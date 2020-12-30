@@ -30,6 +30,26 @@
 from ehelply_python_sdk.services.service_sdk_base import SDKBase
 
 
+class AuthModel:
+    def __init__(
+            self,
+            access_sdk=None,
+            active_participant_uuid=None,
+            entity_identifier=None,
+            project_uuid=None,
+            access_token=None,
+            secret_token=None,
+            claims=None,
+    ) -&gt; None:
+        self.access_sdk = access_sdk
+        self.active_participant_uuid = active_participant_uuid
+        self.entity_identifier = entity_identifier
+        self.project_uuid = project_uuid
+        self.access_token = access_token
+        self.secret_token = secret_token
+        self.claims = claims
+
+
 class AccessSDK(SDKBase):
     def get_base_url(self) -&gt; str:
         return super().get_base_url() + &#34;/access/partitions/&#34; + self.sdk_configuration.project_identifier
@@ -108,7 +128,8 @@ class AccessSDK(SDKBase):
             schema=CreateRoleResponse
         )
 
-    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -&gt; Union[GenericHTTPResponse, MessageResponse]:
+    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -&gt; Union[
+        GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + &#34;/who/groups/&#34; + group_uuid + &#34;/entities/&#34; + entity_identifier
@@ -174,7 +195,7 @@ class AccessSDK(SDKBase):
             entity_identifier: str,
             target_identifier: str,
             node: str
-    ) -&gt; Union[GenericHTTPResponse, bool]:
+    ) -&gt; bool:
 
         response: Response = self.requests_session.get(
             self.get_base_url() + &#34;/auth/targets/&#34; + target_identifier + &#34;/nodes/&#34; + node + &#34;/entities/&#34; + entity_identifier
@@ -183,7 +204,8 @@ class AccessSDK(SDKBase):
         if not is_response_error(response) and response.json() is True:
             return True
 
-        return transform_response_to_schema(response, None)
+        # return transform_response_to_schema(response, None)
+        return False
 
     def is_key_allowed(
             self,
@@ -191,7 +213,7 @@ class AccessSDK(SDKBase):
             secret_token: str,
             target_identifier: str,
             node: str
-    ) -&gt; Union[GenericHTTPResponse, bool]:
+    ) -&gt; bool:
 
         headers: dict = {
             &#34;X-Access-Token&#34;: access_token,
@@ -206,7 +228,33 @@ class AccessSDK(SDKBase):
         if not is_response_error(response) and response.json() is True:
             return True
 
-        return transform_response_to_schema(response, None)</code></pre>
+        # return transform_response_to_schema(response, None)
+        return False
+
+    def is_allowed(
+            self,
+            auth_model: AuthModel,
+            target_identifier: str,
+            node: str
+    ) -&gt; bool:
+        if auth_model.entity_identifier:
+            if self.is_entity_allowed(
+                    entity_identifier=auth_model.entity_identifier,
+                    target_identifier=target_identifier,
+                    node=node
+            ):
+                return True
+
+        if auth_model.access_token and auth_model.secret_token:
+            if self.is_key_allowed(
+                    access_token=auth_model.access_token,
+                    secret_token=auth_model.secret_token,
+                    target_identifier=target_identifier,
+                    node=node
+            ):
+                return True
+
+        return False</code></pre>
 </details>
 </section>
 <section>
@@ -306,7 +354,8 @@ class AccessSDK(SDKBase):
             schema=CreateRoleResponse
         )
 
-    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -&gt; Union[GenericHTTPResponse, MessageResponse]:
+    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -&gt; Union[
+        GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + &#34;/who/groups/&#34; + group_uuid + &#34;/entities/&#34; + entity_identifier
@@ -372,7 +421,7 @@ class AccessSDK(SDKBase):
             entity_identifier: str,
             target_identifier: str,
             node: str
-    ) -&gt; Union[GenericHTTPResponse, bool]:
+    ) -&gt; bool:
 
         response: Response = self.requests_session.get(
             self.get_base_url() + &#34;/auth/targets/&#34; + target_identifier + &#34;/nodes/&#34; + node + &#34;/entities/&#34; + entity_identifier
@@ -381,7 +430,8 @@ class AccessSDK(SDKBase):
         if not is_response_error(response) and response.json() is True:
             return True
 
-        return transform_response_to_schema(response, None)
+        # return transform_response_to_schema(response, None)
+        return False
 
     def is_key_allowed(
             self,
@@ -389,7 +439,7 @@ class AccessSDK(SDKBase):
             secret_token: str,
             target_identifier: str,
             node: str
-    ) -&gt; Union[GenericHTTPResponse, bool]:
+    ) -&gt; bool:
 
         headers: dict = {
             &#34;X-Access-Token&#34;: access_token,
@@ -404,7 +454,33 @@ class AccessSDK(SDKBase):
         if not is_response_error(response) and response.json() is True:
             return True
 
-        return transform_response_to_schema(response, None)</code></pre>
+        # return transform_response_to_schema(response, None)
+        return False
+
+    def is_allowed(
+            self,
+            auth_model: AuthModel,
+            target_identifier: str,
+            node: str
+    ) -&gt; bool:
+        if auth_model.entity_identifier:
+            if self.is_entity_allowed(
+                    entity_identifier=auth_model.entity_identifier,
+                    target_identifier=target_identifier,
+                    node=node
+            ):
+                return True
+
+        if auth_model.access_token and auth_model.secret_token:
+            if self.is_key_allowed(
+                    access_token=auth_model.access_token,
+                    secret_token=auth_model.secret_token,
+                    target_identifier=target_identifier,
+                    node=node
+            ):
+                return True
+
+        return False</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -421,7 +497,8 @@ class AccessSDK(SDKBase):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -&gt; Union[GenericHTTPResponse, MessageResponse]:
+<pre><code class="python">def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -&gt; Union[
+    GenericHTTPResponse, MessageResponse]:
     return transform_response_to_schema(
         self.requests_session.post(
             self.get_base_url() + &#34;/who/groups/&#34; + group_uuid + &#34;/entities/&#34; + entity_identifier
@@ -632,8 +709,43 @@ class AccessSDK(SDKBase):
     return super().get_service_version()</code></pre>
 </details>
 </dd>
+<dt id="ehelply_python_sdk.services.access.sdk.AccessSDK.is_allowed"><code class="name flex">
+<span>def <span class="ident">is_allowed</span></span>(<span>self, auth_model: <a title="ehelply_python_sdk.services.access.sdk.AuthModel" href="#ehelply_python_sdk.services.access.sdk.AuthModel">AuthModel</a>, target_identifier: str, node: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_allowed(
+        self,
+        auth_model: AuthModel,
+        target_identifier: str,
+        node: str
+) -&gt; bool:
+    if auth_model.entity_identifier:
+        if self.is_entity_allowed(
+                entity_identifier=auth_model.entity_identifier,
+                target_identifier=target_identifier,
+                node=node
+        ):
+            return True
+
+    if auth_model.access_token and auth_model.secret_token:
+        if self.is_key_allowed(
+                access_token=auth_model.access_token,
+                secret_token=auth_model.secret_token,
+                target_identifier=target_identifier,
+                node=node
+        ):
+            return True
+
+    return False</code></pre>
+</details>
+</dd>
 <dt id="ehelply_python_sdk.services.access.sdk.AccessSDK.is_entity_allowed"><code class="name flex">
-<span>def <span class="ident">is_entity_allowed</span></span>(<span>self, entity_identifier: str, target_identifier: str, node: str) ‑> Union[~GenericHTTPResponse, bool]</span>
+<span>def <span class="ident">is_entity_allowed</span></span>(<span>self, entity_identifier: str, target_identifier: str, node: str) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -646,7 +758,7 @@ class AccessSDK(SDKBase):
         entity_identifier: str,
         target_identifier: str,
         node: str
-) -&gt; Union[GenericHTTPResponse, bool]:
+) -&gt; bool:
 
     response: Response = self.requests_session.get(
         self.get_base_url() + &#34;/auth/targets/&#34; + target_identifier + &#34;/nodes/&#34; + node + &#34;/entities/&#34; + entity_identifier
@@ -655,11 +767,12 @@ class AccessSDK(SDKBase):
     if not is_response_error(response) and response.json() is True:
         return True
 
-    return transform_response_to_schema(response, None)</code></pre>
+    # return transform_response_to_schema(response, None)
+    return False</code></pre>
 </details>
 </dd>
 <dt id="ehelply_python_sdk.services.access.sdk.AccessSDK.is_key_allowed"><code class="name flex">
-<span>def <span class="ident">is_key_allowed</span></span>(<span>self, access_token: str, secret_token: str, target_identifier: str, node: str) ‑> Union[~GenericHTTPResponse, bool]</span>
+<span>def <span class="ident">is_key_allowed</span></span>(<span>self, access_token: str, secret_token: str, target_identifier: str, node: str) ‑> bool</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -673,7 +786,7 @@ class AccessSDK(SDKBase):
         secret_token: str,
         target_identifier: str,
         node: str
-) -&gt; Union[GenericHTTPResponse, bool]:
+) -&gt; bool:
 
     headers: dict = {
         &#34;X-Access-Token&#34;: access_token,
@@ -688,7 +801,8 @@ class AccessSDK(SDKBase):
     if not is_response_error(response) and response.json() is True:
         return True
 
-    return transform_response_to_schema(response, None)</code></pre>
+    # return transform_response_to_schema(response, None)
+    return False</code></pre>
 </details>
 </dd>
 <dt id="ehelply_python_sdk.services.access.sdk.AccessSDK.make_rgt"><code class="name flex">
@@ -742,6 +856,36 @@ class AccessSDK(SDKBase):
 </dd>
 </dl>
 </dd>
+<dt id="ehelply_python_sdk.services.access.sdk.AuthModel"><code class="flex name class">
+<span>class <span class="ident">AuthModel</span></span>
+<span>(</span><span>access_sdk=None, active_participant_uuid=None, entity_identifier=None, project_uuid=None, access_token=None, secret_token=None, claims=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AuthModel:
+    def __init__(
+            self,
+            access_sdk=None,
+            active_participant_uuid=None,
+            entity_identifier=None,
+            project_uuid=None,
+            access_token=None,
+            secret_token=None,
+            claims=None,
+    ) -&gt; None:
+        self.access_sdk = access_sdk
+        self.active_participant_uuid = active_participant_uuid
+        self.entity_identifier = entity_identifier
+        self.project_uuid = project_uuid
+        self.access_token = access_token
+        self.secret_token = secret_token
+        self.claims = claims</code></pre>
+</details>
+</dd>
 </dl>
 </section>
 </article>
@@ -771,11 +915,15 @@ class AccessSDK(SDKBase):
 <li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.get_base_url" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.get_base_url">get_base_url</a></code></li>
 <li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.get_docs_url" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.get_docs_url">get_docs_url</a></code></li>
 <li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.get_service_version" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.get_service_version">get_service_version</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.is_allowed" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.is_allowed">is_allowed</a></code></li>
 <li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.is_entity_allowed" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.is_entity_allowed">is_entity_allowed</a></code></li>
 <li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.is_key_allowed" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.is_key_allowed">is_key_allowed</a></code></li>
 <li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.make_rgt" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.make_rgt">make_rgt</a></code></li>
 <li><code><a title="ehelply_python_sdk.services.access.sdk.AccessSDK.search_types" href="#ehelply_python_sdk.services.access.sdk.AccessSDK.search_types">search_types</a></code></li>
 </ul>
+</li>
+<li>
+<h4><code><a title="ehelply_python_sdk.services.access.sdk.AuthModel" href="#ehelply_python_sdk.services.access.sdk.AuthModel">AuthModel</a></code></h4>
 </li>
 </ul>
 </li>

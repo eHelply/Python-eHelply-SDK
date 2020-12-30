@@ -22,6 +22,202 @@
 <h1 class="title">Module <code>ehelply_python_sdk.services.access.auth_rules</code></h1>
 </header>
 <section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from __future__ import annotations
+from typing import List, Tuple, Callable
+from ehelply_python_sdk.services.access.sdk import AuthModel
+
+
+class AuthException(Exception):
+    pass
+
+
+class AuthRule:
+    &#34;&#34;&#34;
+    Provides a nice interface into developing authorization rules for endpoints
+    &#34;&#34;&#34;
+
+    # Global config of whether to exception if unauthorized. Useful for development
+    exception_if_unauthorized: bool = True
+
+    # The exception to throw when auth fails
+    exception_to_throw: Exception = AuthException
+
+    # Global config of whether to override auth rules. Essentially, bypass authorization. Useful for development
+    override: bool = False
+
+    def __init__(
+            self,
+            auth_model: AuthModel,
+            *rules,
+            exception_if_unauthorized: bool = None,
+            exception_to_throw: Exception = None,
+            override: bool = None,
+            execute: bool = False
+    ):
+        if exception_if_unauthorized is None:
+            exception_if_unauthorized = AuthRule.exception_if_unauthorized
+        self.local_exception_if_unauthorized: bool = exception_if_unauthorized
+
+        if exception_to_throw is None:
+            exception_to_throw = AuthRule.exception_to_throw
+        self.local_exception_to_throw: Exception = exception_to_throw
+
+        if override is None:
+            override = AuthRule.override
+        self.local_override: bool = override
+
+        self.rules: List[AuthRule] = list(rules)
+
+        self.handlers: List[Tuple[Callable, dict]] = []
+
+        self.auth_model: AuthModel = auth_model
+
+        if execute:
+            self.verify()
+
+    def verify(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Verifies that each changed rule passes using an AND logical operation.
+
+        If rules were passed in, it will also verify that those pass successfully. The passed in rules become a logical OR
+
+        Returns:
+
+        &#34;&#34;&#34;
+        rules_passed: bool = False
+        for rule in self.rules:
+            try:
+                result: bool = rule.verify()
+                if result:
+                    rules_passed = True
+                    break
+            except:
+                pass
+
+        if not rules_passed and len(self.rules) != 0:
+            if self.local_exception_if_unauthorized:
+                raise self.local_exception_to_throw
+            else:
+                return False
+
+        for handler in self.handlers:
+            try:
+                result: bool = handler[0](**handler[1])
+                if not result:
+                    if self.local_exception_if_unauthorized:
+                        raise self.local_exception_to_throw
+                    else:
+                        return False
+            except:
+                if self.local_exception_if_unauthorized:
+                    raise self.local_exception_to_throw
+                else:
+                    return False
+
+        return True
+
+    def __handler_entity_identifier_eq(self, entity_identifier: str) -&gt; bool:
+        return self.auth_model.entity_identifier == entity_identifier
+
+    def entity_identifier_eq(self, entity_identifier: str):
+        self.handlers.append((
+            self.__handler_entity_identifier_eq,
+            {
+                &#34;entity_identifier&#34;: entity_identifier
+            }
+        ))
+
+    def __handler_entity_identifier_neq(self, entity_identifier: str) -&gt; bool:
+        return self.auth_model.entity_identifier != entity_identifier
+
+    def entity_identifier_neq(self, entity_identifier: str):
+        self.handlers.append((
+            self.__handler_entity_identifier_neq,
+            {
+                &#34;entity_identifier&#34;: entity_identifier
+            }
+        ))
+
+    def __handler_entity_has_node_on_target(self, node: str, target_identifier: str) -&gt; bool:
+        return self.auth_model.access_sdk.is_allowed(
+            auth_model=self.auth_model,
+            target_identifier=target_identifier,
+            node=node
+        )
+
+    def entity_has_node_on_target(self, node: str, target_identifier: str) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_entity_has_node_on_target,
+            {
+                &#34;node&#34;: node,
+                &#34;target_identifier&#34;: target_identifier
+            }
+        ))
+        return self
+
+    def __handler_has_entity(self) -&gt; bool:
+        return self.auth_model.entity_identifier is not None
+
+    def has_entity(self) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_has_entity,
+            {}
+        ))
+        return self
+
+    def __handler_has_participant(self) -&gt; bool:
+        return self.auth_model.active_participant_uuid is not None
+
+    def has_participant(self) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_has_participant,
+            {}
+        ))
+        return self
+
+    def __handler_participant_has_node_on_target(self, node: str, target_identifier: str) -&gt; bool:
+        temp_model: AuthModel = AuthModel(
+            access_sdk=self.auth_model.access_sdk,
+            active_participant_uuid=self.auth_model.active_participant_uuid,
+            entity_identifier=self.auth_model.active_participant_uuid,
+            project_uuid=self.auth_model.project_uuid,
+            access_token=self.auth_model.access_token,
+            secret_token=self.auth_model.secret_token,
+            claims=self.auth_model.claims,
+        )
+
+        return self.auth_model.access_sdk.is_allowed(
+            auth_model=temp_model,
+            target_identifier=target_identifier,
+            node=node
+        )
+
+    def participant_has_node_on_target(self, node: str, target_identifier: str) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_participant_has_node_on_target,
+            {
+                &#34;node&#34;: node,
+                &#34;target_identifier&#34;: target_identifier
+            }
+        ))
+        return self
+
+    def __handler_participant_below_limit(self) -&gt; bool:
+        return True
+
+    def participant_below_limit(self, limit: str) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_participant_below_limit,
+            {
+                &#34;limit&#34;: limit
+            }
+        ))
+        return self</code></pre>
+</details>
 </section>
 <section>
 </section>
@@ -30,6 +226,422 @@
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthException"><code class="flex name class">
+<span>class <span class="ident">AuthException</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AuthException(Exception):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule"><code class="flex name class">
+<span>class <span class="ident">AuthRule</span></span>
+<span>(</span><span>auth_model: AuthModel, *rules, exception_if_unauthorized: bool = None, exception_to_throw: Exception = None, override: bool = None, execute: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Provides a nice interface into developing authorization rules for endpoints</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AuthRule:
+    &#34;&#34;&#34;
+    Provides a nice interface into developing authorization rules for endpoints
+    &#34;&#34;&#34;
+
+    # Global config of whether to exception if unauthorized. Useful for development
+    exception_if_unauthorized: bool = True
+
+    # The exception to throw when auth fails
+    exception_to_throw: Exception = AuthException
+
+    # Global config of whether to override auth rules. Essentially, bypass authorization. Useful for development
+    override: bool = False
+
+    def __init__(
+            self,
+            auth_model: AuthModel,
+            *rules,
+            exception_if_unauthorized: bool = None,
+            exception_to_throw: Exception = None,
+            override: bool = None,
+            execute: bool = False
+    ):
+        if exception_if_unauthorized is None:
+            exception_if_unauthorized = AuthRule.exception_if_unauthorized
+        self.local_exception_if_unauthorized: bool = exception_if_unauthorized
+
+        if exception_to_throw is None:
+            exception_to_throw = AuthRule.exception_to_throw
+        self.local_exception_to_throw: Exception = exception_to_throw
+
+        if override is None:
+            override = AuthRule.override
+        self.local_override: bool = override
+
+        self.rules: List[AuthRule] = list(rules)
+
+        self.handlers: List[Tuple[Callable, dict]] = []
+
+        self.auth_model: AuthModel = auth_model
+
+        if execute:
+            self.verify()
+
+    def verify(self) -&gt; bool:
+        &#34;&#34;&#34;
+        Verifies that each changed rule passes using an AND logical operation.
+
+        If rules were passed in, it will also verify that those pass successfully. The passed in rules become a logical OR
+
+        Returns:
+
+        &#34;&#34;&#34;
+        rules_passed: bool = False
+        for rule in self.rules:
+            try:
+                result: bool = rule.verify()
+                if result:
+                    rules_passed = True
+                    break
+            except:
+                pass
+
+        if not rules_passed and len(self.rules) != 0:
+            if self.local_exception_if_unauthorized:
+                raise self.local_exception_to_throw
+            else:
+                return False
+
+        for handler in self.handlers:
+            try:
+                result: bool = handler[0](**handler[1])
+                if not result:
+                    if self.local_exception_if_unauthorized:
+                        raise self.local_exception_to_throw
+                    else:
+                        return False
+            except:
+                if self.local_exception_if_unauthorized:
+                    raise self.local_exception_to_throw
+                else:
+                    return False
+
+        return True
+
+    def __handler_entity_identifier_eq(self, entity_identifier: str) -&gt; bool:
+        return self.auth_model.entity_identifier == entity_identifier
+
+    def entity_identifier_eq(self, entity_identifier: str):
+        self.handlers.append((
+            self.__handler_entity_identifier_eq,
+            {
+                &#34;entity_identifier&#34;: entity_identifier
+            }
+        ))
+
+    def __handler_entity_identifier_neq(self, entity_identifier: str) -&gt; bool:
+        return self.auth_model.entity_identifier != entity_identifier
+
+    def entity_identifier_neq(self, entity_identifier: str):
+        self.handlers.append((
+            self.__handler_entity_identifier_neq,
+            {
+                &#34;entity_identifier&#34;: entity_identifier
+            }
+        ))
+
+    def __handler_entity_has_node_on_target(self, node: str, target_identifier: str) -&gt; bool:
+        return self.auth_model.access_sdk.is_allowed(
+            auth_model=self.auth_model,
+            target_identifier=target_identifier,
+            node=node
+        )
+
+    def entity_has_node_on_target(self, node: str, target_identifier: str) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_entity_has_node_on_target,
+            {
+                &#34;node&#34;: node,
+                &#34;target_identifier&#34;: target_identifier
+            }
+        ))
+        return self
+
+    def __handler_has_entity(self) -&gt; bool:
+        return self.auth_model.entity_identifier is not None
+
+    def has_entity(self) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_has_entity,
+            {}
+        ))
+        return self
+
+    def __handler_has_participant(self) -&gt; bool:
+        return self.auth_model.active_participant_uuid is not None
+
+    def has_participant(self) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_has_participant,
+            {}
+        ))
+        return self
+
+    def __handler_participant_has_node_on_target(self, node: str, target_identifier: str) -&gt; bool:
+        temp_model: AuthModel = AuthModel(
+            access_sdk=self.auth_model.access_sdk,
+            active_participant_uuid=self.auth_model.active_participant_uuid,
+            entity_identifier=self.auth_model.active_participant_uuid,
+            project_uuid=self.auth_model.project_uuid,
+            access_token=self.auth_model.access_token,
+            secret_token=self.auth_model.secret_token,
+            claims=self.auth_model.claims,
+        )
+
+        return self.auth_model.access_sdk.is_allowed(
+            auth_model=temp_model,
+            target_identifier=target_identifier,
+            node=node
+        )
+
+    def participant_has_node_on_target(self, node: str, target_identifier: str) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_participant_has_node_on_target,
+            {
+                &#34;node&#34;: node,
+                &#34;target_identifier&#34;: target_identifier
+            }
+        ))
+        return self
+
+    def __handler_participant_below_limit(self) -&gt; bool:
+        return True
+
+    def participant_below_limit(self, limit: str) -&gt; AuthRule:
+        self.handlers.append((
+            self.__handler_participant_below_limit,
+            {
+                &#34;limit&#34;: limit
+            }
+        ))
+        return self</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.exception_if_unauthorized"><code class="name">var <span class="ident">exception_if_unauthorized</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.exception_to_throw"><code class="name">var <span class="ident">exception_to_throw</span> : Exception</code></dt>
+<dd>
+<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.override"><code class="name">var <span class="ident">override</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_has_node_on_target"><code class="name flex">
+<span>def <span class="ident">entity_has_node_on_target</span></span>(<span>self, node: str, target_identifier: str) ‑> <a title="ehelply_python_sdk.services.access.auth_rules.AuthRule" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule">AuthRule</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def entity_has_node_on_target(self, node: str, target_identifier: str) -&gt; AuthRule:
+    self.handlers.append((
+        self.__handler_entity_has_node_on_target,
+        {
+            &#34;node&#34;: node,
+            &#34;target_identifier&#34;: target_identifier
+        }
+    ))
+    return self</code></pre>
+</details>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_identifier_eq"><code class="name flex">
+<span>def <span class="ident">entity_identifier_eq</span></span>(<span>self, entity_identifier: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def entity_identifier_eq(self, entity_identifier: str):
+    self.handlers.append((
+        self.__handler_entity_identifier_eq,
+        {
+            &#34;entity_identifier&#34;: entity_identifier
+        }
+    ))</code></pre>
+</details>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_identifier_neq"><code class="name flex">
+<span>def <span class="ident">entity_identifier_neq</span></span>(<span>self, entity_identifier: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def entity_identifier_neq(self, entity_identifier: str):
+    self.handlers.append((
+        self.__handler_entity_identifier_neq,
+        {
+            &#34;entity_identifier&#34;: entity_identifier
+        }
+    ))</code></pre>
+</details>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.has_entity"><code class="name flex">
+<span>def <span class="ident">has_entity</span></span>(<span>self) ‑> <a title="ehelply_python_sdk.services.access.auth_rules.AuthRule" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule">AuthRule</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def has_entity(self) -&gt; AuthRule:
+    self.handlers.append((
+        self.__handler_has_entity,
+        {}
+    ))
+    return self</code></pre>
+</details>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.has_participant"><code class="name flex">
+<span>def <span class="ident">has_participant</span></span>(<span>self) ‑> <a title="ehelply_python_sdk.services.access.auth_rules.AuthRule" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule">AuthRule</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def has_participant(self) -&gt; AuthRule:
+    self.handlers.append((
+        self.__handler_has_participant,
+        {}
+    ))
+    return self</code></pre>
+</details>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.participant_below_limit"><code class="name flex">
+<span>def <span class="ident">participant_below_limit</span></span>(<span>self, limit: str) ‑> <a title="ehelply_python_sdk.services.access.auth_rules.AuthRule" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule">AuthRule</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def participant_below_limit(self, limit: str) -&gt; AuthRule:
+    self.handlers.append((
+        self.__handler_participant_below_limit,
+        {
+            &#34;limit&#34;: limit
+        }
+    ))
+    return self</code></pre>
+</details>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.participant_has_node_on_target"><code class="name flex">
+<span>def <span class="ident">participant_has_node_on_target</span></span>(<span>self, node: str, target_identifier: str) ‑> <a title="ehelply_python_sdk.services.access.auth_rules.AuthRule" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule">AuthRule</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def participant_has_node_on_target(self, node: str, target_identifier: str) -&gt; AuthRule:
+    self.handlers.append((
+        self.__handler_participant_has_node_on_target,
+        {
+            &#34;node&#34;: node,
+            &#34;target_identifier&#34;: target_identifier
+        }
+    ))
+    return self</code></pre>
+</details>
+</dd>
+<dt id="ehelply_python_sdk.services.access.auth_rules.AuthRule.verify"><code class="name flex">
+<span>def <span class="ident">verify</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Verifies that each changed rule passes using an AND logical operation.</p>
+<p>If rules were passed in, it will also verify that those pass successfully. The passed in rules become a logical OR</p>
+<p>Returns:</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def verify(self) -&gt; bool:
+    &#34;&#34;&#34;
+    Verifies that each changed rule passes using an AND logical operation.
+
+    If rules were passed in, it will also verify that those pass successfully. The passed in rules become a logical OR
+
+    Returns:
+
+    &#34;&#34;&#34;
+    rules_passed: bool = False
+    for rule in self.rules:
+        try:
+            result: bool = rule.verify()
+            if result:
+                rules_passed = True
+                break
+        except:
+            pass
+
+    if not rules_passed and len(self.rules) != 0:
+        if self.local_exception_if_unauthorized:
+            raise self.local_exception_to_throw
+        else:
+            return False
+
+    for handler in self.handlers:
+        try:
+            result: bool = handler[0](**handler[1])
+            if not result:
+                if self.local_exception_if_unauthorized:
+                    raise self.local_exception_to_throw
+                else:
+                    return False
+        except:
+            if self.local_exception_if_unauthorized:
+                raise self.local_exception_to_throw
+            else:
+                return False
+
+    return True</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -41,6 +653,29 @@
 <li><h3>Super-module</h3>
 <ul>
 <li><code><a title="ehelply_python_sdk.services.access" href="index.html">ehelply_python_sdk.services.access</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthException" href="#ehelply_python_sdk.services.access.auth_rules.AuthException">AuthException</a></code></h4>
+</li>
+<li>
+<h4><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule">AuthRule</a></code></h4>
+<ul class="">
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_has_node_on_target" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_has_node_on_target">entity_has_node_on_target</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_identifier_eq" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_identifier_eq">entity_identifier_eq</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_identifier_neq" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.entity_identifier_neq">entity_identifier_neq</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.exception_if_unauthorized" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.exception_if_unauthorized">exception_if_unauthorized</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.exception_to_throw" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.exception_to_throw">exception_to_throw</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.has_entity" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.has_entity">has_entity</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.has_participant" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.has_participant">has_participant</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.override" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.override">override</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.participant_below_limit" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.participant_below_limit">participant_below_limit</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.participant_has_node_on_target" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.participant_has_node_on_target">participant_has_node_on_target</a></code></li>
+<li><code><a title="ehelply_python_sdk.services.access.auth_rules.AuthRule.verify" href="#ehelply_python_sdk.services.access.auth_rules.AuthRule.verify">verify</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
