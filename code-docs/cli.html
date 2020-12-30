@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.2" />
-<title>ehelply_python_sdk.services API documentation</title>
+<title>ehelply_python_sdk.cli API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,38 +19,146 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>ehelply_python_sdk.services</code></h1>
+<h1 class="title">Module <code>ehelply_python_sdk.cli</code></h1>
 </header>
 <section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from pathlib import Path
+import os.path as OSPath
+from typing import List
+import re
+import os
+
+import pdoc
+from pdoc.cli import _open_write_file
+
+import typer
+
+
+cli = typer.Typer()
+dev_cli = typer.Typer()
+
+cli.add_typer(dev_cli, name=&#34;dev&#34;)
+
+
+@dev_cli.command()
+def export_code_docs():
+    output_dir: Path = Path(__file__).parents[1].joinpath(&#39;code-docs&#39;)
+
+    modules = [&#39;ehelply_python_sdk&#39;]  # Public submodules are auto-imported
+    context = pdoc.Context()
+
+    modules = [pdoc.Module(mod, context=context)
+               for mod in modules]
+    pdoc.link_inheritance(context)
+
+    def recursive_htmls(mod):
+        yield mod.name, mod.html(), mod.url()
+        for submod in mod.submodules():
+            yield from recursive_htmls(submod)
+
+    for mod in modules:
+
+        for module_name, html, url in recursive_htmls(mod):
+            module_name: str
+            url: str
+            html: str
+
+            url_components: List[str] = url.split(&#34;/&#34;)
+            url_components.pop(0)
+            url: str = &#39;/&#39;.join(url_components)
+
+            filepath: str = OSPath.join(str(output_dir), *re.sub(r&#39;\.html$&#39;, &#39;.html&#39;, url).split(&#39;/&#39;))
+
+            dirpath = OSPath.dirname(filepath)
+            if not os.access(dirpath, os.R_OK):
+                os.makedirs(dirpath)
+
+            with _open_write_file(filepath) as f:
+                f.write(html)
+
+
+
+
+
+def cli_main():
+    cli()
+
+
+if __name__ == &#39;__main__&#39;:
+    cli()</code></pre>
+</details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt><code class="name"><a title="ehelply_python_sdk.services.access" href="access/index.html">ehelply_python_sdk.services.access</a></code></dt>
+<dt id="ehelply_python_sdk.cli.cli_main"><code class="name flex">
+<span>def <span class="ident">cli_main</span></span>(<span>)</span>
+</code></dt>
 <dd>
 <div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cli_main():
+    cli()</code></pre>
+</details>
 </dd>
-<dt><code class="name"><a title="ehelply_python_sdk.services.security" href="security/index.html">ehelply_python_sdk.services.security</a></code></dt>
+<dt id="ehelply_python_sdk.cli.export_code_docs"><code class="name flex">
+<span>def <span class="ident">export_code_docs</span></span>(<span>)</span>
+</code></dt>
 <dd>
 <div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="ehelply_python_sdk.services.service_schemas" href="service_schemas.html">ehelply_python_sdk.services.service_schemas</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="ehelply_python_sdk.services.service_sdk_base" href="service_sdk_base.html">ehelply_python_sdk.services.service_sdk_base</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="ehelply_python_sdk.services.services" href="services.html">ehelply_python_sdk.services.services</a></code></dt>
-<dd>
-<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dev_cli.command()
+def export_code_docs():
+    output_dir: Path = Path(__file__).parents[1].joinpath(&#39;code-docs&#39;)
+
+    modules = [&#39;ehelply_python_sdk&#39;]  # Public submodules are auto-imported
+    context = pdoc.Context()
+
+    modules = [pdoc.Module(mod, context=context)
+               for mod in modules]
+    pdoc.link_inheritance(context)
+
+    def recursive_htmls(mod):
+        yield mod.name, mod.html(), mod.url()
+        for submod in mod.submodules():
+            yield from recursive_htmls(submod)
+
+    for mod in modules:
+
+        for module_name, html, url in recursive_htmls(mod):
+            module_name: str
+            url: str
+            html: str
+
+            url_components: List[str] = url.split(&#34;/&#34;)
+            url_components.pop(0)
+            url: str = &#39;/&#39;.join(url_components)
+
+            filepath: str = OSPath.join(str(output_dir), *re.sub(r&#39;\.html$&#39;, &#39;.html&#39;, url).split(&#39;/&#39;))
+
+            dirpath = OSPath.dirname(filepath)
+            if not os.access(dirpath, os.R_OK):
+                os.makedirs(dirpath)
+
+            with _open_write_file(filepath) as f:
+                f.write(html)</code></pre>
+</details>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
 </section>
 <section>
 </section>
@@ -63,16 +171,13 @@
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="ehelply_python_sdk" href="../index.html">ehelply_python_sdk</a></code></li>
+<li><code><a title="ehelply_python_sdk" href="index.html">ehelply_python_sdk</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
-<ul>
-<li><code><a title="ehelply_python_sdk.services.access" href="access/index.html">ehelply_python_sdk.services.access</a></code></li>
-<li><code><a title="ehelply_python_sdk.services.security" href="security/index.html">ehelply_python_sdk.services.security</a></code></li>
-<li><code><a title="ehelply_python_sdk.services.service_schemas" href="service_schemas.html">ehelply_python_sdk.services.service_schemas</a></code></li>
-<li><code><a title="ehelply_python_sdk.services.service_sdk_base" href="service_sdk_base.html">ehelply_python_sdk.services.service_sdk_base</a></code></li>
-<li><code><a title="ehelply_python_sdk.services.services" href="services.html">ehelply_python_sdk.services.services</a></code></li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ehelply_python_sdk.cli.cli_main" href="#ehelply_python_sdk.cli.cli_main">cli_main</a></code></li>
+<li><code><a title="ehelply_python_sdk.cli.export_code_docs" href="#ehelply_python_sdk.cli.export_code_docs">export_code_docs</a></code></li>
 </ul>
 </li>
 </ul>
