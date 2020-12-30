@@ -12,7 +12,7 @@ class AccessSDK(SDKBase):
     def get_service_version(self) -> str:
         return super().get_service_version()
 
-    def search_types(self, name: str) -> Union[HTTPResponse, PageResponse]:
+    def search_types(self, name: str) -> Union[GenericHTTPResponse, PageResponse]:
         response: PageResponse = transform_response_to_schema(
             self.requests_session.get(
                 self.get_base_url() + "/permissions/types",
@@ -28,7 +28,23 @@ class AccessSDK(SDKBase):
 
         return response
 
-    def create_type(self, partition_type: CreateType) -> Union[HTTPResponse, CreateTypeResponse]:
+    def create_type(self, partition_type: CreateType) -> Union[GenericHTTPResponse, CreateTypeResponse]:
+        """
+
+        # Markdown test
+        * This is
+        * so very
+        * epic
+
+        Parameters
+        ----------
+        partition_type : CreateType
+            Pydantic model which defines the parameters of the type to create
+
+        Returns
+        -------
+
+        """
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/permissions/types",
@@ -37,7 +53,7 @@ class AccessSDK(SDKBase):
             schema=CreateTypeResponse
         )
 
-    def create_node(self, partition_type_uuid: str, node: CreateNode) -> Union[HTTPResponse, CreateNodeResponse]:
+    def create_node(self, partition_type_uuid: str, node: CreateNode) -> Union[GenericHTTPResponse, CreateNodeResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/permissions/types/" + partition_type_uuid + "/nodes",
@@ -46,7 +62,7 @@ class AccessSDK(SDKBase):
             schema=CreateNodeResponse
         )
 
-    def create_group(self, group: CreateGroup) -> Union[HTTPResponse, CreateGroupResponse]:
+    def create_group(self, group: CreateGroup) -> Union[GenericHTTPResponse, CreateGroupResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/who/groups",
@@ -55,7 +71,7 @@ class AccessSDK(SDKBase):
             schema=CreateGroupResponse
         )
 
-    def create_role(self, role: CreateRole) -> Union[HTTPResponse, CreateRoleResponse]:
+    def create_role(self, role: CreateRole) -> Union[GenericHTTPResponse, CreateRoleResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/roles",
@@ -64,7 +80,7 @@ class AccessSDK(SDKBase):
             schema=CreateRoleResponse
         )
 
-    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -> Union[HTTPResponse, MessageResponse]:
+    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -> Union[GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/who/groups/" + group_uuid + "/entities/" + entity_identifier
@@ -76,7 +92,7 @@ class AccessSDK(SDKBase):
             self,
             entity_identifier: str,
             key_uuid: str
-    ) -> Union[HTTPResponse, AttachKeyToEntityResponse]:
+    ) -> Union[GenericHTTPResponse, AttachKeyToEntityResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/who/entities/" + entity_identifier + "/keys/" + key_uuid
@@ -89,7 +105,7 @@ class AccessSDK(SDKBase):
             role_uuid: str,
             group_uuid: str,
             target_identifier: str
-    ) -> Union[HTTPResponse, MakeRGTResponse]:
+    ) -> Union[GenericHTTPResponse, MakeRGTResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/rgts/roles/" + role_uuid + "/groups/" + group_uuid + "/targets/" + target_identifier
@@ -103,7 +119,7 @@ class AccessSDK(SDKBase):
             group: CreateGroup,
             target_identifier: str,
             entity_identifiers: List[str] = None
-    ) -> Union[HTTPResponse, MakeRGTResponse]:
+    ) -> Union[GenericHTTPResponse, MakeRGTResponse]:
 
         role_response: CreateRoleResponse = self.create_role(role=role)
 
@@ -130,7 +146,7 @@ class AccessSDK(SDKBase):
             entity_identifier: str,
             target_identifier: str,
             node: str
-    ) -> Union[HTTPResponse, bool]:
+    ) -> Union[GenericHTTPResponse, bool]:
 
         response: Response = self.requests_session.get(
             self.get_base_url() + "/auth/targets/" + target_identifier + "/nodes/" + node + "/entities/" + entity_identifier
@@ -147,7 +163,7 @@ class AccessSDK(SDKBase):
             secret_token: str,
             target_identifier: str,
             node: str
-    ) -> Union[HTTPResponse, bool]:
+    ) -> Union[GenericHTTPResponse, bool]:
 
         headers: dict = {
             "X-Access-Token": access_token,

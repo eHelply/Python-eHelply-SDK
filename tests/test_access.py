@@ -1,4 +1,4 @@
-from ehelply_python_sdk.sdk import SDKConfiguration, eHelplySDK, is_response_error
+from ehelply_python_sdk.sdk import SDKConfiguration, eHelplySDK, ErrorResponse, is_response_error
 
 
 def test_search_types():
@@ -15,6 +15,38 @@ def test_search_types():
 
     response = access_client.search_types(name="eHelply Access")
 
-    print(response.status_code)
+    if is_response_error(response):
+        response: ErrorResponse = response
+        print("I'm sadness")
+        print(response.status_code)
+        print(response.message)
+    else:
+        print(response.dict())
 
-    print(response.dict())
+
+
+    from ehelply_python_sdk.services.access.sdk import AccessSDK
+    from ehelply_python_sdk.utils import make_requests
+
+    sdk_config = SDKConfiguration(
+        access_token="",
+        secret_token="",
+        project_identifier="ehelply-resources",
+        base_url_override="http://localhost"
+    )
+
+    access_only_sdk = AccessSDK(
+        sdk_configuration=sdk_config,
+        requests_session=make_requests(sdk_configuration=sdk_config)
+    )
+
+    response = access_only_sdk.search_types(name="eHelply Access")
+
+    if is_response_error(response):
+        response: ErrorResponse = response
+        print("I'm sadness")
+        print(response.status_code)
+        print(response.message)
+    else:
+        print(response.dict())
+

@@ -4,7 +4,7 @@ import requests
 
 from ehelply_python_sdk.utils import SDKConfiguration, make_requests
 from ehelply_python_sdk.services import services
-from ehelply_python_sdk.services.service_schemas import is_response_error
+from ehelply_python_sdk.services.service_schemas import is_response_error, ErrorResponse
 
 genericSDKBase = TypeVar('genericSDKBase', bound=services.SDKBase)
 

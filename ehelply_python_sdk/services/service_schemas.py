@@ -42,10 +42,10 @@ class ErrorHTTP500Response(ErrorResponse):
         super().__init__(**data, status_code=500, message="Server Error")
 
 
-genericHTTPResponse = TypeVar('genericHTTPResponse', bound=HTTPResponse)
+GenericHTTPResponse = TypeVar('GenericHTTPResponse', bound=HTTPResponse)
 
 
-def transform_response_to_schema(response: Response, schema: Union[None, Type[HTTPResponse]]) -> genericHTTPResponse:
+def transform_response_to_schema(response: Response, schema: Union[None, Type[HTTPResponse]]) -> GenericHTTPResponse:
     if response.status_code == 200:
         if schema:
             return schema(**response.json())
