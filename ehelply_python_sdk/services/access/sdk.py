@@ -2,6 +2,26 @@ from .schemas import *
 from ehelply_python_sdk.services.service_sdk_base import SDKBase
 
 
+class AuthModel:
+    def __init__(
+            self,
+            access_sdk=None,
+            active_participant_uuid=None,
+            entity_identifier=None,
+            project_uuid=None,
+            access_token=None,
+            secret_token=None,
+            claims=None,
+    ) -> None:
+        self.access_sdk = access_sdk
+        self.active_participant_uuid = active_participant_uuid
+        self.entity_identifier = entity_identifier
+        self.project_uuid = project_uuid
+        self.access_token = access_token
+        self.secret_token = secret_token
+        self.claims = claims
+
+
 class AccessSDK(SDKBase):
     def get_base_url(self) -> str:
         return super().get_base_url() + "/access/partitions/" + self.sdk_configuration.project_identifier
@@ -80,7 +100,8 @@ class AccessSDK(SDKBase):
             schema=CreateRoleResponse
         )
 
-    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -> Union[GenericHTTPResponse, MessageResponse]:
+    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -> Union[
+        GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/who/groups/" + group_uuid + "/entities/" + entity_identifier
@@ -146,7 +167,7 @@ class AccessSDK(SDKBase):
             entity_identifier: str,
             target_identifier: str,
             node: str
-    ) -> Union[GenericHTTPResponse, bool]:
+    ) -> bool:
 
         response: Response = self.requests_session.get(
             self.get_base_url() + "/auth/targets/" + target_identifier + "/nodes/" + node + "/entities/" + entity_identifier
@@ -155,7 +176,8 @@ class AccessSDK(SDKBase):
         if not is_response_error(response) and response.json() is True:
             return True
 
-        return transform_response_to_schema(response, None)
+        # return transform_response_to_schema(response, None)
+        return False
 
     def is_key_allowed(
             self,
@@ -163,7 +185,7 @@ class AccessSDK(SDKBase):
             secret_token: str,
             target_identifier: str,
             node: str
-    ) -> Union[GenericHTTPResponse, bool]:
+    ) -> bool:
 
         headers: dict = {
             "X-Access-Token": access_token,
@@ -178,4 +200,30 @@ class AccessSDK(SDKBase):
         if not is_response_error(response) and response.json() is True:
             return True
 
-        return transform_response_to_schema(response, None)
+        # return transform_response_to_schema(response, None)
+        return False
+
+    def is_allowed(
+            self,
+            auth_model: AuthModel,
+            target_identifier: str,
+            node: str
+    ) -> bool:
+        if auth_model.entity_identifier:
+            if self.is_entity_allowed(
+                    entity_identifier=auth_model.entity_identifier,
+                    target_identifier=target_identifier,
+                    node=node
+            ):
+                return True
+
+        if auth_model.access_token and auth_model.secret_token:
+            if self.is_key_allowed(
+                    access_token=auth_model.access_token,
+                    secret_token=auth_model.secret_token,
+                    target_identifier=target_identifier,
+                    node=node
+            ):
+                return True
+
+        return False
