@@ -24,7 +24,7 @@ def test_search_types():
         print(response.dict())
 
 
-
+def test_access_only_sdk():
     from ehelply_python_sdk.services.access.sdk import AccessSDK
     from ehelply_python_sdk.utils import make_requests
 
