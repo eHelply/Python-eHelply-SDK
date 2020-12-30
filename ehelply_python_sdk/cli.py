@@ -18,7 +18,7 @@ cli.add_typer(dev_cli, name="dev")
 
 @dev_cli.command()
 def export_code_docs():
-    output_dir: Path = Path(__file__).parents[1].joinpath('code-docs')
+    output_dir: Path = Path(__file__).parents[1].joinpath('docs')
 
     modules = ['ehelply_python_sdk']  # Public submodules are auto-imported
     context = pdoc.Context()

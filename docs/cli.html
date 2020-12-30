@@ -46,7 +46,7 @@ cli.add_typer(dev_cli, name=&#34;dev&#34;)
 
 @dev_cli.command()
 def export_code_docs():
-    output_dir: Path = Path(__file__).parents[1].joinpath(&#39;code-docs&#39;)
+    output_dir: Path = Path(__file__).parents[1].joinpath(&#39;docs&#39;)
 
     modules = [&#39;ehelply_python_sdk&#39;]  # Public submodules are auto-imported
     context = pdoc.Context()
@@ -123,7 +123,7 @@ if __name__ == &#39;__main__&#39;:
 </summary>
 <pre><code class="python">@dev_cli.command()
 def export_code_docs():
-    output_dir: Path = Path(__file__).parents[1].joinpath(&#39;code-docs&#39;)
+    output_dir: Path = Path(__file__).parents[1].joinpath(&#39;docs&#39;)
 
     modules = [&#39;ehelply_python_sdk&#39;]  # Public submodules are auto-imported
     context = pdoc.Context()
