@@ -50,7 +50,7 @@ class eHelplySDK:
             self,
             sdk_configuration: SDKConfiguration = None,
             request_session: requests.Session = None
-    ) -> services.AccessSDK:
+    ) -> services.SecuritySDK:
         return self._make_client(
             client="security",
             sdk_configuration=sdk_configuration,

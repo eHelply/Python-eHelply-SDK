@@ -76,3 +76,7 @@ class MakeRGTResponse(MessageResponse):
     group_uuid: str
     target_identifier: str
     role_uuid: str
+
+
+class GetEntityForKeyResponse(HTTPResponse):
+    entity_identifier: str

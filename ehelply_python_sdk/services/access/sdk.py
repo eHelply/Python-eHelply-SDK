@@ -32,6 +32,12 @@ class AccessSDK(SDKBase):
     def get_service_version(self) -> str:
         return super().get_service_version()
 
+    def make_partition_override(self, partition: str) -> str:
+        components: List[str] = self.get_base_url().split("/")
+        components.pop()
+        components.append(partition)
+        return "/".join(components)
+
     def search_types(self, name: str) -> Union[GenericHTTPResponse, PageResponse]:
         response: PageResponse = transform_response_to_schema(
             self.requests_session.get(
@@ -50,12 +56,6 @@ class AccessSDK(SDKBase):
 
     def create_type(self, partition_type: CreateType) -> Union[GenericHTTPResponse, CreateTypeResponse]:
         """
-
-        # Markdown test
-        * This is
-        * so very
-        * epic
-
         Parameters
         ----------
         partition_type : CreateType
@@ -104,6 +104,15 @@ class AccessSDK(SDKBase):
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
+                self.get_base_url() + "/who/groups/" + group_uuid + "/entities/" + entity_identifier
+            ),
+            schema=MessageResponse
+        )
+
+    def remove_entity_from_group(self, entity_identifier: str, group_uuid: str) -> Union[
+        GenericHTTPResponse, MessageResponse]:
+        return transform_response_to_schema(
+            self.requests_session.delete(
                 self.get_base_url() + "/who/groups/" + group_uuid + "/entities/" + entity_identifier
             ),
             schema=MessageResponse
@@ -162,15 +171,32 @@ class AccessSDK(SDKBase):
             target_identifier=target_identifier
         )
 
+    def get_entity_for_key(
+            self,
+            key_uuid: str
+    ) -> Union[GenericHTTPResponse, GetEntityForKeyResponse]:
+        return transform_response_to_schema(
+            self.requests_session.post(
+                self.get_base_url() + "/who/entities/keys/" + key_uuid
+            ),
+            schema=GetEntityForKeyResponse
+        )
+
     def is_entity_allowed(
             self,
             entity_identifier: str,
             target_identifier: str,
-            node: str
+            node: str,
+            partition: str = None
     ) -> bool:
 
+        if partition:
+            base_url: str = self.make_partition_override(partition=partition)
+        else:
+            base_url: str = self.get_base_url()
+
         response: Response = self.requests_session.get(
-            self.get_base_url() + "/auth/targets/" + target_identifier + "/nodes/" + node + "/entities/" + entity_identifier
+            base_url + "/auth/targets/" + target_identifier + "/nodes/" + node + "/entities/" + entity_identifier
         )
 
         if not is_response_error(response) and response.json() is True:
@@ -184,8 +210,13 @@ class AccessSDK(SDKBase):
             access_token: str,
             secret_token: str,
             target_identifier: str,
-            node: str
+            node: str,
+            partition: str = None
     ) -> bool:
+        if partition:
+            base_url: str = self.make_partition_override(partition=partition)
+        else:
+            base_url: str = self.get_base_url()
 
         headers: dict = {
             "X-Access-Token": access_token,
@@ -193,7 +224,7 @@ class AccessSDK(SDKBase):
         }
 
         response: Response = self.requests_session.get(
-            self.get_base_url() + "/auth/targets/" + target_identifier + "/nodes/" + node + "/keys",
+            base_url + "/auth/targets/" + target_identifier + "/nodes/" + node + "/keys",
             headers=headers
         )
 
@@ -207,13 +238,15 @@ class AccessSDK(SDKBase):
             self,
             auth_model: AuthModel,
             target_identifier: str,
-            node: str
+            node: str,
+            partition: str = None
     ) -> bool:
         if auth_model.entity_identifier:
             if self.is_entity_allowed(
                     entity_identifier=auth_model.entity_identifier,
                     target_identifier=target_identifier,
-                    node=node
+                    node=node,
+                    partition=partition,
             ):
                 return True
 
@@ -222,8 +255,79 @@ class AccessSDK(SDKBase):
                     access_token=auth_model.access_token,
                     secret_token=auth_model.secret_token,
                     target_identifier=target_identifier,
-                    node=node
+                    node=node,
+                    partition=partition,
             ):
                 return True
 
         return False
+
+    # def templated_access(
+    #         self,
+    #         auth_model: AuthModel,
+    #         service_target_identifier: str,
+    #         target_identifier: str,
+    #         node: str
+    # ):
+    #     AuthRule(
+    #         auth_model,
+    #         AuthRule(auth_model).participant_has_node_on_target(
+    #             partition='ehelply-resources',
+    #             node=node,
+    #             target_identifier=service_target_identifier
+    #         ),
+    #         AuthRule(auth_model).participant_has_node_on_target(
+    #             partition='ehelply-cloud',
+    #             node=node,
+    #             target_identifier=auth_model.project_uuid
+    #         ).customentity_has_node_on_target(
+    #             partition='ehelply-cloud',
+    #             node=node,
+    #             target_identifier=service_target_identifier,
+    #             entity_identifier=auth_model.project_uuid
+    #         ).entity_has_node_on_target(
+    #             node=node,
+    #             target_identifier=target_identifier,
+    #             partition=auth_model.project_uuid
+    #         )
+    #     ).verify()
+
+        # AuthRule(
+        #     auth_model,
+        #     AuthRule(auth_model).participant_has_node_on_target(
+        #         partition='ehelply-resources',
+        #         node=node,
+        #         target_identifier=service_target_identifier
+        #     ),
+        #     AuthRule(auth_model).participant_has_node_on_target(
+        #         partition='ehelply-cloud',
+        #         node=node,
+        #         target_identifier=service_target_identifier
+        #     ).entity_has_node_on_target(
+        #         node=node,
+        #         target_identifier=target_identifier
+        #     )
+        # ).verify()
+
+        # if self.is_allowed(
+        #         auth_model=auth_model,
+        #         target_identifier=service_target_identifier,
+        #         node=node,
+        #         partition="ehelply-resources"
+        # ):
+        #     return True
+        #
+        # if self.is_allowed(
+        #         auth_model=auth_model,
+        #         target_identifier=auth_model.project_uuid,
+        #         node=node,
+        #         partition="ehelply-cloud"
+        # ) and self.is_allowed(
+        #     auth_model=auth_model,
+        #     target_identifier=service_target_identifier,
+        #     node=node,
+        #     partition="ehelply-cloud"
+        # ):
+        #     return True
+        #
+        # return False

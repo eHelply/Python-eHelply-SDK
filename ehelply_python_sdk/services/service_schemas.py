@@ -22,7 +22,10 @@ class ErrorHTTP403Response(ErrorResponse):
 
 class ErrorHTTP404Response(ErrorResponse):
     def __init__(self, **data: Any) -> None:
-        super().__init__(**data, status_code=404)
+        if 'detail' in data:
+            super().__init__(**data, status_code=404, message=data['detail'])
+        else:
+            super().__init__(**data, status_code=404)
 
 
 class ErrorHTTP409Response(ErrorResponse):

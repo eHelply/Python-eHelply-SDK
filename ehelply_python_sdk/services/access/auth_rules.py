@@ -114,19 +114,21 @@ class AuthRule:
             }
         ))
 
-    def __handler_entity_has_node_on_target(self, node: str, target_identifier: str) -> bool:
+    def __handler_entity_has_node_on_target(self, node: str, target_identifier: str, partition: str) -> bool:
         return self.auth_model.access_sdk.is_allowed(
             auth_model=self.auth_model,
             target_identifier=target_identifier,
-            node=node
+            node=node,
+            partition=partition
         )
 
-    def entity_has_node_on_target(self, node: str, target_identifier: str) -> AuthRule:
+    def entity_has_node_on_target(self, node: str, target_identifier: str, partition: str = None) -> AuthRule:
         self.handlers.append((
             self.__handler_entity_has_node_on_target,
             {
                 "node": node,
-                "target_identifier": target_identifier
+                "target_identifier": target_identifier,
+                "partition": partition
             }
         ))
         return self
@@ -151,7 +153,7 @@ class AuthRule:
         ))
         return self
 
-    def __handler_participant_has_node_on_target(self, node: str, target_identifier: str) -> bool:
+    def __handler_participant_has_node_on_target(self, node: str, target_identifier: str, partition: str) -> bool:
         temp_model: AuthModel = AuthModel(
             access_sdk=self.auth_model.access_sdk,
             active_participant_uuid=self.auth_model.active_participant_uuid,
@@ -165,15 +167,17 @@ class AuthRule:
         return self.auth_model.access_sdk.is_allowed(
             auth_model=temp_model,
             target_identifier=target_identifier,
-            node=node
+            node=node,
+            partition=partition
         )
 
-    def participant_has_node_on_target(self, node: str, target_identifier: str) -> AuthRule:
+    def participant_has_node_on_target(self, node: str, target_identifier: str, partition: str = None) -> AuthRule:
         self.handlers.append((
             self.__handler_participant_has_node_on_target,
             {
                 "node": node,
-                "target_identifier": target_identifier
+                "target_identifier": target_identifier,
+                "partition": partition
             }
         ))
         return self
@@ -186,6 +190,48 @@ class AuthRule:
             self.__handler_participant_below_limit,
             {
                 "limit": limit
+            }
+        ))
+        return self
+
+    def __handler_customentity_has_node_on_target(
+            self,
+            node: str,
+            target_identifier: str,
+            partition: str,
+            entity_identifier: str
+    ) -> bool:
+        temp_model: AuthModel = AuthModel(
+            access_sdk=self.auth_model.access_sdk,
+            active_participant_uuid=self.auth_model.active_participant_uuid,
+            entity_identifier=entity_identifier,
+            project_uuid=self.auth_model.project_uuid,
+            access_token=self.auth_model.access_token,
+            secret_token=self.auth_model.secret_token,
+            claims=self.auth_model.claims,
+        )
+
+        return self.auth_model.access_sdk.is_allowed(
+            auth_model=temp_model,
+            target_identifier=target_identifier,
+            node=node,
+            partition=partition
+        )
+
+    def customentity_has_node_on_target(
+            self,
+            node: str,
+            target_identifier: str,
+            partition: str,
+            entity_identifier: str
+    ) -> AuthRule:
+        self.handlers.append((
+            self.__handler_participant_has_node_on_target,
+            {
+                "node": node,
+                "target_identifier": target_identifier,
+                "partition": partition,
+                "entity_identifier": entity_identifier
             }
         ))
         return self
