@@ -38,11 +38,19 @@ class AccessSDK(SDKBase):
         components.append(partition)
         return "/".join(components)
 
-    def search_types(self, name: str) -> Union[GenericHTTPResponse, PageResponse]:
+    def search_types(self, name: str = None, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
+        params: dict = {}
+        if name:
+            params["name"] = name
+
+        if pagination:
+            params["page"] = pagination.next_page
+            params["page_size"] = pagination.page_size
+
         response: PageResponse = transform_response_to_schema(
             self.requests_session.get(
                 self.get_base_url() + "/permissions/types",
-                params={"name": name}
+                params=params
             ),
             schema=PageResponse
         )
@@ -82,6 +90,30 @@ class AccessSDK(SDKBase):
             schema=CreateNodeResponse
         )
 
+    def search_nodes(self, type_uuid: str, node: str = None, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
+        params: dict = {}
+        if node:
+            params["node"] = node
+
+        if pagination:
+            params["page"] = pagination.next_page
+            params["page_size"] = pagination.page_size
+
+        response: PageResponse = transform_response_to_schema(
+            self.requests_session.get(
+                self.get_base_url() + "/permissions/types/" + type_uuid + "/nodes",
+                params=params
+            ),
+            schema=PageResponse
+        )
+
+        if is_response_error(response):
+            return response
+
+        response.transform_dict(pydantic_type=SearchNodeItem)
+
+        return response
+
     def create_group(self, group: CreateGroup) -> Union[GenericHTTPResponse, CreateGroupResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
@@ -98,6 +130,42 @@ class AccessSDK(SDKBase):
                 json={"role": role.dict()}
             ),
             schema=CreateRoleResponse
+        )
+
+    def add_node_to_role(self, node_uuid: str, role_uuid: str) -> Union[
+        GenericHTTPResponse, MessageResponse]:
+        return transform_response_to_schema(
+            self.requests_session.post(
+                self.get_base_url() + "/roles/" + role_uuid + "/nodes/" + node_uuid
+            ),
+            schema=MessageResponse
+        )
+
+    def remove_node_from_role(self, node_uuid: str, role_uuid: str) -> Union[
+        GenericHTTPResponse, MessageResponse]:
+        return transform_response_to_schema(
+            self.requests_session.delete(
+                self.get_base_url() + "/roles/" + role_uuid + "/nodes/" + node_uuid
+            ),
+            schema=MessageResponse
+        )
+    
+    def add_node_to_key(self, node_uuid: str, key_uuid: str) -> Union[
+        GenericHTTPResponse, MessageResponse]:
+        return transform_response_to_schema(
+            self.requests_session.post(
+                self.get_base_url() + "/keys/" + key_uuid + "/nodes/" + node_uuid
+            ),
+            schema=MessageResponse
+        )
+
+    def remove_node_from_key(self, node_uuid: str, key_uuid: str) -> Union[
+        GenericHTTPResponse, MessageResponse]:
+        return transform_response_to_schema(
+            self.requests_session.delete(
+                self.get_base_url() + "/keys/" + key_uuid + "/nodes/" + node_uuid
+            ),
+            schema=MessageResponse
         )
 
     def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -> Union[
@@ -138,7 +206,8 @@ class AccessSDK(SDKBase):
     ) -> Union[GenericHTTPResponse, MakeRGTResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
-                self.get_base_url() + "/rgts/roles/" + role_uuid + "/groups/" + group_uuid + "/targets/" + target_identifier
+                self.get_base_url() + "/rgts/roles/" + role_uuid + "/groups/" + group_uuid + "/targets/" + target_identifier,
+                json={"limits": []}
             ),
             schema=MakeRGTResponse
         )

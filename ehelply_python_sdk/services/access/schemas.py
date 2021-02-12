@@ -23,6 +23,16 @@ class CreateTypeResponse(HTTPResponse):
     created_at: str
 
 
+class SearchNodeItem(BaseModel):
+    uuid: str
+    name: str
+    node: str
+    type_uuid: str
+    summary: str
+    created_at: str
+    roles: list
+
+
 class CreateNode(BaseModel):
     name: str
     node: str

@@ -1,4 +1,4 @@
-from typing import Union, Callable, List, Dict, Tuple, Type, Any, TypeVar
+from typing import Union, Callable, List, Dict, Tuple, Type, Any, TypeVar, Optional
 from pydantic import BaseModel
 from requests import Response
 
@@ -82,14 +82,16 @@ class Pagination(BaseModel):
     """
     Pagination state
     """
-    current_page: int
-    page_size: int
-    total_items: int
-    total_pages: int
-    has_previous_page: bool
-    has_next_page: bool
-    previous_page: Union[int, None]
-    next_page: Union[int, None]
+    current_page: Optional[int] = None
+    page_size: int = 25
+    total_items: Optional[int] = None
+    total_pages: Optional[int] = None
+    has_previous_page: Optional[bool] = None
+    has_next_page: Optional[bool] = True
+    previous_page: Optional[int] = None
+    next_page: Optional[int] = 1
+
+
 
 
 class PageResponse(HTTPResponse):
