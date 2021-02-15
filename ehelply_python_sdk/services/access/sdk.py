@@ -12,6 +12,7 @@ class AuthModel:
             access_token=None,
             secret_token=None,
             claims=None,
+            data=None,
     ) -> None:
         self.access_sdk = access_sdk
         self.active_participant_uuid = active_participant_uuid
@@ -20,6 +21,7 @@ class AuthModel:
         self.access_token = access_token
         self.secret_token = secret_token
         self.claims = claims
+        self.data = data
 
 
 class AccessSDK(SDKBase):
