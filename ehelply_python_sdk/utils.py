@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, Optional
 
 from pydantic import BaseModel
 import requests
@@ -8,7 +8,8 @@ class SDKConfiguration(BaseModel):
     access_token: str
     secret_token: str
     project_identifier: str
-    base_url_override: Union[None, str] = None
+    partition_identifier: Optional[str] = None
+    base_url_override: Optional[str] = None
 
 
 def make_requests(sdk_configuration: SDKConfiguration) -> requests.Session:

@@ -226,7 +226,7 @@ class AuthRule:
             entity_identifier: str
     ) -> AuthRule:
         self.handlers.append((
-            self.__handler_participant_has_node_on_target,
+            self.__handler_customentity_has_node_on_target,
             {
                 "node": node,
                 "target_identifier": target_identifier,

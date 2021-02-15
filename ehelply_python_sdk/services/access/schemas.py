@@ -48,6 +48,14 @@ class CreateNodeResponse(HTTPResponse):
     created_at: str
 
 
+class SearchGroupItem(BaseModel):
+    uuid: str
+    name: str
+    summary: str
+    created_at: str
+    default: bool
+
+
 class CreateGroup(BaseModel):
     name: str
     summary: str

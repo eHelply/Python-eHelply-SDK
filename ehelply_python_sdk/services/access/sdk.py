@@ -26,7 +26,10 @@ class AuthModel:
 
 class AccessSDK(SDKBase):
     def get_base_url(self) -> str:
-        return super().get_base_url() + "/access/partitions/" + self.sdk_configuration.project_identifier
+        partition_identifier: str = self.sdk_configuration.project_identifier
+        if self.sdk_configuration.partition_identifier:
+            partition_identifier = self.sdk_configuration.partition_identifier
+        return super().get_base_url() + "/access/partitions/" + partition_identifier
 
     def get_docs_url(self) -> str:
         return super().get_docs_url()
@@ -113,6 +116,28 @@ class AccessSDK(SDKBase):
             return response
 
         response.transform_dict(pydantic_type=SearchNodeItem)
+
+        return response
+
+    def search_group(self, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
+        params: dict = {}
+
+        if pagination:
+            params["page"] = pagination.next_page
+            params["page_size"] = pagination.page_size
+
+        response: PageResponse = transform_response_to_schema(
+            self.requests_session.get(
+                self.get_base_url() + "/who/groups",
+                params=params
+            ),
+            schema=PageResponse
+        )
+
+        if is_response_error(response):
+            return response
+
+        response.transform_dict(pydantic_type=SearchGroupItem)
 
         return response
 
@@ -247,7 +272,7 @@ class AccessSDK(SDKBase):
             key_uuid: str
     ) -> Union[GenericHTTPResponse, GetEntityForKeyResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            self.requests_session.get(
                 self.get_base_url() + "/who/entities/keys/" + key_uuid
             ),
             schema=GetEntityForKeyResponse
@@ -276,34 +301,34 @@ class AccessSDK(SDKBase):
         # return transform_response_to_schema(response, None)
         return False
 
-    def is_key_allowed(
-            self,
-            access_token: str,
-            secret_token: str,
-            target_identifier: str,
-            node: str,
-            partition: str = None
-    ) -> bool:
-        if partition:
-            base_url: str = self.make_partition_override(partition=partition)
-        else:
-            base_url: str = self.get_base_url()
-
-        headers: dict = {
-            "X-Access-Token": access_token,
-            "X-Secret-Token": secret_token
-        }
-
-        response: Response = self.requests_session.get(
-            base_url + "/auth/targets/" + target_identifier + "/nodes/" + node + "/keys",
-            headers=headers
-        )
-
-        if not is_response_error(response) and response.json() is True:
-            return True
-
-        # return transform_response_to_schema(response, None)
-        return False
+    # def is_key_allowed(
+    #         self,
+    #         access_token: str,
+    #         secret_token: str,
+    #         target_identifier: str,
+    #         node: str,
+    #         partition: str = None
+    # ) -> bool:
+    #     if partition:
+    #         base_url: str = self.make_partition_override(partition=partition)
+    #     else:
+    #         base_url: str = self.get_base_url()
+    #
+    #     headers: dict = {
+    #         "X-Access-Token": access_token,
+    #         "X-Secret-Token": secret_token
+    #     }
+    #
+    #     response: Response = self.requests_session.get(
+    #         base_url + "/auth/targets/" + target_identifier + "/nodes/" + node + "/keys",
+    #         headers=headers
+    #     )
+    #
+    #     if not is_response_error(response) and response.json() is True:
+    #         return True
+    #
+    #     # return transform_response_to_schema(response, None)
+    #     return False
 
     def is_allowed(
             self,
@@ -321,84 +346,14 @@ class AccessSDK(SDKBase):
             ):
                 return True
 
-        if auth_model.access_token and auth_model.secret_token:
-            if self.is_key_allowed(
-                    access_token=auth_model.access_token,
-                    secret_token=auth_model.secret_token,
-                    target_identifier=target_identifier,
-                    node=node,
-                    partition=partition,
-            ):
-                return True
+        # if auth_model.access_token and auth_model.secret_token:
+        #     if self.is_key_allowed(
+        #             access_token=auth_model.access_token,
+        #             secret_token=auth_model.secret_token,
+        #             target_identifier=target_identifier,
+        #             node=node,
+        #             partition=partition,
+        #     ):
+        #         return True
 
         return False
-
-    # def templated_access(
-    #         self,
-    #         auth_model: AuthModel,
-    #         service_target_identifier: str,
-    #         target_identifier: str,
-    #         node: str
-    # ):
-    #     AuthRule(
-    #         auth_model,
-    #         AuthRule(auth_model).participant_has_node_on_target(
-    #             partition='ehelply-resources',
-    #             node=node,
-    #             target_identifier=service_target_identifier
-    #         ),
-    #         AuthRule(auth_model).participant_has_node_on_target(
-    #             partition='ehelply-cloud',
-    #             node=node,
-    #             target_identifier=auth_model.project_uuid
-    #         ).customentity_has_node_on_target(
-    #             partition='ehelply-cloud',
-    #             node=node,
-    #             target_identifier=service_target_identifier,
-    #             entity_identifier=auth_model.project_uuid
-    #         ).entity_has_node_on_target(
-    #             node=node,
-    #             target_identifier=target_identifier,
-    #             partition=auth_model.project_uuid
-    #         )
-    #     ).verify()
-
-        # AuthRule(
-        #     auth_model,
-        #     AuthRule(auth_model).participant_has_node_on_target(
-        #         partition='ehelply-resources',
-        #         node=node,
-        #         target_identifier=service_target_identifier
-        #     ),
-        #     AuthRule(auth_model).participant_has_node_on_target(
-        #         partition='ehelply-cloud',
-        #         node=node,
-        #         target_identifier=service_target_identifier
-        #     ).entity_has_node_on_target(
-        #         node=node,
-        #         target_identifier=target_identifier
-        #     )
-        # ).verify()
-
-        # if self.is_allowed(
-        #         auth_model=auth_model,
-        #         target_identifier=service_target_identifier,
-        #         node=node,
-        #         partition="ehelply-resources"
-        # ):
-        #     return True
-        #
-        # if self.is_allowed(
-        #         auth_model=auth_model,
-        #         target_identifier=auth_model.project_uuid,
-        #         node=node,
-        #         partition="ehelply-cloud"
-        # ) and self.is_allowed(
-        #     auth_model=auth_model,
-        #     target_identifier=service_target_identifier,
-        #     node=node,
-        #     partition="ehelply-cloud"
-        # ):
-        #     return True
-        #
-        # return False
