@@ -235,3 +235,25 @@ class AuthRule:
             }
         ))
         return self
+    
+    def __handler_project_uuid_eq(self, project_uuid: str) -> bool:
+        return self.auth_model.project_uuid == project_uuid
+
+    def project_uuid_eq(self, project_uuid: str):
+        self.handlers.append((
+            self.__handler_project_uuid_eq,
+            {
+                "project_uuid": project_uuid
+            }
+        ))
+
+    def __handler_project_uuid_neq(self, project_uuid: str) -> bool:
+        return self.auth_model.project_uuid != project_uuid
+
+    def project_uuid_neq(self, project_uuid: str):
+        self.handlers.append((
+            self.__handler_project_uuid_neq,
+            {
+                "project_uuid": project_uuid
+            }
+        ))
