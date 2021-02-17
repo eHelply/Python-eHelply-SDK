@@ -269,11 +269,18 @@ class AccessSDK(SDKBase):
 
     def get_entity_for_key(
             self,
-            key_uuid: str
+            key_uuid: str,
+            partition: str = None
     ) -> Union[GenericHTTPResponse, GetEntityForKeyResponse]:
+
+        if partition:
+            base_url: str = self.make_partition_override(partition=partition)
+        else:
+            base_url: str = self.get_base_url()
+
         return transform_response_to_schema(
             self.requests_session.get(
-                self.get_base_url() + "/who/entities/keys/" + key_uuid
+                base_url + "/who/entities/keys/" + key_uuid
             ),
             schema=GetEntityForKeyResponse
         )

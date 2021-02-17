@@ -9,7 +9,6 @@ from pdoc.cli import _open_write_file
 
 import typer
 
-
 cli = typer.Typer()
 dev_cli = typer.Typer()
 
@@ -51,9 +50,6 @@ def export_code_docs():
 
             with _open_write_file(filepath) as f:
                 f.write(html)
-
-
-
 
 
 def cli_main():
