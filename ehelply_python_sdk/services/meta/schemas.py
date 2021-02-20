@@ -52,8 +52,8 @@ class BaseDetailedMetaCreate(BaseModel):
 
 
 class CreateMeta(BaseModel):
-    basic: Optional[BaseBasicMetaCreate] = None
-    detailed: Optional[BaseDetailedMetaCreate] = None
+    basic: Optional[BaseBasicMetaCreate] = BaseBasicMetaCreate()
+    detailed: Optional[BaseDetailedMetaCreate] = BaseDetailedMetaCreate()
     custom: Optional[dict] = None
 
 
@@ -74,8 +74,8 @@ class CreateMetaResponse(HTTPResponse):
 
 
 class UpdateMeta(BaseModel):
-    basic: Optional[BaseBasicMetaCreate] = None
-    detailed: Optional[BaseDetailedMetaCreate] = None
+    basic: Optional[BaseBasicMetaCreate] = BaseBasicMetaCreate()
+    detailed: Optional[BaseDetailedMetaCreate] = BaseDetailedMetaCreate()
     custom: Optional[dict] = None
 
 

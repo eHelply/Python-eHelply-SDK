@@ -15,15 +15,32 @@ class ErrorResponse(MessageResponse):
     pass
 
 
+class ErrorHTTP401Response(ErrorResponse):
+    def __init__(self, **data: Any) -> None:
+        if 'detail' in data:
+            super().__init__(**data, status_code=401, message=data['detail'])
+        elif 'message' in data:
+            super().__init__(**data, status_code=401, message=data['message'])
+        else:
+            super().__init__(**data, status_code=401)
+
+
 class ErrorHTTP403Response(ErrorResponse):
     def __init__(self, **data: Any) -> None:
-        super().__init__(**data, status_code=403, message=data['detail'])
+        if 'detail' in data:
+            super().__init__(**data, status_code=403, message=data['detail'])
+        elif 'message' in data:
+            super().__init__(**data, status_code=403, message=data['message'])
+        else:
+            super().__init__(**data, status_code=403)
 
 
 class ErrorHTTP404Response(ErrorResponse):
     def __init__(self, **data: Any) -> None:
         if 'detail' in data:
             super().__init__(**data, status_code=404, message=data['detail'])
+        elif 'message' in data:
+            super().__init__(**data, status_code=404, message=data['message'])
         else:
             super().__init__(**data, status_code=404)
 
@@ -69,7 +86,7 @@ def transform_response_to_schema(response: Response, schema: Union[None, Type[HT
     if response.status_code == 500:
         return ErrorHTTP500Response()
 
-    return ErrorResponse(message="Undefined Error", status_code=1000)
+    return ErrorResponse(message="Undefined Error - eHelply SDK might be confused", status_code=0)
 
 
 def is_response_error(response: Union[Response, HTTPResponse]) -> bool:
@@ -90,8 +107,6 @@ class Pagination(BaseModel):
     has_next_page: Optional[bool] = True
     previous_page: Optional[int] = None
     next_page: Optional[int] = 1
-
-
 
 
 class PageResponse(HTTPResponse):
