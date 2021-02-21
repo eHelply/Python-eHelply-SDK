@@ -17,37 +17,34 @@ class ErrorResponse(MessageResponse):
 
 class ErrorHTTP401Response(ErrorResponse):
     def __init__(self, **data: Any) -> None:
-        if 'detail' in data:
+        if 'detail' in data and 'message' not in data:
             super().__init__(**data, status_code=401, message=data['detail'])
-        elif 'message' in data:
-            super().__init__(**data, status_code=401, message=data['message'])
         else:
             super().__init__(**data, status_code=401)
 
 
 class ErrorHTTP403Response(ErrorResponse):
     def __init__(self, **data: Any) -> None:
-        if 'detail' in data:
+        if 'detail' in data and 'message' not in data:
             super().__init__(**data, status_code=403, message=data['detail'])
-        elif 'message' in data:
-            super().__init__(**data, status_code=403, message=data['message'])
         else:
             super().__init__(**data, status_code=403)
 
 
 class ErrorHTTP404Response(ErrorResponse):
     def __init__(self, **data: Any) -> None:
-        if 'detail' in data:
+        if 'detail' in data and 'message' not in data:
             super().__init__(**data, status_code=404, message=data['detail'])
-        elif 'message' in data:
-            super().__init__(**data, status_code=404, message=data['message'])
         else:
             super().__init__(**data, status_code=404)
 
 
 class ErrorHTTP409Response(ErrorResponse):
     def __init__(self, **data: Any) -> None:
-        super().__init__(**data, status_code=409)
+        if 'detail' in data and 'message' not in data:
+            super().__init__(**data, status_code=409, message=data['detail'])
+        else:
+            super().__init__(**data, status_code=409)
 
 
 class ErrorHTTP422Response(ErrorResponse):
