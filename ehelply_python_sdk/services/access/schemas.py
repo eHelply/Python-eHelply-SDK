@@ -85,7 +85,12 @@ class CreateRoleResponse(HTTPResponse):
     created_at: str
 
 
-class AttachKeyToEntityResponse(HTTPResponse):
+class AddKeyToEntityResponse(HTTPResponse):
+    entity_key_uuid: str
+    key_uuid: str
+
+
+class RemoveKeyFromEntityResponse(HTTPResponse):
     entity_key_uuid: str
     key_uuid: str
 
@@ -96,5 +101,18 @@ class MakeRGTResponse(MessageResponse):
     role_uuid: str
 
 
-class GetEntityForKeyResponse(HTTPResponse):
+class GetEntityResponse(HTTPResponse):
     entity_identifier: str
+
+
+class GetNodesResponse(HTTPResponse):
+    nodes: List[SearchNodeItem]
+
+    def __init__(self, *args, **data: Any) -> None:
+        nodes: List[SearchNodeItem] = []
+
+        for arg_node in args:
+            nodes.append(SearchNodeItem(**arg_node))
+
+        super().__init__(*args, **data, nodes=nodes)
+

@@ -6,6 +6,9 @@ from requests import Response
 class HTTPResponse(BaseModel):
     status_code: int = 200
 
+    def __init__(self, *args, **data: Any) -> None:
+        super().__init__(**data)
+
 
 class MessageResponse(HTTPResponse):
     message: str
@@ -65,7 +68,13 @@ GenericHTTPResponse = TypeVar('GenericHTTPResponse', bound=HTTPResponse)
 def transform_response_to_schema(response: Response, schema: Union[None, Type[HTTPResponse]]) -> GenericHTTPResponse:
     if response.status_code == 200:
         if schema:
-            return schema(**response.json())
+            result: Union[list, dict] = response.json()
+            if isinstance(result, dict):
+                return schema(**result)
+            elif isinstance(result, list):
+                return schema(*result)
+            else:
+                raise Exception("Response cannot be coerced into schema. JSON response must be a valid list or object")
         return HTTPResponse()
 
     if response.status_code == 403:

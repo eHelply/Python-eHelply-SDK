@@ -213,16 +213,62 @@ class AccessSDK(SDKBase):
             schema=MessageResponse
         )
 
-    def attach_key_to_entity(
+    def add_key_to_entity(
             self,
             entity_identifier: str,
             key_uuid: str
-    ) -> Union[GenericHTTPResponse, AttachKeyToEntityResponse]:
+    ) -> Union[GenericHTTPResponse, AddKeyToEntityResponse]:
         return transform_response_to_schema(
             self.requests_session.post(
                 self.get_base_url() + "/who/entities/" + entity_identifier + "/keys/" + key_uuid
             ),
-            schema=AttachKeyToEntityResponse
+            schema=AddKeyToEntityResponse
+        )
+
+    def remove_key_from_entity(
+            self,
+            entity_identifier: str,
+            key_uuid: str
+    ) -> Union[GenericHTTPResponse, RemoveKeyFromEntityResponse]:
+        return transform_response_to_schema(
+            self.requests_session.delete(
+                self.get_base_url() + "/who/entities/" + entity_identifier + "/keys/" + key_uuid
+            ),
+            schema=RemoveKeyFromEntityResponse
+        )
+
+    def get_keys_for_entity(
+            self,
+            entity_identifier: str
+    ) -> Union[GenericHTTPResponse, PageResponse]:
+        return transform_response_to_schema(
+            self.requests_session.get(
+                self.get_base_url() + "/who/entities/" + entity_identifier + "/keys"
+            ),
+            schema=PageResponse
+        )
+
+    def get_nodes_for_entity(
+            self,
+            entity_identifier: str
+    ) -> Union[GenericHTTPResponse, GetNodesResponse]:
+        return transform_response_to_schema(
+            self.requests_session.get(
+                self.get_base_url() + "/permissions/nodes/entities/" + entity_identifier
+            ),
+            schema=GetNodesResponse
+        )
+
+    def get_nodes_for_entity_key(
+            self,
+            entity_identifier: str,
+            key_uuid: str
+    ) -> Union[GenericHTTPResponse, GetNodesResponse]:
+        return transform_response_to_schema(
+            self.requests_session.get(
+                self.get_base_url() + "/permissions/nodes/entities/" + entity_identifier + "/keys/" + key_uuid
+            ),
+            schema=GetNodesResponse
         )
 
     def make_rgt(
@@ -271,7 +317,7 @@ class AccessSDK(SDKBase):
             self,
             key_uuid: str,
             partition: str = None
-    ) -> Union[GenericHTTPResponse, GetEntityForKeyResponse]:
+    ) -> Union[GenericHTTPResponse, GetEntityResponse]:
 
         if partition:
             base_url: str = self.make_partition_override(partition=partition)
@@ -282,7 +328,7 @@ class AccessSDK(SDKBase):
             self.requests_session.get(
                 base_url + "/who/entities/keys/" + key_uuid
             ),
-            schema=GetEntityForKeyResponse
+            schema=GetEntityResponse
         )
 
     def is_entity_allowed(
