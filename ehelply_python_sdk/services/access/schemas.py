@@ -91,7 +91,7 @@ class AddKeyToEntityResponse(HTTPResponse):
 
 
 class RemoveKeyFromEntityResponse(HTTPResponse):
-    entity_key_uuid: str
+    entity_identifier: str
     key_uuid: str
 
 
