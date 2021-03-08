@@ -12,12 +12,14 @@ CONST_CLIENT_ACCESS: str = "access"
 CONST_CLIENT_SECURITY: str = "security"
 CONST_CLIENT_NOTES: str = "notes"
 CONST_CLIENT_META: str = "meta"
+CONST_CLIENT_MONITOR: str = "monitor"
 
 
 class eHelplySDK:
     """
     eHelply SDK
     """
+
     def __init__(self, sdk_configuration: SDKConfiguration) -> None:
         self.sdk_configuration: SDKConfiguration = sdk_configuration
         self.requests_session: requests.Session = make_requests(sdk_configuration=sdk_configuration)
@@ -39,12 +41,15 @@ class eHelplySDK:
 
         if client == CONST_CLIENT_SECURITY:
             return services.SecuritySDK(sdk_configuration=sdk_configuration, requests_session=request_session)
-        
+
         if client == CONST_CLIENT_NOTES:
             return services.NotesSDK(sdk_configuration=sdk_configuration, requests_session=request_session)
 
         if client == CONST_CLIENT_META:
             return services.MetaSDK(sdk_configuration=sdk_configuration, requests_session=request_session)
+
+        if client == CONST_CLIENT_MONITOR:
+            return services.MonitorSDK(sdk_configuration=sdk_configuration, requests_session=request_session)
 
     def make_access(
             self,
@@ -67,7 +72,7 @@ class eHelplySDK:
             sdk_configuration=sdk_configuration,
             request_session=request_session
         )
-    
+
     def make_notes(
             self,
             sdk_configuration: SDKConfiguration = None,
@@ -86,6 +91,17 @@ class eHelplySDK:
     ) -> services.MetaSDK:
         return self._make_client(
             client=CONST_CLIENT_META,
+            sdk_configuration=sdk_configuration,
+            request_session=request_session
+        )
+
+    def make_monitor(
+            self,
+            sdk_configuration: SDKConfiguration = None,
+            request_session: requests.Session = None
+    ) -> services.MonitorSDK:
+        return self._make_client(
+            client=CONST_CLIENT_MONITOR,
             sdk_configuration=sdk_configuration,
             request_session=request_session
         )
