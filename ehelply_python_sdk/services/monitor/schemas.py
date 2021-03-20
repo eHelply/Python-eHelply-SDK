@@ -49,13 +49,24 @@ class SearchUsageTypeItem(BaseModel):
     unit_prices: List[UsageTypeUnitPrice]
 
 
+class UsageItem(BaseModel):
+    uuid: str
+    project_uuid: str
+    usage_key: str
+    year: int
+    month: int
+    quantity: int  # Quantity formats represented by a x10000000 integer. Precision to the millonth
+    estimated_cost: int  # Dollar formats represented by a x10000000 integer. Precision to the millonth
+    updated_at: str
+
+
 class GetUsageResponse(HTTPResponse):
-    usage: List[SearchUsageTypeItem]
+    usage: List[UsageItem]
 
     def __init__(self, *args, **data: Any) -> None:
-        usage: List[SearchUsageTypeItem] = []
+        usage: List[UsageItem] = []
 
         for arg_usage in args:
-            usage.append(SearchUsageTypeItem(**arg_usage))
+            usage.append(UsageItem(**arg_usage))
 
         super().__init__(*args, **data, usage=usage)

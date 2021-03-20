@@ -58,11 +58,22 @@ class MonitorSDK(SDKBase):
 
     def get_all_project_usage(
             self,
-            project_uuid: str
+            project_uuid: str,
+            year: int = None,
+            month: int = None
     ) -> Union[GenericHTTPResponse, GetUsageResponse]:
+        params: dict = {}
+
+        if year is not None:
+            params["year"] = year
+
+        if month is not None:
+            params["month"] = month
+
         return transform_response_to_schema(
             self.requests_session.get(
-                self.get_base_url() + "/projects/projects/" + project_uuid + "/usage"
+                self.get_base_url() + "/projects/projects/" + project_uuid + "/usage",
+                params=params
             ),
             schema=GetUsageResponse
         )
