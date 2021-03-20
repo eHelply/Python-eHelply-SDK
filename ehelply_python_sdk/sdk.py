@@ -13,6 +13,7 @@ CONST_CLIENT_SECURITY: str = "security"
 CONST_CLIENT_NOTES: str = "notes"
 CONST_CLIENT_META: str = "meta"
 CONST_CLIENT_MONITOR: str = "monitor"
+CONST_CLIENT_PRODUCTS: str = "products"
 
 
 class eHelplySDK:
@@ -50,6 +51,9 @@ class eHelplySDK:
 
         if client == CONST_CLIENT_MONITOR:
             return services.MonitorSDK(sdk_configuration=sdk_configuration, requests_session=request_session)
+
+        if client == CONST_CLIENT_PRODUCTS:
+            return services.ProductsSDK(sdk_configuration=sdk_configuration, requests_session=request_session)
 
     def make_access(
             self,
@@ -102,6 +106,17 @@ class eHelplySDK:
     ) -> services.MonitorSDK:
         return self._make_client(
             client=CONST_CLIENT_MONITOR,
+            sdk_configuration=sdk_configuration,
+            request_session=request_session
+        )
+
+    def make_products(
+            self,
+            sdk_configuration: SDKConfiguration = None,
+            request_session: requests.Session = None
+    ) -> services.ProductsSDK:
+        return self._make_client(
+            client=CONST_CLIENT_PRODUCTS,
             sdk_configuration=sdk_configuration,
             request_session=request_session
         )

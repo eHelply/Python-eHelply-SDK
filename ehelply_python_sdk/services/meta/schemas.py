@@ -15,8 +15,8 @@ class BaseDetailedMeta(BaseModel):
     """
     summary: Optional[str]
     description: Optional[str]
-    summary_history: List[str] = []
-    description_history: List[str] = []
+    summary_history: Optional[List[str]] = []
+    description_history: Optional[List[str]] = []
 
 
 class BaseDatesMeta(BaseModel):
@@ -31,7 +31,7 @@ class GetMetaResponse(HTTPResponse):
     uuid: str
     basic: BaseBasicMeta = BaseBasicMeta()
     detailed: BaseDetailedMeta = BaseDetailedMeta()
-    custom: dict = {}
+    custom: Optional[dict] = {}
     dates: BaseDatesMeta = BaseDatesMeta()
 
 
