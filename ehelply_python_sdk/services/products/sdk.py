@@ -18,7 +18,7 @@ class ProductsSDK(SDKBase):
                 self.get_base_url() + "/products/billing/process_payment",
                 json={"payment_schema": {
                     "project_uuid": project_uuid,
-                    "amount": amount * 100
+                    "amount": amount
                 }}
             ),
             schema=ProcessPaymentResponse

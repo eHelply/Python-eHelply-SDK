@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ehelply-python-sdk"
-version = "0.1.26"
+version = "0.1.27"
 description = ""
 authors = ["Shawn Clake <shawn.clake@ehelply.com>"]
 readme = "readme.md"
