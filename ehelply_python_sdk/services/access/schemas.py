@@ -14,6 +14,14 @@ class CreateType(BaseModel):
     summary: str
 
 
+class GetTypeResponse(HTTPResponse):
+    uuid: str
+    name: str
+    slug: str
+    summary: str
+    created_at: str
+
+
 class CreateTypeResponse(HTTPResponse):
     uuid: str
     partition_identifier: str
@@ -115,4 +123,3 @@ class GetNodesResponse(HTTPResponse):
             nodes.append(SearchNodeItem(**arg_node))
 
         super().__init__(*args, **data, nodes=nodes)
-

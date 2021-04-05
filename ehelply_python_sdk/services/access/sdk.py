@@ -67,6 +67,14 @@ class AccessSDK(SDKBase):
 
         return response
 
+    def get_type(self, type_uuid: str = None) -> Union[GenericHTTPResponse, GetTypeResponse]:
+        return transform_response_to_schema(
+            self.requests_session.get(
+                self.get_base_url() + "/permissions/types/" + type_uuid
+            ),
+            schema=GetTypeResponse
+        )
+
     def create_type(self, partition_type: CreateType) -> Union[GenericHTTPResponse, CreateTypeResponse]:
         """
         Parameters
@@ -95,7 +103,8 @@ class AccessSDK(SDKBase):
             schema=CreateNodeResponse
         )
 
-    def search_nodes(self, type_uuid: str, node: str = None, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
+    def search_nodes(self, type_uuid: str, node: str = None, pagination: Pagination = None) -> Union[
+        GenericHTTPResponse, PageResponse]:
         params: dict = {}
         if node:
             params["node"] = node
@@ -176,7 +185,7 @@ class AccessSDK(SDKBase):
             ),
             schema=MessageResponse
         )
-    
+
     def add_node_to_key(self, node_uuid: str, key_uuid: str) -> Union[
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
