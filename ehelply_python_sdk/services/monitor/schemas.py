@@ -8,6 +8,7 @@ class GetProjectResponse(HTTPResponse):
     current_spend: int  # Dollar formats represented by a x10000000 integer. Precision to the millonth
     max_spend: int  # Dollar formats represented by a x10000000 integer. Precision to the millonth
     is_spend_maxed: bool
+    status: Optional[str] = None
 
 
 class UpdateProject(BaseModel):
