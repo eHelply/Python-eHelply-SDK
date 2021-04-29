@@ -1,6 +1,6 @@
 from typing import Union, Callable, List, Dict, Tuple, Type, Any, TypeVar, Optional
 from pydantic import BaseModel
-from requests import Response
+from httpx import Response
 
 
 class HTTPResponse(BaseModel):

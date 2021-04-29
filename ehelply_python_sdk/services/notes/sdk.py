@@ -13,34 +13,34 @@ class NotesSDK(SDKBase):
     def get_service_version(self) -> str:
         return super().get_service_version()
 
-    def get_note(
+    async def get_note(
             self,
             note_id: str,
             history: int = 0,
             history_content: bool = True
     ) -> Union[GenericHTTPResponse, GetNoteResponse]:
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/notes/" + note_id,
                 params={"history": history, "history_content": history_content}
             ),
             schema=GetNoteResponse
         )
 
-    def delete_note(
+    async def delete_note(
             self,
             note_id: str,
             method: str = "previous"
     ) -> Union[GenericHTTPResponse, DeleteNoteResponse]:
         return transform_response_to_schema(
-            self.requests_session.delete(
+            await self.requests_session.delete(
                 self.get_base_url() + "/notes/" + note_id,
                 params={"method": method}
             ),
             schema=DeleteNoteResponse
         )
 
-    def update_note(
+    async def update_note(
             self,
             note_id: str,
             content: str,
@@ -61,14 +61,14 @@ class NotesSDK(SDKBase):
         }
 
         return transform_response_to_schema(
-            self.requests_session.put(
+            await self.requests_session.put(
                 self.get_base_url() + "/notes/" + note_id,
                 json=data
             ),
             schema=UpdateNoteResponse
         )
 
-    def create_note(
+    async def create_note(
             self,
             content: str,
             author: str
@@ -89,7 +89,7 @@ class NotesSDK(SDKBase):
         }
 
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/notes",
                 json=data
             ),

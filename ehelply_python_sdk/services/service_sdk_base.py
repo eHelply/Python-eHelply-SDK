@@ -1,7 +1,7 @@
 from typing import Union
 from pydantic import BaseModel
 
-import requests
+import httpx
 
 from ehelply_python_sdk.utils import SDKConfiguration
 
@@ -10,9 +10,9 @@ class SDKBase:
     """
     Provides the base class for service SDKs
     """
-    def __init__(self, sdk_configuration: SDKConfiguration, requests_session: requests.Session) -> None:
+    def __init__(self, sdk_configuration: SDKConfiguration, requests_session: httpx.AsyncClient) -> None:
         self.sdk_configuration: SDKConfiguration = sdk_configuration
-        self.requests_session: requests.Session = requests_session
+        self.requests_session: httpx.AsyncClient = requests_session
 
     def get_base_url(self) -> str:
         if self.sdk_configuration.base_url_override:

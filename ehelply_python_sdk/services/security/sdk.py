@@ -14,8 +14,8 @@ class SecuritySDK(SDKBase):
     def get_service_version(self) -> str:
         return super().get_service_version()
 
-    def create_token(self, length: int = 64) -> Union[GenericHTTPResponse, CreateTokenResponse]:
-        response = self.requests_session.post(
+    async def create_token(self, length: int = 64) -> Union[GenericHTTPResponse, CreateTokenResponse]:
+        response = await self.requests_session.post(
             self.get_base_url() + "/tokens",
             json={"token": {"length": length}}
         )
@@ -27,9 +27,9 @@ class SecuritySDK(SDKBase):
             token=response.json()
         )
 
-    def create_key(self, key: CreateKey, access_length: int = 48, secret_length: int = 48) -> Union[CreateKeyResponse, GenericHTTPResponse]:
+    async def create_key(self, key: CreateKey, access_length: int = 48, secret_length: int = 48) -> Union[CreateKeyResponse, GenericHTTPResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/keys",
                 json={"key": key.dict()},
                 params={"secret_length": secret_length, "access_length": access_length}
@@ -37,9 +37,9 @@ class SecuritySDK(SDKBase):
             schema=CreateKeyResponse
         )
 
-    def verify_key(self, access: str, secret: str) -> Union[GenericHTTPResponse, VerifyKeyResponse]:
+    async def verify_key(self, access: str, secret: str) -> Union[GenericHTTPResponse, VerifyKeyResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/keys/verify",
                 json={
                     "key": {

@@ -43,7 +43,7 @@ class AccessSDK(SDKBase):
         components.append(partition)
         return "/".join(components)
 
-    def search_types(self, name: str = None, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
+    async def search_types(self, name: str = None, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
         params: dict = {}
         if name:
             params["name"] = name
@@ -53,7 +53,7 @@ class AccessSDK(SDKBase):
             params["page_size"] = pagination.page_size
 
         response: PageResponse = transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/permissions/types",
                 params=params
             ),
@@ -67,15 +67,15 @@ class AccessSDK(SDKBase):
 
         return response
 
-    def get_type(self, type_uuid: str = None) -> Union[GenericHTTPResponse, GetTypeResponse]:
+    async def get_type(self, type_uuid: str = None) -> Union[GenericHTTPResponse, GetTypeResponse]:
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/permissions/types/" + type_uuid
             ),
             schema=GetTypeResponse
         )
 
-    def create_type(self, partition_type: CreateType) -> Union[GenericHTTPResponse, CreateTypeResponse]:
+    async def create_type(self, partition_type: CreateType) -> Union[GenericHTTPResponse, CreateTypeResponse]:
         """
         Parameters
         ----------
@@ -87,23 +87,23 @@ class AccessSDK(SDKBase):
 
         """
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/permissions/types",
                 json={"partition_type": partition_type.dict()}
             ),
             schema=CreateTypeResponse
         )
 
-    def create_node(self, partition_type_uuid: str, node: CreateNode) -> Union[GenericHTTPResponse, CreateNodeResponse]:
+    async def create_node(self, partition_type_uuid: str, node: CreateNode) -> Union[GenericHTTPResponse, CreateNodeResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/permissions/types/" + partition_type_uuid + "/nodes",
                 json={"node": node.dict()}
             ),
             schema=CreateNodeResponse
         )
 
-    def search_nodes(self, type_uuid: str, node: str = None, pagination: Pagination = None) -> Union[
+    async def search_nodes(self, type_uuid: str, node: str = None, pagination: Pagination = None) -> Union[
         GenericHTTPResponse, PageResponse]:
         params: dict = {}
         if node:
@@ -114,7 +114,7 @@ class AccessSDK(SDKBase):
             params["page_size"] = pagination.page_size
 
         response: PageResponse = transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/permissions/types/" + type_uuid + "/nodes",
                 params=params
             ),
@@ -128,7 +128,7 @@ class AccessSDK(SDKBase):
 
         return response
 
-    def search_group(self, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
+    async def search_group(self, pagination: Pagination = None) -> Union[GenericHTTPResponse, PageResponse]:
         params: dict = {}
 
         if pagination:
@@ -136,7 +136,7 @@ class AccessSDK(SDKBase):
             params["page_size"] = pagination.page_size
 
         response: PageResponse = transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/who/groups",
                 params=params
             ),
@@ -150,151 +150,151 @@ class AccessSDK(SDKBase):
 
         return response
 
-    def create_group(self, group: CreateGroup) -> Union[GenericHTTPResponse, CreateGroupResponse]:
+    async def create_group(self, group: CreateGroup) -> Union[GenericHTTPResponse, CreateGroupResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/who/groups",
                 json={"group": group.dict()}
             ),
             schema=CreateGroupResponse
         )
 
-    def create_role(self, role: CreateRole) -> Union[GenericHTTPResponse, CreateRoleResponse]:
+    async def create_role(self, role: CreateRole) -> Union[GenericHTTPResponse, CreateRoleResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/roles",
                 json={"role": role.dict()}
             ),
             schema=CreateRoleResponse
         )
 
-    def add_node_to_role(self, node_uuid: str, role_uuid: str) -> Union[
+    async def add_node_to_role(self, node_uuid: str, role_uuid: str) -> Union[
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/roles/" + role_uuid + "/nodes/" + node_uuid
             ),
             schema=MessageResponse
         )
 
-    def remove_node_from_role(self, node_uuid: str, role_uuid: str) -> Union[
+    async def remove_node_from_role(self, node_uuid: str, role_uuid: str) -> Union[
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
-            self.requests_session.delete(
+            await self.requests_session.delete(
                 self.get_base_url() + "/roles/" + role_uuid + "/nodes/" + node_uuid
             ),
             schema=MessageResponse
         )
 
-    def add_node_to_key(self, node_uuid: str, key_uuid: str) -> Union[
+    async def add_node_to_key(self, node_uuid: str, key_uuid: str) -> Union[
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/keys/" + key_uuid + "/nodes/" + node_uuid
             ),
             schema=MessageResponse
         )
 
-    def remove_node_from_key(self, node_uuid: str, key_uuid: str) -> Union[
+    async def remove_node_from_key(self, node_uuid: str, key_uuid: str) -> Union[
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
-            self.requests_session.delete(
+            await self.requests_session.delete(
                 self.get_base_url() + "/keys/" + key_uuid + "/nodes/" + node_uuid
             ),
             schema=MessageResponse
         )
 
-    def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -> Union[
+    async def add_entity_to_group(self, entity_identifier: str, group_uuid: str) -> Union[
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/who/groups/" + group_uuid + "/entities/" + entity_identifier
             ),
             schema=MessageResponse
         )
 
-    def remove_entity_from_group(self, entity_identifier: str, group_uuid: str) -> Union[
+    async def remove_entity_from_group(self, entity_identifier: str, group_uuid: str) -> Union[
         GenericHTTPResponse, MessageResponse]:
         return transform_response_to_schema(
-            self.requests_session.delete(
+            await self.requests_session.delete(
                 self.get_base_url() + "/who/groups/" + group_uuid + "/entities/" + entity_identifier
             ),
             schema=MessageResponse
         )
 
-    def add_key_to_entity(
+    async def add_key_to_entity(
             self,
             entity_identifier: str,
             key_uuid: str
     ) -> Union[GenericHTTPResponse, AddKeyToEntityResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/who/entities/" + entity_identifier + "/keys/" + key_uuid
             ),
             schema=AddKeyToEntityResponse
         )
 
-    def remove_key_from_entity(
+    async def remove_key_from_entity(
             self,
             entity_identifier: str,
             key_uuid: str
     ) -> Union[GenericHTTPResponse, RemoveKeyFromEntityResponse]:
         return transform_response_to_schema(
-            self.requests_session.delete(
+            await self.requests_session.delete(
                 self.get_base_url() + "/who/entities/" + entity_identifier + "/keys/" + key_uuid
             ),
             schema=RemoveKeyFromEntityResponse
         )
 
-    def get_keys_for_entity(
+    async def get_keys_for_entity(
             self,
             entity_identifier: str
     ) -> Union[GenericHTTPResponse, PageResponse]:
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/who/entities/" + entity_identifier + "/keys"
             ),
             schema=PageResponse
         )
 
-    def get_nodes_for_entity(
+    async def get_nodes_for_entity(
             self,
             entity_identifier: str
     ) -> Union[GenericHTTPResponse, GetNodesResponse]:
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/permissions/nodes/entities/" + entity_identifier
             ),
             schema=GetNodesResponse
         )
 
-    def get_nodes_for_entity_key(
+    async def get_nodes_for_entity_key(
             self,
             entity_identifier: str,
             key_uuid: str
     ) -> Union[GenericHTTPResponse, GetNodesResponse]:
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/permissions/nodes/entities/" + entity_identifier + "/keys/" + key_uuid
             ),
             schema=GetNodesResponse
         )
 
-    def make_rgt(
+    async def make_rgt(
             self,
             role_uuid: str,
             group_uuid: str,
             target_identifier: str
     ) -> Union[GenericHTTPResponse, MakeRGTResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/rgts/roles/" + role_uuid + "/groups/" + group_uuid + "/targets/" + target_identifier,
                 json={"limits": []}
             ),
             schema=MakeRGTResponse
         )
 
-    def automate_role_group_rgt(
+    async def automate_role_group_rgt(
             self,
             role: CreateRole,
             group: CreateGroup,
@@ -302,27 +302,27 @@ class AccessSDK(SDKBase):
             entity_identifiers: List[str] = None
     ) -> Union[GenericHTTPResponse, MakeRGTResponse]:
 
-        role_response: CreateRoleResponse = self.create_role(role=role)
+        role_response: CreateRoleResponse = await self.create_role(role=role)
 
         if is_response_error(role_response):
             return role_response
 
-        group_response: CreateGroupResponse = self.create_group(group=group)
+        group_response: CreateGroupResponse = await self.create_group(group=group)
 
         if is_response_error(group_response):
             return group_response
 
         if len(entity_identifiers) > 0 and not group.default:
             for entity_identifier in entity_identifiers:
-                self.add_entity_to_group(entity_identifier=entity_identifier, group_uuid=group_response.uuid)
+                await self.add_entity_to_group(entity_identifier=entity_identifier, group_uuid=group_response.uuid)
 
-        return self.make_rgt(
+        return await self.make_rgt(
             role_uuid=role_response.uuid,
             group_uuid=group_response.uuid,
             target_identifier=target_identifier
         )
 
-    def get_entity_for_key(
+    async def get_entity_for_key(
             self,
             key_uuid: str,
             partition: str = None
@@ -334,13 +334,13 @@ class AccessSDK(SDKBase):
             base_url: str = self.get_base_url()
 
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 base_url + "/who/entities/keys/" + key_uuid
             ),
             schema=GetEntityResponse
         )
 
-    def is_entity_allowed(
+    async def is_entity_allowed(
             self,
             entity_identifier: str,
             target_identifier: str,
@@ -353,7 +353,7 @@ class AccessSDK(SDKBase):
         else:
             base_url: str = self.get_base_url()
 
-        response: Response = self.requests_session.get(
+        response: Response = await self.requests_session.get(
             base_url + "/auth/targets/" + target_identifier + "/nodes/" + node + "/entities/" + entity_identifier
         )
 
@@ -381,7 +381,7 @@ class AccessSDK(SDKBase):
     #         "X-Secret-Token": secret_token
     #     }
     #
-    #     response: Response = self.requests_session.get(
+    #     response: Response = await self.requests_session.get(
     #         base_url + "/auth/targets/" + target_identifier + "/nodes/" + node + "/keys",
     #         headers=headers
     #     )
@@ -392,7 +392,7 @@ class AccessSDK(SDKBase):
     #     # return transform_response_to_schema(response, None)
     #     return False
 
-    def is_allowed(
+    async def is_allowed(
             self,
             auth_model: AuthModel,
             target_identifier: str,
@@ -400,7 +400,7 @@ class AccessSDK(SDKBase):
             partition: str = None
     ) -> bool:
         if auth_model.entity_identifier:
-            if self.is_entity_allowed(
+            if await self.is_entity_allowed(
                     entity_identifier=auth_model.entity_identifier,
                     target_identifier=target_identifier,
                     node=node,

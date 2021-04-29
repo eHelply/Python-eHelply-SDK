@@ -12,7 +12,7 @@ class MetaSDK(SDKBase):
     def get_service_version(self) -> str:
         return super().get_service_version()
 
-    def create_meta(
+    async def create_meta(
             self,
             service: str,
             type_str: str,
@@ -28,14 +28,14 @@ class MetaSDK(SDKBase):
         }
 
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/meta/service/" + service + "/type/" + type_str + "/entity/" + entity_uuid,
                 json=data
             ),
             schema=CreateMetaResponse
         )
 
-    def get_meta(
+    async def get_meta(
             self,
             service: str,
             type_str: str,
@@ -50,14 +50,14 @@ class MetaSDK(SDKBase):
             return ErrorResponse(status_code=0, message="Invalid payload when trying to get meta.")
 
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/meta/service/" + service + "/type/" + type_str + "/entity/" + entity_uuid,
                 params={"detailed": detailed, "custom": custom, "dates": dates}
             ),
             schema=GetMetaResponse
         )
 
-    def get_meta_with_id(
+    async def get_meta_with_id(
             self,
             meta_id: str,
             detailed: bool = False,
@@ -70,14 +70,14 @@ class MetaSDK(SDKBase):
             return ErrorResponse(status_code=0, message="Invalid payload when trying to get meta.")
 
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/meta/" + meta_id,
                 params={"detailed": detailed, "custom": custom, "dates": dates}
             ),
             schema=GetMetaResponse
         )
 
-    def update_meta(
+    async def update_meta(
             self,
             service: str,
             type_str: str,
@@ -93,14 +93,14 @@ class MetaSDK(SDKBase):
         }
 
         return transform_response_to_schema(
-            self.requests_session.put(
+            await self.requests_session.put(
                 self.get_base_url() + "/meta/service/" + service + "/type/" + type_str + "/entity/" + entity_uuid,
                 json=data
             ),
             schema=UpdateMetaResponse
         )
 
-    def update_meta_with_id(
+    async def update_meta_with_id(
             self,
             meta_id: str,
             meta: UpdateMeta
@@ -114,14 +114,14 @@ class MetaSDK(SDKBase):
         }
 
         return transform_response_to_schema(
-            self.requests_session.put(
+            await self.requests_session.put(
                 self.get_base_url() + "/meta/" + meta_id,
                 json=data
             ),
             schema=UpdateMetaResponse
         )
 
-    def delete_meta(
+    async def delete_meta(
             self,
             service: str,
             type_str: str,
@@ -132,13 +132,13 @@ class MetaSDK(SDKBase):
             return ErrorResponse(status_code=0, message="Invalid payload when trying to delete meta.")
 
         return transform_response_to_schema(
-            self.requests_session.delete(
+            await self.requests_session.delete(
                 self.get_base_url() + "/meta/service/" + service + "/type/" + type_str + "/entity/" + entity_uuid,
             ),
             schema=DeleteMetaResponse
         )
 
-    def delete_meta_with_id(
+    async def delete_meta_with_id(
             self,
             meta_id: str
     ) -> Union[GenericHTTPResponse, DeleteMetaResponse]:
@@ -147,13 +147,13 @@ class MetaSDK(SDKBase):
             return ErrorResponse(status_code=0, message="Invalid payload when trying to delete meta.")
 
         return transform_response_to_schema(
-            self.requests_session.delete(
+            await self.requests_session.delete(
                 self.get_base_url() + "/meta/" + meta_id,
             ),
             schema=DeleteMetaResponse
         )
 
-    def touch_meta(
+    async def touch_meta(
             self,
             service: str,
             type_str: str,
@@ -164,7 +164,7 @@ class MetaSDK(SDKBase):
             return ErrorResponse(status_code=0, message="Invalid payload when trying to touch meta.")
 
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/meta/service/" + service + "/type/" + type_str + "/entity/" + entity_uuid + "/touch",
             ),
             schema=TouchMetaResponse

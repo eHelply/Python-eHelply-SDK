@@ -12,7 +12,7 @@ class MonitorSDK(SDKBase):
     def get_service_version(self) -> str:
         return super().get_service_version()
 
-    def search_projects(
+    async def search_projects(
             self,
             name: str = None,
             is_spend_maxed: bool = None,
@@ -31,7 +31,7 @@ class MonitorSDK(SDKBase):
             params["page_size"] = pagination.page_size
 
         response: PageResponse = transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/projects/projects",
                 params=params
             ),
@@ -45,18 +45,18 @@ class MonitorSDK(SDKBase):
 
         return response
 
-    def get_project(
+    async def get_project(
             self,
             project_uuid: str
     ) -> Union[GenericHTTPResponse, GetProjectResponse]:
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/projects/projects/" + project_uuid
             ),
             schema=GetProjectResponse
         )
 
-    def get_all_project_usage(
+    async def get_all_project_usage(
             self,
             project_uuid: str,
             year: int = None,
@@ -71,7 +71,7 @@ class MonitorSDK(SDKBase):
             params["month"] = month
 
         return transform_response_to_schema(
-            self.requests_session.get(
+            await self.requests_session.get(
                 self.get_base_url() + "/projects/projects/" + project_uuid + "/usage",
                 params=params
             ),

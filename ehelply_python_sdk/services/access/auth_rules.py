@@ -1,6 +1,7 @@
 from __future__ import annotations
 from typing import List, Tuple, Callable
 from ehelply_python_sdk.services.access.sdk import AuthModel
+import asyncio
 
 
 class AuthException(Exception):
@@ -27,8 +28,7 @@ class AuthRule:
             *rules,
             exception_if_unauthorized: bool = None,
             exception_to_throw: Exception = None,
-            override: bool = None,
-            execute: bool = False
+            override: bool = None
     ):
         if exception_if_unauthorized is None:
             exception_if_unauthorized = AuthRule.exception_if_unauthorized
@@ -48,10 +48,7 @@ class AuthRule:
 
         self.auth_model: AuthModel = auth_model
 
-        if execute:
-            self.verify()
-
-    def verify(self) -> bool:
+    async def verify(self) -> bool:
         """
         Verifies that each changed rule passes using an AND logical operation.
 
@@ -63,7 +60,7 @@ class AuthRule:
         rules_passed: bool = False
         for rule in self.rules:
             try:
-                result: bool = rule.verify()
+                result: bool = await rule.verify()
                 if result:
                     rules_passed = True
                     break
@@ -76,9 +73,21 @@ class AuthRule:
             else:
                 return False
 
+        async_handlers: list = []
+
         for handler in self.handlers:
             try:
-                result: bool = handler[0](**handler[1])
+                async_handlers.append(asyncio.create_task(handler[0](**handler[1])))
+            except:
+                if self.local_exception_if_unauthorized:
+                    raise self.local_exception_to_throw
+                else:
+                    return False
+
+        async_results = await asyncio.gather(*async_handlers)
+
+        for result in async_results:
+            try:
                 if not result:
                     if self.local_exception_if_unauthorized:
                         raise self.local_exception_to_throw
@@ -92,7 +101,7 @@ class AuthRule:
 
         return True
 
-    def __handler_entity_identifier_eq(self, entity_identifier: str) -> bool:
+    async def __handler_entity_identifier_eq(self, entity_identifier: str) -> bool:
         return self.auth_model.entity_identifier == entity_identifier
 
     def entity_identifier_eq(self, entity_identifier: str):
@@ -103,7 +112,7 @@ class AuthRule:
             }
         ))
 
-    def __handler_entity_identifier_neq(self, entity_identifier: str) -> bool:
+    async def __handler_entity_identifier_neq(self, entity_identifier: str) -> bool:
         return self.auth_model.entity_identifier != entity_identifier
 
     def entity_identifier_neq(self, entity_identifier: str):
@@ -114,8 +123,8 @@ class AuthRule:
             }
         ))
 
-    def __handler_entity_has_node_on_target(self, node: str, target_identifier: str, partition: str) -> bool:
-        return self.auth_model.access_sdk.is_allowed(
+    async def __handler_entity_has_node_on_target(self, node: str, target_identifier: str, partition: str) -> bool:
+        return await self.auth_model.access_sdk.is_allowed(
             auth_model=self.auth_model,
             target_identifier=target_identifier,
             node=node,
@@ -133,7 +142,7 @@ class AuthRule:
         ))
         return self
 
-    def __handler_has_entity(self) -> bool:
+    async def __handler_has_entity(self) -> bool:
         return self.auth_model.entity_identifier is not None
 
     def has_entity(self) -> AuthRule:
@@ -143,7 +152,7 @@ class AuthRule:
         ))
         return self
 
-    def __handler_has_participant(self) -> bool:
+    async def __handler_has_participant(self) -> bool:
         return self.auth_model.active_participant_uuid is not None
 
     def has_participant(self) -> AuthRule:
@@ -153,7 +162,7 @@ class AuthRule:
         ))
         return self
 
-    def __handler_participant_has_node_on_target(self, node: str, target_identifier: str, partition: str) -> bool:
+    async def __handler_participant_has_node_on_target(self, node: str, target_identifier: str, partition: str) -> bool:
         temp_model: AuthModel = AuthModel(
             access_sdk=self.auth_model.access_sdk,
             active_participant_uuid=self.auth_model.active_participant_uuid,
@@ -164,7 +173,7 @@ class AuthRule:
             claims=self.auth_model.claims,
         )
 
-        return self.auth_model.access_sdk.is_allowed(
+        return await self.auth_model.access_sdk.is_allowed(
             auth_model=temp_model,
             target_identifier=target_identifier,
             node=node,
@@ -182,7 +191,7 @@ class AuthRule:
         ))
         return self
 
-    def __handler_participant_below_limit(self) -> bool:
+    async def __handler_participant_below_limit(self) -> bool:
         return True
 
     def participant_below_limit(self, limit: str) -> AuthRule:
@@ -194,7 +203,7 @@ class AuthRule:
         ))
         return self
 
-    def __handler_customentity_has_node_on_target(
+    async def __handler_customentity_has_node_on_target(
             self,
             node: str,
             target_identifier: str,
@@ -211,7 +220,7 @@ class AuthRule:
             claims=self.auth_model.claims,
         )
 
-        return self.auth_model.access_sdk.is_allowed(
+        return await self.auth_model.access_sdk.is_allowed(
             auth_model=temp_model,
             target_identifier=target_identifier,
             node=node,
@@ -235,8 +244,8 @@ class AuthRule:
             }
         ))
         return self
-    
-    def __handler_project_uuid_eq(self, project_uuid: str) -> bool:
+
+    async def __handler_project_uuid_eq(self, project_uuid: str) -> bool:
         return self.auth_model.project_uuid == project_uuid
 
     def project_uuid_eq(self, project_uuid: str):
@@ -247,7 +256,7 @@ class AuthRule:
             }
         ))
 
-    def __handler_project_uuid_neq(self, project_uuid: str) -> bool:
+    async def __handler_project_uuid_neq(self, project_uuid: str) -> bool:
         return self.auth_model.project_uuid != project_uuid
 
     def project_uuid_neq(self, project_uuid: str):

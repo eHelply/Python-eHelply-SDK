@@ -12,9 +12,9 @@ class ProductsSDK(SDKBase):
     def get_service_version(self) -> str:
         return super().get_service_version()
 
-    def process_payment(self, project_uuid: str, amount: int) -> Union[GenericHTTPResponse, ProcessPaymentResponse]:
+    async def process_payment(self, project_uuid: str, amount: int) -> Union[GenericHTTPResponse, ProcessPaymentResponse]:
         return transform_response_to_schema(
-            self.requests_session.post(
+            await self.requests_session.post(
                 self.get_base_url() + "/products/billing/process_payment",
                 json={"payment_schema": {
                     "project_uuid": project_uuid,

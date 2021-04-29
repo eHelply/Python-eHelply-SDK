@@ -1,6 +1,6 @@
-from typing import Union, Type, TypeVar
+from typing import Union, Type, TypeVar, Optional
 
-import requests
+import httpx
 
 from ehelply_python_sdk.utils import SDKConfiguration, make_requests
 from ehelply_python_sdk.services import services
@@ -23,13 +23,13 @@ class eHelplySDK:
 
     def __init__(self, sdk_configuration: SDKConfiguration) -> None:
         self.sdk_configuration: SDKConfiguration = sdk_configuration
-        self.requests_session: requests.Session = make_requests(sdk_configuration=sdk_configuration)
+        self.requests_session: httpx.AsyncClient = make_requests(sdk_configuration=self.sdk_configuration)
 
     def _make_client(
             self,
             client: str,
             sdk_configuration: SDKConfiguration = None,
-            request_session: requests.Session = None
+            request_session: httpx.AsyncClient = None
     ) -> genericSDKBase:
         if not sdk_configuration:
             sdk_configuration = self.sdk_configuration
@@ -58,7 +58,7 @@ class eHelplySDK:
     def make_access(
             self,
             sdk_configuration: SDKConfiguration = None,
-            request_session: requests.Session = None
+            request_session: httpx.AsyncClient = None
     ) -> services.AccessSDK:
         return self._make_client(
             client=CONST_CLIENT_ACCESS,
@@ -69,7 +69,7 @@ class eHelplySDK:
     def make_security(
             self,
             sdk_configuration: SDKConfiguration = None,
-            request_session: requests.Session = None
+            request_session: httpx.AsyncClient = None
     ) -> services.SecuritySDK:
         return self._make_client(
             client=CONST_CLIENT_SECURITY,
@@ -80,7 +80,7 @@ class eHelplySDK:
     def make_notes(
             self,
             sdk_configuration: SDKConfiguration = None,
-            request_session: requests.Session = None
+            request_session: httpx.AsyncClient = None
     ) -> services.NotesSDK:
         return self._make_client(
             client=CONST_CLIENT_NOTES,
@@ -91,7 +91,7 @@ class eHelplySDK:
     def make_meta(
             self,
             sdk_configuration: SDKConfiguration = None,
-            request_session: requests.Session = None
+            request_session: httpx.AsyncClient = None
     ) -> services.MetaSDK:
         return self._make_client(
             client=CONST_CLIENT_META,
@@ -102,7 +102,7 @@ class eHelplySDK:
     def make_monitor(
             self,
             sdk_configuration: SDKConfiguration = None,
-            request_session: requests.Session = None
+            request_session: httpx.AsyncClient = None
     ) -> services.MonitorSDK:
         return self._make_client(
             client=CONST_CLIENT_MONITOR,
@@ -113,7 +113,7 @@ class eHelplySDK:
     def make_products(
             self,
             sdk_configuration: SDKConfiguration = None,
-            request_session: requests.Session = None
+            request_session: httpx.AsyncClient = None
     ) -> services.ProductsSDK:
         return self._make_client(
             client=CONST_CLIENT_PRODUCTS,
