@@ -15,9 +15,11 @@
 
 # Import APIs into API package:
 from ehelply-python-sdk.api.access_api import AccessApi
+from ehelply-python-sdk.api.default_api import DefaultApi
 from ehelply-python-sdk.api.logging_api import LoggingApi
 from ehelply-python-sdk.api.meta_api import MetaApi
 from ehelply-python-sdk.api.monitor_api import MonitorApi
+from ehelply-python-sdk.api.notes_api import NotesApi
 from ehelply-python-sdk.api.projects_api import ProjectsApi
 from ehelply-python-sdk.api.security_api import SecurityApi
 from ehelply-python-sdk.api.support_api import SupportApi

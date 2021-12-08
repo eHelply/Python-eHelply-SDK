@@ -151,6 +151,7 @@ Class | Method | HTTP request | Description
 *AccessApi* | [**update_node_access_partitions_partition_identifier_permissions_nodes_node_uuid_put**](docs/AccessApi.md#update_node_access_partitions_partition_identifier_permissions_nodes_node_uuid_put) | **PUT** /sam/access/partitions/{partition_identifier}/permissions/nodes/{node_uuid} | Update Node
 *AccessApi* | [**update_role_access_partitions_partition_identifier_roles_role_uuid_put**](docs/AccessApi.md#update_role_access_partitions_partition_identifier_roles_role_uuid_put) | **PUT** /sam/access/partitions/{partition_identifier}/roles/{role_uuid} | Update Role
 *AccessApi* | [**update_type_access_partitions_partition_identifier_permissions_types_type_uuid_put**](docs/AccessApi.md#update_type_access_partitions_partition_identifier_permissions_types_type_uuid_put) | **PUT** /sam/access/partitions/{partition_identifier}/permissions/types/{type_uuid} | Update Type
+*DefaultApi* | [**playground_notes_playground_get**](docs/DefaultApi.md#playground_notes_playground_get) | **GET** /notes/notes/playground | Playground
 *LoggingApi* | [**get_logs_logging_logs_get**](docs/LoggingApi.md#get_logs_logging_logs_get) | **GET** /sam/logging/logs | Get Logs
 *LoggingApi* | [**get_service_logs_logging_logs_services_service_get**](docs/LoggingApi.md#get_service_logs_logging_logs_services_service_get) | **GET** /sam/logging/logs/services/{service} | Get Service Logs
 *LoggingApi* | [**get_subject_logs_logging_logs_services_service_subjects_subject_get**](docs/LoggingApi.md#get_subject_logs_logging_logs_services_service_subjects_subject_get) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Get Subject Logs
@@ -182,6 +183,10 @@ Class | Method | HTTP request | Description
 *MonitorApi* | [**show_service_monitor_services_service_uuid_stages_stage_show_post**](docs/MonitorApi.md#show_service_monitor_services_service_uuid_stages_stage_show_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/show | Show Service
 *MonitorApi* | [**terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post**](docs/MonitorApi.md#terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminate Alarm
 *MonitorApi* | [**trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post**](docs/MonitorApi.md#trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms | Trigger Alarm
+*NotesApi* | [**create_note_notes_notes_post**](docs/NotesApi.md#create_note_notes_notes_post) | **POST** /notes/notes/notes | Create Note
+*NotesApi* | [**delete_note_notes_notes_note_id_delete**](docs/NotesApi.md#delete_note_notes_notes_note_id_delete) | **DELETE** /notes/notes/notes/{note_id} | Delete Note
+*NotesApi* | [**get_note_notes_notes_note_id_get**](docs/NotesApi.md#get_note_notes_notes_note_id_get) | **GET** /notes/notes/notes/{note_id} | Get Note
+*NotesApi* | [**update_note_notes_notes_note_id_put**](docs/NotesApi.md#update_note_notes_notes_note_id_put) | **PUT** /notes/notes/notes/{note_id} | Update Note
 *ProjectsApi* | [**add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post**](docs/ProjectsApi.md#add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Add Member To Project
 *ProjectsApi* | [**add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post**](docs/ProjectsApi.md#add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}/permissions/{node_uuid} | Add Permission To Key
 *ProjectsApi* | [**archive_project_projects_projects_project_uuid_delete**](docs/ProjectsApi.md#archive_project_projects_projects_project_uuid_delete) | **DELETE** /sam/projects/projects/{project_uuid} | Archive Project
@@ -258,6 +263,7 @@ Class | Method | HTTP request | Description
  - [BodyCloudParticipantProjectsCloudParticipantPost](docs/BodyCloudParticipantProjectsCloudParticipantPost.md)
  - [BodyCreateGroupAccessPartitionsPartitionIdentifierWhoGroupsPost](docs/BodyCreateGroupAccessPartitionsPartitionIdentifierWhoGroupsPost.md)
  - [BodyCreateKeySecurityKeysPost](docs/BodyCreateKeySecurityKeysPost.md)
+ - [BodyCreateNoteNotesNotesPost](docs/BodyCreateNoteNotesNotesPost.md)
  - [BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost](docs/BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost.md)
  - [BodyCreateProjectProjectsProjectsPost](docs/BodyCreateProjectProjectsProjectsPost.md)
  - [BodyCreateRoleAccessPartitionsPartitionIdentifierRolesPost](docs/BodyCreateRoleAccessPartitionsPartitionIdentifierRolesPost.md)
@@ -277,6 +283,7 @@ Class | Method | HTTP request | Description
  - [BodyUpdateMetaFromUuidMetaMetaMetaUuidPut](docs/BodyUpdateMetaFromUuidMetaMetaMetaUuidPut.md)
  - [BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut](docs/BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut.md)
  - [BodyUpdateNodeAccessPartitionsPartitionIdentifierPermissionsNodesNodeUuidPut](docs/BodyUpdateNodeAccessPartitionsPartitionIdentifierPermissionsNodesNodeUuidPut.md)
+ - [BodyUpdateNoteNotesNotesNoteIdPut](docs/BodyUpdateNoteNotesNotesNoteIdPut.md)
  - [BodyUpdateProjectProjectsProjectsProjectUuidPut](docs/BodyUpdateProjectProjectsProjectsProjectUuidPut.md)
  - [BodyUpdateRoleAccessPartitionsPartitionIdentifierRolesRoleUuidPut](docs/BodyUpdateRoleAccessPartitionsPartitionIdentifierRolesRoleUuidPut.md)
  - [BodyUpdateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsTicketIdPut](docs/BodyUpdateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsTicketIdPut.md)
@@ -297,6 +304,9 @@ Class | Method | HTTP request | Description
  - [MetaCreate](docs/MetaCreate.md)
  - [MetaDynamo](docs/MetaDynamo.md)
  - [MetaSlugger](docs/MetaSlugger.md)
+ - [NoteBase](docs/NoteBase.md)
+ - [NoteDynamo](docs/NoteDynamo.md)
+ - [NoteMeta](docs/NoteMeta.md)
  - [Page](docs/Page.md)
  - [Pagination](docs/Pagination.md)
  - [ProjectsProjectCreate](docs/ProjectsProjectCreate.md)
