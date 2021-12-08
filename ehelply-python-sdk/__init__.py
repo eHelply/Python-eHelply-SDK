@@ -10,7 +10,7 @@
 """
 
 
-__version__ = ""
+__version__ = "1.1.31"
 
 # import ApiClient
 from ehelply-python-sdk.api_client import ApiClient
