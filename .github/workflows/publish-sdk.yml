@@ -37,7 +37,7 @@ jobs:
           SLACK_ICON: "https://assets.ehelply.com/logo/ehelply/base/symbol_green_white.png"
           SLACK_FOOTER: ""
           SLACK_TITLE: 'Python SDK Publish FAILED'
-          SLACK_MESSAGE: 'Failed to publish the Python SDK to NPM'
+          SLACK_MESSAGE: 'Failed to publish the Python SDK to PyPi'
       - name: Slack Success Notification
         if: always() && needs.build.result == 'success'
         uses: rtCamp/action-slack-notify@v2
@@ -48,4 +48,4 @@ jobs:
           SLACK_ICON: "https://assets.ehelply.com/logo/ehelply/base/symbol_green_white.png"
           SLACK_FOOTER: ""
           SLACK_TITLE: 'Python SDK Publish SUCCESS'
-          SLACK_MESSAGE: 'Python SDK pushed to NPM successfully'
+          SLACK_MESSAGE: 'Python SDK pushed to PyPi successfully'
