@@ -3,7 +3,7 @@
 
     eHelply SDK  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.36
+    The version of the OpenAPI document: 1.1.37
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,7 +212,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "ehelply-python-sdk"
-VERSION = "1.1.36"
+VERSION = "1.1.37"
 # To install the library, run the following
 #
 # python setup.py install
