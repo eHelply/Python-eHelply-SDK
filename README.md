@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.35
-- Package version: 1.1.35
+- API version: 1.1.36
+- Package version: 1.1.36
 
 ## Requirements.
 
