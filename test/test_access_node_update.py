@@ -3,7 +3,7 @@
 
     eHelply SDK  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.37
+    The version of the OpenAPI document: 1.1.38
 
                                      Apache License
                                Version 2.0, January 2004
