@@ -3,7 +3,7 @@
 
     eHelply SDK  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.38
+    The version of the OpenAPI document: 1.1.39
 
                                      Apache License
                                Version 2.0, January 2004
@@ -294,6 +294,20 @@ class TestMonitorApi(unittest.TestCase):
         """
         pass
 
+    def test_get_service_spec(self):
+        """Test case for get_service_spec
+
+        Getservicespec  # noqa: E501
+        """
+        pass
+
+    def test_get_service_specs(self):
+        """Test case for get_service_specs
+
+        Getservicespecs  # noqa: E501
+        """
+        pass
+
     def test_get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get(self):
         """Test case for get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get
 
@@ -305,6 +319,13 @@ class TestMonitorApi(unittest.TestCase):
         """Test case for get_services_monitor_services_get
 
         Get Services  # noqa: E501
+        """
+        pass
+
+    def test_get_services_with_specs(self):
+        """Test case for get_services_with_specs
+
+        Getserviceswithspecs  # noqa: E501
         """
         pass
 

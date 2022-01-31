@@ -14,8 +14,11 @@ Method | HTTP request | Description
 [**get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get**](MonitorApi.md#get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/heartbeats | Get Service Heartbeats
 [**get_service_kpis_monitor_services_service_uuid_kpis_get**](MonitorApi.md#get_service_kpis_monitor_services_service_uuid_kpis_get) | **GET** /sam/monitor/services/{service_uuid}/kpis | Get Service Kpis
 [**get_service_monitor_services_service_uuid_get**](MonitorApi.md#get_service_monitor_services_service_uuid_get) | **GET** /sam/monitor/services/{service_uuid} | Get Service
+[**get_service_spec**](MonitorApi.md#get_service_spec) | **GET** /sam/monitor/services/{service}/specs/{spec} | Getservicespec
+[**get_service_specs**](MonitorApi.md#get_service_specs) | **GET** /sam/monitor/services/{service}/specs | Getservicespecs
 [**get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get**](MonitorApi.md#get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/vitals | Get Service Vitals
 [**get_services_monitor_services_get**](MonitorApi.md#get_services_monitor_services_get) | **GET** /sam/monitor/services | Get Services
+[**get_services_with_specs**](MonitorApi.md#get_services_with_specs) | **GET** /sam/monitor/specs/services | Getserviceswithspecs
 [**hide_service_monitor_services_service_uuid_stages_stage_hide_post**](MonitorApi.md#hide_service_monitor_services_service_uuid_stages_stage_hide_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/hide | Hide Service
 [**ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post**](MonitorApi.md#ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/ignore | Ignore Alarm
 [**register_service_monitor_services_post**](MonitorApi.md#register_service_monitor_services_post) | **POST** /sam/monitor/services | Register Service
@@ -808,6 +811,155 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_service_spec**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_spec(service, spec)
+
+Getservicespec
+
+### Example
+
+
+```python
+import time
+import ehelply-python-sdk
+from ehelply-python-sdk.api import monitor_api
+from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply-python-sdk.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply-python-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    spec = "spec_example" # str | 
+    as_json = False # bool |  (optional) if omitted the server will use the default value of False
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Getservicespec
+        api_response = api_instance.get_service_spec(service, spec)
+        pprint(api_response)
+    except ehelply-python-sdk.ApiException as e:
+        print("Exception when calling MonitorApi->get_service_spec: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Getservicespec
+        api_response = api_instance.get_service_spec(service, spec, as_json=as_json)
+        pprint(api_response)
+    except ehelply-python-sdk.ApiException as e:
+        print("Exception when calling MonitorApi->get_service_spec: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service** | **str**|  |
+ **spec** | **str**|  |
+ **as_json** | **bool**|  | [optional] if omitted the server will use the default value of False
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_service_specs**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_specs(service)
+
+Getservicespecs
+
+### Example
+
+
+```python
+import time
+import ehelply-python-sdk
+from ehelply-python-sdk.api import monitor_api
+from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply-python-sdk.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply-python-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Getservicespecs
+        api_response = api_instance.get_service_specs(service)
+        pprint(api_response)
+    except ehelply-python-sdk.ApiException as e:
+        print("Exception when calling MonitorApi->get_service_specs: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **service** | **str**|  |
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get**
 > bool, date, datetime, dict, float, int, list, str, none_type get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get(service_uuid, stage)
 
@@ -965,6 +1117,68 @@ No authorization required
 **200** | Successful Response |  -  |
 **404** | Not found |  -  |
 **422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_services_with_specs**
+> bool, date, datetime, dict, float, int, list, str, none_type get_services_with_specs()
+
+Getserviceswithspecs
+
+### Example
+
+
+```python
+import time
+import ehelply-python-sdk
+from ehelply-python-sdk.api import monitor_api
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply-python-sdk.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply-python-sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = monitor_api.MonitorApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Getserviceswithspecs
+        api_response = api_instance.get_services_with_specs()
+        pprint(api_response)
+    except ehelply-python-sdk.ApiException as e:
+        print("Exception when calling MonitorApi->get_services_with_specs: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

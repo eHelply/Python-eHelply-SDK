@@ -3,7 +3,7 @@
 
     eHelply SDK  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.38
+    The version of the OpenAPI document: 1.1.39
 
                                      Apache License
                                Version 2.0, January 2004
@@ -577,8 +577,8 @@ class Configuration(object):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 1.1.38\n"\
-               "SDK Package Version: 1.1.38".\
+               "Version of the API: 1.1.39\n"\
+               "SDK Package Version: 1.1.39".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

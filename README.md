@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.38
-- Package version: 1.1.38
+- API version: 1.1.39
+- Package version: 1.1.39
 
 ## Requirements.
 
@@ -57,7 +57,6 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.access_group_db import AccessGroupDB
 from ehelply-python-sdk.model.access_group_get import AccessGroupGet
 from ehelply-python-sdk.model.access_limit_create import AccessLimitCreate
-from ehelply-python-sdk.model.access_node_create import AccessNodeCreate
 from ehelply-python-sdk.model.access_node_db import AccessNodeDB
 from ehelply-python-sdk.model.access_node_get import AccessNodeGet
 from ehelply-python-sdk.model.access_role_db import AccessRoleDB
@@ -65,6 +64,7 @@ from ehelply-python-sdk.model.access_role_get import AccessRoleGet
 from ehelply-python-sdk.model.access_type_db import AccessTypeDB
 from ehelply-python-sdk.model.access_type_get import AccessTypeGet
 from ehelply-python-sdk.model.body_create_group_access_partitions_partition_identifier_who_groups_post import BodyCreateGroupAccessPartitionsPartitionIdentifierWhoGroupsPost
+from ehelply-python-sdk.model.body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post import BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost
 from ehelply-python-sdk.model.body_create_role_access_partitions_partition_identifier_roles_post import BodyCreateRoleAccessPartitionsPartitionIdentifierRolesPost
 from ehelply-python-sdk.model.body_create_type_access_partitions_partition_identifier_permissions_types_post import BodyCreateTypeAccessPartitionsPartitionIdentifierPermissionsTypesPost
 from ehelply-python-sdk.model.body_make_rgt_access_partitions_partition_identifier_rgts_roles_role_uuid_groups_group_uuid_targets_target_identifier_post import BodyMakeRgtAccessPartitionsPartitionIdentifierRgtsRolesRoleUuidGroupsGroupUuidTargetsTargetIdentifierPost
@@ -177,8 +177,11 @@ Class | Method | HTTP request | Description
 *MonitorApi* | [**get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get**](docs/MonitorApi.md#get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/heartbeats | Get Service Heartbeats
 *MonitorApi* | [**get_service_kpis_monitor_services_service_uuid_kpis_get**](docs/MonitorApi.md#get_service_kpis_monitor_services_service_uuid_kpis_get) | **GET** /sam/monitor/services/{service_uuid}/kpis | Get Service Kpis
 *MonitorApi* | [**get_service_monitor_services_service_uuid_get**](docs/MonitorApi.md#get_service_monitor_services_service_uuid_get) | **GET** /sam/monitor/services/{service_uuid} | Get Service
+*MonitorApi* | [**get_service_spec**](docs/MonitorApi.md#get_service_spec) | **GET** /sam/monitor/services/{service}/specs/{spec} | Getservicespec
+*MonitorApi* | [**get_service_specs**](docs/MonitorApi.md#get_service_specs) | **GET** /sam/monitor/services/{service}/specs | Getservicespecs
 *MonitorApi* | [**get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get**](docs/MonitorApi.md#get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/vitals | Get Service Vitals
 *MonitorApi* | [**get_services_monitor_services_get**](docs/MonitorApi.md#get_services_monitor_services_get) | **GET** /sam/monitor/services | Get Services
+*MonitorApi* | [**get_services_with_specs**](docs/MonitorApi.md#get_services_with_specs) | **GET** /sam/monitor/specs/services | Getserviceswithspecs
 *MonitorApi* | [**hide_service_monitor_services_service_uuid_stages_stage_hide_post**](docs/MonitorApi.md#hide_service_monitor_services_service_uuid_stages_stage_hide_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/hide | Hide Service
 *MonitorApi* | [**ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post**](docs/MonitorApi.md#ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/ignore | Ignore Alarm
 *MonitorApi* | [**register_service_monitor_services_post**](docs/MonitorApi.md#register_service_monitor_services_post) | **POST** /sam/monitor/services | Register Service

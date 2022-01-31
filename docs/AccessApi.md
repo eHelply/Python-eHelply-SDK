@@ -535,7 +535,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_node**
-> AccessNodeDB create_node(partition_identifier, type_uuid, access_node_create)
+> AccessNodeDB create_node(partition_identifier, type_uuid, body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post)
 
 Createnode
 
@@ -549,8 +549,8 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.access_node_create import AccessNodeCreate
 from ehelply-python-sdk.model.access_node_db import AccessNodeDB
+from ehelply-python-sdk.model.body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post import BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost
 from pprint import pprint
 # Defining the host is optional and defaults to http://localhost
 # See configuration.py for a list of all supported configuration parameters.
@@ -565,11 +565,13 @@ with ehelply-python-sdk.ApiClient() as api_client:
     api_instance = access_api.AccessApi(api_client)
     partition_identifier = "partition_identifier_example" # str | 
     type_uuid = "type_uuid_example" # str | 
-    access_node_create = AccessNodeCreate(
-        name="name_example",
-        node="node_example",
-        summary="summary_example",
-    ) # AccessNodeCreate | 
+    body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post = BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost(
+        node=AccessNodeCreate(
+            name="name_example",
+            node="node_example",
+            summary="summary_example",
+        ),
+    ) # BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -580,7 +582,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Createnode
-        api_response = api_instance.create_node(partition_identifier, type_uuid, access_node_create)
+        api_response = api_instance.create_node(partition_identifier, type_uuid, body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling AccessApi->create_node: %s\n" % e)
@@ -589,7 +591,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Createnode
-        api_response = api_instance.create_node(partition_identifier, type_uuid, access_node_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_node(partition_identifier, type_uuid, body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling AccessApi->create_node: %s\n" % e)
@@ -602,7 +604,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **partition_identifier** | **str**|  |
  **type_uuid** | **str**|  |
- **access_node_create** | [**AccessNodeCreate**](AccessNodeCreate.md)|  |
+ **body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post** | [**BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost**](BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]

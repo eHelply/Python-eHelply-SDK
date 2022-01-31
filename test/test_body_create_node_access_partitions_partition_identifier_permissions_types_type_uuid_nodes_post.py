@@ -213,11 +213,13 @@ import sys
 import unittest
 
 import ehelply-python-sdk
-from ehelply-python-sdk.model.tickets_response import TicketsResponse
+from ehelply-python-sdk.model.access_node_create import AccessNodeCreate
+globals()['AccessNodeCreate'] = AccessNodeCreate
+from ehelply-python-sdk.model.body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post import BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost
 
 
-class TestTicketsResponse(unittest.TestCase):
-    """TicketsResponse unit test stubs"""
+class TestBodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost(unittest.TestCase):
+    """BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost unit test stubs"""
 
     def setUp(self):
         pass
@@ -225,10 +227,10 @@ class TestTicketsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testTicketsResponse(self):
-        """Test TicketsResponse"""
+    def testBodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost(self):
+        """Test BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = TicketsResponse()  # noqa: E501
+        # model = BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost()  # noqa: E501
         pass
 
 

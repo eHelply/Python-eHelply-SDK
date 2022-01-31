@@ -3,7 +3,7 @@
 
     eHelply SDK  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.38
+    The version of the OpenAPI document: 1.1.39
 
                                      Apache License
                                Version 2.0, January 2004
@@ -225,7 +225,6 @@ from ehelply-python-sdk.model_utils import (  # noqa: F401
 from ehelply-python-sdk.model.access_group_db import AccessGroupDB
 from ehelply-python-sdk.model.access_group_get import AccessGroupGet
 from ehelply-python-sdk.model.access_limit_create import AccessLimitCreate
-from ehelply-python-sdk.model.access_node_create import AccessNodeCreate
 from ehelply-python-sdk.model.access_node_db import AccessNodeDB
 from ehelply-python-sdk.model.access_node_get import AccessNodeGet
 from ehelply-python-sdk.model.access_role_db import AccessRoleDB
@@ -233,6 +232,7 @@ from ehelply-python-sdk.model.access_role_get import AccessRoleGet
 from ehelply-python-sdk.model.access_type_db import AccessTypeDB
 from ehelply-python-sdk.model.access_type_get import AccessTypeGet
 from ehelply-python-sdk.model.body_create_group_access_partitions_partition_identifier_who_groups_post import BodyCreateGroupAccessPartitionsPartitionIdentifierWhoGroupsPost
+from ehelply-python-sdk.model.body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post import BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost
 from ehelply-python-sdk.model.body_create_role_access_partitions_partition_identifier_roles_post import BodyCreateRoleAccessPartitionsPartitionIdentifierRolesPost
 from ehelply-python-sdk.model.body_create_type_access_partitions_partition_identifier_permissions_types_post import BodyCreateTypeAccessPartitionsPartitionIdentifierPermissionsTypesPost
 from ehelply-python-sdk.model.body_make_rgt_access_partitions_partition_identifier_rgts_roles_role_uuid_groups_group_uuid_targets_target_identifier_post import BodyMakeRgtAccessPartitionsPartitionIdentifierRgtsRolesRoleUuidGroupsGroupUuidTargetsTargetIdentifierPost
@@ -720,7 +720,7 @@ class AccessApi(object):
                 'all': [
                     'partition_identifier',
                     'type_uuid',
-                    'access_node_create',
+                    'body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -731,7 +731,7 @@ class AccessApi(object):
                 'required': [
                     'partition_identifier',
                     'type_uuid',
-                    'access_node_create',
+                    'body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post',
                 ],
                 'nullable': [
                 ],
@@ -750,8 +750,8 @@ class AccessApi(object):
                         (str,),
                     'type_uuid':
                         (str,),
-                    'access_node_create':
-                        (AccessNodeCreate,),
+                    'body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post':
+                        (BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -778,7 +778,7 @@ class AccessApi(object):
                 'location_map': {
                     'partition_identifier': 'path',
                     'type_uuid': 'path',
-                    'access_node_create': 'body',
+                    'body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -4562,7 +4562,7 @@ class AccessApi(object):
         self,
         partition_identifier,
         type_uuid,
-        access_node_create,
+        body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post,
         **kwargs
     ):
         """Createnode  # noqa: E501
@@ -4571,13 +4571,13 @@ class AccessApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_node(partition_identifier, type_uuid, access_node_create, async_req=True)
+        >>> thread = api.create_node(partition_identifier, type_uuid, body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post, async_req=True)
         >>> result = thread.get()
 
         Args:
             partition_identifier (str):
             type_uuid (str):
-            access_node_create (AccessNodeCreate):
+            body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post (BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -4634,8 +4634,8 @@ class AccessApi(object):
             partition_identifier
         kwargs['type_uuid'] = \
             type_uuid
-        kwargs['access_node_create'] = \
-            access_node_create
+        kwargs['body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post'] = \
+            body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post
         return self.create_node_endpoint.call_with_http_info(**kwargs)
 
     def create_role_access_partitions_partition_identifier_roles_post(
