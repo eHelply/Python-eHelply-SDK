@@ -1,6 +1,6 @@
 # ehelply-python-sdk.MetaApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,10 +29,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import meta_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -117,10 +117,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import meta_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -209,10 +209,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import meta_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -305,10 +305,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import meta_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -406,10 +406,10 @@ from ehelply-python-sdk.api import meta_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.meta_slugger import MetaSlugger
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -477,10 +477,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post import BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost
 from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -584,10 +584,10 @@ from ehelply-python-sdk.api import meta_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -678,10 +678,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_update_meta_from_uuid_meta_meta_meta_uuid_put import BodyUpdateMetaFromUuidMetaMetaMetaUuidPut
 from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -782,10 +782,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put import BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut
 from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 

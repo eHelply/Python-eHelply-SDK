@@ -1,9 +1,9 @@
 """
-    eHelply SDK
+    eHelply SDK - 1.1.40
 
-    eHelply SDK  # noqa: E501
+    eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.39
+    The version of the OpenAPI document: 1.1.40
 
                                      Apache License
                                Version 2.0, January 2004
@@ -293,7 +293,7 @@ class Configuration(object):
                  ):
         """Constructor
         """
-        self._base_path = "http://localhost" if host is None else host
+        self._base_path = "https://api.prod.ehelply.com" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -577,8 +577,8 @@ class Configuration(object):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 1.1.39\n"\
-               "SDK Package Version: 1.1.39".\
+               "Version of the API: 1.1.40\n"\
+               "SDK Package Version: 1.1.40".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
@@ -588,8 +588,16 @@ class Configuration(object):
         """
         return [
             {
-                'url': "",
-                'description': "No description provided",
+                'url': "https://api.prod.ehelply.com",
+                'description': "eHelply / SuperStack Production",
+            },
+            {
+                'url': "https://api.test.ehelply.com",
+                'description': "eHelply / SuperStack Testing",
+            },
+            {
+                'url': "http://localhost",
+                'description': "eHelply / SuperStack Development",
             }
         ]
 

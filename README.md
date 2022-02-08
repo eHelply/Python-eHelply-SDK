@@ -2,8 +2,9 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.39
-- Package version: 1.1.39
+- API version: 1.1.40
+- Package version: 1.1.40
+For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
 
@@ -76,10 +77,10 @@ from ehelply-python-sdk.model.body_update_role_access_partitions_partition_ident
 from ehelply-python-sdk.model.body_update_type_access_partitions_partition_identifier_permissions_types_type_uuid_put import BodyUpdateTypeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidPut
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 

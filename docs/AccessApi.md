@@ -1,6 +1,6 @@
 # ehelply-python-sdk.AccessApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -65,10 +65,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -161,10 +161,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -257,10 +257,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -353,10 +353,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -450,10 +450,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_create_group_access_partitions_partition_identifier_who_groups_post import BodyCreateGroupAccessPartitionsPartitionIdentifierWhoGroupsPost
 from ehelply-python-sdk.model.access_group_db import AccessGroupDB
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -552,10 +552,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_node_db import AccessNodeDB
 from ehelply-python-sdk.model.body_create_node_access_partitions_partition_identifier_permissions_types_type_uuid_nodes_post import BodyCreateNodeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidNodesPost
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -656,10 +656,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_create_role_access_partitions_partition_identifier_roles_post import BodyCreateRoleAccessPartitionsPartitionIdentifierRolesPost
 from ehelply-python-sdk.model.access_role_db import AccessRoleDB
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -756,10 +756,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_create_type_access_partitions_partition_identifier_permissions_types_post import BodyCreateTypeAccessPartitionsPartitionIdentifierPermissionsTypesPost
 from ehelply-python-sdk.model.access_type_db import AccessTypeDB
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -855,10 +855,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -948,10 +948,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1041,10 +1041,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1134,10 +1134,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1227,10 +1227,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1324,10 +1324,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1419,10 +1419,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1517,10 +1517,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1590,10 +1590,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1688,10 +1688,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_group_get import AccessGroupGet
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1782,10 +1782,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1888,10 +1888,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_limit_create import AccessLimitCreate
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -1974,10 +1974,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_limit_create import AccessLimitCreate
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2062,10 +2062,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_node_get import AccessNodeGet
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2156,10 +2156,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_node_get import AccessNodeGet
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2250,10 +2250,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_node_get import AccessNodeGet
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2346,10 +2346,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_node_get import AccessNodeGet
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2441,10 +2441,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2543,10 +2543,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_role_get import AccessRoleGet
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2637,10 +2637,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_type_get import AccessTypeGet
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2730,10 +2730,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2807,10 +2807,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_make_rgt_access_partitions_partition_identifier_rgts_roles_role_uuid_groups_group_uuid_targets_target_identifier_post import BodyMakeRgtAccessPartitionsPartitionIdentifierRgtsRolesRoleUuidGroupsGroupUuidTargetsTargetIdentifierPost
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -2914,10 +2914,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3009,10 +3009,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3104,10 +3104,10 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3200,10 +3200,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3304,10 +3304,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3412,10 +3412,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3516,10 +3516,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3623,10 +3623,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_update_group_access_partitions_partition_identifier_who_groups_group_uuid_put import BodyUpdateGroupAccessPartitionsPartitionIdentifierWhoGroupsGroupUuidPut
 from ehelply-python-sdk.model.access_group_db import AccessGroupDB
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3725,10 +3725,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_update_limits_for_entity_on_target_access_partitions_partition_identifier_limits_targets_target_identifier_entities_entity_identifier_post import BodyUpdateLimitsForEntityOnTargetAccessPartitionsPartitionIdentifierLimitsTargetsTargetIdentifierEntitiesEntityIdentifierPost
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3830,10 +3830,10 @@ from ehelply-python-sdk.api import access_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_update_limits_for_key_on_target_access_partitions_partition_identifier_limits_targets_target_identifier_keys_post import BodyUpdateLimitsForKeyOnTargetAccessPartitionsPartitionIdentifierLimitsTargetsTargetIdentifierKeysPost
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -3934,10 +3934,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.body_update_node_access_partitions_partition_identifier_permissions_nodes_node_uuid_put import BodyUpdateNodeAccessPartitionsPartitionIdentifierPermissionsNodesNodeUuidPut
 from ehelply-python-sdk.model.access_node_db import AccessNodeDB
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -4037,10 +4037,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_role_db import AccessRoleDB
 from ehelply-python-sdk.model.body_update_role_access_partitions_partition_identifier_roles_role_uuid_put import BodyUpdateRoleAccessPartitionsPartitionIdentifierRolesRoleUuidPut
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
@@ -4139,10 +4139,10 @@ from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.access_type_db import AccessTypeDB
 from ehelply-python-sdk.model.body_update_type_access_partitions_partition_identifier_permissions_types_type_uuid_put import BodyUpdateTypeAccessPartitionsPartitionIdentifierPermissionsTypesTypeUuidPut
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ehelply-python-sdk.Configuration(
-    host = "http://localhost"
+    host = "https://api.prod.ehelply.com"
 )
 
 
