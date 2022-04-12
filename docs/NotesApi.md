@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_note_notes_notes_post**
-> NoteDynamo create_note_notes_notes_post(body_create_note_notes_notes_post)
+> NoteDynamo create_note_notes_notes_post(note_base)
 
 Create Note
 
@@ -23,7 +23,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import notes_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_create_note_notes_notes_post import BodyCreateNoteNotesNotesPost
+from ehelply-python-sdk.model.note_base import NoteBase
 from ehelply-python-sdk.model.note_dynamo import NoteDynamo
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -37,18 +37,16 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
-    body_create_note_notes_notes_post = BodyCreateNoteNotesNotesPost(
-        note=NoteBase(
-            content="content_example",
-            time="time_example",
-            meta=NoteMeta(
-                original_author="original_author_example",
-                author="author_example",
-                previous_version="previous_version_example",
-                next_version="next_version_example",
-            ),
+    note_base = NoteBase(
+        content="content_example",
+        time="time_example",
+        meta=NoteMeta(
+            original_author="original_author_example",
+            author="author_example",
+            previous_version="previous_version_example",
+            next_version="next_version_example",
         ),
-    ) # BodyCreateNoteNotesNotesPost | 
+    ) # NoteBase | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -59,7 +57,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Note
-        api_response = api_instance.create_note_notes_notes_post(body_create_note_notes_notes_post)
+        api_response = api_instance.create_note_notes_notes_post(note_base)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling NotesApi->create_note_notes_notes_post: %s\n" % e)
@@ -68,7 +66,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Create Note
-        api_response = api_instance.create_note_notes_notes_post(body_create_note_notes_notes_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_note_notes_notes_post(note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling NotesApi->create_note_notes_notes_post: %s\n" % e)
@@ -79,7 +77,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body_create_note_notes_notes_post** | [**BodyCreateNoteNotesNotesPost**](BodyCreateNoteNotesNotesPost.md)|  |
+ **note_base** | [**NoteBase**](NoteBase.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -294,7 +292,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_note_notes_notes_note_id_put**
-> NoteDynamo update_note_notes_notes_note_id_put(note_id, body_update_note_notes_notes_note_id_put)
+> NoteDynamo update_note_notes_notes_note_id_put(note_id, note_base)
 
 Update Note
 
@@ -306,7 +304,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import notes_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_update_note_notes_notes_note_id_put import BodyUpdateNoteNotesNotesNoteIdPut
+from ehelply-python-sdk.model.note_base import NoteBase
 from ehelply-python-sdk.model.note_dynamo import NoteDynamo
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -321,18 +319,16 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
     note_id = "note_id_example" # str | 
-    body_update_note_notes_notes_note_id_put = BodyUpdateNoteNotesNotesNoteIdPut(
-        note=NoteBase(
-            content="content_example",
-            time="time_example",
-            meta=NoteMeta(
-                original_author="original_author_example",
-                author="author_example",
-                previous_version="previous_version_example",
-                next_version="next_version_example",
-            ),
+    note_base = NoteBase(
+        content="content_example",
+        time="time_example",
+        meta=NoteMeta(
+            original_author="original_author_example",
+            author="author_example",
+            previous_version="previous_version_example",
+            next_version="next_version_example",
         ),
-    ) # BodyUpdateNoteNotesNotesNoteIdPut | 
+    ) # NoteBase | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -343,7 +339,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Note
-        api_response = api_instance.update_note_notes_notes_note_id_put(note_id, body_update_note_notes_notes_note_id_put)
+        api_response = api_instance.update_note_notes_notes_note_id_put(note_id, note_base)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling NotesApi->update_note_notes_notes_note_id_put: %s\n" % e)
@@ -352,7 +348,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update Note
-        api_response = api_instance.update_note_notes_notes_note_id_put(note_id, body_update_note_notes_notes_note_id_put, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_note_notes_notes_note_id_put(note_id, note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling NotesApi->update_note_notes_notes_note_id_put: %s\n" % e)
@@ -364,7 +360,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **note_id** | **str**|  |
- **body_update_note_notes_notes_note_id_put** | [**BodyUpdateNoteNotesNotesNoteIdPut**](BodyUpdateNoteNotesNotesNoteIdPut.md)|  |
+ **note_base** | [**NoteBase**](NoteBase.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]

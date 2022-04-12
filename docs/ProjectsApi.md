@@ -5,26 +5,21 @@ All URIs are relative to *https://api.prod.ehelply.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post**](ProjectsApi.md#add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Add Member To Project
-[**add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post**](ProjectsApi.md#add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}/permissions/{node_uuid} | Add Permission To Key
 [**archive_project_projects_projects_project_uuid_delete**](ProjectsApi.md#archive_project_projects_projects_project_uuid_delete) | **DELETE** /sam/projects/projects/{project_uuid} | Archive Project
-[**cloud_participant_projects_cloud_participant_post**](ProjectsApi.md#cloud_participant_projects_cloud_participant_post) | **POST** /sam/projects/cloud_participant | Cloud Participant
-[**create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post**](ProjectsApi.md#create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys | Create Project Key
+[**create_project_key_projects_projects_project_uuid_keys_post**](ProjectsApi.md#create_project_key_projects_projects_project_uuid_keys_post) | **POST** /sam/projects/projects/{project_uuid}/keys | Create Project Key
 [**create_project_projects_projects_post**](ProjectsApi.md#create_project_projects_projects_post) | **POST** /sam/projects/projects | Create Project
 [**create_usage_type_projects_usage_types_post**](ProjectsApi.md#create_usage_type_projects_usage_types_post) | **POST** /sam/projects/usage/types | Create Usage Type
 [**delete_usage_type_projects_usage_types_usage_type_key_delete**](ProjectsApi.md#delete_usage_type_projects_usage_types_usage_type_key_delete) | **DELETE** /sam/projects/usage/types/{usage_type_key} | Delete Usage Type
 [**get_all_project_usage_projects_projects_project_uuid_usage_get**](ProjectsApi.md#get_all_project_usage_projects_projects_project_uuid_usage_get) | **GET** /sam/projects/projects/{project_uuid}/usage | Get All Project Usage
 [**get_member_projects_projects_members_entity_uuid_projects_get**](ProjectsApi.md#get_member_projects_projects_members_entity_uuid_projects_get) | **GET** /sam/projects/members/{entity_uuid}/projects | Get Member Projects
-[**get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get**](ProjectsApi.md#get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get) | **GET** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/permissions | Get Permissions For Entity
-[**get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get**](ProjectsApi.md#get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get) | **GET** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}/permissions | Get Permissions For Key
-[**get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get**](ProjectsApi.md#get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get) | **GET** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/permissions/types/{type_uuid} | Get Permissions Type
-[**get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get**](ProjectsApi.md#get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get) | **GET** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys | Get Project Keys
+[**get_project_keys_projects_projects_project_uuid_keys_get**](ProjectsApi.md#get_project_keys_projects_projects_project_uuid_keys_get) | **GET** /sam/projects/projects/{project_uuid}/keys | Get Project Keys
 [**get_project_members_projects_projects_project_uuid_members_get**](ProjectsApi.md#get_project_members_projects_projects_project_uuid_members_get) | **GET** /sam/projects/projects/{project_uuid}/members | Get Project Members
 [**get_project_projects_projects_project_uuid_get**](ProjectsApi.md#get_project_projects_projects_project_uuid_get) | **GET** /sam/projects/projects/{project_uuid} | Get Project
 [**get_specific_project_usage_projects_projects_project_uuid_usage_usage_type_key_get**](ProjectsApi.md#get_specific_project_usage_projects_projects_project_uuid_usage_usage_type_key_get) | **GET** /sam/projects/projects/{project_uuid}/usage/{usage_type_key} | Get Specific Project Usage
 [**get_usage_type_projects_usage_types_usage_type_key_get**](ProjectsApi.md#get_usage_type_projects_usage_types_usage_type_key_get) | **GET** /sam/projects/usage/types/{usage_type_key} | Get Usage Type
 [**remove_member_from_project_projects_projects_project_uuid_members_entity_uuid_delete**](ProjectsApi.md#remove_member_from_project_projects_projects_project_uuid_members_entity_uuid_delete) | **DELETE** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Remove Member From Project
-[**remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete**](ProjectsApi.md#remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete) | **DELETE** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}/permissions/{node_uuid} | Remove Permission From Key
-[**remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete**](ProjectsApi.md#remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete) | **DELETE** /sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid} | Remove Project Key
+[**remove_project_key_projects_projects_project_uuid_keys_delete**](ProjectsApi.md#remove_project_key_projects_projects_project_uuid_keys_delete) | **DELETE** /sam/projects/projects/{project_uuid}/keys | Remove Project Key
+[**sandbox_projects_sandbox_get**](ProjectsApi.md#sandbox_projects_sandbox_get) | **GET** /sam/projects/sandbox | Sandbox
 [**search_projects_projects_projects_get**](ProjectsApi.md#search_projects_projects_projects_get) | **GET** /sam/projects/projects | Search Projects
 [**search_usage_type_projects_usage_types_get**](ProjectsApi.md#search_usage_type_projects_usage_types_get) | **GET** /sam/projects/usage/types | Search Usage Type
 [**update_project_projects_projects_project_uuid_put**](ProjectsApi.md#update_project_projects_projects_project_uuid_put) | **PUT** /sam/projects/projects/{project_uuid} | Update Project
@@ -122,101 +117,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post**
-> bool, date, datetime, dict, float, int, list, str, none_type add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post(project_uuid, entity_uuid, key_uuid, node_uuid)
-
-Add Permission To Key
-
-### Example
-
-
-```python
-import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.prod.ehelply.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
-    host = "https://api.prod.ehelply.com"
-)
-
-
-# Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
-    project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
-    key_uuid = "key_uuid_example" # str | 
-    node_uuid = "node_uuid_example" # str | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Add Permission To Key
-        api_response = api_instance.add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post(project_uuid, entity_uuid, key_uuid, node_uuid)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Add Permission To Key
-        api_response = api_instance.add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post(project_uuid, entity_uuid, key_uuid, node_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
- **key_uuid** | **str**|  |
- **node_uuid** | **str**|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
-
-### Return type
-
-**bool, date, datetime, dict, float, int, list, str, none_type**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project, Entity, or Key does not exist |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **archive_project_projects_projects_project_uuid_delete**
 > bool, date, datetime, dict, float, int, list, str, none_type archive_project_projects_projects_project_uuid_delete(project_uuid)
 
@@ -306,99 +206,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **cloud_participant_projects_cloud_participant_post**
-> CloudParticipantResponse cloud_participant_projects_cloud_participant_post(body_cloud_participant_projects_cloud_participant_post)
-
-Cloud Participant
-
-:param auth: :param cloud_participant_auth: :return:
-
-### Example
-
-
-```python
-import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.cloud_participant_response import CloudParticipantResponse
-from ehelply-python-sdk.model.body_cloud_participant_projects_cloud_participant_post import BodyCloudParticipantProjectsCloudParticipantPost
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.prod.ehelply.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
-    host = "https://api.prod.ehelply.com"
-)
-
-
-# Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
-    body_cloud_participant_projects_cloud_participant_post = BodyCloudParticipantProjectsCloudParticipantPost(
-        cloud_participant_auth=CloudParticipantRequest(
-            auth=CloudParticipantAuthRequest(
-                x_access_token="x_access_token_example",
-                x_secret_token="x_secret_token_example",
-                authorization="authorization_example",
-                ehelply_active_participant="ehelply_active_participant_example",
-                ehelply_project="ehelply_project_example",
-                ehelply_data="ehelply_data_example",
-            ),
-            node="node_example",
-            service_target="service_target_example",
-            ignore_project_enabled=False,
-            ignore_spend_limits=False,
-            exception_if_unauthorized=True,
-            exception_if_spend_maxed=True,
-            exception_if_project_not_enabled=True,
-            skip_project_check=False,
-        ),
-    ) # BodyCloudParticipantProjectsCloudParticipantPost | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Cloud Participant
-        api_response = api_instance.cloud_participant_projects_cloud_participant_post(body_cloud_participant_projects_cloud_participant_post)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->cloud_participant_projects_cloud_participant_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body_cloud_participant_projects_cloud_participant_post** | [**BodyCloudParticipantProjectsCloudParticipantPost**](BodyCloudParticipantProjectsCloudParticipantPost.md)|  |
-
-### Return type
-
-[**CloudParticipantResponse**](CloudParticipantResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Not found |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post**
-> CreateKeyResponse create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post(project_uuid, entity_uuid, body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post)
+# **create_project_key_projects_projects_project_uuid_keys_post**
+> CreateKeyResponse create_project_key_projects_projects_project_uuid_keys_post(project_uuid, security_key_create)
 
 Create Project Key
 
@@ -411,7 +220,7 @@ import ehelply-python-sdk
 from ehelply-python-sdk.api import projects_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.create_key_response import CreateKeyResponse
-from ehelply-python-sdk.model.body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post import BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost
+from ehelply-python-sdk.model.security_key_create import SecurityKeyCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -425,13 +234,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
-    body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post = BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost(
-        key=SecurityKeyCreate(
-            name="name_example",
-            summary="summary_example",
-        ),
-    ) # BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost | 
+    security_key_create = SecurityKeyCreate(
+        name="name_example",
+        summary="summary_example",
+    ) # SecurityKeyCreate | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -442,19 +248,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Project Key
-        api_response = api_instance.create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post(project_uuid, entity_uuid, body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post)
+        api_response = api_instance.create_project_key_projects_projects_project_uuid_keys_post(project_uuid, security_key_create)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post: %s\n" % e)
+        print("Exception when calling ProjectsApi->create_project_key_projects_projects_project_uuid_keys_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Project Key
-        api_response = api_instance.create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post(project_uuid, entity_uuid, body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_project_key_projects_projects_project_uuid_keys_post(project_uuid, security_key_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post: %s\n" % e)
+        print("Exception when calling ProjectsApi->create_project_key_projects_projects_project_uuid_keys_post: %s\n" % e)
 ```
 
 
@@ -463,8 +269,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
- **body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post** | [**BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost**](BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost.md)|  |
+ **security_key_create** | [**SecurityKeyCreate**](SecurityKeyCreate.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -498,7 +303,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_project_projects_projects_post**
-> ProjectsProjectDB create_project_projects_projects_post(body_create_project_projects_projects_post)
+> bool, date, datetime, dict, float, int, list, str, none_type create_project_projects_projects_post(projects_project_create)
 
 Create Project
 
@@ -512,8 +317,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import projects_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_create_project_projects_projects_post import BodyCreateProjectProjectsProjectsPost
-from ehelply-python-sdk.model.projects_project_db import ProjectsProjectDB
+from ehelply-python-sdk.model.projects_project_create import ProjectsProjectCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -526,11 +330,9 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
-    body_create_project_projects_projects_post = BodyCreateProjectProjectsProjectsPost(
-        project=ProjectsProjectCreate(
-            name="name_example",
-        ),
-    ) # BodyCreateProjectProjectsProjectsPost | 
+    projects_project_create = ProjectsProjectCreate(
+        name="name_example",
+    ) # ProjectsProjectCreate | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -541,7 +343,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Project
-        api_response = api_instance.create_project_projects_projects_post(body_create_project_projects_projects_post)
+        api_response = api_instance.create_project_projects_projects_post(projects_project_create)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_project_projects_projects_post: %s\n" % e)
@@ -550,7 +352,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Create Project
-        api_response = api_instance.create_project_projects_projects_post(body_create_project_projects_projects_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_project_projects_projects_post(projects_project_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_project_projects_projects_post: %s\n" % e)
@@ -561,7 +363,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body_create_project_projects_projects_post** | [**BodyCreateProjectProjectsProjectsPost**](BodyCreateProjectProjectsProjectsPost.md)|  |
+ **projects_project_create** | [**ProjectsProjectCreate**](ProjectsProjectCreate.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -571,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectsProjectDB**](ProjectsProjectDB.md)
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
@@ -595,7 +397,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_usage_type_projects_usage_types_post**
-> ProjectsUsageTypeDB create_usage_type_projects_usage_types_post(body_create_usage_type_projects_usage_types_post)
+> ProjectsUsageTypeDB create_usage_type_projects_usage_types_post(projects_usage_type_create)
 
 Create Usage Type
 
@@ -606,8 +408,8 @@ Create Usage Type
 import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.body_create_usage_type_projects_usage_types_post import BodyCreateUsageTypeProjectsUsageTypesPost
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+from ehelply-python-sdk.model.projects_usage_type_create import ProjectsUsageTypeCreate
 from ehelply-python-sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -621,22 +423,20 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
-    body_create_usage_type_projects_usage_types_post = BodyCreateUsageTypeProjectsUsageTypesPost(
-        usage_type=ProjectsUsageTypeCreate(
-            key="key_example",
-            name="name_example",
-            summary="summary_example",
-            category="category_example",
-            service="service_example",
-            unit_prices=[
-                ProjectsUsageTypeUnitPrice(
-                    min_quantity=1,
-                    max_quantity=1,
-                    unit_price=1,
-                ),
-            ],
-        ),
-    ) # BodyCreateUsageTypeProjectsUsageTypesPost | 
+    projects_usage_type_create = ProjectsUsageTypeCreate(
+        key="key_example",
+        name="name_example",
+        summary="summary_example",
+        category="category_example",
+        service="service_example",
+        unit_prices=[
+            ProjectsUsageTypeUnitPrice(
+                min_quantity=1,
+                max_quantity=1,
+                unit_price=1,
+            ),
+        ],
+    ) # ProjectsUsageTypeCreate | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -647,7 +447,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Usage Type
-        api_response = api_instance.create_usage_type_projects_usage_types_post(body_create_usage_type_projects_usage_types_post)
+        api_response = api_instance.create_usage_type_projects_usage_types_post(projects_usage_type_create)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_usage_type_projects_usage_types_post: %s\n" % e)
@@ -656,7 +456,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Create Usage Type
-        api_response = api_instance.create_usage_type_projects_usage_types_post(body_create_usage_type_projects_usage_types_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_usage_type_projects_usage_types_post(projects_usage_type_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_usage_type_projects_usage_types_post: %s\n" % e)
@@ -667,7 +467,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body_create_usage_type_projects_usage_types_post** | [**BodyCreateUsageTypeProjectsUsageTypesPost**](BodyCreateUsageTypeProjectsUsageTypesPost.md)|  |
+ **projects_usage_type_create** | [**ProjectsUsageTypeCreate**](ProjectsUsageTypeCreate.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -975,288 +775,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get**
-> [AccessNodeGet] get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get(project_uuid, entity_uuid)
-
-Get Permissions For Entity
-
-### Example
-
-
-```python
-import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.access_node_get import AccessNodeGet
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.prod.ehelply.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
-    host = "https://api.prod.ehelply.com"
-)
-
-
-# Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
-    project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get Permissions For Entity
-        api_response = api_instance.get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get(project_uuid, entity_uuid)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get Permissions For Entity
-        api_response = api_instance.get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get(project_uuid, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
-
-### Return type
-
-[**[AccessNodeGet]**](AccessNodeGet.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project or Entity does not exist |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get**
-> [AccessNodeGet] get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get(project_uuid, entity_uuid, key_uuid)
-
-Get Permissions For Key
-
-### Example
-
-
-```python
-import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.access_node_get import AccessNodeGet
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.prod.ehelply.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
-    host = "https://api.prod.ehelply.com"
-)
-
-
-# Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
-    project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
-    key_uuid = "key_uuid_example" # str | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get Permissions For Key
-        api_response = api_instance.get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get(project_uuid, entity_uuid, key_uuid)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get Permissions For Key
-        api_response = api_instance.get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get(project_uuid, entity_uuid, key_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
- **key_uuid** | **str**|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
-
-### Return type
-
-[**[AccessNodeGet]**](AccessNodeGet.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project, Entity, or Key does not exist |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get**
-> AccessTypeGet get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get(project_uuid, entity_uuid, type_uuid)
-
-Get Permissions Type
-
-### Example
-
-
-```python
-import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.access_type_get import AccessTypeGet
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.prod.ehelply.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
-    host = "https://api.prod.ehelply.com"
-)
-
-
-# Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = projects_api.ProjectsApi(api_client)
-    project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
-    type_uuid = "type_uuid_example" # str | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # Get Permissions Type
-        api_response = api_instance.get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get(project_uuid, entity_uuid, type_uuid)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Get Permissions Type
-        api_response = api_instance.get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get(project_uuid, entity_uuid, type_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
- **type_uuid** | **str**|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
-
-### Return type
-
-[**AccessTypeGet**](AccessTypeGet.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project, Entity or Type does not exist |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get(project_uuid, entity_uuid)
+# **get_project_keys_projects_projects_project_uuid_keys_get**
+> [ProjectsProjectMemberDB] get_project_keys_projects_projects_project_uuid_keys_get(project_uuid)
 
 Get Project Keys
 
@@ -1268,6 +788,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import projects_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+from ehelply-python-sdk.model.projects_project_member_db import ProjectsProjectMemberDB
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1281,7 +802,6 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -1292,19 +812,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Project Keys
-        api_response = api_instance.get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get(project_uuid, entity_uuid)
+        api_response = api_instance.get_project_keys_projects_projects_project_uuid_keys_get(project_uuid)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get: %s\n" % e)
+        print("Exception when calling ProjectsApi->get_project_keys_projects_projects_project_uuid_keys_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Project Keys
-        api_response = api_instance.get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get(project_uuid, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_project_keys_projects_projects_project_uuid_keys_get(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get: %s\n" % e)
+        print("Exception when calling ProjectsApi->get_project_keys_projects_projects_project_uuid_keys_get: %s\n" % e)
 ```
 
 
@@ -1313,7 +833,6 @@ with ehelply-python-sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -1323,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**[ProjectsProjectMemberDB]**](ProjectsProjectMemberDB.md)
 
 ### Authorization
 
@@ -1439,7 +958,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_project_projects_projects_project_uuid_get**
-> ProjectsProjectGet get_project_projects_projects_project_uuid_get(project_uuid)
+> bool, date, datetime, dict, float, int, list, str, none_type get_project_projects_projects_project_uuid_get(project_uuid)
 
 Get Project
 
@@ -1453,7 +972,6 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import projects_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_get import ProjectsProjectGet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1507,7 +1025,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectsProjectGet**](ProjectsProjectGet.md)
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
@@ -1784,10 +1302,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete(project_uuid, entity_uuid, key_uuid, node_uuid)
+# **remove_project_key_projects_projects_project_uuid_keys_delete**
+> bool, date, datetime, dict, float, int, list, str, none_type remove_project_key_projects_projects_project_uuid_keys_delete(project_uuid)
 
-Remove Permission From Key
+Remove Project Key
 
 ### Example
 
@@ -1810,9 +1328,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
-    key_uuid = "key_uuid_example" # str | 
-    node_uuid = "node_uuid_example" # str | 
+    access_token = "access_token_example" # str |  (optional)
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -1822,20 +1338,20 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Remove Permission From Key
-        api_response = api_instance.remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete(project_uuid, entity_uuid, key_uuid, node_uuid)
+        # Remove Project Key
+        api_response = api_instance.remove_project_key_projects_projects_project_uuid_keys_delete(project_uuid)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete: %s\n" % e)
+        print("Exception when calling ProjectsApi->remove_project_key_projects_projects_project_uuid_keys_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Remove Permission From Key
-        api_response = api_instance.remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete(project_uuid, entity_uuid, key_uuid, node_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Remove Project Key
+        api_response = api_instance.remove_project_key_projects_projects_project_uuid_keys_delete(project_uuid, access_token=access_token, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete: %s\n" % e)
+        print("Exception when calling ProjectsApi->remove_project_key_projects_projects_project_uuid_keys_delete: %s\n" % e)
 ```
 
 
@@ -1844,9 +1360,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
- **key_uuid** | **str**|  |
- **node_uuid** | **str**|  |
+ **access_token** | **str**|  | [optional]
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -1879,10 +1393,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete(project_uuid, entity_uuid, key_uuid)
+# **sandbox_projects_sandbox_get**
+> bool, date, datetime, dict, float, int, list, str, none_type sandbox_projects_sandbox_get()
 
-Remove Project Key
+Sandbox
 
 ### Example
 
@@ -1904,9 +1418,6 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
-    project_uuid = "project_uuid_example" # str | 
-    entity_uuid = "entity_uuid_example" # str | 
-    key_uuid = "key_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -1915,21 +1426,13 @@ with ehelply-python-sdk.ApiClient() as api_client:
     ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    try:
-        # Remove Project Key
-        api_response = api_instance.remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete(project_uuid, entity_uuid, key_uuid)
-        pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Remove Project Key
-        api_response = api_instance.remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete(project_uuid, entity_uuid, key_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Sandbox
+        api_response = api_instance.sandbox_projects_sandbox_get(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling ProjectsApi->remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete: %s\n" % e)
+        print("Exception when calling ProjectsApi->sandbox_projects_sandbox_get: %s\n" % e)
 ```
 
 
@@ -1937,9 +1440,6 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | **str**|  |
- **entity_uuid** | **str**|  |
- **key_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -1966,8 +1466,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project, Entity, or Key does not exist |  -  |
+**404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2149,7 +1648,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_project_projects_projects_project_uuid_put**
-> ProjectsProjectDB update_project_projects_projects_project_uuid_put(project_uuid, body_update_project_projects_projects_project_uuid_put)
+> bool, date, datetime, dict, float, int, list, str, none_type update_project_projects_projects_project_uuid_put(project_uuid, projects_project_update)
 
 Update Project
 
@@ -2161,8 +1660,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import projects_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_update_project_projects_projects_project_uuid_put import BodyUpdateProjectProjectsProjectsProjectUuidPut
-from ehelply-python-sdk.model.projects_project_db import ProjectsProjectDB
+from ehelply-python-sdk.model.projects_project_update import ProjectsProjectUpdate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2176,12 +1674,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
-    body_update_project_projects_projects_project_uuid_put = BodyUpdateProjectProjectsProjectsProjectUuidPut(
-        project=ProjectsProjectUpdate(
-            max_spend=1,
-            status="status_example",
-        ),
-    ) # BodyUpdateProjectProjectsProjectsProjectUuidPut | 
+    projects_project_update = ProjectsProjectUpdate(
+        max_spend=1,
+        status="status_example",
+    ) # ProjectsProjectUpdate | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -2192,7 +1688,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Project
-        api_response = api_instance.update_project_projects_projects_project_uuid_put(project_uuid, body_update_project_projects_projects_project_uuid_put)
+        api_response = api_instance.update_project_projects_projects_project_uuid_put(project_uuid, projects_project_update)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_project_projects_projects_project_uuid_put: %s\n" % e)
@@ -2201,7 +1697,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update Project
-        api_response = api_instance.update_project_projects_projects_project_uuid_put(project_uuid, body_update_project_projects_projects_project_uuid_put, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_project_projects_projects_project_uuid_put(project_uuid, projects_project_update, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_project_projects_projects_project_uuid_put: %s\n" % e)
@@ -2213,7 +1709,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_uuid** | **str**|  |
- **body_update_project_projects_projects_project_uuid_put** | [**BodyUpdateProjectProjectsProjectsProjectUuidPut**](BodyUpdateProjectProjectsProjectsProjectUuidPut.md)|  |
+ **projects_project_update** | [**ProjectsProjectUpdate**](ProjectsProjectUpdate.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -2223,7 +1719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectsProjectDB**](ProjectsProjectDB.md)
+**bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
@@ -2247,7 +1743,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_usage_type_projects_usage_types_usage_type_key_put**
-> ProjectsUsageTypeDB update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, body_update_usage_type_projects_usage_types_usage_type_key_put)
+> ProjectsUsageTypeDB update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, projects_usage_type_update)
 
 Update Usage Type
 
@@ -2259,7 +1755,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import projects_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_update_usage_type_projects_usage_types_usage_type_key_put import BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut
+from ehelply-python-sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
 from ehelply-python-sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -2274,21 +1770,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     usage_type_key = "usage_type_key_example" # str | 
-    body_update_usage_type_projects_usage_types_usage_type_key_put = BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut(
-        usage_type=ProjectsUsageTypeUpdate(
-            name="name_example",
-            summary="summary_example",
-            category="category_example",
-            service="service_example",
-            unit_prices=[
-                ProjectsUsageTypeUnitPrice(
-                    min_quantity=1,
-                    max_quantity=1,
-                    unit_price=1,
-                ),
-            ],
-        ),
-    ) # BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut | 
+    projects_usage_type_update = ProjectsUsageTypeUpdate(
+        name="name_example",
+        summary="summary_example",
+        category="category_example",
+        service="service_example",
+        unit_prices=[
+            ProjectsUsageTypeUnitPrice(
+                min_quantity=1,
+                max_quantity=1,
+                unit_price=1,
+            ),
+        ],
+    ) # ProjectsUsageTypeUpdate | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -2299,7 +1793,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Usage Type
-        api_response = api_instance.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, body_update_usage_type_projects_usage_types_usage_type_key_put)
+        api_response = api_instance.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, projects_usage_type_update)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_usage_type_projects_usage_types_usage_type_key_put: %s\n" % e)
@@ -2308,7 +1802,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update Usage Type
-        api_response = api_instance.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, body_update_usage_type_projects_usage_types_usage_type_key_put, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, projects_usage_type_update, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_usage_type_projects_usage_types_usage_type_key_put: %s\n" % e)
@@ -2320,7 +1814,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **usage_type_key** | **str**|  |
- **body_update_usage_type_projects_usage_types_usage_type_key_put** | [**BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut**](BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut.md)|  |
+ **projects_usage_type_update** | [**ProjectsUsageTypeUpdate**](ProjectsUsageTypeUpdate.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]

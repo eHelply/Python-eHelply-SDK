@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.40
+    eHelply SDK - 1.1.58
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.40
+    The version of the OpenAPI document: 1.1.58
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,14 +222,14 @@ from ehelply-python-sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from ehelply-python-sdk.model.body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost
-from ehelply-python-sdk.model.body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost
-from ehelply-python-sdk.model.body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost
-from ehelply-python-sdk.model.body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost
-from ehelply-python-sdk.model.body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost
+from ehelply-python-sdk.model.body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost
+from ehelply-python-sdk.model.body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost
+from ehelply-python-sdk.model.body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost
+from ehelply-python-sdk.model.body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost
+from ehelply-python-sdk.model.body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost
 from ehelply-python-sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
-from ehelply-python-sdk.model.body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost
-from ehelply-python-sdk.model.body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost
+from ehelply-python-sdk.model.body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost
+from ehelply-python-sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 
 
@@ -244,27 +244,27 @@ class MonitorApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post_endpoint = _Endpoint(
+        self.ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/acknowledge',
-                'operation_id': 'ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/acknowledge',
+                'operation_id': 'ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post',
+                    'body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post',
+                    'body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post',
                 ],
                 'nullable': [
                 ],
@@ -279,25 +279,25 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                     'alarm_uuid':
                         (str,),
-                    'body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post':
-                        (BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost,),
+                    'body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post':
+                        (BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
-                    'body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post': 'body',
+                    'body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -312,27 +312,27 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post_endpoint = _Endpoint(
+        self.assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/assign',
-                'operation_id': 'assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/assign',
+                'operation_id': 'assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post',
+                    'body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post',
+                    'body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post',
                 ],
                 'nullable': [
                 ],
@@ -347,25 +347,25 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                     'alarm_uuid':
                         (str,),
-                    'body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post':
-                        (BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost,),
+                    'body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post':
+                        (BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
-                    'body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post': 'body',
+                    'body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -380,27 +380,27 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post_endpoint = _Endpoint(
+        self.attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/note',
-                'operation_id': 'attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/note',
+                'operation_id': 'attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post',
+                    'body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post',
+                    'body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post',
                 ],
                 'nullable': [
                 ],
@@ -415,25 +415,25 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                     'alarm_uuid':
                         (str,),
-                    'body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post':
-                        (BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost,),
+                    'body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post':
+                        (BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
-                    'body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post': 'body',
+                    'body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -448,27 +448,27 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post_endpoint = _Endpoint(
+        self.attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/ticket',
-                'operation_id': 'attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/ticket',
+                'operation_id': 'attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post',
+                    'body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post',
+                    'body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post',
                 ],
                 'nullable': [
                 ],
@@ -483,25 +483,25 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                     'alarm_uuid':
                         (str,),
-                    'body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post':
-                        (BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost,),
+                    'body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post':
+                        (BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
-                    'body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post': 'body',
+                    'body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -516,23 +516,23 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post_endpoint = _Endpoint(
+        self.clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/clear',
-                'operation_id': 'clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/clear',
+                'operation_id': 'clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
                 ],
@@ -549,7 +549,7 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
@@ -557,12 +557,12 @@ class MonitorApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
                 },
@@ -577,23 +577,23 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get_endpoint = _Endpoint(
+        self.get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}',
-                'operation_id': 'get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}',
+                'operation_id': 'get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
                 ],
@@ -610,7 +610,7 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
@@ -618,12 +618,12 @@ class MonitorApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
                 },
@@ -638,25 +638,25 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get_endpoint = _Endpoint(
+        self.get_service_alarms_monitor_services_service_stages_stage_alarms_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms',
-                'operation_id': 'get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms',
+                'operation_id': 'get_service_alarms_monitor_services_service_stages_stage_alarms_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'history',
                     'include_terminated',
                     'include_cleared',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                 ],
                 'nullable': [
@@ -672,7 +672,7 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
@@ -684,14 +684,14 @@ class MonitorApi(object):
                         (bool,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'history': 'history',
                     'include_terminated': 'include_terminated',
                     'include_cleared': 'include_cleared',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'history': 'query',
                     'include_terminated': 'query',
@@ -708,23 +708,23 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get_endpoint = _Endpoint(
+        self.get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/heartbeats',
-                'operation_id': 'get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/heartbeats',
+                'operation_id': 'get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'history',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                 ],
                 'nullable': [
@@ -740,7 +740,7 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
@@ -748,12 +748,12 @@ class MonitorApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'history': 'history',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'history': 'query',
                 },
@@ -768,22 +768,22 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.get_service_kpis_monitor_services_service_uuid_kpis_get_endpoint = _Endpoint(
+        self.get_service_kpis_monitor_services_service_kpis_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/kpis',
-                'operation_id': 'get_service_kpis_monitor_services_service_uuid_kpis_get',
+                'endpoint_path': '/sam/monitor/services/{service}/kpis',
+                'operation_id': 'get_service_kpis_monitor_services_service_kpis_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'history',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                 ],
                 'nullable': [
                 ],
@@ -798,17 +798,17 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'history':
                         (int,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'history': 'history',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'history': 'query',
                 },
                 'collection_format_map': {
@@ -822,18 +822,18 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.get_service_monitor_services_service_uuid_get_endpoint = _Endpoint(
+        self.get_service_monitor_services_service_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}',
-                'operation_id': 'get_service_monitor_services_service_uuid_get',
+                'endpoint_path': '/sam/monitor/services/{service}',
+                'operation_id': 'get_service_monitor_services_service_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'heartbeats',
                     'heartbeat_limit',
                     'alarms',
@@ -841,7 +841,7 @@ class MonitorApi(object):
                     'stage',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                 ],
                 'nullable': [
                 ],
@@ -856,7 +856,7 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'heartbeats':
                         (bool,),
@@ -870,7 +870,7 @@ class MonitorApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'heartbeats': 'heartbeats',
                     'heartbeat_limit': 'heartbeat_limit',
                     'alarms': 'alarms',
@@ -878,7 +878,7 @@ class MonitorApi(object):
                     'stage': 'stage',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'heartbeats': 'query',
                     'heartbeat_limit': 'query',
                     'alarms': 'query',
@@ -1005,23 +1005,23 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get_endpoint = _Endpoint(
+        self.get_service_vitals_monitor_services_service_stages_stage_vitals_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/vitals',
-                'operation_id': 'get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/vitals',
+                'operation_id': 'get_service_vitals_monitor_services_service_stages_stage_vitals_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'history',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                 ],
                 'nullable': [
@@ -1037,7 +1037,7 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
@@ -1045,12 +1045,12 @@ class MonitorApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'history': 'history',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'history': 'query',
                 },
@@ -1184,22 +1184,22 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.hide_service_monitor_services_service_uuid_stages_stage_hide_post_endpoint = _Endpoint(
+        self.hide_service_monitor_services_service_stages_stage_hide_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/hide',
-                'operation_id': 'hide_service_monitor_services_service_uuid_stages_stage_hide_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/hide',
+                'operation_id': 'hide_service_monitor_services_service_stages_stage_hide_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                 ],
                 'nullable': [
@@ -1215,17 +1215,17 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                 },
                 'collection_format_map': {
@@ -1239,27 +1239,27 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post_endpoint = _Endpoint(
+        self.ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/ignore',
-                'operation_id': 'ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/ignore',
+                'operation_id': 'ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post',
+                    'body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post',
+                    'body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post',
                 ],
                 'nullable': [
                 ],
@@ -1274,25 +1274,25 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                     'alarm_uuid':
                         (str,),
-                    'body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post':
-                        (BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost,),
+                    'body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post':
+                        (BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
-                    'body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post': 'body',
+                    'body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1357,18 +1357,18 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.search_alarms_monitor_services_service_uuid_alarms_get_endpoint = _Endpoint(
+        self.search_alarms_monitor_services_service_alarms_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/alarms',
-                'operation_id': 'search_alarms_monitor_services_service_uuid_alarms_get',
+                'endpoint_path': '/sam/monitor/services/{service}/alarms',
+                'operation_id': 'search_alarms_monitor_services_service_alarms_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'page',
                     'page_size',
                     'search',
@@ -1377,7 +1377,7 @@ class MonitorApi(object):
                     'sort_desc',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                 ],
                 'nullable': [
                 ],
@@ -1392,7 +1392,7 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'page':
                         (int,),
@@ -1408,7 +1408,7 @@ class MonitorApi(object):
                         (bool,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'page': 'page',
                     'page_size': 'page_size',
                     'search': 'search',
@@ -1417,7 +1417,7 @@ class MonitorApi(object):
                     'sort_desc': 'sort_desc',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'page': 'query',
                     'page_size': 'query',
                     'search': 'query',
@@ -1436,22 +1436,22 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.show_service_monitor_services_service_uuid_stages_stage_show_post_endpoint = _Endpoint(
+        self.show_service_monitor_services_service_stages_stage_show_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/show',
-                'operation_id': 'show_service_monitor_services_service_uuid_stages_stage_show_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/show',
+                'operation_id': 'show_service_monitor_services_service_stages_stage_show_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                 ],
                 'nullable': [
@@ -1467,17 +1467,17 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                 },
                 'collection_format_map': {
@@ -1491,27 +1491,27 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post_endpoint = _Endpoint(
+        self.terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/terminate',
-                'operation_id': 'terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/terminate',
+                'operation_id': 'terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post',
+                    'body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
                     'alarm_uuid',
-                    'body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post',
+                    'body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post',
                 ],
                 'nullable': [
                 ],
@@ -1526,25 +1526,25 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
                     'alarm_uuid':
                         (str,),
-                    'body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post':
-                        (BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost,),
+                    'body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post':
+                        (BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                     'alarm_uuid': 'alarm_uuid',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
                     'alarm_uuid': 'path',
-                    'body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post': 'body',
+                    'body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1559,25 +1559,25 @@ class MonitorApi(object):
             },
             api_client=api_client
         )
-        self.trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post_endpoint = _Endpoint(
+        self.trigger_alarm_monitor_services_service_stages_stage_alarms_post_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/monitor/services/{service_uuid}/stages/{stage}/alarms',
-                'operation_id': 'trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post',
+                'endpoint_path': '/sam/monitor/services/{service}/stages/{stage}/alarms',
+                'operation_id': 'trigger_alarm_monitor_services_service_stages_stage_alarms_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'service_uuid',
+                    'service',
                     'stage',
-                    'body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post',
+                    'body_trigger_alarm_monitor_services_service_stages_stage_alarms_post',
                 ],
                 'required': [
-                    'service_uuid',
+                    'service',
                     'stage',
-                    'body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post',
+                    'body_trigger_alarm_monitor_services_service_stages_stage_alarms_post',
                 ],
                 'nullable': [
                 ],
@@ -1592,21 +1592,21 @@ class MonitorApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'service_uuid':
+                    'service':
                         (str,),
                     'stage':
                         (str,),
-                    'body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post':
-                        (BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost,),
+                    'body_trigger_alarm_monitor_services_service_stages_stage_alarms_post':
+                        (BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost,),
                 },
                 'attribute_map': {
-                    'service_uuid': 'service_uuid',
+                    'service': 'service',
                     'stage': 'stage',
                 },
                 'location_map': {
-                    'service_uuid': 'path',
+                    'service': 'path',
                     'stage': 'path',
-                    'body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post': 'body',
+                    'body_trigger_alarm_monitor_services_service_stages_stage_alarms_post': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1622,12 +1622,12 @@ class MonitorApi(object):
             api_client=api_client
         )
 
-    def ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post(
+    def ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
-        body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post,
+        body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post,
         **kwargs
     ):
         """Ack Alarm  # noqa: E501
@@ -1635,14 +1635,14 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post(service_uuid, stage, alarm_uuid, body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post, async_req=True)
+        >>> thread = api.ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post(service, stage, alarm_uuid, body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
-            body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post (BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost):
+            body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post (BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1689,22 +1689,22 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        kwargs['body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post'] = \
-            body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post
-        return self.ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post'] = \
+            body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post
+        return self.ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post_endpoint.call_with_http_info(**kwargs)
 
-    def assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post(
+    def assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
-        body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post,
+        body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post,
         **kwargs
     ):
         """Assign Alarm  # noqa: E501
@@ -1712,14 +1712,14 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post(service_uuid, stage, alarm_uuid, body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post, async_req=True)
+        >>> thread = api.assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post(service, stage, alarm_uuid, body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
-            body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post (BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost):
+            body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post (BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1766,22 +1766,22 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        kwargs['body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post'] = \
-            body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post
-        return self.assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post'] = \
+            body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post
+        return self.assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post_endpoint.call_with_http_info(**kwargs)
 
-    def attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post(
+    def attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
-        body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post,
+        body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post,
         **kwargs
     ):
         """Attach Alarm Note  # noqa: E501
@@ -1789,14 +1789,14 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post(service_uuid, stage, alarm_uuid, body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post, async_req=True)
+        >>> thread = api.attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post(service, stage, alarm_uuid, body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
-            body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post (BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost):
+            body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post (BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1843,22 +1843,22 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        kwargs['body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post'] = \
-            body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post
-        return self.attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post'] = \
+            body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post
+        return self.attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post_endpoint.call_with_http_info(**kwargs)
 
-    def attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post(
+    def attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
-        body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post,
+        body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post,
         **kwargs
     ):
         """Attach Alarm Ticket  # noqa: E501
@@ -1866,14 +1866,14 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post(service_uuid, stage, alarm_uuid, body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post, async_req=True)
+        >>> thread = api.attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post(service, stage, alarm_uuid, body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
-            body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post (BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost):
+            body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post (BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1920,19 +1920,19 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        kwargs['body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post'] = \
-            body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post
-        return self.attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post'] = \
+            body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post
+        return self.attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post_endpoint.call_with_http_info(**kwargs)
 
-    def clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post(
+    def clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
         **kwargs
@@ -1942,11 +1942,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post(service_uuid, stage, alarm_uuid, async_req=True)
+        >>> thread = api.clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post(service, stage, alarm_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
 
@@ -1995,17 +1995,17 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        return self.clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post_endpoint.call_with_http_info(**kwargs)
+        return self.clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post_endpoint.call_with_http_info(**kwargs)
 
-    def get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get(
+    def get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
         **kwargs
@@ -2015,11 +2015,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get(service_uuid, stage, alarm_uuid, async_req=True)
+        >>> thread = api.get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get(service, stage, alarm_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
 
@@ -2068,17 +2068,17 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        return self.get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get_endpoint.call_with_http_info(**kwargs)
 
-    def get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get(
+    def get_service_alarms_monitor_services_service_stages_stage_alarms_get(
         self,
-        service_uuid,
+        service,
         stage,
         **kwargs
     ):
@@ -2087,11 +2087,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get(service_uuid, stage, async_req=True)
+        >>> thread = api.get_service_alarms_monitor_services_service_stages_stage_alarms_get(service, stage, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
 
         Keyword Args:
@@ -2142,15 +2142,15 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
-        return self.get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_service_alarms_monitor_services_service_stages_stage_alarms_get_endpoint.call_with_http_info(**kwargs)
 
-    def get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get(
+    def get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get(
         self,
-        service_uuid,
+        service,
         stage,
         **kwargs
     ):
@@ -2159,11 +2159,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get(service_uuid, stage, async_req=True)
+        >>> thread = api.get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get(service, stage, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
 
         Keyword Args:
@@ -2212,15 +2212,15 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
-        return self.get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get_endpoint.call_with_http_info(**kwargs)
 
-    def get_service_kpis_monitor_services_service_uuid_kpis_get(
+    def get_service_kpis_monitor_services_service_kpis_get(
         self,
-        service_uuid,
+        service,
         **kwargs
     ):
         """Get Service Kpis  # noqa: E501
@@ -2228,11 +2228,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_service_kpis_monitor_services_service_uuid_kpis_get(service_uuid, async_req=True)
+        >>> thread = api.get_service_kpis_monitor_services_service_kpis_get(service, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
 
         Keyword Args:
             history (int): [optional] if omitted the server will use the default value of 5
@@ -2280,13 +2280,13 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
-        return self.get_service_kpis_monitor_services_service_uuid_kpis_get_endpoint.call_with_http_info(**kwargs)
+        kwargs['service'] = \
+            service
+        return self.get_service_kpis_monitor_services_service_kpis_get_endpoint.call_with_http_info(**kwargs)
 
-    def get_service_monitor_services_service_uuid_get(
+    def get_service_monitor_services_service_get(
         self,
-        service_uuid,
+        service,
         **kwargs
     ):
         """Get Service  # noqa: E501
@@ -2294,11 +2294,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_service_monitor_services_service_uuid_get(service_uuid, async_req=True)
+        >>> thread = api.get_service_monitor_services_service_get(service, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
 
         Keyword Args:
             heartbeats (bool): [optional] if omitted the server will use the default value of False
@@ -2350,9 +2350,9 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
-        return self.get_service_monitor_services_service_uuid_get_endpoint.call_with_http_info(**kwargs)
+        kwargs['service'] = \
+            service
+        return self.get_service_monitor_services_service_get_endpoint.call_with_http_info(**kwargs)
 
     def get_service_spec(
         self,
@@ -2489,9 +2489,9 @@ class MonitorApi(object):
             service
         return self.get_service_specs_endpoint.call_with_http_info(**kwargs)
 
-    def get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get(
+    def get_service_vitals_monitor_services_service_stages_stage_vitals_get(
         self,
-        service_uuid,
+        service,
         stage,
         **kwargs
     ):
@@ -2500,11 +2500,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get(service_uuid, stage, async_req=True)
+        >>> thread = api.get_service_vitals_monitor_services_service_stages_stage_vitals_get(service, stage, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
 
         Keyword Args:
@@ -2553,11 +2553,11 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
-        return self.get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_service_vitals_monitor_services_service_stages_stage_vitals_get_endpoint.call_with_http_info(**kwargs)
 
     def get_services_monitor_services_get(
         self,
@@ -2686,9 +2686,9 @@ class MonitorApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         return self.get_services_with_specs_endpoint.call_with_http_info(**kwargs)
 
-    def hide_service_monitor_services_service_uuid_stages_stage_hide_post(
+    def hide_service_monitor_services_service_stages_stage_hide_post(
         self,
-        service_uuid,
+        service,
         stage,
         **kwargs
     ):
@@ -2697,11 +2697,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.hide_service_monitor_services_service_uuid_stages_stage_hide_post(service_uuid, stage, async_req=True)
+        >>> thread = api.hide_service_monitor_services_service_stages_stage_hide_post(service, stage, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
 
         Keyword Args:
@@ -2749,18 +2749,18 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
-        return self.hide_service_monitor_services_service_uuid_stages_stage_hide_post_endpoint.call_with_http_info(**kwargs)
+        return self.hide_service_monitor_services_service_stages_stage_hide_post_endpoint.call_with_http_info(**kwargs)
 
-    def ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post(
+    def ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
-        body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post,
+        body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post,
         **kwargs
     ):
         """Ignore Alarm  # noqa: E501
@@ -2768,14 +2768,14 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post(service_uuid, stage, alarm_uuid, body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post, async_req=True)
+        >>> thread = api.ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post(service, stage, alarm_uuid, body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
-            body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post (BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost):
+            body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post (BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2822,15 +2822,15 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        kwargs['body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post'] = \
-            body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post
-        return self.ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post'] = \
+            body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post
+        return self.ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post_endpoint.call_with_http_info(**kwargs)
 
     def register_service_monitor_services_post(
         self,
@@ -2897,9 +2897,9 @@ class MonitorApi(object):
             body_register_service_monitor_services_post
         return self.register_service_monitor_services_post_endpoint.call_with_http_info(**kwargs)
 
-    def search_alarms_monitor_services_service_uuid_alarms_get(
+    def search_alarms_monitor_services_service_alarms_get(
         self,
-        service_uuid,
+        service,
         **kwargs
     ):
         """Search Alarms  # noqa: E501
@@ -2907,11 +2907,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_alarms_monitor_services_service_uuid_alarms_get(service_uuid, async_req=True)
+        >>> thread = api.search_alarms_monitor_services_service_alarms_get(service, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
 
         Keyword Args:
             page (int): [optional] if omitted the server will use the default value of 1
@@ -2964,13 +2964,13 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
-        return self.search_alarms_monitor_services_service_uuid_alarms_get_endpoint.call_with_http_info(**kwargs)
+        kwargs['service'] = \
+            service
+        return self.search_alarms_monitor_services_service_alarms_get_endpoint.call_with_http_info(**kwargs)
 
-    def show_service_monitor_services_service_uuid_stages_stage_show_post(
+    def show_service_monitor_services_service_stages_stage_show_post(
         self,
-        service_uuid,
+        service,
         stage,
         **kwargs
     ):
@@ -2979,11 +2979,11 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.show_service_monitor_services_service_uuid_stages_stage_show_post(service_uuid, stage, async_req=True)
+        >>> thread = api.show_service_monitor_services_service_stages_stage_show_post(service, stage, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
 
         Keyword Args:
@@ -3031,18 +3031,18 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
-        return self.show_service_monitor_services_service_uuid_stages_stage_show_post_endpoint.call_with_http_info(**kwargs)
+        return self.show_service_monitor_services_service_stages_stage_show_post_endpoint.call_with_http_info(**kwargs)
 
-    def terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post(
+    def terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post(
         self,
-        service_uuid,
+        service,
         stage,
         alarm_uuid,
-        body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post,
+        body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post,
         **kwargs
     ):
         """Terminate Alarm  # noqa: E501
@@ -3050,14 +3050,14 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post(service_uuid, stage, alarm_uuid, body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post, async_req=True)
+        >>> thread = api.terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post(service, stage, alarm_uuid, body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
             alarm_uuid (str):
-            body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post (BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost):
+            body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post (BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3104,21 +3104,21 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
         kwargs['alarm_uuid'] = \
             alarm_uuid
-        kwargs['body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post'] = \
-            body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post
-        return self.terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post'] = \
+            body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post
+        return self.terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post_endpoint.call_with_http_info(**kwargs)
 
-    def trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post(
+    def trigger_alarm_monitor_services_service_stages_stage_alarms_post(
         self,
-        service_uuid,
+        service,
         stage,
-        body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post,
+        body_trigger_alarm_monitor_services_service_stages_stage_alarms_post,
         **kwargs
     ):
         """Trigger Alarm  # noqa: E501
@@ -3126,13 +3126,13 @@ class MonitorApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post(service_uuid, stage, body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post, async_req=True)
+        >>> thread = api.trigger_alarm_monitor_services_service_stages_stage_alarms_post(service, stage, body_trigger_alarm_monitor_services_service_stages_stage_alarms_post, async_req=True)
         >>> result = thread.get()
 
         Args:
-            service_uuid (str):
+            service (str):
             stage (str):
-            body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post (BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost):
+            body_trigger_alarm_monitor_services_service_stages_stage_alarms_post (BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3179,11 +3179,11 @@ class MonitorApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service_uuid'] = \
-            service_uuid
+        kwargs['service'] = \
+            service
         kwargs['stage'] = \
             stage
-        kwargs['body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post'] = \
-            body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post
-        return self.trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['body_trigger_alarm_monitor_services_service_stages_stage_alarms_post'] = \
+            body_trigger_alarm_monitor_services_service_stages_stage_alarms_post
+        return self.trigger_alarm_monitor_services_service_stages_stage_alarms_post_endpoint.call_with_http_info(**kwargs)
 

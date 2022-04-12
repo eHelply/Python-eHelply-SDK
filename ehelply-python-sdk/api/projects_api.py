@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.40
+    eHelply SDK - 1.1.58
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.40
+    The version of the OpenAPI document: 1.1.58
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,24 +222,19 @@ from ehelply-python-sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from ehelply-python-sdk.model.access_node_get import AccessNodeGet
-from ehelply-python-sdk.model.access_type_get import AccessTypeGet
-from ehelply-python-sdk.model.body_cloud_participant_projects_cloud_participant_post import BodyCloudParticipantProjectsCloudParticipantPost
-from ehelply-python-sdk.model.body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post import BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost
-from ehelply-python-sdk.model.body_create_project_projects_projects_post import BodyCreateProjectProjectsProjectsPost
-from ehelply-python-sdk.model.body_create_usage_type_projects_usage_types_post import BodyCreateUsageTypeProjectsUsageTypesPost
-from ehelply-python-sdk.model.body_update_project_projects_projects_project_uuid_put import BodyUpdateProjectProjectsProjectsProjectUuidPut
-from ehelply-python-sdk.model.body_update_usage_type_projects_usage_types_usage_type_key_put import BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut
-from ehelply-python-sdk.model.cloud_participant_response import CloudParticipantResponse
 from ehelply-python-sdk.model.create_key_response import CreateKeyResponse
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.page import Page
-from ehelply-python-sdk.model.projects_project_db import ProjectsProjectDB
+from ehelply-python-sdk.model.projects_project_create import ProjectsProjectCreate
 from ehelply-python-sdk.model.projects_project_get import ProjectsProjectGet
 from ehelply-python-sdk.model.projects_project_member_db import ProjectsProjectMemberDB
+from ehelply-python-sdk.model.projects_project_update import ProjectsProjectUpdate
 from ehelply-python-sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
+from ehelply-python-sdk.model.projects_usage_type_create import ProjectsUsageTypeCreate
 from ehelply-python-sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from ehelply-python-sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
+from ehelply-python-sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
+from ehelply-python-sdk.model.security_key_create import SecurityKeyCreate
 
 
 class ProjectsApi(object):
@@ -338,103 +333,6 @@ class ProjectsApi(object):
             },
             api_client=api_client
         )
-        self.add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post_endpoint = _Endpoint(
-            settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
-                'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}/permissions/{node_uuid}',
-                'operation_id': 'add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
-                    'node_uuid',
-                    'x_access_token',
-                    'x_secret_token',
-                    'authorization',
-                    'ehelply_active_participant',
-                    'ehelply_project',
-                    'ehelply_data',
-                ],
-                'required': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
-                    'node_uuid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'project_uuid':
-                        (str,),
-                    'entity_uuid':
-                        (str,),
-                    'key_uuid':
-                        (str,),
-                    'node_uuid':
-                        (str,),
-                    'x_access_token':
-                        (str,),
-                    'x_secret_token':
-                        (str,),
-                    'authorization':
-                        (str,),
-                    'ehelply_active_participant':
-                        (str,),
-                    'ehelply_project':
-                        (str,),
-                    'ehelply_data':
-                        (str,),
-                },
-                'attribute_map': {
-                    'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
-                    'key_uuid': 'key_uuid',
-                    'node_uuid': 'node_uuid',
-                    'x_access_token': 'x-access-token',
-                    'x_secret_token': 'x-secret-token',
-                    'authorization': 'authorization',
-                    'ehelply_active_participant': 'ehelply-active-participant',
-                    'ehelply_project': 'ehelply-project',
-                    'ehelply_data': 'ehelply-data',
-                },
-                'location_map': {
-                    'project_uuid': 'path',
-                    'entity_uuid': 'path',
-                    'key_uuid': 'path',
-                    'node_uuid': 'path',
-                    'x_access_token': 'header',
-                    'x_secret_token': 'header',
-                    'authorization': 'header',
-                    'ehelply_active_participant': 'header',
-                    'ehelply_project': 'header',
-                    'ehelply_data': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.archive_project_projects_projects_project_uuid_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
@@ -514,70 +412,19 @@ class ProjectsApi(object):
             },
             api_client=api_client
         )
-        self.cloud_participant_projects_cloud_participant_post_endpoint = _Endpoint(
-            settings={
-                'response_type': (CloudParticipantResponse,),
-                'auth': [],
-                'endpoint_path': '/sam/projects/cloud_participant',
-                'operation_id': 'cloud_participant_projects_cloud_participant_post',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'body_cloud_participant_projects_cloud_participant_post',
-                ],
-                'required': [
-                    'body_cloud_participant_projects_cloud_participant_post',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'body_cloud_participant_projects_cloud_participant_post':
-                        (BodyCloudParticipantProjectsCloudParticipantPost,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'body_cloud_participant_projects_cloud_participant_post': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post_endpoint = _Endpoint(
+        self.create_project_key_projects_projects_project_uuid_keys_post_endpoint = _Endpoint(
             settings={
                 'response_type': (CreateKeyResponse,),
                 'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys',
-                'operation_id': 'create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post',
+                'endpoint_path': '/sam/projects/projects/{project_uuid}/keys',
+                'operation_id': 'create_project_key_projects_projects_project_uuid_keys_post',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'project_uuid',
-                    'entity_uuid',
-                    'body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post',
+                    'security_key_create',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -587,8 +434,7 @@ class ProjectsApi(object):
                 ],
                 'required': [
                     'project_uuid',
-                    'entity_uuid',
-                    'body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post',
+                    'security_key_create',
                 ],
                 'nullable': [
                 ],
@@ -605,10 +451,8 @@ class ProjectsApi(object):
                 'openapi_types': {
                     'project_uuid':
                         (str,),
-                    'entity_uuid':
-                        (str,),
-                    'body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post':
-                        (BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost,),
+                    'security_key_create':
+                        (SecurityKeyCreate,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -624,7 +468,6 @@ class ProjectsApi(object):
                 },
                 'attribute_map': {
                     'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
                     'authorization': 'authorization',
@@ -634,8 +477,7 @@ class ProjectsApi(object):
                 },
                 'location_map': {
                     'project_uuid': 'path',
-                    'entity_uuid': 'path',
-                    'body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post': 'body',
+                    'security_key_create': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -658,7 +500,7 @@ class ProjectsApi(object):
         )
         self.create_project_projects_projects_post_endpoint = _Endpoint(
             settings={
-                'response_type': (ProjectsProjectDB,),
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/sam/projects/projects',
                 'operation_id': 'create_project_projects_projects_post',
@@ -667,7 +509,7 @@ class ProjectsApi(object):
             },
             params_map={
                 'all': [
-                    'body_create_project_projects_projects_post',
+                    'projects_project_create',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -676,7 +518,7 @@ class ProjectsApi(object):
                     'ehelply_data',
                 ],
                 'required': [
-                    'body_create_project_projects_projects_post',
+                    'projects_project_create',
                 ],
                 'nullable': [
                 ],
@@ -691,8 +533,8 @@ class ProjectsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body_create_project_projects_projects_post':
-                        (BodyCreateProjectProjectsProjectsPost,),
+                    'projects_project_create':
+                        (ProjectsProjectCreate,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -715,7 +557,7 @@ class ProjectsApi(object):
                     'ehelply_data': 'ehelply-data',
                 },
                 'location_map': {
-                    'body_create_project_projects_projects_post': 'body',
+                    'projects_project_create': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -747,7 +589,7 @@ class ProjectsApi(object):
             },
             params_map={
                 'all': [
-                    'body_create_usage_type_projects_usage_types_post',
+                    'projects_usage_type_create',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -756,7 +598,7 @@ class ProjectsApi(object):
                     'ehelply_data',
                 ],
                 'required': [
-                    'body_create_usage_type_projects_usage_types_post',
+                    'projects_usage_type_create',
                 ],
                 'nullable': [
                 ],
@@ -771,8 +613,8 @@ class ProjectsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body_create_usage_type_projects_usage_types_post':
-                        (BodyCreateUsageTypeProjectsUsageTypesPost,),
+                    'projects_usage_type_create':
+                        (ProjectsUsageTypeCreate,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -795,7 +637,7 @@ class ProjectsApi(object):
                     'ehelply_data': 'ehelply-data',
                 },
                 'location_map': {
-                    'body_create_usage_type_projects_usage_types_post': 'body',
+                    'projects_usage_type_create': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -1068,19 +910,18 @@ class ProjectsApi(object):
             },
             api_client=api_client
         )
-        self.get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get_endpoint = _Endpoint(
+        self.get_project_keys_projects_projects_project_uuid_keys_get_endpoint = _Endpoint(
             settings={
-                'response_type': ([AccessNodeGet],),
+                'response_type': ([ProjectsProjectMemberDB],),
                 'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/permissions',
-                'operation_id': 'get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get',
+                'endpoint_path': '/sam/projects/projects/{project_uuid}/keys',
+                'operation_id': 'get_project_keys_projects_projects_project_uuid_keys_get',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'project_uuid',
-                    'entity_uuid',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -1090,7 +931,6 @@ class ProjectsApi(object):
                 ],
                 'required': [
                     'project_uuid',
-                    'entity_uuid',
                 ],
                 'nullable': [
                 ],
@@ -1107,8 +947,6 @@ class ProjectsApi(object):
                 'openapi_types': {
                     'project_uuid':
                         (str,),
-                    'entity_uuid':
-                        (str,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -1124,7 +962,6 @@ class ProjectsApi(object):
                 },
                 'attribute_map': {
                     'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
                     'authorization': 'authorization',
@@ -1134,274 +971,6 @@ class ProjectsApi(object):
                 },
                 'location_map': {
                     'project_uuid': 'path',
-                    'entity_uuid': 'path',
-                    'x_access_token': 'header',
-                    'x_secret_token': 'header',
-                    'authorization': 'header',
-                    'ehelply_active_participant': 'header',
-                    'ehelply_project': 'header',
-                    'ehelply_data': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get_endpoint = _Endpoint(
-            settings={
-                'response_type': ([AccessNodeGet],),
-                'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}/permissions',
-                'operation_id': 'get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
-                    'x_access_token',
-                    'x_secret_token',
-                    'authorization',
-                    'ehelply_active_participant',
-                    'ehelply_project',
-                    'ehelply_data',
-                ],
-                'required': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'project_uuid':
-                        (str,),
-                    'entity_uuid':
-                        (str,),
-                    'key_uuid':
-                        (str,),
-                    'x_access_token':
-                        (str,),
-                    'x_secret_token':
-                        (str,),
-                    'authorization':
-                        (str,),
-                    'ehelply_active_participant':
-                        (str,),
-                    'ehelply_project':
-                        (str,),
-                    'ehelply_data':
-                        (str,),
-                },
-                'attribute_map': {
-                    'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
-                    'key_uuid': 'key_uuid',
-                    'x_access_token': 'x-access-token',
-                    'x_secret_token': 'x-secret-token',
-                    'authorization': 'authorization',
-                    'ehelply_active_participant': 'ehelply-active-participant',
-                    'ehelply_project': 'ehelply-project',
-                    'ehelply_data': 'ehelply-data',
-                },
-                'location_map': {
-                    'project_uuid': 'path',
-                    'entity_uuid': 'path',
-                    'key_uuid': 'path',
-                    'x_access_token': 'header',
-                    'x_secret_token': 'header',
-                    'authorization': 'header',
-                    'ehelply_active_participant': 'header',
-                    'ehelply_project': 'header',
-                    'ehelply_data': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get_endpoint = _Endpoint(
-            settings={
-                'response_type': (AccessTypeGet,),
-                'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/permissions/types/{type_uuid}',
-                'operation_id': 'get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'type_uuid',
-                    'x_access_token',
-                    'x_secret_token',
-                    'authorization',
-                    'ehelply_active_participant',
-                    'ehelply_project',
-                    'ehelply_data',
-                ],
-                'required': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'type_uuid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'project_uuid':
-                        (str,),
-                    'entity_uuid':
-                        (str,),
-                    'type_uuid':
-                        (str,),
-                    'x_access_token':
-                        (str,),
-                    'x_secret_token':
-                        (str,),
-                    'authorization':
-                        (str,),
-                    'ehelply_active_participant':
-                        (str,),
-                    'ehelply_project':
-                        (str,),
-                    'ehelply_data':
-                        (str,),
-                },
-                'attribute_map': {
-                    'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
-                    'type_uuid': 'type_uuid',
-                    'x_access_token': 'x-access-token',
-                    'x_secret_token': 'x-secret-token',
-                    'authorization': 'authorization',
-                    'ehelply_active_participant': 'ehelply-active-participant',
-                    'ehelply_project': 'ehelply-project',
-                    'ehelply_data': 'ehelply-data',
-                },
-                'location_map': {
-                    'project_uuid': 'path',
-                    'entity_uuid': 'path',
-                    'type_uuid': 'path',
-                    'x_access_token': 'header',
-                    'x_secret_token': 'header',
-                    'authorization': 'header',
-                    'ehelply_active_participant': 'header',
-                    'ehelply_project': 'header',
-                    'ehelply_data': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get_endpoint = _Endpoint(
-            settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
-                'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys',
-                'operation_id': 'get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'x_access_token',
-                    'x_secret_token',
-                    'authorization',
-                    'ehelply_active_participant',
-                    'ehelply_project',
-                    'ehelply_data',
-                ],
-                'required': [
-                    'project_uuid',
-                    'entity_uuid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'project_uuid':
-                        (str,),
-                    'entity_uuid':
-                        (str,),
-                    'x_access_token':
-                        (str,),
-                    'x_secret_token':
-                        (str,),
-                    'authorization':
-                        (str,),
-                    'ehelply_active_participant':
-                        (str,),
-                    'ehelply_project':
-                        (str,),
-                    'ehelply_data':
-                        (str,),
-                },
-                'attribute_map': {
-                    'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
-                    'x_access_token': 'x-access-token',
-                    'x_secret_token': 'x-secret-token',
-                    'authorization': 'authorization',
-                    'ehelply_active_participant': 'ehelply-active-participant',
-                    'ehelply_project': 'ehelply-project',
-                    'ehelply_data': 'ehelply-data',
-                },
-                'location_map': {
-                    'project_uuid': 'path',
-                    'entity_uuid': 'path',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -1506,7 +1075,7 @@ class ProjectsApi(object):
         )
         self.get_project_projects_projects_project_uuid_get_endpoint = _Endpoint(
             settings={
-                'response_type': (ProjectsProjectGet,),
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/sam/projects/projects/{project_uuid}',
                 'operation_id': 'get_project_projects_projects_project_uuid_get',
@@ -1802,21 +1371,19 @@ class ProjectsApi(object):
             },
             api_client=api_client
         )
-        self.remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete_endpoint = _Endpoint(
+        self.remove_project_key_projects_projects_project_uuid_keys_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}/permissions/{node_uuid}',
-                'operation_id': 'remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete',
+                'endpoint_path': '/sam/projects/projects/{project_uuid}/keys',
+                'operation_id': 'remove_project_key_projects_projects_project_uuid_keys_delete',
                 'http_method': 'DELETE',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
-                    'node_uuid',
+                    'access_token',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -1826,9 +1393,6 @@ class ProjectsApi(object):
                 ],
                 'required': [
                     'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
-                    'node_uuid',
                 ],
                 'nullable': [
                 ],
@@ -1845,11 +1409,7 @@ class ProjectsApi(object):
                 'openapi_types': {
                     'project_uuid':
                         (str,),
-                    'entity_uuid':
-                        (str,),
-                    'key_uuid':
-                        (str,),
-                    'node_uuid':
+                    'access_token':
                         (str,),
                     'x_access_token':
                         (str,),
@@ -1866,9 +1426,7 @@ class ProjectsApi(object):
                 },
                 'attribute_map': {
                     'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
-                    'key_uuid': 'key_uuid',
-                    'node_uuid': 'node_uuid',
+                    'access_token': 'access_token',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
                     'authorization': 'authorization',
@@ -1878,9 +1436,7 @@ class ProjectsApi(object):
                 },
                 'location_map': {
                     'project_uuid': 'path',
-                    'entity_uuid': 'path',
-                    'key_uuid': 'path',
-                    'node_uuid': 'path',
+                    'access_token': 'query',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -1899,20 +1455,17 @@ class ProjectsApi(object):
             },
             api_client=api_client
         )
-        self.remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete_endpoint = _Endpoint(
+        self.sandbox_projects_sandbox_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/sam/projects/projects/{project_uuid}/members/{entity_uuid}/keys/{key_uuid}',
-                'operation_id': 'remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete',
-                'http_method': 'DELETE',
+                'endpoint_path': '/sam/projects/sandbox',
+                'operation_id': 'sandbox_projects_sandbox_get',
+                'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -1920,11 +1473,7 @@ class ProjectsApi(object):
                     'ehelply_project',
                     'ehelply_data',
                 ],
-                'required': [
-                    'project_uuid',
-                    'entity_uuid',
-                    'key_uuid',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -1938,12 +1487,6 @@ class ProjectsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'project_uuid':
-                        (str,),
-                    'entity_uuid':
-                        (str,),
-                    'key_uuid':
-                        (str,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -1958,9 +1501,6 @@ class ProjectsApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'project_uuid': 'project_uuid',
-                    'entity_uuid': 'entity_uuid',
-                    'key_uuid': 'key_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
                     'authorization': 'authorization',
@@ -1969,9 +1509,6 @@ class ProjectsApi(object):
                     'ehelply_data': 'ehelply-data',
                 },
                 'location_map': {
-                    'project_uuid': 'path',
-                    'entity_uuid': 'path',
-                    'key_uuid': 'path',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -2166,7 +1703,7 @@ class ProjectsApi(object):
         )
         self.update_project_projects_projects_project_uuid_put_endpoint = _Endpoint(
             settings={
-                'response_type': (ProjectsProjectDB,),
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/sam/projects/projects/{project_uuid}',
                 'operation_id': 'update_project_projects_projects_project_uuid_put',
@@ -2176,7 +1713,7 @@ class ProjectsApi(object):
             params_map={
                 'all': [
                     'project_uuid',
-                    'body_update_project_projects_projects_project_uuid_put',
+                    'projects_project_update',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -2186,7 +1723,7 @@ class ProjectsApi(object):
                 ],
                 'required': [
                     'project_uuid',
-                    'body_update_project_projects_projects_project_uuid_put',
+                    'projects_project_update',
                 ],
                 'nullable': [
                 ],
@@ -2203,8 +1740,8 @@ class ProjectsApi(object):
                 'openapi_types': {
                     'project_uuid':
                         (str,),
-                    'body_update_project_projects_projects_project_uuid_put':
-                        (BodyUpdateProjectProjectsProjectsProjectUuidPut,),
+                    'projects_project_update':
+                        (ProjectsProjectUpdate,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -2229,7 +1766,7 @@ class ProjectsApi(object):
                 },
                 'location_map': {
                     'project_uuid': 'path',
-                    'body_update_project_projects_projects_project_uuid_put': 'body',
+                    'projects_project_update': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -2262,7 +1799,7 @@ class ProjectsApi(object):
             params_map={
                 'all': [
                     'usage_type_key',
-                    'body_update_usage_type_projects_usage_types_usage_type_key_put',
+                    'projects_usage_type_update',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -2272,7 +1809,7 @@ class ProjectsApi(object):
                 ],
                 'required': [
                     'usage_type_key',
-                    'body_update_usage_type_projects_usage_types_usage_type_key_put',
+                    'projects_usage_type_update',
                 ],
                 'nullable': [
                 ],
@@ -2289,8 +1826,8 @@ class ProjectsApi(object):
                 'openapi_types': {
                     'usage_type_key':
                         (str,),
-                    'body_update_usage_type_projects_usage_types_usage_type_key_put':
-                        (BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut,),
+                    'projects_usage_type_update':
+                        (ProjectsUsageTypeUpdate,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -2315,7 +1852,7 @@ class ProjectsApi(object):
                 },
                 'location_map': {
                     'usage_type_key': 'path',
-                    'body_update_usage_type_projects_usage_types_usage_type_key_put': 'body',
+                    'projects_usage_type_update': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -2412,89 +1949,6 @@ class ProjectsApi(object):
             entity_uuid
         return self.add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post_endpoint.call_with_http_info(**kwargs)
 
-    def add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post(
-        self,
-        project_uuid,
-        entity_uuid,
-        key_uuid,
-        node_uuid,
-        **kwargs
-    ):
-        """Add Permission To Key  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post(project_uuid, entity_uuid, key_uuid, node_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            project_uuid (str):
-            entity_uuid (str):
-            key_uuid (str):
-            node_uuid (str):
-
-        Keyword Args:
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['project_uuid'] = \
-            project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        kwargs['key_uuid'] = \
-            key_uuid
-        kwargs['node_uuid'] = \
-            node_uuid
-        return self.add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post_endpoint.call_with_http_info(**kwargs)
-
     def archive_project_projects_projects_project_uuid_delete(
         self,
         project_uuid,
@@ -2566,77 +2020,10 @@ class ProjectsApi(object):
             project_uuid
         return self.archive_project_projects_projects_project_uuid_delete_endpoint.call_with_http_info(**kwargs)
 
-    def cloud_participant_projects_cloud_participant_post(
-        self,
-        body_cloud_participant_projects_cloud_participant_post,
-        **kwargs
-    ):
-        """Cloud Participant  # noqa: E501
-
-        :param auth: :param cloud_participant_auth: :return:  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.cloud_participant_projects_cloud_participant_post(body_cloud_participant_projects_cloud_participant_post, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            body_cloud_participant_projects_cloud_participant_post (BodyCloudParticipantProjectsCloudParticipantPost):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            CloudParticipantResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['body_cloud_participant_projects_cloud_participant_post'] = \
-            body_cloud_participant_projects_cloud_participant_post
-        return self.cloud_participant_projects_cloud_participant_post_endpoint.call_with_http_info(**kwargs)
-
-    def create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post(
+    def create_project_key_projects_projects_project_uuid_keys_post(
         self,
         project_uuid,
-        entity_uuid,
-        body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post,
+        security_key_create,
         **kwargs
     ):
         """Create Project Key  # noqa: E501
@@ -2644,13 +2031,12 @@ class ProjectsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post(project_uuid, entity_uuid, body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post, async_req=True)
+        >>> thread = api.create_project_key_projects_projects_project_uuid_keys_post(project_uuid, security_key_create, async_req=True)
         >>> result = thread.get()
 
         Args:
             project_uuid (str):
-            entity_uuid (str):
-            body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post (BodyCreateProjectKeyProjectsProjectsProjectUuidMembersEntityUuidKeysPost):
+            security_key_create (SecurityKeyCreate):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -2705,15 +2091,13 @@ class ProjectsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['project_uuid'] = \
             project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        kwargs['body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post'] = \
-            body_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post
-        return self.create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['security_key_create'] = \
+            security_key_create
+        return self.create_project_key_projects_projects_project_uuid_keys_post_endpoint.call_with_http_info(**kwargs)
 
     def create_project_projects_projects_post(
         self,
-        body_create_project_projects_projects_post,
+        projects_project_create,
         **kwargs
     ):
         """Create Project  # noqa: E501
@@ -2722,11 +2106,11 @@ class ProjectsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_project_projects_projects_post(body_create_project_projects_projects_post, async_req=True)
+        >>> thread = api.create_project_projects_projects_post(projects_project_create, async_req=True)
         >>> result = thread.get()
 
         Args:
-            body_create_project_projects_projects_post (BodyCreateProjectProjectsProjectsPost):
+            projects_project_create (ProjectsProjectCreate):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -2756,7 +2140,7 @@ class ProjectsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProjectsProjectDB
+            bool, date, datetime, dict, float, int, list, str, none_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2779,13 +2163,13 @@ class ProjectsApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['body_create_project_projects_projects_post'] = \
-            body_create_project_projects_projects_post
+        kwargs['projects_project_create'] = \
+            projects_project_create
         return self.create_project_projects_projects_post_endpoint.call_with_http_info(**kwargs)
 
     def create_usage_type_projects_usage_types_post(
         self,
-        body_create_usage_type_projects_usage_types_post,
+        projects_usage_type_create,
         **kwargs
     ):
         """Create Usage Type  # noqa: E501
@@ -2793,11 +2177,11 @@ class ProjectsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_usage_type_projects_usage_types_post(body_create_usage_type_projects_usage_types_post, async_req=True)
+        >>> thread = api.create_usage_type_projects_usage_types_post(projects_usage_type_create, async_req=True)
         >>> result = thread.get()
 
         Args:
-            body_create_usage_type_projects_usage_types_post (BodyCreateUsageTypeProjectsUsageTypesPost):
+            projects_usage_type_create (ProjectsUsageTypeCreate):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -2850,8 +2234,8 @@ class ProjectsApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['body_create_usage_type_projects_usage_types_post'] = \
-            body_create_usage_type_projects_usage_types_post
+        kwargs['projects_usage_type_create'] = \
+            projects_usage_type_create
         return self.create_usage_type_projects_usage_types_post_endpoint.call_with_http_info(**kwargs)
 
     def delete_usage_type_projects_usage_types_usage_type_key_delete(
@@ -3070,243 +2454,9 @@ class ProjectsApi(object):
             entity_uuid
         return self.get_member_projects_projects_members_entity_uuid_projects_get_endpoint.call_with_http_info(**kwargs)
 
-    def get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get(
+    def get_project_keys_projects_projects_project_uuid_keys_get(
         self,
         project_uuid,
-        entity_uuid,
-        **kwargs
-    ):
-        """Get Permissions For Entity  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get(project_uuid, entity_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            project_uuid (str):
-            entity_uuid (str):
-
-        Keyword Args:
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            [AccessNodeGet]
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['project_uuid'] = \
-            project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        return self.get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get_endpoint.call_with_http_info(**kwargs)
-
-    def get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get(
-        self,
-        project_uuid,
-        entity_uuid,
-        key_uuid,
-        **kwargs
-    ):
-        """Get Permissions For Key  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get(project_uuid, entity_uuid, key_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            project_uuid (str):
-            entity_uuid (str):
-            key_uuid (str):
-
-        Keyword Args:
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            [AccessNodeGet]
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['project_uuid'] = \
-            project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        kwargs['key_uuid'] = \
-            key_uuid
-        return self.get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get_endpoint.call_with_http_info(**kwargs)
-
-    def get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get(
-        self,
-        project_uuid,
-        entity_uuid,
-        type_uuid,
-        **kwargs
-    ):
-        """Get Permissions Type  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get(project_uuid, entity_uuid, type_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            project_uuid (str):
-            entity_uuid (str):
-            type_uuid (str):
-
-        Keyword Args:
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            AccessTypeGet
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['project_uuid'] = \
-            project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        kwargs['type_uuid'] = \
-            type_uuid
-        return self.get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get_endpoint.call_with_http_info(**kwargs)
-
-    def get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get(
-        self,
-        project_uuid,
-        entity_uuid,
         **kwargs
     ):
         """Get Project Keys  # noqa: E501
@@ -3314,12 +2464,11 @@ class ProjectsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get(project_uuid, entity_uuid, async_req=True)
+        >>> thread = api.get_project_keys_projects_projects_project_uuid_keys_get(project_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
             project_uuid (str):
-            entity_uuid (str):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -3349,7 +2498,7 @@ class ProjectsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            [ProjectsProjectMemberDB]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3374,9 +2523,7 @@ class ProjectsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['project_uuid'] = \
             project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        return self.get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_project_keys_projects_projects_project_uuid_keys_get_endpoint.call_with_http_info(**kwargs)
 
     def get_project_members_projects_projects_project_uuid_members_get(
         self,
@@ -3495,7 +2642,7 @@ class ProjectsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProjectsProjectGet
+            bool, date, datetime, dict, float, int, list, str, none_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3738,94 +2885,9 @@ class ProjectsApi(object):
             entity_uuid
         return self.remove_member_from_project_projects_projects_project_uuid_members_entity_uuid_delete_endpoint.call_with_http_info(**kwargs)
 
-    def remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete(
+    def remove_project_key_projects_projects_project_uuid_keys_delete(
         self,
         project_uuid,
-        entity_uuid,
-        key_uuid,
-        node_uuid,
-        **kwargs
-    ):
-        """Remove Permission From Key  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete(project_uuid, entity_uuid, key_uuid, node_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            project_uuid (str):
-            entity_uuid (str):
-            key_uuid (str):
-            node_uuid (str):
-
-        Keyword Args:
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['project_uuid'] = \
-            project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        kwargs['key_uuid'] = \
-            key_uuid
-        kwargs['node_uuid'] = \
-            node_uuid
-        return self.remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete_endpoint.call_with_http_info(**kwargs)
-
-    def remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete(
-        self,
-        project_uuid,
-        entity_uuid,
-        key_uuid,
         **kwargs
     ):
         """Remove Project Key  # noqa: E501
@@ -3833,15 +2895,14 @@ class ProjectsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete(project_uuid, entity_uuid, key_uuid, async_req=True)
+        >>> thread = api.remove_project_key_projects_projects_project_uuid_keys_delete(project_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
             project_uuid (str):
-            entity_uuid (str):
-            key_uuid (str):
 
         Keyword Args:
+            access_token (str): [optional]
             x_access_token (str): [optional]
             x_secret_token (str): [optional]
             authorization (str): [optional]
@@ -3894,11 +2955,73 @@ class ProjectsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['project_uuid'] = \
             project_uuid
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        kwargs['key_uuid'] = \
-            key_uuid
-        return self.remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete_endpoint.call_with_http_info(**kwargs)
+        return self.remove_project_key_projects_projects_project_uuid_keys_delete_endpoint.call_with_http_info(**kwargs)
+
+    def sandbox_projects_sandbox_get(
+        self,
+        **kwargs
+    ):
+        """Sandbox  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.sandbox_projects_sandbox_get(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.sandbox_projects_sandbox_get_endpoint.call_with_http_info(**kwargs)
 
     def search_projects_projects_projects_get(
         self,
@@ -4043,7 +3166,7 @@ class ProjectsApi(object):
     def update_project_projects_projects_project_uuid_put(
         self,
         project_uuid,
-        body_update_project_projects_projects_project_uuid_put,
+        projects_project_update,
         **kwargs
     ):
         """Update Project  # noqa: E501
@@ -4051,12 +3174,12 @@ class ProjectsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_project_projects_projects_project_uuid_put(project_uuid, body_update_project_projects_projects_project_uuid_put, async_req=True)
+        >>> thread = api.update_project_projects_projects_project_uuid_put(project_uuid, projects_project_update, async_req=True)
         >>> result = thread.get()
 
         Args:
             project_uuid (str):
-            body_update_project_projects_projects_project_uuid_put (BodyUpdateProjectProjectsProjectsProjectUuidPut):
+            projects_project_update (ProjectsProjectUpdate):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -4086,7 +3209,7 @@ class ProjectsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProjectsProjectDB
+            bool, date, datetime, dict, float, int, list, str, none_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4111,14 +3234,14 @@ class ProjectsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['project_uuid'] = \
             project_uuid
-        kwargs['body_update_project_projects_projects_project_uuid_put'] = \
-            body_update_project_projects_projects_project_uuid_put
+        kwargs['projects_project_update'] = \
+            projects_project_update
         return self.update_project_projects_projects_project_uuid_put_endpoint.call_with_http_info(**kwargs)
 
     def update_usage_type_projects_usage_types_usage_type_key_put(
         self,
         usage_type_key,
-        body_update_usage_type_projects_usage_types_usage_type_key_put,
+        projects_usage_type_update,
         **kwargs
     ):
         """Update Usage Type  # noqa: E501
@@ -4126,12 +3249,12 @@ class ProjectsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, body_update_usage_type_projects_usage_types_usage_type_key_put, async_req=True)
+        >>> thread = api.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, projects_usage_type_update, async_req=True)
         >>> result = thread.get()
 
         Args:
             usage_type_key (str):
-            body_update_usage_type_projects_usage_types_usage_type_key_put (BodyUpdateUsageTypeProjectsUsageTypesUsageTypeKeyPut):
+            projects_usage_type_update (ProjectsUsageTypeUpdate):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -4186,7 +3309,7 @@ class ProjectsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['usage_type_key'] = \
             usage_type_key
-        kwargs['body_update_usage_type_projects_usage_types_usage_type_key_put'] = \
-            body_update_usage_type_projects_usage_types_usage_type_key_put
+        kwargs['projects_usage_type_update'] = \
+            projects_usage_type_update
         return self.update_usage_type_projects_usage_types_usage_type_key_put_endpoint.call_with_http_info(**kwargs)
 

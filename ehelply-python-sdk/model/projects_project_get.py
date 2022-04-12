@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.40
+    eHelply SDK - 1.1.58
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.40
+    The version of the OpenAPI document: 1.1.58
 
                                      Apache License
                                Version 2.0, January 2004
@@ -284,10 +284,6 @@ class ProjectsProjectGet(ModelNormal):
         return {
             'uuid': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'created_at': (str,),  # noqa: E501
-            'current_spend': (int,),  # noqa: E501
-            'max_spend': (int,),  # noqa: E501
-            'is_spend_maxed': (bool,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'archived_at': (str,),  # noqa: E501
         }
@@ -300,10 +296,6 @@ class ProjectsProjectGet(ModelNormal):
     attribute_map = {
         'uuid': 'uuid',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'created_at': 'created_at',  # noqa: E501
-        'current_spend': 'current_spend',  # noqa: E501
-        'max_spend': 'max_spend',  # noqa: E501
-        'is_spend_maxed': 'is_spend_maxed',  # noqa: E501
         'status': 'status',  # noqa: E501
         'archived_at': 'archived_at',  # noqa: E501
     }
@@ -315,17 +307,12 @@ class ProjectsProjectGet(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, uuid, name, created_at, current_spend, max_spend, is_spend_maxed, status, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, uuid, name, *args, **kwargs):  # noqa: E501
         """ProjectsProjectGet - a model defined in OpenAPI
 
         Args:
             uuid (str):
             name (str):
-            created_at (str):
-            current_spend (int):
-            max_spend (int):
-            is_spend_maxed (bool):
-            status (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -358,6 +345,7 @@ class ProjectsProjectGet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            status (str): [optional]  # noqa: E501
             archived_at (str): [optional]  # noqa: E501
         """
 
@@ -388,11 +376,6 @@ class ProjectsProjectGet(ModelNormal):
 
         self.uuid = uuid
         self.name = name
-        self.created_at = created_at
-        self.current_spend = current_spend
-        self.max_spend = max_spend
-        self.is_spend_maxed = is_spend_maxed
-        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -413,17 +396,12 @@ class ProjectsProjectGet(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, uuid, name, created_at, current_spend, max_spend, is_spend_maxed, status, *args, **kwargs):  # noqa: E501
+    def __init__(self, uuid, name, *args, **kwargs):  # noqa: E501
         """ProjectsProjectGet - a model defined in OpenAPI
 
         Args:
             uuid (str):
             name (str):
-            created_at (str):
-            current_spend (int):
-            max_spend (int):
-            is_spend_maxed (bool):
-            status (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -456,6 +434,7 @@ class ProjectsProjectGet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            status (str): [optional]  # noqa: E501
             archived_at (str): [optional]  # noqa: E501
         """
 
@@ -484,11 +463,6 @@ class ProjectsProjectGet(ModelNormal):
 
         self.uuid = uuid
         self.name = name
-        self.created_at = created_at
-        self.current_spend = current_spend
-        self.max_spend = max_spend
-        self.is_spend_maxed = is_spend_maxed
-        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

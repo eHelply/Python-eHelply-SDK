@@ -4,32 +4,32 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post**](MonitorApi.md#ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/acknowledge | Ack Alarm
-[**assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post**](MonitorApi.md#assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/assign | Assign Alarm
-[**attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post**](MonitorApi.md#attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/note | Attach Alarm Note
-[**attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post**](MonitorApi.md#attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/ticket | Attach Alarm Ticket
-[**clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post**](MonitorApi.md#clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/clear | Clear Alarm
-[**get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get**](MonitorApi.md#get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid} | Get Service Alarm
-[**get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get**](MonitorApi.md#get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms | Get Service Alarms
-[**get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get**](MonitorApi.md#get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/heartbeats | Get Service Heartbeats
-[**get_service_kpis_monitor_services_service_uuid_kpis_get**](MonitorApi.md#get_service_kpis_monitor_services_service_uuid_kpis_get) | **GET** /sam/monitor/services/{service_uuid}/kpis | Get Service Kpis
-[**get_service_monitor_services_service_uuid_get**](MonitorApi.md#get_service_monitor_services_service_uuid_get) | **GET** /sam/monitor/services/{service_uuid} | Get Service
+[**ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post**](MonitorApi.md#ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/acknowledge | Ack Alarm
+[**assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post**](MonitorApi.md#assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/assign | Assign Alarm
+[**attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post**](MonitorApi.md#attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/note | Attach Alarm Note
+[**attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post**](MonitorApi.md#attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/ticket | Attach Alarm Ticket
+[**clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post**](MonitorApi.md#clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/clear | Clear Alarm
+[**get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get**](MonitorApi.md#get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get) | **GET** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid} | Get Service Alarm
+[**get_service_alarms_monitor_services_service_stages_stage_alarms_get**](MonitorApi.md#get_service_alarms_monitor_services_service_stages_stage_alarms_get) | **GET** /sam/monitor/services/{service}/stages/{stage}/alarms | Get Service Alarms
+[**get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get**](MonitorApi.md#get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get) | **GET** /sam/monitor/services/{service}/stages/{stage}/heartbeats | Get Service Heartbeats
+[**get_service_kpis_monitor_services_service_kpis_get**](MonitorApi.md#get_service_kpis_monitor_services_service_kpis_get) | **GET** /sam/monitor/services/{service}/kpis | Get Service Kpis
+[**get_service_monitor_services_service_get**](MonitorApi.md#get_service_monitor_services_service_get) | **GET** /sam/monitor/services/{service} | Get Service
 [**get_service_spec**](MonitorApi.md#get_service_spec) | **GET** /sam/monitor/services/{service}/specs/{spec} | Getservicespec
 [**get_service_specs**](MonitorApi.md#get_service_specs) | **GET** /sam/monitor/services/{service}/specs | Getservicespecs
-[**get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get**](MonitorApi.md#get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get) | **GET** /sam/monitor/services/{service_uuid}/stages/{stage}/vitals | Get Service Vitals
+[**get_service_vitals_monitor_services_service_stages_stage_vitals_get**](MonitorApi.md#get_service_vitals_monitor_services_service_stages_stage_vitals_get) | **GET** /sam/monitor/services/{service}/stages/{stage}/vitals | Get Service Vitals
 [**get_services_monitor_services_get**](MonitorApi.md#get_services_monitor_services_get) | **GET** /sam/monitor/services | Get Services
 [**get_services_with_specs**](MonitorApi.md#get_services_with_specs) | **GET** /sam/monitor/specs/services | Getserviceswithspecs
-[**hide_service_monitor_services_service_uuid_stages_stage_hide_post**](MonitorApi.md#hide_service_monitor_services_service_uuid_stages_stage_hide_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/hide | Hide Service
-[**ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post**](MonitorApi.md#ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/ignore | Ignore Alarm
+[**hide_service_monitor_services_service_stages_stage_hide_post**](MonitorApi.md#hide_service_monitor_services_service_stages_stage_hide_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/hide | Hide Service
+[**ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post**](MonitorApi.md#ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/ignore | Ignore Alarm
 [**register_service_monitor_services_post**](MonitorApi.md#register_service_monitor_services_post) | **POST** /sam/monitor/services | Register Service
-[**search_alarms_monitor_services_service_uuid_alarms_get**](MonitorApi.md#search_alarms_monitor_services_service_uuid_alarms_get) | **GET** /sam/monitor/services/{service_uuid}/alarms | Search Alarms
-[**show_service_monitor_services_service_uuid_stages_stage_show_post**](MonitorApi.md#show_service_monitor_services_service_uuid_stages_stage_show_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/show | Show Service
-[**terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post**](MonitorApi.md#terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminate Alarm
-[**trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post**](MonitorApi.md#trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post) | **POST** /sam/monitor/services/{service_uuid}/stages/{stage}/alarms | Trigger Alarm
+[**search_alarms_monitor_services_service_alarms_get**](MonitorApi.md#search_alarms_monitor_services_service_alarms_get) | **GET** /sam/monitor/services/{service}/alarms | Search Alarms
+[**show_service_monitor_services_service_stages_stage_show_post**](MonitorApi.md#show_service_monitor_services_service_stages_stage_show_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/show | Show Service
+[**terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post**](MonitorApi.md#terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminate Alarm
+[**trigger_alarm_monitor_services_service_stages_stage_alarms_post**](MonitorApi.md#trigger_alarm_monitor_services_service_stages_stage_alarms_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms | Trigger Alarm
 
 
-# **ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post**
-> bool, date, datetime, dict, float, int, list, str, none_type ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post(service_uuid, stage, alarm_uuid, body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post)
+# **ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post**
+> bool, date, datetime, dict, float, int, list, str, none_type ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post(service, stage, alarm_uuid, body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post)
 
 Ack Alarm
 
@@ -41,7 +41,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import monitor_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost
+from ehelply-python-sdk.model.body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -54,22 +54,22 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
-    body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post = BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost(
+    body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post = BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost(
         acknowledge=AlarmAcknowledge(
             acknowledger_uuid="acknowledger_uuid_example",
         ),
-    ) # BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost | 
+    ) # BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost | 
 
     # example passing only required values which don't have defaults set
     try:
         # Ack Alarm
-        api_response = api_instance.ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post(service_uuid, stage, alarm_uuid, body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post)
+        api_response = api_instance.ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post(service, stage, alarm_uuid, body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post: %s\n" % e)
+        print("Exception when calling MonitorApi->ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post: %s\n" % e)
 ```
 
 
@@ -77,10 +77,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
- **body_ack_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_acknowledge_post** | [**BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost**](BodyAckAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAcknowledgePost.md)|  |
+ **body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post** | [**BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost**](BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost.md)|  |
 
 ### Return type
 
@@ -106,8 +106,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post**
-> bool, date, datetime, dict, float, int, list, str, none_type assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post(service_uuid, stage, alarm_uuid, body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post)
+# **assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post**
+> bool, date, datetime, dict, float, int, list, str, none_type assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post(service, stage, alarm_uuid, body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post)
 
 Assign Alarm
 
@@ -119,7 +119,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import monitor_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost
+from ehelply-python-sdk.model.body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -132,22 +132,22 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
-    body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post = BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost(
+    body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post = BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost(
         assignee=AlarmAssign(
             assignee_uuid="assignee_uuid_example",
         ),
-    ) # BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost | 
+    ) # BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost | 
 
     # example passing only required values which don't have defaults set
     try:
         # Assign Alarm
-        api_response = api_instance.assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post(service_uuid, stage, alarm_uuid, body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post)
+        api_response = api_instance.assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post(service, stage, alarm_uuid, body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post: %s\n" % e)
+        print("Exception when calling MonitorApi->assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post: %s\n" % e)
 ```
 
 
@@ -155,10 +155,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
- **body_assign_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_assign_post** | [**BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost**](BodyAssignAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidAssignPost.md)|  |
+ **body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post** | [**BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost**](BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost.md)|  |
 
 ### Return type
 
@@ -184,8 +184,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post**
-> bool, date, datetime, dict, float, int, list, str, none_type attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post(service_uuid, stage, alarm_uuid, body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post)
+# **attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post**
+> bool, date, datetime, dict, float, int, list, str, none_type attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post(service, stage, alarm_uuid, body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post)
 
 Attach Alarm Note
 
@@ -197,7 +197,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import monitor_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost
+from ehelply-python-sdk.model.body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -210,23 +210,23 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
-    body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post = BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost(
+    body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post = BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost(
         note=AlarmNote(
             author_uuid="author_uuid_example",
             message="message_example",
         ),
-    ) # BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost | 
+    ) # BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost | 
 
     # example passing only required values which don't have defaults set
     try:
         # Attach Alarm Note
-        api_response = api_instance.attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post(service_uuid, stage, alarm_uuid, body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post)
+        api_response = api_instance.attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post(service, stage, alarm_uuid, body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post: %s\n" % e)
+        print("Exception when calling MonitorApi->attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post: %s\n" % e)
 ```
 
 
@@ -234,10 +234,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
- **body_attach_alarm_note_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_note_post** | [**BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost**](BodyAttachAlarmNoteMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidNotePost.md)|  |
+ **body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post** | [**BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost**](BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost.md)|  |
 
 ### Return type
 
@@ -263,8 +263,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post**
-> bool, date, datetime, dict, float, int, list, str, none_type attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post(service_uuid, stage, alarm_uuid, body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post)
+# **attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post**
+> bool, date, datetime, dict, float, int, list, str, none_type attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post(service, stage, alarm_uuid, body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post)
 
 Attach Alarm Ticket
 
@@ -276,7 +276,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import monitor_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost
+from ehelply-python-sdk.model.body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -289,22 +289,22 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
-    body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post = BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost(
+    body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post = BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost(
         ticket=AlarmTicket(
             ticket_uuid="ticket_uuid_example",
         ),
-    ) # BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost | 
+    ) # BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost | 
 
     # example passing only required values which don't have defaults set
     try:
         # Attach Alarm Ticket
-        api_response = api_instance.attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post(service_uuid, stage, alarm_uuid, body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post)
+        api_response = api_instance.attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post(service, stage, alarm_uuid, body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post: %s\n" % e)
+        print("Exception when calling MonitorApi->attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post: %s\n" % e)
 ```
 
 
@@ -312,10 +312,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
- **body_attach_alarm_ticket_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ticket_post** | [**BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost**](BodyAttachAlarmTicketMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTicketPost.md)|  |
+ **body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post** | [**BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost**](BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost.md)|  |
 
 ### Return type
 
@@ -341,8 +341,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post**
-> bool, date, datetime, dict, float, int, list, str, none_type clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post(service_uuid, stage, alarm_uuid)
+# **clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post**
+> bool, date, datetime, dict, float, int, list, str, none_type clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post(service, stage, alarm_uuid)
 
 Clear Alarm
 
@@ -366,17 +366,17 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         # Clear Alarm
-        api_response = api_instance.clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post(service_uuid, stage, alarm_uuid)
+        api_response = api_instance.clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post(service, stage, alarm_uuid)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->clear_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_clear_post: %s\n" % e)
+        print("Exception when calling MonitorApi->clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post: %s\n" % e)
 ```
 
 
@@ -384,7 +384,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
 
@@ -412,8 +412,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get(service_uuid, stage, alarm_uuid)
+# **get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get(service, stage, alarm_uuid)
 
 Get Service Alarm
 
@@ -437,17 +437,17 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         # Get Service Alarm
-        api_response = api_instance.get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get(service_uuid, stage, alarm_uuid)
+        api_response = api_instance.get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get(service, stage, alarm_uuid)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get: %s\n" % e)
 ```
 
 
@@ -455,7 +455,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
 
@@ -483,8 +483,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get(service_uuid, stage)
+# **get_service_alarms_monitor_services_service_stages_stage_alarms_get**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_alarms_monitor_services_service_stages_stage_alarms_get(service, stage)
 
 Get Service Alarms
 
@@ -508,7 +508,7 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     history = 5 # int |  (optional) if omitted the server will use the default value of 5
     include_terminated = False # bool |  (optional) if omitted the server will use the default value of False
@@ -517,19 +517,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Service Alarms
-        api_response = api_instance.get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get(service_uuid, stage)
+        api_response = api_instance.get_service_alarms_monitor_services_service_stages_stage_alarms_get(service, stage)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_alarms_monitor_services_service_stages_stage_alarms_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Service Alarms
-        api_response = api_instance.get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get(service_uuid, stage, history=history, include_terminated=include_terminated, include_cleared=include_cleared)
+        api_response = api_instance.get_service_alarms_monitor_services_service_stages_stage_alarms_get(service, stage, history=history, include_terminated=include_terminated, include_cleared=include_cleared)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_alarms_monitor_services_service_uuid_stages_stage_alarms_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_alarms_monitor_services_service_stages_stage_alarms_get: %s\n" % e)
 ```
 
 
@@ -537,7 +537,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **history** | **int**|  | [optional] if omitted the server will use the default value of 5
  **include_terminated** | **bool**|  | [optional] if omitted the server will use the default value of False
@@ -567,8 +567,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get(service_uuid, stage)
+# **get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get(service, stage)
 
 Get Service Heartbeats
 
@@ -592,26 +592,26 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     history = 5 # int |  (optional) if omitted the server will use the default value of 5
 
     # example passing only required values which don't have defaults set
     try:
         # Get Service Heartbeats
-        api_response = api_instance.get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get(service_uuid, stage)
+        api_response = api_instance.get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get(service, stage)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Service Heartbeats
-        api_response = api_instance.get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get(service_uuid, stage, history=history)
+        api_response = api_instance.get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get(service, stage, history=history)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_heartbeats_monitor_services_service_uuid_stages_stage_heartbeats_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get: %s\n" % e)
 ```
 
 
@@ -619,7 +619,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **history** | **int**|  | [optional] if omitted the server will use the default value of 5
 
@@ -647,8 +647,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_kpis_monitor_services_service_uuid_kpis_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_service_kpis_monitor_services_service_uuid_kpis_get(service_uuid)
+# **get_service_kpis_monitor_services_service_kpis_get**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_kpis_monitor_services_service_kpis_get(service)
 
 Get Service Kpis
 
@@ -672,25 +672,25 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     history = 5 # int |  (optional) if omitted the server will use the default value of 5
 
     # example passing only required values which don't have defaults set
     try:
         # Get Service Kpis
-        api_response = api_instance.get_service_kpis_monitor_services_service_uuid_kpis_get(service_uuid)
+        api_response = api_instance.get_service_kpis_monitor_services_service_kpis_get(service)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_kpis_monitor_services_service_uuid_kpis_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_kpis_monitor_services_service_kpis_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Service Kpis
-        api_response = api_instance.get_service_kpis_monitor_services_service_uuid_kpis_get(service_uuid, history=history)
+        api_response = api_instance.get_service_kpis_monitor_services_service_kpis_get(service, history=history)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_kpis_monitor_services_service_uuid_kpis_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_kpis_monitor_services_service_kpis_get: %s\n" % e)
 ```
 
 
@@ -698,7 +698,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **history** | **int**|  | [optional] if omitted the server will use the default value of 5
 
 ### Return type
@@ -725,8 +725,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_monitor_services_service_uuid_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_service_monitor_services_service_uuid_get(service_uuid)
+# **get_service_monitor_services_service_get**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_monitor_services_service_get(service)
 
 Get Service
 
@@ -750,7 +750,7 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     heartbeats = False # bool |  (optional) if omitted the server will use the default value of False
     heartbeat_limit = 5 # int |  (optional) if omitted the server will use the default value of 5
     alarms = False # bool |  (optional) if omitted the server will use the default value of False
@@ -760,19 +760,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Service
-        api_response = api_instance.get_service_monitor_services_service_uuid_get(service_uuid)
+        api_response = api_instance.get_service_monitor_services_service_get(service)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_monitor_services_service_uuid_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_monitor_services_service_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Service
-        api_response = api_instance.get_service_monitor_services_service_uuid_get(service_uuid, heartbeats=heartbeats, heartbeat_limit=heartbeat_limit, alarms=alarms, alarm_limit=alarm_limit, stage=stage)
+        api_response = api_instance.get_service_monitor_services_service_get(service, heartbeats=heartbeats, heartbeat_limit=heartbeat_limit, alarms=alarms, alarm_limit=alarm_limit, stage=stage)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_monitor_services_service_uuid_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_monitor_services_service_get: %s\n" % e)
 ```
 
 
@@ -780,7 +780,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **heartbeats** | **bool**|  | [optional] if omitted the server will use the default value of False
  **heartbeat_limit** | **int**|  | [optional] if omitted the server will use the default value of 5
  **alarms** | **bool**|  | [optional] if omitted the server will use the default value of False
@@ -960,8 +960,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get(service_uuid, stage)
+# **get_service_vitals_monitor_services_service_stages_stage_vitals_get**
+> bool, date, datetime, dict, float, int, list, str, none_type get_service_vitals_monitor_services_service_stages_stage_vitals_get(service, stage)
 
 Get Service Vitals
 
@@ -985,26 +985,26 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     history = 5 # int |  (optional) if omitted the server will use the default value of 5
 
     # example passing only required values which don't have defaults set
     try:
         # Get Service Vitals
-        api_response = api_instance.get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get(service_uuid, stage)
+        api_response = api_instance.get_service_vitals_monitor_services_service_stages_stage_vitals_get(service, stage)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_vitals_monitor_services_service_stages_stage_vitals_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Service Vitals
-        api_response = api_instance.get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get(service_uuid, stage, history=history)
+        api_response = api_instance.get_service_vitals_monitor_services_service_stages_stage_vitals_get(service, stage, history=history)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_vitals_monitor_services_service_uuid_stages_stage_vitals_get: %s\n" % e)
+        print("Exception when calling MonitorApi->get_service_vitals_monitor_services_service_stages_stage_vitals_get: %s\n" % e)
 ```
 
 
@@ -1012,7 +1012,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **history** | **int**|  | [optional] if omitted the server will use the default value of 5
 
@@ -1182,8 +1182,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **hide_service_monitor_services_service_uuid_stages_stage_hide_post**
-> bool, date, datetime, dict, float, int, list, str, none_type hide_service_monitor_services_service_uuid_stages_stage_hide_post(service_uuid, stage)
+# **hide_service_monitor_services_service_stages_stage_hide_post**
+> bool, date, datetime, dict, float, int, list, str, none_type hide_service_monitor_services_service_stages_stage_hide_post(service, stage)
 
 Hide Service
 
@@ -1207,16 +1207,16 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         # Hide Service
-        api_response = api_instance.hide_service_monitor_services_service_uuid_stages_stage_hide_post(service_uuid, stage)
+        api_response = api_instance.hide_service_monitor_services_service_stages_stage_hide_post(service, stage)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->hide_service_monitor_services_service_uuid_stages_stage_hide_post: %s\n" % e)
+        print("Exception when calling MonitorApi->hide_service_monitor_services_service_stages_stage_hide_post: %s\n" % e)
 ```
 
 
@@ -1224,7 +1224,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
 
 ### Return type
@@ -1251,8 +1251,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post**
-> bool, date, datetime, dict, float, int, list, str, none_type ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post(service_uuid, stage, alarm_uuid, body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post)
+# **ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post**
+> bool, date, datetime, dict, float, int, list, str, none_type ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post(service, stage, alarm_uuid, body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post)
 
 Ignore Alarm
 
@@ -1264,7 +1264,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import monitor_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost
+from ehelply-python-sdk.model.body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1277,22 +1277,22 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
-    body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post = BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost(
+    body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post = BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost(
         ignore=AlarmIgnore(
             ignorer_uuid="ignorer_uuid_example",
         ),
-    ) # BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost | 
+    ) # BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost | 
 
     # example passing only required values which don't have defaults set
     try:
         # Ignore Alarm
-        api_response = api_instance.ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post(service_uuid, stage, alarm_uuid, body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post)
+        api_response = api_instance.ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post(service, stage, alarm_uuid, body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post: %s\n" % e)
+        print("Exception when calling MonitorApi->ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post: %s\n" % e)
 ```
 
 
@@ -1300,10 +1300,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
- **body_ignore_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_ignore_post** | [**BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost**](BodyIgnoreAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidIgnorePost.md)|  |
+ **body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post** | [**BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost**](BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost.md)|  |
 
 ### Return type
 
@@ -1410,8 +1410,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_alarms_monitor_services_service_uuid_alarms_get**
-> bool, date, datetime, dict, float, int, list, str, none_type search_alarms_monitor_services_service_uuid_alarms_get(service_uuid)
+# **search_alarms_monitor_services_service_alarms_get**
+> bool, date, datetime, dict, float, int, list, str, none_type search_alarms_monitor_services_service_alarms_get(service)
 
 Search Alarms
 
@@ -1435,7 +1435,7 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     page = 1 # int |  (optional) if omitted the server will use the default value of 1
     page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
     search = "search_example" # str |  (optional)
@@ -1446,19 +1446,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Search Alarms
-        api_response = api_instance.search_alarms_monitor_services_service_uuid_alarms_get(service_uuid)
+        api_response = api_instance.search_alarms_monitor_services_service_alarms_get(service)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->search_alarms_monitor_services_service_uuid_alarms_get: %s\n" % e)
+        print("Exception when calling MonitorApi->search_alarms_monitor_services_service_alarms_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Search Alarms
-        api_response = api_instance.search_alarms_monitor_services_service_uuid_alarms_get(service_uuid, page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc)
+        api_response = api_instance.search_alarms_monitor_services_service_alarms_get(service, page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->search_alarms_monitor_services_service_uuid_alarms_get: %s\n" % e)
+        print("Exception when calling MonitorApi->search_alarms_monitor_services_service_alarms_get: %s\n" % e)
 ```
 
 
@@ -1466,7 +1466,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **page** | **int**|  | [optional] if omitted the server will use the default value of 1
  **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
  **search** | **str**|  | [optional]
@@ -1498,8 +1498,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **show_service_monitor_services_service_uuid_stages_stage_show_post**
-> bool, date, datetime, dict, float, int, list, str, none_type show_service_monitor_services_service_uuid_stages_stage_show_post(service_uuid, stage)
+# **show_service_monitor_services_service_stages_stage_show_post**
+> bool, date, datetime, dict, float, int, list, str, none_type show_service_monitor_services_service_stages_stage_show_post(service, stage)
 
 Show Service
 
@@ -1523,16 +1523,16 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
 
     # example passing only required values which don't have defaults set
     try:
         # Show Service
-        api_response = api_instance.show_service_monitor_services_service_uuid_stages_stage_show_post(service_uuid, stage)
+        api_response = api_instance.show_service_monitor_services_service_stages_stage_show_post(service, stage)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->show_service_monitor_services_service_uuid_stages_stage_show_post: %s\n" % e)
+        print("Exception when calling MonitorApi->show_service_monitor_services_service_stages_stage_show_post: %s\n" % e)
 ```
 
 
@@ -1540,7 +1540,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
 
 ### Return type
@@ -1567,8 +1567,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post**
-> bool, date, datetime, dict, float, int, list, str, none_type terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post(service_uuid, stage, alarm_uuid, body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post)
+# **terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post**
+> bool, date, datetime, dict, float, int, list, str, none_type terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post(service, stage, alarm_uuid, body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post)
 
 Terminate Alarm
 
@@ -1580,7 +1580,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import monitor_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost
+from ehelply-python-sdk.model.body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1593,22 +1593,22 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
     alarm_uuid = "alarm_uuid_example" # str | 
-    body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post = BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost(
+    body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post = BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost(
         terminate=AlarmTerminate(
             terminater_uuid="terminater_uuid_example",
         ),
-    ) # BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost | 
+    ) # BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost | 
 
     # example passing only required values which don't have defaults set
     try:
         # Terminate Alarm
-        api_response = api_instance.terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post(service_uuid, stage, alarm_uuid, body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post)
+        api_response = api_instance.terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post(service, stage, alarm_uuid, body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post: %s\n" % e)
+        print("Exception when calling MonitorApi->terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post: %s\n" % e)
 ```
 
 
@@ -1616,10 +1616,10 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
  **alarm_uuid** | **str**|  |
- **body_terminate_alarm_monitor_services_service_uuid_stages_stage_alarms_alarm_uuid_terminate_post** | [**BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost**](BodyTerminateAlarmMonitorServicesServiceUuidStagesStageAlarmsAlarmUuidTerminatePost.md)|  |
+ **body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post** | [**BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost**](BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost.md)|  |
 
 ### Return type
 
@@ -1645,8 +1645,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post**
-> bool, date, datetime, dict, float, int, list, str, none_type trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post(service_uuid, stage, body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post)
+# **trigger_alarm_monitor_services_service_stages_stage_alarms_post**
+> bool, date, datetime, dict, float, int, list, str, none_type trigger_alarm_monitor_services_service_stages_stage_alarms_post(service, stage, body_trigger_alarm_monitor_services_service_stages_stage_alarms_post)
 
 Trigger Alarm
 
@@ -1658,7 +1658,7 @@ import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import monitor_api
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost
+from ehelply-python-sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1671,9 +1671,9 @@ configuration = ehelply-python-sdk.Configuration(
 with ehelply-python-sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-    service_uuid = "service_uuid_example" # str | 
+    service = "service_example" # str | 
     stage = "stage_example" # str | 
-    body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post = BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost(
+    body_trigger_alarm_monitor_services_service_stages_stage_alarms_post = BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost(
         alarm=AlarmCreate(
             process="process_example",
             severity="severity_example",
@@ -1681,15 +1681,15 @@ with ehelply-python-sdk.ApiClient() as api_client:
             summary="summary_example",
             description="description_example",
         ),
-    ) # BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost | 
+    ) # BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost | 
 
     # example passing only required values which don't have defaults set
     try:
         # Trigger Alarm
-        api_response = api_instance.trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post(service_uuid, stage, body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post)
+        api_response = api_instance.trigger_alarm_monitor_services_service_stages_stage_alarms_post(service, stage, body_trigger_alarm_monitor_services_service_stages_stage_alarms_post)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling MonitorApi->trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post: %s\n" % e)
+        print("Exception when calling MonitorApi->trigger_alarm_monitor_services_service_stages_stage_alarms_post: %s\n" % e)
 ```
 
 
@@ -1697,9 +1697,9 @@ with ehelply-python-sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_uuid** | **str**|  |
+ **service** | **str**|  |
  **stage** | **str**|  |
- **body_trigger_alarm_monitor_services_service_uuid_stages_stage_alarms_post** | [**BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost**](BodyTriggerAlarmMonitorServicesServiceUuidStagesStageAlarmsPost.md)|  |
+ **body_trigger_alarm_monitor_services_service_stages_stage_alarms_post** | [**BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost**](BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost.md)|  |
 
 ### Return type
 

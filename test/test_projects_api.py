@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.40
+    eHelply SDK - 1.1.58
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.40
+    The version of the OpenAPI document: 1.1.58
 
                                      Apache License
                                Version 2.0, January 2004
@@ -231,13 +231,6 @@ class TestProjectsApi(unittest.TestCase):
         """
         pass
 
-    def test_add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post(self):
-        """Test case for add_permission_to_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_post
-
-        Add Permission To Key  # noqa: E501
-        """
-        pass
-
     def test_archive_project_projects_projects_project_uuid_delete(self):
         """Test case for archive_project_projects_projects_project_uuid_delete
 
@@ -245,15 +238,8 @@ class TestProjectsApi(unittest.TestCase):
         """
         pass
 
-    def test_cloud_participant_projects_cloud_participant_post(self):
-        """Test case for cloud_participant_projects_cloud_participant_post
-
-        Cloud Participant  # noqa: E501
-        """
-        pass
-
-    def test_create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post(self):
-        """Test case for create_project_key_projects_projects_project_uuid_members_entity_uuid_keys_post
+    def test_create_project_key_projects_projects_project_uuid_keys_post(self):
+        """Test case for create_project_key_projects_projects_project_uuid_keys_post
 
         Create Project Key  # noqa: E501
         """
@@ -294,29 +280,8 @@ class TestProjectsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get(self):
-        """Test case for get_permissions_for_entity_projects_projects_project_uuid_members_entity_uuid_permissions_get
-
-        Get Permissions For Entity  # noqa: E501
-        """
-        pass
-
-    def test_get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get(self):
-        """Test case for get_permissions_for_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_get
-
-        Get Permissions For Key  # noqa: E501
-        """
-        pass
-
-    def test_get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get(self):
-        """Test case for get_permissions_type_projects_projects_project_uuid_members_entity_uuid_permissions_types_type_uuid_get
-
-        Get Permissions Type  # noqa: E501
-        """
-        pass
-
-    def test_get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get(self):
-        """Test case for get_project_keys_projects_projects_project_uuid_members_entity_uuid_keys_get
+    def test_get_project_keys_projects_projects_project_uuid_keys_get(self):
+        """Test case for get_project_keys_projects_projects_project_uuid_keys_get
 
         Get Project Keys  # noqa: E501
         """
@@ -357,17 +322,17 @@ class TestProjectsApi(unittest.TestCase):
         """
         pass
 
-    def test_remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete(self):
-        """Test case for remove_permission_from_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_permissions_node_uuid_delete
+    def test_remove_project_key_projects_projects_project_uuid_keys_delete(self):
+        """Test case for remove_project_key_projects_projects_project_uuid_keys_delete
 
-        Remove Permission From Key  # noqa: E501
+        Remove Project Key  # noqa: E501
         """
         pass
 
-    def test_remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete(self):
-        """Test case for remove_project_key_projects_projects_project_uuid_members_entity_uuid_keys_key_uuid_delete
+    def test_sandbox_projects_sandbox_get(self):
+        """Test case for sandbox_projects_sandbox_get
 
-        Remove Project Key  # noqa: E501
+        Sandbox  # noqa: E501
         """
         pass
 

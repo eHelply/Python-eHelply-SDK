@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.40
+    eHelply SDK - 1.1.58
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.40
+    The version of the OpenAPI document: 1.1.58
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,9 +222,8 @@ from ehelply-python-sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from ehelply-python-sdk.model.body_create_note_notes_notes_post import BodyCreateNoteNotesNotesPost
-from ehelply-python-sdk.model.body_update_note_notes_notes_note_id_put import BodyUpdateNoteNotesNotesNoteIdPut
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+from ehelply-python-sdk.model.note_base import NoteBase
 from ehelply-python-sdk.model.note_dynamo import NoteDynamo
 
 
@@ -250,7 +249,7 @@ class NotesApi(object):
             },
             params_map={
                 'all': [
-                    'body_create_note_notes_notes_post',
+                    'note_base',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -259,7 +258,7 @@ class NotesApi(object):
                     'ehelply_data',
                 ],
                 'required': [
-                    'body_create_note_notes_notes_post',
+                    'note_base',
                 ],
                 'nullable': [
                 ],
@@ -274,8 +273,8 @@ class NotesApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body_create_note_notes_notes_post':
-                        (BodyCreateNoteNotesNotesPost,),
+                    'note_base':
+                        (NoteBase,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -298,7 +297,7 @@ class NotesApi(object):
                     'ehelply_data': 'ehelply-data',
                 },
                 'location_map': {
-                    'body_create_note_notes_notes_post': 'body',
+                    'note_base': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -504,7 +503,7 @@ class NotesApi(object):
             params_map={
                 'all': [
                     'note_id',
-                    'body_update_note_notes_notes_note_id_put',
+                    'note_base',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -514,7 +513,7 @@ class NotesApi(object):
                 ],
                 'required': [
                     'note_id',
-                    'body_update_note_notes_notes_note_id_put',
+                    'note_base',
                 ],
                 'nullable': [
                 ],
@@ -531,8 +530,8 @@ class NotesApi(object):
                 'openapi_types': {
                     'note_id':
                         (str,),
-                    'body_update_note_notes_notes_note_id_put':
-                        (BodyUpdateNoteNotesNotesNoteIdPut,),
+                    'note_base':
+                        (NoteBase,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -557,7 +556,7 @@ class NotesApi(object):
                 },
                 'location_map': {
                     'note_id': 'path',
-                    'body_update_note_notes_notes_note_id_put': 'body',
+                    'note_base': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -581,7 +580,7 @@ class NotesApi(object):
 
     def create_note_notes_notes_post(
         self,
-        body_create_note_notes_notes_post,
+        note_base,
         **kwargs
     ):
         """Create Note  # noqa: E501
@@ -589,11 +588,11 @@ class NotesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_note_notes_notes_post(body_create_note_notes_notes_post, async_req=True)
+        >>> thread = api.create_note_notes_notes_post(note_base, async_req=True)
         >>> result = thread.get()
 
         Args:
-            body_create_note_notes_notes_post (BodyCreateNoteNotesNotesPost):
+            note_base (NoteBase):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -646,8 +645,8 @@ class NotesApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['body_create_note_notes_notes_post'] = \
-            body_create_note_notes_notes_post
+        kwargs['note_base'] = \
+            note_base
         return self.create_note_notes_notes_post_endpoint.call_with_http_info(**kwargs)
 
     def delete_note_notes_notes_note_id_delete(
@@ -798,7 +797,7 @@ class NotesApi(object):
     def update_note_notes_notes_note_id_put(
         self,
         note_id,
-        body_update_note_notes_notes_note_id_put,
+        note_base,
         **kwargs
     ):
         """Update Note  # noqa: E501
@@ -806,12 +805,12 @@ class NotesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_note_notes_notes_note_id_put(note_id, body_update_note_notes_notes_note_id_put, async_req=True)
+        >>> thread = api.update_note_notes_notes_note_id_put(note_id, note_base, async_req=True)
         >>> result = thread.get()
 
         Args:
             note_id (str):
-            body_update_note_notes_notes_note_id_put (BodyUpdateNoteNotesNotesNoteIdPut):
+            note_base (NoteBase):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -866,7 +865,7 @@ class NotesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['note_id'] = \
             note_id
-        kwargs['body_update_note_notes_notes_note_id_put'] = \
-            body_update_note_notes_notes_note_id_put
+        kwargs['note_base'] = \
+            note_base
         return self.update_note_notes_notes_note_id_put_endpoint.call_with_http_info(**kwargs)
 

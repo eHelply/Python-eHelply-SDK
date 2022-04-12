@@ -7,11 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** |  | 
 **name** | **str** |  | 
-**created_at** | **str** |  | 
-**current_spend** | **int** |  | 
-**max_spend** | **int** |  | 
-**is_spend_maxed** | **bool** |  | 
-**status** | **str** |  | 
+**status** | **str** |  | [optional] 
 **archived_at** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

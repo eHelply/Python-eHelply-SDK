@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.40
+    eHelply SDK - 1.1.58
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.40
+    The version of the OpenAPI document: 1.1.58
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,9 +222,9 @@ from ehelply-python-sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from ehelply-python-sdk.model.body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post import BodyCreateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsPost
-from ehelply-python-sdk.model.body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put import BodyUpdateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsTicketIdPut
+from ehelply-python-sdk.model.contact import Contact
 from ehelply-python-sdk.model.contact_response import ContactResponse
+from ehelply-python-sdk.model.create_ticket import CreateTicket
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.ticket_response import TicketResponse
 from ehelply-python-sdk.model.tickets_response import TicketsResponse
@@ -252,6 +252,7 @@ class SupportApi(object):
             },
             params_map={
                 'all': [
+                    'contact',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -259,7 +260,9 @@ class SupportApi(object):
                     'ehelply_project',
                     'ehelply_data',
                 ],
-                'required': [],
+                'required': [
+                    'contact',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -273,6 +276,8 @@ class SupportApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'contact':
+                        (Contact,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -295,6 +300,7 @@ class SupportApi(object):
                     'ehelply_data': 'ehelply-data',
                 },
                 'location_map': {
+                    'contact': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -309,7 +315,9 @@ class SupportApi(object):
                 'accept': [
                     'application/json'
                 ],
-                'content_type': [],
+                'content_type': [
+                    'application/json'
+                ]
             },
             api_client=api_client
         )
@@ -326,7 +334,7 @@ class SupportApi(object):
                 'all': [
                     'project_uuid',
                     'member_uuid',
-                    'body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post',
+                    'create_ticket',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -337,7 +345,7 @@ class SupportApi(object):
                 'required': [
                     'project_uuid',
                     'member_uuid',
-                    'body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post',
+                    'create_ticket',
                 ],
                 'nullable': [
                 ],
@@ -356,8 +364,8 @@ class SupportApi(object):
                         (str,),
                     'member_uuid':
                         (str,),
-                    'body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post':
-                        (BodyCreateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsPost,),
+                    'create_ticket':
+                        (CreateTicket,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -384,7 +392,7 @@ class SupportApi(object):
                 'location_map': {
                     'project_uuid': 'path',
                     'member_uuid': 'path',
-                    'body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post': 'body',
+                    'create_ticket': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -576,7 +584,7 @@ class SupportApi(object):
                     'project_uuid',
                     'member_uuid',
                     'ticket_id',
-                    'body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put',
+                    'create_ticket',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -588,7 +596,7 @@ class SupportApi(object):
                     'project_uuid',
                     'member_uuid',
                     'ticket_id',
-                    'body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put',
+                    'create_ticket',
                 ],
                 'nullable': [
                 ],
@@ -609,8 +617,8 @@ class SupportApi(object):
                         (str,),
                     'ticket_id':
                         (str,),
-                    'body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put':
-                        (BodyUpdateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsTicketIdPut,),
+                    'create_ticket':
+                        (CreateTicket,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -639,7 +647,7 @@ class SupportApi(object):
                     'project_uuid': 'path',
                     'member_uuid': 'path',
                     'ticket_id': 'path',
-                    'body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put': 'body',
+                    'create_ticket': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -754,6 +762,7 @@ class SupportApi(object):
 
     def create_contact_support_contact_post(
         self,
+        contact,
         **kwargs
     ):
         """Create Contact  # noqa: E501
@@ -761,9 +770,11 @@ class SupportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_contact_support_contact_post(async_req=True)
+        >>> thread = api.create_contact_support_contact_post(contact, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            contact (Contact):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -816,13 +827,15 @@ class SupportApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['contact'] = \
+            contact
         return self.create_contact_support_contact_post_endpoint.call_with_http_info(**kwargs)
 
     def create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(
         self,
         project_uuid,
         member_uuid,
-        body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post,
+        create_ticket,
         **kwargs
     ):
         """Create Ticket  # noqa: E501
@@ -830,13 +843,13 @@ class SupportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(project_uuid, member_uuid, body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post, async_req=True)
+        >>> thread = api.create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(project_uuid, member_uuid, create_ticket, async_req=True)
         >>> result = thread.get()
 
         Args:
             project_uuid (str):
             member_uuid (str):
-            body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post (BodyCreateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsPost):
+            create_ticket (CreateTicket):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -893,8 +906,8 @@ class SupportApi(object):
             project_uuid
         kwargs['member_uuid'] = \
             member_uuid
-        kwargs['body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post'] = \
-            body_create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post
+        kwargs['create_ticket'] = \
+            create_ticket
         return self.create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post_endpoint.call_with_http_info(**kwargs)
 
     def delete_contact_support_contact_delete(
@@ -1043,7 +1056,7 @@ class SupportApi(object):
         project_uuid,
         member_uuid,
         ticket_id,
-        body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put,
+        create_ticket,
         **kwargs
     ):
         """Update Ticket  # noqa: E501
@@ -1051,14 +1064,14 @@ class SupportApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put(project_uuid, member_uuid, ticket_id, body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put, async_req=True)
+        >>> thread = api.update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put(project_uuid, member_uuid, ticket_id, create_ticket, async_req=True)
         >>> result = thread.get()
 
         Args:
             project_uuid (str):
             member_uuid (str):
             ticket_id (str):
-            body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put (BodyUpdateTicketSupportProjectsProjectUuidMembersMemberUuidTicketsTicketIdPut):
+            create_ticket (CreateTicket):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -1117,8 +1130,8 @@ class SupportApi(object):
             member_uuid
         kwargs['ticket_id'] = \
             ticket_id
-        kwargs['body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put'] = \
-            body_update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put
+        kwargs['create_ticket'] = \
+            create_ticket
         return self.update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put_endpoint.call_with_http_info(**kwargs)
 
     def view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get(
