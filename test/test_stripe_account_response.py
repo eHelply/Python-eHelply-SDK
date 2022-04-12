@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.stripe_account_response import StripeAccountResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
 
 
 class TestStripeAccountResponse(unittest.TestCase):

@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.contact_response import ContactResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.model.contact_response import ContactResponse
 
 
 class TestContactResponse(unittest.TestCase):

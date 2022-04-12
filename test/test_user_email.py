@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.user_email import UserEmail
+import ehelply_python_sdk
+from ehelply_python_sdk.model.user_email import UserEmail
 
 
 class TestUserEmail(unittest.TestCase):

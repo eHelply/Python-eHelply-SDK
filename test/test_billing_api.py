@@ -211,8 +211,8 @@
 
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.api.billing_api import BillingApi  # noqa: E501
+import ehelply_python_sdk
+from ehelply_python_sdk.api.billing_api import BillingApi  # noqa: E501
 
 
 class TestBillingApi(unittest.TestCase):

@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
+import ehelply_python_sdk
+from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 
 
 class TestSecurityEncryptionKeyGet(unittest.TestCase):

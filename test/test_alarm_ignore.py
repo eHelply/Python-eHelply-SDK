@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_ignore import AlarmIgnore
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_ignore import AlarmIgnore
 
 
 class TestAlarmIgnore(unittest.TestCase):

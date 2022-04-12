@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.detailed_meta_create import DetailedMetaCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
 
 
 class TestDetailedMetaCreate(unittest.TestCase):

@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.projects_project_create import ProjectsProjectCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
 
 
 class TestProjectsProjectCreate(unittest.TestCase):

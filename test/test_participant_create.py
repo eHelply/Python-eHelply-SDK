@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.participant_create import ParticipantCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.participant_create import ParticipantCreate
 
 
 class TestParticipantCreate(unittest.TestCase):

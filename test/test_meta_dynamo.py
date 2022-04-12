@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
+import ehelply_python_sdk
+from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
 
 
 class TestMetaDynamo(unittest.TestCase):

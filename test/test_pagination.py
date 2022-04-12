@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.pagination import Pagination
+import ehelply_python_sdk
+from ehelply_python_sdk.model.pagination import Pagination
 
 
 class TestPagination(unittest.TestCase):

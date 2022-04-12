@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.participant_user_return import ParticipantUserReturn
+import ehelply_python_sdk
+from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
 
 
 class TestParticipantUserReturn(unittest.TestCase):

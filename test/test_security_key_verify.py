@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.security_key_verify import SecurityKeyVerify
+import ehelply_python_sdk
+from ehelply_python_sdk.model.security_key_verify import SecurityKeyVerify
 
 
 class TestSecurityKeyVerify(unittest.TestCase):

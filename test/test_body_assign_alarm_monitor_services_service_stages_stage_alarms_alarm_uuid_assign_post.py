@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_assign import AlarmAssign
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_assign import AlarmAssign
 globals()['AlarmAssign'] = AlarmAssign
-from ehelply-python-sdk.model.body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost
+from ehelply_python_sdk.model.body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost
 
 
 class TestBodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost(unittest.TestCase):

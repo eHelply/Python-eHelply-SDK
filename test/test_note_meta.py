@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.note_meta import NoteMeta
+import ehelply_python_sdk
+from ehelply_python_sdk.model.note_meta import NoteMeta
 
 
 class TestNoteMeta(unittest.TestCase):

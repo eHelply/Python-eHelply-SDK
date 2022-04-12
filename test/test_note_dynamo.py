@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.note_meta import NoteMeta
+import ehelply_python_sdk
+from ehelply_python_sdk.model.note_meta import NoteMeta
 globals()['NoteMeta'] = NoteMeta
-from ehelply-python-sdk.model.note_dynamo import NoteDynamo
+from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 
 
 class TestNoteDynamo(unittest.TestCase):

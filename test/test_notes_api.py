@@ -211,8 +211,8 @@
 
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.api.notes_api import NotesApi  # noqa: E501
+import ehelply_python_sdk
+from ehelply_python_sdk.api.notes_api import NotesApi  # noqa: E501
 
 
 class TestNotesApi(unittest.TestCase):

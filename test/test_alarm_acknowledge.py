@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_acknowledge import AlarmAcknowledge
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_acknowledge import AlarmAcknowledge
 
 
 class TestAlarmAcknowledge(unittest.TestCase):

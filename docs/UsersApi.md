@@ -1,4 +1,4 @@
-# ehelply-python-sdk.UsersApi
+# ehelply_python_sdk.UsersApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -34,20 +34,20 @@ Validates a user signup with a given confirmation
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_confirmation import UserConfirmation
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user_confirmation import UserConfirmation
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_confirmation = UserConfirmation(
@@ -60,7 +60,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Confirmsignup
         api_response = api_instance.confirm_signup(user_confirmation)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->confirm_signup: %s\n" % e)
 ```
 
@@ -107,21 +107,21 @@ Creates a participant given the participant info (meta and user_id)
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.participant_create import ParticipantCreate
-from ehelply-python-sdk.model.participant_user_return import ParticipantUserReturn
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.participant_create import ParticipantCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     participant_create = ParticipantCreate(
@@ -140,7 +140,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Createparticipant
         api_response = api_instance.create_participant(participant_create)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->create_participant: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -149,7 +149,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Createparticipant
         api_response = api_instance.create_participant(participant_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->create_participant: %s\n" % e)
 ```
 
@@ -202,19 +202,19 @@ Usually ran after login and will do the following: - If no user exists (AKA sign
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     authorization = "authorization_example" # str |  (optional)
@@ -225,7 +225,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Createuser
         api_response = api_instance.create_user(authorization=authorization)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->create_user: %s\n" % e)
 ```
 
@@ -272,19 +272,19 @@ Delete participants related to the given participant_id, returns True if success
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     participant_id = "participant_id_example" # str | 
@@ -300,7 +300,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Deleteparticipant
         api_response = api_instance.delete_participant(participant_id)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->delete_participant: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -309,7 +309,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Deleteparticipant
         api_response = api_instance.delete_participant(participant_id, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->delete_participant: %s\n" % e)
 ```
 
@@ -362,19 +362,19 @@ Soft deletes the user with the provided user id, granted the deleter is the same
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_id = "user_id_example" # str | 
@@ -390,7 +390,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Deleteuser
         api_response = api_instance.delete_user(user_id)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->delete_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -399,7 +399,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Deleteuser
         api_response = api_instance.delete_user(user_id, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->delete_user: %s\n" % e)
 ```
 
@@ -452,20 +452,20 @@ Gets a participant given their participant ID
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.participant_user_return import ParticipantUserReturn
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     participant_id = "participant_id_example" # str | 
@@ -481,7 +481,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getparticipant
         api_response = api_instance.get_participant(participant_id)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->get_participant: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -490,7 +490,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getparticipant
         api_response = api_instance.get_participant(participant_id, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->get_participant: %s\n" % e)
 ```
 
@@ -543,20 +543,20 @@ Gets the user object given user id (uuid) or cognito id (cognito)
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_response import UserResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.user_response import UserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_id = "user_id_example" # str | 
@@ -573,7 +573,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getuser
         api_response = api_instance.get_user(user_id)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->get_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -582,7 +582,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getuser
         api_response = api_instance.get_user(user_id, id_type=id_type, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->get_user: %s\n" % e)
 ```
 
@@ -636,21 +636,21 @@ Login endpoint, returns tokens. EMAIL NEEDS TO BE VERIFIED (can be done through 
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_login_return import UserLoginReturn
-from ehelply-python-sdk.model.user_login import UserLogin
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user_login_return import UserLoginReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.user_login import UserLogin
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_login = UserLogin(
@@ -663,7 +663,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Login
         api_response = api_instance.login(user_login)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->login: %s\n" % e)
 ```
 
@@ -710,20 +710,20 @@ Refreshes tokens given a refresh token.
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_token_return import UserTokenReturn
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user_token_return import UserTokenReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     app_client = "app_client_example" # str | 
@@ -734,7 +734,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Refreshtoken
         api_response = api_instance.refresh_token(app_client, body)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->refresh_token: %s\n" % e)
 ```
 
@@ -782,20 +782,20 @@ Sends the user an email with a confirmation code so they can reset their passwor
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_password_reset import UserPasswordReset
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user_password_reset import UserPasswordReset
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_password_reset = UserPasswordReset(
@@ -807,7 +807,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Resetpassword
         api_response = api_instance.reset_password(user_password_reset)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->reset_password: %s\n" % e)
 ```
 
@@ -854,20 +854,20 @@ Resets the given user's password to the given password when the proper code is p
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_password_reset_confirmation = UserPasswordResetConfirmation(
@@ -881,7 +881,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Reset Password Confirmation
         api_response = api_instance.reset_password_confirmation_users_auth_password_reset_confirm_post(user_password_reset_confirmation)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->reset_password_confirmation_users_auth_password_reset_confirm_post: %s\n" % e)
 ```
 
@@ -928,20 +928,20 @@ Search participants using a user uuid, returns pagination information and list o
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     page = 1 # int |  (optional) if omitted the server will use the default value of 1
@@ -963,7 +963,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Searchparticipants
         api_response = api_instance.search_participants(page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->search_participants: %s\n" % e)
 ```
 
@@ -1021,21 +1021,21 @@ Signup to eHelply, creates a user and default participant behind the scenes. Doe
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_signup import UserSignup
-from ehelply-python-sdk.model.user_signup_return import UserSignupReturn
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user_signup import UserSignup
+from ehelply_python_sdk.model.user_signup_return import UserSignupReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_signup = UserSignup(
@@ -1058,7 +1058,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Signup
         api_response = api_instance.signup(user_signup)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->signup: %s\n" % e)
 ```
 
@@ -1105,21 +1105,21 @@ Update participant data given
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.participant_update import ParticipantUpdate
-from ehelply-python-sdk.model.participant_user_return import ParticipantUserReturn
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.participant_update import ParticipantUpdate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     participant_id = "participant_id_example" # str | 
@@ -1140,7 +1140,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Updateparticipant
         api_response = api_instance.update_participant(participant_id, participant_update)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->update_participant: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1149,7 +1149,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Updateparticipant
         api_response = api_instance.update_participant(participant_id, participant_update, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->update_participant: %s\n" % e)
 ```
 
@@ -1203,21 +1203,21 @@ Update the given user and sync the cognito data
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_response import UserResponse
-from ehelply-python-sdk.model.user import User
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user import User
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.user_response import UserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     user_id = "user_id_example" # str | 
@@ -1251,7 +1251,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Updateuser
         api_response = api_instance.update_user(user_id, user)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1260,7 +1260,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Updateuser
         api_response = api_instance.update_user(user_id, user, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->update_user: %s\n" % e)
 ```
 
@@ -1314,20 +1314,20 @@ Validates a certain field.
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import users_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_validations import UserValidations
+import ehelply_python_sdk
+from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.user_validations import UserValidations
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
     field = "email" # str | 
@@ -1347,7 +1347,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Uservalidations
         api_response = api_instance.user_validations(field, user_validations)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->user_validations: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1356,7 +1356,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Uservalidations
         api_response = api_instance.user_validations(field, user_validations, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling UsersApi->user_validations: %s\n" % e)
 ```
 

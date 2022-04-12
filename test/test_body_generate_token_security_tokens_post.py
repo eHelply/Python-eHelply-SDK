@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.security_create_token import SecurityCreateToken
+import ehelply_python_sdk
+from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 globals()['SecurityCreateToken'] = SecurityCreateToken
-from ehelply-python-sdk.model.body_generate_token_security_tokens_post import BodyGenerateTokenSecurityTokensPost
+from ehelply_python_sdk.model.body_generate_token_security_tokens_post import BodyGenerateTokenSecurityTokensPost
 
 
 class TestBodyGenerateTokenSecurityTokensPost(unittest.TestCase):

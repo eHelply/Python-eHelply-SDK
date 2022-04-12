@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.security_create_token import SecurityCreateToken
+import ehelply_python_sdk
+from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 
 
 class TestSecurityCreateToken(unittest.TestCase):

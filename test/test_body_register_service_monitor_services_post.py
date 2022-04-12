@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.service_create import ServiceCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.service_create import ServiceCreate
 globals()['ServiceCreate'] = ServiceCreate
-from ehelply-python-sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
+from ehelply_python_sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
 
 
 class TestBodyRegisterServiceMonitorServicesPost(unittest.TestCase):

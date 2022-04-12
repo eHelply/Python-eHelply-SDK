@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_ignore import AlarmIgnore
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_ignore import AlarmIgnore
 globals()['AlarmIgnore'] = AlarmIgnore
-from ehelply-python-sdk.model.body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost
+from ehelply_python_sdk.model.body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost
 
 
 class TestBodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost(unittest.TestCase):

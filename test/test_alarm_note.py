@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_note import AlarmNote
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_note import AlarmNote
 
 
 class TestAlarmNote(unittest.TestCase):

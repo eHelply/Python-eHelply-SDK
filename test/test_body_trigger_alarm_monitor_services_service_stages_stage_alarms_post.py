@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_create import AlarmCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_create import AlarmCreate
 globals()['AlarmCreate'] = AlarmCreate
-from ehelply-python-sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
+from ehelply_python_sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
 
 
 class TestBodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost(unittest.TestCase):

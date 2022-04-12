@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.user_token_return import UserTokenReturn
+import ehelply_python_sdk
+from ehelply_python_sdk.model.user_token_return import UserTokenReturn
 
 
 class TestUserTokenReturn(unittest.TestCase):

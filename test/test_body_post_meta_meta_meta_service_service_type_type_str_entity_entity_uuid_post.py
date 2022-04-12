@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.meta_create import MetaCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.meta_create import MetaCreate
 globals()['MetaCreate'] = MetaCreate
-from ehelply-python-sdk.model.body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post import BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost
+from ehelply_python_sdk.model.body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post import BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost
 
 
 class TestBodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost(unittest.TestCase):

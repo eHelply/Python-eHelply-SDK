@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.tickets_response import TicketsResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.model.tickets_response import TicketsResponse
 
 
 class TestTicketsResponse(unittest.TestCase):

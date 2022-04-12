@@ -211,8 +211,8 @@
 
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.api.security_api import SecurityApi  # noqa: E501
+import ehelply_python_sdk
+from ehelply_python_sdk.api.security_api import SecurityApi  # noqa: E501
 
 
 class TestSecurityApi(unittest.TestCase):

@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.projects_usage_type_unit_price import ProjectsUsageTypeUnitPrice
+import ehelply_python_sdk
+from ehelply_python_sdk.model.projects_usage_type_unit_price import ProjectsUsageTypeUnitPrice
 globals()['ProjectsUsageTypeUnitPrice'] = ProjectsUsageTypeUnitPrice
-from ehelply-python-sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
+from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
 
 
 class TestProjectsUsageTypeGet(unittest.TestCase):

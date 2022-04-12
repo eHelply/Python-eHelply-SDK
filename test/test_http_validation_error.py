@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.validation_error import ValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.model.validation_error import ValidationError
 globals()['ValidationError'] = ValidationError
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 
 
 class TestHTTPValidationError(unittest.TestCase):

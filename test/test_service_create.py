@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.service_create import ServiceCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.service_create import ServiceCreate
 
 
 class TestServiceCreate(unittest.TestCase):

@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_ticket import AlarmTicket
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_ticket import AlarmTicket
 globals()['AlarmTicket'] = AlarmTicket
-from ehelply-python-sdk.model.body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost
+from ehelply_python_sdk.model.body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost
 
 
 class TestBodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost(unittest.TestCase):

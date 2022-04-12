@@ -1,4 +1,4 @@
-# ehelply-python-sdk.MonitorApi
+# ehelply_python_sdk.MonitorApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -38,20 +38,20 @@ Ack Alarm
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -68,7 +68,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Ack Alarm
         api_response = api_instance.ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post(service, stage, alarm_uuid, body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post: %s\n" % e)
 ```
 
@@ -116,20 +116,20 @@ Assign Alarm
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post import BodyAssignAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAssignPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -146,7 +146,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Assign Alarm
         api_response = api_instance.assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post(service, stage, alarm_uuid, body_assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post: %s\n" % e)
 ```
 
@@ -194,20 +194,20 @@ Attach Alarm Note
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -225,7 +225,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Attach Alarm Note
         api_response = api_instance.attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post(service, stage, alarm_uuid, body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post: %s\n" % e)
 ```
 
@@ -273,20 +273,20 @@ Attach Alarm Ticket
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post import BodyAttachAlarmTicketMonitorServicesServiceStagesStageAlarmsAlarmUuidTicketPost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -303,7 +303,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Attach Alarm Ticket
         api_response = api_instance.attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post(service, stage, alarm_uuid, body_attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->attach_alarm_ticket_monitor_services_service_stages_stage_alarms_alarm_uuid_ticket_post: %s\n" % e)
 ```
 
@@ -351,19 +351,19 @@ Clear Alarm
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -375,7 +375,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Clear Alarm
         api_response = api_instance.clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post(service, stage, alarm_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->clear_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_clear_post: %s\n" % e)
 ```
 
@@ -422,19 +422,19 @@ Get Service Alarm
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -446,7 +446,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Alarm
         api_response = api_instance.get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get(service, stage, alarm_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_get: %s\n" % e)
 ```
 
@@ -493,19 +493,19 @@ Get Service Alarms
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -519,7 +519,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Alarms
         api_response = api_instance.get_service_alarms_monitor_services_service_stages_stage_alarms_get(service, stage)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_alarms_monitor_services_service_stages_stage_alarms_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -528,7 +528,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Alarms
         api_response = api_instance.get_service_alarms_monitor_services_service_stages_stage_alarms_get(service, stage, history=history, include_terminated=include_terminated, include_cleared=include_cleared)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_alarms_monitor_services_service_stages_stage_alarms_get: %s\n" % e)
 ```
 
@@ -577,19 +577,19 @@ Get Service Heartbeats
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -601,7 +601,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Heartbeats
         api_response = api_instance.get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get(service, stage)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -610,7 +610,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Heartbeats
         api_response = api_instance.get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get(service, stage, history=history)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_heartbeats_monitor_services_service_stages_stage_heartbeats_get: %s\n" % e)
 ```
 
@@ -657,19 +657,19 @@ Get Service Kpis
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -680,7 +680,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Kpis
         api_response = api_instance.get_service_kpis_monitor_services_service_kpis_get(service)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_kpis_monitor_services_service_kpis_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -689,7 +689,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Kpis
         api_response = api_instance.get_service_kpis_monitor_services_service_kpis_get(service, history=history)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_kpis_monitor_services_service_kpis_get: %s\n" % e)
 ```
 
@@ -735,19 +735,19 @@ Get Service
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -762,7 +762,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service
         api_response = api_instance.get_service_monitor_services_service_get(service)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_monitor_services_service_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -771,7 +771,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service
         api_response = api_instance.get_service_monitor_services_service_get(service, heartbeats=heartbeats, heartbeat_limit=heartbeat_limit, alarms=alarms, alarm_limit=alarm_limit, stage=stage)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_monitor_services_service_get: %s\n" % e)
 ```
 
@@ -821,19 +821,19 @@ Getservicespec
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -845,7 +845,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getservicespec
         api_response = api_instance.get_service_spec(service, spec)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_spec: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -854,7 +854,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getservicespec
         api_response = api_instance.get_service_spec(service, spec, as_json=as_json)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_spec: %s\n" % e)
 ```
 
@@ -902,19 +902,19 @@ Getservicespecs
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -924,7 +924,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getservicespecs
         api_response = api_instance.get_service_specs(service)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_specs: %s\n" % e)
 ```
 
@@ -970,19 +970,19 @@ Get Service Vitals
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -994,7 +994,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Vitals
         api_response = api_instance.get_service_vitals_monitor_services_service_stages_stage_vitals_get(service, stage)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_vitals_monitor_services_service_stages_stage_vitals_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1003,7 +1003,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Vitals
         api_response = api_instance.get_service_vitals_monitor_services_service_stages_stage_vitals_get(service, stage, history=history)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_vitals_monitor_services_service_stages_stage_vitals_get: %s\n" % e)
 ```
 
@@ -1050,19 +1050,19 @@ Get Services
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     heartbeats = False # bool |  (optional) if omitted the server will use the default value of False
@@ -1079,7 +1079,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Services
         api_response = api_instance.get_services_monitor_services_get(heartbeats=heartbeats, heartbeat_limit=heartbeat_limit, alarms=alarms, alarm_limit=alarm_limit, include_hidden=include_hidden, stage=stage, key=key)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_services_monitor_services_get: %s\n" % e)
 ```
 
@@ -1130,18 +1130,18 @@ Getserviceswithspecs
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
 
@@ -1150,7 +1150,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Getserviceswithspecs
         api_response = api_instance.get_services_with_specs()
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_services_with_specs: %s\n" % e)
 ```
 
@@ -1192,19 +1192,19 @@ Hide Service
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -1215,7 +1215,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Hide Service
         api_response = api_instance.hide_service_monitor_services_service_stages_stage_hide_post(service, stage)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->hide_service_monitor_services_service_stages_stage_hide_post: %s\n" % e)
 ```
 
@@ -1261,20 +1261,20 @@ Ignore Alarm
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post import BodyIgnoreAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidIgnorePost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -1291,7 +1291,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Ignore Alarm
         api_response = api_instance.ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post(service, stage, alarm_uuid, body_ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->ignore_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_ignore_post: %s\n" % e)
 ```
 
@@ -1339,20 +1339,20 @@ Register Service
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     body_register_service_monitor_services_post = BodyRegisterServiceMonitorServicesPost(
@@ -1375,7 +1375,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Register Service
         api_response = api_instance.register_service_monitor_services_post(body_register_service_monitor_services_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->register_service_monitor_services_post: %s\n" % e)
 ```
 
@@ -1420,19 +1420,19 @@ Search Alarms
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -1448,7 +1448,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Alarms
         api_response = api_instance.search_alarms_monitor_services_service_alarms_get(service)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->search_alarms_monitor_services_service_alarms_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1457,7 +1457,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Alarms
         api_response = api_instance.search_alarms_monitor_services_service_alarms_get(service, page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->search_alarms_monitor_services_service_alarms_get: %s\n" % e)
 ```
 
@@ -1508,19 +1508,19 @@ Show Service
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -1531,7 +1531,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Show Service
         api_response = api_instance.show_service_monitor_services_service_stages_stage_show_post(service, stage)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->show_service_monitor_services_service_stages_stage_show_post: %s\n" % e)
 ```
 
@@ -1577,20 +1577,20 @@ Terminate Alarm
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -1607,7 +1607,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Terminate Alarm
         api_response = api_instance.terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post(service, stage, alarm_uuid, body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post: %s\n" % e)
 ```
 
@@ -1655,20 +1655,20 @@ Trigger Alarm
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import monitor_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
     service = "service_example" # str | 
@@ -1688,7 +1688,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Trigger Alarm
         api_response = api_instance.trigger_alarm_monitor_services_service_stages_stage_alarms_post(service, stage, body_trigger_alarm_monitor_services_service_stages_stage_alarms_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->trigger_alarm_monitor_services_service_stages_stage_alarms_post: %s\n" % e)
 ```
 

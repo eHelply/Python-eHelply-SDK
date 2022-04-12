@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.security_key_verify import SecurityKeyVerify
+import ehelply_python_sdk
+from ehelply_python_sdk.model.security_key_verify import SecurityKeyVerify
 globals()['SecurityKeyVerify'] = SecurityKeyVerify
-from ehelply-python-sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
+from ehelply_python_sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
 
 
 class TestBodyVerifyKeySecurityKeysVerifyPost(unittest.TestCase):

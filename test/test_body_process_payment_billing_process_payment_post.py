@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.payment import Payment
+import ehelply_python_sdk
+from ehelply_python_sdk.model.payment import Payment
 globals()['Payment'] = Payment
-from ehelply-python-sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
+from ehelply_python_sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
 
 
 class TestBodyProcessPaymentBillingProcessPaymentPost(unittest.TestCase):

@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.user import User
+import ehelply_python_sdk
+from ehelply_python_sdk.model.user import User
 
 
 class TestUser(unittest.TestCase):

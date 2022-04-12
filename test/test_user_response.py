@@ -212,12 +212,12 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.user_email import UserEmail
-from ehelply-python-sdk.model.user_flags import UserFlags
+import ehelply_python_sdk
+from ehelply_python_sdk.model.user_email import UserEmail
+from ehelply_python_sdk.model.user_flags import UserFlags
 globals()['UserEmail'] = UserEmail
 globals()['UserFlags'] = UserFlags
-from ehelply-python-sdk.model.user_response import UserResponse
+from ehelply_python_sdk.model.user_response import UserResponse
 
 
 class TestUserResponse(unittest.TestCase):

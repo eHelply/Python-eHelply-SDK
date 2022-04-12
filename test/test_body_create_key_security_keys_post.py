@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.security_key_create import SecurityKeyCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
 globals()['SecurityKeyCreate'] = SecurityKeyCreate
-from ehelply-python-sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
+from ehelply_python_sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
 
 
 class TestBodyCreateKeySecurityKeysPost(unittest.TestCase):

@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.meta_slugger import MetaSlugger
+import ehelply_python_sdk
+from ehelply_python_sdk.model.meta_slugger import MetaSlugger
 
 
 class TestMetaSlugger(unittest.TestCase):

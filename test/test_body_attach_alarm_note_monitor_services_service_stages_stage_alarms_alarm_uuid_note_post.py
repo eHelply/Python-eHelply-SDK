@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_note import AlarmNote
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_note import AlarmNote
 globals()['AlarmNote'] = AlarmNote
-from ehelply-python-sdk.model.body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost
+from ehelply_python_sdk.model.body_attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post import BodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost
 
 
 class TestBodyAttachAlarmNoteMonitorServicesServiceStagesStageAlarmsAlarmUuidNotePost(unittest.TestCase):

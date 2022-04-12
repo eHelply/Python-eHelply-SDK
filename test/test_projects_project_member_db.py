@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.projects_project_member_db import ProjectsProjectMemberDB
+import ehelply_python_sdk
+from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
 
 
 class TestProjectsProjectMemberDB(unittest.TestCase):

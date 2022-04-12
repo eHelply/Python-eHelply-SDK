@@ -1,4 +1,4 @@
-# ehelply-python-sdk.AuthApi
+# ehelply_python_sdk.AuthApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -19,20 +19,20 @@ Resets the given user's password to the given password when the proper code is p
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import auth_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
+import ehelply_python_sdk
+from ehelply_python_sdk.api import auth_api
+from ehelply_python_sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = auth_api.AuthApi(api_client)
     user_password_reset_confirmation = UserPasswordResetConfirmation(
@@ -46,7 +46,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Reset Password Confirmation
         api_response = api_instance.reset_password_confirmation_users_auth_password_reset_confirm_post(user_password_reset_confirmation)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling AuthApi->reset_password_confirmation_users_auth_password_reset_confirm_post: %s\n" % e)
 ```
 

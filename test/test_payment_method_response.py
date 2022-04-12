@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.payment_method_response import PaymentMethodResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
 
 
 class TestPaymentMethodResponse(unittest.TestCase):

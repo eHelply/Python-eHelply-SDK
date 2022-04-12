@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.pagination import Pagination
+import ehelply_python_sdk
+from ehelply_python_sdk.model.pagination import Pagination
 globals()['Pagination'] = Pagination
-from ehelply-python-sdk.model.page import Page
+from ehelply_python_sdk.model.page import Page
 
 
 class TestPage(unittest.TestCase):

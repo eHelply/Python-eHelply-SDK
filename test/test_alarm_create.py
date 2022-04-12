@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_create import AlarmCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_create import AlarmCreate
 
 
 class TestAlarmCreate(unittest.TestCase):

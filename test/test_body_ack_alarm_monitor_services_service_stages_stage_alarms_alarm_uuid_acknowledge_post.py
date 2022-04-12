@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_acknowledge import AlarmAcknowledge
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_acknowledge import AlarmAcknowledge
 globals()['AlarmAcknowledge'] = AlarmAcknowledge
-from ehelply-python-sdk.model.body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost
+from ehelply_python_sdk.model.body_ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post import BodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost
 
 
 class TestBodyAckAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidAcknowledgePost(unittest.TestCase):

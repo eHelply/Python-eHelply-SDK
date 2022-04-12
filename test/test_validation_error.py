@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.validation_error import ValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.model.validation_error import ValidationError
 
 
 class TestValidationError(unittest.TestCase):

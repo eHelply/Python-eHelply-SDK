@@ -211,8 +211,8 @@
 
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.api.support_api import SupportApi  # noqa: E501
+import ehelply_python_sdk
+from ehelply_python_sdk.api.support_api import SupportApi  # noqa: E501
 
 
 class TestSupportApi(unittest.TestCase):

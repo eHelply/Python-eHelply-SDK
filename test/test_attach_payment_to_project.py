@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.attach_payment_to_project import AttachPaymentToProject
+import ehelply_python_sdk
+from ehelply_python_sdk.model.attach_payment_to_project import AttachPaymentToProject
 
 
 class TestAttachPaymentToProject(unittest.TestCase):

@@ -212,12 +212,12 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.basic_meta_create import BasicMetaCreate
-from ehelply-python-sdk.model.detailed_meta_create import DetailedMetaCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate
+from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
 globals()['BasicMetaCreate'] = BasicMetaCreate
 globals()['DetailedMetaCreate'] = DetailedMetaCreate
-from ehelply-python-sdk.model.meta_create import MetaCreate
+from ehelply_python_sdk.model.meta_create import MetaCreate
 
 
 class TestMetaCreate(unittest.TestCase):

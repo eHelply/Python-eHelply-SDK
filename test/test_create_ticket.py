@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.create_ticket import CreateTicket
+import ehelply_python_sdk
+from ehelply_python_sdk.model.create_ticket import CreateTicket
 
 
 class TestCreateTicket(unittest.TestCase):

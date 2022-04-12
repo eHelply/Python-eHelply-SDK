@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.user_password_reset import UserPasswordReset
+import ehelply_python_sdk
+from ehelply_python_sdk.model.user_password_reset import UserPasswordReset
 
 
 class TestUserPasswordReset(unittest.TestCase):

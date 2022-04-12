@@ -212,8 +212,8 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_ticket import AlarmTicket
+import ehelply_python_sdk
+from ehelply_python_sdk.model.alarm_ticket import AlarmTicket
 
 
 class TestAlarmTicket(unittest.TestCase):
