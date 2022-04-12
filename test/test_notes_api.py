@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.41
+    eHelply SDK - 1.1.42
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.41
+    The version of the OpenAPI document: 1.1.42
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,29 +224,29 @@ class TestNotesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_note_notes_notes_post(self):
-        """Test case for create_note_notes_notes_post
+    def test_create_note(self):
+        """Test case for create_note
 
         Create Note  # noqa: E501
         """
         pass
 
-    def test_delete_note_notes_notes_note_id_delete(self):
-        """Test case for delete_note_notes_notes_note_id_delete
+    def test_delete_note(self):
+        """Test case for delete_note
 
         Delete Note  # noqa: E501
         """
         pass
 
-    def test_get_note_notes_notes_note_id_get(self):
-        """Test case for get_note_notes_notes_note_id_get
+    def test_get_note(self):
+        """Test case for get_note
 
         Get Note  # noqa: E501
         """
         pass
 
-    def test_update_note_notes_notes_note_id_put(self):
-        """Test case for update_note_notes_notes_note_id_put
+    def test_update_note(self):
+        """Test case for update_note
 
         Update Note  # noqa: E501
         """

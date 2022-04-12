@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.41
+    eHelply SDK - 1.1.42
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.41
+    The version of the OpenAPI document: 1.1.42
 
                                      Apache License
                                Version 2.0, January 2004
@@ -225,6 +225,7 @@ from ehelply-python-sdk.model_utils import (  # noqa: F401
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from ehelply-python-sdk.model.note_base import NoteBase
 from ehelply-python-sdk.model.note_dynamo import NoteDynamo
+from ehelply-python-sdk.model.note_dynamo_history import NoteDynamoHistory
 
 
 class NotesApi(object):
@@ -238,12 +239,12 @@ class NotesApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_note_notes_notes_post_endpoint = _Endpoint(
+        self.create_note_endpoint = _Endpoint(
             settings={
                 'response_type': (NoteDynamo,),
                 'auth': [],
                 'endpoint_path': '/notes/notes/notes',
-                'operation_id': 'create_note_notes_notes_post',
+                'operation_id': 'create_note',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -318,12 +319,12 @@ class NotesApi(object):
             },
             api_client=api_client
         )
-        self.delete_note_notes_notes_note_id_delete_endpoint = _Endpoint(
+        self.delete_note_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/notes/notes/notes/{note_id}',
-                'operation_id': 'delete_note_notes_notes_note_id_delete',
+                'operation_id': 'delete_note',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -402,12 +403,12 @@ class NotesApi(object):
             },
             api_client=api_client
         )
-        self.get_note_notes_notes_note_id_get_endpoint = _Endpoint(
+        self.get_note_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (NoteDynamoHistory,),
                 'auth': [],
                 'endpoint_path': '/notes/notes/notes/{note_id}',
-                'operation_id': 'get_note_notes_notes_note_id_get',
+                'operation_id': 'get_note',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -491,12 +492,12 @@ class NotesApi(object):
             },
             api_client=api_client
         )
-        self.update_note_notes_notes_note_id_put_endpoint = _Endpoint(
+        self.update_note_endpoint = _Endpoint(
             settings={
                 'response_type': (NoteDynamo,),
                 'auth': [],
                 'endpoint_path': '/notes/notes/notes/{note_id}',
-                'operation_id': 'update_note_notes_notes_note_id_put',
+                'operation_id': 'update_note',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -578,7 +579,7 @@ class NotesApi(object):
             api_client=api_client
         )
 
-    def create_note_notes_notes_post(
+    def create_note(
         self,
         note_base,
         **kwargs
@@ -588,7 +589,7 @@ class NotesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_note_notes_notes_post(note_base, async_req=True)
+        >>> thread = api.create_note(note_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -647,9 +648,9 @@ class NotesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['note_base'] = \
             note_base
-        return self.create_note_notes_notes_post_endpoint.call_with_http_info(**kwargs)
+        return self.create_note_endpoint.call_with_http_info(**kwargs)
 
-    def delete_note_notes_notes_note_id_delete(
+    def delete_note(
         self,
         note_id,
         **kwargs
@@ -659,7 +660,7 @@ class NotesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_note_notes_notes_note_id_delete(note_id, async_req=True)
+        >>> thread = api.delete_note(note_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -719,9 +720,9 @@ class NotesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['note_id'] = \
             note_id
-        return self.delete_note_notes_notes_note_id_delete_endpoint.call_with_http_info(**kwargs)
+        return self.delete_note_endpoint.call_with_http_info(**kwargs)
 
-    def get_note_notes_notes_note_id_get(
+    def get_note(
         self,
         note_id,
         **kwargs
@@ -731,7 +732,7 @@ class NotesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_note_notes_notes_note_id_get(note_id, async_req=True)
+        >>> thread = api.get_note(note_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -767,7 +768,7 @@ class NotesApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            NoteDynamoHistory
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -792,9 +793,9 @@ class NotesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['note_id'] = \
             note_id
-        return self.get_note_notes_notes_note_id_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_note_endpoint.call_with_http_info(**kwargs)
 
-    def update_note_notes_notes_note_id_put(
+    def update_note(
         self,
         note_id,
         note_base,
@@ -805,7 +806,7 @@ class NotesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_note_notes_notes_note_id_put(note_id, note_base, async_req=True)
+        >>> thread = api.update_note(note_id, note_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -867,5 +868,5 @@ class NotesApi(object):
             note_id
         kwargs['note_base'] = \
             note_base
-        return self.update_note_notes_notes_note_id_put_endpoint.call_with_http_info(**kwargs)
+        return self.update_note_endpoint.call_with_http_info(**kwargs)
 

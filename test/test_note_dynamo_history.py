@@ -213,11 +213,15 @@ import sys
 import unittest
 
 import ehelply-python-sdk
-from ehelply-python-sdk.model.alarm_acknowledge import AlarmAcknowledge
+from ehelply-python-sdk.model.note_dynamo import NoteDynamo
+from ehelply-python-sdk.model.note_meta import NoteMeta
+globals()['NoteDynamo'] = NoteDynamo
+globals()['NoteMeta'] = NoteMeta
+from ehelply-python-sdk.model.note_dynamo_history import NoteDynamoHistory
 
 
-class TestAlarmAcknowledge(unittest.TestCase):
-    """AlarmAcknowledge unit test stubs"""
+class TestNoteDynamoHistory(unittest.TestCase):
+    """NoteDynamoHistory unit test stubs"""
 
     def setUp(self):
         pass
@@ -225,10 +229,10 @@ class TestAlarmAcknowledge(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAlarmAcknowledge(self):
-        """Test AlarmAcknowledge"""
+    def testNoteDynamoHistory(self):
+        """Test NoteDynamoHistory"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = AlarmAcknowledge()  # noqa: E501
+        # model = NoteDynamoHistory()  # noqa: E501
         pass
 
 

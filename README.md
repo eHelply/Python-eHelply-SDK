@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.41
-- Package version: 1.1.41
+- API version: 1.1.42
+- Package version: 1.1.42
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -140,10 +140,10 @@ Class | Method | HTTP request | Description
 *MonitorApi* | [**show_service_monitor_services_service_stages_stage_show_post**](docs/MonitorApi.md#show_service_monitor_services_service_stages_stage_show_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/show | Show Service
 *MonitorApi* | [**terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post**](docs/MonitorApi.md#terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminate Alarm
 *MonitorApi* | [**trigger_alarm_monitor_services_service_stages_stage_alarms_post**](docs/MonitorApi.md#trigger_alarm_monitor_services_service_stages_stage_alarms_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms | Trigger Alarm
-*NotesApi* | [**create_note_notes_notes_post**](docs/NotesApi.md#create_note_notes_notes_post) | **POST** /notes/notes/notes | Create Note
-*NotesApi* | [**delete_note_notes_notes_note_id_delete**](docs/NotesApi.md#delete_note_notes_notes_note_id_delete) | **DELETE** /notes/notes/notes/{note_id} | Delete Note
-*NotesApi* | [**get_note_notes_notes_note_id_get**](docs/NotesApi.md#get_note_notes_notes_note_id_get) | **GET** /notes/notes/notes/{note_id} | Get Note
-*NotesApi* | [**update_note_notes_notes_note_id_put**](docs/NotesApi.md#update_note_notes_notes_note_id_put) | **PUT** /notes/notes/notes/{note_id} | Update Note
+*NotesApi* | [**create_note**](docs/NotesApi.md#create_note) | **POST** /notes/notes/notes | Create Note
+*NotesApi* | [**delete_note**](docs/NotesApi.md#delete_note) | **DELETE** /notes/notes/notes/{note_id} | Delete Note
+*NotesApi* | [**get_note**](docs/NotesApi.md#get_note) | **GET** /notes/notes/notes/{note_id} | Get Note
+*NotesApi* | [**update_note**](docs/NotesApi.md#update_note) | **PUT** /notes/notes/notes/{note_id} | Update Note
 *ProjectsApi* | [**add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post**](docs/ProjectsApi.md#add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Add Member To Project
 *ProjectsApi* | [**archive_project_projects_projects_project_uuid_delete**](docs/ProjectsApi.md#archive_project_projects_projects_project_uuid_delete) | **DELETE** /sam/projects/projects/{project_uuid} | Archive Project
 *ProjectsApi* | [**create_project_key_projects_projects_project_uuid_keys_post**](docs/ProjectsApi.md#create_project_key_projects_projects_project_uuid_keys_post) | **POST** /sam/projects/projects/{project_uuid}/keys | Create Project Key
