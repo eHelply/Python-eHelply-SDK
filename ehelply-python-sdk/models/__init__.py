@@ -54,6 +54,7 @@ from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
 from ehelply-python-sdk.model.meta_slugger import MetaSlugger
 from ehelply-python-sdk.model.note_base import NoteBase
 from ehelply-python-sdk.model.note_dynamo import NoteDynamo
+from ehelply-python-sdk.model.note_dynamo_history import NoteDynamoHistory
 from ehelply-python-sdk.model.note_meta import NoteMeta
 from ehelply-python-sdk.model.page import Page
 from ehelply-python-sdk.model.pagination import Pagination

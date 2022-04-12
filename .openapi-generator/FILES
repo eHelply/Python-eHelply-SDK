@@ -55,6 +55,7 @@ docs/MetaSlugger.md
 docs/MonitorApi.md
 docs/NoteBase.md
 docs/NoteDynamo.md
+docs/NoteDynamoHistory.md
 docs/NoteMeta.md
 docs/NotesApi.md
 docs/Page.md
@@ -178,6 +179,7 @@ ehelply-python-sdk/model/meta_dynamo.py
 ehelply-python-sdk/model/meta_slugger.py
 ehelply-python-sdk/model/note_base.py
 ehelply-python-sdk/model/note_dynamo.py
+ehelply-python-sdk/model/note_dynamo_history.py
 ehelply-python-sdk/model/note_meta.py
 ehelply-python-sdk/model/page.py
 ehelply-python-sdk/model/pagination.py
@@ -287,6 +289,7 @@ test/test_meta_slugger.py
 test/test_monitor_api.py
 test/test_note_base.py
 test/test_note_dynamo.py
+test/test_note_dynamo_history.py
 test/test_note_meta.py
 test/test_notes_api.py
 test/test_page.py

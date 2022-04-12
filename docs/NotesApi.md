@@ -4,14 +4,14 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_note_notes_notes_post**](NotesApi.md#create_note_notes_notes_post) | **POST** /notes/notes/notes | Create Note
-[**delete_note_notes_notes_note_id_delete**](NotesApi.md#delete_note_notes_notes_note_id_delete) | **DELETE** /notes/notes/notes/{note_id} | Delete Note
-[**get_note_notes_notes_note_id_get**](NotesApi.md#get_note_notes_notes_note_id_get) | **GET** /notes/notes/notes/{note_id} | Get Note
-[**update_note_notes_notes_note_id_put**](NotesApi.md#update_note_notes_notes_note_id_put) | **PUT** /notes/notes/notes/{note_id} | Update Note
+[**create_note**](NotesApi.md#create_note) | **POST** /notes/notes/notes | Create Note
+[**delete_note**](NotesApi.md#delete_note) | **DELETE** /notes/notes/notes/{note_id} | Delete Note
+[**get_note**](NotesApi.md#get_note) | **GET** /notes/notes/notes/{note_id} | Get Note
+[**update_note**](NotesApi.md#update_note) | **PUT** /notes/notes/notes/{note_id} | Update Note
 
 
-# **create_note_notes_notes_post**
-> NoteDynamo create_note_notes_notes_post(note_base)
+# **create_note**
+> NoteDynamo create_note(note_base)
 
 Create Note
 
@@ -57,19 +57,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Note
-        api_response = api_instance.create_note_notes_notes_post(note_base)
+        api_response = api_instance.create_note(note_base)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->create_note_notes_notes_post: %s\n" % e)
+        print("Exception when calling NotesApi->create_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Note
-        api_response = api_instance.create_note_notes_notes_post(note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_note(note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->create_note_notes_notes_post: %s\n" % e)
+        print("Exception when calling NotesApi->create_note: %s\n" % e)
 ```
 
 
@@ -109,8 +109,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_note_notes_notes_note_id_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_note_notes_notes_note_id_delete(note_id)
+# **delete_note**
+> bool, date, datetime, dict, float, int, list, str, none_type delete_note(note_id)
 
 Delete Note
 
@@ -146,19 +146,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete Note
-        api_response = api_instance.delete_note_notes_notes_note_id_delete(note_id)
+        api_response = api_instance.delete_note(note_id)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->delete_note_notes_notes_note_id_delete: %s\n" % e)
+        print("Exception when calling NotesApi->delete_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Delete Note
-        api_response = api_instance.delete_note_notes_notes_note_id_delete(note_id, method=method, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.delete_note(note_id, method=method, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->delete_note_notes_notes_note_id_delete: %s\n" % e)
+        print("Exception when calling NotesApi->delete_note: %s\n" % e)
 ```
 
 
@@ -199,8 +199,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_note_notes_notes_note_id_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_note_notes_notes_note_id_get(note_id)
+# **get_note**
+> NoteDynamoHistory get_note(note_id)
 
 Get Note
 
@@ -211,6 +211,7 @@ Get Note
 import time
 import ehelply-python-sdk
 from ehelply-python-sdk.api import notes_api
+from ehelply-python-sdk.model.note_dynamo_history import NoteDynamoHistory
 from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -237,19 +238,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Note
-        api_response = api_instance.get_note_notes_notes_note_id_get(note_id)
+        api_response = api_instance.get_note(note_id)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->get_note_notes_notes_note_id_get: %s\n" % e)
+        print("Exception when calling NotesApi->get_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Note
-        api_response = api_instance.get_note_notes_notes_note_id_get(note_id, history=history, history_content=history_content, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_note(note_id, history=history, history_content=history_content, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->get_note_notes_notes_note_id_get: %s\n" % e)
+        print("Exception when calling NotesApi->get_note: %s\n" % e)
 ```
 
 
@@ -269,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**NoteDynamoHistory**](NoteDynamoHistory.md)
 
 ### Authorization
 
@@ -291,8 +292,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_note_notes_notes_note_id_put**
-> NoteDynamo update_note_notes_notes_note_id_put(note_id, note_base)
+# **update_note**
+> NoteDynamo update_note(note_id, note_base)
 
 Update Note
 
@@ -339,19 +340,19 @@ with ehelply-python-sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Note
-        api_response = api_instance.update_note_notes_notes_note_id_put(note_id, note_base)
+        api_response = api_instance.update_note(note_id, note_base)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->update_note_notes_notes_note_id_put: %s\n" % e)
+        print("Exception when calling NotesApi->update_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Update Note
-        api_response = api_instance.update_note_notes_notes_note_id_put(note_id, note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_note(note_id, note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply-python-sdk.ApiException as e:
-        print("Exception when calling NotesApi->update_note_notes_notes_note_id_put: %s\n" % e)
+        print("Exception when calling NotesApi->update_note: %s\n" % e)
 ```
 
 
