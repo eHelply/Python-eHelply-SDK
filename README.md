@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.59
-- Package version: 1.1.59
+- API version: 1.1.61
+- Package version: 1.1.61
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -52,20 +52,20 @@ import ehelply_python_sdk
 ```python
 
 import time
-import ehelply-python-sdk
+import ehelply_python_sdk
 from pprint import pprint
-from ehelply-python-sdk.api import auth_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
+from ehelply_python_sdk.api import auth_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = auth_api.AuthApi(api_client)
     user_password_reset_confirmation = UserPasswordResetConfirmation(
@@ -78,7 +78,7 @@ with ehelply-python-sdk.ApiClient(configuration) as api_client:
         # Reset Password Confirmation
         api_response = api_instance.reset_password_confirmation_users_auth_password_reset_confirm_post(user_password_reset_confirmation)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling AuthApi->reset_password_confirmation_users_auth_password_reset_confirm_post: %s\n" % e)
 ```
 
@@ -226,7 +226,7 @@ Class | Method | HTTP request | Description
 
 
 ## RecursionError
-When APIs/SDKs are large, imports in ehelply-python-sdk.apis and ehelply-python-sdk.models may fail with a
+When APIs/SDKs are large, imports in ehelply_python_sdk.apis and ehelply_python_sdk.models may fail with a
 RecursionError indicating the maximum recursion limit has been exceeded. In that case, there are a couple of solutions:
 
 Solution 1:

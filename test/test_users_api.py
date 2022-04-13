@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -211,8 +211,8 @@
 
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.api.users_api import UsersApi  # noqa: E501
+import ehelply_python_sdk
+from ehelply_python_sdk.api.users_api import UsersApi  # noqa: E501
 
 
 class TestUsersApi(unittest.TestCase):

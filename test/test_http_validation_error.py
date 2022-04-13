@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.validation_error import ValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.model.validation_error import ValidationError
 globals()['ValidationError'] = ValidationError
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 
 
 class TestHTTPValidationError(unittest.TestCase):

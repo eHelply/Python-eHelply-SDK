@@ -1,4 +1,4 @@
-# ehelply-python-sdk.LoggingApi
+# ehelply_python_sdk.LoggingApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -19,19 +19,19 @@ Get Logs
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import logging_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import logging_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = logging_api.LoggingApi(api_client)
     service = "service_example" # str |  (optional)
@@ -51,7 +51,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Logs
         api_response = api_instance.get_logs_logging_logs_get(service=service, date_start=date_start, date_end=date_end, desc=desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling LoggingApi->get_logs_logging_logs_get: %s\n" % e)
 ```
 
@@ -105,19 +105,19 @@ Get Service Logs
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import logging_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import logging_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = logging_api.LoggingApi(api_client)
     service = "service_example" # str | 
@@ -137,7 +137,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Logs
         api_response = api_instance.get_service_logs_logging_logs_services_service_get(service)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling LoggingApi->get_service_logs_logging_logs_services_service_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -146,7 +146,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Service Logs
         api_response = api_instance.get_service_logs_logging_logs_services_service_get(service, date_start=date_start, date_end=date_end, desc=desc, limit=limit, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling LoggingApi->get_service_logs_logging_logs_services_service_get: %s\n" % e)
 ```
 
@@ -201,19 +201,19 @@ Get Subject Logs
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import logging_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import logging_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = logging_api.LoggingApi(api_client)
     service = "service_example" # str | 
@@ -234,7 +234,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Subject Logs
         api_response = api_instance.get_subject_logs_logging_logs_services_service_subjects_subject_get(service, subject)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling LoggingApi->get_subject_logs_logging_logs_services_service_subjects_subject_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -243,7 +243,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Subject Logs
         api_response = api_instance.get_subject_logs_logging_logs_services_service_subjects_subject_get(service, subject, date_start=date_start, date_end=date_end, desc=desc, limit=limit, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling LoggingApi->get_subject_logs_logging_logs_services_service_subjects_subject_get: %s\n" % e)
 ```
 

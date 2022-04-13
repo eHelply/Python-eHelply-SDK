@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.attach_payment_to_project import AttachPaymentToProject
+import ehelply_python_sdk
+from ehelply_python_sdk.model.attach_payment_to_project import AttachPaymentToProject
 globals()['AttachPaymentToProject'] = AttachPaymentToProject
-from ehelply-python-sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
+from ehelply_python_sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
 
 
 class TestBodyAttachPaymentToProjectBillingAttachPaymentToProjectPost(unittest.TestCase):

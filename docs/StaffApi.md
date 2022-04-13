@@ -1,4 +1,4 @@
-# ehelply-python-sdk.StaffApi
+# ehelply_python_sdk.StaffApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -23,21 +23,21 @@ Creates a staff member
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import staff_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.staff_db import StaffDb
-from ehelply-python-sdk.model.staff_create import StaffCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.api import staff_api
+from ehelply_python_sdk.model.staff_create import StaffCreate
+from ehelply_python_sdk.model.staff_db import StaffDb
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
     staff_create = StaffCreate(
@@ -59,7 +59,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Staff
         api_response = api_instance.create_staff_staff_post(staff_create)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->create_staff_staff_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -68,7 +68,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Staff
         api_response = api_instance.create_staff_staff_post(staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->create_staff_staff_post: %s\n" % e)
 ```
 
@@ -121,19 +121,19 @@ Deletes the staff member with the given ID and returns True if successful
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import staff_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import staff_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
     staff_uuid = "staff_uuid_example" # str | 
@@ -150,7 +150,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Staff
         api_response = api_instance.delete_staff_staff_staff_uuid_delete(staff_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->delete_staff_staff_staff_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -159,7 +159,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Staff
         api_response = api_instance.delete_staff_staff_staff_uuid_delete(staff_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->delete_staff_staff_staff_uuid_delete: %s\n" % e)
 ```
 
@@ -213,20 +213,20 @@ Gets the staff member information given the staff ID
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import staff_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.staff_response import StaffResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import staff_api
+from ehelply_python_sdk.model.staff_response import StaffResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
     staff_uuid = "staff_uuid_example" # str | 
@@ -247,7 +247,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Staff
         api_response = api_instance.get_staff_staff_staff_uuid_get(staff_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->get_staff_staff_staff_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -256,7 +256,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Staff
         api_response = api_instance.get_staff_staff_staff_uuid_get(staff_uuid, with_places=with_places, with_companies=with_companies, with_catalog=with_catalog, with_schedule=with_schedule, with_roles=with_roles, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->get_staff_staff_staff_uuid_get: %s\n" % e)
 ```
 
@@ -314,20 +314,20 @@ TODO Item return format: ``` {     uuid                                **type:**
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import staff_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import staff_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
     project_uuid = "project_uuid_example" # str |  (optional)
@@ -357,7 +357,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Staff
         api_response = api_instance.search_staff_staff_get(project_uuid=project_uuid, first_name=first_name, last_name=last_name, is_deleted=is_deleted, with_companies=with_companies, with_places=with_places, with_schedule=with_schedule, with_catalog=with_catalog, with_reviews=with_reviews, with_roles=with_roles, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->search_staff_staff_get: %s\n" % e)
 ```
 
@@ -423,21 +423,21 @@ Update staff with given info, only updating the fields supplied. Staff Uuid must
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import staff_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.staff_response import StaffResponse
-from ehelply-python-sdk.model.staff_create import StaffCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.api import staff_api
+from ehelply_python_sdk.model.staff_response import StaffResponse
+from ehelply_python_sdk.model.staff_create import StaffCreate
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
     staff_uuid = "staff_uuid_example" # str | 
@@ -460,7 +460,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Staff
         api_response = api_instance.update_staff_staff_staff_uuid_put(staff_uuid, staff_create)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->update_staff_staff_staff_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -469,7 +469,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Staff
         api_response = api_instance.update_staff_staff_staff_uuid_put(staff_uuid, staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->update_staff_staff_staff_uuid_put: %s\n" % e)
 ```
 

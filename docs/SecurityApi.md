@@ -1,4 +1,4 @@
-# ehelply-python-sdk.SecurityApi
+# ehelply_python_sdk.SecurityApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -24,19 +24,19 @@ Create Encryption Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
     category = "category_example" # str | 
@@ -47,7 +47,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Encryption Key
         api_response = api_instance.create_encryption_key_security_encryption_categories_category_keys_post(category)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->create_encryption_key_security_encryption_categories_category_keys_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -56,7 +56,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Encryption Key
         api_response = api_instance.create_encryption_key_security_encryption_categories_category_keys_post(category, ehelply_security_secret_key=ehelply_security_secret_key)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->create_encryption_key_security_encryption_categories_category_keys_post: %s\n" % e)
 ```
 
@@ -102,20 +102,20 @@ Create Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
     body_create_key_security_keys_post = BodyCreateKeySecurityKeysPost(
@@ -132,7 +132,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Key
         api_response = api_instance.create_key_security_keys_post(body_create_key_security_keys_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->create_key_security_keys_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -141,7 +141,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Key
         api_response = api_instance.create_key_security_keys_post(body_create_key_security_keys_post, access_length=access_length, secret_length=secret_length)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->create_key_security_keys_post: %s\n" % e)
 ```
 
@@ -190,19 +190,19 @@ Delete Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
     key_uuid = "key_uuid_example" # str | 
@@ -212,7 +212,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Key
         api_response = api_instance.delete_key_security_keys_key_uuid_delete(key_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->delete_key_security_keys_key_uuid_delete: %s\n" % e)
 ```
 
@@ -258,20 +258,20 @@ Generate Token
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_generate_token_security_tokens_post import BodyGenerateTokenSecurityTokensPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.body_generate_token_security_tokens_post import BodyGenerateTokenSecurityTokensPost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
     body_generate_token_security_tokens_post = BodyGenerateTokenSecurityTokensPost(
@@ -285,7 +285,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Generate Token
         api_response = api_instance.generate_token_security_tokens_post(body_generate_token_security_tokens_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->generate_token_security_tokens_post: %s\n" % e)
 ```
 
@@ -331,20 +331,20 @@ Get Encryption Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
     category = "category_example" # str | 
@@ -355,7 +355,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Encryption Key
         api_response = api_instance.get_encryption_key_security_encryption_categories_category_keys_get(category)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->get_encryption_key_security_encryption_categories_category_keys_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -364,7 +364,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Encryption Key
         api_response = api_instance.get_encryption_key_security_encryption_categories_category_keys_get(category, ehelply_security_secret_key=ehelply_security_secret_key)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->get_encryption_key_security_encryption_categories_category_keys_get: %s\n" % e)
 ```
 
@@ -410,20 +410,20 @@ Get Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.security_key_get import SecurityKeyGet
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
     key_uuid = "key_uuid_example" # str | 
@@ -433,7 +433,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Key
         api_response = api_instance.get_key_security_keys_key_uuid_get(key_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->get_key_security_keys_key_uuid_get: %s\n" % e)
 ```
 
@@ -479,19 +479,19 @@ Search Keys
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.security_key_get import SecurityKeyGet
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
 
@@ -500,7 +500,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Keys
         api_response = api_instance.search_keys_security_keys_get()
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->search_keys_security_keys_get: %s\n" % e)
 ```
 
@@ -542,21 +542,21 @@ Verify Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import security_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
-from ehelply-python-sdk.model.security_key_get import SecurityKeyGet
+import ehelply_python_sdk
+from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
+from ehelply_python_sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = security_api.SecurityApi(api_client)
     body_verify_key_security_keys_verify_post = BodyVerifyKeySecurityKeysVerifyPost(
@@ -571,7 +571,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Verify Key
         api_response = api_instance.verify_key_security_keys_verify_post(body_verify_key_security_keys_verify_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SecurityApi->verify_key_security_keys_verify_post: %s\n" % e)
 ```
 

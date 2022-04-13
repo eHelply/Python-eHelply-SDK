@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,12 +212,12 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.basic_meta_create import BasicMetaCreate
-from ehelply-python-sdk.model.detailed_meta_create import DetailedMetaCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate
+from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
 globals()['BasicMetaCreate'] = BasicMetaCreate
 globals()['DetailedMetaCreate'] = DetailedMetaCreate
-from ehelply-python-sdk.model.meta_create import MetaCreate
+from ehelply_python_sdk.model.meta_create import MetaCreate
 
 
 class TestMetaCreate(unittest.TestCase):

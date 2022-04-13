@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.service_create import ServiceCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.service_create import ServiceCreate
 globals()['ServiceCreate'] = ServiceCreate
-from ehelply-python-sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
+from ehelply_python_sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
 
 
 class TestBodyRegisterServiceMonitorServicesPost(unittest.TestCase):

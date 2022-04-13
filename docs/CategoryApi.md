@@ -1,4 +1,4 @@
-# ehelply-python-sdk.CategoryApi
+# ehelply_python_sdk.CategoryApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -23,21 +23,21 @@ Creates a category
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import category_api
-from ehelply-python-sdk.model.category_base import CategoryBase
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.category_db import CategoryDb
+import ehelply_python_sdk
+from ehelply_python_sdk.api import category_api
+from ehelply_python_sdk.model.category_base import CategoryBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.category_db import CategoryDb
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = category_api.CategoryApi(api_client)
     category_base = CategoryBase(
@@ -58,7 +58,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Category
         api_response = api_instance.create_category_categories_post(category_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->create_category_categories_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -67,7 +67,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Category
         api_response = api_instance.create_category_categories_post(category_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->create_category_categories_post: %s\n" % e)
 ```
 
@@ -120,19 +120,19 @@ Deletes the category with the given ID and returns True if successful
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import category_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import category_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = category_api.CategoryApi(api_client)
     category_uuid = "category_uuid_example" # str | 
@@ -148,7 +148,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Category
         api_response = api_instance.delete_category_categories_category_uuid_delete(category_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->delete_category_categories_category_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -157,7 +157,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Category
         api_response = api_instance.delete_category_categories_category_uuid_delete(category_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->delete_category_categories_category_uuid_delete: %s\n" % e)
 ```
 
@@ -210,20 +210,20 @@ Gets the category information given the category ID
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import category_api
-from ehelply-python-sdk.model.category_base import CategoryBase
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import category_api
+from ehelply_python_sdk.model.category_base import CategoryBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = category_api.CategoryApi(api_client)
     category_uuid = "category_uuid_example" # str | 
@@ -240,7 +240,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Category
         api_response = api_instance.get_category_categories_category_uuid_get(category_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->get_category_categories_category_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -249,7 +249,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Category
         api_response = api_instance.get_category_categories_category_uuid_get(category_uuid, with_meta=with_meta, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->get_category_categories_category_uuid_get: %s\n" % e)
 ```
 
@@ -303,20 +303,20 @@ TODO Item return format: ``` {     uuid                                **type:**
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import category_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import category_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = category_api.CategoryApi(api_client)
     project_uuid = "project_uuid_example" # str |  (optional)
@@ -339,7 +339,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Categories
         api_response = api_instance.search_categories_categories_get(project_uuid=project_uuid, name=name, with_meta=with_meta, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->search_categories_categories_get: %s\n" % e)
 ```
 
@@ -398,20 +398,20 @@ Update category with given info, only updating the fields supplied. Category Uui
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import category_api
-from ehelply-python-sdk.model.category_base import CategoryBase
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import category_api
+from ehelply_python_sdk.model.category_base import CategoryBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = category_api.CategoryApi(api_client)
     category_uuid = "category_uuid_example" # str | 
@@ -433,7 +433,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Category
         api_response = api_instance.update_category_categories_category_uuid_put(category_uuid, category_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->update_category_categories_category_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -442,7 +442,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Category
         api_response = api_instance.update_category_categories_category_uuid_put(category_uuid, category_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CategoryApi->update_category_categories_category_uuid_put: %s\n" % e)
 ```
 

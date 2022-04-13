@@ -1,4 +1,4 @@
-# ehelply-python-sdk.NotesApi
+# ehelply_python_sdk.NotesApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -20,21 +20,21 @@ Create Note
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import notes_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.note_base import NoteBase
-from ehelply-python-sdk.model.note_dynamo import NoteDynamo
+import ehelply_python_sdk
+from ehelply_python_sdk.api import notes_api
+from ehelply_python_sdk.model.note_base import NoteBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
     note_base = NoteBase(
@@ -59,7 +59,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Note
         api_response = api_instance.create_note(note_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->create_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -68,7 +68,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Note
         api_response = api_instance.create_note(note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->create_note: %s\n" % e)
 ```
 
@@ -119,19 +119,19 @@ Delete Note
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import notes_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import notes_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
     note_id = "note_id_example" # str | 
@@ -148,7 +148,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Note
         api_response = api_instance.delete_note(note_id)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->delete_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -157,7 +157,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Note
         api_response = api_instance.delete_note(note_id, method=method, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->delete_note: %s\n" % e)
 ```
 
@@ -209,20 +209,20 @@ Get Note
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import notes_api
-from ehelply-python-sdk.model.note_dynamo_history import NoteDynamoHistory
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import notes_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
     note_id = "note_id_example" # str | 
@@ -240,7 +240,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Note
         api_response = api_instance.get_note(note_id)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->get_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -249,7 +249,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Note
         api_response = api_instance.get_note(note_id, history=history, history_content=history_content, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->get_note: %s\n" % e)
 ```
 
@@ -302,21 +302,21 @@ Update Note
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import notes_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.note_base import NoteBase
-from ehelply-python-sdk.model.note_dynamo import NoteDynamo
+import ehelply_python_sdk
+from ehelply_python_sdk.api import notes_api
+from ehelply_python_sdk.model.note_base import NoteBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
     note_id = "note_id_example" # str | 
@@ -342,7 +342,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Note
         api_response = api_instance.update_note(note_id, note_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->update_note: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -351,7 +351,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Note
         api_response = api_instance.update_note(note_id, note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->update_note: %s\n" % e)
 ```
 

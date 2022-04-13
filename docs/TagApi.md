@@ -1,4 +1,4 @@
-# ehelply-python-sdk.TagApi
+# ehelply_python_sdk.TagApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -23,21 +23,21 @@ Creates a tag
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import tag_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.tag_db import TagDb
-from ehelply-python-sdk.model.tag_base import TagBase
+import ehelply_python_sdk
+from ehelply_python_sdk.api import tag_api
+from ehelply_python_sdk.model.tag_db import TagDb
+from ehelply_python_sdk.model.tag_base import TagBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = tag_api.TagApi(api_client)
     tag_base = TagBase(
@@ -56,7 +56,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Tag
         api_response = api_instance.create_tag_tags_post(tag_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->create_tag_tags_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -65,7 +65,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Tag
         api_response = api_instance.create_tag_tags_post(tag_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->create_tag_tags_post: %s\n" % e)
 ```
 
@@ -118,19 +118,19 @@ Deletes the tag member with the given ID and returns True if successful
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import tag_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import tag_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = tag_api.TagApi(api_client)
     tag_uuid = "tag_uuid_example" # str | 
@@ -146,7 +146,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Tag
         api_response = api_instance.delete_tag_tags_tag_uuid_delete(tag_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->delete_tag_tags_tag_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -155,7 +155,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Tag
         api_response = api_instance.delete_tag_tags_tag_uuid_delete(tag_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->delete_tag_tags_tag_uuid_delete: %s\n" % e)
 ```
 
@@ -208,20 +208,20 @@ Gets the tag member information given the tag ID
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import tag_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.tag_base import TagBase
+import ehelply_python_sdk
+from ehelply_python_sdk.api import tag_api
+from ehelply_python_sdk.model.tag_base import TagBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = tag_api.TagApi(api_client)
     tag_uuid = "tag_uuid_example" # str | 
@@ -237,7 +237,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Tag
         api_response = api_instance.get_tag_tags_tag_uuid_get(tag_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->get_tag_tags_tag_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -246,7 +246,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Tag
         api_response = api_instance.get_tag_tags_tag_uuid_get(tag_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->get_tag_tags_tag_uuid_get: %s\n" % e)
 ```
 
@@ -299,20 +299,20 @@ TODO Item return format: ``` {     uuid                                **type:**
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import tag_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import tag_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = tag_api.TagApi(api_client)
     project_uuid = "project_uuid_example" # str |  (optional)
@@ -334,7 +334,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Tags
         api_response = api_instance.search_tags_tags_get(project_uuid=project_uuid, name=name, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->search_tags_tags_get: %s\n" % e)
 ```
 
@@ -392,20 +392,20 @@ Update tag with given info, only updating the fields supplied. Tag Uuid must be 
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import tag_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.tag_base import TagBase
+import ehelply_python_sdk
+from ehelply_python_sdk.api import tag_api
+from ehelply_python_sdk.model.tag_base import TagBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = tag_api.TagApi(api_client)
     tag_uuid = "tag_uuid_example" # str | 
@@ -425,7 +425,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Tag
         api_response = api_instance.update_tag_tags_tag_uuid_put(tag_uuid, tag_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->update_tag_tags_tag_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -434,7 +434,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Tag
         api_response = api_instance.update_tag_tags_tag_uuid_put(tag_uuid, tag_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling TagApi->update_tag_tags_tag_uuid_put: %s\n" % e)
 ```
 

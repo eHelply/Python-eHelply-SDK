@@ -1,4 +1,4 @@
-# ehelply-python-sdk.SupportApi
+# ehelply_python_sdk.SupportApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -22,21 +22,21 @@ Create Contact
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import support_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.contact import Contact
-from ehelply-python-sdk.model.contact_response import ContactResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.contact import Contact
+from ehelply_python_sdk.model.contact_response import ContactResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = support_api.SupportApi(api_client)
     contact = Contact(
@@ -57,7 +57,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Contact
         api_response = api_instance.create_contact_support_contact_post(contact)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->create_contact_support_contact_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -66,7 +66,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Contact
         api_response = api_instance.create_contact_support_contact_post(contact, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->create_contact_support_contact_post: %s\n" % e)
 ```
 
@@ -118,21 +118,21 @@ Create Ticket
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import support_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.create_ticket import CreateTicket
-from ehelply-python-sdk.model.ticket_response import TicketResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.create_ticket import CreateTicket
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = support_api.SupportApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -153,7 +153,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Ticket
         api_response = api_instance.create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(project_uuid, member_uuid, create_ticket)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -162,7 +162,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Ticket
         api_response = api_instance.create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(project_uuid, member_uuid, create_ticket, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post: %s\n" % e)
 ```
 
@@ -216,19 +216,19 @@ Delete Contact
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import support_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = support_api.SupportApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -244,7 +244,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Contact
         api_response = api_instance.delete_contact_support_contact_delete(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->delete_contact_support_contact_delete: %s\n" % e)
 ```
 
@@ -294,20 +294,20 @@ List Tickets
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import support_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.tickets_response import TicketsResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.tickets_response import TicketsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = support_api.SupportApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -324,7 +324,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # List Tickets
         api_response = api_instance.list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get(project_uuid, member_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -333,7 +333,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # List Tickets
         api_response = api_instance.list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get(project_uuid, member_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get: %s\n" % e)
 ```
 
@@ -386,21 +386,21 @@ Update Ticket
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import support_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.create_ticket import CreateTicket
-from ehelply-python-sdk.model.ticket_response import TicketResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.create_ticket import CreateTicket
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = support_api.SupportApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -422,7 +422,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Ticket
         api_response = api_instance.update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put(project_uuid, member_uuid, ticket_id, create_ticket)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -431,7 +431,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Ticket
         api_response = api_instance.update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put(project_uuid, member_uuid, ticket_id, create_ticket, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put: %s\n" % e)
 ```
 
@@ -486,20 +486,20 @@ View Ticket
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import support_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.ticket_response import TicketResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = support_api.SupportApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -517,7 +517,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # View Ticket
         api_response = api_instance.view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get(project_uuid, member_uuid, ticket_id)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -526,7 +526,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # View Ticket
         api_response = api_instance.view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get(project_uuid, member_uuid, ticket_id, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling SupportApi->view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get: %s\n" % e)
 ```
 

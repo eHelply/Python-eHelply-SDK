@@ -1,4 +1,4 @@
-# ehelply-python-sdk.CompaniesApi
+# ehelply_python_sdk.CompaniesApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -23,21 +23,21 @@ Creates a company
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import companies_api
-from ehelply-python-sdk.model.company_response import CompanyResponse
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.company_base import CompanyBase
+import ehelply_python_sdk
+from ehelply_python_sdk.api import companies_api
+from ehelply_python_sdk.model.company_response import CompanyResponse
+from ehelply_python_sdk.model.company_base import CompanyBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
     company_base = CompanyBase(
@@ -64,7 +64,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Company
         api_response = api_instance.create_company_companies_post(company_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->create_company_companies_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -73,7 +73,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Company
         api_response = api_instance.create_company_companies_post(company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->create_company_companies_post: %s\n" % e)
 ```
 
@@ -126,19 +126,19 @@ Deletes the company with the given ID and returns True if successful
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import companies_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import companies_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
     company_uuid = "company_uuid_example" # str | 
@@ -155,7 +155,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Place
         api_response = api_instance.delete_place_companies_company_uuid_delete(company_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->delete_place_companies_company_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -164,7 +164,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Place
         api_response = api_instance.delete_place_companies_company_uuid_delete(company_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->delete_place_companies_company_uuid_delete: %s\n" % e)
 ```
 
@@ -218,20 +218,20 @@ Gets the company information given the Place ID
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import companies_api
-from ehelply-python-sdk.model.company_response import CompanyResponse
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import companies_api
+from ehelply_python_sdk.model.company_response import CompanyResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
     company_uuid = "company_uuid_example" # str | 
@@ -255,7 +255,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Company
         api_response = api_instance.get_company_companies_company_uuid_get(company_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->get_company_companies_company_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -264,7 +264,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Company
         api_response = api_instance.get_company_companies_company_uuid_get(company_uuid, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, with_places=with_places, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->get_company_companies_company_uuid_get: %s\n" % e)
 ```
 
@@ -325,20 +325,20 @@ Search all companies and returns paginated results with Companies being stored i
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import companies_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import companies_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
     project_uuid = "project_uuid_example" # str |  (optional)
@@ -371,7 +371,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Companies
         api_response = api_instance.search_companies_companies_get(project_uuid=project_uuid, name=name, email=email, is_public=is_public, is_deleted=is_deleted, with_places=with_places, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->search_companies_companies_get: %s\n" % e)
 ```
 
@@ -440,21 +440,21 @@ Update company with given info, only updating the fields supplied. Company Uuid 
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import companies_api
-from ehelply-python-sdk.model.company_response import CompanyResponse
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.company_base import CompanyBase
+import ehelply_python_sdk
+from ehelply_python_sdk.api import companies_api
+from ehelply_python_sdk.model.company_response import CompanyResponse
+from ehelply_python_sdk.model.company_base import CompanyBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
     company_uuid = "company_uuid_example" # str | 
@@ -482,7 +482,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Company
         api_response = api_instance.update_company_companies_company_uuid_put(company_uuid, company_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->update_company_companies_company_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -491,7 +491,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Company
         api_response = api_instance.update_company_companies_company_uuid_put(company_uuid, company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->update_company_companies_company_uuid_put: %s\n" % e)
 ```
 

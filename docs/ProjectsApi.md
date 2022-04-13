@@ -1,4 +1,4 @@
-# ehelply-python-sdk.ProjectsApi
+# ehelply_python_sdk.ProjectsApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -36,19 +36,19 @@ Add Member To Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -65,7 +65,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Add Member To Project
         api_response = api_instance.add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post(project_uuid, entity_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -74,7 +74,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Add Member To Project
         api_response = api_instance.add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post(project_uuid, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post: %s\n" % e)
 ```
 
@@ -127,19 +127,19 @@ Archive Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -155,7 +155,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Archive Project
         api_response = api_instance.archive_project_projects_projects_project_uuid_delete(project_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->archive_project_projects_projects_project_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -164,7 +164,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Archive Project
         api_response = api_instance.archive_project_projects_projects_project_uuid_delete(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->archive_project_projects_projects_project_uuid_delete: %s\n" % e)
 ```
 
@@ -216,21 +216,21 @@ Create Project Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.create_key_response import CreateKeyResponse
-from ehelply-python-sdk.model.security_key_create import SecurityKeyCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
+from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -250,7 +250,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Project Key
         api_response = api_instance.create_project_key_projects_projects_project_uuid_keys_post(project_uuid, security_key_create)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_project_key_projects_projects_project_uuid_keys_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -259,7 +259,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Project Key
         api_response = api_instance.create_project_key_projects_projects_project_uuid_keys_post(project_uuid, security_key_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_project_key_projects_projects_project_uuid_keys_post: %s\n" % e)
 ```
 
@@ -314,20 +314,20 @@ Create a new Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_create import ProjectsProjectCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     projects_project_create = ProjectsProjectCreate(
@@ -345,7 +345,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Project
         api_response = api_instance.create_project_projects_projects_post(projects_project_create)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_project_projects_projects_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -354,7 +354,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Project
         api_response = api_instance.create_project_projects_projects_post(projects_project_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_project_projects_projects_post: %s\n" % e)
 ```
 
@@ -406,21 +406,21 @@ Create Usage Type
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_usage_type_create import ProjectsUsageTypeCreate
-from ehelply-python-sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.projects_usage_type_create import ProjectsUsageTypeCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     projects_usage_type_create = ProjectsUsageTypeCreate(
@@ -449,7 +449,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Usage Type
         api_response = api_instance.create_usage_type_projects_usage_types_post(projects_usage_type_create)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_usage_type_projects_usage_types_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -458,7 +458,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Usage Type
         api_response = api_instance.create_usage_type_projects_usage_types_post(projects_usage_type_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->create_usage_type_projects_usage_types_post: %s\n" % e)
 ```
 
@@ -510,19 +510,19 @@ Delete Usage Type
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     usage_type_key = "usage_type_key_example" # str | 
@@ -538,7 +538,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Usage Type
         api_response = api_instance.delete_usage_type_projects_usage_types_usage_type_key_delete(usage_type_key)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->delete_usage_type_projects_usage_types_usage_type_key_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -547,7 +547,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Usage Type
         api_response = api_instance.delete_usage_type_projects_usage_types_usage_type_key_delete(usage_type_key, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->delete_usage_type_projects_usage_types_usage_type_key_delete: %s\n" % e)
 ```
 
@@ -599,20 +599,20 @@ Get All Project Usage
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -630,7 +630,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get All Project Usage
         api_response = api_instance.get_all_project_usage_projects_projects_project_uuid_usage_get(project_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_all_project_usage_projects_projects_project_uuid_usage_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -639,7 +639,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get All Project Usage
         api_response = api_instance.get_all_project_usage_projects_projects_project_uuid_usage_get(project_uuid, year=year, month=month, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_all_project_usage_projects_projects_project_uuid_usage_get: %s\n" % e)
 ```
 
@@ -693,20 +693,20 @@ Get Member Projects
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_get import ProjectsProjectGet
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.projects_project_get import ProjectsProjectGet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     entity_uuid = "entity_uuid_example" # str | 
@@ -723,7 +723,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Member Projects
         api_response = api_instance.get_member_projects_projects_members_entity_uuid_projects_get(entity_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_member_projects_projects_members_entity_uuid_projects_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -732,7 +732,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Member Projects
         api_response = api_instance.get_member_projects_projects_members_entity_uuid_projects_get(entity_uuid, role=role, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_member_projects_projects_members_entity_uuid_projects_get: %s\n" % e)
 ```
 
@@ -785,20 +785,20 @@ Get Project Keys
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_member_db import ProjectsProjectMemberDB
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -814,7 +814,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Project Keys
         api_response = api_instance.get_project_keys_projects_projects_project_uuid_keys_get(project_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_project_keys_projects_projects_project_uuid_keys_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -823,7 +823,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Project Keys
         api_response = api_instance.get_project_keys_projects_projects_project_uuid_keys_get(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_project_keys_projects_projects_project_uuid_keys_get: %s\n" % e)
 ```
 
@@ -875,20 +875,20 @@ Get Project Members
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_member_db import ProjectsProjectMemberDB
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -905,7 +905,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Project Members
         api_response = api_instance.get_project_members_projects_projects_project_uuid_members_get(project_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_project_members_projects_projects_project_uuid_members_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -914,7 +914,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Project Members
         api_response = api_instance.get_project_members_projects_projects_project_uuid_members_get(project_uuid, role=role, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_project_members_projects_projects_project_uuid_members_get: %s\n" % e)
 ```
 
@@ -969,19 +969,19 @@ Get a Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -997,7 +997,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Project
         api_response = api_instance.get_project_projects_projects_project_uuid_get(project_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_project_projects_projects_project_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1006,7 +1006,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Project
         api_response = api_instance.get_project_projects_projects_project_uuid_get(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_project_projects_projects_project_uuid_get: %s\n" % e)
 ```
 
@@ -1058,20 +1058,20 @@ Get Specific Project Usage
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     usage_type_key = "usage_type_key_example" # str | 
@@ -1088,7 +1088,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Specific Project Usage
         api_response = api_instance.get_specific_project_usage_projects_projects_project_uuid_usage_usage_type_key_get(usage_type_key, project_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_specific_project_usage_projects_projects_project_uuid_usage_usage_type_key_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1097,7 +1097,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Specific Project Usage
         api_response = api_instance.get_specific_project_usage_projects_projects_project_uuid_usage_usage_type_key_get(usage_type_key, project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_specific_project_usage_projects_projects_project_uuid_usage_usage_type_key_get: %s\n" % e)
 ```
 
@@ -1152,20 +1152,20 @@ Get a UsageType  No auth because we may want to use this on pricing/docs pages
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     usage_type_key = "usage_type_key_example" # str | 
@@ -1175,7 +1175,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Usage Type
         api_response = api_instance.get_usage_type_projects_usage_types_usage_type_key_get(usage_type_key)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->get_usage_type_projects_usage_types_usage_type_key_get: %s\n" % e)
 ```
 
@@ -1221,19 +1221,19 @@ Remove Member From Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -1250,7 +1250,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Remove Member From Project
         api_response = api_instance.remove_member_from_project_projects_projects_project_uuid_members_entity_uuid_delete(project_uuid, entity_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->remove_member_from_project_projects_projects_project_uuid_members_entity_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1259,7 +1259,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Remove Member From Project
         api_response = api_instance.remove_member_from_project_projects_projects_project_uuid_members_entity_uuid_delete(project_uuid, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->remove_member_from_project_projects_projects_project_uuid_members_entity_uuid_delete: %s\n" % e)
 ```
 
@@ -1312,19 +1312,19 @@ Remove Project Key
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -1341,7 +1341,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Remove Project Key
         api_response = api_instance.remove_project_key_projects_projects_project_uuid_keys_delete(project_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->remove_project_key_projects_projects_project_uuid_keys_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1350,7 +1350,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Remove Project Key
         api_response = api_instance.remove_project_key_projects_projects_project_uuid_keys_delete(project_uuid, access_token=access_token, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->remove_project_key_projects_projects_project_uuid_keys_delete: %s\n" % e)
 ```
 
@@ -1403,19 +1403,19 @@ Sandbox
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -1431,7 +1431,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Sandbox
         api_response = api_instance.sandbox_projects_sandbox_get(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->sandbox_projects_sandbox_get: %s\n" % e)
 ```
 
@@ -1483,20 +1483,20 @@ Search projects
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     page = 1 # int |  (optional) if omitted the server will use the default value of 1
@@ -1518,7 +1518,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Projects
         api_response = api_instance.search_projects_projects_projects_get(page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->search_projects_projects_projects_get: %s\n" % e)
 ```
 
@@ -1577,20 +1577,20 @@ Get a UsageType  No auth because we may want to use this on pricing/docs pages
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     page = 1 # int |  (optional) if omitted the server will use the default value of 1
@@ -1606,7 +1606,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Usage Type
         api_response = api_instance.search_usage_type_projects_usage_types_get(page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->search_usage_type_projects_usage_types_get: %s\n" % e)
 ```
 
@@ -1657,20 +1657,20 @@ Update Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_project_update import ProjectsProjectUpdate
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_project_update import ProjectsProjectUpdate
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     project_uuid = "project_uuid_example" # str | 
@@ -1690,7 +1690,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Project
         api_response = api_instance.update_project_projects_projects_project_uuid_put(project_uuid, projects_project_update)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_project_projects_projects_project_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1699,7 +1699,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Project
         api_response = api_instance.update_project_projects_projects_project_uuid_put(project_uuid, projects_project_update, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_project_projects_projects_project_uuid_put: %s\n" % e)
 ```
 
@@ -1752,21 +1752,21 @@ Update Usage Type
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import projects_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
-from ehelply-python-sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
+from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
     usage_type_key = "usage_type_key_example" # str | 
@@ -1795,7 +1795,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Usage Type
         api_response = api_instance.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, projects_usage_type_update)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_usage_type_projects_usage_types_usage_type_key_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -1804,7 +1804,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Usage Type
         api_response = api_instance.update_usage_type_projects_usage_types_usage_type_key_put(usage_type_key, projects_usage_type_update, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->update_usage_type_projects_usage_types_usage_type_key_put: %s\n" % e)
 ```
 

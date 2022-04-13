@@ -1,4 +1,4 @@
-# ehelply-python-sdk.BillingApi
+# ehelply_python_sdk.BillingApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -33,20 +33,20 @@ Attach Payment To Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     body_attach_payment_to_project_billing_attach_payment_to_project_post = BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost(
@@ -70,7 +70,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Attach Payment To Project
         api_response = api_instance.attach_payment_to_project_billing_attach_payment_to_project_post(body_attach_payment_to_project_billing_attach_payment_to_project_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->attach_payment_to_project_billing_attach_payment_to_project_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -79,7 +79,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Attach Payment To Project
         api_response = api_instance.attach_payment_to_project_billing_attach_payment_to_project_post(body_attach_payment_to_project_billing_attach_payment_to_project_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->attach_payment_to_project_billing_attach_payment_to_project_post: %s\n" % e)
 ```
 
@@ -130,20 +130,20 @@ Attach Payment To Project
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     body_attach_payment_to_project_billing_attach_payment_to_project_post = BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost(
@@ -167,7 +167,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Attach Payment To Project
         api_response = api_instance.attach_payment_to_project_billing_attach_payment_to_project_post_0(body_attach_payment_to_project_billing_attach_payment_to_project_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->attach_payment_to_project_billing_attach_payment_to_project_post_0: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -176,7 +176,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Attach Payment To Project
         api_response = api_instance.attach_payment_to_project_billing_attach_payment_to_project_post_0(body_attach_payment_to_project_billing_attach_payment_to_project_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->attach_payment_to_project_billing_attach_payment_to_project_post_0: %s\n" % e)
 ```
 
@@ -227,20 +227,20 @@ Create Billing Account
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.stripe_account_response import StripeAccountResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -256,7 +256,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Billing Account
         api_response = api_instance.create_billing_account_billing_create_billing_account_post(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->create_billing_account_billing_create_billing_account_post: %s\n" % e)
 ```
 
@@ -306,20 +306,20 @@ Create Billing Account
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.stripe_account_response import StripeAccountResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -335,7 +335,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Billing Account
         api_response = api_instance.create_billing_account_billing_create_billing_account_post_0(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->create_billing_account_billing_create_billing_account_post_0: %s\n" % e)
 ```
 
@@ -385,19 +385,19 @@ Delete Billing Account
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -413,7 +413,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Billing Account
         api_response = api_instance.delete_billing_account_billing_delete_billing_account_delete(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->delete_billing_account_billing_delete_billing_account_delete: %s\n" % e)
 ```
 
@@ -463,19 +463,19 @@ Delete Billing Account
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -491,7 +491,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Billing Account
         api_response = api_instance.delete_billing_account_billing_delete_billing_account_delete_0(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->delete_billing_account_billing_delete_billing_account_delete_0: %s\n" % e)
 ```
 
@@ -541,19 +541,19 @@ Get Client Secret
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -569,7 +569,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Client Secret
         api_response = api_instance.get_client_secret_billing_retrieve_secret_get(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->get_client_secret_billing_retrieve_secret_get: %s\n" % e)
 ```
 
@@ -619,19 +619,19 @@ Get Client Secret
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -647,7 +647,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Client Secret
         api_response = api_instance.get_client_secret_billing_retrieve_secret_get_0(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->get_client_secret_billing_retrieve_secret_get_0: %s\n" % e)
 ```
 
@@ -697,19 +697,19 @@ Has Payment
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -725,7 +725,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Has Payment
         api_response = api_instance.has_payment_billing_has_payment_get(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->has_payment_billing_has_payment_get: %s\n" % e)
 ```
 
@@ -775,19 +775,19 @@ Has Payment
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -803,7 +803,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Has Payment
         api_response = api_instance.has_payment_billing_has_payment_get_0(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->has_payment_billing_has_payment_get_0: %s\n" % e)
 ```
 
@@ -853,20 +853,20 @@ Process Payment
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     body_process_payment_billing_process_payment_post = BodyProcessPaymentBillingProcessPaymentPost(
@@ -886,7 +886,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Process Payment
         api_response = api_instance.process_payment_billing_process_payment_post(body_process_payment_billing_process_payment_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment_billing_process_payment_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -895,7 +895,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Process Payment
         api_response = api_instance.process_payment_billing_process_payment_post(body_process_payment_billing_process_payment_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment_billing_process_payment_post: %s\n" % e)
 ```
 
@@ -946,20 +946,20 @@ Process Payment
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     body_process_payment_billing_process_payment_post = BodyProcessPaymentBillingProcessPaymentPost(
@@ -979,7 +979,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Process Payment
         api_response = api_instance.process_payment_billing_process_payment_post_0(body_process_payment_billing_process_payment_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment_billing_process_payment_post_0: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -988,7 +988,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Process Payment
         api_response = api_instance.process_payment_billing_process_payment_post_0(body_process_payment_billing_process_payment_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment_billing_process_payment_post_0: %s\n" % e)
 ```
 
@@ -1039,19 +1039,19 @@ Reconcile Payment Methods
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -1067,7 +1067,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Reconcile Payment Methods
         api_response = api_instance.reconcile_payment_methods_billing_reconcile_payment_get(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->reconcile_payment_methods_billing_reconcile_payment_get: %s\n" % e)
 ```
 
@@ -1117,19 +1117,19 @@ Remove Payment Method
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -1145,7 +1145,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Remove Payment Method
         api_response = api_instance.remove_payment_method_billing_remove_payment_method_delete(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->remove_payment_method_billing_remove_payment_method_delete: %s\n" % e)
 ```
 
@@ -1195,19 +1195,19 @@ Remove Payment Method
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -1223,7 +1223,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Remove Payment Method
         api_response = api_instance.remove_payment_method_billing_remove_payment_method_delete_0(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->remove_payment_method_billing_remove_payment_method_delete_0: %s\n" % e)
 ```
 
@@ -1273,20 +1273,20 @@ View Payment Method
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.payment_method_response import PaymentMethodResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -1302,7 +1302,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # View Payment Method
         api_response = api_instance.view_payment_method_billing_view_payment_method_get(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->view_payment_method_billing_view_payment_method_get: %s\n" % e)
 ```
 
@@ -1352,20 +1352,20 @@ View Payment Method
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import billing_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.payment_method_response import PaymentMethodResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -1381,7 +1381,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # View Payment Method
         api_response = api_instance.view_payment_method_billing_view_payment_method_get_0(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->view_payment_method_billing_view_payment_method_get_0: %s\n" % e)
 ```
 

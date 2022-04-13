@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,12 +212,12 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.note_dynamo import NoteDynamo
-from ehelply-python-sdk.model.note_meta import NoteMeta
+import ehelply_python_sdk
+from ehelply_python_sdk.model.note_dynamo import NoteDynamo
+from ehelply_python_sdk.model.note_meta import NoteMeta
 globals()['NoteDynamo'] = NoteDynamo
 globals()['NoteMeta'] = NoteMeta
-from ehelply-python-sdk.model.note_dynamo_history import NoteDynamoHistory
+from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
 
 
 class TestNoteDynamoHistory(unittest.TestCase):

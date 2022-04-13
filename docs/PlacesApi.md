@@ -1,4 +1,4 @@
-# ehelply-python-sdk.PlacesApi
+# ehelply_python_sdk.PlacesApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -27,21 +27,21 @@ Creates a Place.
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.place_base import PlaceBase
-from ehelply-python-sdk.model.place_response import PlaceResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.place_base import PlaceBase
+from ehelply_python_sdk.model.place_response import PlaceResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     place_base = PlaceBase(
@@ -81,7 +81,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Place
         api_response = api_instance.create_place_places_post(place_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->create_place_places_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -90,7 +90,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Create Place
         api_response = api_instance.create_place_places_post(place_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->create_place_places_post: %s\n" % e)
 ```
 
@@ -143,19 +143,19 @@ Deletes the place with the given ID and returns True if successful
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     place_uuid = "place_uuid_example" # str | 
@@ -172,7 +172,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Place
         api_response = api_instance.delete_place_places_place_uuid_delete(place_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->delete_place_places_place_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -181,7 +181,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Place
         api_response = api_instance.delete_place_places_place_uuid_delete(place_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->delete_place_places_place_uuid_delete: %s\n" % e)
 ```
 
@@ -233,19 +233,19 @@ Forward Geocoding
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     searching_place = "searching_place_example" # str | 
@@ -261,7 +261,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Forward Geocoding
         api_response = api_instance.forward_geocoding_places_forward_geocoding_get(searching_place)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->forward_geocoding_places_forward_geocoding_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -270,7 +270,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Forward Geocoding
         api_response = api_instance.forward_geocoding_places_forward_geocoding_get(searching_place, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->forward_geocoding_places_forward_geocoding_get: %s\n" % e)
 ```
 
@@ -323,20 +323,20 @@ Gets the place information given the Place ID
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.place_response import PlaceResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.place_response import PlaceResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     place_uuid = "place_uuid_example" # str | 
@@ -361,7 +361,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Place
         api_response = api_instance.get_place_places_place_uuid_get(place_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->get_place_places_place_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -370,7 +370,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Place
         api_response = api_instance.get_place_places_place_uuid_get(place_uuid, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_collection=with_collection, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, with_company=with_company, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->get_place_places_place_uuid_get: %s\n" % e)
 ```
 
@@ -430,19 +430,19 @@ Reverse Geocoding
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     long = 3.14 # float | 
@@ -459,7 +459,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Reverse Geocoding
         api_response = api_instance.reverse_geocoding_places_reverse_geocoding_get(long, lat)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->reverse_geocoding_places_reverse_geocoding_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -468,7 +468,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Reverse Geocoding
         api_response = api_instance.reverse_geocoding_places_reverse_geocoding_get(long, lat, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->reverse_geocoding_places_reverse_geocoding_get: %s\n" % e)
 ```
 
@@ -520,19 +520,19 @@ Search Places By Area
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.page import Page
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
 
@@ -541,7 +541,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Places By Area
         api_response = api_instance.search_places_by_area_places_search_location_get()
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->search_places_by_area_places_search_location_get: %s\n" % e)
 ```
 
@@ -584,20 +584,20 @@ Search places by a search string
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     search_string = "" # str |  (optional) if omitted the server will use the default value of ""
@@ -618,7 +618,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Places By Search String
         api_response = api_instance.search_places_by_search_string_places_search_get(search_string=search_string, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->search_places_by_search_string_places_search_get: %s\n" % e)
 ```
 
@@ -675,20 +675,20 @@ Search all places and returns paginated results with Places being stored in item
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.page import Page
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     project_uuid = "project_uuid_example" # str |  (optional)
@@ -730,7 +730,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Search Places
         api_response = api_instance.search_places_places_get(project_uuid=project_uuid, name=name, address_line_1=address_line_1, address_line_2=address_line_2, city=city, province_state=province_state, country=country, postal_zip_code=postal_zip_code, lat=lat, lng=lng, email=email, is_public=is_public, is_deleted=is_deleted, with_company=with_company, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_collection=with_collection, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->search_places_places_get: %s\n" % e)
 ```
 
@@ -808,21 +808,21 @@ Update Place with given info, only updating the fields supplied. Place Uuid must
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import places_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.place_base import PlaceBase
-from ehelply-python-sdk.model.place_response import PlaceResponse
+import ehelply_python_sdk
+from ehelply_python_sdk.api import places_api
+from ehelply_python_sdk.model.place_base import PlaceBase
+from ehelply_python_sdk.model.place_response import PlaceResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     place_uuid = "place_uuid_example" # str | 
@@ -863,7 +863,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Place
         api_response = api_instance.update_place_places_place_uuid_put(place_uuid, place_base)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->update_place_places_place_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -872,7 +872,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Place
         api_response = api_instance.update_place_places_place_uuid_put(place_uuid, place_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->update_place_places_place_uuid_put: %s\n" % e)
 ```
 

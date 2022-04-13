@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,10 +212,10 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.security_key_create import SecurityKeyCreate
+import ehelply_python_sdk
+from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
 globals()['SecurityKeyCreate'] = SecurityKeyCreate
-from ehelply-python-sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
+from ehelply_python_sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
 
 
 class TestBodyCreateKeySecurityKeysPost(unittest.TestCase):

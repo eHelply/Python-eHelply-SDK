@@ -1,4 +1,4 @@
-# ehelply-python-sdk.MetaApi
+# ehelply_python_sdk.MetaApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
@@ -25,19 +25,19 @@ Delete Meta From Uuid
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     meta_uuid = "meta_uuid_example" # str | 
@@ -53,7 +53,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Meta From Uuid
         api_response = api_instance.delete_meta_from_uuid_meta_meta_meta_uuid_delete(meta_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->delete_meta_from_uuid_meta_meta_meta_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -62,7 +62,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Meta From Uuid
         api_response = api_instance.delete_meta_from_uuid_meta_meta_meta_uuid_delete(meta_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->delete_meta_from_uuid_meta_meta_meta_uuid_delete: %s\n" % e)
 ```
 
@@ -113,19 +113,19 @@ Delete Meta
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
@@ -143,7 +143,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Meta
         api_response = api_instance.delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete(service, type, entity_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -152,7 +152,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Delete Meta
         api_response = api_instance.delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete(service, type, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete: %s\n" % e)
 ```
 
@@ -205,19 +205,19 @@ Get Meta From Uuid
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     meta_uuid = "meta_uuid_example" # str | 
@@ -237,7 +237,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Meta From Uuid
         api_response = api_instance.get_meta_from_uuid_meta_meta_meta_uuid_get(meta_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->get_meta_from_uuid_meta_meta_meta_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -246,7 +246,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Meta From Uuid
         api_response = api_instance.get_meta_from_uuid_meta_meta_meta_uuid_get(meta_uuid, detailed=detailed, custom=custom, dates=dates, history=history, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->get_meta_from_uuid_meta_meta_meta_uuid_get: %s\n" % e)
 ```
 
@@ -301,19 +301,19 @@ Get Meta
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
@@ -335,7 +335,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Meta
         api_response = api_instance.get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get(service, type, entity_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -344,7 +344,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Get Meta
         api_response = api_instance.get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get(service, type, entity_uuid, detailed=detailed, custom=custom, dates=dates, history=history, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get: %s\n" % e)
 ```
 
@@ -401,20 +401,20 @@ Make Slug
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.meta_slugger import MetaSlugger
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_slugger import MetaSlugger
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     meta_slugger = MetaSlugger(
@@ -426,7 +426,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Make Slug
         api_response = api_instance.make_slug_meta_meta_slug_post(meta_slugger)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->make_slug_meta_meta_slug_post: %s\n" % e)
 ```
 
@@ -471,21 +471,21 @@ Post Meta
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post import BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost
-from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post import BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
@@ -516,7 +516,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Post Meta
         api_response = api_instance.post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post(service, type_str, entity_uuid, body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -525,7 +525,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Post Meta
         api_response = api_instance.post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post(service, type_str, entity_uuid, body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post: %s\n" % e)
 ```
 
@@ -579,20 +579,20 @@ Touch Meta
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
@@ -610,7 +610,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Touch Meta
         api_response = api_instance.touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post(service, type, entity_uuid)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -619,7 +619,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Touch Meta
         api_response = api_instance.touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post(service, type, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post: %s\n" % e)
 ```
 
@@ -672,21 +672,21 @@ Update Meta From Uuid
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_update_meta_from_uuid_meta_meta_meta_uuid_put import BodyUpdateMetaFromUuidMetaMetaMetaUuidPut
-from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
+from ehelply_python_sdk.model.body_update_meta_from_uuid_meta_meta_meta_uuid_put import BodyUpdateMetaFromUuidMetaMetaMetaUuidPut
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     meta_uuid = "meta_uuid_example" # str | 
@@ -715,7 +715,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Meta From Uuid
         api_response = api_instance.update_meta_from_uuid_meta_meta_meta_uuid_put(meta_uuid, body_update_meta_from_uuid_meta_meta_meta_uuid_put)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->update_meta_from_uuid_meta_meta_meta_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -724,7 +724,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Meta From Uuid
         api_response = api_instance.update_meta_from_uuid_meta_meta_meta_uuid_put(meta_uuid, body_update_meta_from_uuid_meta_meta_meta_uuid_put, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->update_meta_from_uuid_meta_meta_meta_uuid_put: %s\n" % e)
 ```
 
@@ -776,21 +776,21 @@ Update Meta
 
 ```python
 import time
-import ehelply-python-sdk
-from ehelply-python-sdk.api import meta_api
-from ehelply-python-sdk.model.http_validation_error import HTTPValidationError
-from ehelply-python-sdk.model.body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put import BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut
-from ehelply-python-sdk.model.meta_dynamo import MetaDynamo
+import ehelply_python_sdk
+from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put import BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply-python-sdk.Configuration(
+configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
 
 # Enter a context with an instance of the API client
-with ehelply-python-sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
@@ -821,7 +821,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Meta
         api_response = api_instance.update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put(service, type, entity_uuid, body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -830,7 +830,7 @@ with ehelply-python-sdk.ApiClient() as api_client:
         # Update Meta
         api_response = api_instance.update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put(service, type, entity_uuid, body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
-    except ehelply-python-sdk.ApiException as e:
+    except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put: %s\n" % e)
 ```
 

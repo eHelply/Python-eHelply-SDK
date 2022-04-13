@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.61
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.61
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,16 +212,16 @@
 import sys
 import unittest
 
-import ehelply-python-sdk
-from ehelply-python-sdk.model.category_base import CategoryBase
-from ehelply-python-sdk.model.contact_base import ContactBase
-from ehelply-python-sdk.model.place_base import PlaceBase
-from ehelply-python-sdk.model.tag_base import TagBase
+import ehelply_python_sdk
+from ehelply_python_sdk.model.category_base import CategoryBase
+from ehelply_python_sdk.model.contact_base import ContactBase
+from ehelply_python_sdk.model.place_base import PlaceBase
+from ehelply_python_sdk.model.tag_base import TagBase
 globals()['CategoryBase'] = CategoryBase
 globals()['ContactBase'] = ContactBase
 globals()['PlaceBase'] = PlaceBase
 globals()['TagBase'] = TagBase
-from ehelply-python-sdk.model.company_response import CompanyResponse
+from ehelply_python_sdk.model.company_response import CompanyResponse
 
 
 class TestCompanyResponse(unittest.TestCase):
