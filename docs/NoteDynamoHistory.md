@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **uuid** | **str** |  | 
 **time** | **str** |  | 
 **meta** | [**NoteMeta**](NoteMeta.md) |  | 
-**content** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**content** | **file_type** |  | [optional] 
 **history** | [**[NoteDynamo]**](NoteDynamo.md) |  | [optional]  if omitted the server will use the default value of []
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

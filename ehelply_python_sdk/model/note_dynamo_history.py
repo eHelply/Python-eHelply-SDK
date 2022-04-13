@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.45
+    eHelply SDK - 1.1.46
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.45
+    The version of the OpenAPI document: 1.1.46
 
                                      Apache License
                                Version 2.0, January 2004
@@ -293,7 +293,7 @@ class NoteDynamoHistory(ModelNormal):
             'uuid': (str,),  # noqa: E501
             'time': (str,),  # noqa: E501
             'meta': (NoteMeta,),  # noqa: E501
-            'content': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'content': (file_type,),  # noqa: E501
             'history': ([NoteDynamo],),  # noqa: E501
         }
 
@@ -356,7 +356,7 @@ class NoteDynamoHistory(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            content (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            content (file_type): [optional]  # noqa: E501
             history ([NoteDynamo]): [optional] if omitted the server will use the default value of []  # noqa: E501
         """
 
@@ -447,7 +447,7 @@ class NoteDynamoHistory(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            content (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            content (file_type): [optional]  # noqa: E501
             history ([NoteDynamo]): [optional] if omitted the server will use the default value of []  # noqa: E501
         """
 
