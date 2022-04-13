@@ -4,10 +4,10 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_note**](NotesApi.md#create_note) | **POST** /notes/notes/notes | Create Note
-[**delete_note**](NotesApi.md#delete_note) | **DELETE** /notes/notes/notes/{note_id} | Delete Note
-[**get_note**](NotesApi.md#get_note) | **GET** /notes/notes/notes/{note_id} | Get Note
-[**update_note**](NotesApi.md#update_note) | **PUT** /notes/notes/notes/{note_id} | Update Note
+[**create_note**](NotesApi.md#create_note) | **POST** /notes/notes | Create Note
+[**delete_note**](NotesApi.md#delete_note) | **DELETE** /notes/notes/{note_id} | Delete Note
+[**get_note**](NotesApi.md#get_note) | **GET** /notes/notes/{note_id} | Get Note
+[**update_note**](NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Update Note
 
 
 # **create_note**

@@ -291,7 +291,7 @@ class NoteDynamo(ModelNormal):
             'uuid': (str,),  # noqa: E501
             'time': (str,),  # noqa: E501
             'meta': (NoteMeta,),  # noqa: E501
-            'content': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'content': (file_type,),  # noqa: E501
         }
 
     @cached_property
@@ -352,7 +352,7 @@ class NoteDynamo(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            content (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            content (file_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -442,7 +442,7 @@ class NoteDynamo(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            content (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            content (file_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

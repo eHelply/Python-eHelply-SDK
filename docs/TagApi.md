@@ -4,11 +4,11 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_tag_tags_post**](TagApi.md#create_tag_tags_post) | **POST** /places/tags | Create Tag
-[**delete_tag_tags_tag_uuid_delete**](TagApi.md#delete_tag_tags_tag_uuid_delete) | **DELETE** /places/tags/{tag_uuid} | Delete Tag
-[**get_tag_tags_tag_uuid_get**](TagApi.md#get_tag_tags_tag_uuid_get) | **GET** /places/tags/{tag_uuid} | Get Tag
-[**search_tags_tags_get**](TagApi.md#search_tags_tags_get) | **GET** /places/tags | Search Tags
-[**update_tag_tags_tag_uuid_put**](TagApi.md#update_tag_tags_tag_uuid_put) | **PUT** /places/tags/{tag_uuid} | Update Tag
+[**create_tag_tags_post**](TagApi.md#create_tag_tags_post) | **POST** /tags | Create Tag
+[**delete_tag_tags_tag_uuid_delete**](TagApi.md#delete_tag_tags_tag_uuid_delete) | **DELETE** /tags/{tag_uuid} | Delete Tag
+[**get_tag_tags_tag_uuid_get**](TagApi.md#get_tag_tags_tag_uuid_get) | **GET** /tags/{tag_uuid} | Get Tag
+[**search_tags_tags_get**](TagApi.md#search_tags_tags_get) | **GET** /tags | Search Tags
+[**update_tag_tags_tag_uuid_put**](TagApi.md#update_tag_tags_tag_uuid_put) | **PUT** /tags/{tag_uuid} | Update Tag
 
 
 # **create_tag_tags_post**

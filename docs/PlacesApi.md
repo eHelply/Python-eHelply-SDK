@@ -4,15 +4,15 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_place_places_post**](PlacesApi.md#create_place_places_post) | **POST** /places/places | Create Place
-[**delete_place_places_place_uuid_delete**](PlacesApi.md#delete_place_places_place_uuid_delete) | **DELETE** /places/places/{place_uuid} | Delete Place
-[**forward_geocoding_places_forward_geocoding_get**](PlacesApi.md#forward_geocoding_places_forward_geocoding_get) | **GET** /places/places/forward_geocoding | Forward Geocoding
-[**get_place_places_place_uuid_get**](PlacesApi.md#get_place_places_place_uuid_get) | **GET** /places/places/{place_uuid} | Get Place
-[**reverse_geocoding_places_reverse_geocoding_get**](PlacesApi.md#reverse_geocoding_places_reverse_geocoding_get) | **GET** /places/places/reverse_geocoding | Reverse Geocoding
-[**search_places_by_area_places_search_location_get**](PlacesApi.md#search_places_by_area_places_search_location_get) | **GET** /places/places/search/location | Search Places By Area
-[**search_places_by_search_string_places_search_get**](PlacesApi.md#search_places_by_search_string_places_search_get) | **GET** /places/places/search | Search Places By Search String
-[**search_places_places_get**](PlacesApi.md#search_places_places_get) | **GET** /places/places | Search Places
-[**update_place_places_place_uuid_put**](PlacesApi.md#update_place_places_place_uuid_put) | **PUT** /places/places/{place_uuid} | Update Place
+[**create_place_places_post**](PlacesApi.md#create_place_places_post) | **POST** /places | Create Place
+[**delete_place_places_place_uuid_delete**](PlacesApi.md#delete_place_places_place_uuid_delete) | **DELETE** /places/{place_uuid} | Delete Place
+[**forward_geocoding_places_forward_geocoding_get**](PlacesApi.md#forward_geocoding_places_forward_geocoding_get) | **GET** /places/forward_geocoding | Forward Geocoding
+[**get_place_places_place_uuid_get**](PlacesApi.md#get_place_places_place_uuid_get) | **GET** /places/{place_uuid} | Get Place
+[**reverse_geocoding_places_reverse_geocoding_get**](PlacesApi.md#reverse_geocoding_places_reverse_geocoding_get) | **GET** /places/reverse_geocoding | Reverse Geocoding
+[**search_places_by_area_places_search_location_get**](PlacesApi.md#search_places_by_area_places_search_location_get) | **GET** /places/search/location | Search Places By Area
+[**search_places_by_search_string_places_search_get**](PlacesApi.md#search_places_by_search_string_places_search_get) | **GET** /places/search | Search Places By Search String
+[**search_places_places_get**](PlacesApi.md#search_places_places_get) | **GET** /places | Search Places
+[**update_place_places_place_uuid_put**](PlacesApi.md#update_place_places_place_uuid_put) | **PUT** /places/{place_uuid} | Update Place
 
 
 # **create_place_places_post**

@@ -243,7 +243,7 @@ class CompaniesApi(object):
             settings={
                 'response_type': (CompanyResponse,),
                 'auth': [],
-                'endpoint_path': '/places/companies',
+                'endpoint_path': '/companies',
                 'operation_id': 'create_company_companies_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -323,7 +323,7 @@ class CompaniesApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/companies/{company_uuid}',
+                'endpoint_path': '/companies/{company_uuid}',
                 'operation_id': 'delete_place_companies_company_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -407,7 +407,7 @@ class CompaniesApi(object):
             settings={
                 'response_type': (CompanyResponse,),
                 'auth': [],
-                'endpoint_path': '/places/companies/{company_uuid}',
+                'endpoint_path': '/companies/{company_uuid}',
                 'operation_id': 'get_company_companies_company_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -526,7 +526,7 @@ class CompaniesApi(object):
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/companies',
+                'endpoint_path': '/companies',
                 'operation_id': 'search_companies_companies_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -683,7 +683,7 @@ class CompaniesApi(object):
             settings={
                 'response_type': (CompanyResponse,),
                 'auth': [],
-                'endpoint_path': '/places/companies/{company_uuid}',
+                'endpoint_path': '/companies/{company_uuid}',
                 'operation_id': 'update_company_companies_company_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,

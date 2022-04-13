@@ -243,7 +243,7 @@ class TagApi(object):
             settings={
                 'response_type': (TagDb,),
                 'auth': [],
-                'endpoint_path': '/places/tags',
+                'endpoint_path': '/tags',
                 'operation_id': 'create_tag_tags_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -323,7 +323,7 @@ class TagApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/tags/{tag_uuid}',
+                'endpoint_path': '/tags/{tag_uuid}',
                 'operation_id': 'delete_tag_tags_tag_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -402,7 +402,7 @@ class TagApi(object):
             settings={
                 'response_type': (TagBase,),
                 'auth': [],
-                'endpoint_path': '/places/tags/{tag_uuid}',
+                'endpoint_path': '/tags/{tag_uuid}',
                 'operation_id': 'get_tag_tags_tag_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -481,7 +481,7 @@ class TagApi(object):
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/tags',
+                'endpoint_path': '/tags',
                 'operation_id': 'search_tags_tags_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -583,7 +583,7 @@ class TagApi(object):
             settings={
                 'response_type': (TagBase,),
                 'auth': [],
-                'endpoint_path': '/places/tags/{tag_uuid}',
+                'endpoint_path': '/tags/{tag_uuid}',
                 'operation_id': 'update_tag_tags_tag_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,

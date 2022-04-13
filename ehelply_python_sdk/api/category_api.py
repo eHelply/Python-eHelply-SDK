@@ -243,7 +243,7 @@ class CategoryApi(object):
             settings={
                 'response_type': (CategoryDb,),
                 'auth': [],
-                'endpoint_path': '/places/categories',
+                'endpoint_path': '/categories',
                 'operation_id': 'create_category_categories_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -323,7 +323,7 @@ class CategoryApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/categories/{category_uuid}',
+                'endpoint_path': '/categories/{category_uuid}',
                 'operation_id': 'delete_category_categories_category_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -402,7 +402,7 @@ class CategoryApi(object):
             settings={
                 'response_type': (CategoryBase,),
                 'auth': [],
-                'endpoint_path': '/places/categories/{category_uuid}',
+                'endpoint_path': '/categories/{category_uuid}',
                 'operation_id': 'get_category_categories_category_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -486,7 +486,7 @@ class CategoryApi(object):
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/categories',
+                'endpoint_path': '/categories',
                 'operation_id': 'search_categories_categories_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -593,7 +593,7 @@ class CategoryApi(object):
             settings={
                 'response_type': (CategoryBase,),
                 'auth': [],
-                'endpoint_path': '/places/categories/{category_uuid}',
+                'endpoint_path': '/categories/{category_uuid}',
                 'operation_id': 'update_category_categories_category_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,

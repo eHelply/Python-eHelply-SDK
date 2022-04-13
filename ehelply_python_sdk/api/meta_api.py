@@ -245,7 +245,7 @@ class MetaApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/{meta_uuid}',
+                'endpoint_path': '/meta/meta/{meta_uuid}',
                 'operation_id': 'delete_meta_from_uuid_meta_meta_meta_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -324,7 +324,7 @@ class MetaApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
                 'operation_id': 'delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -415,7 +415,7 @@ class MetaApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/{meta_uuid}',
+                'endpoint_path': '/meta/meta/{meta_uuid}',
                 'operation_id': 'get_meta_from_uuid_meta_meta_meta_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -514,7 +514,7 @@ class MetaApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
                 'operation_id': 'get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -625,7 +625,7 @@ class MetaApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/slug',
+                'endpoint_path': '/meta/meta/slug',
                 'operation_id': 'make_slug_meta_meta_slug_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -675,7 +675,7 @@ class MetaApi(object):
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}',
                 'operation_id': 'post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -773,7 +773,7 @@ class MetaApi(object):
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch',
                 'operation_id': 'touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -864,7 +864,7 @@ class MetaApi(object):
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/{meta_uuid}',
+                'endpoint_path': '/meta/meta/{meta_uuid}',
                 'operation_id': 'update_meta_from_uuid_meta_meta_meta_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,
@@ -950,7 +950,7 @@ class MetaApi(object):
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
                 'operation_id': 'update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,

@@ -244,7 +244,7 @@ class StaffApi(object):
             settings={
                 'response_type': (StaffDb,),
                 'auth': [],
-                'endpoint_path': '/places/staff',
+                'endpoint_path': '/staff',
                 'operation_id': 'create_staff_staff_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -324,7 +324,7 @@ class StaffApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/staff/{staff_uuid}',
+                'endpoint_path': '/staff/{staff_uuid}',
                 'operation_id': 'delete_staff_staff_staff_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -408,7 +408,7 @@ class StaffApi(object):
             settings={
                 'response_type': (StaffResponse,),
                 'auth': [],
-                'endpoint_path': '/places/staff/{staff_uuid}',
+                'endpoint_path': '/staff/{staff_uuid}',
                 'operation_id': 'get_staff_staff_staff_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -512,7 +512,7 @@ class StaffApi(object):
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/staff',
+                'endpoint_path': '/staff',
                 'operation_id': 'search_staff_staff_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -654,7 +654,7 @@ class StaffApi(object):
             settings={
                 'response_type': (StaffResponse,),
                 'auth': [],
-                'endpoint_path': '/places/staff/{staff_uuid}',
+                'endpoint_path': '/staff/{staff_uuid}',
                 'operation_id': 'update_staff_staff_staff_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,

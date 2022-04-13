@@ -243,7 +243,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (PlaceResponse,),
                 'auth': [],
-                'endpoint_path': '/places/places',
+                'endpoint_path': '/places',
                 'operation_id': 'create_place_places_post',
                 'http_method': 'POST',
                 'servers': None,
@@ -323,7 +323,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/places/{place_uuid}',
+                'endpoint_path': '/places/{place_uuid}',
                 'operation_id': 'delete_place_places_place_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -407,7 +407,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/places/forward_geocoding',
+                'endpoint_path': '/places/forward_geocoding',
                 'operation_id': 'forward_geocoding_places_forward_geocoding_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -486,7 +486,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (PlaceResponse,),
                 'auth': [],
-                'endpoint_path': '/places/places/{place_uuid}',
+                'endpoint_path': '/places/{place_uuid}',
                 'operation_id': 'get_place_places_place_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -610,7 +610,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/places/reverse_geocoding',
+                'endpoint_path': '/places/reverse_geocoding',
                 'operation_id': 'reverse_geocoding_places_reverse_geocoding_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -695,7 +695,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/places/search/location',
+                'endpoint_path': '/places/search/location',
                 'operation_id': 'search_places_by_area_places_search_location_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -737,7 +737,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/places/search',
+                'endpoint_path': '/places/search',
                 'operation_id': 'search_places_by_search_string_places_search_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -834,7 +834,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/places',
+                'endpoint_path': '/places',
                 'operation_id': 'search_places_places_get',
                 'http_method': 'GET',
                 'servers': None,
@@ -1036,7 +1036,7 @@ class PlacesApi(object):
             settings={
                 'response_type': (PlaceResponse,),
                 'auth': [],
-                'endpoint_path': '/places/places/{place_uuid}',
+                'endpoint_path': '/places/{place_uuid}',
                 'operation_id': 'update_place_places_place_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,
