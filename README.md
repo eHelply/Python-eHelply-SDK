@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.63
-- Package version: 1.1.63
+- API version: 1.1.64
+- Package version: 1.1.64
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -122,15 +122,15 @@ Class | Method | HTTP request | Description
 *MetaApi* | [**create_field**](docs/MetaApi.md#create_field) | **POST** /meta/field | Create Field
 *MetaApi* | [**create_meta**](docs/MetaApi.md#create_meta) | **POST** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Create Meta
 *MetaApi* | [**delete_field**](docs/MetaApi.md#delete_field) | **DELETE** /meta/field/{field_uuid} | Delete Field
-*MetaApi* | [**delete_meta**](docs/MetaApi.md#delete_meta) | **DELETE** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Delete Meta
+*MetaApi* | [**delete_meta**](docs/MetaApi.md#delete_meta) | **DELETE** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Delete Meta
 *MetaApi* | [**delete_meta_from_uuid**](docs/MetaApi.md#delete_meta_from_uuid) | **DELETE** /meta/meta/{meta_uuid} | Delete Meta From Uuid
 *MetaApi* | [**get_field**](docs/MetaApi.md#get_field) | **GET** /meta/field/{field_uuid} | Get Field
-*MetaApi* | [**get_meta**](docs/MetaApi.md#get_meta) | **GET** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Get Meta
+*MetaApi* | [**get_meta**](docs/MetaApi.md#get_meta) | **GET** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Get Meta
 *MetaApi* | [**get_meta_from_uuid**](docs/MetaApi.md#get_meta_from_uuid) | **GET** /meta/meta/{meta_uuid} | Get Meta From Uuid
 *MetaApi* | [**make_slug**](docs/MetaApi.md#make_slug) | **POST** /meta/meta/slug | Make Slug
-*MetaApi* | [**touch_meta**](docs/MetaApi.md#touch_meta) | **POST** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch | Touch Meta
+*MetaApi* | [**touch_meta**](docs/MetaApi.md#touch_meta) | **POST** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}/touch | Touch Meta
 *MetaApi* | [**update_field**](docs/MetaApi.md#update_field) | **PUT** /meta/field/{field_uuid} | Update Field
-*MetaApi* | [**update_meta**](docs/MetaApi.md#update_meta) | **PUT** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Update Meta
+*MetaApi* | [**update_meta**](docs/MetaApi.md#update_meta) | **PUT** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Update Meta
 *MetaApi* | [**update_meta_from_uuid**](docs/MetaApi.md#update_meta_from_uuid) | **PUT** /meta/meta/{meta_uuid} | Update Meta From Uuid
 *MonitorApi* | [**ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post**](docs/MonitorApi.md#ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/acknowledge | Ack Alarm
 *MonitorApi* | [**assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post**](docs/MonitorApi.md#assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/assign | Assign Alarm

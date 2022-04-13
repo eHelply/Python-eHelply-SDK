@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.63
+    eHelply SDK - 1.1.64
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.63
+    The version of the OpenAPI document: 1.1.64
 
                                      Apache License
                                Version 2.0, January 2004
@@ -507,7 +507,7 @@ class MetaApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}',
                 'operation_id': 'delete_meta',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -515,7 +515,7 @@ class MetaApi(object):
             params_map={
                 'all': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                     'x_access_token',
                     'x_secret_token',
@@ -526,7 +526,7 @@ class MetaApi(object):
                 ],
                 'required': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                 ],
                 'nullable': [
@@ -544,7 +544,7 @@ class MetaApi(object):
                 'openapi_types': {
                     'service':
                         (str,),
-                    'type':
+                    'type_str':
                         (str,),
                     'entity_uuid':
                         (str,),
@@ -563,7 +563,7 @@ class MetaApi(object):
                 },
                 'attribute_map': {
                     'service': 'service',
-                    'type': 'type',
+                    'type_str': 'type_str',
                     'entity_uuid': 'entity_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
@@ -574,7 +574,7 @@ class MetaApi(object):
                 },
                 'location_map': {
                     'service': 'path',
-                    'type': 'path',
+                    'type_str': 'path',
                     'entity_uuid': 'path',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
@@ -756,7 +756,7 @@ class MetaApi(object):
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}',
                 'operation_id': 'get_meta',
                 'http_method': 'GET',
                 'servers': None,
@@ -764,7 +764,7 @@ class MetaApi(object):
             params_map={
                 'all': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                     'detailed',
                     'custom',
@@ -779,7 +779,7 @@ class MetaApi(object):
                 ],
                 'required': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                 ],
                 'nullable': [
@@ -797,7 +797,7 @@ class MetaApi(object):
                 'openapi_types': {
                     'service':
                         (str,),
-                    'type':
+                    'type_str':
                         (str,),
                     'entity_uuid':
                         (str,),
@@ -824,7 +824,7 @@ class MetaApi(object):
                 },
                 'attribute_map': {
                     'service': 'service',
-                    'type': 'type',
+                    'type_str': 'type_str',
                     'entity_uuid': 'entity_uuid',
                     'detailed': 'detailed',
                     'custom': 'custom',
@@ -839,7 +839,7 @@ class MetaApi(object):
                 },
                 'location_map': {
                     'service': 'path',
-                    'type': 'path',
+                    'type_str': 'path',
                     'entity_uuid': 'path',
                     'detailed': 'query',
                     'custom': 'query',
@@ -1016,7 +1016,7 @@ class MetaApi(object):
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}/touch',
                 'operation_id': 'touch_meta',
                 'http_method': 'POST',
                 'servers': None,
@@ -1024,7 +1024,7 @@ class MetaApi(object):
             params_map={
                 'all': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                     'x_access_token',
                     'x_secret_token',
@@ -1035,7 +1035,7 @@ class MetaApi(object):
                 ],
                 'required': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                 ],
                 'nullable': [
@@ -1053,7 +1053,7 @@ class MetaApi(object):
                 'openapi_types': {
                     'service':
                         (str,),
-                    'type':
+                    'type_str':
                         (str,),
                     'entity_uuid':
                         (str,),
@@ -1072,7 +1072,7 @@ class MetaApi(object):
                 },
                 'attribute_map': {
                     'service': 'service',
-                    'type': 'type',
+                    'type_str': 'type_str',
                     'entity_uuid': 'entity_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
@@ -1083,7 +1083,7 @@ class MetaApi(object):
                 },
                 'location_map': {
                     'service': 'path',
-                    'type': 'path',
+                    'type_str': 'path',
                     'entity_uuid': 'path',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
@@ -1193,7 +1193,7 @@ class MetaApi(object):
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
+                'endpoint_path': '/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}',
                 'operation_id': 'update_meta',
                 'http_method': 'PUT',
                 'servers': None,
@@ -1201,7 +1201,7 @@ class MetaApi(object):
             params_map={
                 'all': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                     'meta_create',
                     'x_access_token',
@@ -1213,7 +1213,7 @@ class MetaApi(object):
                 ],
                 'required': [
                     'service',
-                    'type',
+                    'type_str',
                     'entity_uuid',
                     'meta_create',
                 ],
@@ -1232,7 +1232,7 @@ class MetaApi(object):
                 'openapi_types': {
                     'service':
                         (str,),
-                    'type':
+                    'type_str':
                         (str,),
                     'entity_uuid':
                         (str,),
@@ -1253,7 +1253,7 @@ class MetaApi(object):
                 },
                 'attribute_map': {
                     'service': 'service',
-                    'type': 'type',
+                    'type_str': 'type_str',
                     'entity_uuid': 'entity_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
@@ -1264,7 +1264,7 @@ class MetaApi(object):
                 },
                 'location_map': {
                     'service': 'path',
-                    'type': 'path',
+                    'type_str': 'path',
                     'entity_uuid': 'path',
                     'meta_create': 'body',
                     'x_access_token': 'header',
@@ -1603,7 +1603,7 @@ class MetaApi(object):
     def delete_meta(
         self,
         service,
-        type,
+        type_str,
         entity_uuid,
         **kwargs
     ):
@@ -1612,12 +1612,12 @@ class MetaApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_meta(service, type, entity_uuid, async_req=True)
+        >>> thread = api.delete_meta(service, type_str, entity_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
             service (str):
-            type (str):
+            type_str (str):
             entity_uuid (str):
 
         Keyword Args:
@@ -1673,8 +1673,8 @@ class MetaApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['service'] = \
             service
-        kwargs['type'] = \
-            type
+        kwargs['type_str'] = \
+            type_str
         kwargs['entity_uuid'] = \
             entity_uuid
         return self.delete_meta_endpoint.call_with_http_info(**kwargs)
@@ -1824,7 +1824,7 @@ class MetaApi(object):
     def get_meta(
         self,
         service,
-        type,
+        type_str,
         entity_uuid,
         **kwargs
     ):
@@ -1833,12 +1833,12 @@ class MetaApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_meta(service, type, entity_uuid, async_req=True)
+        >>> thread = api.get_meta(service, type_str, entity_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
             service (str):
-            type (str):
+            type_str (str):
             entity_uuid (str):
 
         Keyword Args:
@@ -1898,8 +1898,8 @@ class MetaApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['service'] = \
             service
-        kwargs['type'] = \
-            type
+        kwargs['type_str'] = \
+            type_str
         kwargs['entity_uuid'] = \
             entity_uuid
         return self.get_meta_endpoint.call_with_http_info(**kwargs)
@@ -2047,7 +2047,7 @@ class MetaApi(object):
     def touch_meta(
         self,
         service,
-        type,
+        type_str,
         entity_uuid,
         **kwargs
     ):
@@ -2056,12 +2056,12 @@ class MetaApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.touch_meta(service, type, entity_uuid, async_req=True)
+        >>> thread = api.touch_meta(service, type_str, entity_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
             service (str):
-            type (str):
+            type_str (str):
             entity_uuid (str):
 
         Keyword Args:
@@ -2117,8 +2117,8 @@ class MetaApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['service'] = \
             service
-        kwargs['type'] = \
-            type
+        kwargs['type_str'] = \
+            type_str
         kwargs['entity_uuid'] = \
             entity_uuid
         return self.touch_meta_endpoint.call_with_http_info(**kwargs)
@@ -2201,7 +2201,7 @@ class MetaApi(object):
     def update_meta(
         self,
         service,
-        type,
+        type_str,
         entity_uuid,
         meta_create,
         **kwargs
@@ -2211,12 +2211,12 @@ class MetaApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_meta(service, type, entity_uuid, meta_create, async_req=True)
+        >>> thread = api.update_meta(service, type_str, entity_uuid, meta_create, async_req=True)
         >>> result = thread.get()
 
         Args:
             service (str):
-            type (str):
+            type_str (str):
             entity_uuid (str):
             meta_create (MetaCreate):
 
@@ -2273,8 +2273,8 @@ class MetaApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['service'] = \
             service
-        kwargs['type'] = \
-            type
+        kwargs['type_str'] = \
+            type_str
         kwargs['entity_uuid'] = \
             entity_uuid
         kwargs['meta_create'] = \

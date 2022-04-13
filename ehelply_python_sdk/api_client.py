@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.63
+    eHelply SDK - 1.1.64
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.63
+    The version of the OpenAPI document: 1.1.64
 
                                      Apache License
                                Version 2.0, January 2004
@@ -277,7 +277,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/1.1.63/python'
+        self.user_agent = 'OpenAPI-Generator/1.1.64/python'
 
     def __enter__(self):
         return self

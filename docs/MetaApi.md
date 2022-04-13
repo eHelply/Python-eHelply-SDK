@@ -7,15 +7,15 @@ Method | HTTP request | Description
 [**create_field**](MetaApi.md#create_field) | **POST** /meta/field | Create Field
 [**create_meta**](MetaApi.md#create_meta) | **POST** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Create Meta
 [**delete_field**](MetaApi.md#delete_field) | **DELETE** /meta/field/{field_uuid} | Delete Field
-[**delete_meta**](MetaApi.md#delete_meta) | **DELETE** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Delete Meta
+[**delete_meta**](MetaApi.md#delete_meta) | **DELETE** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Delete Meta
 [**delete_meta_from_uuid**](MetaApi.md#delete_meta_from_uuid) | **DELETE** /meta/meta/{meta_uuid} | Delete Meta From Uuid
 [**get_field**](MetaApi.md#get_field) | **GET** /meta/field/{field_uuid} | Get Field
-[**get_meta**](MetaApi.md#get_meta) | **GET** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Get Meta
+[**get_meta**](MetaApi.md#get_meta) | **GET** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Get Meta
 [**get_meta_from_uuid**](MetaApi.md#get_meta_from_uuid) | **GET** /meta/meta/{meta_uuid} | Get Meta From Uuid
 [**make_slug**](MetaApi.md#make_slug) | **POST** /meta/meta/slug | Make Slug
-[**touch_meta**](MetaApi.md#touch_meta) | **POST** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch | Touch Meta
+[**touch_meta**](MetaApi.md#touch_meta) | **POST** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}/touch | Touch Meta
 [**update_field**](MetaApi.md#update_field) | **PUT** /meta/field/{field_uuid} | Update Field
-[**update_meta**](MetaApi.md#update_meta) | **PUT** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Update Meta
+[**update_meta**](MetaApi.md#update_meta) | **PUT** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Update Meta
 [**update_meta_from_uuid**](MetaApi.md#update_meta_from_uuid) | **PUT** /meta/meta/{meta_uuid} | Update Meta From Uuid
 
 
@@ -329,7 +329,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_meta**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_meta(service, type, entity_uuid)
+> bool, date, datetime, dict, float, int, list, str, none_type delete_meta(service, type_str, entity_uuid)
 
 Delete Meta
 
@@ -354,7 +354,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
-    type = "type_example" # str | 
+    type_str = "type_str_example" # str | 
     entity_uuid = "entity_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -366,7 +366,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete Meta
-        api_response = api_instance.delete_meta(service, type, entity_uuid)
+        api_response = api_instance.delete_meta(service, type_str, entity_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->delete_meta: %s\n" % e)
@@ -375,7 +375,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Delete Meta
-        api_response = api_instance.delete_meta(service, type, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.delete_meta(service, type_str, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->delete_meta: %s\n" % e)
@@ -387,7 +387,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **str**|  |
- **type** | **str**|  |
+ **type_str** | **str**|  |
  **entity_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
@@ -598,7 +598,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_meta**
-> MetaDynamo get_meta(service, type, entity_uuid)
+> MetaDynamo get_meta(service, type_str, entity_uuid)
 
 Get Meta
 
@@ -624,7 +624,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
-    type = "type_example" # str | 
+    type_str = "type_str_example" # str | 
     entity_uuid = "entity_uuid_example" # str | 
     detailed = False # bool |  (optional) if omitted the server will use the default value of False
     custom = False # bool |  (optional) if omitted the server will use the default value of False
@@ -640,7 +640,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Meta
-        api_response = api_instance.get_meta(service, type, entity_uuid)
+        api_response = api_instance.get_meta(service, type_str, entity_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->get_meta: %s\n" % e)
@@ -649,7 +649,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Get Meta
-        api_response = api_instance.get_meta(service, type, entity_uuid, detailed=detailed, custom=custom, dates=dates, history=history, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_meta(service, type_str, entity_uuid, detailed=detailed, custom=custom, dates=dates, history=history, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->get_meta: %s\n" % e)
@@ -661,7 +661,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **str**|  |
- **type** | **str**|  |
+ **type_str** | **str**|  |
  **entity_uuid** | **str**|  |
  **detailed** | **bool**|  | [optional] if omitted the server will use the default value of False
  **custom** | **bool**|  | [optional] if omitted the server will use the default value of False
@@ -866,7 +866,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **touch_meta**
-> MetaDynamo touch_meta(service, type, entity_uuid)
+> MetaDynamo touch_meta(service, type_str, entity_uuid)
 
 Touch Meta
 
@@ -892,7 +892,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
-    type = "type_example" # str | 
+    type_str = "type_str_example" # str | 
     entity_uuid = "entity_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -904,7 +904,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Touch Meta
-        api_response = api_instance.touch_meta(service, type, entity_uuid)
+        api_response = api_instance.touch_meta(service, type_str, entity_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->touch_meta: %s\n" % e)
@@ -913,7 +913,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Touch Meta
-        api_response = api_instance.touch_meta(service, type, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.touch_meta(service, type_str, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->touch_meta: %s\n" % e)
@@ -925,7 +925,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **str**|  |
- **type** | **str**|  |
+ **type_str** | **str**|  |
  **entity_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
@@ -1058,7 +1058,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_meta**
-> MetaDynamo update_meta(service, type, entity_uuid, meta_create)
+> MetaDynamo update_meta(service, type_str, entity_uuid, meta_create)
 
 Update Meta
 
@@ -1085,7 +1085,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     service = "service_example" # str | 
-    type = "type_example" # str | 
+    type_str = "type_str_example" # str | 
     entity_uuid = "entity_uuid_example" # str | 
     meta_create = MetaCreate(
         basic=BasicMetaCreate(
@@ -1123,7 +1123,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Meta
-        api_response = api_instance.update_meta(service, type, entity_uuid, meta_create)
+        api_response = api_instance.update_meta(service, type_str, entity_uuid, meta_create)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->update_meta: %s\n" % e)
@@ -1132,7 +1132,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Update Meta
-        api_response = api_instance.update_meta(service, type, entity_uuid, meta_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_meta(service, type_str, entity_uuid, meta_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MetaApi->update_meta: %s\n" % e)
@@ -1144,7 +1144,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service** | **str**|  |
- **type** | **str**|  |
+ **type_str** | **str**|  |
  **entity_uuid** | **str**|  |
  **meta_create** | [**MetaCreate**](MetaCreate.md)|  |
  **x_access_token** | **str**|  | [optional]
