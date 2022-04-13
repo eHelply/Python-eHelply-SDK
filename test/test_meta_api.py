@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.62
+    eHelply SDK - 1.1.63
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.62
+    The version of the OpenAPI document: 1.1.63
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,66 +224,94 @@ class TestMetaApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_delete_meta_from_uuid_meta_meta_meta_uuid_delete(self):
-        """Test case for delete_meta_from_uuid_meta_meta_meta_uuid_delete
+    def test_create_field(self):
+        """Test case for create_field
 
-        Delete Meta From Uuid  # noqa: E501
+        Create Field  # noqa: E501
         """
         pass
 
-    def test_delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete(self):
-        """Test case for delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete
+    def test_create_meta(self):
+        """Test case for create_meta
+
+        Create Meta  # noqa: E501
+        """
+        pass
+
+    def test_delete_field(self):
+        """Test case for delete_field
+
+        Delete Field  # noqa: E501
+        """
+        pass
+
+    def test_delete_meta(self):
+        """Test case for delete_meta
 
         Delete Meta  # noqa: E501
         """
         pass
 
-    def test_get_meta_from_uuid_meta_meta_meta_uuid_get(self):
-        """Test case for get_meta_from_uuid_meta_meta_meta_uuid_get
+    def test_delete_meta_from_uuid(self):
+        """Test case for delete_meta_from_uuid
 
-        Get Meta From Uuid  # noqa: E501
+        Delete Meta From Uuid  # noqa: E501
         """
         pass
 
-    def test_get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get(self):
-        """Test case for get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get
+    def test_get_field(self):
+        """Test case for get_field
+
+        Get Field  # noqa: E501
+        """
+        pass
+
+    def test_get_meta(self):
+        """Test case for get_meta
 
         Get Meta  # noqa: E501
         """
         pass
 
-    def test_make_slug_meta_meta_slug_post(self):
-        """Test case for make_slug_meta_meta_slug_post
+    def test_get_meta_from_uuid(self):
+        """Test case for get_meta_from_uuid
+
+        Get Meta From Uuid  # noqa: E501
+        """
+        pass
+
+    def test_make_slug(self):
+        """Test case for make_slug
 
         Make Slug  # noqa: E501
         """
         pass
 
-    def test_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post(self):
-        """Test case for post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post
-
-        Post Meta  # noqa: E501
-        """
-        pass
-
-    def test_touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post(self):
-        """Test case for touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post
+    def test_touch_meta(self):
+        """Test case for touch_meta
 
         Touch Meta  # noqa: E501
         """
         pass
 
-    def test_update_meta_from_uuid_meta_meta_meta_uuid_put(self):
-        """Test case for update_meta_from_uuid_meta_meta_meta_uuid_put
+    def test_update_field(self):
+        """Test case for update_field
 
-        Update Meta From Uuid  # noqa: E501
+        Update Field  # noqa: E501
         """
         pass
 
-    def test_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put(self):
-        """Test case for update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put
+    def test_update_meta(self):
+        """Test case for update_meta
 
         Update Meta  # noqa: E501
+        """
+        pass
+
+    def test_update_meta_from_uuid(self):
+        """Test case for update_meta_from_uuid
+
+        Update Meta From Uuid  # noqa: E501
         """
         pass
 

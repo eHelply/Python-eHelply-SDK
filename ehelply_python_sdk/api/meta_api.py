@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.62
+    eHelply SDK - 1.1.63
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.62
+    The version of the OpenAPI document: 1.1.63
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,10 +222,10 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from ehelply_python_sdk.model.body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post import BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost
-from ehelply_python_sdk.model.body_update_meta_from_uuid_meta_meta_meta_uuid_put import BodyUpdateMetaFromUuidMetaMetaMetaUuidPut
-from ehelply_python_sdk.model.body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put import BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut
+from ehelply_python_sdk.model.field import Field
+from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_create import MetaCreate
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
 from ehelply_python_sdk.model.meta_slugger import MetaSlugger
 
@@ -241,18 +241,18 @@ class MetaApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.delete_meta_from_uuid_meta_meta_meta_uuid_delete_endpoint = _Endpoint(
+        self.create_field_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (FieldDynamo,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/{meta_uuid}',
-                'operation_id': 'delete_meta_from_uuid_meta_meta_meta_uuid_delete',
-                'http_method': 'DELETE',
+                'endpoint_path': '/meta/field',
+                'operation_id': 'create_field',
+                'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'meta_uuid',
+                    'field',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -261,7 +261,7 @@ class MetaApi(object):
                     'ehelply_data',
                 ],
                 'required': [
-                    'meta_uuid',
+                    'field',
                 ],
                 'nullable': [
                 ],
@@ -276,8 +276,8 @@ class MetaApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'meta_uuid':
-                        (str,),
+                    'field':
+                        (Field,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -292,7 +292,6 @@ class MetaApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'meta_uuid': 'meta_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
                     'authorization': 'authorization',
@@ -301,7 +300,191 @@ class MetaApi(object):
                     'ehelply_data': 'ehelply-data',
                 },
                 'location_map': {
-                    'meta_uuid': 'path',
+                    'field': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_meta_endpoint = _Endpoint(
+            settings={
+                'response_type': (MetaDynamo,),
+                'auth': [],
+                'endpoint_path': '/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}',
+                'operation_id': 'create_meta',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'service',
+                    'type_str',
+                    'entity_uuid',
+                    'meta_create',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'service',
+                    'type_str',
+                    'entity_uuid',
+                    'meta_create',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'service':
+                        (str,),
+                    'type_str':
+                        (str,),
+                    'entity_uuid':
+                        (str,),
+                    'meta_create':
+                        (MetaCreate,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'service': 'service',
+                    'type_str': 'type_str',
+                    'entity_uuid': 'entity_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'service': 'path',
+                    'type_str': 'path',
+                    'entity_uuid': 'path',
+                    'meta_create': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.delete_field_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/meta/field/{field_uuid}',
+                'operation_id': 'delete_field',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'field_uuid',
+                    'soft_delete',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'field_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'field_uuid':
+                        (str,),
+                    'soft_delete':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'field_uuid': 'field_uuid',
+                    'soft_delete': 'soft_delete',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'field_uuid': 'path',
+                    'soft_delete': 'query',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -320,12 +503,12 @@ class MetaApi(object):
             },
             api_client=api_client
         )
-        self.delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete_endpoint = _Endpoint(
+        self.delete_meta_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
-                'operation_id': 'delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete',
+                'operation_id': 'delete_meta',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -411,12 +594,281 @@ class MetaApi(object):
             },
             api_client=api_client
         )
-        self.get_meta_from_uuid_meta_meta_meta_uuid_get_endpoint = _Endpoint(
+        self.delete_meta_from_uuid_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/meta/meta/{meta_uuid}',
-                'operation_id': 'get_meta_from_uuid_meta_meta_meta_uuid_get',
+                'operation_id': 'delete_meta_from_uuid',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'meta_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'meta_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'meta_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'meta_uuid': 'meta_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'meta_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_field_endpoint = _Endpoint(
+            settings={
+                'response_type': (FieldDynamo,),
+                'auth': [],
+                'endpoint_path': '/meta/field/{field_uuid}',
+                'operation_id': 'get_field',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'field_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'field_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'field_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'field_uuid': 'field_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'field_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_meta_endpoint = _Endpoint(
+            settings={
+                'response_type': (MetaDynamo,),
+                'auth': [],
+                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
+                'operation_id': 'get_meta',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'service',
+                    'type',
+                    'entity_uuid',
+                    'detailed',
+                    'custom',
+                    'dates',
+                    'history',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'service',
+                    'type',
+                    'entity_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'service':
+                        (str,),
+                    'type':
+                        (str,),
+                    'entity_uuid':
+                        (str,),
+                    'detailed':
+                        (bool,),
+                    'custom':
+                        (bool,),
+                    'dates':
+                        (bool,),
+                    'history':
+                        (int,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'service': 'service',
+                    'type': 'type',
+                    'entity_uuid': 'entity_uuid',
+                    'detailed': 'detailed',
+                    'custom': 'custom',
+                    'dates': 'dates',
+                    'history': 'history',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'service': 'path',
+                    'type': 'path',
+                    'entity_uuid': 'path',
+                    'detailed': 'query',
+                    'custom': 'query',
+                    'dates': 'query',
+                    'history': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_meta_from_uuid_endpoint = _Endpoint(
+            settings={
+                'response_type': (MetaDynamo,),
+                'auth': [],
+                'endpoint_path': '/meta/meta/{meta_uuid}',
+                'operation_id': 'get_meta_from_uuid',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -510,123 +962,12 @@ class MetaApi(object):
             },
             api_client=api_client
         )
-        self.get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get_endpoint = _Endpoint(
-            settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
-                'auth': [],
-                'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
-                'operation_id': 'get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'service',
-                    'type',
-                    'entity_uuid',
-                    'detailed',
-                    'custom',
-                    'dates',
-                    'history',
-                    'x_access_token',
-                    'x_secret_token',
-                    'authorization',
-                    'ehelply_active_participant',
-                    'ehelply_project',
-                    'ehelply_data',
-                ],
-                'required': [
-                    'service',
-                    'type',
-                    'entity_uuid',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'service':
-                        (str,),
-                    'type':
-                        (str,),
-                    'entity_uuid':
-                        (str,),
-                    'detailed':
-                        (bool,),
-                    'custom':
-                        (bool,),
-                    'dates':
-                        (bool,),
-                    'history':
-                        (int,),
-                    'x_access_token':
-                        (str,),
-                    'x_secret_token':
-                        (str,),
-                    'authorization':
-                        (str,),
-                    'ehelply_active_participant':
-                        (str,),
-                    'ehelply_project':
-                        (str,),
-                    'ehelply_data':
-                        (str,),
-                },
-                'attribute_map': {
-                    'service': 'service',
-                    'type': 'type',
-                    'entity_uuid': 'entity_uuid',
-                    'detailed': 'detailed',
-                    'custom': 'custom',
-                    'dates': 'dates',
-                    'history': 'history',
-                    'x_access_token': 'x-access-token',
-                    'x_secret_token': 'x-secret-token',
-                    'authorization': 'authorization',
-                    'ehelply_active_participant': 'ehelply-active-participant',
-                    'ehelply_project': 'ehelply-project',
-                    'ehelply_data': 'ehelply-data',
-                },
-                'location_map': {
-                    'service': 'path',
-                    'type': 'path',
-                    'entity_uuid': 'path',
-                    'detailed': 'query',
-                    'custom': 'query',
-                    'dates': 'query',
-                    'history': 'query',
-                    'x_access_token': 'header',
-                    'x_secret_token': 'header',
-                    'authorization': 'header',
-                    'ehelply_active_participant': 'header',
-                    'ehelply_project': 'header',
-                    'ehelply_data': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.make_slug_meta_meta_slug_post_endpoint = _Endpoint(
+        self.make_slug_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
                 'endpoint_path': '/meta/meta/slug',
-                'operation_id': 'make_slug_meta_meta_slug_post',
+                'operation_id': 'make_slug',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -671,110 +1012,12 @@ class MetaApi(object):
             },
             api_client=api_client
         )
-        self.post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post_endpoint = _Endpoint(
-            settings={
-                'response_type': (MetaDynamo,),
-                'auth': [],
-                'endpoint_path': '/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid}',
-                'operation_id': 'post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'service',
-                    'type_str',
-                    'entity_uuid',
-                    'body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post',
-                    'x_access_token',
-                    'x_secret_token',
-                    'authorization',
-                    'ehelply_active_participant',
-                    'ehelply_project',
-                    'ehelply_data',
-                ],
-                'required': [
-                    'service',
-                    'type_str',
-                    'entity_uuid',
-                    'body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'service':
-                        (str,),
-                    'type_str':
-                        (str,),
-                    'entity_uuid':
-                        (str,),
-                    'body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post':
-                        (BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost,),
-                    'x_access_token':
-                        (str,),
-                    'x_secret_token':
-                        (str,),
-                    'authorization':
-                        (str,),
-                    'ehelply_active_participant':
-                        (str,),
-                    'ehelply_project':
-                        (str,),
-                    'ehelply_data':
-                        (str,),
-                },
-                'attribute_map': {
-                    'service': 'service',
-                    'type_str': 'type_str',
-                    'entity_uuid': 'entity_uuid',
-                    'x_access_token': 'x-access-token',
-                    'x_secret_token': 'x-secret-token',
-                    'authorization': 'authorization',
-                    'ehelply_active_participant': 'ehelply-active-participant',
-                    'ehelply_project': 'ehelply-project',
-                    'ehelply_data': 'ehelply-data',
-                },
-                'location_map': {
-                    'service': 'path',
-                    'type_str': 'path',
-                    'entity_uuid': 'path',
-                    'body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post': 'body',
-                    'x_access_token': 'header',
-                    'x_secret_token': 'header',
-                    'authorization': 'header',
-                    'ehelply_active_participant': 'header',
-                    'ehelply_project': 'header',
-                    'ehelply_data': 'header',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post_endpoint = _Endpoint(
+        self.touch_meta_endpoint = _Endpoint(
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
                 'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch',
-                'operation_id': 'touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post',
+                'operation_id': 'touch_meta',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -860,19 +1103,19 @@ class MetaApi(object):
             },
             api_client=api_client
         )
-        self.update_meta_from_uuid_meta_meta_meta_uuid_put_endpoint = _Endpoint(
+        self.update_field_endpoint = _Endpoint(
             settings={
-                'response_type': (MetaDynamo,),
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/meta/meta/{meta_uuid}',
-                'operation_id': 'update_meta_from_uuid_meta_meta_meta_uuid_put',
+                'endpoint_path': '/meta/field/{field_uuid}',
+                'operation_id': 'update_field',
                 'http_method': 'PUT',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'meta_uuid',
-                    'body_update_meta_from_uuid_meta_meta_meta_uuid_put',
+                    'field_uuid',
+                    'field',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -881,8 +1124,8 @@ class MetaApi(object):
                     'ehelply_data',
                 ],
                 'required': [
-                    'meta_uuid',
-                    'body_update_meta_from_uuid_meta_meta_meta_uuid_put',
+                    'field_uuid',
+                    'field',
                 ],
                 'nullable': [
                 ],
@@ -897,10 +1140,10 @@ class MetaApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'meta_uuid':
+                    'field_uuid':
                         (str,),
-                    'body_update_meta_from_uuid_meta_meta_meta_uuid_put':
-                        (BodyUpdateMetaFromUuidMetaMetaMetaUuidPut,),
+                    'field':
+                        (Field,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -915,7 +1158,7 @@ class MetaApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'meta_uuid': 'meta_uuid',
+                    'field_uuid': 'field_uuid',
                     'x_access_token': 'x-access-token',
                     'x_secret_token': 'x-secret-token',
                     'authorization': 'authorization',
@@ -924,8 +1167,8 @@ class MetaApi(object):
                     'ehelply_data': 'ehelply-data',
                 },
                 'location_map': {
-                    'meta_uuid': 'path',
-                    'body_update_meta_from_uuid_meta_meta_meta_uuid_put': 'body',
+                    'field_uuid': 'path',
+                    'field': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -946,12 +1189,12 @@ class MetaApi(object):
             },
             api_client=api_client
         )
-        self.update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put_endpoint = _Endpoint(
+        self.update_meta_endpoint = _Endpoint(
             settings={
                 'response_type': (MetaDynamo,),
                 'auth': [],
                 'endpoint_path': '/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}',
-                'operation_id': 'update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put',
+                'operation_id': 'update_meta',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -960,7 +1203,7 @@ class MetaApi(object):
                     'service',
                     'type',
                     'entity_uuid',
-                    'body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put',
+                    'meta_create',
                     'x_access_token',
                     'x_secret_token',
                     'authorization',
@@ -972,7 +1215,7 @@ class MetaApi(object):
                     'service',
                     'type',
                     'entity_uuid',
-                    'body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put',
+                    'meta_create',
                 ],
                 'nullable': [
                 ],
@@ -993,8 +1236,8 @@ class MetaApi(object):
                         (str,),
                     'entity_uuid':
                         (str,),
-                    'body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put':
-                        (BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut,),
+                    'meta_create':
+                        (MetaCreate,),
                     'x_access_token':
                         (str,),
                     'x_secret_token':
@@ -1023,7 +1266,93 @@ class MetaApi(object):
                     'service': 'path',
                     'type': 'path',
                     'entity_uuid': 'path',
-                    'body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put': 'body',
+                    'meta_create': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_meta_from_uuid_endpoint = _Endpoint(
+            settings={
+                'response_type': (MetaDynamo,),
+                'auth': [],
+                'endpoint_path': '/meta/meta/{meta_uuid}',
+                'operation_id': 'update_meta_from_uuid',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'meta_uuid',
+                    'meta_create',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'meta_uuid',
+                    'meta_create',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'meta_uuid':
+                        (str,),
+                    'meta_create':
+                        (MetaCreate,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'meta_uuid': 'meta_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'meta_uuid': 'path',
+                    'meta_create': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -1045,21 +1374,21 @@ class MetaApi(object):
             api_client=api_client
         )
 
-    def delete_meta_from_uuid_meta_meta_meta_uuid_delete(
+    def create_field(
         self,
-        meta_uuid,
+        field,
         **kwargs
     ):
-        """Delete Meta From Uuid  # noqa: E501
+        """Create Field  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_meta_from_uuid_meta_meta_meta_uuid_delete(meta_uuid, async_req=True)
+        >>> thread = api.create_field(field, async_req=True)
         >>> result = thread.get()
 
         Args:
-            meta_uuid (str):
+            field (Field):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -1089,7 +1418,7 @@ class MetaApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            FieldDynamo
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1112,333 +1441,31 @@ class MetaApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['meta_uuid'] = \
-            meta_uuid
-        return self.delete_meta_from_uuid_meta_meta_meta_uuid_delete_endpoint.call_with_http_info(**kwargs)
+        kwargs['field'] = \
+            field
+        return self.create_field_endpoint.call_with_http_info(**kwargs)
 
-    def delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete(
-        self,
-        service,
-        type,
-        entity_uuid,
-        **kwargs
-    ):
-        """Delete Meta  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete(service, type, entity_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            service (str):
-            type (str):
-            entity_uuid (str):
-
-        Keyword Args:
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service'] = \
-            service
-        kwargs['type'] = \
-            type
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        return self.delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete_endpoint.call_with_http_info(**kwargs)
-
-    def get_meta_from_uuid_meta_meta_meta_uuid_get(
-        self,
-        meta_uuid,
-        **kwargs
-    ):
-        """Get Meta From Uuid  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_meta_from_uuid_meta_meta_meta_uuid_get(meta_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            meta_uuid (str):
-
-        Keyword Args:
-            detailed (bool): [optional] if omitted the server will use the default value of False
-            custom (bool): [optional] if omitted the server will use the default value of False
-            dates (bool): [optional] if omitted the server will use the default value of False
-            history (int): [optional] if omitted the server will use the default value of 0
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['meta_uuid'] = \
-            meta_uuid
-        return self.get_meta_from_uuid_meta_meta_meta_uuid_get_endpoint.call_with_http_info(**kwargs)
-
-    def get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get(
-        self,
-        service,
-        type,
-        entity_uuid,
-        **kwargs
-    ):
-        """Get Meta  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get(service, type, entity_uuid, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            service (str):
-            type (str):
-            entity_uuid (str):
-
-        Keyword Args:
-            detailed (bool): [optional] if omitted the server will use the default value of False
-            custom (bool): [optional] if omitted the server will use the default value of False
-            dates (bool): [optional] if omitted the server will use the default value of False
-            history (int): [optional] if omitted the server will use the default value of 0
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service'] = \
-            service
-        kwargs['type'] = \
-            type
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        return self.get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get_endpoint.call_with_http_info(**kwargs)
-
-    def make_slug_meta_meta_slug_post(
-        self,
-        meta_slugger,
-        **kwargs
-    ):
-        """Make Slug  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.make_slug_meta_meta_slug_post(meta_slugger, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            meta_slugger (MetaSlugger):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['meta_slugger'] = \
-            meta_slugger
-        return self.make_slug_meta_meta_slug_post_endpoint.call_with_http_info(**kwargs)
-
-    def post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post(
+    def create_meta(
         self,
         service,
         type_str,
         entity_uuid,
-        body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post,
+        meta_create,
         **kwargs
     ):
-        """Post Meta  # noqa: E501
+        """Create Meta  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post(service, type_str, entity_uuid, body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post, async_req=True)
+        >>> thread = api.create_meta(service, type_str, entity_uuid, meta_create, async_req=True)
         >>> result = thread.get()
 
         Args:
             service (str):
             type_str (str):
             entity_uuid (str):
-            body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post (BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost):
+            meta_create (MetaCreate):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -1497,11 +1524,527 @@ class MetaApi(object):
             type_str
         kwargs['entity_uuid'] = \
             entity_uuid
-        kwargs['body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post'] = \
-            body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post
-        return self.post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post_endpoint.call_with_http_info(**kwargs)
+        kwargs['meta_create'] = \
+            meta_create
+        return self.create_meta_endpoint.call_with_http_info(**kwargs)
 
-    def touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post(
+    def delete_field(
+        self,
+        field_uuid,
+        **kwargs
+    ):
+        """Delete Field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_field(field_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            field_uuid (str):
+
+        Keyword Args:
+            soft_delete (bool): [optional] if omitted the server will use the default value of True
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['field_uuid'] = \
+            field_uuid
+        return self.delete_field_endpoint.call_with_http_info(**kwargs)
+
+    def delete_meta(
+        self,
+        service,
+        type,
+        entity_uuid,
+        **kwargs
+    ):
+        """Delete Meta  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_meta(service, type, entity_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            service (str):
+            type (str):
+            entity_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['service'] = \
+            service
+        kwargs['type'] = \
+            type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        return self.delete_meta_endpoint.call_with_http_info(**kwargs)
+
+    def delete_meta_from_uuid(
+        self,
+        meta_uuid,
+        **kwargs
+    ):
+        """Delete Meta From Uuid  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_meta_from_uuid(meta_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            meta_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['meta_uuid'] = \
+            meta_uuid
+        return self.delete_meta_from_uuid_endpoint.call_with_http_info(**kwargs)
+
+    def get_field(
+        self,
+        field_uuid,
+        **kwargs
+    ):
+        """Get Field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_field(field_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            field_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            FieldDynamo
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['field_uuid'] = \
+            field_uuid
+        return self.get_field_endpoint.call_with_http_info(**kwargs)
+
+    def get_meta(
+        self,
+        service,
+        type,
+        entity_uuid,
+        **kwargs
+    ):
+        """Get Meta  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_meta(service, type, entity_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            service (str):
+            type (str):
+            entity_uuid (str):
+
+        Keyword Args:
+            detailed (bool): [optional] if omitted the server will use the default value of False
+            custom (bool): [optional] if omitted the server will use the default value of False
+            dates (bool): [optional] if omitted the server will use the default value of False
+            history (int): [optional] if omitted the server will use the default value of 0
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetaDynamo
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['service'] = \
+            service
+        kwargs['type'] = \
+            type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        return self.get_meta_endpoint.call_with_http_info(**kwargs)
+
+    def get_meta_from_uuid(
+        self,
+        meta_uuid,
+        **kwargs
+    ):
+        """Get Meta From Uuid  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_meta_from_uuid(meta_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            meta_uuid (str):
+
+        Keyword Args:
+            detailed (bool): [optional] if omitted the server will use the default value of False
+            custom (bool): [optional] if omitted the server will use the default value of False
+            dates (bool): [optional] if omitted the server will use the default value of False
+            history (int): [optional] if omitted the server will use the default value of 0
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetaDynamo
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['meta_uuid'] = \
+            meta_uuid
+        return self.get_meta_from_uuid_endpoint.call_with_http_info(**kwargs)
+
+    def make_slug(
+        self,
+        meta_slugger,
+        **kwargs
+    ):
+        """Make Slug  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.make_slug(meta_slugger, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            meta_slugger (MetaSlugger):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['meta_slugger'] = \
+            meta_slugger
+        return self.make_slug_endpoint.call_with_http_info(**kwargs)
+
+    def touch_meta(
         self,
         service,
         type,
@@ -1513,7 +2056,7 @@ class MetaApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post(service, type, entity_uuid, async_req=True)
+        >>> thread = api.touch_meta(service, type, entity_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1578,12 +2121,170 @@ class MetaApi(object):
             type
         kwargs['entity_uuid'] = \
             entity_uuid
-        return self.touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post_endpoint.call_with_http_info(**kwargs)
+        return self.touch_meta_endpoint.call_with_http_info(**kwargs)
 
-    def update_meta_from_uuid_meta_meta_meta_uuid_put(
+    def update_field(
+        self,
+        field_uuid,
+        field,
+        **kwargs
+    ):
+        """Update Field  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_field(field_uuid, field, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            field_uuid (str):
+            field (Field):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['field_uuid'] = \
+            field_uuid
+        kwargs['field'] = \
+            field
+        return self.update_field_endpoint.call_with_http_info(**kwargs)
+
+    def update_meta(
+        self,
+        service,
+        type,
+        entity_uuid,
+        meta_create,
+        **kwargs
+    ):
+        """Update Meta  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_meta(service, type, entity_uuid, meta_create, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            service (str):
+            type (str):
+            entity_uuid (str):
+            meta_create (MetaCreate):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            MetaDynamo
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['service'] = \
+            service
+        kwargs['type'] = \
+            type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        kwargs['meta_create'] = \
+            meta_create
+        return self.update_meta_endpoint.call_with_http_info(**kwargs)
+
+    def update_meta_from_uuid(
         self,
         meta_uuid,
-        body_update_meta_from_uuid_meta_meta_meta_uuid_put,
+        meta_create,
         **kwargs
     ):
         """Update Meta From Uuid  # noqa: E501
@@ -1591,12 +2292,12 @@ class MetaApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_meta_from_uuid_meta_meta_meta_uuid_put(meta_uuid, body_update_meta_from_uuid_meta_meta_meta_uuid_put, async_req=True)
+        >>> thread = api.update_meta_from_uuid(meta_uuid, meta_create, async_req=True)
         >>> result = thread.get()
 
         Args:
             meta_uuid (str):
-            body_update_meta_from_uuid_meta_meta_meta_uuid_put (BodyUpdateMetaFromUuidMetaMetaMetaUuidPut):
+            meta_create (MetaCreate):
 
         Keyword Args:
             x_access_token (str): [optional]
@@ -1651,90 +2352,7 @@ class MetaApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['meta_uuid'] = \
             meta_uuid
-        kwargs['body_update_meta_from_uuid_meta_meta_meta_uuid_put'] = \
-            body_update_meta_from_uuid_meta_meta_meta_uuid_put
-        return self.update_meta_from_uuid_meta_meta_meta_uuid_put_endpoint.call_with_http_info(**kwargs)
-
-    def update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put(
-        self,
-        service,
-        type,
-        entity_uuid,
-        body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put,
-        **kwargs
-    ):
-        """Update Meta  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put(service, type, entity_uuid, body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            service (str):
-            type (str):
-            entity_uuid (str):
-            body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put (BodyUpdateMetaMetaMetaServiceServiceTypeTypeEntityEntityUuidPut):
-
-        Keyword Args:
-            x_access_token (str): [optional]
-            x_secret_token (str): [optional]
-            authorization (str): [optional]
-            ehelply_active_participant (str): [optional]
-            ehelply_project (str): [optional]
-            ehelply_data (str): [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            MetaDynamo
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['service'] = \
-            service
-        kwargs['type'] = \
-            type
-        kwargs['entity_uuid'] = \
-            entity_uuid
-        kwargs['body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put'] = \
-            body_update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put
-        return self.update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put_endpoint.call_with_http_info(**kwargs)
+        kwargs['meta_create'] = \
+            meta_create
+        return self.update_meta_from_uuid_endpoint.call_with_http_info(**kwargs)
 
