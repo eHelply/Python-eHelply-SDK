@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.51
-- Package version: 1.1.51
+- API version: 1.1.52
+- Package version: 1.1.52
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -109,15 +109,15 @@ Class | Method | HTTP request | Description
 *LoggingApi* | [**get_logs_logging_logs_get**](docs/LoggingApi.md#get_logs_logging_logs_get) | **GET** /sam/logging/logs | Get Logs
 *LoggingApi* | [**get_service_logs_logging_logs_services_service_get**](docs/LoggingApi.md#get_service_logs_logging_logs_services_service_get) | **GET** /sam/logging/logs/services/{service} | Get Service Logs
 *LoggingApi* | [**get_subject_logs_logging_logs_services_service_subjects_subject_get**](docs/LoggingApi.md#get_subject_logs_logging_logs_services_service_subjects_subject_get) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Get Subject Logs
-*MetaApi* | [**delete_meta_from_uuid_meta_meta_meta_uuid_delete**](docs/MetaApi.md#delete_meta_from_uuid_meta_meta_meta_uuid_delete) | **DELETE** /meta/meta/meta/{meta_uuid} | Delete Meta From Uuid
-*MetaApi* | [**delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete**](docs/MetaApi.md#delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete) | **DELETE** /meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Delete Meta
-*MetaApi* | [**get_meta_from_uuid_meta_meta_meta_uuid_get**](docs/MetaApi.md#get_meta_from_uuid_meta_meta_meta_uuid_get) | **GET** /meta/meta/meta/{meta_uuid} | Get Meta From Uuid
-*MetaApi* | [**get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get**](docs/MetaApi.md#get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get) | **GET** /meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Get Meta
-*MetaApi* | [**make_slug_meta_meta_slug_post**](docs/MetaApi.md#make_slug_meta_meta_slug_post) | **POST** /meta/meta/meta/slug | Make Slug
-*MetaApi* | [**post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post**](docs/MetaApi.md#post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post) | **POST** /meta/meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Post Meta
-*MetaApi* | [**touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post**](docs/MetaApi.md#touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post) | **POST** /meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch | Touch Meta
-*MetaApi* | [**update_meta_from_uuid_meta_meta_meta_uuid_put**](docs/MetaApi.md#update_meta_from_uuid_meta_meta_meta_uuid_put) | **PUT** /meta/meta/meta/{meta_uuid} | Update Meta From Uuid
-*MetaApi* | [**update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put**](docs/MetaApi.md#update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put) | **PUT** /meta/meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Update Meta
+*MetaApi* | [**delete_meta_from_uuid_meta_meta_meta_uuid_delete**](docs/MetaApi.md#delete_meta_from_uuid_meta_meta_meta_uuid_delete) | **DELETE** /meta/meta/{meta_uuid} | Delete Meta From Uuid
+*MetaApi* | [**delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete**](docs/MetaApi.md#delete_meta_meta_meta_service_service_type_type_entity_entity_uuid_delete) | **DELETE** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Delete Meta
+*MetaApi* | [**get_meta_from_uuid_meta_meta_meta_uuid_get**](docs/MetaApi.md#get_meta_from_uuid_meta_meta_meta_uuid_get) | **GET** /meta/meta/{meta_uuid} | Get Meta From Uuid
+*MetaApi* | [**get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get**](docs/MetaApi.md#get_meta_meta_meta_service_service_type_type_entity_entity_uuid_get) | **GET** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Get Meta
+*MetaApi* | [**make_slug_meta_meta_slug_post**](docs/MetaApi.md#make_slug_meta_meta_slug_post) | **POST** /meta/meta/slug | Make Slug
+*MetaApi* | [**post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post**](docs/MetaApi.md#post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post) | **POST** /meta/meta/service/{service}/type/{type_str}/entity/{entity_uuid} | Post Meta
+*MetaApi* | [**touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post**](docs/MetaApi.md#touch_meta_meta_meta_service_service_type_type_entity_entity_uuid_touch_post) | **POST** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid}/touch | Touch Meta
+*MetaApi* | [**update_meta_from_uuid_meta_meta_meta_uuid_put**](docs/MetaApi.md#update_meta_from_uuid_meta_meta_meta_uuid_put) | **PUT** /meta/meta/{meta_uuid} | Update Meta From Uuid
+*MetaApi* | [**update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put**](docs/MetaApi.md#update_meta_meta_meta_service_service_type_type_entity_entity_uuid_put) | **PUT** /meta/meta/service/{service}/type/{type}/entity/{entity_uuid} | Update Meta
 *MonitorApi* | [**ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post**](docs/MonitorApi.md#ack_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_acknowledge_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/acknowledge | Ack Alarm
 *MonitorApi* | [**assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post**](docs/MonitorApi.md#assign_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_assign_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/assign | Assign Alarm
 *MonitorApi* | [**attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post**](docs/MonitorApi.md#attach_alarm_note_monitor_services_service_stages_stage_alarms_alarm_uuid_note_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/note | Attach Alarm Note
@@ -140,10 +140,10 @@ Class | Method | HTTP request | Description
 *MonitorApi* | [**show_service_monitor_services_service_stages_stage_show_post**](docs/MonitorApi.md#show_service_monitor_services_service_stages_stage_show_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/show | Show Service
 *MonitorApi* | [**terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post**](docs/MonitorApi.md#terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminate Alarm
 *MonitorApi* | [**trigger_alarm_monitor_services_service_stages_stage_alarms_post**](docs/MonitorApi.md#trigger_alarm_monitor_services_service_stages_stage_alarms_post) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms | Trigger Alarm
-*NotesApi* | [**create_note**](docs/NotesApi.md#create_note) | **POST** /notes/notes/notes | Create Note
-*NotesApi* | [**delete_note**](docs/NotesApi.md#delete_note) | **DELETE** /notes/notes/notes/{note_id} | Delete Note
-*NotesApi* | [**get_note**](docs/NotesApi.md#get_note) | **GET** /notes/notes/notes/{note_id} | Get Note
-*NotesApi* | [**update_note**](docs/NotesApi.md#update_note) | **PUT** /notes/notes/notes/{note_id} | Update Note
+*NotesApi* | [**create_note**](docs/NotesApi.md#create_note) | **POST** /notes/notes | Create Note
+*NotesApi* | [**delete_note**](docs/NotesApi.md#delete_note) | **DELETE** /notes/notes/{note_id} | Delete Note
+*NotesApi* | [**get_note**](docs/NotesApi.md#get_note) | **GET** /notes/notes/{note_id} | Get Note
+*NotesApi* | [**update_note**](docs/NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Update Note
 *ProjectsApi* | [**add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post**](docs/ProjectsApi.md#add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Add Member To Project
 *ProjectsApi* | [**archive_project_projects_projects_project_uuid_delete**](docs/ProjectsApi.md#archive_project_projects_projects_project_uuid_delete) | **DELETE** /sam/projects/projects/{project_uuid} | Archive Project
 *ProjectsApi* | [**create_project_key_projects_projects_project_uuid_keys_post**](docs/ProjectsApi.md#create_project_key_projects_projects_project_uuid_keys_post) | **POST** /sam/projects/projects/{project_uuid}/keys | Create Project Key

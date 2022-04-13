@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.51
+    eHelply SDK - 1.1.52
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.51
+    The version of the OpenAPI document: 1.1.52
 
                                      Apache License
                                Version 2.0, January 2004
@@ -243,7 +243,7 @@ class NotesApi(object):
             settings={
                 'response_type': (NoteDynamo,),
                 'auth': [],
-                'endpoint_path': '/notes/notes/notes',
+                'endpoint_path': '/notes/notes',
                 'operation_id': 'create_note',
                 'http_method': 'POST',
                 'servers': None,
@@ -323,7 +323,7 @@ class NotesApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/notes/notes/notes/{note_id}',
+                'endpoint_path': '/notes/notes/{note_id}',
                 'operation_id': 'delete_note',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -407,7 +407,7 @@ class NotesApi(object):
             settings={
                 'response_type': (NoteDynamoHistory,),
                 'auth': [],
-                'endpoint_path': '/notes/notes/notes/{note_id}',
+                'endpoint_path': '/notes/notes/{note_id}',
                 'operation_id': 'get_note',
                 'http_method': 'GET',
                 'servers': None,
@@ -496,7 +496,7 @@ class NotesApi(object):
             settings={
                 'response_type': (NoteDynamo,),
                 'auth': [],
-                'endpoint_path': '/notes/notes/notes/{note_id}',
+                'endpoint_path': '/notes/notes/{note_id}',
                 'operation_id': 'update_note',
                 'http_method': 'PUT',
                 'servers': None,
