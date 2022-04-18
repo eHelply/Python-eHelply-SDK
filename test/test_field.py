@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.53
+    eHelply SDK - 1.1.54
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.53
+    The version of the OpenAPI document: 1.1.54
 
                                      Apache License
                                Version 2.0, January 2004
@@ -213,13 +213,11 @@ import sys
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.meta_create import MetaCreate
-globals()['MetaCreate'] = MetaCreate
-from ehelply_python_sdk.model.body_post_meta_meta_meta_service_service_type_type_str_entity_entity_uuid_post import BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost
+from ehelply_python_sdk.model.field import Field
 
 
-class TestBodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost(unittest.TestCase):
-    """BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost unit test stubs"""
+class TestField(unittest.TestCase):
+    """Field unit test stubs"""
 
     def setUp(self):
         pass
@@ -227,10 +225,10 @@ class TestBodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost(unit
     def tearDown(self):
         pass
 
-    def testBodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost(self):
-        """Test BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost"""
+    def testField(self):
+        """Test Field"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = BodyPostMetaMetaMetaServiceServiceTypeTypeStrEntityEntityUuidPost()  # noqa: E501
+        # model = Field()  # noqa: E501
         pass
 
 

@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.53
+    eHelply SDK - 1.1.54
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.53
+    The version of the OpenAPI document: 1.1.54
 
                                      Apache License
                                Version 2.0, January 2004
@@ -233,8 +233,10 @@ from ehelply_python_sdk.exceptions import ApiAttributeError
 def lazy_import():
     from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate
     from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
+    from ehelply_python_sdk.model.field import Field
     globals()['BasicMetaCreate'] = BasicMetaCreate
     globals()['DetailedMetaCreate'] = DetailedMetaCreate
+    globals()['Field'] = Field
 
 
 class MetaCreate(ModelNormal):
@@ -293,6 +295,9 @@ class MetaCreate(ModelNormal):
             'basic': (BasicMetaCreate,),  # noqa: E501
             'detailed': (DetailedMetaCreate,),  # noqa: E501
             'custom': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'fields': ([Field],),  # noqa: E501
+            'children': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
+            'parent_uuid': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -304,6 +309,9 @@ class MetaCreate(ModelNormal):
         'basic': 'basic',  # noqa: E501
         'detailed': 'detailed',  # noqa: E501
         'custom': 'custom',  # noqa: E501
+        'fields': 'fields',  # noqa: E501
+        'children': 'children',  # noqa: E501
+        'parent_uuid': 'parent_uuid',  # noqa: E501
     }
 
     read_only_vars = {
@@ -350,6 +358,9 @@ class MetaCreate(ModelNormal):
             basic (BasicMetaCreate): [optional]  # noqa: E501
             detailed (DetailedMetaCreate): [optional]  # noqa: E501
             custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            fields ([Field]): [optional]  # noqa: E501
+            children ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
+            parent_uuid (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -434,6 +445,9 @@ class MetaCreate(ModelNormal):
             basic (BasicMetaCreate): [optional]  # noqa: E501
             detailed (DetailedMetaCreate): [optional]  # noqa: E501
             custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            fields ([Field]): [optional]  # noqa: E501
+            children ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
+            parent_uuid (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
