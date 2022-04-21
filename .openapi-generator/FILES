@@ -11,6 +11,8 @@ docs/AlarmIgnore.md
 docs/AlarmNote.md
 docs/AlarmTerminate.md
 docs/AlarmTicket.md
+docs/AppointmentBase.md
+docs/AppointmentResponse.md
 docs/AttachPaymentToProject.md
 docs/AuthApi.md
 docs/BasicMeta.md
@@ -41,6 +43,7 @@ docs/ContactResponse.md
 docs/CreateKeyResponse.md
 docs/CreateTicket.md
 docs/DatesMeta.md
+docs/DefaultApi.md
 docs/DetailedMeta.md
 docs/DetailedMetaCreate.md
 docs/Field.md
@@ -117,6 +120,7 @@ ehelply_python_sdk/api/auth_api.py
 ehelply_python_sdk/api/billing_api.py
 ehelply_python_sdk/api/category_api.py
 ehelply_python_sdk/api/companies_api.py
+ehelply_python_sdk/api/default_api.py
 ehelply_python_sdk/api/logging_api.py
 ehelply_python_sdk/api/meta_api.py
 ehelply_python_sdk/api/monitor_api.py
@@ -141,6 +145,8 @@ ehelply_python_sdk/model/alarm_ignore.py
 ehelply_python_sdk/model/alarm_note.py
 ehelply_python_sdk/model/alarm_terminate.py
 ehelply_python_sdk/model/alarm_ticket.py
+ehelply_python_sdk/model/appointment_base.py
+ehelply_python_sdk/model/appointment_response.py
 ehelply_python_sdk/model/attach_payment_to_project.py
 ehelply_python_sdk/model/basic_meta.py
 ehelply_python_sdk/model/basic_meta_create.py
@@ -243,6 +249,8 @@ test/test_alarm_ignore.py
 test/test_alarm_note.py
 test/test_alarm_terminate.py
 test/test_alarm_ticket.py
+test/test_appointment_base.py
+test/test_appointment_response.py
 test/test_attach_payment_to_project.py
 test/test_auth_api.py
 test/test_basic_meta.py
@@ -273,6 +281,7 @@ test/test_contact_response.py
 test/test_create_key_response.py
 test/test_create_ticket.py
 test/test_dates_meta.py
+test/test_default_api.py
 test/test_detailed_meta.py
 test/test_detailed_meta_create.py
 test/test_field.py

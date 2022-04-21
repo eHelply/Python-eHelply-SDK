@@ -17,6 +17,8 @@ from ehelply_python_sdk.model.alarm_ignore import AlarmIgnore
 from ehelply_python_sdk.model.alarm_note import AlarmNote
 from ehelply_python_sdk.model.alarm_terminate import AlarmTerminate
 from ehelply_python_sdk.model.alarm_ticket import AlarmTicket
+from ehelply_python_sdk.model.appointment_base import AppointmentBase
+from ehelply_python_sdk.model.appointment_response import AppointmentResponse
 from ehelply_python_sdk.model.attach_payment_to_project import AttachPaymentToProject
 from ehelply_python_sdk.model.basic_meta import BasicMeta
 from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate

@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.65
-- Package version: 1.1.65
+- API version: 1.1.66
+- Package version: 1.1.66
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -116,6 +116,14 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**get_company_companies_company_uuid_get**](docs/CompaniesApi.md#get_company_companies_company_uuid_get) | **GET** /companies/{company_uuid} | Get Company
 *CompaniesApi* | [**search_companies_companies_get**](docs/CompaniesApi.md#search_companies_companies_get) | **GET** /companies | Search Companies
 *CompaniesApi* | [**update_company_companies_company_uuid_put**](docs/CompaniesApi.md#update_company_companies_company_uuid_put) | **PUT** /companies/{company_uuid} | Update Company
+*DefaultApi* | [**attach_entity_to_appointment**](docs/DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
+*DefaultApi* | [**create_appointment**](docs/DefaultApi.md#create_appointment) | **POST** /appointments | Create Appointment
+*DefaultApi* | [**delete_appointment**](docs/DefaultApi.md#delete_appointment) | **DELETE** /appointments/{appointment_uuid} | Delete Appointment
+*DefaultApi* | [**detach_entity_from_appointment**](docs/DefaultApi.md#detach_entity_from_appointment) | **DELETE** /appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
+*DefaultApi* | [**get_appointment**](docs/DefaultApi.md#get_appointment) | **GET** /appointments/{appointment_uuid} | Get Appointment
+*DefaultApi* | [**search_appointment**](docs/DefaultApi.md#search_appointment) | **GET** /appointments | Search Appointment
+*DefaultApi* | [**search_appointment_entities**](docs/DefaultApi.md#search_appointment_entities) | **GET** /appointments/{appointment_uuid}/entities | Search Appointment Entities
+*DefaultApi* | [**update_appointment**](docs/DefaultApi.md#update_appointment) | **PUT** /appointments/{appointment_uuid} | Update Appointment
 *LoggingApi* | [**get_logs_logging_logs_get**](docs/LoggingApi.md#get_logs_logging_logs_get) | **GET** /sam/logging/logs | Get Logs
 *LoggingApi* | [**get_service_logs_logging_logs_services_service_get**](docs/LoggingApi.md#get_service_logs_logging_logs_services_service_get) | **GET** /sam/logging/logs/services/{service} | Get Service Logs
 *LoggingApi* | [**get_subject_logs_logging_logs_services_service_subjects_subject_get**](docs/LoggingApi.md#get_subject_logs_logging_logs_services_service_subjects_subject_get) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Get Subject Logs
