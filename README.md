@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.66
-- Package version: 1.1.66
+- API version: 1.1.67
+- Package version: 1.1.67
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -117,13 +117,32 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**search_companies_companies_get**](docs/CompaniesApi.md#search_companies_companies_get) | **GET** /companies | Search Companies
 *CompaniesApi* | [**update_company_companies_company_uuid_put**](docs/CompaniesApi.md#update_company_companies_company_uuid_put) | **PUT** /companies/{company_uuid} | Update Company
 *DefaultApi* | [**attach_entity_to_appointment**](docs/DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
+*DefaultApi* | [**attach_product_to_catalog**](docs/DefaultApi.md#attach_product_to_catalog) | **POST** /catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
 *DefaultApi* | [**create_appointment**](docs/DefaultApi.md#create_appointment) | **POST** /appointments | Create Appointment
+*DefaultApi* | [**create_catalog**](docs/DefaultApi.md#create_catalog) | **POST** /catalogs | Create Catalog
+*DefaultApi* | [**create_product**](docs/DefaultApi.md#create_product) | **POST** /products | Create Product
+*DefaultApi* | [**create_review**](docs/DefaultApi.md#create_review) | **POST** /reviews/types/{entity_type}/entities/{entity_uuid} | Create Review
 *DefaultApi* | [**delete_appointment**](docs/DefaultApi.md#delete_appointment) | **DELETE** /appointments/{appointment_uuid} | Delete Appointment
+*DefaultApi* | [**delete_catalog**](docs/DefaultApi.md#delete_catalog) | **DELETE** /catalogs/{catalog_uuid} | Delete Catalog
+*DefaultApi* | [**delete_product**](docs/DefaultApi.md#delete_product) | **DELETE** /products/{product_uuid} | Delete Product
+*DefaultApi* | [**delete_review**](docs/DefaultApi.md#delete_review) | **DELETE** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Delete Review
 *DefaultApi* | [**detach_entity_from_appointment**](docs/DefaultApi.md#detach_entity_from_appointment) | **DELETE** /appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
+*DefaultApi* | [**detach_product_from_catalog**](docs/DefaultApi.md#detach_product_from_catalog) | **DELETE** /catalogs/{catalog_uuid}/products/{product_uuid} | Detach Product From Catalog
 *DefaultApi* | [**get_appointment**](docs/DefaultApi.md#get_appointment) | **GET** /appointments/{appointment_uuid} | Get Appointment
+*DefaultApi* | [**get_catalog**](docs/DefaultApi.md#get_catalog) | **GET** /catalogs/{catalog_uuid} | Get Catalog
+*DefaultApi* | [**get_product**](docs/DefaultApi.md#get_product) | **GET** /products/{product_uuid} | Get Product
+*DefaultApi* | [**get_review**](docs/DefaultApi.md#get_review) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Get Review
 *DefaultApi* | [**search_appointment**](docs/DefaultApi.md#search_appointment) | **GET** /appointments | Search Appointment
 *DefaultApi* | [**search_appointment_entities**](docs/DefaultApi.md#search_appointment_entities) | **GET** /appointments/{appointment_uuid}/entities | Search Appointment Entities
+*DefaultApi* | [**search_catalog_products**](docs/DefaultApi.md#search_catalog_products) | **GET** /catalogs/{catalog_uuid}/products | Search Catalog Products
+*DefaultApi* | [**search_catalogs**](docs/DefaultApi.md#search_catalogs) | **GET** /catalogs | Search Catalogs
+*DefaultApi* | [**search_product**](docs/DefaultApi.md#search_product) | **GET** /products | Search Products
+*DefaultApi* | [**search_product_catalog**](docs/DefaultApi.md#search_product_catalog) | **GET** /products/{product_uuid}/catalogs | Search Product Catalogs
+*DefaultApi* | [**search_reviews**](docs/DefaultApi.md#search_reviews) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid} | Search Review
 *DefaultApi* | [**update_appointment**](docs/DefaultApi.md#update_appointment) | **PUT** /appointments/{appointment_uuid} | Update Appointment
+*DefaultApi* | [**update_catalog**](docs/DefaultApi.md#update_catalog) | **PUT** /catalogs/{catalog_uuid} | Update Catalog
+*DefaultApi* | [**update_product**](docs/DefaultApi.md#update_product) | **PUT** /products/{product_uuid} | Update Product
+*DefaultApi* | [**update_review**](docs/DefaultApi.md#update_review) | **PUT** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Update Review
 *LoggingApi* | [**get_logs_logging_logs_get**](docs/LoggingApi.md#get_logs_logging_logs_get) | **GET** /sam/logging/logs | Get Logs
 *LoggingApi* | [**get_service_logs_logging_logs_services_service_get**](docs/LoggingApi.md#get_service_logs_logging_logs_services_service_get) | **GET** /sam/logging/logs/services/{service} | Get Service Logs
 *LoggingApi* | [**get_subject_logs_logging_logs_services_service_subjects_subject_get**](docs/LoggingApi.md#get_subject_logs_logging_logs_services_service_subjects_subject_get) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Get Subject Logs

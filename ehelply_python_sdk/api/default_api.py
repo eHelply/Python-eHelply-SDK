@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.66
+    eHelply SDK - 1.1.67
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.66
+    The version of the OpenAPI document: 1.1.67
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,7 +224,15 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
 )
 from ehelply_python_sdk.model.appointment_base import AppointmentBase
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
+from ehelply_python_sdk.model.catalog_base import CatalogBase
+from ehelply_python_sdk.model.catalog_return import CatalogReturn
+from ehelply_python_sdk.model.create_review import CreateReview
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.product_base import ProductBase
+from ehelply_python_sdk.model.product_return import ProductReturn
+from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.update_review import UpdateReview
 
 
 class DefaultApi(object):
@@ -323,6 +331,91 @@ class DefaultApi(object):
             },
             api_client=api_client
         )
+        self.attach_product_to_catalog_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/catalogs/{catalog_uuid}/products/{product_uuid}',
+                'operation_id': 'attach_product_to_catalog',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'catalog_uuid',
+                    'product_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'catalog_uuid',
+                    'product_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'catalog_uuid':
+                        (str,),
+                    'product_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'catalog_uuid': 'catalog_uuid',
+                    'product_uuid': 'product_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'catalog_uuid': 'path',
+                    'product_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.create_appointment_endpoint = _Endpoint(
             settings={
                 'response_type': (AppointmentResponse,),
@@ -383,6 +476,258 @@ class DefaultApi(object):
                 },
                 'location_map': {
                     'appointment_base': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_catalog_endpoint = _Endpoint(
+            settings={
+                'response_type': (CatalogReturn,),
+                'auth': [],
+                'endpoint_path': '/catalogs',
+                'operation_id': 'create_catalog',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'catalog_base',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'catalog_base',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'catalog_base':
+                        (CatalogBase,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'catalog_base': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_product_endpoint = _Endpoint(
+            settings={
+                'response_type': (ProductReturn,),
+                'auth': [],
+                'endpoint_path': '/products',
+                'operation_id': 'create_product',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'product_base',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'product_base',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'product_base':
+                        (ProductBase,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'product_base': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_review_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/reviews/types/{entity_type}/entities/{entity_uuid}',
+                'operation_id': 'create_review',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'entity_type',
+                    'entity_uuid',
+                    'create_review',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'entity_type',
+                    'entity_uuid',
+                    'create_review',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'entity_type':
+                        (str,),
+                    'entity_uuid':
+                        (str,),
+                    'create_review':
+                        (CreateReview,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'entity_type': 'entity_type',
+                    'entity_uuid': 'entity_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'entity_type': 'path',
+                    'entity_uuid': 'path',
+                    'create_review': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -464,6 +809,255 @@ class DefaultApi(object):
                 },
                 'location_map': {
                     'appointment_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_catalog_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool,),
+                'auth': [],
+                'endpoint_path': '/catalogs/{catalog_uuid}',
+                'operation_id': 'delete_catalog',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'catalog_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'catalog_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'catalog_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'catalog_uuid': 'catalog_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'catalog_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_product_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool,),
+                'auth': [],
+                'endpoint_path': '/products/{product_uuid}',
+                'operation_id': 'delete_product',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'product_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'product_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'product_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'product_uuid': 'product_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'product_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_review_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid}',
+                'operation_id': 'delete_review',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'entity_type',
+                    'entity_uuid',
+                    'review_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'entity_type',
+                    'entity_uuid',
+                    'review_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'entity_type':
+                        (str,),
+                    'entity_uuid':
+                        (str,),
+                    'review_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'entity_type': 'entity_type',
+                    'entity_uuid': 'entity_uuid',
+                    'review_uuid': 'review_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'entity_type': 'path',
+                    'entity_uuid': 'path',
+                    'review_uuid': 'path',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -567,6 +1161,91 @@ class DefaultApi(object):
             },
             api_client=api_client
         )
+        self.detach_product_from_catalog_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/catalogs/{catalog_uuid}/products/{product_uuid}',
+                'operation_id': 'detach_product_from_catalog',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'catalog_uuid',
+                    'product_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'catalog_uuid',
+                    'product_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'catalog_uuid':
+                        (str,),
+                    'product_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'catalog_uuid': 'catalog_uuid',
+                    'product_uuid': 'product_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'catalog_uuid': 'path',
+                    'product_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.get_appointment_endpoint = _Endpoint(
             settings={
                 'response_type': (AppointmentResponse,),
@@ -628,6 +1307,270 @@ class DefaultApi(object):
                 },
                 'location_map': {
                     'appointment_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_catalog_endpoint = _Endpoint(
+            settings={
+                'response_type': (CatalogReturn,),
+                'auth': [],
+                'endpoint_path': '/catalogs/{catalog_uuid}',
+                'operation_id': 'get_catalog',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'catalog_uuid',
+                    'with_meta',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'catalog_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'catalog_uuid':
+                        (str,),
+                    'with_meta':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'catalog_uuid': 'catalog_uuid',
+                    'with_meta': 'with_meta',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'catalog_uuid': 'path',
+                    'with_meta': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_product_endpoint = _Endpoint(
+            settings={
+                'response_type': (ProductReturn,),
+                'auth': [],
+                'endpoint_path': '/products/{product_uuid}',
+                'operation_id': 'get_product',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'product_uuid',
+                    'with_addons',
+                    'with_meta',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'product_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'product_uuid':
+                        (str,),
+                    'with_addons':
+                        (bool,),
+                    'with_meta':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'product_uuid': 'product_uuid',
+                    'with_addons': 'with_addons',
+                    'with_meta': 'with_meta',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'product_uuid': 'path',
+                    'with_addons': 'query',
+                    'with_meta': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_review_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid}',
+                'operation_id': 'get_review',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'entity_type',
+                    'entity_uuid',
+                    'review_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'entity_type',
+                    'entity_uuid',
+                    'review_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'entity_type':
+                        (str,),
+                    'entity_uuid':
+                        (str,),
+                    'review_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'entity_type': 'entity_type',
+                    'entity_uuid': 'entity_uuid',
+                    'review_uuid': 'review_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'entity_type': 'path',
+                    'entity_uuid': 'path',
+                    'review_uuid': 'path',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -882,6 +1825,529 @@ class DefaultApi(object):
             },
             api_client=api_client
         )
+        self.search_catalog_products_endpoint = _Endpoint(
+            settings={
+                'response_type': (Page,),
+                'auth': [],
+                'endpoint_path': '/catalogs/{catalog_uuid}/products',
+                'operation_id': 'search_catalog_products',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'catalog_uuid',
+                    'with_meta',
+                    'page',
+                    'page_size',
+                    'sort_on',
+                    'sort_desc',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'catalog_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'catalog_uuid':
+                        (str,),
+                    'with_meta':
+                        (bool,),
+                    'page':
+                        (int,),
+                    'page_size':
+                        (int,),
+                    'sort_on':
+                        (str,),
+                    'sort_desc':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'catalog_uuid': 'catalog_uuid',
+                    'with_meta': 'with_meta',
+                    'page': 'page',
+                    'page_size': 'page_size',
+                    'sort_on': 'sort_on',
+                    'sort_desc': 'sort_desc',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'catalog_uuid': 'path',
+                    'with_meta': 'query',
+                    'page': 'query',
+                    'page_size': 'query',
+                    'sort_on': 'query',
+                    'sort_desc': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.search_catalogs_endpoint = _Endpoint(
+            settings={
+                'response_type': (Page,),
+                'auth': [],
+                'endpoint_path': '/catalogs',
+                'operation_id': 'search_catalogs',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'with_meta',
+                    'name',
+                    'page',
+                    'page_size',
+                    'sort_on',
+                    'sort_desc',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'with_meta':
+                        (bool,),
+                    'name':
+                        (str,),
+                    'page':
+                        (int,),
+                    'page_size':
+                        (int,),
+                    'sort_on':
+                        (str,),
+                    'sort_desc':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'with_meta': 'with_meta',
+                    'name': 'name',
+                    'page': 'page',
+                    'page_size': 'page_size',
+                    'sort_on': 'sort_on',
+                    'sort_desc': 'sort_desc',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'with_meta': 'query',
+                    'name': 'query',
+                    'page': 'query',
+                    'page_size': 'query',
+                    'sort_on': 'query',
+                    'sort_desc': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.search_product_endpoint = _Endpoint(
+            settings={
+                'response_type': (Page,),
+                'auth': [],
+                'endpoint_path': '/products',
+                'operation_id': 'search_product',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'with_meta',
+                    'name',
+                    'addons',
+                    'price_max',
+                    'price_min',
+                    'quantity_available',
+                    'is_deleted',
+                    'page',
+                    'page_size',
+                    'sort_on',
+                    'sort_desc',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'with_meta':
+                        (bool,),
+                    'name':
+                        (str,),
+                    'addons':
+                        ([str],),
+                    'price_max':
+                        (int,),
+                    'price_min':
+                        (int,),
+                    'quantity_available':
+                        (bool,),
+                    'is_deleted':
+                        (bool,),
+                    'page':
+                        (int,),
+                    'page_size':
+                        (int,),
+                    'sort_on':
+                        (str,),
+                    'sort_desc':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'with_meta': 'with_meta',
+                    'name': 'name',
+                    'addons': 'addons',
+                    'price_max': 'price_max',
+                    'price_min': 'price_min',
+                    'quantity_available': 'quantity_available',
+                    'is_deleted': 'is_deleted',
+                    'page': 'page',
+                    'page_size': 'page_size',
+                    'sort_on': 'sort_on',
+                    'sort_desc': 'sort_desc',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'with_meta': 'query',
+                    'name': 'query',
+                    'addons': 'query',
+                    'price_max': 'query',
+                    'price_min': 'query',
+                    'quantity_available': 'query',
+                    'is_deleted': 'query',
+                    'page': 'query',
+                    'page_size': 'query',
+                    'sort_on': 'query',
+                    'sort_desc': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                    'addons': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.search_product_catalog_endpoint = _Endpoint(
+            settings={
+                'response_type': (Page,),
+                'auth': [],
+                'endpoint_path': '/products/{product_uuid}/catalogs',
+                'operation_id': 'search_product_catalog',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'product_uuid',
+                    'with_meta',
+                    'page',
+                    'page_size',
+                    'sort_on',
+                    'sort_desc',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'product_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'product_uuid':
+                        (str,),
+                    'with_meta':
+                        (bool,),
+                    'page':
+                        (int,),
+                    'page_size':
+                        (int,),
+                    'sort_on':
+                        (str,),
+                    'sort_desc':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'product_uuid': 'product_uuid',
+                    'with_meta': 'with_meta',
+                    'page': 'page',
+                    'page_size': 'page_size',
+                    'sort_on': 'sort_on',
+                    'sort_desc': 'sort_desc',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'product_uuid': 'path',
+                    'with_meta': 'query',
+                    'page': 'query',
+                    'page_size': 'query',
+                    'sort_on': 'query',
+                    'sort_desc': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.search_reviews_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/reviews/types/{entity_type}/entities/{entity_uuid}',
+                'operation_id': 'search_reviews',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'entity_type',
+                    'entity_uuid',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'entity_type',
+                    'entity_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'entity_type':
+                        (str,),
+                    'entity_uuid':
+                        (str,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'entity_type': 'entity_type',
+                    'entity_uuid': 'entity_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'entity_type': 'path',
+                    'entity_uuid': 'path',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.update_appointment_endpoint = _Endpoint(
             settings={
                 'response_type': (AppointmentResponse,),
@@ -948,6 +2414,276 @@ class DefaultApi(object):
                 'location_map': {
                     'appointment_uuid': 'path',
                     'appointment_base': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_catalog_endpoint = _Endpoint(
+            settings={
+                'response_type': (CatalogReturn,),
+                'auth': [],
+                'endpoint_path': '/catalogs/{catalog_uuid}',
+                'operation_id': 'update_catalog',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'catalog_uuid',
+                    'catalog_base',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'catalog_uuid',
+                    'catalog_base',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'catalog_uuid':
+                        (str,),
+                    'catalog_base':
+                        (CatalogBase,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'catalog_uuid': 'catalog_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'catalog_uuid': 'path',
+                    'catalog_base': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_product_endpoint = _Endpoint(
+            settings={
+                'response_type': (ProductReturn,),
+                'auth': [],
+                'endpoint_path': '/products/{product_uuid}',
+                'operation_id': 'update_product',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'product_uuid',
+                    'product_base',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'product_uuid',
+                    'product_base',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'product_uuid':
+                        (str,),
+                    'product_base':
+                        (ProductBase,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'product_uuid': 'product_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'product_uuid': 'path',
+                    'product_base': 'body',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_review_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid}',
+                'operation_id': 'update_review',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'entity_type',
+                    'entity_uuid',
+                    'review_uuid',
+                    'update_review',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'entity_type',
+                    'entity_uuid',
+                    'review_uuid',
+                    'update_review',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'entity_type':
+                        (str,),
+                    'entity_uuid':
+                        (str,),
+                    'review_uuid':
+                        (str,),
+                    'update_review':
+                        (UpdateReview,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'entity_type': 'entity_type',
+                    'entity_uuid': 'entity_uuid',
+                    'review_uuid': 'review_uuid',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'entity_type': 'path',
+                    'entity_uuid': 'path',
+                    'review_uuid': 'path',
+                    'update_review': 'body',
                     'x_access_token': 'header',
                     'x_secret_token': 'header',
                     'authorization': 'header',
@@ -1044,6 +2780,81 @@ class DefaultApi(object):
             entity_uuid
         return self.attach_entity_to_appointment_endpoint.call_with_http_info(**kwargs)
 
+    def attach_product_to_catalog(
+        self,
+        catalog_uuid,
+        product_uuid,
+        **kwargs
+    ):
+        """Attach Product To Catalog  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.attach_product_to_catalog(catalog_uuid, product_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            catalog_uuid (str):
+            product_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['catalog_uuid'] = \
+            catalog_uuid
+        kwargs['product_uuid'] = \
+            product_uuid
+        return self.attach_product_to_catalog_endpoint.call_with_http_info(**kwargs)
+
     def create_appointment(
         self,
         appointment_base,
@@ -1115,6 +2926,227 @@ class DefaultApi(object):
             appointment_base
         return self.create_appointment_endpoint.call_with_http_info(**kwargs)
 
+    def create_catalog(
+        self,
+        catalog_base,
+        **kwargs
+    ):
+        """Create Catalog  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_catalog(catalog_base, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            catalog_base (CatalogBase):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CatalogReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['catalog_base'] = \
+            catalog_base
+        return self.create_catalog_endpoint.call_with_http_info(**kwargs)
+
+    def create_product(
+        self,
+        product_base,
+        **kwargs
+    ):
+        """Create Product  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_product(product_base, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            product_base (ProductBase):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProductReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['product_base'] = \
+            product_base
+        return self.create_product_endpoint.call_with_http_info(**kwargs)
+
+    def create_review(
+        self,
+        entity_type,
+        entity_uuid,
+        create_review,
+        **kwargs
+    ):
+        """Create Review  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_review(entity_type, entity_uuid, create_review, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            entity_type (str):
+            entity_uuid (str):
+            create_review (CreateReview):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['entity_type'] = \
+            entity_type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        kwargs['create_review'] = \
+            create_review
+        return self.create_review_endpoint.call_with_http_info(**kwargs)
+
     def delete_appointment(
         self,
         appointment_uuid,
@@ -1185,6 +3217,227 @@ class DefaultApi(object):
         kwargs['appointment_uuid'] = \
             appointment_uuid
         return self.delete_appointment_endpoint.call_with_http_info(**kwargs)
+
+    def delete_catalog(
+        self,
+        catalog_uuid,
+        **kwargs
+    ):
+        """Delete Catalog  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_catalog(catalog_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            catalog_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['catalog_uuid'] = \
+            catalog_uuid
+        return self.delete_catalog_endpoint.call_with_http_info(**kwargs)
+
+    def delete_product(
+        self,
+        product_uuid,
+        **kwargs
+    ):
+        """Delete Product  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_product(product_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            product_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['product_uuid'] = \
+            product_uuid
+        return self.delete_product_endpoint.call_with_http_info(**kwargs)
+
+    def delete_review(
+        self,
+        entity_type,
+        entity_uuid,
+        review_uuid,
+        **kwargs
+    ):
+        """Delete Review  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_review(entity_type, entity_uuid, review_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            entity_type (str):
+            entity_uuid (str):
+            review_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['entity_type'] = \
+            entity_type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        kwargs['review_uuid'] = \
+            review_uuid
+        return self.delete_review_endpoint.call_with_http_info(**kwargs)
 
     def detach_entity_from_appointment(
         self,
@@ -1261,6 +3514,81 @@ class DefaultApi(object):
             entity_uuid
         return self.detach_entity_from_appointment_endpoint.call_with_http_info(**kwargs)
 
+    def detach_product_from_catalog(
+        self,
+        catalog_uuid,
+        product_uuid,
+        **kwargs
+    ):
+        """Detach Product From Catalog  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.detach_product_from_catalog(catalog_uuid, product_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            catalog_uuid (str):
+            product_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['catalog_uuid'] = \
+            catalog_uuid
+        kwargs['product_uuid'] = \
+            product_uuid
+        return self.detach_product_from_catalog_endpoint.call_with_http_info(**kwargs)
+
     def get_appointment(
         self,
         appointment_uuid,
@@ -1331,6 +3659,230 @@ class DefaultApi(object):
         kwargs['appointment_uuid'] = \
             appointment_uuid
         return self.get_appointment_endpoint.call_with_http_info(**kwargs)
+
+    def get_catalog(
+        self,
+        catalog_uuid,
+        **kwargs
+    ):
+        """Get Catalog  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_catalog(catalog_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            catalog_uuid (str):
+
+        Keyword Args:
+            with_meta (bool): [optional] if omitted the server will use the default value of False
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CatalogReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['catalog_uuid'] = \
+            catalog_uuid
+        return self.get_catalog_endpoint.call_with_http_info(**kwargs)
+
+    def get_product(
+        self,
+        product_uuid,
+        **kwargs
+    ):
+        """Get Product  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_product(product_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            product_uuid (str):
+
+        Keyword Args:
+            with_addons (bool): [optional] if omitted the server will use the default value of False
+            with_meta (bool): [optional] if omitted the server will use the default value of False
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProductReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['product_uuid'] = \
+            product_uuid
+        return self.get_product_endpoint.call_with_http_info(**kwargs)
+
+    def get_review(
+        self,
+        entity_type,
+        entity_uuid,
+        review_uuid,
+        **kwargs
+    ):
+        """Get Review  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_review(entity_type, entity_uuid, review_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            entity_type (str):
+            entity_uuid (str):
+            review_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['entity_type'] = \
+            entity_type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        kwargs['review_uuid'] = \
+            review_uuid
+        return self.get_review_endpoint.call_with_http_info(**kwargs)
 
     def search_appointment(
         self,
@@ -1486,6 +4038,382 @@ class DefaultApi(object):
             appointment_uuid
         return self.search_appointment_entities_endpoint.call_with_http_info(**kwargs)
 
+    def search_catalog_products(
+        self,
+        catalog_uuid,
+        **kwargs
+    ):
+        """Search Catalog Products  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_catalog_products(catalog_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            catalog_uuid (str):
+
+        Keyword Args:
+            with_meta (bool): [optional] if omitted the server will use the default value of False
+            page (int): [optional] if omitted the server will use the default value of 1
+            page_size (int): [optional] if omitted the server will use the default value of 25
+            sort_on (str): [optional]
+            sort_desc (bool): [optional] if omitted the server will use the default value of False
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Page
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['catalog_uuid'] = \
+            catalog_uuid
+        return self.search_catalog_products_endpoint.call_with_http_info(**kwargs)
+
+    def search_catalogs(
+        self,
+        **kwargs
+    ):
+        """Search Catalogs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_catalogs(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            with_meta (bool): [optional] if omitted the server will use the default value of False
+            name (str): [optional]
+            page (int): [optional] if omitted the server will use the default value of 1
+            page_size (int): [optional] if omitted the server will use the default value of 25
+            sort_on (str): [optional]
+            sort_desc (bool): [optional] if omitted the server will use the default value of False
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Page
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.search_catalogs_endpoint.call_with_http_info(**kwargs)
+
+    def search_product(
+        self,
+        **kwargs
+    ):
+        """Search Products  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_product(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            with_meta (bool): [optional] if omitted the server will use the default value of False
+            name (str): [optional]
+            addons ([str]): [optional]
+            price_max (int): [optional]
+            price_min (int): [optional]
+            quantity_available (bool): [optional] if omitted the server will use the default value of False
+            is_deleted (bool): [optional] if omitted the server will use the default value of False
+            page (int): [optional] if omitted the server will use the default value of 1
+            page_size (int): [optional] if omitted the server will use the default value of 25
+            sort_on (str): [optional]
+            sort_desc (bool): [optional] if omitted the server will use the default value of False
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Page
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        return self.search_product_endpoint.call_with_http_info(**kwargs)
+
+    def search_product_catalog(
+        self,
+        product_uuid,
+        **kwargs
+    ):
+        """Search Product Catalogs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_product_catalog(product_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            product_uuid (str):
+
+        Keyword Args:
+            with_meta (bool): [optional] if omitted the server will use the default value of False
+            page (int): [optional] if omitted the server will use the default value of 1
+            page_size (int): [optional] if omitted the server will use the default value of 25
+            sort_on (str): [optional]
+            sort_desc (bool): [optional] if omitted the server will use the default value of False
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Page
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['product_uuid'] = \
+            product_uuid
+        return self.search_product_catalog_endpoint.call_with_http_info(**kwargs)
+
+    def search_reviews(
+        self,
+        entity_type,
+        entity_uuid,
+        **kwargs
+    ):
+        """Search Review  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_reviews(entity_type, entity_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            entity_type (str):
+            entity_uuid (str):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['entity_type'] = \
+            entity_type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        return self.search_reviews_endpoint.call_with_http_info(**kwargs)
+
     def update_appointment(
         self,
         appointment_uuid,
@@ -1560,4 +4488,237 @@ class DefaultApi(object):
         kwargs['appointment_base'] = \
             appointment_base
         return self.update_appointment_endpoint.call_with_http_info(**kwargs)
+
+    def update_catalog(
+        self,
+        catalog_uuid,
+        catalog_base,
+        **kwargs
+    ):
+        """Update Catalog  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_catalog(catalog_uuid, catalog_base, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            catalog_uuid (str):
+            catalog_base (CatalogBase):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CatalogReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['catalog_uuid'] = \
+            catalog_uuid
+        kwargs['catalog_base'] = \
+            catalog_base
+        return self.update_catalog_endpoint.call_with_http_info(**kwargs)
+
+    def update_product(
+        self,
+        product_uuid,
+        product_base,
+        **kwargs
+    ):
+        """Update Product  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_product(product_uuid, product_base, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            product_uuid (str):
+            product_base (ProductBase):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProductReturn
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['product_uuid'] = \
+            product_uuid
+        kwargs['product_base'] = \
+            product_base
+        return self.update_product_endpoint.call_with_http_info(**kwargs)
+
+    def update_review(
+        self,
+        entity_type,
+        entity_uuid,
+        review_uuid,
+        update_review,
+        **kwargs
+    ):
+        """Update Review  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_review(entity_type, entity_uuid, review_uuid, update_review, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            entity_type (str):
+            entity_uuid (str):
+            review_uuid (str):
+            update_review (UpdateReview):
+
+        Keyword Args:
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['entity_type'] = \
+            entity_type
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        kwargs['review_uuid'] = \
+            review_uuid
+        kwargs['update_review'] = \
+            update_review
+        return self.update_review_endpoint.call_with_http_info(**kwargs)
 

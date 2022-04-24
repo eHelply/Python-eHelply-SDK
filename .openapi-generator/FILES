@@ -31,6 +31,8 @@ docs/BodyRegisterServiceMonitorServicesPost.md
 docs/BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost.md
 docs/BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost.md
 docs/BodyVerifyKeySecurityKeysVerifyPost.md
+docs/CatalogBase.md
+docs/CatalogReturn.md
 docs/CategoryApi.md
 docs/CategoryBase.md
 docs/CategoryDb.md
@@ -41,6 +43,7 @@ docs/Contact.md
 docs/ContactBase.md
 docs/ContactResponse.md
 docs/CreateKeyResponse.md
+docs/CreateReview.md
 docs/CreateTicket.md
 docs/DatesMeta.md
 docs/DefaultApi.md
@@ -70,6 +73,10 @@ docs/PaymentMethodResponse.md
 docs/PlaceBase.md
 docs/PlaceResponse.md
 docs/PlacesApi.md
+docs/ProductBase.md
+docs/ProductReturn.md
+docs/ProductsHTTPValidationError.md
+docs/ProductsValidationError.md
 docs/ProjectsApi.md
 docs/ProjectsProjectCreate.md
 docs/ProjectsProjectGet.md
@@ -99,6 +106,7 @@ docs/TagBase.md
 docs/TagDb.md
 docs/TicketResponse.md
 docs/TicketsResponse.md
+docs/UpdateReview.md
 docs/User.md
 docs/UserConfirmation.md
 docs/UserEmail.md
@@ -163,6 +171,8 @@ ehelply_python_sdk/model/body_register_service_monitor_services_post.py
 ehelply_python_sdk/model/body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post.py
 ehelply_python_sdk/model/body_trigger_alarm_monitor_services_service_stages_stage_alarms_post.py
 ehelply_python_sdk/model/body_verify_key_security_keys_verify_post.py
+ehelply_python_sdk/model/catalog_base.py
+ehelply_python_sdk/model/catalog_return.py
 ehelply_python_sdk/model/category_base.py
 ehelply_python_sdk/model/category_db.py
 ehelply_python_sdk/model/company_base.py
@@ -171,6 +181,7 @@ ehelply_python_sdk/model/contact.py
 ehelply_python_sdk/model/contact_base.py
 ehelply_python_sdk/model/contact_response.py
 ehelply_python_sdk/model/create_key_response.py
+ehelply_python_sdk/model/create_review.py
 ehelply_python_sdk/model/create_ticket.py
 ehelply_python_sdk/model/dates_meta.py
 ehelply_python_sdk/model/detailed_meta.py
@@ -194,6 +205,10 @@ ehelply_python_sdk/model/payment.py
 ehelply_python_sdk/model/payment_method_response.py
 ehelply_python_sdk/model/place_base.py
 ehelply_python_sdk/model/place_response.py
+ehelply_python_sdk/model/product_base.py
+ehelply_python_sdk/model/product_return.py
+ehelply_python_sdk/model/products_http_validation_error.py
+ehelply_python_sdk/model/products_validation_error.py
 ehelply_python_sdk/model/projects_project_create.py
 ehelply_python_sdk/model/projects_project_get.py
 ehelply_python_sdk/model/projects_project_member_db.py
@@ -218,6 +233,7 @@ ehelply_python_sdk/model/tag_base.py
 ehelply_python_sdk/model/tag_db.py
 ehelply_python_sdk/model/ticket_response.py
 ehelply_python_sdk/model/tickets_response.py
+ehelply_python_sdk/model/update_review.py
 ehelply_python_sdk/model/user.py
 ehelply_python_sdk/model/user_confirmation.py
 ehelply_python_sdk/model/user_email.py
@@ -269,6 +285,8 @@ test/test_body_register_service_monitor_services_post.py
 test/test_body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post.py
 test/test_body_trigger_alarm_monitor_services_service_stages_stage_alarms_post.py
 test/test_body_verify_key_security_keys_verify_post.py
+test/test_catalog_base.py
+test/test_catalog_return.py
 test/test_category_api.py
 test/test_category_base.py
 test/test_category_db.py
@@ -279,6 +297,7 @@ test/test_contact.py
 test/test_contact_base.py
 test/test_contact_response.py
 test/test_create_key_response.py
+test/test_create_review.py
 test/test_create_ticket.py
 test/test_dates_meta.py
 test/test_default_api.py
@@ -308,6 +327,10 @@ test/test_payment_method_response.py
 test/test_place_base.py
 test/test_place_response.py
 test/test_places_api.py
+test/test_product_base.py
+test/test_product_return.py
+test/test_products_http_validation_error.py
+test/test_products_validation_error.py
 test/test_projects_api.py
 test/test_projects_project_create.py
 test/test_projects_project_get.py
@@ -337,6 +360,7 @@ test/test_tag_base.py
 test/test_tag_db.py
 test/test_ticket_response.py
 test/test_tickets_response.py
+test/test_update_review.py
 test/test_user.py
 test/test_user_confirmation.py
 test/test_user_email.py

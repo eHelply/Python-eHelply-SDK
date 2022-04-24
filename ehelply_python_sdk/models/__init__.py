@@ -35,6 +35,8 @@ from ehelply_python_sdk.model.body_register_service_monitor_services_post import
 from ehelply_python_sdk.model.body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost
 from ehelply_python_sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
 from ehelply_python_sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
+from ehelply_python_sdk.model.catalog_base import CatalogBase
+from ehelply_python_sdk.model.catalog_return import CatalogReturn
 from ehelply_python_sdk.model.category_base import CategoryBase
 from ehelply_python_sdk.model.category_db import CategoryDb
 from ehelply_python_sdk.model.company_base import CompanyBase
@@ -43,6 +45,7 @@ from ehelply_python_sdk.model.contact import Contact
 from ehelply_python_sdk.model.contact_base import ContactBase
 from ehelply_python_sdk.model.contact_response import ContactResponse
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
+from ehelply_python_sdk.model.create_review import CreateReview
 from ehelply_python_sdk.model.create_ticket import CreateTicket
 from ehelply_python_sdk.model.dates_meta import DatesMeta
 from ehelply_python_sdk.model.detailed_meta import DetailedMeta
@@ -66,6 +69,10 @@ from ehelply_python_sdk.model.payment import Payment
 from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
 from ehelply_python_sdk.model.place_base import PlaceBase
 from ehelply_python_sdk.model.place_response import PlaceResponse
+from ehelply_python_sdk.model.product_base import ProductBase
+from ehelply_python_sdk.model.product_return import ProductReturn
+from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.products_validation_error import ProductsValidationError
 from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
 from ehelply_python_sdk.model.projects_project_get import ProjectsProjectGet
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
@@ -90,6 +97,7 @@ from ehelply_python_sdk.model.tag_base import TagBase
 from ehelply_python_sdk.model.tag_db import TagDb
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
+from ehelply_python_sdk.model.update_review import UpdateReview
 from ehelply_python_sdk.model.user import User
 from ehelply_python_sdk.model.user_confirmation import UserConfirmation
 from ehelply_python_sdk.model.user_email import UserEmail
