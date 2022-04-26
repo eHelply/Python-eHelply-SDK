@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.55
+    eHelply SDK - 1.1.56
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.55
+    The version of the OpenAPI document: 1.1.56
 
                                      Apache License
                                Version 2.0, January 2004
@@ -212,7 +212,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "ehelply-python-sdk"
-VERSION = "1.1.55"
+VERSION = "1.1.56"
 # To install the library, run the following
 #
 # python setup.py install
@@ -228,11 +228,11 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="eHelply SDK - 1.1.55",
+    description="eHelply SDK - 1.1.56",
     author="Support",
     author_email="support@ehelply.com",
     url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "eHelply SDK - 1.1.55"],
+    keywords=["OpenAPI", "OpenAPI-Generator", "eHelply SDK - 1.1.56"],
     python_requires=">=3.6",
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
