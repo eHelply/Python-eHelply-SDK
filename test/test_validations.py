@@ -213,15 +213,11 @@ import sys
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.dates_meta import DatesMeta
-from ehelply_python_sdk.model.field import Field
-globals()['DatesMeta'] = DatesMeta
-globals()['Field'] = Field
-from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
+from ehelply_python_sdk.model.validations import Validations
 
 
-class TestMetaDynamo(unittest.TestCase):
-    """MetaDynamo unit test stubs"""
+class TestValidations(unittest.TestCase):
+    """Validations unit test stubs"""
 
     def setUp(self):
         pass
@@ -229,10 +225,10 @@ class TestMetaDynamo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMetaDynamo(self):
-        """Test MetaDynamo"""
+    def testValidations(self):
+        """Test Validations"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = MetaDynamo()  # noqa: E501
+        # model = Validations()  # noqa: E501
         pass
 
 

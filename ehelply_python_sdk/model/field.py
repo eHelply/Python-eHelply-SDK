@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.61
+    eHelply SDK - 1.1.62
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.61
+    The version of the OpenAPI document: 1.1.62
 
                                      Apache License
                                Version 2.0, January 2004
@@ -232,7 +232,9 @@ from ehelply_python_sdk.exceptions import ApiAttributeError
 
 def lazy_import():
     from ehelply_python_sdk.model.options import Options
+    from ehelply_python_sdk.model.validations import Validations
     globals()['Options'] = Options
+    globals()['Validations'] = Validations
 
 
 class Field(ModelNormal):
@@ -291,7 +293,7 @@ class Field(ModelNormal):
             'uuid': (str,),  # noqa: E501
             'type': (int,),  # noqa: E501
             'placeholder': (str,),  # noqa: E501
-            'validations': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'validations': (Validations,),  # noqa: E501
             'hint': (str,),  # noqa: E501
             'icon': (str,),  # noqa: E501
             'label': (str,),  # noqa: E501
@@ -358,7 +360,7 @@ class Field(ModelNormal):
             uuid (str): [optional]  # noqa: E501
             type (int): [optional]  # noqa: E501
             placeholder (str): [optional]  # noqa: E501
-            validations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            validations (Validations): [optional]  # noqa: E501
             hint (str): [optional]  # noqa: E501
             icon (str): [optional]  # noqa: E501
             label (str): [optional]  # noqa: E501
@@ -447,7 +449,7 @@ class Field(ModelNormal):
             uuid (str): [optional]  # noqa: E501
             type (int): [optional]  # noqa: E501
             placeholder (str): [optional]  # noqa: E501
-            validations ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            validations (Validations): [optional]  # noqa: E501
             hint (str): [optional]  # noqa: E501
             icon (str): [optional]  # noqa: E501
             label (str): [optional]  # noqa: E501

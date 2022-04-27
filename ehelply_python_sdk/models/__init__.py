@@ -104,3 +104,4 @@ from ehelply_python_sdk.model.user_signup_return import UserSignupReturn
 from ehelply_python_sdk.model.user_token_return import UserTokenReturn
 from ehelply_python_sdk.model.user_validations import UserValidations
 from ehelply_python_sdk.model.validation_error import ValidationError
+from ehelply_python_sdk.model.validations import Validations

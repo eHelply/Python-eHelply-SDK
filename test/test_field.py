@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.61
+    eHelply SDK - 1.1.62
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.61
+    The version of the OpenAPI document: 1.1.62
 
                                      Apache License
                                Version 2.0, January 2004
@@ -214,7 +214,9 @@ import unittest
 
 import ehelply_python_sdk
 from ehelply_python_sdk.model.options import Options
+from ehelply_python_sdk.model.validations import Validations
 globals()['Options'] = Options
+globals()['Validations'] = Validations
 from ehelply_python_sdk.model.field import Field
 
 

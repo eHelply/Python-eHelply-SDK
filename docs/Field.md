@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **uuid** | **str** |  | [optional] 
 **type** | **int** |  | [optional] 
 **placeholder** | **str** |  | [optional] 
-**validations** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**validations** | [**Validations**](Validations.md) |  | [optional] 
 **hint** | **str** |  | [optional] 
 **icon** | **str** |  | [optional] 
 **label** | **str** |  | [optional] 

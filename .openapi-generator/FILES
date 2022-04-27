@@ -109,6 +109,7 @@ docs/UserTokenReturn.md
 docs/UserValidations.md
 docs/UsersApi.md
 docs/ValidationError.md
+docs/Validations.md
 ehelply_python_sdk/__init__.py
 ehelply_python_sdk/api/__init__.py
 ehelply_python_sdk/api/auth_api.py
@@ -222,6 +223,7 @@ ehelply_python_sdk/model/user_signup_return.py
 ehelply_python_sdk/model/user_token_return.py
 ehelply_python_sdk/model/user_validations.py
 ehelply_python_sdk/model/validation_error.py
+ehelply_python_sdk/model/validations.py
 ehelply_python_sdk/model_utils.py
 ehelply_python_sdk/models/__init__.py
 ehelply_python_sdk/rest.py
@@ -337,4 +339,5 @@ test/test_user_token_return.py
 test/test_user_validations.py
 test/test_users_api.py
 test/test_validation_error.py
+test/test_validations.py
 tox.ini

@@ -50,7 +50,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
         uuid="uuid_example",
         type=1,
         placeholder="placeholder_example",
-        validations={},
+        validations=Validations(
+            value=[
+                "value_example",
+            ],
+        ),
         hint="hint_example",
         icon="icon_example",
         label="label_example",
@@ -192,7 +196,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
                 uuid="uuid_example",
                 type=1,
                 placeholder="placeholder_example",
-                validations={},
+                validations=Validations(
+                    value=[
+                        "value_example",
+                    ],
+                ),
                 hint="hint_example",
                 icon="icon_example",
                 label="label_example",
@@ -1049,7 +1057,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
         uuid="uuid_example",
         type=1,
         placeholder="placeholder_example",
-        validations={},
+        validations=Validations(
+            value=[
+                "value_example",
+            ],
+        ),
         hint="hint_example",
         icon="icon_example",
         label="label_example",
@@ -1192,7 +1204,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
                 uuid="uuid_example",
                 type=1,
                 placeholder="placeholder_example",
-                validations={},
+                validations=Validations(
+                    value=[
+                        "value_example",
+                    ],
+                ),
                 hint="hint_example",
                 icon="icon_example",
                 label="label_example",
@@ -1343,7 +1359,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
                 uuid="uuid_example",
                 type=1,
                 placeholder="placeholder_example",
-                validations={},
+                validations=Validations(
+                    value=[
+                        "value_example",
+                    ],
+                ),
                 hint="hint_example",
                 icon="icon_example",
                 label="label_example",
