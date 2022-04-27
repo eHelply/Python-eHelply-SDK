@@ -37,6 +37,7 @@ docs/ContactResponse.md
 docs/CreateKeyResponse.md
 docs/CreateReview.md
 docs/CreateTicket.md
+docs/CustomList.md
 docs/DatesMeta.md
 docs/DefaultApi.md
 docs/DetailedMeta.md
@@ -46,7 +47,9 @@ docs/FieldDynamo.md
 docs/HTTPValidationError.md
 docs/LoggingApi.md
 docs/MetaApi.md
+docs/MetaChildren.md
 docs/MetaCreate.md
+docs/MetaCustom.md
 docs/MetaDynamo.md
 docs/MetaHTTPValidationError.md
 docs/MetaSlugger.md
@@ -160,13 +163,16 @@ ehelply_python_sdk/model/contact_response.py
 ehelply_python_sdk/model/create_key_response.py
 ehelply_python_sdk/model/create_review.py
 ehelply_python_sdk/model/create_ticket.py
+ehelply_python_sdk/model/custom_list.py
 ehelply_python_sdk/model/dates_meta.py
 ehelply_python_sdk/model/detailed_meta.py
 ehelply_python_sdk/model/detailed_meta_create.py
 ehelply_python_sdk/model/field.py
 ehelply_python_sdk/model/field_dynamo.py
 ehelply_python_sdk/model/http_validation_error.py
+ehelply_python_sdk/model/meta_children.py
 ehelply_python_sdk/model/meta_create.py
+ehelply_python_sdk/model/meta_custom.py
 ehelply_python_sdk/model/meta_dynamo.py
 ehelply_python_sdk/model/meta_http_validation_error.py
 ehelply_python_sdk/model/meta_slugger.py
@@ -267,6 +273,7 @@ test/test_contact_response.py
 test/test_create_key_response.py
 test/test_create_review.py
 test/test_create_ticket.py
+test/test_custom_list.py
 test/test_dates_meta.py
 test/test_default_api.py
 test/test_detailed_meta.py
@@ -276,7 +283,9 @@ test/test_field_dynamo.py
 test/test_http_validation_error.py
 test/test_logging_api.py
 test/test_meta_api.py
+test/test_meta_children.py
 test/test_meta_create.py
+test/test_meta_custom.py
 test/test_meta_dynamo.py
 test/test_meta_http_validation_error.py
 test/test_meta_slugger.py

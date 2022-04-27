@@ -188,9 +188,16 @@ with ehelply_python_sdk.ApiClient() as api_client:
             summary="summary_example",
             description="description_example",
         ),
-        custom={
-            "key": "key_example",
-        },
+        custom=MetaCustom(
+            name="name_example",
+            description="description_example",
+            list=[
+                CustomList(
+                    name="name_example",
+                    description="description_example",
+                ),
+            ],
+        ),
         fields=[
             Field(
                 uuid="uuid_example",
@@ -235,9 +242,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
             ),
         ],
         children=[
-            {
-                "key": "key_example",
-            },
+            MetaChildren(
+                child_name="child_name_example",
+                child_description="child_description_example",
+                child_uuid="child_uuid_example",
+            ),
         ],
         parent_uuid="parent_uuid_example",
     ) # MetaCreate | 
@@ -1196,9 +1205,16 @@ with ehelply_python_sdk.ApiClient() as api_client:
             summary="summary_example",
             description="description_example",
         ),
-        custom={
-            "key": "key_example",
-        },
+        custom=MetaCustom(
+            name="name_example",
+            description="description_example",
+            list=[
+                CustomList(
+                    name="name_example",
+                    description="description_example",
+                ),
+            ],
+        ),
         fields=[
             Field(
                 uuid="uuid_example",
@@ -1243,9 +1259,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
             ),
         ],
         children=[
-            {
-                "key": "key_example",
-            },
+            MetaChildren(
+                child_name="child_name_example",
+                child_description="child_description_example",
+                child_uuid="child_uuid_example",
+            ),
         ],
         parent_uuid="parent_uuid_example",
     ) # MetaCreate | 
@@ -1351,9 +1369,16 @@ with ehelply_python_sdk.ApiClient() as api_client:
             summary="summary_example",
             description="description_example",
         ),
-        custom={
-            "key": "key_example",
-        },
+        custom=MetaCustom(
+            name="name_example",
+            description="description_example",
+            list=[
+                CustomList(
+                    name="name_example",
+                    description="description_example",
+                ),
+            ],
+        ),
         fields=[
             Field(
                 uuid="uuid_example",
@@ -1398,9 +1423,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
             ),
         ],
         children=[
-            {
-                "key": "key_example",
-            },
+            MetaChildren(
+                child_name="child_name_example",
+                child_description="child_description_example",
+                child_uuid="child_uuid_example",
+            ),
         ],
         parent_uuid="parent_uuid_example",
     ) # MetaCreate | 
