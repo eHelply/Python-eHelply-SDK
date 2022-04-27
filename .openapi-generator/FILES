@@ -57,6 +57,8 @@ docs/NoteDynamo.md
 docs/NoteDynamoHistory.md
 docs/NoteMeta.md
 docs/NotesApi.md
+docs/OptionGroup.md
+docs/Options.md
 docs/Page.md
 docs/Pagination.md
 docs/ParticipantCreate.md
@@ -85,6 +87,7 @@ docs/SecurityEncryptionKeyGet.md
 docs/SecurityKeyCreate.md
 docs/SecurityKeyGet.md
 docs/SecurityKeyVerify.md
+docs/Selection.md
 docs/ServiceCreate.md
 docs/StripeAccountResponse.md
 docs/SupportApi.md
@@ -171,6 +174,8 @@ ehelply_python_sdk/model/note_base.py
 ehelply_python_sdk/model/note_dynamo.py
 ehelply_python_sdk/model/note_dynamo_history.py
 ehelply_python_sdk/model/note_meta.py
+ehelply_python_sdk/model/option_group.py
+ehelply_python_sdk/model/options.py
 ehelply_python_sdk/model/page.py
 ehelply_python_sdk/model/pagination.py
 ehelply_python_sdk/model/participant_create.py
@@ -197,6 +202,7 @@ ehelply_python_sdk/model/security_encryption_key_get.py
 ehelply_python_sdk/model/security_key_create.py
 ehelply_python_sdk/model/security_key_get.py
 ehelply_python_sdk/model/security_key_verify.py
+ehelply_python_sdk/model/selection.py
 ehelply_python_sdk/model/service_create.py
 ehelply_python_sdk/model/stripe_account_response.py
 ehelply_python_sdk/model/ticket_response.py
@@ -279,6 +285,8 @@ test/test_note_dynamo.py
 test/test_note_dynamo_history.py
 test/test_note_meta.py
 test/test_notes_api.py
+test/test_option_group.py
+test/test_options.py
 test/test_page.py
 test/test_pagination.py
 test/test_participant_create.py
@@ -307,6 +315,7 @@ test/test_security_encryption_key_get.py
 test/test_security_key_create.py
 test/test_security_key_get.py
 test/test_security_key_verify.py
+test/test_selection.py
 test/test_service_create.py
 test/test_stripe_account_response.py
 test/test_support_api.py

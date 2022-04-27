@@ -56,6 +56,8 @@ from ehelply_python_sdk.model.note_base import NoteBase
 from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
 from ehelply_python_sdk.model.note_meta import NoteMeta
+from ehelply_python_sdk.model.option_group import OptionGroup
+from ehelply_python_sdk.model.options import Options
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.pagination import Pagination
 from ehelply_python_sdk.model.participant_create import ParticipantCreate
@@ -82,6 +84,7 @@ from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncrypt
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
 from ehelply_python_sdk.model.security_key_verify import SecurityKeyVerify
+from ehelply_python_sdk.model.selection import Selection
 from ehelply_python_sdk.model.service_create import ServiceCreate
 from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
 from ehelply_python_sdk.model.ticket_response import TicketResponse

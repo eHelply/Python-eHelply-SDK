@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **basic** | [**BasicMetaCreate**](BasicMetaCreate.md) |  | [optional] 
 **detailed** | [**DetailedMetaCreate**](DetailedMetaCreate.md) |  | [optional] 
-**custom** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**custom** | **{str: (str,)}** |  | [optional] 
 **fields** | [**[Field]**](Field.md) |  | [optional] 
 **children** | **[{str: (str,)}]** |  | [optional] 
 **parent_uuid** | **str** |  | [optional] 

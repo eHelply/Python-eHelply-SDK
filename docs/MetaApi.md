@@ -47,13 +47,41 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = meta_api.MetaApi(api_client)
     field = Field(
-        type={},
+        uuid="uuid_example",
+        type=1,
         placeholder="placeholder_example",
         validations={},
         hint="hint_example",
         icon="icon_example",
         label="label_example",
-        options={},
+        options=Options(
+            required=True,
+            label="label_example",
+            inset_label="inset_label_example",
+            placeholder="placeholder_example",
+            hint="hint_example",
+            icon="icon_example",
+            max_length=3.14,
+            counter=True,
+            caption="caption_example",
+            color="color_example",
+            size="size_example",
+            type="type_example",
+            icon_position="icon_position_example",
+            selections=[
+                OptionGroup(
+                    name="name_example",
+                    type="type_example",
+                    selections=[
+                        Selection(
+                            name="name_example",
+                            value=3.14,
+                            icon="icon_example",
+                        ),
+                    ],
+                ),
+            ],
+        ),
     ) # Field | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -156,16 +184,46 @@ with ehelply_python_sdk.ApiClient() as api_client:
             summary="summary_example",
             description="description_example",
         ),
-        custom={},
+        custom={
+            "key": "key_example",
+        },
         fields=[
             Field(
-                type={},
+                uuid="uuid_example",
+                type=1,
                 placeholder="placeholder_example",
                 validations={},
                 hint="hint_example",
                 icon="icon_example",
                 label="label_example",
-                options={},
+                options=Options(
+                    required=True,
+                    label="label_example",
+                    inset_label="inset_label_example",
+                    placeholder="placeholder_example",
+                    hint="hint_example",
+                    icon="icon_example",
+                    max_length=3.14,
+                    counter=True,
+                    caption="caption_example",
+                    color="color_example",
+                    size="size_example",
+                    type="type_example",
+                    icon_position="icon_position_example",
+                    selections=[
+                        OptionGroup(
+                            name="name_example",
+                            type="type_example",
+                            selections=[
+                                Selection(
+                                    name="name_example",
+                                    value=3.14,
+                                    icon="icon_example",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
             ),
         ],
         children=[
@@ -988,13 +1046,41 @@ with ehelply_python_sdk.ApiClient() as api_client:
     api_instance = meta_api.MetaApi(api_client)
     field_uuid = "field_uuid_example" # str | 
     field = Field(
-        type={},
+        uuid="uuid_example",
+        type=1,
         placeholder="placeholder_example",
         validations={},
         hint="hint_example",
         icon="icon_example",
         label="label_example",
-        options={},
+        options=Options(
+            required=True,
+            label="label_example",
+            inset_label="inset_label_example",
+            placeholder="placeholder_example",
+            hint="hint_example",
+            icon="icon_example",
+            max_length=3.14,
+            counter=True,
+            caption="caption_example",
+            color="color_example",
+            size="size_example",
+            type="type_example",
+            icon_position="icon_position_example",
+            selections=[
+                OptionGroup(
+                    name="name_example",
+                    type="type_example",
+                    selections=[
+                        Selection(
+                            name="name_example",
+                            value=3.14,
+                            icon="icon_example",
+                        ),
+                    ],
+                ),
+            ],
+        ),
     ) # Field | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -1098,16 +1184,46 @@ with ehelply_python_sdk.ApiClient() as api_client:
             summary="summary_example",
             description="description_example",
         ),
-        custom={},
+        custom={
+            "key": "key_example",
+        },
         fields=[
             Field(
-                type={},
+                uuid="uuid_example",
+                type=1,
                 placeholder="placeholder_example",
                 validations={},
                 hint="hint_example",
                 icon="icon_example",
                 label="label_example",
-                options={},
+                options=Options(
+                    required=True,
+                    label="label_example",
+                    inset_label="inset_label_example",
+                    placeholder="placeholder_example",
+                    hint="hint_example",
+                    icon="icon_example",
+                    max_length=3.14,
+                    counter=True,
+                    caption="caption_example",
+                    color="color_example",
+                    size="size_example",
+                    type="type_example",
+                    icon_position="icon_position_example",
+                    selections=[
+                        OptionGroup(
+                            name="name_example",
+                            type="type_example",
+                            selections=[
+                                Selection(
+                                    name="name_example",
+                                    value=3.14,
+                                    icon="icon_example",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
             ),
         ],
         children=[
@@ -1219,16 +1335,46 @@ with ehelply_python_sdk.ApiClient() as api_client:
             summary="summary_example",
             description="description_example",
         ),
-        custom={},
+        custom={
+            "key": "key_example",
+        },
         fields=[
             Field(
-                type={},
+                uuid="uuid_example",
+                type=1,
                 placeholder="placeholder_example",
                 validations={},
                 hint="hint_example",
                 icon="icon_example",
                 label="label_example",
-                options={},
+                options=Options(
+                    required=True,
+                    label="label_example",
+                    inset_label="inset_label_example",
+                    placeholder="placeholder_example",
+                    hint="hint_example",
+                    icon="icon_example",
+                    max_length=3.14,
+                    counter=True,
+                    caption="caption_example",
+                    color="color_example",
+                    size="size_example",
+                    type="type_example",
+                    icon_position="icon_position_example",
+                    selections=[
+                        OptionGroup(
+                            name="name_example",
+                            type="type_example",
+                            selections=[
+                                Selection(
+                                    name="name_example",
+                                    value=3.14,
+                                    icon="icon_example",
+                                ),
+                            ],
+                        ),
+                    ],
+                ),
             ),
         ],
         children=[
