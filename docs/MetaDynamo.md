@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **basic** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **detailed** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **custom** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
-**dates** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**dates** | [**DatesMeta**](DatesMeta.md) |  | [optional] 
 **fields** | [**[Field]**](Field.md) |  | [optional] 
 **children** | **[{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]** |  | [optional] 
 **parent_uuid** | **str** |  | [optional] 

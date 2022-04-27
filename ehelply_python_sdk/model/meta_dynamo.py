@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.56
+    eHelply SDK - 1.1.57
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.56
+    The version of the OpenAPI document: 1.1.57
 
                                      Apache License
                                Version 2.0, January 2004
@@ -231,7 +231,9 @@ from ehelply_python_sdk.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from ehelply_python_sdk.model.dates_meta import DatesMeta
     from ehelply_python_sdk.model.field import Field
+    globals()['DatesMeta'] = DatesMeta
     globals()['Field'] = Field
 
 
@@ -292,7 +294,7 @@ class MetaDynamo(ModelNormal):
             'basic': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'detailed': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'custom': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
-            'dates': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'dates': (DatesMeta,),  # noqa: E501
             'fields': ([Field],),  # noqa: E501
             'children': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
             'parent_uuid': (str,),  # noqa: E501
@@ -361,7 +363,7 @@ class MetaDynamo(ModelNormal):
             basic (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             detailed (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] if omitted the server will use the default value of {}  # noqa: E501
-            dates (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            dates (DatesMeta): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
             children ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
@@ -453,7 +455,7 @@ class MetaDynamo(ModelNormal):
             basic (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             detailed (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] if omitted the server will use the default value of {}  # noqa: E501
-            dates (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            dates (DatesMeta): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
             children ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
