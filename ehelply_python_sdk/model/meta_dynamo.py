@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.58
+    eHelply SDK - 1.1.59
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.58
+    The version of the OpenAPI document: 1.1.59
 
                                      Apache License
                                Version 2.0, January 2004
@@ -362,7 +362,7 @@ class MetaDynamo(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             basic (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             detailed (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] if omitted the server will use the default value of {}  # noqa: E501
+            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             dates (DatesMeta): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
             children ([{str: (str,)}]): [optional]  # noqa: E501
@@ -454,7 +454,7 @@ class MetaDynamo(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             basic (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             detailed (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] if omitted the server will use the default value of {}  # noqa: E501
+            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             dates (DatesMeta): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
             children ([{str: (str,)}]): [optional]  # noqa: E501
