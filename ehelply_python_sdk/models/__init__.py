@@ -55,7 +55,9 @@ from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.meta_create import MetaCreate
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_slugger import MetaSlugger
+from ehelply_python_sdk.model.meta_validation_error import MetaValidationError
 from ehelply_python_sdk.model.note_base import NoteBase
 from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory

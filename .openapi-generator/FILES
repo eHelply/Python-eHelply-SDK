@@ -56,7 +56,9 @@ docs/LoggingApi.md
 docs/MetaApi.md
 docs/MetaCreate.md
 docs/MetaDynamo.md
+docs/MetaHTTPValidationError.md
 docs/MetaSlugger.md
+docs/MetaValidationError.md
 docs/MonitorApi.md
 docs/NoteBase.md
 docs/NoteDynamo.md
@@ -191,7 +193,9 @@ ehelply_python_sdk/model/field_dynamo.py
 ehelply_python_sdk/model/http_validation_error.py
 ehelply_python_sdk/model/meta_create.py
 ehelply_python_sdk/model/meta_dynamo.py
+ehelply_python_sdk/model/meta_http_validation_error.py
 ehelply_python_sdk/model/meta_slugger.py
+ehelply_python_sdk/model/meta_validation_error.py
 ehelply_python_sdk/model/note_base.py
 ehelply_python_sdk/model/note_dynamo.py
 ehelply_python_sdk/model/note_dynamo_history.py
@@ -310,7 +314,9 @@ test/test_logging_api.py
 test/test_meta_api.py
 test/test_meta_create.py
 test/test_meta_dynamo.py
+test/test_meta_http_validation_error.py
 test/test_meta_slugger.py
+test/test_meta_validation_error.py
 test/test_monitor_api.py
 test/test_note_base.py
 test/test_note_dynamo.py

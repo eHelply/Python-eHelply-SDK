@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.67
-- Package version: 1.1.67
+- API version: 1.1.68
+- Package version: 1.1.68
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.

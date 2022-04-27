@@ -31,7 +31,7 @@ Create Field
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.field import Field
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from pprint import pprint
@@ -130,8 +130,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
 from ehelply_python_sdk.model.meta_create import MetaCreate
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -250,7 +250,7 @@ Delete Field
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -340,7 +340,7 @@ Delete Meta
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -432,7 +432,7 @@ Delete Meta From Uuid
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -520,7 +520,7 @@ Get Field
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -609,8 +609,8 @@ Get Meta
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -710,8 +710,8 @@ Get Meta From Uuid
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -808,7 +808,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
 from ehelply_python_sdk.model.meta_slugger import MetaSlugger
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -877,8 +877,8 @@ Touch Meta
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -970,7 +970,7 @@ Update Field
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.field import Field
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -1070,8 +1070,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
 from ehelply_python_sdk.model.meta_create import MetaCreate
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1191,8 +1191,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import meta_api
 from ehelply_python_sdk.model.meta_create import MetaCreate
+from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
