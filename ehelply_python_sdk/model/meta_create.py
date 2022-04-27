@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.68
+    eHelply SDK - 1.1.69
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.68
+    The version of the OpenAPI document: 1.1.69
 
                                      Apache License
                                Version 2.0, January 2004
@@ -296,7 +296,7 @@ class MetaCreate(ModelNormal):
             'detailed': (DetailedMetaCreate,),  # noqa: E501
             'custom': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'fields': ([Field],),  # noqa: E501
-            'children': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}],),  # noqa: E501
+            'children': ([{str: (str,)}],),  # noqa: E501
             'parent_uuid': (str,),  # noqa: E501
         }
 
@@ -359,7 +359,7 @@ class MetaCreate(ModelNormal):
             detailed (DetailedMetaCreate): [optional]  # noqa: E501
             custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
-            children ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
+            children ([{str: (str,)}]): [optional]  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
         """
 
@@ -446,7 +446,7 @@ class MetaCreate(ModelNormal):
             detailed (DetailedMetaCreate): [optional]  # noqa: E501
             custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
-            children ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]): [optional]  # noqa: E501
+            children ([{str: (str,)}]): [optional]  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
         """
 

@@ -169,7 +169,9 @@ with ehelply_python_sdk.ApiClient() as api_client:
             ),
         ],
         children=[
-            {},
+            {
+                "key": "key_example",
+            },
         ],
         parent_uuid="parent_uuid_example",
     ) # MetaCreate | 
@@ -1109,7 +1111,9 @@ with ehelply_python_sdk.ApiClient() as api_client:
             ),
         ],
         children=[
-            {},
+            {
+                "key": "key_example",
+            },
         ],
         parent_uuid="parent_uuid_example",
     ) # MetaCreate | 
@@ -1228,7 +1232,9 @@ with ehelply_python_sdk.ApiClient() as api_client:
             ),
         ],
         children=[
-            {},
+            {
+                "key": "key_example",
+            },
         ],
         parent_uuid="parent_uuid_example",
     ) # MetaCreate | 
