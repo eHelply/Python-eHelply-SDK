@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.69
+    eHelply SDK - 1.1.70
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.69
+    The version of the OpenAPI document: 1.1.70
 
                                      Apache License
                                Version 2.0, January 2004
@@ -234,9 +234,13 @@ def lazy_import():
     from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate
     from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
     from ehelply_python_sdk.model.field import Field
+    from ehelply_python_sdk.model.meta_children import MetaChildren
+    from ehelply_python_sdk.model.meta_custom import MetaCustom
     globals()['BasicMetaCreate'] = BasicMetaCreate
     globals()['DetailedMetaCreate'] = DetailedMetaCreate
     globals()['Field'] = Field
+    globals()['MetaChildren'] = MetaChildren
+    globals()['MetaCustom'] = MetaCustom
 
 
 class MetaCreate(ModelNormal):
@@ -294,9 +298,9 @@ class MetaCreate(ModelNormal):
         return {
             'basic': (BasicMetaCreate,),  # noqa: E501
             'detailed': (DetailedMetaCreate,),  # noqa: E501
-            'custom': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'custom': (MetaCustom,),  # noqa: E501
             'fields': ([Field],),  # noqa: E501
-            'children': ([{str: (str,)}],),  # noqa: E501
+            'children': ([MetaChildren],),  # noqa: E501
             'parent_uuid': (str,),  # noqa: E501
         }
 
@@ -357,9 +361,9 @@ class MetaCreate(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             basic (BasicMetaCreate): [optional]  # noqa: E501
             detailed (DetailedMetaCreate): [optional]  # noqa: E501
-            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            custom (MetaCustom): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
-            children ([{str: (str,)}]): [optional]  # noqa: E501
+            children ([MetaChildren]): [optional]  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
         """
 
@@ -444,9 +448,9 @@ class MetaCreate(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             basic (BasicMetaCreate): [optional]  # noqa: E501
             detailed (DetailedMetaCreate): [optional]  # noqa: E501
-            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            custom (MetaCustom): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
-            children ([{str: (str,)}]): [optional]  # noqa: E501
+            children ([MetaChildren]): [optional]  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
         """
 

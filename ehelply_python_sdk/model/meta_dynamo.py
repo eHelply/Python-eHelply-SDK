@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.69
+    eHelply SDK - 1.1.70
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.69
+    The version of the OpenAPI document: 1.1.70
 
                                      Apache License
                                Version 2.0, January 2004
@@ -233,8 +233,12 @@ from ehelply_python_sdk.exceptions import ApiAttributeError
 def lazy_import():
     from ehelply_python_sdk.model.dates_meta import DatesMeta
     from ehelply_python_sdk.model.field import Field
+    from ehelply_python_sdk.model.meta_children import MetaChildren
+    from ehelply_python_sdk.model.meta_custom import MetaCustom
     globals()['DatesMeta'] = DatesMeta
     globals()['Field'] = Field
+    globals()['MetaChildren'] = MetaChildren
+    globals()['MetaCustom'] = MetaCustom
 
 
 class MetaDynamo(ModelNormal):
@@ -293,10 +297,10 @@ class MetaDynamo(ModelNormal):
             'uuid': (str,),  # noqa: E501
             'basic': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'detailed': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'custom': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'custom': (MetaCustom,),  # noqa: E501
             'dates': (DatesMeta,),  # noqa: E501
             'fields': ([Field],),  # noqa: E501
-            'children': ([{str: (str,)}],),  # noqa: E501
+            'children': ([MetaChildren],),  # noqa: E501
             'parent_uuid': (str,),  # noqa: E501
         }
 
@@ -362,10 +366,10 @@ class MetaDynamo(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             basic (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             detailed (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] if omitted the server will use the default value of {}  # noqa: E501
+            custom (MetaCustom): [optional]  # noqa: E501
             dates (DatesMeta): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
-            children ([{str: (str,)}]): [optional]  # noqa: E501
+            children ([MetaChildren]): [optional] if omitted the server will use the default value of []  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
         """
 
@@ -454,10 +458,10 @@ class MetaDynamo(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             basic (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             detailed (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            custom ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional] if omitted the server will use the default value of {}  # noqa: E501
+            custom (MetaCustom): [optional]  # noqa: E501
             dates (DatesMeta): [optional]  # noqa: E501
             fields ([Field]): [optional]  # noqa: E501
-            children ([{str: (str,)}]): [optional]  # noqa: E501
+            children ([MetaChildren]): [optional] if omitted the server will use the default value of []  # noqa: E501
             parent_uuid (str): [optional]  # noqa: E501
         """
 

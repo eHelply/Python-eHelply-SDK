@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.69
+    eHelply SDK - 1.1.70
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.69
+    The version of the OpenAPI document: 1.1.70
 
                                      Apache License
                                Version 2.0, January 2004
@@ -215,8 +215,12 @@ import unittest
 import ehelply_python_sdk
 from ehelply_python_sdk.model.dates_meta import DatesMeta
 from ehelply_python_sdk.model.field import Field
+from ehelply_python_sdk.model.meta_children import MetaChildren
+from ehelply_python_sdk.model.meta_custom import MetaCustom
 globals()['DatesMeta'] = DatesMeta
 globals()['Field'] = Field
+globals()['MetaChildren'] = MetaChildren
+globals()['MetaCustom'] = MetaCustom
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
 
 
