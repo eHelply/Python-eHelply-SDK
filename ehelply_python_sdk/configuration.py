@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.59
+    eHelply SDK - 1.1.60
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.59
+    The version of the OpenAPI document: 1.1.60
 
                                      Apache License
                                Version 2.0, January 2004
@@ -577,8 +577,8 @@ class Configuration(object):
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: 1.1.59\n"\
-               "SDK Package Version: 1.1.59".\
+               "Version of the API: 1.1.60\n"\
+               "SDK Package Version: 1.1.60".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
