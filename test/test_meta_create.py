@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.63
+    eHelply SDK - 1.1.64
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.63
+    The version of the OpenAPI document: 1.1.64
 
                                      Apache License
                                Version 2.0, January 2004
