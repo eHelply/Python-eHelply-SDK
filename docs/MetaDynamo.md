@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **custom** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
 **dates** | [**DatesMeta**](DatesMeta.md) |  | [optional] 
 **fields** | [**[Field]**](Field.md) |  | [optional] 
-**children** | **[{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]** |  | [optional] 
+**children** | **[{str: (str,)}]** |  | [optional] 
 **parent_uuid** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
