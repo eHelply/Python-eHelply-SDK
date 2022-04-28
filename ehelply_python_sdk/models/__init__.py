@@ -9,6 +9,7 @@
 # import sys
 # sys.setrecursionlimit(n)
 
+from ehelply_python_sdk.model.address_base import AddressBase
 from ehelply_python_sdk.model.alarm_acknowledge import AlarmAcknowledge
 from ehelply_python_sdk.model.alarm_assign import AlarmAssign
 from ehelply_python_sdk.model.alarm_create import AlarmCreate
@@ -36,7 +37,12 @@ from ehelply_python_sdk.model.body_trigger_alarm_monitor_services_service_stages
 from ehelply_python_sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
 from ehelply_python_sdk.model.catalog_base import CatalogBase
 from ehelply_python_sdk.model.catalog_return import CatalogReturn
+from ehelply_python_sdk.model.category_base import CategoryBase
+from ehelply_python_sdk.model.category_db import CategoryDb
+from ehelply_python_sdk.model.company_base import CompanyBase
+from ehelply_python_sdk.model.company_response import CompanyResponse
 from ehelply_python_sdk.model.contact import Contact
+from ehelply_python_sdk.model.contact_base import ContactBase
 from ehelply_python_sdk.model.contact_response import ContactResponse
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.create_review import CreateReview
@@ -68,6 +74,8 @@ from ehelply_python_sdk.model.participant_update import ParticipantUpdate
 from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
 from ehelply_python_sdk.model.payment import Payment
 from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
+from ehelply_python_sdk.model.place_base import PlaceBase
+from ehelply_python_sdk.model.place_response import PlaceResponse
 from ehelply_python_sdk.model.product_base import ProductBase
 from ehelply_python_sdk.model.product_return import ProductReturn
 from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
@@ -89,7 +97,12 @@ from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
 from ehelply_python_sdk.model.security_key_verify import SecurityKeyVerify
 from ehelply_python_sdk.model.selection import Selection
 from ehelply_python_sdk.model.service_create import ServiceCreate
+from ehelply_python_sdk.model.staff_create import StaffCreate
+from ehelply_python_sdk.model.staff_db import StaffDb
+from ehelply_python_sdk.model.staff_response import StaffResponse
 from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
+from ehelply_python_sdk.model.tag_base import TagBase
+from ehelply_python_sdk.model.tag_db import TagDb
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
 from ehelply_python_sdk.model.update_review import UpdateReview
