@@ -27,7 +27,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.staff_create import StaffCreate
 from ehelply_python_sdk.model.staff_db import StaffDb
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -123,7 +123,7 @@ Deletes the staff member with the given ID and returns True if successful
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -216,7 +216,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.staff_response import StaffResponse
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -317,7 +317,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -427,7 +427,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.staff_response import StaffResponse
 from ehelply_python_sdk.model.staff_create import StaffCreate
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

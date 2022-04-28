@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.71
+    eHelply SDK - 1.1.72
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.71
+    The version of the OpenAPI document: 1.1.72
 
                                      Apache License
                                Version 2.0, January 2004
@@ -213,13 +213,11 @@ import sys
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.products_validation_error import ProductsValidationError
-globals()['ProductsValidationError'] = ProductsValidationError
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.notes_validation_error import NotesValidationError
 
 
-class TestProductsHTTPValidationError(unittest.TestCase):
-    """ProductsHTTPValidationError unit test stubs"""
+class TestNotesValidationError(unittest.TestCase):
+    """NotesValidationError unit test stubs"""
 
     def setUp(self):
         pass
@@ -227,10 +225,10 @@ class TestProductsHTTPValidationError(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testProductsHTTPValidationError(self):
-        """Test ProductsHTTPValidationError"""
+    def testNotesValidationError(self):
+        """Test NotesValidationError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ProductsHTTPValidationError()  # noqa: E501
+        # model = NotesValidationError()  # noqa: E501
         pass
 
 

@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.71
+    eHelply SDK - 1.1.72
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.71
+    The version of the OpenAPI document: 1.1.72
 
                                      Apache License
                                Version 2.0, January 2004
@@ -230,7 +230,7 @@ from ehelply_python_sdk.model.body_ignore_alarm_monitor_services_service_stages_
 from ehelply_python_sdk.model.body_register_service_monitor_services_post import BodyRegisterServiceMonitorServicesPost
 from ehelply_python_sdk.model.body_terminate_alarm_monitor_services_service_stages_stage_alarms_alarm_uuid_terminate_post import BodyTerminateAlarmMonitorServicesServiceStagesStageAlarmsAlarmUuidTerminatePost
 from ehelply_python_sdk.model.body_trigger_alarm_monitor_services_service_stages_stage_alarms_post import BodyTriggerAlarmMonitorServicesServiceStagesStageAlarmsPost
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 
 
 class MonitorApi(object):

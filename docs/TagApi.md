@@ -27,7 +27,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.tag_db import TagDb
 from ehelply_python_sdk.model.tag_base import TagBase
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -120,7 +120,7 @@ Deletes the tag member with the given ID and returns True if successful
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -211,7 +211,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.tag_base import TagBase
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -302,7 +302,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -395,7 +395,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.tag_base import TagBase
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

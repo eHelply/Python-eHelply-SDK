@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.71
+    eHelply SDK - 1.1.72
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.71
+    The version of the OpenAPI document: 1.1.72
 
                                      Apache License
                                Version 2.0, January 2004
@@ -231,7 +231,6 @@ from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.product_base import ProductBase
 from ehelply_python_sdk.model.product_return import ProductReturn
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.update_review import UpdateReview
 
 
@@ -246,6 +245,100 @@ class DefaultApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.appointmentssearch_appointment_entities_endpoint = _Endpoint(
+            settings={
+                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'auth': [],
+                'endpoint_path': '/appointments/entities/{entity_uuid}/appointments',
+                'operation_id': 'appointmentssearch_appointment_entities',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'entity_uuid',
+                    'start_date',
+                    'end_date',
+                    'include_cancelled',
+                    'x_access_token',
+                    'x_secret_token',
+                    'authorization',
+                    'ehelply_active_participant',
+                    'ehelply_project',
+                    'ehelply_data',
+                ],
+                'required': [
+                    'entity_uuid',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'entity_uuid':
+                        (str,),
+                    'start_date':
+                        (str,),
+                    'end_date':
+                        (str,),
+                    'include_cancelled':
+                        (bool,),
+                    'x_access_token':
+                        (str,),
+                    'x_secret_token':
+                        (str,),
+                    'authorization':
+                        (str,),
+                    'ehelply_active_participant':
+                        (str,),
+                    'ehelply_project':
+                        (str,),
+                    'ehelply_data':
+                        (str,),
+                },
+                'attribute_map': {
+                    'entity_uuid': 'entity_uuid',
+                    'start_date': 'start_date',
+                    'end_date': 'end_date',
+                    'include_cancelled': 'include_cancelled',
+                    'x_access_token': 'x-access-token',
+                    'x_secret_token': 'x-secret-token',
+                    'authorization': 'authorization',
+                    'ehelply_active_participant': 'ehelply-active-participant',
+                    'ehelply_project': 'ehelply-project',
+                    'ehelply_data': 'ehelply-data',
+                },
+                'location_map': {
+                    'entity_uuid': 'path',
+                    'start_date': 'query',
+                    'end_date': 'query',
+                    'include_cancelled': 'query',
+                    'x_access_token': 'header',
+                    'x_secret_token': 'header',
+                    'authorization': 'header',
+                    'ehelply_active_participant': 'header',
+                    'ehelply_project': 'header',
+                    'ehelply_data': 'header',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.attach_entity_to_appointment_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
@@ -2704,6 +2797,80 @@ class DefaultApi(object):
             },
             api_client=api_client
         )
+
+    def appointmentssearch_appointment_entities(
+        self,
+        entity_uuid,
+        **kwargs
+    ):
+        """Get Entities Appointments  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.appointmentssearch_appointment_entities(entity_uuid, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            entity_uuid (str):
+
+        Keyword Args:
+            start_date (str): [optional]
+            end_date (str): [optional]
+            include_cancelled (bool): [optional] if omitted the server will use the default value of False
+            x_access_token (str): [optional]
+            x_secret_token (str): [optional]
+            authorization (str): [optional]
+            ehelply_active_participant (str): [optional]
+            ehelply_project (str): [optional]
+            ehelply_data (str): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            bool, date, datetime, dict, float, int, list, str, none_type
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['entity_uuid'] = \
+            entity_uuid
+        return self.appointmentssearch_appointment_entities_endpoint.call_with_http_info(**kwargs)
 
     def attach_entity_to_appointment(
         self,

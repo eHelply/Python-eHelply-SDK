@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.71
+    eHelply SDK - 1.1.72
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.71
+    The version of the OpenAPI document: 1.1.72
 
                                      Apache License
                                Version 2.0, January 2004
@@ -225,7 +225,7 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
 from ehelply_python_sdk.model.contact import Contact
 from ehelply_python_sdk.model.contact_response import ContactResponse
 from ehelply_python_sdk.model.create_ticket import CreateTicket
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
 

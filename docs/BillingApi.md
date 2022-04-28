@@ -35,7 +35,7 @@ Attach Payment To Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -132,7 +132,7 @@ Attach Payment To Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.body_attach_payment_to_project_billing_attach_payment_to_project_post import BodyAttachPaymentToProjectBillingAttachPaymentToProjectPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -229,8 +229,8 @@ Create Billing Account
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -308,8 +308,8 @@ Create Billing Account
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -387,7 +387,7 @@ Delete Billing Account
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -465,7 +465,7 @@ Delete Billing Account
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -543,7 +543,7 @@ Get Client Secret
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -621,7 +621,7 @@ Get Client Secret
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -699,7 +699,7 @@ Has Payment
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -777,7 +777,7 @@ Has Payment
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -855,8 +855,8 @@ Process Payment
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -948,8 +948,8 @@ Process Payment
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.body_process_payment_billing_process_payment_post import BodyProcessPaymentBillingProcessPaymentPost
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1041,7 +1041,7 @@ Reconcile Payment Methods
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1119,7 +1119,7 @@ Remove Payment Method
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1197,7 +1197,7 @@ Remove Payment Method
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1276,7 +1276,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1355,7 +1355,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

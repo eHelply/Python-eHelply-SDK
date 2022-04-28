@@ -26,7 +26,7 @@ Create Encryption Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -104,7 +104,7 @@ Create Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -192,7 +192,7 @@ Delete Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -260,8 +260,8 @@ Generate Token
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.body_generate_token_security_tokens_post import BodyGenerateTokenSecurityTokensPost
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -333,7 +333,7 @@ Get Encryption Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -412,8 +412,8 @@ Get Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -544,9 +544,9 @@ Verify Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
 from ehelply_python_sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

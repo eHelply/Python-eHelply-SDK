@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.71
+    eHelply SDK - 1.1.72
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.71
+    The version of the OpenAPI document: 1.1.72
 
                                      Apache License
                                Version 2.0, January 2004
@@ -213,13 +213,11 @@ import sys
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.meta_validation_error import MetaValidationError
-globals()['MetaValidationError'] = MetaValidationError
-from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
+from ehelply_python_sdk.model.places_validation_error import PlacesValidationError
 
 
-class TestMetaHTTPValidationError(unittest.TestCase):
-    """MetaHTTPValidationError unit test stubs"""
+class TestPlacesValidationError(unittest.TestCase):
+    """PlacesValidationError unit test stubs"""
 
     def setUp(self):
         pass
@@ -227,10 +225,10 @@ class TestMetaHTTPValidationError(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMetaHTTPValidationError(self):
-        """Test MetaHTTPValidationError"""
+    def testPlacesValidationError(self):
+        """Test PlacesValidationError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = MetaHTTPValidationError()  # noqa: E501
+        # model = PlacesValidationError()  # noqa: E501
         pass
 
 

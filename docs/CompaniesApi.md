@@ -27,7 +27,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
 from ehelply_python_sdk.model.company_base import CompanyBase
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -128,7 +128,7 @@ Deletes the company with the given ID and returns True if successful
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -221,7 +221,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -328,7 +328,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -444,7 +444,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
 from ehelply_python_sdk.model.company_base import CompanyBase
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

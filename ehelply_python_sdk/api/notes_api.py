@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.71
+    eHelply SDK - 1.1.72
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.71
+    The version of the OpenAPI document: 1.1.72
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,10 +222,10 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.note_base import NoteBase
 from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
+from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
 
 
 class NotesApi(object):

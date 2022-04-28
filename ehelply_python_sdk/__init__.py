@@ -1,11 +1,11 @@
 # flake8: noqa
 
 """
-    eHelply SDK - 1.1.71
+    eHelply SDK - 1.1.72
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.71
+    The version of the OpenAPI document: 1.1.72
 
                                      Apache License
                                Version 2.0, January 2004
@@ -211,7 +211,7 @@
 """
 
 
-__version__ = "1.1.71"
+__version__ = "1.1.72"
 
 # import ApiClient
 from ehelply_python_sdk.api_client import ApiClient

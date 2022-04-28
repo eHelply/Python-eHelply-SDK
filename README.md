@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.71
-- Package version: 1.1.71
+- API version: 1.1.72
+- Package version: 1.1.72
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -55,7 +55,7 @@ import time
 import ehelply_python_sdk
 from pprint import pprint
 from ehelply_python_sdk.api import auth_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**get_company_companies_company_uuid_get**](docs/CompaniesApi.md#get_company_companies_company_uuid_get) | **GET** /companies/{company_uuid} | Get Company
 *CompaniesApi* | [**search_companies_companies_get**](docs/CompaniesApi.md#search_companies_companies_get) | **GET** /companies | Search Companies
 *CompaniesApi* | [**update_company_companies_company_uuid_put**](docs/CompaniesApi.md#update_company_companies_company_uuid_put) | **PUT** /companies/{company_uuid} | Update Company
+*DefaultApi* | [**appointmentssearch_appointment_entities**](docs/DefaultApi.md#appointmentssearch_appointment_entities) | **GET** /appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
 *DefaultApi* | [**attach_entity_to_appointment**](docs/DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
 *DefaultApi* | [**attach_product_to_catalog**](docs/DefaultApi.md#attach_product_to_catalog) | **POST** /catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
 *DefaultApi* | [**create_appointment**](docs/DefaultApi.md#create_appointment) | **POST** /appointments | Create Appointment

@@ -25,8 +25,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
 from ehelply_python_sdk.model.contact import Contact
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.contact_response import ContactResponse
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -120,8 +120,8 @@ Create Ticket
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.create_ticket import CreateTicket
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -218,7 +218,7 @@ Delete Contact
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -296,7 +296,7 @@ List Tickets
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -388,8 +388,8 @@ Update Ticket
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.create_ticket import CreateTicket
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -488,7 +488,7 @@ View Ticket
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com

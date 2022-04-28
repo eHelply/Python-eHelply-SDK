@@ -58,13 +58,13 @@ from ehelply_python_sdk.model.meta_children import MetaChildren
 from ehelply_python_sdk.model.meta_create import MetaCreate
 from ehelply_python_sdk.model.meta_custom import MetaCustom
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
-from ehelply_python_sdk.model.meta_http_validation_error import MetaHTTPValidationError
 from ehelply_python_sdk.model.meta_slugger import MetaSlugger
-from ehelply_python_sdk.model.meta_validation_error import MetaValidationError
 from ehelply_python_sdk.model.note_base import NoteBase
 from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
 from ehelply_python_sdk.model.note_meta import NoteMeta
+from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
+from ehelply_python_sdk.model.notes_validation_error import NotesValidationError
 from ehelply_python_sdk.model.option_group import OptionGroup
 from ehelply_python_sdk.model.options import Options
 from ehelply_python_sdk.model.page import Page
@@ -76,10 +76,10 @@ from ehelply_python_sdk.model.payment import Payment
 from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
 from ehelply_python_sdk.model.place_base import PlaceBase
 from ehelply_python_sdk.model.place_response import PlaceResponse
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.places_validation_error import PlacesValidationError
 from ehelply_python_sdk.model.product_base import ProductBase
 from ehelply_python_sdk.model.product_return import ProductReturn
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
-from ehelply_python_sdk.model.products_validation_error import ProductsValidationError
 from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
 from ehelply_python_sdk.model.projects_project_get import ProjectsProjectGet
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
@@ -90,6 +90,8 @@ from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
 from ehelply_python_sdk.model.projects_usage_type_unit_price import ProjectsUsageTypeUnitPrice
 from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
+from ehelply_python_sdk.model.sam_validation_error import SamValidationError
 from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
