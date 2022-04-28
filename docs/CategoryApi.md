@@ -4,15 +4,15 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_category_categories_post**](CategoryApi.md#create_category_categories_post) | **POST** /categories | Create Category
-[**delete_category_categories_category_uuid_delete**](CategoryApi.md#delete_category_categories_category_uuid_delete) | **DELETE** /categories/{category_uuid} | Delete Category
-[**get_category_categories_category_uuid_get**](CategoryApi.md#get_category_categories_category_uuid_get) | **GET** /categories/{category_uuid} | Get Category
-[**search_categories_categories_get**](CategoryApi.md#search_categories_categories_get) | **GET** /categories | Search Categories
-[**update_category_categories_category_uuid_put**](CategoryApi.md#update_category_categories_category_uuid_put) | **PUT** /categories/{category_uuid} | Update Category
+[**create_category_places_categories_post**](CategoryApi.md#create_category_places_categories_post) | **POST** /places/categories | Create Category
+[**delete_category_places_categories_category_uuid_delete**](CategoryApi.md#delete_category_places_categories_category_uuid_delete) | **DELETE** /places/categories/{category_uuid} | Delete Category
+[**get_category_places_categories_category_uuid_get**](CategoryApi.md#get_category_places_categories_category_uuid_get) | **GET** /places/categories/{category_uuid} | Get Category
+[**search_categories_places_categories_get**](CategoryApi.md#search_categories_places_categories_get) | **GET** /places/categories | Search Categories
+[**update_category_places_categories_category_uuid_put**](CategoryApi.md#update_category_places_categories_category_uuid_put) | **PUT** /places/categories/{category_uuid} | Update Category
 
 
-# **create_category_categories_post**
-> CategoryDb create_category_categories_post(category_base)
+# **create_category_places_categories_post**
+> CategoryDb create_category_places_categories_post(category_base)
 
 Create Category
 
@@ -26,8 +26,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import category_api
 from ehelply_python_sdk.model.category_base import CategoryBase
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.category_db import CategoryDb
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -56,19 +56,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Category
-        api_response = api_instance.create_category_categories_post(category_base)
+        api_response = api_instance.create_category_places_categories_post(category_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->create_category_categories_post: %s\n" % e)
+        print("Exception when calling CategoryApi->create_category_places_categories_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Category
-        api_response = api_instance.create_category_categories_post(category_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_category_places_categories_post(category_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->create_category_categories_post: %s\n" % e)
+        print("Exception when calling CategoryApi->create_category_places_categories_post: %s\n" % e)
 ```
 
 
@@ -108,8 +108,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_category_categories_category_uuid_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_category_categories_category_uuid_delete(category_uuid)
+# **delete_category_places_categories_category_uuid_delete**
+> bool, date, datetime, dict, float, int, list, str, none_type delete_category_places_categories_category_uuid_delete(category_uuid)
 
 Delete Category
 
@@ -122,7 +122,7 @@ Deletes the category with the given ID and returns True if successful
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import category_api
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -146,19 +146,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete Category
-        api_response = api_instance.delete_category_categories_category_uuid_delete(category_uuid)
+        api_response = api_instance.delete_category_places_categories_category_uuid_delete(category_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->delete_category_categories_category_uuid_delete: %s\n" % e)
+        print("Exception when calling CategoryApi->delete_category_places_categories_category_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Delete Category
-        api_response = api_instance.delete_category_categories_category_uuid_delete(category_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.delete_category_places_categories_category_uuid_delete(category_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->delete_category_categories_category_uuid_delete: %s\n" % e)
+        print("Exception when calling CategoryApi->delete_category_places_categories_category_uuid_delete: %s\n" % e)
 ```
 
 
@@ -198,8 +198,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_category_categories_category_uuid_get**
-> CategoryBase get_category_categories_category_uuid_get(category_uuid)
+# **get_category_places_categories_category_uuid_get**
+> CategoryBase get_category_places_categories_category_uuid_get(category_uuid)
 
 Get Category
 
@@ -213,7 +213,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import category_api
 from ehelply_python_sdk.model.category_base import CategoryBase
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -238,19 +238,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Category
-        api_response = api_instance.get_category_categories_category_uuid_get(category_uuid)
+        api_response = api_instance.get_category_places_categories_category_uuid_get(category_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->get_category_categories_category_uuid_get: %s\n" % e)
+        print("Exception when calling CategoryApi->get_category_places_categories_category_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Category
-        api_response = api_instance.get_category_categories_category_uuid_get(category_uuid, with_meta=with_meta, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_category_places_categories_category_uuid_get(category_uuid, with_meta=with_meta, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->get_category_categories_category_uuid_get: %s\n" % e)
+        print("Exception when calling CategoryApi->get_category_places_categories_category_uuid_get: %s\n" % e)
 ```
 
 
@@ -291,8 +291,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_categories_categories_get**
-> Page search_categories_categories_get()
+# **search_categories_places_categories_get**
+> Page search_categories_places_categories_get()
 
 Search Categories
 
@@ -306,7 +306,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import category_api
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -337,10 +337,10 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Search Categories
-        api_response = api_instance.search_categories_categories_get(project_uuid=project_uuid, name=name, with_meta=with_meta, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_categories_places_categories_get(project_uuid=project_uuid, name=name, with_meta=with_meta, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->search_categories_categories_get: %s\n" % e)
+        print("Exception when calling CategoryApi->search_categories_places_categories_get: %s\n" % e)
 ```
 
 
@@ -386,8 +386,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_category_categories_category_uuid_put**
-> CategoryBase update_category_categories_category_uuid_put(category_uuid, category_base)
+# **update_category_places_categories_category_uuid_put**
+> CategoryBase update_category_places_categories_category_uuid_put(category_uuid, category_base)
 
 Update Category
 
@@ -401,7 +401,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import category_api
 from ehelply_python_sdk.model.category_base import CategoryBase
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -431,19 +431,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Category
-        api_response = api_instance.update_category_categories_category_uuid_put(category_uuid, category_base)
+        api_response = api_instance.update_category_places_categories_category_uuid_put(category_uuid, category_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->update_category_categories_category_uuid_put: %s\n" % e)
+        print("Exception when calling CategoryApi->update_category_places_categories_category_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Update Category
-        api_response = api_instance.update_category_categories_category_uuid_put(category_uuid, category_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_category_places_categories_category_uuid_put(category_uuid, category_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CategoryApi->update_category_categories_category_uuid_put: %s\n" % e)
+        print("Exception when calling CategoryApi->update_category_places_categories_category_uuid_put: %s\n" % e)
 ```
 
 

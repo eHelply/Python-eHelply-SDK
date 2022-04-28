@@ -4,15 +4,15 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_tag_tags_post**](TagApi.md#create_tag_tags_post) | **POST** /tags | Create Tag
-[**delete_tag_tags_tag_uuid_delete**](TagApi.md#delete_tag_tags_tag_uuid_delete) | **DELETE** /tags/{tag_uuid} | Delete Tag
-[**get_tag_tags_tag_uuid_get**](TagApi.md#get_tag_tags_tag_uuid_get) | **GET** /tags/{tag_uuid} | Get Tag
-[**search_tags_tags_get**](TagApi.md#search_tags_tags_get) | **GET** /tags | Search Tags
-[**update_tag_tags_tag_uuid_put**](TagApi.md#update_tag_tags_tag_uuid_put) | **PUT** /tags/{tag_uuid} | Update Tag
+[**create_tag_places_tags_post**](TagApi.md#create_tag_places_tags_post) | **POST** /places/tags | Create Tag
+[**delete_tag_places_tags_tag_uuid_delete**](TagApi.md#delete_tag_places_tags_tag_uuid_delete) | **DELETE** /places/tags/{tag_uuid} | Delete Tag
+[**get_tag_places_tags_tag_uuid_get**](TagApi.md#get_tag_places_tags_tag_uuid_get) | **GET** /places/tags/{tag_uuid} | Get Tag
+[**search_tags_places_tags_get**](TagApi.md#search_tags_places_tags_get) | **GET** /places/tags | Search Tags
+[**update_tag_places_tags_tag_uuid_put**](TagApi.md#update_tag_places_tags_tag_uuid_put) | **PUT** /places/tags/{tag_uuid} | Update Tag
 
 
-# **create_tag_tags_post**
-> TagDb create_tag_tags_post(tag_base)
+# **create_tag_places_tags_post**
+> TagDb create_tag_places_tags_post(tag_base)
 
 Create Tag
 
@@ -27,7 +27,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.tag_db import TagDb
 from ehelply_python_sdk.model.tag_base import TagBase
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -54,19 +54,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Tag
-        api_response = api_instance.create_tag_tags_post(tag_base)
+        api_response = api_instance.create_tag_places_tags_post(tag_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->create_tag_tags_post: %s\n" % e)
+        print("Exception when calling TagApi->create_tag_places_tags_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Tag
-        api_response = api_instance.create_tag_tags_post(tag_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_tag_places_tags_post(tag_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->create_tag_tags_post: %s\n" % e)
+        print("Exception when calling TagApi->create_tag_places_tags_post: %s\n" % e)
 ```
 
 
@@ -106,8 +106,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_tag_tags_tag_uuid_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_tag_tags_tag_uuid_delete(tag_uuid)
+# **delete_tag_places_tags_tag_uuid_delete**
+> bool, date, datetime, dict, float, int, list, str, none_type delete_tag_places_tags_tag_uuid_delete(tag_uuid)
 
 Delete Tag
 
@@ -120,7 +120,7 @@ Deletes the tag member with the given ID and returns True if successful
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -144,19 +144,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete Tag
-        api_response = api_instance.delete_tag_tags_tag_uuid_delete(tag_uuid)
+        api_response = api_instance.delete_tag_places_tags_tag_uuid_delete(tag_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->delete_tag_tags_tag_uuid_delete: %s\n" % e)
+        print("Exception when calling TagApi->delete_tag_places_tags_tag_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Delete Tag
-        api_response = api_instance.delete_tag_tags_tag_uuid_delete(tag_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.delete_tag_places_tags_tag_uuid_delete(tag_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->delete_tag_tags_tag_uuid_delete: %s\n" % e)
+        print("Exception when calling TagApi->delete_tag_places_tags_tag_uuid_delete: %s\n" % e)
 ```
 
 
@@ -196,8 +196,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tag_tags_tag_uuid_get**
-> TagBase get_tag_tags_tag_uuid_get(tag_uuid)
+# **get_tag_places_tags_tag_uuid_get**
+> TagBase get_tag_places_tags_tag_uuid_get(tag_uuid)
 
 Get Tag
 
@@ -211,7 +211,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.tag_base import TagBase
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -235,19 +235,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Tag
-        api_response = api_instance.get_tag_tags_tag_uuid_get(tag_uuid)
+        api_response = api_instance.get_tag_places_tags_tag_uuid_get(tag_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->get_tag_tags_tag_uuid_get: %s\n" % e)
+        print("Exception when calling TagApi->get_tag_places_tags_tag_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Tag
-        api_response = api_instance.get_tag_tags_tag_uuid_get(tag_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_tag_places_tags_tag_uuid_get(tag_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->get_tag_tags_tag_uuid_get: %s\n" % e)
+        print("Exception when calling TagApi->get_tag_places_tags_tag_uuid_get: %s\n" % e)
 ```
 
 
@@ -287,8 +287,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_tags_tags_get**
-> Page search_tags_tags_get()
+# **search_tags_places_tags_get**
+> Page search_tags_places_tags_get()
 
 Search Tags
 
@@ -302,7 +302,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -332,10 +332,10 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Search Tags
-        api_response = api_instance.search_tags_tags_get(project_uuid=project_uuid, name=name, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_tags_places_tags_get(project_uuid=project_uuid, name=name, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->search_tags_tags_get: %s\n" % e)
+        print("Exception when calling TagApi->search_tags_places_tags_get: %s\n" % e)
 ```
 
 
@@ -380,8 +380,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_tag_tags_tag_uuid_put**
-> TagBase update_tag_tags_tag_uuid_put(tag_uuid, tag_base)
+# **update_tag_places_tags_tag_uuid_put**
+> TagBase update_tag_places_tags_tag_uuid_put(tag_uuid, tag_base)
 
 Update Tag
 
@@ -395,7 +395,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import tag_api
 from ehelply_python_sdk.model.tag_base import TagBase
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -423,19 +423,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Tag
-        api_response = api_instance.update_tag_tags_tag_uuid_put(tag_uuid, tag_base)
+        api_response = api_instance.update_tag_places_tags_tag_uuid_put(tag_uuid, tag_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->update_tag_tags_tag_uuid_put: %s\n" % e)
+        print("Exception when calling TagApi->update_tag_places_tags_tag_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Update Tag
-        api_response = api_instance.update_tag_tags_tag_uuid_put(tag_uuid, tag_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_tag_places_tags_tag_uuid_put(tag_uuid, tag_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling TagApi->update_tag_tags_tag_uuid_put: %s\n" % e)
+        print("Exception when calling TagApi->update_tag_places_tags_tag_uuid_put: %s\n" % e)
 ```
 
 

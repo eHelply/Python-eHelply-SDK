@@ -76,8 +76,6 @@ from ehelply_python_sdk.model.payment import Payment
 from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
 from ehelply_python_sdk.model.place_base import PlaceBase
 from ehelply_python_sdk.model.place_response import PlaceResponse
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
-from ehelply_python_sdk.model.places_validation_error import PlacesValidationError
 from ehelply_python_sdk.model.product_base import ProductBase
 from ehelply_python_sdk.model.product_return import ProductReturn
 from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate

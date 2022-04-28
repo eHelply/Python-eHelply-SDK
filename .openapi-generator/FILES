@@ -80,8 +80,6 @@ docs/PaymentMethodResponse.md
 docs/PlaceBase.md
 docs/PlaceResponse.md
 docs/PlacesApi.md
-docs/PlacesHTTPValidationError.md
-docs/PlacesValidationError.md
 docs/ProductBase.md
 docs/ProductReturn.md
 docs/ProjectsApi.md
@@ -223,8 +221,6 @@ ehelply_python_sdk/model/payment.py
 ehelply_python_sdk/model/payment_method_response.py
 ehelply_python_sdk/model/place_base.py
 ehelply_python_sdk/model/place_response.py
-ehelply_python_sdk/model/places_http_validation_error.py
-ehelply_python_sdk/model/places_validation_error.py
 ehelply_python_sdk/model/product_base.py
 ehelply_python_sdk/model/product_return.py
 ehelply_python_sdk/model/projects_project_create.py
@@ -356,8 +352,6 @@ test/test_payment_method_response.py
 test/test_place_base.py
 test/test_place_response.py
 test/test_places_api.py
-test/test_places_http_validation_error.py
-test/test_places_validation_error.py
 test/test_product_base.py
 test/test_product_return.py
 test/test_projects_api.py

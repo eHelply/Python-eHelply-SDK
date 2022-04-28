@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.66
+    eHelply SDK - 1.1.67
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.66
+    The version of the OpenAPI document: 1.1.67
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,8 +222,8 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from ehelply_python_sdk.model.tag_base import TagBase
 from ehelply_python_sdk.model.tag_db import TagDb
 
@@ -239,12 +239,12 @@ class TagApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_tag_tags_post_endpoint = _Endpoint(
+        self.create_tag_places_tags_post_endpoint = _Endpoint(
             settings={
                 'response_type': (TagDb,),
                 'auth': [],
-                'endpoint_path': '/tags',
-                'operation_id': 'create_tag_tags_post',
+                'endpoint_path': '/places/tags',
+                'operation_id': 'create_tag_places_tags_post',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -319,12 +319,12 @@ class TagApi(object):
             },
             api_client=api_client
         )
-        self.delete_tag_tags_tag_uuid_delete_endpoint = _Endpoint(
+        self.delete_tag_places_tags_tag_uuid_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/tags/{tag_uuid}',
-                'operation_id': 'delete_tag_tags_tag_uuid_delete',
+                'endpoint_path': '/places/tags/{tag_uuid}',
+                'operation_id': 'delete_tag_places_tags_tag_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -398,12 +398,12 @@ class TagApi(object):
             },
             api_client=api_client
         )
-        self.get_tag_tags_tag_uuid_get_endpoint = _Endpoint(
+        self.get_tag_places_tags_tag_uuid_get_endpoint = _Endpoint(
             settings={
                 'response_type': (TagBase,),
                 'auth': [],
-                'endpoint_path': '/tags/{tag_uuid}',
-                'operation_id': 'get_tag_tags_tag_uuid_get',
+                'endpoint_path': '/places/tags/{tag_uuid}',
+                'operation_id': 'get_tag_places_tags_tag_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -477,12 +477,12 @@ class TagApi(object):
             },
             api_client=api_client
         )
-        self.search_tags_tags_get_endpoint = _Endpoint(
+        self.search_tags_places_tags_get_endpoint = _Endpoint(
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/tags',
-                'operation_id': 'search_tags_tags_get',
+                'endpoint_path': '/places/tags',
+                'operation_id': 'search_tags_places_tags_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -579,12 +579,12 @@ class TagApi(object):
             },
             api_client=api_client
         )
-        self.update_tag_tags_tag_uuid_put_endpoint = _Endpoint(
+        self.update_tag_places_tags_tag_uuid_put_endpoint = _Endpoint(
             settings={
                 'response_type': (TagBase,),
                 'auth': [],
-                'endpoint_path': '/tags/{tag_uuid}',
-                'operation_id': 'update_tag_tags_tag_uuid_put',
+                'endpoint_path': '/places/tags/{tag_uuid}',
+                'operation_id': 'update_tag_places_tags_tag_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -666,7 +666,7 @@ class TagApi(object):
             api_client=api_client
         )
 
-    def create_tag_tags_post(
+    def create_tag_places_tags_post(
         self,
         tag_base,
         **kwargs
@@ -677,7 +677,7 @@ class TagApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_tag_tags_post(tag_base, async_req=True)
+        >>> thread = api.create_tag_places_tags_post(tag_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -736,9 +736,9 @@ class TagApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['tag_base'] = \
             tag_base
-        return self.create_tag_tags_post_endpoint.call_with_http_info(**kwargs)
+        return self.create_tag_places_tags_post_endpoint.call_with_http_info(**kwargs)
 
-    def delete_tag_tags_tag_uuid_delete(
+    def delete_tag_places_tags_tag_uuid_delete(
         self,
         tag_uuid,
         **kwargs
@@ -749,7 +749,7 @@ class TagApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_tag_tags_tag_uuid_delete(tag_uuid, async_req=True)
+        >>> thread = api.delete_tag_places_tags_tag_uuid_delete(tag_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -808,9 +808,9 @@ class TagApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['tag_uuid'] = \
             tag_uuid
-        return self.delete_tag_tags_tag_uuid_delete_endpoint.call_with_http_info(**kwargs)
+        return self.delete_tag_places_tags_tag_uuid_delete_endpoint.call_with_http_info(**kwargs)
 
-    def get_tag_tags_tag_uuid_get(
+    def get_tag_places_tags_tag_uuid_get(
         self,
         tag_uuid,
         **kwargs
@@ -821,7 +821,7 @@ class TagApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_tag_tags_tag_uuid_get(tag_uuid, async_req=True)
+        >>> thread = api.get_tag_places_tags_tag_uuid_get(tag_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -880,9 +880,9 @@ class TagApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['tag_uuid'] = \
             tag_uuid
-        return self.get_tag_tags_tag_uuid_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_tag_places_tags_tag_uuid_get_endpoint.call_with_http_info(**kwargs)
 
-    def search_tags_tags_get(
+    def search_tags_places_tags_get(
         self,
         **kwargs
     ):
@@ -892,7 +892,7 @@ class TagApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_tags_tags_get(async_req=True)
+        >>> thread = api.search_tags_places_tags_get(async_req=True)
         >>> result = thread.get()
 
 
@@ -953,9 +953,9 @@ class TagApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.search_tags_tags_get_endpoint.call_with_http_info(**kwargs)
+        return self.search_tags_places_tags_get_endpoint.call_with_http_info(**kwargs)
 
-    def update_tag_tags_tag_uuid_put(
+    def update_tag_places_tags_tag_uuid_put(
         self,
         tag_uuid,
         tag_base,
@@ -967,7 +967,7 @@ class TagApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_tag_tags_tag_uuid_put(tag_uuid, tag_base, async_req=True)
+        >>> thread = api.update_tag_places_tags_tag_uuid_put(tag_uuid, tag_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1029,5 +1029,5 @@ class TagApi(object):
             tag_uuid
         kwargs['tag_base'] = \
             tag_base
-        return self.update_tag_tags_tag_uuid_put_endpoint.call_with_http_info(**kwargs)
+        return self.update_tag_places_tags_tag_uuid_put_endpoint.call_with_http_info(**kwargs)
 
