@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.65
+    eHelply SDK - 1.1.66
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.65
+    The version of the OpenAPI document: 1.1.66
 
                                      Apache License
                                Version 2.0, January 2004
@@ -213,11 +213,11 @@ import sys
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.products_validation_error import ProductsValidationError
+from ehelply_python_sdk.model.places_validation_error import PlacesValidationError
 
 
-class TestProductsValidationError(unittest.TestCase):
-    """ProductsValidationError unit test stubs"""
+class TestPlacesValidationError(unittest.TestCase):
+    """PlacesValidationError unit test stubs"""
 
     def setUp(self):
         pass
@@ -225,10 +225,10 @@ class TestProductsValidationError(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testProductsValidationError(self):
-        """Test ProductsValidationError"""
+    def testPlacesValidationError(self):
+        """Test PlacesValidationError"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ProductsValidationError()  # noqa: E501
+        # model = PlacesValidationError()  # noqa: E501
         pass
 
 

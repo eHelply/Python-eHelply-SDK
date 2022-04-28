@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.65
+    eHelply SDK - 1.1.66
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.65
+    The version of the OpenAPI document: 1.1.66
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,6 +222,13 @@ class TestDefaultApi(unittest.TestCase):
         self.api = DefaultApi()  # noqa: E501
 
     def tearDown(self):
+        pass
+
+    def test_appointmentssearch_appointment_entities(self):
+        """Test case for appointmentssearch_appointment_entities
+
+        Get Entities Appointments  # noqa: E501
+        """
         pass
 
     def test_attach_entity_to_appointment(self):

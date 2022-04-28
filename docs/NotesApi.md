@@ -23,7 +23,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
 from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -121,7 +121,7 @@ Delete Note
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -211,7 +211,7 @@ Get Note
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
 from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -305,7 +305,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
 from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com

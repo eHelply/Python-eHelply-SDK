@@ -1,10 +1,10 @@
-# MetaValidationError
+# PlacesValidationError
 
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**loc** | **[bool, date, datetime, dict, float, int, list, str, none_type]** |  | 
+**loc** | **[str]** |  | 
 **msg** | **str** |  | 
 **type** | **str** |  | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

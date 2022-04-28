@@ -21,8 +21,8 @@ Resets the given user's password to the given password when the proper code is p
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import auth_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

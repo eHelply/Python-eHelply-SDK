@@ -4,6 +4,7 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**appointmentssearch_appointment_entities**](DefaultApi.md#appointmentssearch_appointment_entities) | **GET** /appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
 [**attach_entity_to_appointment**](DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
 [**attach_product_to_catalog**](DefaultApi.md#attach_product_to_catalog) | **POST** /catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
 [**create_appointment**](DefaultApi.md#create_appointment) | **POST** /appointments | Create Appointment
@@ -32,6 +33,100 @@ Method | HTTP request | Description
 [**update_product**](DefaultApi.md#update_product) | **PUT** /products/{product_uuid} | Update Product
 [**update_review**](DefaultApi.md#update_review) | **PUT** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Update Review
 
+
+# **appointmentssearch_appointment_entities**
+> bool, date, datetime, dict, float, int, list, str, none_type appointmentssearch_appointment_entities(entity_uuid)
+
+Get Entities Appointments
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = default_api.DefaultApi(api_client)
+    entity_uuid = "entity_uuid_example" # str | 
+    start_date = "start_date_example" # str |  (optional)
+    end_date = "end_date_example" # str |  (optional)
+    include_cancelled = False # bool |  (optional) if omitted the server will use the default value of False
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Entities Appointments
+        api_response = api_instance.appointmentssearch_appointment_entities(entity_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->appointmentssearch_appointment_entities: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Entities Appointments
+        api_response = api_instance.appointmentssearch_appointment_entities(entity_uuid, start_date=start_date, end_date=end_date, include_cancelled=include_cancelled, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling DefaultApi->appointmentssearch_appointment_entities: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entity_uuid** | **str**|  |
+ **start_date** | **str**|  | [optional]
+ **end_date** | **str**|  | [optional]
+ **include_cancelled** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+**bool, date, datetime, dict, float, int, list, str, none_type**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **attach_entity_to_appointment**
 > bool, date, datetime, dict, float, int, list, str, none_type attach_entity_to_appointment(appointment_uuid, entity_uuid)
@@ -135,7 +230,7 @@ Attach Product To Catalog
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -329,7 +424,7 @@ Create Catalog
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.catalog_base import CatalogBase
 from ehelply_python_sdk.model.catalog_return import CatalogReturn
 from pprint import pprint
@@ -424,8 +519,8 @@ Create Product
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.product_return import ProductReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.product_base import ProductBase
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -522,7 +617,7 @@ Create Review
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.create_review import CreateReview
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -707,7 +802,7 @@ Delete Catalog
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -795,7 +890,7 @@ Delete Product
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -883,7 +978,7 @@ Delete Review
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1065,7 +1160,7 @@ Detach Product From Catalog
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1245,7 +1340,7 @@ Get Catalog
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.catalog_return import CatalogReturn
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -1336,8 +1431,8 @@ Get Product
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.product_return import ProductReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1429,7 +1524,7 @@ Get Review
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1721,8 +1816,8 @@ Search Catalog Products
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1820,8 +1915,8 @@ Search Catalogs
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1911,8 +2006,8 @@ Search Products
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2014,8 +2109,8 @@ Search Product Catalogs
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.page import Page
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2113,7 +2208,7 @@ Search Review
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2310,7 +2405,7 @@ Update Catalog
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.catalog_base import CatalogBase
 from ehelply_python_sdk.model.catalog_return import CatalogReturn
 from pprint import pprint
@@ -2407,8 +2502,8 @@ Update Product
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.product_return import ProductReturn
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.product_base import ProductBase
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -2507,8 +2602,8 @@ Update Review
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
-from ehelply_python_sdk.model.products_http_validation_error import ProductsHTTPValidationError
 from ehelply_python_sdk.model.update_review import UpdateReview
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

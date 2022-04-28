@@ -21,7 +21,7 @@ Get Logs
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import logging_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -107,7 +107,7 @@ Get Service Logs
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import logging_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -203,7 +203,7 @@ Get Subject Logs
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import logging_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.65
+    eHelply SDK - 1.1.66
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.65
+    The version of the OpenAPI document: 1.1.66
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,10 +222,10 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.place_base import PlaceBase
 from ehelply_python_sdk.model.place_response import PlaceResponse
+from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 
 
 class PlacesApi(object):

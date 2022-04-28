@@ -38,7 +38,7 @@ Add Member To Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -129,7 +129,7 @@ Archive Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -218,7 +218,7 @@ Create Project Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
 from pprint import pprint
@@ -316,8 +316,8 @@ Create a new Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -408,8 +408,8 @@ Create Usage Type
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.projects_usage_type_create import ProjectsUsageTypeCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -512,7 +512,7 @@ Delete Usage Type
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -601,8 +601,8 @@ Get All Project Usage
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -695,7 +695,7 @@ Get Member Projects
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_project_get import ProjectsProjectGet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -787,8 +787,8 @@ Get Project Keys
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -877,8 +877,8 @@ Get Project Members
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -971,7 +971,7 @@ Get a Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1060,8 +1060,8 @@ Get Specific Project Usage
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1155,7 +1155,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1223,7 +1223,7 @@ Remove Member From Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1314,7 +1314,7 @@ Remove Project Key
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1405,7 +1405,7 @@ Sandbox
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1485,8 +1485,8 @@ Search projects
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1579,8 +1579,8 @@ Get a UsageType  No auth because we may want to use this on pricing/docs pages
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1659,8 +1659,8 @@ Update Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_project_update import ProjectsProjectUpdate
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1754,9 +1754,9 @@ Update Usage Type
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

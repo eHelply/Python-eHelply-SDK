@@ -36,8 +36,8 @@ Validates a user signup with a given confirmation
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_confirmation import UserConfirmation
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -109,8 +109,8 @@ Creates a participant given the participant info (meta and user_id)
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.participant_create import ParticipantCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -204,7 +204,7 @@ Usually ran after login and will do the following: - If no user exists (AKA sign
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -274,7 +274,7 @@ Delete participants related to the given participant_id, returns True if success
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -364,7 +364,7 @@ Soft deletes the user with the provided user id, granted the deleter is the same
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -454,8 +454,8 @@ Gets a participant given their participant ID
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -545,7 +545,7 @@ Gets the user object given user id (uuid) or cognito id (cognito)
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_response import UserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -638,8 +638,8 @@ Login endpoint, returns tokens. EMAIL NEEDS TO BE VERIFIED (can be done through 
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_login_return import UserLoginReturn
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.user_login import UserLogin
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -712,8 +712,8 @@ Refreshes tokens given a refresh token.
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_token_return import UserTokenReturn
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -784,8 +784,8 @@ Sends the user an email with a confirmation code so they can reset their passwor
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_password_reset import UserPasswordReset
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -856,8 +856,8 @@ Resets the given user's password to the given password when the proper code is p
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_password_reset_confirmation import UserPasswordResetConfirmation
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -930,8 +930,8 @@ Search participants using a user uuid, returns pagination information and list o
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1023,9 +1023,9 @@ Signup to eHelply, creates a user and default participant behind the scenes. Doe
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_signup import UserSignup
 from ehelply_python_sdk.model.user_signup_return import UserSignupReturn
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1107,8 +1107,8 @@ Update participant data given
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.participant_user_return import ParticipantUserReturn
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.participant_update import ParticipantUpdate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -1205,8 +1205,8 @@ Update the given user and sync the cognito data
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user import User
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.user_response import UserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -1316,8 +1316,8 @@ Validates a certain field.
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
+from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
 from ehelply_python_sdk.model.user_validations import UserValidations
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
