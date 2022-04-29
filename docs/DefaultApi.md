@@ -4,31 +4,31 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**appointmentssearch_appointment_entities**](DefaultApi.md#appointmentssearch_appointment_entities) | **GET** /appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
-[**attach_entity_to_appointment**](DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
+[**appointmentssearch_appointment_entities**](DefaultApi.md#appointmentssearch_appointment_entities) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
+[**attach_entity_to_appointment**](DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
 [**attach_product_to_catalog**](DefaultApi.md#attach_product_to_catalog) | **POST** /catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
-[**create_appointment**](DefaultApi.md#create_appointment) | **POST** /appointments | Create Appointment
+[**create_appointment**](DefaultApi.md#create_appointment) | **POST** /appointments/appointments | Create Appointment
 [**create_catalog**](DefaultApi.md#create_catalog) | **POST** /catalogs | Create Catalog
 [**create_product**](DefaultApi.md#create_product) | **POST** /products | Create Product
 [**create_review**](DefaultApi.md#create_review) | **POST** /reviews/types/{entity_type}/entities/{entity_uuid} | Create Review
-[**delete_appointment**](DefaultApi.md#delete_appointment) | **DELETE** /appointments/{appointment_uuid} | Delete Appointment
+[**delete_appointment**](DefaultApi.md#delete_appointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Delete Appointment
 [**delete_catalog**](DefaultApi.md#delete_catalog) | **DELETE** /catalogs/{catalog_uuid} | Delete Catalog
 [**delete_product**](DefaultApi.md#delete_product) | **DELETE** /products/{product_uuid} | Delete Product
 [**delete_review**](DefaultApi.md#delete_review) | **DELETE** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Delete Review
-[**detach_entity_from_appointment**](DefaultApi.md#detach_entity_from_appointment) | **DELETE** /appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
+[**detach_entity_from_appointment**](DefaultApi.md#detach_entity_from_appointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
 [**detach_product_from_catalog**](DefaultApi.md#detach_product_from_catalog) | **DELETE** /catalogs/{catalog_uuid}/products/{product_uuid} | Detach Product From Catalog
-[**get_appointment**](DefaultApi.md#get_appointment) | **GET** /appointments/{appointment_uuid} | Get Appointment
+[**get_appointment**](DefaultApi.md#get_appointment) | **GET** /appointments/appointments/{appointment_uuid} | Get Appointment
 [**get_catalog**](DefaultApi.md#get_catalog) | **GET** /catalogs/{catalog_uuid} | Get Catalog
 [**get_product**](DefaultApi.md#get_product) | **GET** /products/{product_uuid} | Get Product
 [**get_review**](DefaultApi.md#get_review) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Get Review
-[**search_appointment**](DefaultApi.md#search_appointment) | **GET** /appointments | Search Appointment
-[**search_appointment_entities**](DefaultApi.md#search_appointment_entities) | **GET** /appointments/{appointment_uuid}/entities | Search Appointment Entities
+[**search_appointment**](DefaultApi.md#search_appointment) | **GET** /appointments/appointments | Search Appointment
+[**search_appointment_entities**](DefaultApi.md#search_appointment_entities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Search Appointment Entities
 [**search_catalog_products**](DefaultApi.md#search_catalog_products) | **GET** /catalogs/{catalog_uuid}/products | Search Catalog Products
 [**search_catalogs**](DefaultApi.md#search_catalogs) | **GET** /catalogs | Search Catalogs
 [**search_product**](DefaultApi.md#search_product) | **GET** /products | Search Products
 [**search_product_catalog**](DefaultApi.md#search_product_catalog) | **GET** /products/{product_uuid}/catalogs | Search Product Catalogs
 [**search_reviews**](DefaultApi.md#search_reviews) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid} | Search Review
-[**update_appointment**](DefaultApi.md#update_appointment) | **PUT** /appointments/{appointment_uuid} | Update Appointment
+[**update_appointment**](DefaultApi.md#update_appointment) | **PUT** /appointments/appointments/{appointment_uuid} | Update Appointment
 [**update_catalog**](DefaultApi.md#update_catalog) | **PUT** /catalogs/{catalog_uuid} | Update Catalog
 [**update_product**](DefaultApi.md#update_product) | **PUT** /products/{product_uuid} | Update Product
 [**update_review**](DefaultApi.md#update_review) | **PUT** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Update Review
@@ -129,7 +129,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **attach_entity_to_appointment**
-> bool, date, datetime, dict, float, int, list, str, none_type attach_entity_to_appointment(appointment_uuid, entity_uuid)
+> bool attach_entity_to_appointment(appointment_uuid, entity_uuid)
 
 Attach Entity To Appointment
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**bool**
 
 ### Authorization
 
@@ -703,7 +703,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_appointment**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_appointment(appointment_uuid)
+> bool delete_appointment(appointment_uuid)
 
 Delete Appointment
 
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**bool**
 
 ### Authorization
 
@@ -1059,7 +1059,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **detach_entity_from_appointment**
-> bool, date, datetime, dict, float, int, list, str, none_type detach_entity_from_appointment(appointment_uuid, entity_uuid)
+> bool detach_entity_from_appointment(appointment_uuid, entity_uuid)
 
 Detach Entity From Appointment
 
@@ -1126,7 +1126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**bool**
 
 ### Authorization
 

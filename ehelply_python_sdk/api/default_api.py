@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.68
+    eHelply SDK - 1.1.69
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.68
+    The version of the OpenAPI document: 1.1.69
 
                                      Apache License
                                Version 2.0, January 2004
@@ -249,7 +249,7 @@ class DefaultApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/appointments/entities/{entity_uuid}/appointments',
+                'endpoint_path': '/appointments/appointments/entities/{entity_uuid}/appointments',
                 'operation_id': 'appointmentssearch_appointment_entities',
                 'http_method': 'GET',
                 'servers': None,
@@ -341,9 +341,9 @@ class DefaultApi(object):
         )
         self.attach_entity_to_appointment_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (bool,),
                 'auth': [],
-                'endpoint_path': '/appointments/{appointment_uuid}/entities/{entity_uuid}',
+                'endpoint_path': '/appointments/appointments/{appointment_uuid}/entities/{entity_uuid}',
                 'operation_id': 'attach_entity_to_appointment',
                 'http_method': 'POST',
                 'servers': None,
@@ -513,7 +513,7 @@ class DefaultApi(object):
             settings={
                 'response_type': (AppointmentResponse,),
                 'auth': [],
-                'endpoint_path': '/appointments',
+                'endpoint_path': '/appointments/appointments',
                 'operation_id': 'create_appointment',
                 'http_method': 'POST',
                 'servers': None,
@@ -843,9 +843,9 @@ class DefaultApi(object):
         )
         self.delete_appointment_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (bool,),
                 'auth': [],
-                'endpoint_path': '/appointments/{appointment_uuid}',
+                'endpoint_path': '/appointments/appointments/{appointment_uuid}',
                 'operation_id': 'delete_appointment',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -1171,9 +1171,9 @@ class DefaultApi(object):
         )
         self.detach_entity_from_appointment_endpoint = _Endpoint(
             settings={
-                'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
+                'response_type': (bool,),
                 'auth': [],
-                'endpoint_path': '/appointments/{appointment_uuid}/entities/{entity_uuid}',
+                'endpoint_path': '/appointments/appointments/{appointment_uuid}/entities/{entity_uuid}',
                 'operation_id': 'detach_entity_from_appointment',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -1343,7 +1343,7 @@ class DefaultApi(object):
             settings={
                 'response_type': (AppointmentResponse,),
                 'auth': [],
-                'endpoint_path': '/appointments/{appointment_uuid}',
+                'endpoint_path': '/appointments/appointments/{appointment_uuid}',
                 'operation_id': 'get_appointment',
                 'http_method': 'GET',
                 'servers': None,
@@ -1686,7 +1686,7 @@ class DefaultApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/appointments',
+                'endpoint_path': '/appointments/appointments',
                 'operation_id': 'search_appointment',
                 'http_method': 'GET',
                 'servers': None,
@@ -1813,7 +1813,7 @@ class DefaultApi(object):
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/appointments/{appointment_uuid}/entities',
+                'endpoint_path': '/appointments/appointments/{appointment_uuid}/entities',
                 'operation_id': 'search_appointment_entities',
                 'http_method': 'GET',
                 'servers': None,
@@ -2445,7 +2445,7 @@ class DefaultApi(object):
             settings={
                 'response_type': (AppointmentResponse,),
                 'auth': [],
-                'endpoint_path': '/appointments/{appointment_uuid}',
+                'endpoint_path': '/appointments/appointments/{appointment_uuid}',
                 'operation_id': 'update_appointment',
                 'http_method': 'PUT',
                 'servers': None,
@@ -2918,7 +2918,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            bool
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3358,7 +3358,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            bool
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3652,7 +3652,7 @@ class DefaultApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            bool, date, datetime, dict, float, int, list, str, none_type
+            bool
                 If the method is called asynchronously, returns the request
                 thread.
         """
