@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.73
+    eHelply SDK - 1.1.74
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.73
+    The version of the OpenAPI document: 1.1.74
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,8 +224,8 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
 )
 from ehelply_python_sdk.model.company_base import CompanyBase
 from ehelply_python_sdk.model.company_response import CompanyResponse
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 
 
 class CompaniesApi(object):
@@ -239,12 +239,12 @@ class CompaniesApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_company_companies_post_endpoint = _Endpoint(
+        self.create_company_places_companies_post_endpoint = _Endpoint(
             settings={
                 'response_type': (CompanyResponse,),
                 'auth': [],
-                'endpoint_path': '/companies',
-                'operation_id': 'create_company_companies_post',
+                'endpoint_path': '/places/companies',
+                'operation_id': 'create_company_places_companies_post',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -319,12 +319,12 @@ class CompaniesApi(object):
             },
             api_client=api_client
         )
-        self.delete_place_companies_company_uuid_delete_endpoint = _Endpoint(
+        self.delete_place_places_companies_company_uuid_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/companies/{company_uuid}',
-                'operation_id': 'delete_place_companies_company_uuid_delete',
+                'endpoint_path': '/places/companies/{company_uuid}',
+                'operation_id': 'delete_place_places_companies_company_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -403,12 +403,12 @@ class CompaniesApi(object):
             },
             api_client=api_client
         )
-        self.get_company_companies_company_uuid_get_endpoint = _Endpoint(
+        self.get_company_places_companies_company_uuid_get_endpoint = _Endpoint(
             settings={
                 'response_type': (CompanyResponse,),
                 'auth': [],
-                'endpoint_path': '/companies/{company_uuid}',
-                'operation_id': 'get_company_companies_company_uuid_get',
+                'endpoint_path': '/places/companies/{company_uuid}',
+                'operation_id': 'get_company_places_companies_company_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -522,12 +522,12 @@ class CompaniesApi(object):
             },
             api_client=api_client
         )
-        self.search_companies_companies_get_endpoint = _Endpoint(
+        self.search_companies_places_companies_get_endpoint = _Endpoint(
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/companies',
-                'operation_id': 'search_companies_companies_get',
+                'endpoint_path': '/places/companies',
+                'operation_id': 'search_companies_places_companies_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -679,12 +679,12 @@ class CompaniesApi(object):
             },
             api_client=api_client
         )
-        self.update_company_companies_company_uuid_put_endpoint = _Endpoint(
+        self.update_company_places_companies_company_uuid_put_endpoint = _Endpoint(
             settings={
                 'response_type': (CompanyResponse,),
                 'auth': [],
-                'endpoint_path': '/companies/{company_uuid}',
-                'operation_id': 'update_company_companies_company_uuid_put',
+                'endpoint_path': '/places/companies/{company_uuid}',
+                'operation_id': 'update_company_places_companies_company_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -766,7 +766,7 @@ class CompaniesApi(object):
             api_client=api_client
         )
 
-    def create_company_companies_post(
+    def create_company_places_companies_post(
         self,
         company_base,
         **kwargs
@@ -777,7 +777,7 @@ class CompaniesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_company_companies_post(company_base, async_req=True)
+        >>> thread = api.create_company_places_companies_post(company_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -836,9 +836,9 @@ class CompaniesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['company_base'] = \
             company_base
-        return self.create_company_companies_post_endpoint.call_with_http_info(**kwargs)
+        return self.create_company_places_companies_post_endpoint.call_with_http_info(**kwargs)
 
-    def delete_place_companies_company_uuid_delete(
+    def delete_place_places_companies_company_uuid_delete(
         self,
         company_uuid,
         **kwargs
@@ -849,7 +849,7 @@ class CompaniesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_place_companies_company_uuid_delete(company_uuid, async_req=True)
+        >>> thread = api.delete_place_places_companies_company_uuid_delete(company_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -909,9 +909,9 @@ class CompaniesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['company_uuid'] = \
             company_uuid
-        return self.delete_place_companies_company_uuid_delete_endpoint.call_with_http_info(**kwargs)
+        return self.delete_place_places_companies_company_uuid_delete_endpoint.call_with_http_info(**kwargs)
 
-    def get_company_companies_company_uuid_get(
+    def get_company_places_companies_company_uuid_get(
         self,
         company_uuid,
         **kwargs
@@ -922,7 +922,7 @@ class CompaniesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_company_companies_company_uuid_get(company_uuid, async_req=True)
+        >>> thread = api.get_company_places_companies_company_uuid_get(company_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -989,9 +989,9 @@ class CompaniesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['company_uuid'] = \
             company_uuid
-        return self.get_company_companies_company_uuid_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_company_places_companies_company_uuid_get_endpoint.call_with_http_info(**kwargs)
 
-    def search_companies_companies_get(
+    def search_companies_places_companies_get(
         self,
         **kwargs
     ):
@@ -1001,7 +1001,7 @@ class CompaniesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_companies_companies_get(async_req=True)
+        >>> thread = api.search_companies_places_companies_get(async_req=True)
         >>> result = thread.get()
 
 
@@ -1073,9 +1073,9 @@ class CompaniesApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.search_companies_companies_get_endpoint.call_with_http_info(**kwargs)
+        return self.search_companies_places_companies_get_endpoint.call_with_http_info(**kwargs)
 
-    def update_company_companies_company_uuid_put(
+    def update_company_places_companies_company_uuid_put(
         self,
         company_uuid,
         company_base,
@@ -1087,7 +1087,7 @@ class CompaniesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_company_companies_company_uuid_put(company_uuid, company_base, async_req=True)
+        >>> thread = api.update_company_places_companies_company_uuid_put(company_uuid, company_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1149,5 +1149,5 @@ class CompaniesApi(object):
             company_uuid
         kwargs['company_base'] = \
             company_base
-        return self.update_company_companies_company_uuid_put_endpoint.call_with_http_info(**kwargs)
+        return self.update_company_places_companies_company_uuid_put_endpoint.call_with_http_info(**kwargs)
 

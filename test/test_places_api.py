@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.73
+    eHelply SDK - 1.1.74
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.73
+    The version of the OpenAPI document: 1.1.74
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,64 +224,64 @@ class TestPlacesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_place_places_post(self):
-        """Test case for create_place_places_post
+    def test_create_place_places_places_post(self):
+        """Test case for create_place_places_places_post
 
         Create Place  # noqa: E501
         """
         pass
 
-    def test_delete_place_places_place_uuid_delete(self):
-        """Test case for delete_place_places_place_uuid_delete
+    def test_delete_place_places_places_place_uuid_delete(self):
+        """Test case for delete_place_places_places_place_uuid_delete
 
         Delete Place  # noqa: E501
         """
         pass
 
-    def test_forward_geocoding_places_forward_geocoding_get(self):
-        """Test case for forward_geocoding_places_forward_geocoding_get
+    def test_forward_geocoding_places_places_forward_geocoding_get(self):
+        """Test case for forward_geocoding_places_places_forward_geocoding_get
 
         Forward Geocoding  # noqa: E501
         """
         pass
 
-    def test_get_place_places_place_uuid_get(self):
-        """Test case for get_place_places_place_uuid_get
+    def test_get_place_places_places_place_uuid_get(self):
+        """Test case for get_place_places_places_place_uuid_get
 
         Get Place  # noqa: E501
         """
         pass
 
-    def test_reverse_geocoding_places_reverse_geocoding_get(self):
-        """Test case for reverse_geocoding_places_reverse_geocoding_get
+    def test_reverse_geocoding_places_places_reverse_geocoding_get(self):
+        """Test case for reverse_geocoding_places_places_reverse_geocoding_get
 
         Reverse Geocoding  # noqa: E501
         """
         pass
 
-    def test_search_places_by_area_places_search_location_get(self):
-        """Test case for search_places_by_area_places_search_location_get
+    def test_search_places_by_area_places_places_search_location_get(self):
+        """Test case for search_places_by_area_places_places_search_location_get
 
         Search Places By Area  # noqa: E501
         """
         pass
 
-    def test_search_places_by_search_string_places_search_get(self):
-        """Test case for search_places_by_search_string_places_search_get
+    def test_search_places_by_search_string_places_places_search_get(self):
+        """Test case for search_places_by_search_string_places_places_search_get
 
         Search Places By Search String  # noqa: E501
         """
         pass
 
-    def test_search_places_places_get(self):
-        """Test case for search_places_places_get
+    def test_search_places_places_places_get(self):
+        """Test case for search_places_places_places_get
 
         Search Places  # noqa: E501
         """
         pass
 
-    def test_update_place_places_place_uuid_put(self):
-        """Test case for update_place_places_place_uuid_put
+    def test_update_place_places_places_place_uuid_put(self):
+        """Test case for update_place_places_places_place_uuid_put
 
         Update Place  # noqa: E501
         """

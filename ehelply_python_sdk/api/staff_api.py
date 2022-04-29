@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.73
+    eHelply SDK - 1.1.74
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.73
+    The version of the OpenAPI document: 1.1.74
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,8 +222,8 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 from ehelply_python_sdk.model.staff_create import StaffCreate
 from ehelply_python_sdk.model.staff_db import StaffDb
 from ehelply_python_sdk.model.staff_response import StaffResponse
@@ -240,12 +240,12 @@ class StaffApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_staff_staff_post_endpoint = _Endpoint(
+        self.create_staff_places_staff_post_endpoint = _Endpoint(
             settings={
                 'response_type': (StaffDb,),
                 'auth': [],
-                'endpoint_path': '/staff',
-                'operation_id': 'create_staff_staff_post',
+                'endpoint_path': '/places/staff',
+                'operation_id': 'create_staff_places_staff_post',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -320,12 +320,12 @@ class StaffApi(object):
             },
             api_client=api_client
         )
-        self.delete_staff_staff_staff_uuid_delete_endpoint = _Endpoint(
+        self.delete_staff_places_staff_staff_uuid_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/staff/{staff_uuid}',
-                'operation_id': 'delete_staff_staff_staff_uuid_delete',
+                'endpoint_path': '/places/staff/{staff_uuid}',
+                'operation_id': 'delete_staff_places_staff_staff_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -404,12 +404,12 @@ class StaffApi(object):
             },
             api_client=api_client
         )
-        self.get_staff_staff_staff_uuid_get_endpoint = _Endpoint(
+        self.get_staff_places_staff_staff_uuid_get_endpoint = _Endpoint(
             settings={
                 'response_type': (StaffResponse,),
                 'auth': [],
-                'endpoint_path': '/staff/{staff_uuid}',
-                'operation_id': 'get_staff_staff_staff_uuid_get',
+                'endpoint_path': '/places/staff/{staff_uuid}',
+                'operation_id': 'get_staff_places_staff_staff_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -508,12 +508,12 @@ class StaffApi(object):
             },
             api_client=api_client
         )
-        self.search_staff_staff_get_endpoint = _Endpoint(
+        self.search_staff_places_staff_get_endpoint = _Endpoint(
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/staff',
-                'operation_id': 'search_staff_staff_get',
+                'endpoint_path': '/places/staff',
+                'operation_id': 'search_staff_places_staff_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -650,12 +650,12 @@ class StaffApi(object):
             },
             api_client=api_client
         )
-        self.update_staff_staff_staff_uuid_put_endpoint = _Endpoint(
+        self.update_staff_places_staff_staff_uuid_put_endpoint = _Endpoint(
             settings={
                 'response_type': (StaffResponse,),
                 'auth': [],
-                'endpoint_path': '/staff/{staff_uuid}',
-                'operation_id': 'update_staff_staff_staff_uuid_put',
+                'endpoint_path': '/places/staff/{staff_uuid}',
+                'operation_id': 'update_staff_places_staff_staff_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -737,7 +737,7 @@ class StaffApi(object):
             api_client=api_client
         )
 
-    def create_staff_staff_post(
+    def create_staff_places_staff_post(
         self,
         staff_create,
         **kwargs
@@ -748,7 +748,7 @@ class StaffApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_staff_staff_post(staff_create, async_req=True)
+        >>> thread = api.create_staff_places_staff_post(staff_create, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -807,9 +807,9 @@ class StaffApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['staff_create'] = \
             staff_create
-        return self.create_staff_staff_post_endpoint.call_with_http_info(**kwargs)
+        return self.create_staff_places_staff_post_endpoint.call_with_http_info(**kwargs)
 
-    def delete_staff_staff_staff_uuid_delete(
+    def delete_staff_places_staff_staff_uuid_delete(
         self,
         staff_uuid,
         **kwargs
@@ -820,7 +820,7 @@ class StaffApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_staff_staff_staff_uuid_delete(staff_uuid, async_req=True)
+        >>> thread = api.delete_staff_places_staff_staff_uuid_delete(staff_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -880,9 +880,9 @@ class StaffApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['staff_uuid'] = \
             staff_uuid
-        return self.delete_staff_staff_staff_uuid_delete_endpoint.call_with_http_info(**kwargs)
+        return self.delete_staff_places_staff_staff_uuid_delete_endpoint.call_with_http_info(**kwargs)
 
-    def get_staff_staff_staff_uuid_get(
+    def get_staff_places_staff_staff_uuid_get(
         self,
         staff_uuid,
         **kwargs
@@ -893,7 +893,7 @@ class StaffApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_staff_staff_staff_uuid_get(staff_uuid, async_req=True)
+        >>> thread = api.get_staff_places_staff_staff_uuid_get(staff_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -957,9 +957,9 @@ class StaffApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['staff_uuid'] = \
             staff_uuid
-        return self.get_staff_staff_staff_uuid_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_staff_places_staff_staff_uuid_get_endpoint.call_with_http_info(**kwargs)
 
-    def search_staff_staff_get(
+    def search_staff_places_staff_get(
         self,
         **kwargs
     ):
@@ -969,7 +969,7 @@ class StaffApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_staff_staff_get(async_req=True)
+        >>> thread = api.search_staff_places_staff_get(async_req=True)
         >>> result = thread.get()
 
 
@@ -1038,9 +1038,9 @@ class StaffApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.search_staff_staff_get_endpoint.call_with_http_info(**kwargs)
+        return self.search_staff_places_staff_get_endpoint.call_with_http_info(**kwargs)
 
-    def update_staff_staff_staff_uuid_put(
+    def update_staff_places_staff_staff_uuid_put(
         self,
         staff_uuid,
         staff_create,
@@ -1052,7 +1052,7 @@ class StaffApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_staff_staff_staff_uuid_put(staff_uuid, staff_create, async_req=True)
+        >>> thread = api.update_staff_places_staff_staff_uuid_put(staff_uuid, staff_create, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1114,5 +1114,5 @@ class StaffApi(object):
             staff_uuid
         kwargs['staff_create'] = \
             staff_create
-        return self.update_staff_staff_staff_uuid_put_endpoint.call_with_http_info(**kwargs)
+        return self.update_staff_places_staff_staff_uuid_put_endpoint.call_with_http_info(**kwargs)
 

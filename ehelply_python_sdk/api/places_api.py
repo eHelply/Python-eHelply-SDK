@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.73
+    eHelply SDK - 1.1.74
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.73
+    The version of the OpenAPI document: 1.1.74
 
                                      Apache License
                                Version 2.0, January 2004
@@ -222,10 +222,10 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.place_base import PlaceBase
 from ehelply_python_sdk.model.place_response import PlaceResponse
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 
 
 class PlacesApi(object):
@@ -239,12 +239,12 @@ class PlacesApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_place_places_post_endpoint = _Endpoint(
+        self.create_place_places_places_post_endpoint = _Endpoint(
             settings={
                 'response_type': (PlaceResponse,),
                 'auth': [],
-                'endpoint_path': '/places',
-                'operation_id': 'create_place_places_post',
+                'endpoint_path': '/places/places',
+                'operation_id': 'create_place_places_places_post',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -319,12 +319,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.delete_place_places_place_uuid_delete_endpoint = _Endpoint(
+        self.delete_place_places_places_place_uuid_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/{place_uuid}',
-                'operation_id': 'delete_place_places_place_uuid_delete',
+                'endpoint_path': '/places/places/{place_uuid}',
+                'operation_id': 'delete_place_places_places_place_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -403,12 +403,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.forward_geocoding_places_forward_geocoding_get_endpoint = _Endpoint(
+        self.forward_geocoding_places_places_forward_geocoding_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/forward_geocoding',
-                'operation_id': 'forward_geocoding_places_forward_geocoding_get',
+                'endpoint_path': '/places/places/forward_geocoding',
+                'operation_id': 'forward_geocoding_places_places_forward_geocoding_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -482,12 +482,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.get_place_places_place_uuid_get_endpoint = _Endpoint(
+        self.get_place_places_places_place_uuid_get_endpoint = _Endpoint(
             settings={
                 'response_type': (PlaceResponse,),
                 'auth': [],
-                'endpoint_path': '/places/{place_uuid}',
-                'operation_id': 'get_place_places_place_uuid_get',
+                'endpoint_path': '/places/places/{place_uuid}',
+                'operation_id': 'get_place_places_places_place_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -606,12 +606,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.reverse_geocoding_places_reverse_geocoding_get_endpoint = _Endpoint(
+        self.reverse_geocoding_places_places_reverse_geocoding_get_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/places/reverse_geocoding',
-                'operation_id': 'reverse_geocoding_places_reverse_geocoding_get',
+                'endpoint_path': '/places/places/reverse_geocoding',
+                'operation_id': 'reverse_geocoding_places_places_reverse_geocoding_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -691,12 +691,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.search_places_by_area_places_search_location_get_endpoint = _Endpoint(
+        self.search_places_by_area_places_places_search_location_get_endpoint = _Endpoint(
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/search/location',
-                'operation_id': 'search_places_by_area_places_search_location_get',
+                'endpoint_path': '/places/places/search/location',
+                'operation_id': 'search_places_by_area_places_places_search_location_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -733,12 +733,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.search_places_by_search_string_places_search_get_endpoint = _Endpoint(
+        self.search_places_by_search_string_places_places_search_get_endpoint = _Endpoint(
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places/search',
-                'operation_id': 'search_places_by_search_string_places_search_get',
+                'endpoint_path': '/places/places/search',
+                'operation_id': 'search_places_by_search_string_places_places_search_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -830,12 +830,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.search_places_places_get_endpoint = _Endpoint(
+        self.search_places_places_places_get_endpoint = _Endpoint(
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/places',
-                'operation_id': 'search_places_places_get',
+                'endpoint_path': '/places/places',
+                'operation_id': 'search_places_places_places_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1032,12 +1032,12 @@ class PlacesApi(object):
             },
             api_client=api_client
         )
-        self.update_place_places_place_uuid_put_endpoint = _Endpoint(
+        self.update_place_places_places_place_uuid_put_endpoint = _Endpoint(
             settings={
                 'response_type': (PlaceResponse,),
                 'auth': [],
-                'endpoint_path': '/places/{place_uuid}',
-                'operation_id': 'update_place_places_place_uuid_put',
+                'endpoint_path': '/places/places/{place_uuid}',
+                'operation_id': 'update_place_places_places_place_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -1119,7 +1119,7 @@ class PlacesApi(object):
             api_client=api_client
         )
 
-    def create_place_places_post(
+    def create_place_places_places_post(
         self,
         place_base,
         **kwargs
@@ -1130,7 +1130,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_place_places_post(place_base, async_req=True)
+        >>> thread = api.create_place_places_places_post(place_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1189,9 +1189,9 @@ class PlacesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['place_base'] = \
             place_base
-        return self.create_place_places_post_endpoint.call_with_http_info(**kwargs)
+        return self.create_place_places_places_post_endpoint.call_with_http_info(**kwargs)
 
-    def delete_place_places_place_uuid_delete(
+    def delete_place_places_places_place_uuid_delete(
         self,
         place_uuid,
         **kwargs
@@ -1202,7 +1202,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_place_places_place_uuid_delete(place_uuid, async_req=True)
+        >>> thread = api.delete_place_places_places_place_uuid_delete(place_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1262,9 +1262,9 @@ class PlacesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['place_uuid'] = \
             place_uuid
-        return self.delete_place_places_place_uuid_delete_endpoint.call_with_http_info(**kwargs)
+        return self.delete_place_places_places_place_uuid_delete_endpoint.call_with_http_info(**kwargs)
 
-    def forward_geocoding_places_forward_geocoding_get(
+    def forward_geocoding_places_places_forward_geocoding_get(
         self,
         searching_place,
         **kwargs
@@ -1274,7 +1274,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.forward_geocoding_places_forward_geocoding_get(searching_place, async_req=True)
+        >>> thread = api.forward_geocoding_places_places_forward_geocoding_get(searching_place, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1333,9 +1333,9 @@ class PlacesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['searching_place'] = \
             searching_place
-        return self.forward_geocoding_places_forward_geocoding_get_endpoint.call_with_http_info(**kwargs)
+        return self.forward_geocoding_places_places_forward_geocoding_get_endpoint.call_with_http_info(**kwargs)
 
-    def get_place_places_place_uuid_get(
+    def get_place_places_places_place_uuid_get(
         self,
         place_uuid,
         **kwargs
@@ -1346,7 +1346,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_place_places_place_uuid_get(place_uuid, async_req=True)
+        >>> thread = api.get_place_places_places_place_uuid_get(place_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1414,9 +1414,9 @@ class PlacesApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['place_uuid'] = \
             place_uuid
-        return self.get_place_places_place_uuid_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_place_places_places_place_uuid_get_endpoint.call_with_http_info(**kwargs)
 
-    def reverse_geocoding_places_reverse_geocoding_get(
+    def reverse_geocoding_places_places_reverse_geocoding_get(
         self,
         long,
         lat,
@@ -1427,7 +1427,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.reverse_geocoding_places_reverse_geocoding_get(long, lat, async_req=True)
+        >>> thread = api.reverse_geocoding_places_places_reverse_geocoding_get(long, lat, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1489,9 +1489,9 @@ class PlacesApi(object):
             long
         kwargs['lat'] = \
             lat
-        return self.reverse_geocoding_places_reverse_geocoding_get_endpoint.call_with_http_info(**kwargs)
+        return self.reverse_geocoding_places_places_reverse_geocoding_get_endpoint.call_with_http_info(**kwargs)
 
-    def search_places_by_area_places_search_location_get(
+    def search_places_by_area_places_places_search_location_get(
         self,
         **kwargs
     ):
@@ -1500,7 +1500,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_places_by_area_places_search_location_get(async_req=True)
+        >>> thread = api.search_places_by_area_places_places_search_location_get(async_req=True)
         >>> result = thread.get()
 
 
@@ -1549,9 +1549,9 @@ class PlacesApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.search_places_by_area_places_search_location_get_endpoint.call_with_http_info(**kwargs)
+        return self.search_places_by_area_places_places_search_location_get_endpoint.call_with_http_info(**kwargs)
 
-    def search_places_by_search_string_places_search_get(
+    def search_places_by_search_string_places_places_search_get(
         self,
         **kwargs
     ):
@@ -1561,7 +1561,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_places_by_search_string_places_search_get(async_req=True)
+        >>> thread = api.search_places_by_search_string_places_places_search_get(async_req=True)
         >>> result = thread.get()
 
 
@@ -1621,9 +1621,9 @@ class PlacesApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.search_places_by_search_string_places_search_get_endpoint.call_with_http_info(**kwargs)
+        return self.search_places_by_search_string_places_places_search_get_endpoint.call_with_http_info(**kwargs)
 
-    def search_places_places_get(
+    def search_places_places_places_get(
         self,
         **kwargs
     ):
@@ -1633,7 +1633,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_places_places_get(async_req=True)
+        >>> thread = api.search_places_places_places_get(async_req=True)
         >>> result = thread.get()
 
 
@@ -1714,9 +1714,9 @@ class PlacesApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.search_places_places_get_endpoint.call_with_http_info(**kwargs)
+        return self.search_places_places_places_get_endpoint.call_with_http_info(**kwargs)
 
-    def update_place_places_place_uuid_put(
+    def update_place_places_places_place_uuid_put(
         self,
         place_uuid,
         place_base,
@@ -1728,7 +1728,7 @@ class PlacesApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_place_places_place_uuid_put(place_uuid, place_base, async_req=True)
+        >>> thread = api.update_place_places_places_place_uuid_put(place_uuid, place_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1790,5 +1790,5 @@ class PlacesApi(object):
             place_uuid
         kwargs['place_base'] = \
             place_base
-        return self.update_place_places_place_uuid_put_endpoint.call_with_http_info(**kwargs)
+        return self.update_place_places_places_place_uuid_put_endpoint.call_with_http_info(**kwargs)
 

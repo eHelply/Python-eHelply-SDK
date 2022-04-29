@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.73
+    eHelply SDK - 1.1.74
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.73
+    The version of the OpenAPI document: 1.1.74
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,36 +224,36 @@ class TestStaffApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_staff_staff_post(self):
-        """Test case for create_staff_staff_post
+    def test_create_staff_places_staff_post(self):
+        """Test case for create_staff_places_staff_post
 
         Create Staff  # noqa: E501
         """
         pass
 
-    def test_delete_staff_staff_staff_uuid_delete(self):
-        """Test case for delete_staff_staff_staff_uuid_delete
+    def test_delete_staff_places_staff_staff_uuid_delete(self):
+        """Test case for delete_staff_places_staff_staff_uuid_delete
 
         Delete Staff  # noqa: E501
         """
         pass
 
-    def test_get_staff_staff_staff_uuid_get(self):
-        """Test case for get_staff_staff_staff_uuid_get
+    def test_get_staff_places_staff_staff_uuid_get(self):
+        """Test case for get_staff_places_staff_staff_uuid_get
 
         Get Staff  # noqa: E501
         """
         pass
 
-    def test_search_staff_staff_get(self):
-        """Test case for search_staff_staff_get
+    def test_search_staff_places_staff_get(self):
+        """Test case for search_staff_places_staff_get
 
         Search Staff  # noqa: E501
         """
         pass
 
-    def test_update_staff_staff_staff_uuid_put(self):
-        """Test case for update_staff_staff_staff_uuid_put
+    def test_update_staff_places_staff_staff_uuid_put(self):
+        """Test case for update_staff_places_staff_staff_uuid_put
 
         Update Staff  # noqa: E501
         """

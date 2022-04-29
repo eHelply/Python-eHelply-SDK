@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.73
+    eHelply SDK - 1.1.74
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.73
+    The version of the OpenAPI document: 1.1.74
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,8 +224,8 @@ from ehelply_python_sdk.model_utils import (  # noqa: F401
 )
 from ehelply_python_sdk.model.category_base import CategoryBase
 from ehelply_python_sdk.model.category_db import CategoryDb
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
 
 
 class CategoryApi(object):
@@ -239,12 +239,12 @@ class CategoryApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_category_categories_post_endpoint = _Endpoint(
+        self.create_category_places_categories_post_endpoint = _Endpoint(
             settings={
                 'response_type': (CategoryDb,),
                 'auth': [],
-                'endpoint_path': '/categories',
-                'operation_id': 'create_category_categories_post',
+                'endpoint_path': '/places/categories',
+                'operation_id': 'create_category_places_categories_post',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -319,12 +319,12 @@ class CategoryApi(object):
             },
             api_client=api_client
         )
-        self.delete_category_categories_category_uuid_delete_endpoint = _Endpoint(
+        self.delete_category_places_categories_category_uuid_delete_endpoint = _Endpoint(
             settings={
                 'response_type': (bool, date, datetime, dict, float, int, list, str, none_type,),
                 'auth': [],
-                'endpoint_path': '/categories/{category_uuid}',
-                'operation_id': 'delete_category_categories_category_uuid_delete',
+                'endpoint_path': '/places/categories/{category_uuid}',
+                'operation_id': 'delete_category_places_categories_category_uuid_delete',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -398,12 +398,12 @@ class CategoryApi(object):
             },
             api_client=api_client
         )
-        self.get_category_categories_category_uuid_get_endpoint = _Endpoint(
+        self.get_category_places_categories_category_uuid_get_endpoint = _Endpoint(
             settings={
                 'response_type': (CategoryBase,),
                 'auth': [],
-                'endpoint_path': '/categories/{category_uuid}',
-                'operation_id': 'get_category_categories_category_uuid_get',
+                'endpoint_path': '/places/categories/{category_uuid}',
+                'operation_id': 'get_category_places_categories_category_uuid_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -482,12 +482,12 @@ class CategoryApi(object):
             },
             api_client=api_client
         )
-        self.search_categories_categories_get_endpoint = _Endpoint(
+        self.search_categories_places_categories_get_endpoint = _Endpoint(
             settings={
                 'response_type': (Page,),
                 'auth': [],
-                'endpoint_path': '/categories',
-                'operation_id': 'search_categories_categories_get',
+                'endpoint_path': '/places/categories',
+                'operation_id': 'search_categories_places_categories_get',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -589,12 +589,12 @@ class CategoryApi(object):
             },
             api_client=api_client
         )
-        self.update_category_categories_category_uuid_put_endpoint = _Endpoint(
+        self.update_category_places_categories_category_uuid_put_endpoint = _Endpoint(
             settings={
                 'response_type': (CategoryBase,),
                 'auth': [],
-                'endpoint_path': '/categories/{category_uuid}',
-                'operation_id': 'update_category_categories_category_uuid_put',
+                'endpoint_path': '/places/categories/{category_uuid}',
+                'operation_id': 'update_category_places_categories_category_uuid_put',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -676,7 +676,7 @@ class CategoryApi(object):
             api_client=api_client
         )
 
-    def create_category_categories_post(
+    def create_category_places_categories_post(
         self,
         category_base,
         **kwargs
@@ -687,7 +687,7 @@ class CategoryApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_category_categories_post(category_base, async_req=True)
+        >>> thread = api.create_category_places_categories_post(category_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -746,9 +746,9 @@ class CategoryApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['category_base'] = \
             category_base
-        return self.create_category_categories_post_endpoint.call_with_http_info(**kwargs)
+        return self.create_category_places_categories_post_endpoint.call_with_http_info(**kwargs)
 
-    def delete_category_categories_category_uuid_delete(
+    def delete_category_places_categories_category_uuid_delete(
         self,
         category_uuid,
         **kwargs
@@ -759,7 +759,7 @@ class CategoryApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_category_categories_category_uuid_delete(category_uuid, async_req=True)
+        >>> thread = api.delete_category_places_categories_category_uuid_delete(category_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -818,9 +818,9 @@ class CategoryApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['category_uuid'] = \
             category_uuid
-        return self.delete_category_categories_category_uuid_delete_endpoint.call_with_http_info(**kwargs)
+        return self.delete_category_places_categories_category_uuid_delete_endpoint.call_with_http_info(**kwargs)
 
-    def get_category_categories_category_uuid_get(
+    def get_category_places_categories_category_uuid_get(
         self,
         category_uuid,
         **kwargs
@@ -831,7 +831,7 @@ class CategoryApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_category_categories_category_uuid_get(category_uuid, async_req=True)
+        >>> thread = api.get_category_places_categories_category_uuid_get(category_uuid, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -891,9 +891,9 @@ class CategoryApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['category_uuid'] = \
             category_uuid
-        return self.get_category_categories_category_uuid_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_category_places_categories_category_uuid_get_endpoint.call_with_http_info(**kwargs)
 
-    def search_categories_categories_get(
+    def search_categories_places_categories_get(
         self,
         **kwargs
     ):
@@ -903,7 +903,7 @@ class CategoryApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_categories_categories_get(async_req=True)
+        >>> thread = api.search_categories_places_categories_get(async_req=True)
         >>> result = thread.get()
 
 
@@ -965,9 +965,9 @@ class CategoryApi(object):
             '_check_return_type', True
         )
         kwargs['_host_index'] = kwargs.get('_host_index')
-        return self.search_categories_categories_get_endpoint.call_with_http_info(**kwargs)
+        return self.search_categories_places_categories_get_endpoint.call_with_http_info(**kwargs)
 
-    def update_category_categories_category_uuid_put(
+    def update_category_places_categories_category_uuid_put(
         self,
         category_uuid,
         category_base,
@@ -979,7 +979,7 @@ class CategoryApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_category_categories_category_uuid_put(category_uuid, category_base, async_req=True)
+        >>> thread = api.update_category_places_categories_category_uuid_put(category_uuid, category_base, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1041,5 +1041,5 @@ class CategoryApi(object):
             category_uuid
         kwargs['category_base'] = \
             category_base
-        return self.update_category_categories_category_uuid_put_endpoint.call_with_http_info(**kwargs)
+        return self.update_category_places_categories_category_uuid_put_endpoint.call_with_http_info(**kwargs)
 

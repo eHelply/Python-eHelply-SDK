@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.73
+    eHelply SDK - 1.1.74
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.73
+    The version of the OpenAPI document: 1.1.74
 
                                      Apache License
                                Version 2.0, January 2004
@@ -224,36 +224,36 @@ class TestTagApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_tag_tags_post(self):
-        """Test case for create_tag_tags_post
+    def test_create_tag_places_tags_post(self):
+        """Test case for create_tag_places_tags_post
 
         Create Tag  # noqa: E501
         """
         pass
 
-    def test_delete_tag_tags_tag_uuid_delete(self):
-        """Test case for delete_tag_tags_tag_uuid_delete
+    def test_delete_tag_places_tags_tag_uuid_delete(self):
+        """Test case for delete_tag_places_tags_tag_uuid_delete
 
         Delete Tag  # noqa: E501
         """
         pass
 
-    def test_get_tag_tags_tag_uuid_get(self):
-        """Test case for get_tag_tags_tag_uuid_get
+    def test_get_tag_places_tags_tag_uuid_get(self):
+        """Test case for get_tag_places_tags_tag_uuid_get
 
         Get Tag  # noqa: E501
         """
         pass
 
-    def test_search_tags_tags_get(self):
-        """Test case for search_tags_tags_get
+    def test_search_tags_places_tags_get(self):
+        """Test case for search_tags_places_tags_get
 
         Search Tags  # noqa: E501
         """
         pass
 
-    def test_update_tag_tags_tag_uuid_put(self):
-        """Test case for update_tag_tags_tag_uuid_put
+    def test_update_tag_places_tags_tag_uuid_put(self):
+        """Test case for update_tag_places_tags_tag_uuid_put
 
         Update Tag  # noqa: E501
         """

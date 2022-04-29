@@ -4,15 +4,15 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_company_companies_post**](CompaniesApi.md#create_company_companies_post) | **POST** /companies | Create Company
-[**delete_place_companies_company_uuid_delete**](CompaniesApi.md#delete_place_companies_company_uuid_delete) | **DELETE** /companies/{company_uuid} | Delete Place
-[**get_company_companies_company_uuid_get**](CompaniesApi.md#get_company_companies_company_uuid_get) | **GET** /companies/{company_uuid} | Get Company
-[**search_companies_companies_get**](CompaniesApi.md#search_companies_companies_get) | **GET** /companies | Search Companies
-[**update_company_companies_company_uuid_put**](CompaniesApi.md#update_company_companies_company_uuid_put) | **PUT** /companies/{company_uuid} | Update Company
+[**create_company_places_companies_post**](CompaniesApi.md#create_company_places_companies_post) | **POST** /places/companies | Create Company
+[**delete_place_places_companies_company_uuid_delete**](CompaniesApi.md#delete_place_places_companies_company_uuid_delete) | **DELETE** /places/companies/{company_uuid} | Delete Place
+[**get_company_places_companies_company_uuid_get**](CompaniesApi.md#get_company_places_companies_company_uuid_get) | **GET** /places/companies/{company_uuid} | Get Company
+[**search_companies_places_companies_get**](CompaniesApi.md#search_companies_places_companies_get) | **GET** /places/companies | Search Companies
+[**update_company_places_companies_company_uuid_put**](CompaniesApi.md#update_company_places_companies_company_uuid_put) | **PUT** /places/companies/{company_uuid} | Update Company
 
 
-# **create_company_companies_post**
-> CompanyResponse create_company_companies_post(company_base)
+# **create_company_places_companies_post**
+> CompanyResponse create_company_places_companies_post(company_base)
 
 Create Company
 
@@ -27,7 +27,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
 from ehelply_python_sdk.model.company_base import CompanyBase
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -62,19 +62,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Create Company
-        api_response = api_instance.create_company_companies_post(company_base)
+        api_response = api_instance.create_company_places_companies_post(company_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->create_company_companies_post: %s\n" % e)
+        print("Exception when calling CompaniesApi->create_company_places_companies_post: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Create Company
-        api_response = api_instance.create_company_companies_post(company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_company_places_companies_post(company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->create_company_companies_post: %s\n" % e)
+        print("Exception when calling CompaniesApi->create_company_places_companies_post: %s\n" % e)
 ```
 
 
@@ -114,8 +114,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_place_companies_company_uuid_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_place_companies_company_uuid_delete(company_uuid)
+# **delete_place_places_companies_company_uuid_delete**
+> bool, date, datetime, dict, float, int, list, str, none_type delete_place_places_companies_company_uuid_delete(company_uuid)
 
 Delete Place
 
@@ -128,7 +128,7 @@ Deletes the company with the given ID and returns True if successful
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -153,19 +153,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Delete Place
-        api_response = api_instance.delete_place_companies_company_uuid_delete(company_uuid)
+        api_response = api_instance.delete_place_places_companies_company_uuid_delete(company_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->delete_place_companies_company_uuid_delete: %s\n" % e)
+        print("Exception when calling CompaniesApi->delete_place_places_companies_company_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Delete Place
-        api_response = api_instance.delete_place_companies_company_uuid_delete(company_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.delete_place_places_companies_company_uuid_delete(company_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->delete_place_companies_company_uuid_delete: %s\n" % e)
+        print("Exception when calling CompaniesApi->delete_place_places_companies_company_uuid_delete: %s\n" % e)
 ```
 
 
@@ -206,8 +206,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_company_companies_company_uuid_get**
-> CompanyResponse get_company_companies_company_uuid_get(company_uuid)
+# **get_company_places_companies_company_uuid_get**
+> CompanyResponse get_company_places_companies_company_uuid_get(company_uuid)
 
 Get Company
 
@@ -221,7 +221,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -253,19 +253,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Get Company
-        api_response = api_instance.get_company_companies_company_uuid_get(company_uuid)
+        api_response = api_instance.get_company_places_companies_company_uuid_get(company_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->get_company_companies_company_uuid_get: %s\n" % e)
+        print("Exception when calling CompaniesApi->get_company_places_companies_company_uuid_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Get Company
-        api_response = api_instance.get_company_companies_company_uuid_get(company_uuid, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, with_places=with_places, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_company_places_companies_company_uuid_get(company_uuid, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, with_places=with_places, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->get_company_companies_company_uuid_get: %s\n" % e)
+        print("Exception when calling CompaniesApi->get_company_places_companies_company_uuid_get: %s\n" % e)
 ```
 
 
@@ -313,8 +313,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_companies_companies_get**
-> Page search_companies_companies_get()
+# **search_companies_places_companies_get**
+> Page search_companies_places_companies_get()
 
 Search Companies
 
@@ -328,7 +328,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.page import Page
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -369,10 +369,10 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Search Companies
-        api_response = api_instance.search_companies_companies_get(project_uuid=project_uuid, name=name, email=email, is_public=is_public, is_deleted=is_deleted, with_places=with_places, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_companies_places_companies_get(project_uuid=project_uuid, name=name, email=email, is_public=is_public, is_deleted=is_deleted, with_places=with_places, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->search_companies_companies_get: %s\n" % e)
+        print("Exception when calling CompaniesApi->search_companies_places_companies_get: %s\n" % e)
 ```
 
 
@@ -428,8 +428,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_company_companies_company_uuid_put**
-> CompanyResponse update_company_companies_company_uuid_put(company_uuid, company_base)
+# **update_company_places_companies_company_uuid_put**
+> CompanyResponse update_company_places_companies_company_uuid_put(company_uuid, company_base)
 
 Update Company
 
@@ -444,7 +444,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
 from ehelply_python_sdk.model.company_base import CompanyBase
-from ehelply_python_sdk.model.places_http_validation_error import PlacesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -480,19 +480,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Update Company
-        api_response = api_instance.update_company_companies_company_uuid_put(company_uuid, company_base)
+        api_response = api_instance.update_company_places_companies_company_uuid_put(company_uuid, company_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->update_company_companies_company_uuid_put: %s\n" % e)
+        print("Exception when calling CompaniesApi->update_company_places_companies_company_uuid_put: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Update Company
-        api_response = api_instance.update_company_companies_company_uuid_put(company_uuid, company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_company_places_companies_company_uuid_put(company_uuid, company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->update_company_companies_company_uuid_put: %s\n" % e)
+        print("Exception when calling CompaniesApi->update_company_places_companies_company_uuid_put: %s\n" % e)
 ```
 
 
