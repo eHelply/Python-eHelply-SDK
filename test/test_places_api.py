@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.67
+    eHelply SDK - 1.1.68
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.67
+    The version of the OpenAPI document: 1.1.68
 
                                      Apache License
                                Version 2.0, January 2004
@@ -238,8 +238,8 @@ class TestPlacesApi(unittest.TestCase):
         """
         pass
 
-    def test_forward_geocoding_places_places_forward_geocoding_get(self):
-        """Test case for forward_geocoding_places_places_forward_geocoding_get
+    def test_forward_geocoding_places_places_geocoding_forward_get(self):
+        """Test case for forward_geocoding_places_places_geocoding_forward_get
 
         Forward Geocoding  # noqa: E501
         """
@@ -252,22 +252,15 @@ class TestPlacesApi(unittest.TestCase):
         """
         pass
 
-    def test_reverse_geocoding_places_places_reverse_geocoding_get(self):
-        """Test case for reverse_geocoding_places_places_reverse_geocoding_get
+    def test_reverse_geocoding_places_places_geocoding_reverse_get(self):
+        """Test case for reverse_geocoding_places_places_geocoding_reverse_get
 
         Reverse Geocoding  # noqa: E501
         """
         pass
 
-    def test_search_places_by_area_places_places_search_location_get(self):
-        """Test case for search_places_by_area_places_places_search_location_get
-
-        Search Places By Area  # noqa: E501
-        """
-        pass
-
-    def test_search_places_by_search_string_places_places_search_get(self):
-        """Test case for search_places_by_search_string_places_places_search_get
+    def test_search_places_by_search_string_places_places_search_string_get(self):
+        """Test case for search_places_by_search_string_places_places_search_string_get
 
         Search Places By Search String  # noqa: E501
         """

@@ -6,11 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_place_places_places_post**](PlacesApi.md#create_place_places_places_post) | **POST** /places/places | Create Place
 [**delete_place_places_places_place_uuid_delete**](PlacesApi.md#delete_place_places_places_place_uuid_delete) | **DELETE** /places/places/{place_uuid} | Delete Place
-[**forward_geocoding_places_places_forward_geocoding_get**](PlacesApi.md#forward_geocoding_places_places_forward_geocoding_get) | **GET** /places/places/forward_geocoding | Forward Geocoding
+[**forward_geocoding_places_places_geocoding_forward_get**](PlacesApi.md#forward_geocoding_places_places_geocoding_forward_get) | **GET** /places/places/geocoding/forward | Forward Geocoding
 [**get_place_places_places_place_uuid_get**](PlacesApi.md#get_place_places_places_place_uuid_get) | **GET** /places/places/{place_uuid} | Get Place
-[**reverse_geocoding_places_places_reverse_geocoding_get**](PlacesApi.md#reverse_geocoding_places_places_reverse_geocoding_get) | **GET** /places/places/reverse_geocoding | Reverse Geocoding
-[**search_places_by_area_places_places_search_location_get**](PlacesApi.md#search_places_by_area_places_places_search_location_get) | **GET** /places/places/search/location | Search Places By Area
-[**search_places_by_search_string_places_places_search_get**](PlacesApi.md#search_places_by_search_string_places_places_search_get) | **GET** /places/places/search | Search Places By Search String
+[**reverse_geocoding_places_places_geocoding_reverse_get**](PlacesApi.md#reverse_geocoding_places_places_geocoding_reverse_get) | **GET** /places/places/geocoding/reverse | Reverse Geocoding
+[**search_places_by_search_string_places_places_search_string_get**](PlacesApi.md#search_places_by_search_string_places_places_search_string_get) | **GET** /places/places/search/string | Search Places By Search String
 [**search_places_places_places_get**](PlacesApi.md#search_places_places_places_get) | **GET** /places/places | Search Places
 [**update_place_places_places_place_uuid_put**](PlacesApi.md#update_place_places_places_place_uuid_put) | **PUT** /places/places/{place_uuid} | Update Place
 
@@ -223,8 +222,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **forward_geocoding_places_places_forward_geocoding_get**
-> bool, date, datetime, dict, float, int, list, str, none_type forward_geocoding_places_places_forward_geocoding_get(searching_place)
+# **forward_geocoding_places_places_geocoding_forward_get**
+> bool, date, datetime, dict, float, int, list, str, none_type forward_geocoding_places_places_geocoding_forward_get(searching_place)
 
 Forward Geocoding
 
@@ -259,19 +258,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Forward Geocoding
-        api_response = api_instance.forward_geocoding_places_places_forward_geocoding_get(searching_place)
+        api_response = api_instance.forward_geocoding_places_places_geocoding_forward_get(searching_place)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling PlacesApi->forward_geocoding_places_places_forward_geocoding_get: %s\n" % e)
+        print("Exception when calling PlacesApi->forward_geocoding_places_places_geocoding_forward_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Forward Geocoding
-        api_response = api_instance.forward_geocoding_places_places_forward_geocoding_get(searching_place, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.forward_geocoding_places_places_geocoding_forward_get(searching_place, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling PlacesApi->forward_geocoding_places_places_forward_geocoding_get: %s\n" % e)
+        print("Exception when calling PlacesApi->forward_geocoding_places_places_geocoding_forward_get: %s\n" % e)
 ```
 
 
@@ -420,8 +419,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reverse_geocoding_places_places_reverse_geocoding_get**
-> bool, date, datetime, dict, float, int, list, str, none_type reverse_geocoding_places_places_reverse_geocoding_get(long, lat)
+# **reverse_geocoding_places_places_geocoding_reverse_get**
+> bool, date, datetime, dict, float, int, list, str, none_type reverse_geocoding_places_places_geocoding_reverse_get(long, lat)
 
 Reverse Geocoding
 
@@ -457,19 +456,19 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Reverse Geocoding
-        api_response = api_instance.reverse_geocoding_places_places_reverse_geocoding_get(long, lat)
+        api_response = api_instance.reverse_geocoding_places_places_geocoding_reverse_get(long, lat)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling PlacesApi->reverse_geocoding_places_places_reverse_geocoding_get: %s\n" % e)
+        print("Exception when calling PlacesApi->reverse_geocoding_places_places_geocoding_reverse_get: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Reverse Geocoding
-        api_response = api_instance.reverse_geocoding_places_places_reverse_geocoding_get(long, lat, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.reverse_geocoding_places_places_geocoding_reverse_get(long, lat, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling PlacesApi->reverse_geocoding_places_places_reverse_geocoding_get: %s\n" % e)
+        print("Exception when calling PlacesApi->reverse_geocoding_places_places_geocoding_reverse_get: %s\n" % e)
 ```
 
 
@@ -510,70 +509,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_places_by_area_places_places_search_location_get**
-> Page search_places_by_area_places_places_search_location_get()
-
-Search Places By Area
-
-### Example
-
-
-```python
-import time
-import ehelply_python_sdk
-from ehelply_python_sdk.api import places_api
-from ehelply_python_sdk.model.page import Page
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.prod.ehelply.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply_python_sdk.Configuration(
-    host = "https://api.prod.ehelply.com"
-)
-
-
-# Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
-    # Create an instance of the API class
-    api_instance = places_api.PlacesApi(api_client)
-
-    # example, this endpoint has no required or optional parameters
-    try:
-        # Search Places By Area
-        api_response = api_instance.search_places_by_area_places_places_search_location_get()
-        pprint(api_response)
-    except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling PlacesApi->search_places_by_area_places_places_search_location_get: %s\n" % e)
-```
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**Page**](Page.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Route not found - Denied by eHelply |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_places_by_search_string_places_places_search_get**
-> Page search_places_by_search_string_places_places_search_get()
+# **search_places_by_search_string_places_places_search_string_get**
+> Page search_places_by_search_string_places_places_search_string_get()
 
 Search Places By Search String
 
@@ -616,10 +553,10 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Search Places By Search String
-        api_response = api_instance.search_places_by_search_string_places_places_search_get(search_string=search_string, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_places_by_search_string_places_places_search_string_get(search_string=search_string, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling PlacesApi->search_places_by_search_string_places_places_search_get: %s\n" % e)
+        print("Exception when calling PlacesApi->search_places_by_search_string_places_places_search_string_get: %s\n" % e)
 ```
 
 

@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.67
-- Package version: 1.1.67
+- API version: 1.1.68
+- Package version: 1.1.68
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -188,11 +188,10 @@ Class | Method | HTTP request | Description
 *NotesApi* | [**update_note**](docs/NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Update Note
 *PlacesApi* | [**create_place_places_places_post**](docs/PlacesApi.md#create_place_places_places_post) | **POST** /places/places | Create Place
 *PlacesApi* | [**delete_place_places_places_place_uuid_delete**](docs/PlacesApi.md#delete_place_places_places_place_uuid_delete) | **DELETE** /places/places/{place_uuid} | Delete Place
-*PlacesApi* | [**forward_geocoding_places_places_forward_geocoding_get**](docs/PlacesApi.md#forward_geocoding_places_places_forward_geocoding_get) | **GET** /places/places/forward_geocoding | Forward Geocoding
+*PlacesApi* | [**forward_geocoding_places_places_geocoding_forward_get**](docs/PlacesApi.md#forward_geocoding_places_places_geocoding_forward_get) | **GET** /places/places/geocoding/forward | Forward Geocoding
 *PlacesApi* | [**get_place_places_places_place_uuid_get**](docs/PlacesApi.md#get_place_places_places_place_uuid_get) | **GET** /places/places/{place_uuid} | Get Place
-*PlacesApi* | [**reverse_geocoding_places_places_reverse_geocoding_get**](docs/PlacesApi.md#reverse_geocoding_places_places_reverse_geocoding_get) | **GET** /places/places/reverse_geocoding | Reverse Geocoding
-*PlacesApi* | [**search_places_by_area_places_places_search_location_get**](docs/PlacesApi.md#search_places_by_area_places_places_search_location_get) | **GET** /places/places/search/location | Search Places By Area
-*PlacesApi* | [**search_places_by_search_string_places_places_search_get**](docs/PlacesApi.md#search_places_by_search_string_places_places_search_get) | **GET** /places/places/search | Search Places By Search String
+*PlacesApi* | [**reverse_geocoding_places_places_geocoding_reverse_get**](docs/PlacesApi.md#reverse_geocoding_places_places_geocoding_reverse_get) | **GET** /places/places/geocoding/reverse | Reverse Geocoding
+*PlacesApi* | [**search_places_by_search_string_places_places_search_string_get**](docs/PlacesApi.md#search_places_by_search_string_places_places_search_string_get) | **GET** /places/places/search/string | Search Places By Search String
 *PlacesApi* | [**search_places_places_places_get**](docs/PlacesApi.md#search_places_places_places_get) | **GET** /places/places | Search Places
 *PlacesApi* | [**update_place_places_places_place_uuid_put**](docs/PlacesApi.md#update_place_places_places_place_uuid_put) | **PUT** /places/places/{place_uuid} | Update Place
 *ProjectsApi* | [**add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post**](docs/ProjectsApi.md#add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Add Member To Project
