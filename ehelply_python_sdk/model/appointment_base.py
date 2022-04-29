@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.75
+    eHelply SDK - 1.1.76
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.75
+    The version of the OpenAPI document: 1.1.76
 
                                      Apache License
                                Version 2.0, January 2004
@@ -325,11 +325,8 @@ class AppointmentBase(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, project_uuid, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """AppointmentBase - a model defined in OpenAPI
-
-        Args:
-            project_uuid (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -362,6 +359,7 @@ class AppointmentBase(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            project_uuid (str): [optional]  # noqa: E501
             place_uuid (str): [optional]  # noqa: E501
             review_group_uuid (str): [optional]  # noqa: E501
             expected_finish_at (str): [optional]  # noqa: E501
@@ -401,7 +399,6 @@ class AppointmentBase(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.project_uuid = project_uuid
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -422,11 +419,8 @@ class AppointmentBase(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, project_uuid, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """AppointmentBase - a model defined in OpenAPI
-
-        Args:
-            project_uuid (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -459,6 +453,7 @@ class AppointmentBase(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            project_uuid (str): [optional]  # noqa: E501
             place_uuid (str): [optional]  # noqa: E501
             review_group_uuid (str): [optional]  # noqa: E501
             expected_finish_at (str): [optional]  # noqa: E501
@@ -496,7 +491,6 @@ class AppointmentBase(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.project_uuid = project_uuid
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

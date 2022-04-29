@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**project_uuid** | **str** |  | 
 **uuid** | **str** |  | 
 **created_at** | **str** |  | 
 **updated_at** | **str** |  | 
+**project_uuid** | **str** |  | [optional] 
 **place_uuid** | **str** |  | [optional] 
 **review_group_uuid** | **str** |  | [optional] 
 **expected_finish_at** | **str** |  | [optional] 

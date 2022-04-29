@@ -2,8 +2,8 @@
 
 Note: This SDK is generated, built, and published automatically by eHelply.
 
-- API version: 1.1.75
-- Package version: 1.1.75
+- API version: 1.1.76
+- Package version: 1.1.76
 For more information, please visit [https://superstack.ehelply.com/support](https://superstack.ehelply.com/support)
 
 ## Requirements.
@@ -116,31 +116,31 @@ Class | Method | HTTP request | Description
 *CompaniesApi* | [**get_company_places_companies_company_uuid_get**](docs/CompaniesApi.md#get_company_places_companies_company_uuid_get) | **GET** /places/companies/{company_uuid} | Get Company
 *CompaniesApi* | [**search_companies_places_companies_get**](docs/CompaniesApi.md#search_companies_places_companies_get) | **GET** /places/companies | Search Companies
 *CompaniesApi* | [**update_company_places_companies_company_uuid_put**](docs/CompaniesApi.md#update_company_places_companies_company_uuid_put) | **PUT** /places/companies/{company_uuid} | Update Company
-*DefaultApi* | [**appointmentssearch_appointment_entities**](docs/DefaultApi.md#appointmentssearch_appointment_entities) | **GET** /appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
-*DefaultApi* | [**attach_entity_to_appointment**](docs/DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
+*DefaultApi* | [**appointmentssearch_appointment_entities**](docs/DefaultApi.md#appointmentssearch_appointment_entities) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
+*DefaultApi* | [**attach_entity_to_appointment**](docs/DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
 *DefaultApi* | [**attach_product_to_catalog**](docs/DefaultApi.md#attach_product_to_catalog) | **POST** /catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
-*DefaultApi* | [**create_appointment**](docs/DefaultApi.md#create_appointment) | **POST** /appointments | Create Appointment
+*DefaultApi* | [**create_appointment**](docs/DefaultApi.md#create_appointment) | **POST** /appointments/appointments | Create Appointment
 *DefaultApi* | [**create_catalog**](docs/DefaultApi.md#create_catalog) | **POST** /catalogs | Create Catalog
 *DefaultApi* | [**create_product**](docs/DefaultApi.md#create_product) | **POST** /products | Create Product
 *DefaultApi* | [**create_review**](docs/DefaultApi.md#create_review) | **POST** /reviews/types/{entity_type}/entities/{entity_uuid} | Create Review
-*DefaultApi* | [**delete_appointment**](docs/DefaultApi.md#delete_appointment) | **DELETE** /appointments/{appointment_uuid} | Delete Appointment
+*DefaultApi* | [**delete_appointment**](docs/DefaultApi.md#delete_appointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Delete Appointment
 *DefaultApi* | [**delete_catalog**](docs/DefaultApi.md#delete_catalog) | **DELETE** /catalogs/{catalog_uuid} | Delete Catalog
 *DefaultApi* | [**delete_product**](docs/DefaultApi.md#delete_product) | **DELETE** /products/{product_uuid} | Delete Product
 *DefaultApi* | [**delete_review**](docs/DefaultApi.md#delete_review) | **DELETE** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Delete Review
-*DefaultApi* | [**detach_entity_from_appointment**](docs/DefaultApi.md#detach_entity_from_appointment) | **DELETE** /appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
+*DefaultApi* | [**detach_entity_from_appointment**](docs/DefaultApi.md#detach_entity_from_appointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
 *DefaultApi* | [**detach_product_from_catalog**](docs/DefaultApi.md#detach_product_from_catalog) | **DELETE** /catalogs/{catalog_uuid}/products/{product_uuid} | Detach Product From Catalog
-*DefaultApi* | [**get_appointment**](docs/DefaultApi.md#get_appointment) | **GET** /appointments/{appointment_uuid} | Get Appointment
+*DefaultApi* | [**get_appointment**](docs/DefaultApi.md#get_appointment) | **GET** /appointments/appointments/{appointment_uuid} | Get Appointment
 *DefaultApi* | [**get_catalog**](docs/DefaultApi.md#get_catalog) | **GET** /catalogs/{catalog_uuid} | Get Catalog
 *DefaultApi* | [**get_product**](docs/DefaultApi.md#get_product) | **GET** /products/{product_uuid} | Get Product
 *DefaultApi* | [**get_review**](docs/DefaultApi.md#get_review) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Get Review
-*DefaultApi* | [**search_appointment**](docs/DefaultApi.md#search_appointment) | **GET** /appointments | Search Appointment
-*DefaultApi* | [**search_appointment_entities**](docs/DefaultApi.md#search_appointment_entities) | **GET** /appointments/{appointment_uuid}/entities | Search Appointment Entities
+*DefaultApi* | [**search_appointment**](docs/DefaultApi.md#search_appointment) | **GET** /appointments/appointments | Search Appointment
+*DefaultApi* | [**search_appointment_entities**](docs/DefaultApi.md#search_appointment_entities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Search Appointment Entities
 *DefaultApi* | [**search_catalog_products**](docs/DefaultApi.md#search_catalog_products) | **GET** /catalogs/{catalog_uuid}/products | Search Catalog Products
 *DefaultApi* | [**search_catalogs**](docs/DefaultApi.md#search_catalogs) | **GET** /catalogs | Search Catalogs
 *DefaultApi* | [**search_product**](docs/DefaultApi.md#search_product) | **GET** /products | Search Products
 *DefaultApi* | [**search_product_catalog**](docs/DefaultApi.md#search_product_catalog) | **GET** /products/{product_uuid}/catalogs | Search Product Catalogs
 *DefaultApi* | [**search_reviews**](docs/DefaultApi.md#search_reviews) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid} | Search Review
-*DefaultApi* | [**update_appointment**](docs/DefaultApi.md#update_appointment) | **PUT** /appointments/{appointment_uuid} | Update Appointment
+*DefaultApi* | [**update_appointment**](docs/DefaultApi.md#update_appointment) | **PUT** /appointments/appointments/{appointment_uuid} | Update Appointment
 *DefaultApi* | [**update_catalog**](docs/DefaultApi.md#update_catalog) | **PUT** /catalogs/{catalog_uuid} | Update Catalog
 *DefaultApi* | [**update_product**](docs/DefaultApi.md#update_product) | **PUT** /products/{product_uuid} | Update Product
 *DefaultApi* | [**update_review**](docs/DefaultApi.md#update_review) | **PUT** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Update Review
@@ -188,10 +188,10 @@ Class | Method | HTTP request | Description
 *NotesApi* | [**update_note**](docs/NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Update Note
 *PlacesApi* | [**create_place_places_places_post**](docs/PlacesApi.md#create_place_places_places_post) | **POST** /places/places | Create Place
 *PlacesApi* | [**delete_place_places_places_place_uuid_delete**](docs/PlacesApi.md#delete_place_places_places_place_uuid_delete) | **DELETE** /places/places/{place_uuid} | Delete Place
-*PlacesApi* | [**forward_geocoding_places_places_geocoding_forward_get**](docs/PlacesApi.md#forward_geocoding_places_places_geocoding_forward_get) | **GET** /places/places/geocoding/forward | Forward Geocoding
+*PlacesApi* | [**forward_geocoding_places_geocoding_forward_get**](docs/PlacesApi.md#forward_geocoding_places_geocoding_forward_get) | **GET** /places/geocoding/forward | Forward Geocoding
 *PlacesApi* | [**get_place_places_places_place_uuid_get**](docs/PlacesApi.md#get_place_places_places_place_uuid_get) | **GET** /places/places/{place_uuid} | Get Place
-*PlacesApi* | [**reverse_geocoding_places_places_geocoding_reverse_get**](docs/PlacesApi.md#reverse_geocoding_places_places_geocoding_reverse_get) | **GET** /places/places/geocoding/reverse | Reverse Geocoding
-*PlacesApi* | [**search_places_by_search_string_places_places_search_string_get**](docs/PlacesApi.md#search_places_by_search_string_places_places_search_string_get) | **GET** /places/places/search/string | Search Places By Search String
+*PlacesApi* | [**reverse_geocoding_places_geocoding_reverse_get**](docs/PlacesApi.md#reverse_geocoding_places_geocoding_reverse_get) | **GET** /places/geocoding/reverse | Reverse Geocoding
+*PlacesApi* | [**search_places_by_search_string_places_search_places_string_get**](docs/PlacesApi.md#search_places_by_search_string_places_search_places_string_get) | **GET** /places/search/places/string | Search Places By Search String
 *PlacesApi* | [**search_places_places_places_get**](docs/PlacesApi.md#search_places_places_places_get) | **GET** /places/places | Search Places
 *PlacesApi* | [**update_place_places_places_place_uuid_put**](docs/PlacesApi.md#update_place_places_places_place_uuid_put) | **PUT** /places/places/{place_uuid} | Update Place
 *ProjectsApi* | [**add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post**](docs/ProjectsApi.md#add_member_to_project_projects_projects_project_uuid_members_entity_uuid_post) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Add Member To Project

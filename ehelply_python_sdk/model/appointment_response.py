@@ -1,9 +1,9 @@
 """
-    eHelply SDK - 1.1.75
+    eHelply SDK - 1.1.76
 
     eHelply SDK for SuperStack Services  # noqa: E501
 
-    The version of the OpenAPI document: 1.1.75
+    The version of the OpenAPI document: 1.1.76
 
                                      Apache License
                                Version 2.0, January 2004
@@ -282,10 +282,10 @@ class AppointmentResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'project_uuid': (str,),  # noqa: E501
             'uuid': (str,),  # noqa: E501
             'created_at': (str,),  # noqa: E501
             'updated_at': (str,),  # noqa: E501
+            'project_uuid': (str,),  # noqa: E501
             'place_uuid': (str,),  # noqa: E501
             'review_group_uuid': (str,),  # noqa: E501
             'expected_finish_at': (str,),  # noqa: E501
@@ -307,10 +307,10 @@ class AppointmentResponse(ModelNormal):
 
 
     attribute_map = {
-        'project_uuid': 'project_uuid',  # noqa: E501
         'uuid': 'uuid',  # noqa: E501
         'created_at': 'created_at',  # noqa: E501
         'updated_at': 'updated_at',  # noqa: E501
+        'project_uuid': 'project_uuid',  # noqa: E501
         'place_uuid': 'place_uuid',  # noqa: E501
         'review_group_uuid': 'review_group_uuid',  # noqa: E501
         'expected_finish_at': 'expected_finish_at',  # noqa: E501
@@ -333,11 +333,10 @@ class AppointmentResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, project_uuid, uuid, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, uuid, created_at, updated_at, *args, **kwargs):  # noqa: E501
         """AppointmentResponse - a model defined in OpenAPI
 
         Args:
-            project_uuid (str):
             uuid (str):
             created_at (str):
             updated_at (str):
@@ -373,6 +372,7 @@ class AppointmentResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            project_uuid (str): [optional]  # noqa: E501
             place_uuid (str): [optional]  # noqa: E501
             review_group_uuid (str): [optional]  # noqa: E501
             expected_finish_at (str): [optional]  # noqa: E501
@@ -413,7 +413,6 @@ class AppointmentResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.project_uuid = project_uuid
         self.uuid = uuid
         self.created_at = created_at
         self.updated_at = updated_at
@@ -437,11 +436,10 @@ class AppointmentResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, project_uuid, uuid, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, uuid, created_at, updated_at, *args, **kwargs):  # noqa: E501
         """AppointmentResponse - a model defined in OpenAPI
 
         Args:
-            project_uuid (str):
             uuid (str):
             created_at (str):
             updated_at (str):
@@ -477,6 +475,7 @@ class AppointmentResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            project_uuid (str): [optional]  # noqa: E501
             place_uuid (str): [optional]  # noqa: E501
             review_group_uuid (str): [optional]  # noqa: E501
             expected_finish_at (str): [optional]  # noqa: E501
@@ -515,7 +514,6 @@ class AppointmentResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.project_uuid = project_uuid
         self.uuid = uuid
         self.created_at = created_at
         self.updated_at = updated_at
