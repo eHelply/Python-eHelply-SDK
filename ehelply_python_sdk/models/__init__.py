@@ -1,3 +1,5 @@
+# coding: utf-8
+
 # flake8: noqa
 
 # import all models into this package
@@ -17,8 +19,6 @@ from ehelply_python_sdk.model.alarm_ignore import AlarmIgnore
 from ehelply_python_sdk.model.alarm_note import AlarmNote
 from ehelply_python_sdk.model.alarm_terminate import AlarmTerminate
 from ehelply_python_sdk.model.alarm_ticket import AlarmTicket
-from ehelply_python_sdk.model.appointment_base import AppointmentBase
-from ehelply_python_sdk.model.appointment_response import AppointmentResponse
 from ehelply_python_sdk.model.attach_payment_to_project import AttachPaymentToProject
 from ehelply_python_sdk.model.basic_meta import BasicMeta
 from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate
@@ -54,6 +54,16 @@ from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
 from ehelply_python_sdk.model.field import Field
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.inline_response200 import InlineResponse200
+from ehelply_python_sdk.model.inline_response2001 import InlineResponse2001
+from ehelply_python_sdk.model.inline_response2002 import InlineResponse2002
+from ehelply_python_sdk.model.inline_response2003 import InlineResponse2003
+from ehelply_python_sdk.model.inline_response2004 import InlineResponse2004
+from ehelply_python_sdk.model.inline_response2005 import InlineResponse2005
+from ehelply_python_sdk.model.inline_response2006 import InlineResponse2006
+from ehelply_python_sdk.model.inline_response2007 import InlineResponse2007
+from ehelply_python_sdk.model.inline_response2008 import InlineResponse2008
+from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.meta_children import MetaChildren
 from ehelply_python_sdk.model.meta_create import MetaCreate
 from ehelply_python_sdk.model.meta_custom import MetaCustom
@@ -88,8 +98,6 @@ from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
 from ehelply_python_sdk.model.projects_usage_type_unit_price import ProjectsUsageTypeUnitPrice
 from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
-from ehelply_python_sdk.model.sam_http_validation_error import SamHTTPValidationError
-from ehelply_python_sdk.model.sam_validation_error import SamValidationError
 from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
