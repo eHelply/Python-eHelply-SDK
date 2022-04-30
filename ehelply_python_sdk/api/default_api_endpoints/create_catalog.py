@@ -136,7 +136,7 @@ request_body_catalog_base = api_client.RequestBody(
     },
     required=True,
 )
-_path = '/catalogs'
+_path = '/products/catalogs'
 _method = 'POST'
 SchemaFor200ResponseBodyApplicationJson = CatalogReturn
 

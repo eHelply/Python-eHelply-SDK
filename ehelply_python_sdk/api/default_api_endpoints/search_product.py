@@ -235,7 +235,7 @@ request_header_ehelply_data = api_client.HeaderParameter(
     style=api_client.ParameterStyle.SIMPLE,
     schema=EhelplyDataSchema,
 )
-_path = '/products'
+_path = '/products/products'
 _method = 'GET'
 SchemaFor200ResponseBodyApplicationJson = Page
 

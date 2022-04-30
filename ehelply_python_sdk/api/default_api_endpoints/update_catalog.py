@@ -162,7 +162,7 @@ request_body_catalog_base = api_client.RequestBody(
     },
     required=True,
 )
-_path = '/catalogs/{catalog_uuid}'
+_path = '/products/catalogs/{catalog_uuid}'
 _method = 'PUT'
 SchemaFor200ResponseBodyApplicationJson = CatalogReturn
 

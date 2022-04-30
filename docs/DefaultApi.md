@@ -4,28 +4,28 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_product_to_catalog**](DefaultApi.md#attach_product_to_catalog) | **POST** /catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
-[**create_catalog**](DefaultApi.md#create_catalog) | **POST** /catalogs | Create Catalog
-[**create_product**](DefaultApi.md#create_product) | **POST** /products | Create Product
-[**create_review**](DefaultApi.md#create_review) | **POST** /reviews/types/{entity_type}/entities/{entity_uuid} | Create Review
-[**delete_catalog**](DefaultApi.md#delete_catalog) | **DELETE** /catalogs/{catalog_uuid} | Delete Catalog
-[**delete_product**](DefaultApi.md#delete_product) | **DELETE** /products/{product_uuid} | Delete Product
-[**delete_review**](DefaultApi.md#delete_review) | **DELETE** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Delete Review
-[**detach_product_from_catalog**](DefaultApi.md#detach_product_from_catalog) | **DELETE** /catalogs/{catalog_uuid}/products/{product_uuid} | Detach Product From Catalog
-[**get_catalog**](DefaultApi.md#get_catalog) | **GET** /catalogs/{catalog_uuid} | Get Catalog
-[**get_product**](DefaultApi.md#get_product) | **GET** /products/{product_uuid} | Get Product
-[**get_review**](DefaultApi.md#get_review) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Get Review
-[**search_catalog_products**](DefaultApi.md#search_catalog_products) | **GET** /catalogs/{catalog_uuid}/products | Search Catalog Products
-[**search_catalogs**](DefaultApi.md#search_catalogs) | **GET** /catalogs | Search Catalogs
-[**search_product**](DefaultApi.md#search_product) | **GET** /products | Search Products
-[**search_product_catalog**](DefaultApi.md#search_product_catalog) | **GET** /products/{product_uuid}/catalogs | Search Product Catalogs
-[**search_reviews**](DefaultApi.md#search_reviews) | **GET** /reviews/types/{entity_type}/entities/{entity_uuid} | Search Review
-[**update_catalog**](DefaultApi.md#update_catalog) | **PUT** /catalogs/{catalog_uuid} | Update Catalog
-[**update_product**](DefaultApi.md#update_product) | **PUT** /products/{product_uuid} | Update Product
-[**update_review**](DefaultApi.md#update_review) | **PUT** /reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Update Review
+[**attach_product_to_catalog**](DefaultApi.md#attach_product_to_catalog) | **POST** /products/catalogs/{catalog_uuid}/products/{product_uuid} | Attach Product To Catalog
+[**create_catalog**](DefaultApi.md#create_catalog) | **POST** /products/catalogs | Create Catalog
+[**create_product**](DefaultApi.md#create_product) | **POST** /products/products | Create Product
+[**create_review**](DefaultApi.md#create_review) | **POST** /products/reviews/types/{entity_type}/entities/{entity_uuid} | Create Review
+[**delete_catalog**](DefaultApi.md#delete_catalog) | **DELETE** /products/catalogs/{catalog_uuid} | Delete Catalog
+[**delete_product**](DefaultApi.md#delete_product) | **DELETE** /products/products/{product_uuid} | Delete Product
+[**delete_review**](DefaultApi.md#delete_review) | **DELETE** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Delete Review
+[**detach_product_from_catalog**](DefaultApi.md#detach_product_from_catalog) | **DELETE** /products/catalogs/{catalog_uuid}/products/{product_uuid} | Detach Product From Catalog
+[**get_catalog**](DefaultApi.md#get_catalog) | **GET** /products/catalogs/{catalog_uuid} | Get Catalog
+[**get_product**](DefaultApi.md#get_product) | **GET** /products/products/{product_uuid} | Get Product
+[**get_review**](DefaultApi.md#get_review) | **GET** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Get Review
+[**search_catalog_products**](DefaultApi.md#search_catalog_products) | **GET** /products/catalogs/{catalog_uuid}/products | Search Catalog Products
+[**search_catalogs**](DefaultApi.md#search_catalogs) | **GET** /products/catalogs | Search Catalogs
+[**search_product**](DefaultApi.md#search_product) | **GET** /products/products | Search Products
+[**search_product_catalog**](DefaultApi.md#search_product_catalog) | **GET** /products/products/{product_uuid}/catalogs | Search Product Catalogs
+[**search_reviews**](DefaultApi.md#search_reviews) | **GET** /products/reviews/types/{entity_type}/entities/{entity_uuid} | Search Review
+[**update_catalog**](DefaultApi.md#update_catalog) | **PUT** /products/catalogs/{catalog_uuid} | Update Catalog
+[**update_product**](DefaultApi.md#update_product) | **PUT** /products/products/{product_uuid} | Update Product
+[**update_review**](DefaultApi.md#update_review) | **PUT** /products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid} | Update Review
 
 # **attach_product_to_catalog**
-> bool, date, datetime, dict, float, int, list, str, none_type attach_product_to_catalog(catalog_uuidproduct_uuid)
+> bool attach_product_to_catalog(catalog_uuidproduct_uuid)
 
 Attach Product To Catalog
 
@@ -186,7 +186,7 @@ headers | Unset | headers were not defined |
 
 Type | Description | Notes
 ------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+**bool** |  | 
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -209,7 +209,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**bool**
 
 ### Authorization
 
@@ -437,7 +437,7 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         meta_data=dict(),
         collection_uuid="collection_uuid",
         review_group_uuid="review_group_uuid",
-        addons={"addon1":"addon_uuid"},
+        addons=["addon1","addon_uuid"],
         name="Product Name",
         price=10000,
         quantity_for_public=10,
@@ -465,7 +465,7 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         meta_data=dict(),
         collection_uuid="collection_uuid",
         review_group_uuid="review_group_uuid",
-        addons={"addon1":"addon_uuid"},
+        addons=["addon1","addon_uuid"],
         name="Product Name",
         price=10000,
         quantity_for_public=10,
@@ -1386,7 +1386,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **detach_product_from_catalog**
-> bool, date, datetime, dict, float, int, list, str, none_type detach_product_from_catalog(catalog_uuidproduct_uuid)
+> bool detach_product_from_catalog(catalog_uuidproduct_uuid)
 
 Detach Product From Catalog
 
@@ -1547,7 +1547,7 @@ headers | Unset | headers were not defined |
 
 Type | Description | Notes
 ------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+**bool** |  | 
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1570,7 +1570,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**bool**
 
 ### Authorization
 
@@ -3580,7 +3580,7 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         meta_data=dict(),
         collection_uuid="collection_uuid",
         review_group_uuid="review_group_uuid",
-        addons={"addon1":"addon_uuid"},
+        addons=["addon1","addon_uuid"],
         name="Product Name",
         price=10000,
         quantity_for_public=10,
@@ -3612,7 +3612,7 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         meta_data=dict(),
         collection_uuid="collection_uuid",
         review_group_uuid="review_group_uuid",
-        addons={"addon1":"addon_uuid"},
+        addons=["addon1","addon_uuid"],
         name="Product Name",
         price=10000,
         quantity_for_public=10,

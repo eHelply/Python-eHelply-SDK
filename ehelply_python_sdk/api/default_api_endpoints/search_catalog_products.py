@@ -208,7 +208,7 @@ request_path_catalog_uuid = api_client.PathParameter(
     schema=CatalogUuidSchema,
     required=True,
 )
-_path = '/catalogs/{catalog_uuid}/products'
+_path = '/products/catalogs/{catalog_uuid}/products'
 _method = 'GET'
 SchemaFor200ResponseBodyApplicationJson = Page
 
