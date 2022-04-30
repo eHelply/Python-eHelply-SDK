@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**get_note**](NotesApi.md#get_note) | **GET** /notes/notes/{note_id} | Get Note
 [**update_note**](NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Update Note
 
-
 # **create_note**
 > NoteDynamo create_note(note_base)
 
@@ -17,9 +16,7 @@ Create Note
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
@@ -32,12 +29,15 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
-    note_base = NoteBase(
+
+    # example passing only required values which don't have defaults set
+    header_params = {
+    }
+    body = NoteBase(
         content="content_example",
         time="time_example",
         meta=NoteMeta(
@@ -46,66 +46,162 @@ with ehelply_python_sdk.ApiClient() as api_client:
             previous_version="previous_version_example",
             next_version="next_version_example",
         ),
-    ) # NoteBase | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
+    )
     try:
         # Create Note
-        api_response = api_instance.create_note(note_base)
+        api_response = api_instance.create_note(
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->create_note: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
+    body = NoteBase(
+        content="content_example",
+        time="time_example",
+        meta=NoteMeta(
+            original_author="original_author_example",
+            author="author_example",
+            previous_version="previous_version_example",
+            next_version="next_version_example",
+        ),
+    )
     try:
         # Create Note
-        api_response = api_instance.create_note(note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_note(
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->create_note: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **note_base** | [**NoteBase**](NoteBase.md)|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+header_params | RequestHeaderParams | |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### body
+
+#### SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NoteBase**](NoteBase.md) |  | 
+
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response 
+404 | ApiResponseFor404 | Not found 
+422 | ApiResponseFor422 | Validation Error 
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NoteDynamo**](NoteDynamo.md) |  | 
+
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+
+
 
 [**NoteDynamo**](NoteDynamo.md)
 
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Not found |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -116,9 +212,7 @@ Delete Note
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
@@ -129,73 +223,191 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
-    note_id = "note_id_example" # str | 
-    method = "previous" # str |  (optional) if omitted the server will use the default value of "previous"
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    path_params = {
+        'note_id': "note_id_example",
+    }
+    query_params = {
+    }
+    header_params = {
+    }
     try:
         # Delete Note
-        api_response = api_instance.delete_note(note_id)
+        api_response = api_instance.delete_note(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->delete_note: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    path_params = {
+        'note_id': "note_id_example",
+    }
+    query_params = {
+        'method': "previous",
+    }
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
     try:
         # Delete Note
-        api_response = api_instance.delete_note(note_id, method=method, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.delete_note(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->delete_note: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **note_id** | **str**|  |
- **method** | **str**|  | [optional] if omitted the server will use the default value of "previous"
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
+path_params | RequestPathParams | |
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### query_params
+#### RequestQueryParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+method | MethodSchema | | optional
+
+
+#### MethodSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | defaults to "previous"
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+note_id | NoteIdSchema | | 
+
+#### NoteIdSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response 
+404 | ApiResponseFor404 | Not found 
+422 | ApiResponseFor422 | Validation Error 
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+
+Type | Description | Notes
+------------- | ------------- | -------------
+typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+
+
 
 **bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Not found |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -206,9 +418,7 @@ Get Note
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
@@ -220,55 +430,193 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
-    note_id = "note_id_example" # str | 
-    history = 0 # int |  (optional) if omitted the server will use the default value of 0
-    history_content = True # bool |  (optional) if omitted the server will use the default value of True
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    path_params = {
+        'note_id': "note_id_example",
+    }
+    query_params = {
+    }
+    header_params = {
+    }
     try:
         # Get Note
-        api_response = api_instance.get_note(note_id)
+        api_response = api_instance.get_note(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->get_note: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    path_params = {
+        'note_id': "note_id_example",
+    }
+    query_params = {
+        'history': 0,
+        'history_content': True,
+    }
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
     try:
         # Get Note
-        api_response = api_instance.get_note(note_id, history=history, history_content=history_content, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_note(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->get_note: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **note_id** | **str**|  |
- **history** | **int**|  | [optional] if omitted the server will use the default value of 0
- **history_content** | **bool**|  | [optional] if omitted the server will use the default value of True
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
+path_params | RequestPathParams | |
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### query_params
+#### RequestQueryParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+history | HistorySchema | | optional
+history_content | HistoryContentSchema | | optional
+
+
+#### HistorySchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**int** |  | defaults to 0
+
+#### HistoryContentSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to True
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+note_id | NoteIdSchema | | 
+
+#### NoteIdSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response 
+404 | ApiResponseFor404 | Not found 
+422 | ApiResponseFor422 | Validation Error 
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NoteDynamoHistory**](NoteDynamoHistory.md) |  | 
+
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+
+
 
 [**NoteDynamoHistory**](NoteDynamoHistory.md)
 
@@ -276,32 +624,16 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Not found |  -  |
-**422** | Validation Error |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_note**
-> NoteDynamo update_note(note_id, note_base)
+> NoteDynamo update_note(note_idnote_base)
 
 Update Note
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
@@ -314,13 +646,18 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = notes_api.NotesApi(api_client)
-    note_id = "note_id_example" # str | 
-    note_base = NoteBase(
+
+    # example passing only required values which don't have defaults set
+    path_params = {
+        'note_id': "note_id_example",
+    }
+    header_params = {
+    }
+    body = NoteBase(
         content="content_example",
         time="time_example",
         meta=NoteMeta(
@@ -329,67 +666,181 @@ with ehelply_python_sdk.ApiClient() as api_client:
             previous_version="previous_version_example",
             next_version="next_version_example",
         ),
-    ) # NoteBase | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
+    )
     try:
         # Update Note
-        api_response = api_instance.update_note(note_id, note_base)
+        api_response = api_instance.update_note(
+            path_params=path_params,
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->update_note: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    path_params = {
+        'note_id': "note_id_example",
+    }
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
+    body = NoteBase(
+        content="content_example",
+        time="time_example",
+        meta=NoteMeta(
+            original_author="original_author_example",
+            author="author_example",
+            previous_version="previous_version_example",
+            next_version="next_version_example",
+        ),
+    )
     try:
         # Update Note
-        api_response = api_instance.update_note(note_id, note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_note(
+            path_params=path_params,
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling NotesApi->update_note: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **note_id** | **str**|  |
- **note_base** | [**NoteBase**](NoteBase.md)|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+header_params | RequestHeaderParams | |
+path_params | RequestPathParams | |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### body
+
+#### SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NoteBase**](NoteBase.md) |  | 
+
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+note_id | NoteIdSchema | | 
+
+#### NoteIdSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response 
+404 | ApiResponseFor404 | Not found 
+422 | ApiResponseFor422 | Validation Error 
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NoteDynamo**](NoteDynamo.md) |  | 
+
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+
+
 
 [**NoteDynamo**](NoteDynamo.md)
 
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Not found |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
