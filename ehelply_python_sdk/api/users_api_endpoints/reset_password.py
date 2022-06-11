@@ -77,7 +77,7 @@ request_body_user_password_reset = api_client.RequestBody(
 )
 _path = '/sam/users/auth/password/reset'
 _method = 'POST'
-SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
+SchemaFor200ResponseBodyApplicationJson = DictSchema
 
 
 @dataclass

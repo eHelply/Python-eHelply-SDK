@@ -157,9 +157,9 @@ request_path_product_uuid = api_client.PathParameter(
     schema=ProductUuidSchema,
     required=True,
 )
-_path = '/catalogs/{catalog_uuid}/products/{product_uuid}'
+_path = '/products/catalogs/{catalog_uuid}/products/{product_uuid}'
 _method = 'POST'
-SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
+SchemaFor200ResponseBodyApplicationJson = BoolSchema
 
 
 @dataclass

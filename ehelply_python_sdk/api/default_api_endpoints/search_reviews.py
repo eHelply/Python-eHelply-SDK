@@ -157,7 +157,7 @@ request_path_entity_uuid = api_client.PathParameter(
     schema=EntityUuidSchema,
     required=True,
 )
-_path = '/reviews/types/{entity_type}/entities/{entity_uuid}'
+_path = '/products/reviews/types/{entity_type}/entities/{entity_uuid}'
 _method = 'GET'
 SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
 

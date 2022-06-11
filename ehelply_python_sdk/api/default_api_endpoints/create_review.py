@@ -169,7 +169,7 @@ request_body_create_review = api_client.RequestBody(
     },
     required=True,
 )
-_path = '/reviews/types/{entity_type}/entities/{entity_uuid}'
+_path = '/products/reviews/types/{entity_type}/entities/{entity_uuid}'
 _method = 'POST'
 SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
 

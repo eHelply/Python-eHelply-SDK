@@ -149,7 +149,7 @@ request_path_product_uuid = api_client.PathParameter(
     schema=ProductUuidSchema,
     required=True,
 )
-_path = '/products/{product_uuid}'
+_path = '/products/products/{product_uuid}'
 _method = 'DELETE'
 SchemaFor200ResponseBodyApplicationJson = BoolSchema
 

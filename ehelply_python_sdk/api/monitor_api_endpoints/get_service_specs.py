@@ -62,7 +62,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.inline_response403 import InlineResponse403
-from ehelply_python_sdk.model.inline_response2001 import InlineResponse2001
+from ehelply_python_sdk.model.response_getservicespecs import ResponseGetservicespecs
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 
 # path params
@@ -93,7 +93,7 @@ request_path_service = api_client.PathParameter(
 )
 _path = '/sam/monitor/services/{service}/specs'
 _method = 'GET'
-SchemaFor200ResponseBodyApplicationJson = InlineResponse2001
+SchemaFor200ResponseBodyApplicationJson = ResponseGetservicespecs
 
 
 @dataclass

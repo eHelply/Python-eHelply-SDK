@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**login**](UsersApi.md#login) | **POST** /sam/users/auth/login | Login
 [**refresh_token**](UsersApi.md#refresh_token) | **POST** /sam/users/auth/{app_client}/refresh-token | Refreshtoken
 [**reset_password**](UsersApi.md#reset_password) | **POST** /sam/users/auth/password/reset | Resetpassword
-[**reset_password_confirmation_users_auth_password_reset_confirm_post**](UsersApi.md#reset_password_confirmation_users_auth_password_reset_confirm_post) | **POST** /sam/users/auth/password/reset/confirm | Reset Password Confirmation
+[**reset_password_confirmation**](UsersApi.md#reset_password_confirmation) | **POST** /sam/users/auth/password/reset/confirm | Resetpasswordconfirmation
 [**search_participants**](UsersApi.md#search_participants) | **GET** /sam/users/participants | Searchparticipants
 [**signup**](UsersApi.md#signup) | **POST** /sam/users/auth/signup | Signup
 [**update_participant**](UsersApi.md#update_participant) | **PUT** /sam/users/participants/{participant_id} | Updateparticipant
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**user_validations**](UsersApi.md#user_validations) | **POST** /sam/users/validations/{field} | Uservalidations
 
 # **confirm_signup**
-> bool, date, datetime, dict, float, int, list, str, none_type confirm_signup(user_confirmation)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} confirm_signup(user_confirmation)
 
 Confirmsignup
 
@@ -98,9 +98,10 @@ headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
 
-Type | Description | Notes
-------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -123,7 +124,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -318,7 +319,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_user**
-> bool, date, datetime, dict, float, int, list, str, none_type create_user()
+> UserResponse create_user()
 
 Createuser
 
@@ -330,6 +331,7 @@ Usually ran after login and will do the following: - If no user exists (AKA sign
 import ehelply_python_sdk
 from ehelply_python_sdk.api import users_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.user_response import UserResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -395,10 +397,10 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
+Type | Description  | Notes
 ------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+[**UserResponse**](UserResponse.md) |  | 
+
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -421,7 +423,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -1434,7 +1436,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reset_password**
-> bool, date, datetime, dict, float, int, list, str, none_type reset_password(user_password_reset)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} reset_password(user_password_reset)
 
 Resetpassword
 
@@ -1509,9 +1511,10 @@ headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
 
-Type | Description | Notes
-------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1534,7 +1537,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -1542,10 +1545,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reset_password_confirmation_users_auth_password_reset_confirm_post**
-> bool, date, datetime, dict, float, int, list, str, none_type reset_password_confirmation_users_auth_password_reset_confirm_post(user_password_reset_confirmation)
+# **reset_password_confirmation**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} reset_password_confirmation(user_password_reset_confirmation)
 
-Reset Password Confirmation
+Resetpasswordconfirmation
 
 Resets the given user's password to the given password when the proper code is provided
 
@@ -1575,13 +1578,13 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         password="password_example",
     )
     try:
-        # Reset Password Confirmation
-        api_response = api_instance.reset_password_confirmation_users_auth_password_reset_confirm_post(
+        # Resetpasswordconfirmation
+        api_response = api_instance.reset_password_confirmation(
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling UsersApi->reset_password_confirmation_users_auth_password_reset_confirm_post: %s\n" % e)
+        print("Exception when calling UsersApi->reset_password_confirmation: %s\n" % e)
 ```
 ### Parameters
 
@@ -1620,9 +1623,10 @@ headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
 
-Type | Description | Notes
-------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1645,7 +1649,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 

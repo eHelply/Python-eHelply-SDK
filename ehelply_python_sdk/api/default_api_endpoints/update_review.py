@@ -177,7 +177,7 @@ request_body_update_review = api_client.RequestBody(
     },
     required=True,
 )
-_path = '/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid}'
+_path = '/products/reviews/types/{entity_type}/entities/{entity_uuid}/reviews/{review_uuid}'
 _method = 'PUT'
 SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
 

@@ -136,7 +136,7 @@ request_body_product_base = api_client.RequestBody(
     },
     required=True,
 )
-_path = '/products'
+_path = '/products/products'
 _method = 'POST'
 SchemaFor200ResponseBodyApplicationJson = ProductReturn
 

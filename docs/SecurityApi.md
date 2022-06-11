@@ -4,19 +4,19 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_encryption_key_security_encryption_categories_category_keys_post**](SecurityApi.md#create_encryption_key_security_encryption_categories_category_keys_post) | **POST** /sam/security/encryption/categories/{category}/keys | Create Encryption Key
-[**create_key_security_keys_post**](SecurityApi.md#create_key_security_keys_post) | **POST** /sam/security/keys | Create Key
-[**delete_key_security_keys_key_uuid_delete**](SecurityApi.md#delete_key_security_keys_key_uuid_delete) | **DELETE** /sam/security/keys/{key_uuid} | Delete Key
-[**generate_token_security_tokens_post**](SecurityApi.md#generate_token_security_tokens_post) | **POST** /sam/security/tokens | Generate Token
-[**get_encryption_key_security_encryption_categories_category_keys_get**](SecurityApi.md#get_encryption_key_security_encryption_categories_category_keys_get) | **GET** /sam/security/encryption/categories/{category}/keys | Get Encryption Key
-[**get_key_security_keys_key_uuid_get**](SecurityApi.md#get_key_security_keys_key_uuid_get) | **GET** /sam/security/keys/{key_uuid} | Get Key
-[**search_keys_security_keys_get**](SecurityApi.md#search_keys_security_keys_get) | **GET** /sam/security/keys | Search Keys
-[**verify_key_security_keys_verify_post**](SecurityApi.md#verify_key_security_keys_verify_post) | **POST** /sam/security/keys/verify | Verify Key
+[**create_encryption_key**](SecurityApi.md#create_encryption_key) | **POST** /sam/security/encryption/categories/{category}/keys | Createencryptionkey
+[**create_key**](SecurityApi.md#create_key) | **POST** /sam/security/keys | Createkey
+[**delete_key**](SecurityApi.md#delete_key) | **DELETE** /sam/security/keys/{key_uuid} | Deletekey
+[**generate_token**](SecurityApi.md#generate_token) | **POST** /sam/security/tokens | Generatetoken
+[**get_encryption_key**](SecurityApi.md#get_encryption_key) | **GET** /sam/security/encryption/categories/{category}/keys | Getencryptionkey
+[**get_key**](SecurityApi.md#get_key) | **GET** /sam/security/keys/{key_uuid} | Getkey
+[**search_keys**](SecurityApi.md#search_keys) | **GET** /sam/security/keys | Searchkeys
+[**verify_key**](SecurityApi.md#verify_key) | **POST** /sam/security/keys/verify | Verifykey
 
-# **create_encryption_key_security_encryption_categories_category_keys_post**
-> bool, date, datetime, dict, float, int, list, str, none_type create_encryption_key_security_encryption_categories_category_keys_post(category)
+# **create_encryption_key**
+> SecurityEncryptionKeyResponse create_encryption_key(category)
 
-Create Encryption Key
+Createencryptionkey
 
 ### Example
 
@@ -24,6 +24,7 @@ Create Encryption Key
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.security_encryption_key_response import SecurityEncryptionKeyResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -43,14 +44,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     header_params = {
     }
     try:
-        # Create Encryption Key
-        api_response = api_instance.create_encryption_key_security_encryption_categories_category_keys_post(
+        # Createencryptionkey
+        api_response = api_instance.create_encryption_key(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->create_encryption_key_security_encryption_categories_category_keys_post: %s\n" % e)
+        print("Exception when calling SecurityApi->create_encryption_key: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -60,14 +61,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'ehelply-security-secret-key': "ehelply-security-secret-key_example",
     }
     try:
-        # Create Encryption Key
-        api_response = api_instance.create_encryption_key_security_encryption_categories_category_keys_post(
+        # Createencryptionkey
+        api_response = api_instance.create_encryption_key(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->create_encryption_key_security_encryption_categories_category_keys_post: %s\n" % e)
+        print("Exception when calling SecurityApi->create_encryption_key: %s\n" % e)
 ```
 ### Parameters
 
@@ -123,10 +124,10 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
+Type | Description  | Notes
 ------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+[**SecurityEncryptionKeyResponse**](SecurityEncryptionKeyResponse.md) |  | 
+
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -149,7 +150,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**SecurityEncryptionKeyResponse**](SecurityEncryptionKeyResponse.md)
 
 ### Authorization
 
@@ -157,20 +158,20 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_key_security_keys_post**
-> InlineResponse2007 create_key_security_keys_post(body_create_key_security_keys_post)
+# **create_key**
+> ResponseCreatekey create_key(security_key_create)
 
-Create Key
+Createkey
 
 ### Example
 
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.inline_response2007 import InlineResponse2007
 from ehelply_python_sdk.model.inline_response403 import InlineResponse403
+from ehelply_python_sdk.model.response_createkey import ResponseCreatekey
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.body_create_key_security_keys_post import BodyCreateKeySecurityKeysPost
+from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -186,42 +187,38 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     query_params = {
     }
-    body = BodyCreateKeySecurityKeysPost(
-        key=SecurityKeyCreate(
-            name="name_example",
-            summary="summary_example",
-        ),
+    body = SecurityKeyCreate(
+        name="name_example",
+        summary="summary_example",
     )
     try:
-        # Create Key
-        api_response = api_instance.create_key_security_keys_post(
+        # Createkey
+        api_response = api_instance.create_key(
             query_params=query_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->create_key_security_keys_post: %s\n" % e)
+        print("Exception when calling SecurityApi->create_key: %s\n" % e)
 
     # example passing only optional values
     query_params = {
         'access_length': 64,
         'secret_length': 64,
     }
-    body = BodyCreateKeySecurityKeysPost(
-        key=SecurityKeyCreate(
-            name="name_example",
-            summary="summary_example",
-        ),
+    body = SecurityKeyCreate(
+        name="name_example",
+        summary="summary_example",
     )
     try:
-        # Create Key
-        api_response = api_instance.create_key_security_keys_post(
+        # Createkey
+        api_response = api_instance.create_key(
             query_params=query_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->create_key_security_keys_post: %s\n" % e)
+        print("Exception when calling SecurityApi->create_key: %s\n" % e)
 ```
 ### Parameters
 
@@ -240,7 +237,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 #### SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**BodyCreateKeySecurityKeysPost**](BodyCreateKeySecurityKeysPost.md) |  | 
+[**SecurityKeyCreate**](SecurityKeyCreate.md) |  | 
 
 
 ### query_params
@@ -285,7 +282,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**InlineResponse2007**](InlineResponse2007.md) |  | 
+[**ResponseCreatekey**](ResponseCreatekey.md) |  | 
 
 
 #### ApiResponseFor400
@@ -335,7 +332,7 @@ Type | Description  | Notes
 
 
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**ResponseCreatekey**](ResponseCreatekey.md)
 
 ### Authorization
 
@@ -343,10 +340,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_key_security_keys_key_uuid_delete**
-> InlineResponse2008 delete_key_security_keys_key_uuid_delete(key_uuid)
+# **delete_key**
+> ResponseDeletekey delete_key(key_uuid)
 
-Delete Key
+Deletekey
 
 ### Example
 
@@ -354,8 +351,8 @@ Delete Key
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
 from ehelply_python_sdk.model.inline_response403 import InlineResponse403
-from ehelply_python_sdk.model.inline_response2008 import InlineResponse2008
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.response_deletekey import ResponseDeletekey
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -373,13 +370,13 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'key_uuid': "key_uuid_example",
     }
     try:
-        # Delete Key
-        api_response = api_instance.delete_key_security_keys_key_uuid_delete(
+        # Deletekey
+        api_response = api_instance.delete_key(
             path_params=path_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->delete_key_security_keys_key_uuid_delete: %s\n" % e)
+        print("Exception when calling SecurityApi->delete_key: %s\n" % e)
 ```
 ### Parameters
 
@@ -424,7 +421,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**InlineResponse2008**](InlineResponse2008.md) |  | 
+[**ResponseDeletekey**](ResponseDeletekey.md) |  | 
 
 
 #### ApiResponseFor403
@@ -461,7 +458,7 @@ Type | Description  | Notes
 
 
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**ResponseDeletekey**](ResponseDeletekey.md)
 
 ### Authorization
 
@@ -469,19 +466,19 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generate_token_security_tokens_post**
-> InlineResponse2006 generate_token_security_tokens_post(body_generate_token_security_tokens_post)
+# **generate_token**
+> ResponseGeneratetoken generate_token(security_create_token)
 
-Generate Token
+Generatetoken
 
 ### Example
 
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.response_generatetoken import ResponseGeneratetoken
 from ehelply_python_sdk.model.inline_response403 import InlineResponse403
-from ehelply_python_sdk.model.inline_response2006 import InlineResponse2006
-from ehelply_python_sdk.model.body_generate_token_security_tokens_post import BodyGenerateTokenSecurityTokensPost
+from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -496,19 +493,17 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     api_instance = security_api.SecurityApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = BodyGenerateTokenSecurityTokensPost(
-        token=SecurityCreateToken(
-            length=64,
-        ),
+    body = SecurityCreateToken(
+        length=64,
     )
     try:
-        # Generate Token
-        api_response = api_instance.generate_token_security_tokens_post(
+        # Generatetoken
+        api_response = api_instance.generate_token(
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->generate_token_security_tokens_post: %s\n" % e)
+        print("Exception when calling SecurityApi->generate_token: %s\n" % e)
 ```
 ### Parameters
 
@@ -526,7 +521,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 #### SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**BodyGenerateTokenSecurityTokensPost**](BodyGenerateTokenSecurityTokensPost.md) |  | 
+[**SecurityCreateToken**](SecurityCreateToken.md) |  | 
 
 
 ### Return Types, Responses
@@ -549,7 +544,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**InlineResponse2006**](InlineResponse2006.md) |  | 
+[**ResponseGeneratetoken**](ResponseGeneratetoken.md) |  | 
 
 
 #### ApiResponseFor403
@@ -586,7 +581,7 @@ Type | Description  | Notes
 
 
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**ResponseGeneratetoken**](ResponseGeneratetoken.md)
 
 ### Authorization
 
@@ -594,10 +589,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_encryption_key_security_encryption_categories_category_keys_get**
-> [SecurityEncryptionKeyGet] get_encryption_key_security_encryption_categories_category_keys_get(category)
+# **get_encryption_key**
+> [SecurityEncryptionKeyGet] get_encryption_key(category)
 
-Get Encryption Key
+Getencryptionkey
 
 ### Example
 
@@ -625,14 +620,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     header_params = {
     }
     try:
-        # Get Encryption Key
-        api_response = api_instance.get_encryption_key_security_encryption_categories_category_keys_get(
+        # Getencryptionkey
+        api_response = api_instance.get_encryption_key(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->get_encryption_key_security_encryption_categories_category_keys_get: %s\n" % e)
+        print("Exception when calling SecurityApi->get_encryption_key: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -642,14 +637,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'ehelply-security-secret-key': "ehelply-security-secret-key_example",
     }
     try:
-        # Get Encryption Key
-        api_response = api_instance.get_encryption_key_security_encryption_categories_category_keys_get(
+        # Getencryptionkey
+        api_response = api_instance.get_encryption_key(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->get_encryption_key_security_encryption_categories_category_keys_get: %s\n" % e)
+        print("Exception when calling SecurityApi->get_encryption_key: %s\n" % e)
 ```
 ### Parameters
 
@@ -739,10 +734,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_key_security_keys_key_uuid_get**
-> SecurityKeyGet get_key_security_keys_key_uuid_get(key_uuid)
+# **get_key**
+> SecurityKeyGet get_key(key_uuid)
 
-Get Key
+Getkey
 
 ### Example
 
@@ -769,13 +764,13 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'key_uuid': "key_uuid_example",
     }
     try:
-        # Get Key
-        api_response = api_instance.get_key_security_keys_key_uuid_get(
+        # Getkey
+        api_response = api_instance.get_key(
             path_params=path_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->get_key_security_keys_key_uuid_get: %s\n" % e)
+        print("Exception when calling SecurityApi->get_key: %s\n" % e)
 ```
 ### Parameters
 
@@ -871,10 +866,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_keys_security_keys_get**
-> [SecurityKeyGet] search_keys_security_keys_get()
+# **search_keys**
+> [SecurityKeyGet] search_keys()
 
-Search Keys
+Searchkeys
 
 ### Example
 
@@ -897,11 +892,11 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
-        # Search Keys
-        api_response = api_instance.search_keys_security_keys_get()
+        # Searchkeys
+        api_response = api_instance.search_keys()
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->search_keys_security_keys_get: %s\n" % e)
+        print("Exception when calling SecurityApi->search_keys: %s\n" % e)
 ```
 ### Parameters
 This endpoint does not need any parameter.
@@ -957,10 +952,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verify_key_security_keys_verify_post**
-> SecurityKeyGet verify_key_security_keys_verify_post(body_verify_key_security_keys_verify_post)
+# **verify_key**
+> SecurityKeyGet verify_key(security_key_verify)
 
-Verify Key
+Verifykey
 
 ### Example
 
@@ -969,8 +964,8 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
 from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
-from ehelply_python_sdk.model.body_verify_key_security_keys_verify_post import BodyVerifyKeySecurityKeysVerifyPost
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.security_key_verify import SecurityKeyVerify
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -984,20 +979,18 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     api_instance = security_api.SecurityApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = BodyVerifyKeySecurityKeysVerifyPost(
-        key=SecurityKeyVerify(
-            access="access_example",
-            secret="secret_example",
-        ),
+    body = SecurityKeyVerify(
+        access="access_example",
+        secret="secret_example",
     )
     try:
-        # Verify Key
-        api_response = api_instance.verify_key_security_keys_verify_post(
+        # Verifykey
+        api_response = api_instance.verify_key(
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SecurityApi->verify_key_security_keys_verify_post: %s\n" % e)
+        print("Exception when calling SecurityApi->verify_key: %s\n" % e)
 ```
 ### Parameters
 
@@ -1015,7 +1008,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 #### SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**BodyVerifyKeySecurityKeysVerifyPost**](BodyVerifyKeySecurityKeysVerifyPost.md) |  | 
+[**SecurityKeyVerify**](SecurityKeyVerify.md) |  | 
 
 
 ### Return Types, Responses

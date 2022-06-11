@@ -4,17 +4,16 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_contact_support_contact_post**](SupportApi.md#create_contact_support_contact_post) | **POST** /sam/support/contact | Create Contact
-[**create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post**](SupportApi.md#create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post) | **POST** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets | Create Ticket
-[**delete_contact_support_contact_delete**](SupportApi.md#delete_contact_support_contact_delete) | **DELETE** /sam/support/contact | Delete Contact
-[**list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get**](SupportApi.md#list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get) | **GET** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets | List Tickets
-[**update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put**](SupportApi.md#update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put) | **PUT** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets/{ticket_id} | Update Ticket
-[**view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get**](SupportApi.md#view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get) | **GET** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets/{ticket_id} | View Ticket
+[**create_contact**](SupportApi.md#create_contact) | **POST** /sam/support/contact | Createcontact
+[**create_ticket**](SupportApi.md#create_ticket) | **POST** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets | Createticket
+[**list_tickets**](SupportApi.md#list_tickets) | **GET** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets | Listtickets
+[**update_ticket**](SupportApi.md#update_ticket) | **PUT** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets/{ticket_id} | Updateticket
+[**view_ticket**](SupportApi.md#view_ticket) | **GET** /sam/support/projects/{project_uuid}/members/{member_uuid}/tickets/{ticket_id} | Viewticket
 
-# **create_contact_support_contact_post**
-> ContactResponse create_contact_support_contact_post(contact)
+# **create_contact**
+> ContactResponse create_contact(contact)
 
-Create Contact
+Createcontact
 
 ### Example
 
@@ -47,14 +46,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         phone="phone_example",
     )
     try:
-        # Create Contact
-        api_response = api_instance.create_contact_support_contact_post(
+        # Createcontact
+        api_response = api_instance.create_contact(
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->create_contact_support_contact_post: %s\n" % e)
+        print("Exception when calling SupportApi->create_contact: %s\n" % e)
 
     # example passing only optional values
     header_params = {
@@ -72,14 +71,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         phone="phone_example",
     )
     try:
-        # Create Contact
-        api_response = api_instance.create_contact_support_contact_post(
+        # Createcontact
+        api_response = api_instance.create_contact(
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->create_contact_support_contact_post: %s\n" % e)
+        print("Exception when calling SupportApi->create_contact: %s\n" % e)
 ```
 ### Parameters
 
@@ -214,10 +213,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post**
-> TicketResponse create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(project_uuidmember_uuidcreate_ticket)
+# **create_ticket**
+> TicketResponse create_ticket(project_uuidmember_uuidcreate_ticket)
 
-Create Ticket
+Createticket
 
 ### Example
 
@@ -252,15 +251,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         subject="subject_example",
     )
     try:
-        # Create Ticket
-        api_response = api_instance.create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(
+        # Createticket
+        api_response = api_instance.create_ticket(
             path_params=path_params,
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post: %s\n" % e)
+        print("Exception when calling SupportApi->create_ticket: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -280,15 +279,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         subject="subject_example",
     )
     try:
-        # Create Ticket
-        api_response = api_instance.create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post(
+        # Createticket
+        api_response = api_instance.create_ticket(
             path_params=path_params,
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->create_ticket_support_projects_project_uuid_members_member_uuid_tickets_post: %s\n" % e)
+        print("Exception when calling SupportApi->create_ticket: %s\n" % e)
 ```
 ### Parameters
 
@@ -444,160 +443,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_contact_support_contact_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_contact_support_contact_delete()
+# **list_tickets**
+> [TicketsResponse] list_tickets(project_uuidmember_uuid)
 
-Delete Contact
-
-### Example
-
-```python
-import ehelply_python_sdk
-from ehelply_python_sdk.api import support_api
-from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.prod.ehelply.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ehelply_python_sdk.Configuration(
-    host = "https://api.prod.ehelply.com"
-)
-
-# Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = support_api.SupportApi(api_client)
-
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
-    try:
-        # Delete Contact
-        api_response = api_instance.delete_contact_support_contact_delete(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->delete_contact_support_contact_delete: %s\n" % e)
-```
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
-
-**bool, date, datetime, dict, float, int, list, str, none_type**
-
-### Authorization
-
-No authorization required
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get**
-> [TicketsResponse] list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get(project_uuidmember_uuid)
-
-List Tickets
+Listtickets
 
 ### Example
 
@@ -627,14 +476,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     header_params = {
     }
     try:
-        # List Tickets
-        api_response = api_instance.list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get(
+        # Listtickets
+        api_response = api_instance.list_tickets(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get: %s\n" % e)
+        print("Exception when calling SupportApi->list_tickets: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -650,14 +499,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'ehelply-data': "ehelply-data_example",
     }
     try:
-        # List Tickets
-        api_response = api_instance.list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get(
+        # Listtickets
+        api_response = api_instance.list_tickets(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->list_tickets_support_projects_project_uuid_members_member_uuid_tickets_get: %s\n" % e)
+        print("Exception when calling SupportApi->list_tickets: %s\n" % e)
 ```
 ### Parameters
 
@@ -809,10 +658,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put**
-> TicketResponse update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put(project_uuidmember_uuidticket_idcreate_ticket)
+# **update_ticket**
+> TicketResponse update_ticket(project_uuidmember_uuidticket_idcreate_ticket)
 
-Update Ticket
+Updateticket
 
 ### Example
 
@@ -848,15 +697,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         subject="subject_example",
     )
     try:
-        # Update Ticket
-        api_response = api_instance.update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put(
+        # Updateticket
+        api_response = api_instance.update_ticket(
             path_params=path_params,
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put: %s\n" % e)
+        print("Exception when calling SupportApi->update_ticket: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -877,15 +726,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         subject="subject_example",
     )
     try:
-        # Update Ticket
-        api_response = api_instance.update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put(
+        # Updateticket
+        api_response = api_instance.update_ticket(
             path_params=path_params,
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->update_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_put: %s\n" % e)
+        print("Exception when calling SupportApi->update_ticket: %s\n" % e)
 ```
 ### Parameters
 
@@ -1048,10 +897,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get**
-> TicketResponse view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get(project_uuidmember_uuidticket_id)
+# **view_ticket**
+> TicketResponse view_ticket(project_uuidmember_uuidticket_id)
 
-View Ticket
+Viewticket
 
 ### Example
 
@@ -1082,14 +931,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     header_params = {
     }
     try:
-        # View Ticket
-        api_response = api_instance.view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get(
+        # Viewticket
+        api_response = api_instance.view_ticket(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get: %s\n" % e)
+        print("Exception when calling SupportApi->view_ticket: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -1106,14 +955,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'ehelply-data': "ehelply-data_example",
     }
     try:
-        # View Ticket
-        api_response = api_instance.view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get(
+        # Viewticket
+        api_response = api_instance.view_ticket(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling SupportApi->view_ticket_support_projects_project_uuid_members_member_uuid_tickets_ticket_id_get: %s\n" % e)
+        print("Exception when calling SupportApi->view_ticket: %s\n" % e)
 ```
 ### Parameters
 

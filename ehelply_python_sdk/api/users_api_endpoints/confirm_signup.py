@@ -77,7 +77,7 @@ request_body_user_confirmation = api_client.RequestBody(
 )
 _path = '/sam/users/auth/signup/confirm'
 _method = 'POST'
-SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
+SchemaFor200ResponseBodyApplicationJson = DictSchema
 
 
 @dataclass

@@ -62,11 +62,11 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.inline_response403 import InlineResponse403
-from ehelply_python_sdk.model.inline_response200 import InlineResponse200
+from ehelply_python_sdk.model.response_getserviceswithspecs import ResponseGetserviceswithspecs
 
 _path = '/sam/monitor/specs/services'
 _method = 'GET'
-SchemaFor200ResponseBodyApplicationJson = InlineResponse200
+SchemaFor200ResponseBodyApplicationJson = ResponseGetserviceswithspecs
 
 
 @dataclass

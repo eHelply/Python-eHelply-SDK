@@ -162,7 +162,7 @@ request_body_product_base = api_client.RequestBody(
     },
     required=True,
 )
-_path = '/products/{product_uuid}'
+_path = '/products/products/{product_uuid}'
 _method = 'PUT'
 SchemaFor200ResponseBodyApplicationJson = ProductReturn
 

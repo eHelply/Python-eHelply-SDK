@@ -62,6 +62,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.user_response import UserResponse
 
 # header params
 AuthorizationSchema = StrSchema
@@ -90,7 +91,7 @@ request_header_authorization = api_client.HeaderParameter(
 )
 _path = '/sam/users'
 _method = 'POST'
-SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
+SchemaFor200ResponseBodyApplicationJson = UserResponse
 
 
 @dataclass
