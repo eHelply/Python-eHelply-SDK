@@ -180,9 +180,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -373,9 +373,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -579,9 +579,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -767,9 +767,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -961,9 +961,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1177,9 +1177,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1361,9 +1361,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1545,9 +1545,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1729,9 +1729,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1931,9 +1931,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2124,9 +2124,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2317,9 +2317,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2374,7 +2374,6 @@ Get Appointment
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -2503,10 +2502,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Appointment does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Appointment does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2529,10 +2528,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -2542,10 +2543,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -2730,9 +2733,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2945,9 +2948,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3147,9 +3150,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3380,9 +3383,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3626,9 +3629,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3865,9 +3868,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -4075,9 +4078,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -4297,9 +4300,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -4549,9 +4552,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -4788,9 +4791,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -4981,9 +4984,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -5038,7 +5041,6 @@ Update Appointment
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.appointment_base import AppointmentBase
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -5210,10 +5212,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Appointment does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Appointment does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -5236,10 +5238,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -5249,10 +5253,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -5440,9 +5446,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -5656,9 +5662,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -5881,9 +5887,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes

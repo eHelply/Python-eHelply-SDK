@@ -112,9 +112,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -159,7 +159,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_key**
-> ResponseCreatekey create_key(security_key_create)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} create_key(security_key_create)
 
 Createkey
 
@@ -168,8 +168,6 @@ Createkey
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
-from ehelply_python_sdk.model.response_createkey import ResponseCreatekey
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
 from pprint import pprint
@@ -266,11 +264,11 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-400 | ApiResponseFor400 | Access token and secret token lengths must be greater than 48 characters and less than 1024 characters to guarantee adequate security.  
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+400 | ApiResponseFor400 | Access token and secret token lengths must be greater than 48 characters and less than 1024 characters to guarantee adequate security. 
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -280,10 +278,12 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResponseCreatekey**](ResponseCreatekey.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor400
 Name | Type | Description  | Notes
@@ -293,10 +293,12 @@ body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor400ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -306,10 +308,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -332,7 +336,7 @@ Type | Description  | Notes
 
 
 
-[**ResponseCreatekey**](ResponseCreatekey.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -341,7 +345,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_key**
-> ResponseDeletekey delete_key(key_uuid)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_key(key_uuid)
 
 Deletekey
 
@@ -350,9 +354,7 @@ Deletekey
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.response_deletekey import ResponseDeletekey
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -406,10 +408,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -419,10 +421,12 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResponseDeletekey**](ResponseDeletekey.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -432,10 +436,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -458,7 +464,7 @@ Type | Description  | Notes
 
 
 
-[**ResponseDeletekey**](ResponseDeletekey.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -467,7 +473,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_token**
-> ResponseGeneratetoken generate_token(security_create_token)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} generate_token(security_create_token)
 
 Generatetoken
 
@@ -476,8 +482,6 @@ Generatetoken
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.response_generatetoken import ResponseGeneratetoken
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -529,10 +533,10 @@ Type | Description  | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -542,10 +546,12 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResponseGeneratetoken**](ResponseGeneratetoken.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -555,10 +561,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -581,7 +589,7 @@ Type | Description  | Notes
 
 
 
-[**ResponseGeneratetoken**](ResponseGeneratetoken.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -688,9 +696,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -744,7 +752,6 @@ Getkey
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -800,10 +807,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Key does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Key does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -826,10 +833,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -839,10 +848,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -876,7 +887,6 @@ Searchkeys
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -906,9 +916,9 @@ This endpoint does not need any parameter.
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -931,10 +941,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -962,7 +974,6 @@ Verifykey
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.security_key_verify import SecurityKeyVerify
@@ -1016,11 +1027,11 @@ Type | Description  | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-400 | ApiResponseFor400 | Access token and secret token lengths must be greater than 48 characters and less than 1024 characters to guarantee adequate security.  
-403 | ApiResponseFor403 | Key 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+400 | ApiResponseFor400 | Access token and secret token lengths must be greater than 48 characters and less than 1024 characters to guarantee adequate security. 
+403 | ApiResponseFor403 | Key
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1043,10 +1054,12 @@ body | typing.Union[SchemaFor400ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor400ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -1056,10 +1069,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes

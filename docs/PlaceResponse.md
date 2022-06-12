@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **blog_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
 **tags** | **[TagBase]** |  | [optional] 
 **categories** | **[CategoryBase]** |  | [optional] 
-**company** | **object** |  | [optional] 
+**company** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **created_at** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **deleted_at** | **str** |  | [optional] 

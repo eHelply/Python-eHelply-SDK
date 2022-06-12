@@ -11,6 +11,7 @@ import re  # noqa: F401
 import sys  # noqa: F401
 import typing
 import urllib3
+import functools  # noqa: F401
 from urllib3._collections import HTTPHeaderDict
 
 from ehelply_python_sdk import api_client, exceptions
@@ -30,6 +31,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     Float32Schema,
     Float64Schema,
     NumberSchema,
+    UUIDSchema,
     DateSchema,
     DateTimeSchema,
     DecimalSchema,
@@ -51,6 +53,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     Float32Base,
     Float64Base,
     NumberBase,
+    UUIDBase,
     DateBase,
     DateTimeBase,
     BoolBase,
@@ -61,7 +64,6 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     _SchemaEnumMaker
 )
 
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 
@@ -215,7 +217,28 @@ _response_for_200 = api_client.OpenApiResponse(
             schema=SchemaFor200ResponseBodyApplicationJson),
     },
 )
-SchemaFor403ResponseBodyApplicationJson = InlineResponse403
+
+
+class SchemaFor403ResponseBodyApplicationJson(
+    DictSchema
+):
+    message = StrSchema
+
+
+    def __new__(
+        cls,
+        *args: typing.Union[dict, frozendict, ],
+        message: typing.Union[message, Unset] = unset,
+        _configuration: typing.Optional[Configuration] = None,
+        **kwargs: typing.Type[Schema],
+    ) -> 'SchemaFor403ResponseBodyApplicationJson':
+        return super().__new__(
+            cls,
+            *args,
+            message=message,
+            _configuration=_configuration,
+            **kwargs,
+        )
 
 
 @dataclass
@@ -234,7 +257,28 @@ _response_for_403 = api_client.OpenApiResponse(
             schema=SchemaFor403ResponseBodyApplicationJson),
     },
 )
-SchemaFor404ResponseBodyApplicationJson = InlineResponse403
+
+
+class SchemaFor404ResponseBodyApplicationJson(
+    DictSchema
+):
+    message = StrSchema
+
+
+    def __new__(
+        cls,
+        *args: typing.Union[dict, frozendict, ],
+        message: typing.Union[message, Unset] = unset,
+        _configuration: typing.Optional[Configuration] = None,
+        **kwargs: typing.Type[Schema],
+    ) -> 'SchemaFor404ResponseBodyApplicationJson':
+        return super().__new__(
+            cls,
+            *args,
+            message=message,
+            _configuration=_configuration,
+            **kwargs,
+        )
 
 
 @dataclass

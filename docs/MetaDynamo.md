@@ -5,8 +5,8 @@ A meta from DynamoDB
 #### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**basic** | **object** |  | [optional] 
-**detailed** | **object** |  | [optional] 
+**basic** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**detailed** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **custom** | [**MetaCustom**](MetaCustom.md) |  | [optional] 
 **dates** | [**DatesMeta**](DatesMeta.md) |  | [optional] 
 **fields** | **[Field]** |  | [optional] 

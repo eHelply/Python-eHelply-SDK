@@ -25,7 +25,7 @@ Method | HTTP request | Description
 [**update_usage_type**](ProjectsApi.md#update_usage_type) | **PUT** /sam/projects/usage/types/{usage_type_key} | Updateusagetype
 
 # **add_member_to_project**
-> ResponseAddmembertoproject add_member_to_project(project_uuidentity_uuid)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} add_member_to_project(project_uuidentity_uuid)
 
 Addmembertoproject
 
@@ -34,9 +34,7 @@ Addmembertoproject
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.response_addmembertoproject import ResponseAddmembertoproject
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -173,10 +171,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -186,10 +184,12 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResponseAddmembertoproject**](ResponseAddmembertoproject.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -199,10 +199,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -212,10 +214,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -231,7 +235,7 @@ Type | Description  | Notes
 
 
 
-[**ResponseAddmembertoproject**](ResponseAddmembertoproject.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -240,7 +244,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **archive_project**
-> ResponseArchiveproject archive_project(project_uuid)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} archive_project(project_uuid)
 
 Archiveproject
 
@@ -249,9 +253,7 @@ Archiveproject
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.response_archiveproject import ResponseArchiveproject
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -379,10 +381,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -392,10 +394,12 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResponseArchiveproject**](ResponseArchiveproject.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -405,10 +409,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -431,7 +437,7 @@ Type | Description  | Notes
 
 
 
-[**ResponseArchiveproject**](ResponseArchiveproject.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -451,7 +457,6 @@ Create a new Project
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.project_db import ProjectDB
@@ -578,10 +583,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -604,10 +609,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -648,7 +655,6 @@ Createprojectkey
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
@@ -799,10 +805,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project or Entity does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project or Entity does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -825,10 +831,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -838,10 +846,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -875,7 +885,6 @@ Createusagetype
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.projects_usage_type_create import ProjectsUsageTypeCreate
@@ -1024,10 +1033,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1050,10 +1059,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1094,7 +1105,6 @@ Deleteprojectkey
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -1245,10 +1255,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project, Entity, or Key does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project, Entity, or Key does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1271,10 +1281,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1284,10 +1296,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -1312,7 +1326,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_usage_type**
-> ResponseDeleteusagetype delete_usage_type(usage_type_key)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} delete_usage_type(usage_type_key)
 
 Deleteusagetype
 
@@ -1321,9 +1335,7 @@ Deleteusagetype
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.response_deleteusagetype import ResponseDeleteusagetype
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1451,10 +1463,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1464,10 +1476,12 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResponseDeleteusagetype**](ResponseDeleteusagetype.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -1477,10 +1491,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1503,7 +1519,7 @@ Type | Description  | Notes
 
 
 
-[**ResponseDeleteusagetype**](ResponseDeleteusagetype.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -1521,7 +1537,6 @@ Getallprojectusage
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -1681,10 +1696,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1707,10 +1722,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1720,10 +1737,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -1757,7 +1776,6 @@ Getmemberprojects
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.projects_project_get import ProjectsProjectGet
 from pprint import pprint
@@ -1909,10 +1927,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Member does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Member does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -1935,10 +1953,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -1948,10 +1968,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -1987,7 +2009,6 @@ Get a Project
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.project_db import ProjectDB
 from pprint import pprint
@@ -2117,10 +2138,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2143,10 +2164,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -2156,10 +2179,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -2193,7 +2218,6 @@ Getprojectkeys
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -2323,10 +2347,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project or Entity does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project or Entity does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2349,10 +2373,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -2362,10 +2388,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -2399,7 +2427,6 @@ Getprojectmembers
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -2551,10 +2578,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2577,10 +2604,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -2590,10 +2619,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -2627,7 +2658,6 @@ Getspecificprojectusage
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -2766,10 +2796,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project, Usage does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project, Usage does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2792,10 +2822,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -2805,10 +2837,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -2845,7 +2879,6 @@ Get a UsageType  No auth because we may want to use this on pricing/docs pages
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -2900,10 +2933,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | UsageType does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | UsageType does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -2926,10 +2959,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -2939,10 +2974,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -2967,7 +3004,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_member_from_project**
-> ResponseRemovememberfromproject remove_member_from_project(project_uuidentity_uuid)
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} remove_member_from_project(project_uuidentity_uuid)
 
 Removememberfromproject
 
@@ -2976,8 +3013,6 @@ Removememberfromproject
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
-from ehelply_python_sdk.model.response_removememberfromproject import ResponseRemovememberfromproject
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -3115,10 +3150,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3128,10 +3163,12 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ResponseRemovememberfromproject**](ResponseRemovememberfromproject.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
 Name | Type | Description  | Notes
@@ -3141,10 +3178,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -3154,10 +3193,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -3173,7 +3214,7 @@ Type | Description  | Notes
 
 
 
-[**ResponseRemovememberfromproject**](ResponseRemovememberfromproject.md)
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 
@@ -3193,7 +3234,6 @@ Search projects
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -3348,10 +3388,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3374,10 +3414,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -3420,7 +3462,6 @@ Get a UsageType  No auth because we may want to use this on pricing/docs pages
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -3517,10 +3558,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3543,10 +3584,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -3587,7 +3630,6 @@ Updateproject
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_project_update import ProjectsProjectUpdate
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -3737,10 +3779,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | Project does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | Project does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -3764,10 +3806,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -3777,10 +3821,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
@@ -3814,7 +3860,6 @@ Updateusagetype
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.inline_response403 import InlineResponse403
 from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -3983,10 +4028,10 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply 
-404 | ApiResponseFor404 | UsageType does not exist 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
+404 | ApiResponseFor404 | UsageType does not exist
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -4009,10 +4054,12 @@ body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor403ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -4022,10 +4069,12 @@ body | typing.Union[SchemaFor404ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 #### SchemaFor404ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**InlineResponse403**](InlineResponse403.md) |  | 
 
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**message** | **str** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor422
 Name | Type | Description  | Notes
