@@ -11,6 +11,7 @@ import re  # noqa: F401
 import sys  # noqa: F401
 import typing
 import urllib3
+import functools  # noqa: F401
 from urllib3._collections import HTTPHeaderDict
 
 from ehelply_python_sdk import api_client, exceptions
@@ -30,6 +31,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     Float32Schema,
     Float64Schema,
     NumberSchema,
+    UUIDSchema,
     DateSchema,
     DateTimeSchema,
     DecimalSchema,
@@ -51,6 +53,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     Float32Base,
     Float64Base,
     NumberBase,
+    UUIDBase,
     DateBase,
     DateTimeBase,
     BoolBase,
@@ -62,6 +65,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.user_response import UserResponse
 
 # header params
 AuthorizationSchema = StrSchema
@@ -90,7 +94,7 @@ request_header_authorization = api_client.HeaderParameter(
 )
 _path = '/sam/users'
 _method = 'POST'
-SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
+SchemaFor200ResponseBodyApplicationJson = UserResponse
 
 
 @dataclass

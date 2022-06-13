@@ -4,20 +4,21 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_logs_logging_logs_get**](LoggingApi.md#get_logs_logging_logs_get) | **GET** /sam/logging/logs | Get Logs
-[**get_service_logs_logging_logs_services_service_get**](LoggingApi.md#get_service_logs_logging_logs_services_service_get) | **GET** /sam/logging/logs/services/{service} | Get Service Logs
-[**get_subject_logs_logging_logs_services_service_subjects_subject_get**](LoggingApi.md#get_subject_logs_logging_logs_services_service_subjects_subject_get) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Get Subject Logs
+[**get_logs**](LoggingApi.md#get_logs) | **GET** /sam/logging/logs | Getlogs
+[**get_service_logs**](LoggingApi.md#get_service_logs) | **GET** /sam/logging/logs/services/{service} | Getservicelogs
+[**get_subject_logs**](LoggingApi.md#get_subject_logs) | **GET** /sam/logging/logs/services/{service}/subjects/{subject} | Getsubjectlogs
 
-# **get_logs_logging_logs_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_logs_logging_logs_get()
+# **get_logs**
+> [LoggingDynamo] get_logs()
 
-Get Logs
+Getlogs
 
 ### Example
 
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import logging_api
+from ehelply_python_sdk.model.logging_dynamo import LoggingDynamo
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -47,14 +48,14 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'ehelply-data': "ehelply-data_example",
     }
     try:
-        # Get Logs
-        api_response = api_instance.get_logs_logging_logs_get(
+        # Getlogs
+        api_response = api_instance.get_logs(
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling LoggingApi->get_logs_logging_logs_get: %s\n" % e)
+        print("Exception when calling LoggingApi->get_logs: %s\n" % e)
 ```
 ### Parameters
 
@@ -155,9 +156,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -170,7 +171,7 @@ headers | Unset | headers were not defined |
 
 Type | Description | Notes
 ------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+**[LoggingDynamo]** |  | 
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -193,7 +194,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**[LoggingDynamo]**](LoggingDynamo.md)
 
 ### Authorization
 
@@ -201,16 +202,17 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_logs_logging_logs_services_service_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_service_logs_logging_logs_services_service_get(service)
+# **get_service_logs**
+> [LoggingDynamo] get_service_logs(service)
 
-Get Service Logs
+Getservicelogs
 
 ### Example
 
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import logging_api
+from ehelply_python_sdk.model.logging_dynamo import LoggingDynamo
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -233,15 +235,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     header_params = {
     }
     try:
-        # Get Service Logs
-        api_response = api_instance.get_service_logs_logging_logs_services_service_get(
+        # Getservicelogs
+        api_response = api_instance.get_service_logs(
             path_params=path_params,
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling LoggingApi->get_service_logs_logging_logs_services_service_get: %s\n" % e)
+        print("Exception when calling LoggingApi->get_service_logs: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -262,15 +264,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'ehelply-data': "ehelply-data_example",
     }
     try:
-        # Get Service Logs
-        api_response = api_instance.get_service_logs_logging_logs_services_service_get(
+        # Getservicelogs
+        api_response = api_instance.get_service_logs(
             path_params=path_params,
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling LoggingApi->get_service_logs_logging_logs_services_service_get: %s\n" % e)
+        print("Exception when calling LoggingApi->get_service_logs: %s\n" % e)
 ```
 ### Parameters
 
@@ -385,9 +387,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -400,7 +402,7 @@ headers | Unset | headers were not defined |
 
 Type | Description | Notes
 ------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+**[LoggingDynamo]** |  | 
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -423,7 +425,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**[LoggingDynamo]**](LoggingDynamo.md)
 
 ### Authorization
 
@@ -431,10 +433,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_subject_logs_logging_logs_services_service_subjects_subject_get**
-> bool, date, datetime, dict, float, int, list, str, none_type get_subject_logs_logging_logs_services_service_subjects_subject_get(servicesubject)
+# **get_subject_logs**
+> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} get_subject_logs(servicesubject)
 
-Get Subject Logs
+Getsubjectlogs
 
 ### Example
 
@@ -464,15 +466,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     header_params = {
     }
     try:
-        # Get Subject Logs
-        api_response = api_instance.get_subject_logs_logging_logs_services_service_subjects_subject_get(
+        # Getsubjectlogs
+        api_response = api_instance.get_subject_logs(
             path_params=path_params,
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling LoggingApi->get_subject_logs_logging_logs_services_service_subjects_subject_get: %s\n" % e)
+        print("Exception when calling LoggingApi->get_subject_logs: %s\n" % e)
 
     # example passing only optional values
     path_params = {
@@ -494,15 +496,15 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'ehelply-data': "ehelply-data_example",
     }
     try:
-        # Get Subject Logs
-        api_response = api_instance.get_subject_logs_logging_logs_services_service_subjects_subject_get(
+        # Getsubjectlogs
+        api_response = api_instance.get_subject_logs(
             path_params=path_params,
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling LoggingApi->get_subject_logs_logging_logs_services_service_subjects_subject_get: %s\n" % e)
+        print("Exception when calling LoggingApi->get_subject_logs: %s\n" % e)
 ```
 ### Parameters
 
@@ -624,9 +626,9 @@ Type | Description | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response 
-404 | ApiResponseFor404 | Not found 
-422 | ApiResponseFor422 | Validation Error 
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Not found
+422 | ApiResponseFor422 | Validation Error
 
 #### ApiResponseFor200
 Name | Type | Description  | Notes
@@ -637,9 +639,10 @@ headers | Unset | headers were not defined |
 
 #### SchemaFor200ResponseBodyApplicationJson
 
-Type | Description | Notes
-------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+#### Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor404
 Name | Type | Description  | Notes
@@ -662,7 +665,7 @@ Type | Description  | Notes
 
 
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
 
 ### Authorization
 

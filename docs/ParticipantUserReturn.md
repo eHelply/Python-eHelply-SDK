@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **participant_meta** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
-**email** | **object** |  | [optional] 
+**email** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
 **country** | **str** |  | [optional] 
 **gps_location** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 

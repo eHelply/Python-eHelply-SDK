@@ -11,6 +11,7 @@ import re  # noqa: F401
 import sys  # noqa: F401
 import typing
 import urllib3
+import functools  # noqa: F401
 from urllib3._collections import HTTPHeaderDict
 
 from ehelply_python_sdk import api_client, exceptions
@@ -30,6 +31,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     Float32Schema,
     Float64Schema,
     NumberSchema,
+    UUIDSchema,
     DateSchema,
     DateTimeSchema,
     DecimalSchema,
@@ -51,6 +53,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     Float32Base,
     Float64Base,
     NumberBase,
+    UUIDBase,
     DateBase,
     DateTimeBase,
     BoolBase,
@@ -77,7 +80,7 @@ request_body_user_password_reset = api_client.RequestBody(
 )
 _path = '/sam/users/auth/password/reset'
 _method = 'POST'
-SchemaFor200ResponseBodyApplicationJson = AnyTypeSchema
+SchemaFor200ResponseBodyApplicationJson = DictSchema
 
 
 @dataclass

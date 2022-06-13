@@ -7,7 +7,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.auth_api import AuthApi
+#   from ehelply_python_sdk.api.billing_api import BillingApi
 #
 # or import this package, but before doing it, use:
 #
@@ -15,7 +15,6 @@
 #   sys.setrecursionlimit(n)
 
 # Import APIs into API package:
-from ehelply_python_sdk.api.auth_api import AuthApi
 from ehelply_python_sdk.api.billing_api import BillingApi
 from ehelply_python_sdk.api.category_api import CategoryApi
 from ehelply_python_sdk.api.companies_api import CompaniesApi
