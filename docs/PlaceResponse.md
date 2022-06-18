@@ -14,11 +14,6 @@ Name | Type | Description | Notes
 **uuid** | **str** |  | 
 **project_uuid** | **str** |  | [optional] 
 **meta_uuid** | **str** |  | [optional] 
-**catalog_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
-**review_group_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
-**schedule_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
-**collection_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
-**blog_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
 **tags** | **[TagBase]** |  | [optional] 
 **categories** | **[CategoryBase]** |  | [optional] 
 **company** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

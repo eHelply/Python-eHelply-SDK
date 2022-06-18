@@ -13,11 +13,11 @@
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
+from ehelply_python_sdk.model.contact_method import ContactMethod
 
 
-class TestProjectsProjectCreate(unittest.TestCase):
-    """ProjectsProjectCreate unit test stubs"""
+class TestContactMethod(unittest.TestCase):
+    """ContactMethod unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestProjectsProjectCreate(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_ProjectsProjectCreate(self):
-        """Test ProjectsProjectCreate"""
+    def test_ContactMethod(self):
+        """Test ContactMethod"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ProjectsProjectCreate()  # noqa: E501
+        # model = ContactMethod()  # noqa: E501
         pass
 
 

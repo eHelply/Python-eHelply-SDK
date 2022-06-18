@@ -46,10 +46,10 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         public=True,
         meta=dict(),
         contact=ContactBase(
-            phones=dict(),
+            phones=[{"name":"cell","value":"1234567"}],
             email="test@example.com",
             website="www.ehelply.com",
-            socials=dict(),
+            socials=[{"name":"Twitter","value":"twitter.com"}],
         ),
     )
     try:
@@ -77,10 +77,10 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         public=True,
         meta=dict(),
         contact=ContactBase(
-            phones=dict(),
+            phones=[{"name":"cell","value":"1234567"}],
             email="test@example.com",
             website="www.ehelply.com",
-            socials=dict(),
+            socials=[{"name":"Twitter","value":"twitter.com"}],
         ),
     )
     try:
@@ -1024,10 +1024,10 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         public=True,
         meta=dict(),
         contact=ContactBase(
-            phones=dict(),
+            phones=[{"name":"cell","value":"1234567"}],
             email="test@example.com",
             website="www.ehelply.com",
-            socials=dict(),
+            socials=[{"name":"Twitter","value":"twitter.com"}],
         ),
     )
     try:
@@ -1059,10 +1059,10 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         public=True,
         meta=dict(),
         contact=ContactBase(
-            phones=dict(),
+            phones=[{"name":"cell","value":"1234567"}],
             email="test@example.com",
             website="www.ehelply.com",
-            socials=dict(),
+            socials=[{"name":"Twitter","value":"twitter.com"}],
         ),
     )
     try:
