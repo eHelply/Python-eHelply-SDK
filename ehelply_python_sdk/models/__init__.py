@@ -33,6 +33,7 @@ from ehelply_python_sdk.model.company_base import CompanyBase
 from ehelply_python_sdk.model.company_response import CompanyResponse
 from ehelply_python_sdk.model.contact import Contact
 from ehelply_python_sdk.model.contact_base import ContactBase
+from ehelply_python_sdk.model.contact_method import ContactMethod
 from ehelply_python_sdk.model.contact_response import ContactResponse
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.create_review import CreateReview

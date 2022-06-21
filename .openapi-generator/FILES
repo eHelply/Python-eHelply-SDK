@@ -28,6 +28,7 @@ docs/CompanyBase.md
 docs/CompanyResponse.md
 docs/Contact.md
 docs/ContactBase.md
+docs/ContactMethod.md
 docs/ContactResponse.md
 docs/CreateKeyResponse.md
 docs/CreateReview.md
@@ -169,6 +170,7 @@ ehelply_python_sdk/model/company_base.py
 ehelply_python_sdk/model/company_response.py
 ehelply_python_sdk/model/contact.py
 ehelply_python_sdk/model/contact_base.py
+ehelply_python_sdk/model/contact_method.py
 ehelply_python_sdk/model/contact_response.py
 ehelply_python_sdk/model/create_key_response.py
 ehelply_python_sdk/model/create_review.py
@@ -288,6 +290,7 @@ test/test_company_base.py
 test/test_company_response.py
 test/test_contact.py
 test/test_contact_base.py
+test/test_contact_method.py
 test/test_contact_response.py
 test/test_create_key_response.py
 test/test_create_review.py

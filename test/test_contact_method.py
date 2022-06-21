@@ -13,11 +13,11 @@
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.update_review import UpdateReview
+from ehelply_python_sdk.model.contact_method import ContactMethod
 
 
-class TestUpdateReview(unittest.TestCase):
-    """UpdateReview unit test stubs"""
+class TestContactMethod(unittest.TestCase):
+    """ContactMethod unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestUpdateReview(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_UpdateReview(self):
-        """Test UpdateReview"""
+    def test_ContactMethod(self):
+        """Test ContactMethod"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = UpdateReview()  # noqa: E501
+        # model = ContactMethod()  # noqa: E501
         pass
 
 
