@@ -1501,7 +1501,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_spec**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} get_service_spec(servicespec)
+> GetServiceSpecResponse get_service_spec(servicespec)
 
 Getservicespec
 
@@ -1511,6 +1511,7 @@ Getservicespec
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1528,31 +1529,10 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
         'service': "service_example",
         'spec': "spec_example",
     }
-    query_params = {
-    }
     try:
         # Getservicespec
         api_response = api_instance.get_service_spec(
             path_params=path_params,
-            query_params=query_params,
-        )
-        pprint(api_response)
-    except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling MonitorApi->get_service_spec: %s\n" % e)
-
-    # example passing only optional values
-    path_params = {
-        'service': "service_example",
-        'spec': "spec_example",
-    }
-    query_params = {
-        'as_json': False,
-    }
-    try:
-        # Getservicespec
-        api_response = api_instance.get_service_spec(
-            path_params=path_params,
-            query_params=query_params,
         )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -1562,26 +1542,11 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
 path_params | RequestPathParams | |
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
 skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
-
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-as_json | AsJsonSchema | | optional
-
-
-#### AsJsonSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
 
 ### path_params
 #### RequestPathParams
@@ -1625,7 +1590,6 @@ headers | Unset | headers were not defined |
 #### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
@@ -1664,7 +1628,7 @@ Type | Description  | Notes
 
 
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**GetServiceSpecResponse**](GetServiceSpecResponse.md)
 
 ### Authorization
 
@@ -1673,7 +1637,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_specs**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} get_service_specs(service)
+> GetServiceSpecsResponse get_service_specs(service)
 
 Getservicespecs
 
@@ -1682,6 +1646,7 @@ Getservicespecs
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -1753,7 +1718,6 @@ headers | Unset | headers were not defined |
 #### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
@@ -1792,7 +1756,7 @@ Type | Description  | Notes
 
 
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**GetServiceSpecsResponse**](GetServiceSpecsResponse.md)
 
 ### Authorization
 
@@ -2116,7 +2080,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_services_with_specs**
-> {str: (bool, date, datetime, dict, float, int, list, str, none_type)} get_services_with_specs()
+> GetServiceServiceWithSpecsResponse get_services_with_specs()
 
 Getserviceswithspecs
 
@@ -2125,6 +2089,7 @@ Getserviceswithspecs
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.get_service_service_with_specs_response import GetServiceServiceWithSpecsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2169,7 +2134,6 @@ headers | Unset | headers were not defined |
 #### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 #### ApiResponseFor403
@@ -2195,7 +2159,7 @@ body | Unset | body was not defined |
 headers | Unset | headers were not defined |
 
 
-**{str: (bool, date, datetime, dict, float, int, list, str, none_type)}**
+[**GetServiceServiceWithSpecsResponse**](GetServiceServiceWithSpecsResponse.md)
 
 ### Authorization
 
