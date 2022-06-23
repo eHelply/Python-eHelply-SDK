@@ -65,33 +65,8 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
 
-# query params
-AsJsonSchema = BoolSchema
-RequestRequiredQueryParams = typing.TypedDict(
-    'RequestRequiredQueryParams',
-    {
-    }
-)
-RequestOptionalQueryParams = typing.TypedDict(
-    'RequestOptionalQueryParams',
-    {
-        'as_json': AsJsonSchema,
-    },
-    total=False
-)
-
-
-class RequestQueryParams(RequestRequiredQueryParams, RequestOptionalQueryParams):
-    pass
-
-
-request_query_as_json = api_client.QueryParameter(
-    name="as_json",
-    style=api_client.ParameterStyle.FORM,
-    schema=AsJsonSchema,
-    explode=True,
-)
 # path params
 ServiceSchema = StrSchema
 SpecSchema = StrSchema
@@ -128,28 +103,7 @@ request_path_spec = api_client.PathParameter(
 )
 _path = '/sam/monitor/services/{service}/specs/{spec}'
 _method = 'GET'
-
-
-class SchemaFor200ResponseBodyApplicationJson(
-    DictSchema
-):
-    message = StrSchema
-
-
-    def __new__(
-        cls,
-        *args: typing.Union[dict, frozendict, ],
-        message: typing.Union[message, Unset] = unset,
-        _configuration: typing.Optional[Configuration] = None,
-        **kwargs: typing.Type[Schema],
-    ) -> 'SchemaFor200ResponseBodyApplicationJson':
-        return super().__new__(
-            cls,
-            *args,
-            message=message,
-            _configuration=_configuration,
-            **kwargs,
-        )
+SchemaFor200ResponseBodyApplicationJson = DictSchema
 
 
 @dataclass
@@ -254,7 +208,6 @@ class GetServiceSpec(api_client.Api):
 
     def get_service_spec(
         self: api_client.Api,
-        query_params: RequestQueryParams = frozendict(),
         path_params: RequestPathParams = frozendict(),
         accept_content_types: typing.Tuple[str] = _all_accept_content_types,
         stream: bool = False,
@@ -270,7 +223,6 @@ class GetServiceSpec(api_client.Api):
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
         """
-        self._verify_typed_dict_inputs(RequestQueryParams, query_params)
         self._verify_typed_dict_inputs(RequestPathParams, path_params)
 
         _path_params = {}
@@ -284,16 +236,6 @@ class GetServiceSpec(api_client.Api):
             serialized_data = parameter.serialize(parameter_data)
             _path_params.update(serialized_data)
 
-        _query_params = []
-        for parameter in (
-            request_query_as_json,
-        ):
-            parameter_data = query_params.get(parameter.name, unset)
-            if parameter_data is unset:
-                continue
-            serialized_data = parameter.serialize(parameter_data)
-            _query_params.extend(serialized_data)
-
         _headers = HTTPHeaderDict()
         # TODO add cookie handling
         if accept_content_types:
@@ -304,7 +246,6 @@ class GetServiceSpec(api_client.Api):
             resource_path=_path,
             method=_method,
             path_params=_path_params,
-            query_params=tuple(_query_params),
             headers=_headers,
             stream=stream,
             timeout=timeout,

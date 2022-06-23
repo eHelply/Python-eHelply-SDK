@@ -64,6 +64,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
     _SchemaEnumMaker
 )
 
+from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 
 # path params
@@ -94,28 +95,7 @@ request_path_service = api_client.PathParameter(
 )
 _path = '/sam/monitor/services/{service}/specs'
 _method = 'GET'
-
-
-class SchemaFor200ResponseBodyApplicationJson(
-    DictSchema
-):
-    message = StrSchema
-
-
-    def __new__(
-        cls,
-        *args: typing.Union[dict, frozendict, ],
-        message: typing.Union[message, Unset] = unset,
-        _configuration: typing.Optional[Configuration] = None,
-        **kwargs: typing.Type[Schema],
-    ) -> 'SchemaFor200ResponseBodyApplicationJson':
-        return super().__new__(
-            cls,
-            *args,
-            message=message,
-            _configuration=_configuration,
-            **kwargs,
-        )
+SchemaFor200ResponseBodyApplicationJson = DictSchema
 
 
 @dataclass

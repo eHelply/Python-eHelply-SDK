@@ -40,6 +40,9 @@ docs/DetailedMeta.md
 docs/DetailedMetaCreate.md
 docs/Field.md
 docs/FieldDynamo.md
+docs/GetServiceServiceWithSpecsResponse.md
+docs/GetServiceSpecResponse.md
+docs/GetServiceSpecsResponse.md
 docs/HTTPValidationError.md
 docs/HeartbeatResponse.md
 docs/KpiResponse.md
@@ -181,6 +184,9 @@ ehelply_python_sdk/model/detailed_meta.py
 ehelply_python_sdk/model/detailed_meta_create.py
 ehelply_python_sdk/model/field.py
 ehelply_python_sdk/model/field_dynamo.py
+ehelply_python_sdk/model/get_service_service_with_specs_response.py
+ehelply_python_sdk/model/get_service_spec_response.py
+ehelply_python_sdk/model/get_service_specs_response.py
 ehelply_python_sdk/model/heartbeat_response.py
 ehelply_python_sdk/model/http_validation_error.py
 ehelply_python_sdk/model/kpi_response.py
@@ -302,6 +308,9 @@ test/test_detailed_meta.py
 test/test_detailed_meta_create.py
 test/test_field.py
 test/test_field_dynamo.py
+test/test_get_service_service_with_specs_response.py
+test/test_get_service_spec_response.py
+test/test_get_service_specs_response.py
 test/test_heartbeat_response.py
 test/test_http_validation_error.py
 test/test_kpi_response.py

@@ -44,6 +44,9 @@ from ehelply_python_sdk.model.detailed_meta import DetailedMeta
 from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
 from ehelply_python_sdk.model.field import Field
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
+from ehelply_python_sdk.model.get_service_service_with_specs_response import GetServiceServiceWithSpecsResponse
+from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
+from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.heartbeat_response import HeartbeatResponse
 from ehelply_python_sdk.model.kpi_response import KpiResponse
