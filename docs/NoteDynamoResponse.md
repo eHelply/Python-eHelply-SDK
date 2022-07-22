@@ -1,12 +1,10 @@
-# NoteDynamo
-
-A note from DynamoDB
+# NoteDynamoResponse
 
 #### Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** |  | 
-**content** | **file_type** |  | [optional] 
+**content** | **str** |  | 
 **time** | **str** |  | 
 **meta** | [**NoteMeta**](NoteMeta.md) |  | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

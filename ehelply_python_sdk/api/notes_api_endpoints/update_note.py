@@ -65,8 +65,8 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
-from ehelply_python_sdk.model.note_dynamo import NoteDynamo
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 
 # header params
 XAccessTokenSchema = StrSchema
@@ -167,7 +167,7 @@ request_body_note_base = api_client.RequestBody(
 )
 _path = '/notes/notes/{note_id}'
 _method = 'PUT'
-SchemaFor200ResponseBodyApplicationJson = NoteDynamo
+SchemaFor200ResponseBodyApplicationJson = NoteDynamoResponse
 
 
 @dataclass
@@ -198,7 +198,7 @@ class ApiResponseFor404(api_client.ApiResponse):
 _response_for_404 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor404,
 )
-SchemaFor422ResponseBodyApplicationJson = NotesHTTPValidationError
+SchemaFor422ResponseBodyApplicationJson = HTTPValidationError
 
 
 @dataclass
@@ -251,6 +251,7 @@ class UpdateNote(api_client.Api):
         """
         self._verify_typed_dict_inputs(RequestHeaderParams, header_params)
         self._verify_typed_dict_inputs(RequestPathParams, path_params)
+        used_path = _path
 
         _path_params = {}
         for parameter in (
@@ -261,6 +262,9 @@ class UpdateNote(api_client.Api):
                 continue
             serialized_data = parameter.serialize(parameter_data)
             _path_params.update(serialized_data)
+
+        for k, v in _path_params.items():
+            used_path = used_path.replace('{%s}' % k, v)
 
         _headers = HTTPHeaderDict()
         for parameter in (
@@ -293,9 +297,8 @@ class UpdateNote(api_client.Api):
         elif 'body' in serialized_data:
             _body = serialized_data['body']
         response = self.api_client.call_api(
-            resource_path=_path,
+            resource_path=used_path,
             method=_method,
-            path_params=_path_params,
             headers=_headers,
             fields=_fields,
             body=_body,

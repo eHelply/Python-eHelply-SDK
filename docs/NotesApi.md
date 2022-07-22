@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**update_note**](NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Update Note
 
 # **create_note**
-> NoteDynamo create_note(note_base)
+> NoteDynamoResponse create_note(note_base)
 
 Create Note
 
@@ -20,8 +20,8 @@ Create Note
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
-from ehelply_python_sdk.model.note_dynamo import NoteDynamo
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -173,7 +173,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**NoteDynamo**](NoteDynamo.md) |  | 
+[**NoteDynamoResponse**](NoteDynamoResponse.md) |  | 
 
 
 #### ApiResponseFor404
@@ -193,11 +193,11 @@ headers | Unset | headers were not defined |
 #### SchemaFor422ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
 
 
 
-[**NoteDynamo**](NoteDynamo.md)
+[**NoteDynamoResponse**](NoteDynamoResponse.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ Delete Note
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
-from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -399,7 +399,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor422ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
 
 
 
@@ -421,7 +421,7 @@ Get Note
 ```python
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
-from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -614,7 +614,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor422ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
 
 
 
@@ -627,7 +627,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_note**
-> NoteDynamo update_note(note_idnote_base)
+> NoteDynamoResponse update_note(note_idnote_base)
 
 Update Note
 
@@ -637,8 +637,8 @@ Update Note
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
-from ehelply_python_sdk.model.note_dynamo import NoteDynamo
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -812,7 +812,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**NoteDynamo**](NoteDynamo.md) |  | 
+[**NoteDynamoResponse**](NoteDynamoResponse.md) |  | 
 
 
 #### ApiResponseFor404
@@ -832,11 +832,11 @@ headers | Unset | headers were not defined |
 #### SchemaFor422ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**NotesHTTPValidationError**](NotesHTTPValidationError.md) |  | 
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
 
 
 
-[**NoteDynamo**](NoteDynamo.md)
+[**NoteDynamoResponse**](NoteDynamoResponse.md)
 
 ### Authorization
 

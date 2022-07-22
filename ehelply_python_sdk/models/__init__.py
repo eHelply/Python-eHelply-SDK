@@ -57,11 +57,9 @@ from ehelply_python_sdk.model.meta_custom import MetaCustom
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
 from ehelply_python_sdk.model.meta_slugger import MetaSlugger
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.note_dynamo import NoteDynamo
 from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
+from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 from ehelply_python_sdk.model.note_meta import NoteMeta
-from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
-from ehelply_python_sdk.model.notes_validation_error import NotesValidationError
 from ehelply_python_sdk.model.option_group import OptionGroup
 from ehelply_python_sdk.model.options import Options
 from ehelply_python_sdk.model.page import Page
