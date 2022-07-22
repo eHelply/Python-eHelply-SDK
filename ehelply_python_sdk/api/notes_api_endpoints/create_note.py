@@ -65,8 +65,8 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.notes_http_validation_error import NotesHTTPValidationError
-from ehelply_python_sdk.model.note_dynamo import NoteDynamo
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 
 # header params
 XAccessTokenSchema = StrSchema
@@ -141,7 +141,7 @@ request_body_note_base = api_client.RequestBody(
 )
 _path = '/notes/notes'
 _method = 'POST'
-SchemaFor200ResponseBodyApplicationJson = NoteDynamo
+SchemaFor200ResponseBodyApplicationJson = NoteDynamoResponse
 
 
 @dataclass
@@ -172,7 +172,7 @@ class ApiResponseFor404(api_client.ApiResponse):
 _response_for_404 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor404,
 )
-SchemaFor422ResponseBodyApplicationJson = NotesHTTPValidationError
+SchemaFor422ResponseBodyApplicationJson = HTTPValidationError
 
 
 @dataclass
@@ -223,6 +223,7 @@ class CreateNote(api_client.Api):
             class instances
         """
         self._verify_typed_dict_inputs(RequestHeaderParams, header_params)
+        used_path = _path
 
         _headers = HTTPHeaderDict()
         for parameter in (
@@ -255,7 +256,7 @@ class CreateNote(api_client.Api):
         elif 'body' in serialized_data:
             _body = serialized_data['body']
         response = self.api_client.call_api(
-            resource_path=_path,
+            resource_path=used_path,
             method=_method,
             headers=_headers,
             fields=_fields,

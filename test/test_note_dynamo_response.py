@@ -13,12 +13,12 @@
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
+from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 from ehelply_python_sdk import configuration
 
 
-class TestDetailedMetaCreate(unittest.TestCase):
-    """DetailedMetaCreate unit test stubs"""
+class TestNoteDynamoResponse(unittest.TestCase):
+    """NoteDynamoResponse unit test stubs"""
     _configuration = configuration.Configuration()
 
 

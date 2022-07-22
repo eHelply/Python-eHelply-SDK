@@ -334,6 +334,7 @@ class AddMemberToProject(api_client.Api):
         """
         self._verify_typed_dict_inputs(RequestHeaderParams, header_params)
         self._verify_typed_dict_inputs(RequestPathParams, path_params)
+        used_path = _path
 
         _path_params = {}
         for parameter in (
@@ -345,6 +346,9 @@ class AddMemberToProject(api_client.Api):
                 continue
             serialized_data = parameter.serialize(parameter_data)
             _path_params.update(serialized_data)
+
+        for k, v in _path_params.items():
+            used_path = used_path.replace('{%s}' % k, v)
 
         _headers = HTTPHeaderDict()
         for parameter in (
@@ -366,9 +370,8 @@ class AddMemberToProject(api_client.Api):
                 _headers.add('Accept', accept_content_type)
 
         response = self.api_client.call_api(
-            resource_path=_path,
+            resource_path=used_path,
             method=_method,
-            path_params=_path_params,
             headers=_headers,
             stream=stream,
             timeout=timeout,
