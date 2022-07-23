@@ -60,7 +60,7 @@ docs/MetaDynamo.md
 docs/MetaSlugger.md
 docs/MonitorApi.md
 docs/NoteBase.md
-docs/NoteDynamoHistory.md
+docs/NoteDynamoHistoryResponse.md
 docs/NoteDynamoResponse.md
 docs/NoteMeta.md
 docs/NotesApi.md
@@ -204,7 +204,7 @@ ehelply_python_sdk/model/meta_custom.py
 ehelply_python_sdk/model/meta_dynamo.py
 ehelply_python_sdk/model/meta_slugger.py
 ehelply_python_sdk/model/note_base.py
-ehelply_python_sdk/model/note_dynamo_history.py
+ehelply_python_sdk/model/note_dynamo_history_response.py
 ehelply_python_sdk/model/note_dynamo_response.py
 ehelply_python_sdk/model/note_meta.py
 ehelply_python_sdk/model/option_group.py
@@ -334,7 +334,7 @@ test/test_meta_dynamo.py
 test/test_meta_slugger.py
 test/test_monitor_api.py
 test/test_note_base.py
-test/test_note_dynamo_history.py
+test/test_note_dynamo_history_response.py
 test/test_note_dynamo_response.py
 test/test_note_meta.py
 test/test_notes_api.py

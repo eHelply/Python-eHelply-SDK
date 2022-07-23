@@ -65,7 +65,7 @@ from ehelply_python_sdk.schemas import (  # noqa: F401
 )
 
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
+from ehelply_python_sdk.model.note_dynamo_history_response import NoteDynamoHistoryResponse
 
 # query params
 HistorySchema = IntSchema
@@ -189,7 +189,7 @@ request_path_note_id = api_client.PathParameter(
 )
 _path = '/notes/notes/{note_id}'
 _method = 'GET'
-SchemaFor200ResponseBodyApplicationJson = NoteDynamoHistory
+SchemaFor200ResponseBodyApplicationJson = NoteDynamoHistoryResponse
 
 
 @dataclass

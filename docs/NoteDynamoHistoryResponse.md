@@ -1,4 +1,4 @@
-# NoteDynamoHistory
+# NoteDynamoHistoryResponse
 
 A note from Dynamo DB including n amount of version history of that note
 
@@ -6,7 +6,7 @@ A note from Dynamo DB including n amount of version history of that note
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** |  | 
-**content** | **file_type** |  | [optional] 
+**content** | **str** |  | 
 **time** | **str** |  | 
 **meta** | [**NoteMeta**](NoteMeta.md) |  | 
 **history** | **[NoteDynamoResponse]** |  | [optional]  if omitted the server will use the default value of []

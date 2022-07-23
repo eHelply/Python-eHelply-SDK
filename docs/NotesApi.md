@@ -412,7 +412,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_note**
-> NoteDynamoHistory get_note(note_id)
+> NoteDynamoHistoryResponse get_note(note_id)
 
 Get Note
 
@@ -422,7 +422,7 @@ Get Note
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
+from ehelply_python_sdk.model.note_dynamo_history_response import NoteDynamoHistoryResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -594,7 +594,7 @@ headers | Unset | headers were not defined |
 #### SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**NoteDynamoHistory**](NoteDynamoHistory.md) |  | 
+[**NoteDynamoHistoryResponse**](NoteDynamoHistoryResponse.md) |  | 
 
 
 #### ApiResponseFor404
@@ -618,7 +618,7 @@ Type | Description  | Notes
 
 
 
-[**NoteDynamoHistory**](NoteDynamoHistory.md)
+[**NoteDynamoHistoryResponse**](NoteDynamoHistoryResponse.md)
 
 ### Authorization
 

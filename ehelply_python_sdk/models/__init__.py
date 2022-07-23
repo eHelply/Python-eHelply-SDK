@@ -61,7 +61,7 @@ from ehelply_python_sdk.model.meta_custom import MetaCustom
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
 from ehelply_python_sdk.model.meta_slugger import MetaSlugger
 from ehelply_python_sdk.model.note_base import NoteBase
-from ehelply_python_sdk.model.note_dynamo_history import NoteDynamoHistory
+from ehelply_python_sdk.model.note_dynamo_history_response import NoteDynamoHistoryResponse
 from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 from ehelply_python_sdk.model.note_meta import NoteMeta
 from ehelply_python_sdk.model.option_group import OptionGroup
