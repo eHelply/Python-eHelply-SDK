@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**search_staff_places_staff_get**](StaffApi.md#search_staff_places_staff_get) | **GET** /places/staff | Search Staff
 [**update_staff_places_staff_staff_uuid_put**](StaffApi.md#update_staff_places_staff_staff_uuid_put) | **PUT** /places/staff/{staff_uuid} | Update Staff
 
-
 # **create_staff_places_staff_post**
 > StaffDb create_staff_places_staff_post(staff_create)
 
@@ -20,9 +19,7 @@ Creates a staff member
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.staff_create import StaffCreate
@@ -35,77 +32,173 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
-    staff_create = StaffCreate(
+
+    # example passing only required values which don't have defaults set
+    header_params = {
+    }
+    body = StaffCreate(
         entity_uuid="entity_uuid_1234",
         project_uuid="project_uuid_1234",
         schedule_uuid="schedule_uuid_1234",
         catalog_uuid="catalog_uuid_1234",
         review_group_uuid="review_uuid_1234",
-    ) # StaffCreate | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
+    )
     try:
         # Create Staff
-        api_response = api_instance.create_staff_places_staff_post(staff_create)
+        api_response = api_instance.create_staff_places_staff_post(
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->create_staff_places_staff_post: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
+    body = StaffCreate(
+        entity_uuid="entity_uuid_1234",
+        project_uuid="project_uuid_1234",
+        schedule_uuid="schedule_uuid_1234",
+        catalog_uuid="catalog_uuid_1234",
+        review_group_uuid="review_uuid_1234",
+    )
     try:
         # Create Staff
-        api_response = api_instance.create_staff_places_staff_post(staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_staff_places_staff_post(
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->create_staff_places_staff_post: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **staff_create** | [**StaffCreate**](StaffCreate.md)|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+header_params | RequestHeaderParams | |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### body
+
+#### SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**StaffCreate**](StaffCreate.md) |  | 
+
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Route not found - Denied by eHelply
+422 | ApiResponseFor422 | Validation Error
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**StaffDb**](StaffDb.md) |  | 
+
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
+
+
 
 [**StaffDb**](StaffDb.md)
 
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Route not found - Denied by eHelply |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -118,9 +211,7 @@ Deletes the staff member with the given ID and returns True if successful
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -131,73 +222,191 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
-    staff_uuid = "staff_uuid_example" # str | 
-    soft_delete = True # bool |  (optional) if omitted the server will use the default value of True
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    path_params = {
+        'staff_uuid': "staff_uuid_example",
+    }
+    query_params = {
+    }
+    header_params = {
+    }
     try:
         # Delete Staff
-        api_response = api_instance.delete_staff_places_staff_staff_uuid_delete(staff_uuid)
+        api_response = api_instance.delete_staff_places_staff_staff_uuid_delete(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->delete_staff_places_staff_staff_uuid_delete: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    path_params = {
+        'staff_uuid': "staff_uuid_example",
+    }
+    query_params = {
+        'soft_delete': True,
+    }
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
     try:
         # Delete Staff
-        api_response = api_instance.delete_staff_places_staff_staff_uuid_delete(staff_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.delete_staff_places_staff_staff_uuid_delete(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->delete_staff_places_staff_staff_uuid_delete: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **staff_uuid** | **str**|  |
- **soft_delete** | **bool**|  | [optional] if omitted the server will use the default value of True
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
+path_params | RequestPathParams | |
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### query_params
+#### RequestQueryParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+soft_delete | SoftDeleteSchema | | optional
+
+
+#### SoftDeleteSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to True
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+staff_uuid | StaffUuidSchema | | 
+
+#### StaffUuidSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Route not found - Denied by eHelply
+422 | ApiResponseFor422 | Validation Error
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+
+Type | Description | Notes
+------------- | ------------- | -------------
+typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
+
+
 
 **bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Route not found - Denied by eHelply |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -210,9 +419,7 @@ Gets the staff member information given the staff ID
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.staff_response import StaffResponse
@@ -224,81 +431,223 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
-    staff_uuid = "staff_uuid_example" # str | 
-    with_places = False # bool |  (optional) if omitted the server will use the default value of False
-    with_companies = False # bool |  (optional) if omitted the server will use the default value of False
-    with_catalog = False # bool |  (optional) if omitted the server will use the default value of False
-    with_schedule = False # bool |  (optional) if omitted the server will use the default value of False
-    with_roles = False # bool |  (optional) if omitted the server will use the default value of False
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    path_params = {
+        'staff_uuid': "staff_uuid_example",
+    }
+    query_params = {
+    }
+    header_params = {
+    }
     try:
         # Get Staff
-        api_response = api_instance.get_staff_places_staff_staff_uuid_get(staff_uuid)
+        api_response = api_instance.get_staff_places_staff_staff_uuid_get(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->get_staff_places_staff_staff_uuid_get: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    path_params = {
+        'staff_uuid': "staff_uuid_example",
+    }
+    query_params = {
+        'with_places': False,
+        'with_companies': False,
+        'with_catalog': False,
+        'with_schedule': False,
+        'with_roles': False,
+    }
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
     try:
         # Get Staff
-        api_response = api_instance.get_staff_places_staff_staff_uuid_get(staff_uuid, with_places=with_places, with_companies=with_companies, with_catalog=with_catalog, with_schedule=with_schedule, with_roles=with_roles, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_staff_places_staff_staff_uuid_get(
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->get_staff_places_staff_staff_uuid_get: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **staff_uuid** | **str**|  |
- **with_places** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_companies** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_catalog** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_schedule** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_roles** | **bool**|  | [optional] if omitted the server will use the default value of False
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
+path_params | RequestPathParams | |
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### query_params
+#### RequestQueryParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+with_places | WithPlacesSchema | | optional
+with_companies | WithCompaniesSchema | | optional
+with_catalog | WithCatalogSchema | | optional
+with_schedule | WithScheduleSchema | | optional
+with_roles | WithRolesSchema | | optional
+
+
+#### WithPlacesSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithCompaniesSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithCatalogSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithScheduleSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithRolesSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+staff_uuid | StaffUuidSchema | | 
+
+#### StaffUuidSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Route not found - Denied by eHelply
+422 | ApiResponseFor422 | Validation Error
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**StaffResponse**](StaffResponse.md) |  | 
+
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
+
+
 
 [**StaffResponse**](StaffResponse.md)
 
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Route not found - Denied by eHelply |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -311,9 +660,7 @@ TODO Item return format: ``` {     uuid                                **type:**
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.page import Page
@@ -325,69 +672,252 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
-    project_uuid = "project_uuid_example" # str |  (optional)
-    first_name = "first_name_example" # str |  (optional)
-    last_name = "last_name_example" # str |  (optional)
-    is_deleted = False # bool |  (optional) if omitted the server will use the default value of False
-    with_companies = False # bool |  (optional) if omitted the server will use the default value of False
-    with_places = False # bool |  (optional) if omitted the server will use the default value of False
-    with_schedule = False # bool |  (optional) if omitted the server will use the default value of False
-    with_catalog = False # bool |  (optional) if omitted the server will use the default value of False
-    with_reviews = False # bool |  (optional) if omitted the server will use the default value of False
-    with_roles = False # bool |  (optional) if omitted the server will use the default value of False
-    page = 1 # int |  (optional) if omitted the server will use the default value of 1
-    page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
-    sort_on = "sort_on_example" # str |  (optional)
-    sort_desc = False # bool |  (optional) if omitted the server will use the default value of False
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    query_params = {
+        'project_uuid': "project_uuid_example",
+        'first_name': "first_name_example",
+        'last_name': "last_name_example",
+        'is_deleted': False,
+        'with_companies': False,
+        'with_places': False,
+        'with_schedule': False,
+        'with_catalog': False,
+        'with_reviews': False,
+        'with_roles': False,
+        'page': 1,
+        'page_size': 25,
+        'sort_on': "sort_on_example",
+        'sort_desc': False,
+    }
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
     try:
         # Search Staff
-        api_response = api_instance.search_staff_places_staff_get(project_uuid=project_uuid, first_name=first_name, last_name=last_name, is_deleted=is_deleted, with_companies=with_companies, with_places=with_places, with_schedule=with_schedule, with_catalog=with_catalog, with_reviews=with_reviews, with_roles=with_roles, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_staff_places_staff_get(
+            query_params=query_params,
+            header_params=header_params,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->search_staff_places_staff_get: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | **str**|  | [optional]
- **first_name** | **str**|  | [optional]
- **last_name** | **str**|  | [optional]
- **is_deleted** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_companies** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_places** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_schedule** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_catalog** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_reviews** | **bool**|  | [optional] if omitted the server will use the default value of False
- **with_roles** | **bool**|  | [optional] if omitted the server will use the default value of False
- **page** | **int**|  | [optional] if omitted the server will use the default value of 1
- **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
- **sort_on** | **str**|  | [optional]
- **sort_desc** | **bool**|  | [optional] if omitted the server will use the default value of False
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+query_params | RequestQueryParams | |
+header_params | RequestHeaderParams | |
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### query_params
+#### RequestQueryParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+project_uuid | ProjectUuidSchema | | optional
+first_name | FirstNameSchema | | optional
+last_name | LastNameSchema | | optional
+is_deleted | IsDeletedSchema | | optional
+with_companies | WithCompaniesSchema | | optional
+with_places | WithPlacesSchema | | optional
+with_schedule | WithScheduleSchema | | optional
+with_catalog | WithCatalogSchema | | optional
+with_reviews | WithReviewsSchema | | optional
+with_roles | WithRolesSchema | | optional
+page | PageSchema | | optional
+page_size | PageSizeSchema | | optional
+sort_on | SortOnSchema | | optional
+sort_desc | SortDescSchema | | optional
+
+
+#### ProjectUuidSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### FirstNameSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### LastNameSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### IsDeletedSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithCompaniesSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithPlacesSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithScheduleSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithCatalogSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithReviewsSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### WithRolesSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+#### PageSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**int** |  | defaults to 1
+
+#### PageSizeSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**int** |  | defaults to 25
+
+#### SortOnSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### SortDescSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**bool** |  | defaults to False
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Route not found - Denied by eHelply
+422 | ApiResponseFor422 | Validation Error
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Page**](Page.md) |  | 
+
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
+
+
 
 [**Page**](Page.md)
 
@@ -395,24 +925,10 @@ Name | Type | Description  | Notes
 
 No authorization required
 
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Route not found - Denied by eHelply |  -  |
-**422** | Validation Error |  -  |
-
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_staff_places_staff_staff_uuid_put**
-> StaffResponse update_staff_places_staff_staff_uuid_put(staff_uuid, staff_create)
+> StaffResponse update_staff_places_staff_staff_uuid_put(staff_uuidstaff_create)
 
 Update Staff
 
@@ -420,9 +936,7 @@ Update staff with given info, only updating the fields supplied. Staff Uuid must
 
 ### Example
 
-
 ```python
-import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.staff_response import StaffResponse
@@ -435,79 +949,195 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
-
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient() as api_client:
+with ehelply_python_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
-    staff_uuid = "staff_uuid_example" # str | 
-    staff_create = StaffCreate(
+
+    # example passing only required values which don't have defaults set
+    path_params = {
+        'staff_uuid': "staff_uuid_example",
+    }
+    header_params = {
+    }
+    body = StaffCreate(
         entity_uuid="entity_uuid_1234",
         project_uuid="project_uuid_1234",
         schedule_uuid="schedule_uuid_1234",
         catalog_uuid="catalog_uuid_1234",
         review_group_uuid="review_uuid_1234",
-    ) # StaffCreate | 
-    x_access_token = "x-access-token_example" # str |  (optional)
-    x_secret_token = "x-secret-token_example" # str |  (optional)
-    authorization = "authorization_example" # str |  (optional)
-    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
-    ehelply_project = "ehelply-project_example" # str |  (optional)
-    ehelply_data = "ehelply-data_example" # str |  (optional)
-
-    # example passing only required values which don't have defaults set
+    )
     try:
         # Update Staff
-        api_response = api_instance.update_staff_places_staff_staff_uuid_put(staff_uuid, staff_create)
+        api_response = api_instance.update_staff_places_staff_staff_uuid_put(
+            path_params=path_params,
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->update_staff_places_staff_staff_uuid_put: %s\n" % e)
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example passing only optional values
+    path_params = {
+        'staff_uuid': "staff_uuid_example",
+    }
+    header_params = {
+        'x-access-token': "x-access-token_example",
+        'x-secret-token': "x-secret-token_example",
+        'authorization': "authorization_example",
+        'ehelply-active-participant': "ehelply-active-participant_example",
+        'ehelply-project': "ehelply-project_example",
+        'ehelply-data': "ehelply-data_example",
+    }
+    body = StaffCreate(
+        entity_uuid="entity_uuid_1234",
+        project_uuid="project_uuid_1234",
+        schedule_uuid="schedule_uuid_1234",
+        catalog_uuid="catalog_uuid_1234",
+        review_group_uuid="review_uuid_1234",
+    )
     try:
         # Update Staff
-        api_response = api_instance.update_staff_places_staff_staff_uuid_put(staff_uuid, staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_staff_places_staff_staff_uuid_put(
+            path_params=path_params,
+            header_params=header_params,
+            body=body,
+        )
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->update_staff_places_staff_staff_uuid_put: %s\n" % e)
 ```
-
-
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **staff_uuid** | **str**|  |
- **staff_create** | [**StaffCreate**](StaffCreate.md)|  |
- **x_access_token** | **str**|  | [optional]
- **x_secret_token** | **str**|  | [optional]
- **authorization** | **str**|  | [optional]
- **ehelply_active_participant** | **str**|  | [optional]
- **ehelply_project** | **str**|  | [optional]
- **ehelply_data** | **str**|  | [optional]
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+header_params | RequestHeaderParams | |
+path_params | RequestPathParams | |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
 
-### Return type
+### body
+
+#### SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**StaffCreate**](StaffCreate.md) |  | 
+
+
+### header_params
+#### RequestHeaderParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+x-access-token | XAccessTokenSchema | | optional
+x-secret-token | XSecretTokenSchema | | optional
+authorization | AuthorizationSchema | | optional
+ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
+ehelply-project | EhelplyProjectSchema | | optional
+ehelply-data | EhelplyDataSchema | | optional
+
+#### XAccessTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### XSecretTokenSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### AuthorizationSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyActiveParticipantSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyProjectSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+#### EhelplyDataSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+staff_uuid | StaffUuidSchema | | 
+
+#### StaffUuidSchema
+
+Type | Description | Notes
+------------- | ------------- | -------------
+**str** |  | 
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | ApiResponseFor200 | Successful Response
+404 | ApiResponseFor404 | Route not found - Denied by eHelply
+422 | ApiResponseFor422 | Validation Error
+
+#### ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**StaffResponse**](StaffResponse.md) |  | 
+
+
+#### ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+#### SchemaFor422ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**HTTPValidationError**](HTTPValidationError.md) |  | 
+
+
 
 [**StaffResponse**](StaffResponse.md)
 
 ### Authorization
 
 No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**404** | Route not found - Denied by eHelply |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
