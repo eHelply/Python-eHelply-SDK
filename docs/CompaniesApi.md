@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**search_companies_places_companies_get**](CompaniesApi.md#search_companies_places_companies_get) | **GET** /places/companies | Search Companies
 [**update_company_places_companies_company_uuid_put**](CompaniesApi.md#update_company_places_companies_company_uuid_put) | **PUT** /places/companies/{company_uuid} | Update Company
 
+
 # **create_company_places_companies_post**
 > CompanyResponse create_company_places_companies_post(company_base)
 
@@ -19,7 +20,9 @@ Creates a company
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
@@ -32,183 +35,92 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
-
-    # example passing only required values which don't have defaults set
-    header_params = {
-    }
-    body = CompanyBase(
+    company_base = CompanyBase(
         name="Example Company",
         summary="Summary of the company",
         public=True,
-        meta=dict(),
+        meta={},
         contact=ContactBase(
-            phones=[{"name":"cell","value":"1234567"}],
+            phones=[
+                ContactMethod(
+                    name="Primary Number",
+                    value="123-456-7890",
+                ),
+            ],
             email="test@example.com",
             website="www.ehelply.com",
-            socials=[{"name":"Twitter","value":"twitter.com"}],
+            socials=[
+                ContactMethod(
+                    name="Primary Number",
+                    value="123-456-7890",
+                ),
+            ],
         ),
-    )
+    ) # CompanyBase | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
     try:
         # Create Company
-        api_response = api_instance.create_company_places_companies_post(
-            header_params=header_params,
-            body=body,
-        )
+        api_response = api_instance.create_company_places_companies_post(company_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->create_company_places_companies_post: %s\n" % e)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
-    body = CompanyBase(
-        name="Example Company",
-        summary="Summary of the company",
-        public=True,
-        meta=dict(),
-        contact=ContactBase(
-            phones=[{"name":"cell","value":"1234567"}],
-            email="test@example.com",
-            website="www.ehelply.com",
-            socials=[{"name":"Twitter","value":"twitter.com"}],
-        ),
-    )
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Create Company
-        api_response = api_instance.create_company_places_companies_post(
-            header_params=header_params,
-            body=body,
-        )
+        api_response = api_instance.create_company_places_companies_post(company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->create_company_places_companies_post: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **company_base** | [**CompanyBase**](CompanyBase.md)|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**CompanyBase**](CompanyBase.md) |  | 
-
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Route not found - Denied by eHelply
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**CompanyResponse**](CompanyResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**CompanyResponse**](CompanyResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Route not found - Denied by eHelply |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -221,7 +133,9 @@ Deletes the company with the given ID and returns True if successful
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -232,191 +146,73 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
+    company_uuid = "company_uuid_example" # str | 
+    soft_delete = True # bool |  (optional) if omitted the server will use the default value of True
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'company_uuid': "company_uuid_example",
-    }
-    query_params = {
-    }
-    header_params = {
-    }
     try:
         # Delete Place
-        api_response = api_instance.delete_place_places_companies_company_uuid_delete(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-        )
+        api_response = api_instance.delete_place_places_companies_company_uuid_delete(company_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->delete_place_places_companies_company_uuid_delete: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'company_uuid': "company_uuid_example",
-    }
-    query_params = {
-        'soft_delete': True,
-    }
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Delete Place
-        api_response = api_instance.delete_place_places_companies_company_uuid_delete(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-        )
+        api_response = api_instance.delete_place_places_companies_company_uuid_delete(company_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->delete_place_places_companies_company_uuid_delete: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **company_uuid** | **str**|  |
+ **soft_delete** | **bool**|  | [optional] if omitted the server will use the default value of True
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-soft_delete | SoftDeleteSchema | | optional
-
-
-#### SoftDeleteSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to True
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-company_uuid | CompanyUuidSchema | | 
-
-#### CompanyUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Route not found - Denied by eHelply
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-typing.Union[dict, frozendict, str, date, datetime, int, float, bool, Decimal, None, list, tuple, bytes] | |
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 **bool, date, datetime, dict, float, int, list, str, none_type**
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Route not found - Denied by eHelply |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -429,7 +225,9 @@ Gets the company information given the Place ID
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
@@ -441,247 +239,87 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
+    company_uuid = "company_uuid_example" # str | 
+    with_meta = False # bool |  (optional) if omitted the server will use the default value of False
+    with_catalog = False # bool |  (optional) if omitted the server will use the default value of False
+    with_reviews = False # bool |  (optional) if omitted the server will use the default value of False
+    with_schedule = False # bool |  (optional) if omitted the server will use the default value of False
+    with_blog = False # bool |  (optional) if omitted the server will use the default value of False
+    with_tags = False # bool |  (optional) if omitted the server will use the default value of False
+    with_categories = False # bool |  (optional) if omitted the server will use the default value of False
+    with_places = False # bool |  (optional) if omitted the server will use the default value of False
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'company_uuid': "company_uuid_example",
-    }
-    query_params = {
-    }
-    header_params = {
-    }
     try:
         # Get Company
-        api_response = api_instance.get_company_places_companies_company_uuid_get(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-        )
+        api_response = api_instance.get_company_places_companies_company_uuid_get(company_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->get_company_places_companies_company_uuid_get: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'company_uuid': "company_uuid_example",
-    }
-    query_params = {
-        'with_meta': False,
-        'with_catalog': False,
-        'with_reviews': False,
-        'with_schedule': False,
-        'with_blog': False,
-        'with_tags': False,
-        'with_categories': False,
-        'with_places': False,
-    }
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Get Company
-        api_response = api_instance.get_company_places_companies_company_uuid_get(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-        )
+        api_response = api_instance.get_company_places_companies_company_uuid_get(company_uuid, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, with_places=with_places, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->get_company_places_companies_company_uuid_get: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **company_uuid** | **str**|  |
+ **with_meta** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_catalog** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_reviews** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_schedule** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_blog** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_tags** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_categories** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_places** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-with_meta | WithMetaSchema | | optional
-with_catalog | WithCatalogSchema | | optional
-with_reviews | WithReviewsSchema | | optional
-with_schedule | WithScheduleSchema | | optional
-with_blog | WithBlogSchema | | optional
-with_tags | WithTagsSchema | | optional
-with_categories | WithCategoriesSchema | | optional
-with_places | WithPlacesSchema | | optional
-
-
-#### WithMetaSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithCatalogSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithReviewsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithScheduleSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithBlogSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithTagsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithCategoriesSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithPlacesSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-company_uuid | CompanyUuidSchema | | 
-
-#### CompanyUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Route not found - Denied by eHelply
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**CompanyResponse**](CompanyResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**CompanyResponse**](CompanyResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Route not found - Denied by eHelply |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -694,7 +332,9 @@ Search all companies and returns paginated results with Companies being stored i
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.page import Page
@@ -706,276 +346,75 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
+    project_uuid = "project_uuid_example" # str |  (optional)
+    name = "name_example" # str |  (optional)
+    email = "email_example" # str |  (optional)
+    is_public = True # bool |  (optional) if omitted the server will use the default value of True
+    is_deleted = False # bool |  (optional) if omitted the server will use the default value of False
+    with_places = False # bool |  (optional) if omitted the server will use the default value of False
+    with_meta = False # bool |  (optional) if omitted the server will use the default value of False
+    with_catalog = False # bool |  (optional) if omitted the server will use the default value of False
+    with_reviews = False # bool |  (optional) if omitted the server will use the default value of False
+    with_schedule = False # bool |  (optional) if omitted the server will use the default value of False
+    with_blog = False # bool |  (optional) if omitted the server will use the default value of False
+    with_tags = False # bool |  (optional) if omitted the server will use the default value of False
+    with_categories = False # bool |  (optional) if omitted the server will use the default value of False
+    page = 1 # int |  (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
+    sort_on = "sort_on_example" # str |  (optional)
+    sort_desc = False # bool |  (optional) if omitted the server will use the default value of False
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only optional values
-    query_params = {
-        'project_uuid': "project_uuid_example",
-        'name': "name_example",
-        'email': "email_example",
-        'is_public': True,
-        'is_deleted': False,
-        'with_places': False,
-        'with_meta': False,
-        'with_catalog': False,
-        'with_reviews': False,
-        'with_schedule': False,
-        'with_blog': False,
-        'with_tags': False,
-        'with_categories': False,
-        'page': 1,
-        'page_size': 25,
-        'sort_on': "sort_on_example",
-        'sort_desc': False,
-    }
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Search Companies
-        api_response = api_instance.search_companies_places_companies_get(
-            query_params=query_params,
-            header_params=header_params,
-        )
+        api_response = api_instance.search_companies_places_companies_get(project_uuid=project_uuid, name=name, email=email, is_public=is_public, is_deleted=is_deleted, with_places=with_places, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->search_companies_places_companies_get: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **project_uuid** | **str**|  | [optional]
+ **name** | **str**|  | [optional]
+ **email** | **str**|  | [optional]
+ **is_public** | **bool**|  | [optional] if omitted the server will use the default value of True
+ **is_deleted** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_places** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_meta** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_catalog** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_reviews** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_schedule** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_blog** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_tags** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **with_categories** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **page** | **int**|  | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
+ **sort_on** | **str**|  | [optional]
+ **sort_desc** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-project_uuid | ProjectUuidSchema | | optional
-name | NameSchema | | optional
-email | EmailSchema | | optional
-is_public | IsPublicSchema | | optional
-is_deleted | IsDeletedSchema | | optional
-with_places | WithPlacesSchema | | optional
-with_meta | WithMetaSchema | | optional
-with_catalog | WithCatalogSchema | | optional
-with_reviews | WithReviewsSchema | | optional
-with_schedule | WithScheduleSchema | | optional
-with_blog | WithBlogSchema | | optional
-with_tags | WithTagsSchema | | optional
-with_categories | WithCategoriesSchema | | optional
-page | PageSchema | | optional
-page_size | PageSizeSchema | | optional
-sort_on | SortOnSchema | | optional
-sort_desc | SortDescSchema | | optional
-
-
-#### ProjectUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### NameSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EmailSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### IsPublicSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to True
-
-#### IsDeletedSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithPlacesSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithMetaSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithCatalogSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithReviewsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithScheduleSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithBlogSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithTagsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### WithCategoriesSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### PageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 1
-
-#### PageSizeSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 25
-
-#### SortOnSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### SortDescSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Route not found - Denied by eHelply
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Page**](Page.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**Page**](Page.md)
 
@@ -983,10 +422,24 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Route not found - Denied by eHelply |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_company_places_companies_company_uuid_put**
-> CompanyResponse update_company_places_companies_company_uuid_put(company_uuidcompany_base)
+> CompanyResponse update_company_places_companies_company_uuid_put(company_uuid, company_base)
 
 Update Company
 
@@ -994,7 +447,9 @@ Update company with given info, only updating the fields supplied. Company Uuid 
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import companies_api
 from ehelply_python_sdk.model.company_response import CompanyResponse
@@ -1007,205 +462,94 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = companies_api.CompaniesApi(api_client)
-
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'company_uuid': "company_uuid_example",
-    }
-    header_params = {
-    }
-    body = CompanyBase(
+    company_uuid = "company_uuid_example" # str | 
+    company_base = CompanyBase(
         name="Example Company",
         summary="Summary of the company",
         public=True,
-        meta=dict(),
+        meta={},
         contact=ContactBase(
-            phones=[{"name":"cell","value":"1234567"}],
+            phones=[
+                ContactMethod(
+                    name="Primary Number",
+                    value="123-456-7890",
+                ),
+            ],
             email="test@example.com",
             website="www.ehelply.com",
-            socials=[{"name":"Twitter","value":"twitter.com"}],
+            socials=[
+                ContactMethod(
+                    name="Primary Number",
+                    value="123-456-7890",
+                ),
+            ],
         ),
-    )
+    ) # CompanyBase | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
     try:
         # Update Company
-        api_response = api_instance.update_company_places_companies_company_uuid_put(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
+        api_response = api_instance.update_company_places_companies_company_uuid_put(company_uuid, company_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->update_company_places_companies_company_uuid_put: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'company_uuid': "company_uuid_example",
-    }
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
-    body = CompanyBase(
-        name="Example Company",
-        summary="Summary of the company",
-        public=True,
-        meta=dict(),
-        contact=ContactBase(
-            phones=[{"name":"cell","value":"1234567"}],
-            email="test@example.com",
-            website="www.ehelply.com",
-            socials=[{"name":"Twitter","value":"twitter.com"}],
-        ),
-    )
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Update Company
-        api_response = api_instance.update_company_places_companies_company_uuid_put(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
+        api_response = api_instance.update_company_places_companies_company_uuid_put(company_uuid, company_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling CompaniesApi->update_company_places_companies_company_uuid_put: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **company_uuid** | **str**|  |
+ **company_base** | [**CompanyBase**](CompanyBase.md)|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**CompanyBase**](CompanyBase.md) |  | 
-
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-company_uuid | CompanyUuidSchema | | 
-
-#### CompanyUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Route not found - Denied by eHelply
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**CompanyResponse**](CompanyResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**CompanyResponse**](CompanyResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Route not found - Denied by eHelply |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

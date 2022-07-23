@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**reconcile_payment_method**](BillingApi.md#reconcile_payment_method) | **GET** /sam/billing/reconcile_payment | Reconcilepaymentmethod
 [**remove_payment_method**](BillingApi.md#remove_payment_method) | **DELETE** /sam/billing/remove_payment_method | Removepaymentmethod
 
+
 # **create_billing_account**
 > StripeAccountResponse create_billing_account()
 
@@ -19,7 +20,9 @@ Createbillingaccount
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
@@ -31,135 +34,61 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Createbillingaccount
-        api_response = api_instance.create_billing_account(
-            header_params=header_params,
-        )
+        api_response = api_instance.create_billing_account(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->create_billing_account: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**StripeAccountResponse**](StripeAccountResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**StripeAccountResponse**](StripeAccountResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -170,7 +99,9 @@ Getclientsecret
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.stripe_customer_secret_response import StripeCustomerSecretResponse
@@ -182,135 +113,61 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Getclientsecret
-        api_response = api_instance.get_client_secret(
-            header_params=header_params,
-        )
+        api_response = api_instance.get_client_secret(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->get_client_secret: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**StripeCustomerSecretResponse**](StripeCustomerSecretResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**StripeCustomerSecretResponse**](StripeCustomerSecretResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -321,7 +178,9 @@ Haspayment
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -332,135 +191,61 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Haspayment
-        api_response = api_instance.has_payment(
-            header_params=header_params,
-        )
+        api_response = api_instance.has_payment(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->has_payment: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 **bool**
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -471,7 +256,9 @@ Listpaymentmethods
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.payment_method_response import PaymentMethodResponse
@@ -483,135 +270,61 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Listpaymentmethods
-        api_response = api_instance.list_payment_methods(
-            header_params=header_params,
-        )
+        api_response = api_instance.list_payment_methods(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->list_payment_methods: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**[PaymentMethodResponse]** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**[PaymentMethodResponse]**](PaymentMethodResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -622,7 +335,9 @@ Processpayment
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -634,165 +349,73 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    payment = Payment(
+        amount=1,
+    ) # Payment | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    header_params = {
-    }
-    body = Payment(
-        amount=1,
-    )
     try:
         # Processpayment
-        api_response = api_instance.process_payment(
-            header_params=header_params,
-            body=body,
-        )
+        api_response = api_instance.process_payment(payment)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment: %s\n" % e)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
-    body = Payment(
-        amount=1,
-    )
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Processpayment
-        api_response = api_instance.process_payment(
-            header_params=header_params,
-            body=body,
-        )
+        api_response = api_instance.process_payment(payment, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-header_params | RequestHeaderParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **payment** | [**Payment**](Payment.md)|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Payment**](Payment.md) |  | 
-
-
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 **str**
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -803,7 +426,9 @@ Reconcilepaymentmethod
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -814,135 +439,61 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Reconcilepaymentmethod
-        api_response = api_instance.reconcile_payment_method(
-            header_params=header_params,
-        )
+        api_response = api_instance.reconcile_payment_method(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->reconcile_payment_method: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 **bool**
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -953,7 +504,9 @@ Removepaymentmethod
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import billing_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -964,135 +517,61 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
 
-    # example passing only optional values
-    header_params = {
-        'x-access-token': "x-access-token_example",
-        'x-secret-token': "x-secret-token_example",
-        'authorization': "authorization_example",
-        'ehelply-active-participant': "ehelply-active-participant_example",
-        'ehelply-project': "ehelply-project_example",
-        'ehelply-data': "ehelply-data_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Removepaymentmethod
-        api_response = api_instance.remove_payment_method(
-            header_params=header_params,
-        )
+        api_response = api_instance.remove_payment_method(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->remove_payment_method: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-header_params | RequestHeaderParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
 
-### header_params
-#### RequestHeaderParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-x-access-token | XAccessTokenSchema | | optional
-x-secret-token | XSecretTokenSchema | | optional
-authorization | AuthorizationSchema | | optional
-ehelply-active-participant | EhelplyActiveParticipantSchema | | optional
-ehelply-project | EhelplyProjectSchema | | optional
-ehelply-data | EhelplyDataSchema | | optional
-
-#### XAccessTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### XSecretTokenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AuthorizationSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyActiveParticipantSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyProjectSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### EhelplyDataSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 **str**
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
