@@ -1,5 +1,6 @@
 # OptionGroup
 
+Option Group
 
 ## Properties
 Name | Type | Description | Notes
