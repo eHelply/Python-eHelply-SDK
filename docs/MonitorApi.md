@@ -27,14 +27,17 @@ Method | HTTP request | Description
 [**terminate_alarm**](MonitorApi.md#terminate_alarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms/{alarm_uuid}/terminate | Terminatealarm
 [**trigger_alarm**](MonitorApi.md#trigger_alarm) | **POST** /sam/monitor/services/{service}/stages/{stage}/alarms | Triggeralarm
 
+
 # **acknowledge_alarm**
-> AlarmResponse acknowledge_alarm(servicestagealarm_uuidalarm_acknowledge)
+> AlarmResponse acknowledge_alarm(service, stage, alarm_uuid, alarm_acknowledge)
 
 Acknowledgealarm
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -47,119 +50,38 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
+    alarm_acknowledge = AlarmAcknowledge(
+        acknowledger_uuid="acknowledger_uuid_example",
+    ) # AlarmAcknowledge | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
-    body = AlarmAcknowledge(
-        acknowledger_uuid="acknowledger_uuid_example",
-    )
     try:
         # Acknowledgealarm
-        api_response = api_instance.acknowledge_alarm(
-            path_params=path_params,
-            body=body,
-        )
+        api_response = api_instance.acknowledge_alarm(service, stage, alarm_uuid, alarm_acknowledge)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->acknowledge_alarm: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
+ **alarm_acknowledge** | [**AlarmAcknowledge**](AlarmAcknowledge.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmAcknowledge**](AlarmAcknowledge.md) |  | 
-
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
@@ -167,16 +89,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assign_alarm**
-> AlarmResponse assign_alarm(servicestagealarm_uuidalarm_assign)
+> AlarmResponse assign_alarm(service, stage, alarm_uuid, alarm_assign)
 
 Assignalarm
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_assign import AlarmAssign
@@ -189,119 +127,38 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
+    alarm_assign = AlarmAssign(
+        assignee_uuid="assignee_uuid_example",
+    ) # AlarmAssign | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
-    body = AlarmAssign(
-        assignee_uuid="assignee_uuid_example",
-    )
     try:
         # Assignalarm
-        api_response = api_instance.assign_alarm(
-            path_params=path_params,
-            body=body,
-        )
+        api_response = api_instance.assign_alarm(service, stage, alarm_uuid, alarm_assign)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->assign_alarm: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
+ **alarm_assign** | [**AlarmAssign**](AlarmAssign.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmAssign**](AlarmAssign.md) |  | 
-
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
@@ -309,16 +166,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **attach_alarm_note**
-> AlarmResponse attach_alarm_note(servicestagealarm_uuidalarm_note)
+> AlarmResponse attach_alarm_note(service, stage, alarm_uuid, alarm_note)
 
 Attachalarmnote
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_note import AlarmNote
@@ -331,120 +204,39 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
-    body = AlarmNote(
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
+    alarm_note = AlarmNote(
         author_uuid="author_uuid_example",
         message="message_example",
-    )
+    ) # AlarmNote | 
+
+    # example passing only required values which don't have defaults set
     try:
         # Attachalarmnote
-        api_response = api_instance.attach_alarm_note(
-            path_params=path_params,
-            body=body,
-        )
+        api_response = api_instance.attach_alarm_note(service, stage, alarm_uuid, alarm_note)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->attach_alarm_note: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
+ **alarm_note** | [**AlarmNote**](AlarmNote.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmNote**](AlarmNote.md) |  | 
-
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
@@ -452,16 +244,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **attach_alarm_ticket**
-> AlarmResponse attach_alarm_ticket(servicestagealarm_uuidalarm_ticket)
+> AlarmResponse attach_alarm_ticket(service, stage, alarm_uuid, alarm_ticket)
 
 Attachalarmticket
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -474,119 +282,38 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
+    alarm_ticket = AlarmTicket(
+        ticket_uuid="ticket_uuid_example",
+    ) # AlarmTicket | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
-    body = AlarmTicket(
-        ticket_uuid="ticket_uuid_example",
-    )
     try:
         # Attachalarmticket
-        api_response = api_instance.attach_alarm_ticket(
-            path_params=path_params,
-            body=body,
-        )
+        api_response = api_instance.attach_alarm_ticket(service, stage, alarm_uuid, alarm_ticket)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->attach_alarm_ticket: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
+ **alarm_ticket** | [**AlarmTicket**](AlarmTicket.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmTicket**](AlarmTicket.md) |  | 
-
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
@@ -594,16 +321,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clear_alarm**
-> AlarmResponse clear_alarm(servicestagealarm_uuid)
+> AlarmResponse clear_alarm(service, stage, alarm_uuid)
 
 Clearalarm
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -615,111 +358,54 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
     try:
         # Clearalarm
-        api_response = api_instance.clear_alarm(
-            path_params=path_params,
-        )
+        api_response = api_instance.clear_alarm(service, stage, alarm_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->clear_alarm: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
 
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -730,7 +416,9 @@ Getservice
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.service_response import ServiceResponse
@@ -742,156 +430,49 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    heartbeats = False # bool |  (optional) if omitted the server will use the default value of False
+    heartbeat_limit = 5 # int |  (optional) if omitted the server will use the default value of 5
+    alarms = False # bool |  (optional) if omitted the server will use the default value of False
+    alarm_limit = 5 # int |  (optional) if omitted the server will use the default value of 5
+    stage = "stage_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-    }
-    query_params = {
-    }
     try:
         # Getservice
-        api_response = api_instance.get_service(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service(service)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'service': "service_example",
-    }
-    query_params = {
-        'heartbeats': False,
-        'heartbeat_limit': 5,
-        'alarms': False,
-        'alarm_limit': 5,
-        'stage': "stage_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Getservice
-        api_response = api_instance.get_service(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service(service, heartbeats=heartbeats, heartbeat_limit=heartbeat_limit, alarms=alarms, alarm_limit=alarm_limit, stage=stage)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **heartbeats** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **heartbeat_limit** | **int**|  | [optional] if omitted the server will use the default value of 5
+ **alarms** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **alarm_limit** | **int**|  | [optional] if omitted the server will use the default value of 5
+ **stage** | **str**|  | [optional]
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-heartbeats | HeartbeatsSchema | | optional
-heartbeat_limit | HeartbeatLimitSchema | | optional
-alarms | AlarmsSchema | | optional
-alarm_limit | AlarmLimitSchema | | optional
-stage | StageSchema | | optional
-
-
-#### HeartbeatsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### HeartbeatLimitSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-#### AlarmsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### AlarmLimitSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ServiceResponse**](ServiceResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**ServiceResponse**](ServiceResponse.md)
 
@@ -899,16 +480,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_alarm**
-> AlarmResponse get_service_alarm(servicestagealarm_uuid)
+> AlarmResponse get_service_alarm(service, stage, alarm_uuid)
 
 Getservicealarm
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -920,105 +517,34 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
     try:
         # Getservicealarm
-        api_response = api_instance.get_service_alarm(
-            path_params=path_params,
-        )
+        api_response = api_instance.get_service_alarm(service, stage, alarm_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_alarm: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
 
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
@@ -1026,16 +552,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_alarms**
-> [AlarmResponse] get_service_alarms(servicestage)
+> [AlarmResponse] get_service_alarms(service, stage)
 
 Getservicealarms
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -1047,149 +589,47 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    history = 5 # int |  (optional) if omitted the server will use the default value of 5
+    include_terminated = False # bool |  (optional) if omitted the server will use the default value of False
+    include_cleared = False # bool |  (optional) if omitted the server will use the default value of False
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
-    query_params = {
-    }
     try:
         # Getservicealarms
-        api_response = api_instance.get_service_alarms(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_alarms(service, stage)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_alarms: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
-    query_params = {
-        'history': 5,
-        'include_terminated': False,
-        'include_cleared': False,
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Getservicealarms
-        api_response = api_instance.get_service_alarms(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_alarms(service, stage, history=history, include_terminated=include_terminated, include_cleared=include_cleared)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_alarms: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **history** | **int**|  | [optional] if omitted the server will use the default value of 5
+ **include_terminated** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **include_cleared** | **bool**|  | [optional] if omitted the server will use the default value of False
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-history | HistorySchema | | optional
-include_terminated | IncludeTerminatedSchema | | optional
-include_cleared | IncludeClearedSchema | | optional
-
-
-#### HistorySchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-#### IncludeTerminatedSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### IncludeClearedSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**[AlarmResponse]** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**[AlarmResponse]**](AlarmResponse.md)
 
@@ -1197,16 +637,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_heartbeat**
-> [HeartbeatResponse] get_service_heartbeat(servicestage)
+> [HeartbeatResponse] get_service_heartbeat(service, stage)
 
 Getserviceheartbeat
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -1218,139 +674,63 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    history = 5 # int |  (optional) if omitted the server will use the default value of 5
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
-    query_params = {
-    }
     try:
         # Getserviceheartbeat
-        api_response = api_instance.get_service_heartbeat(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_heartbeat(service, stage)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_heartbeat: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
-    query_params = {
-        'history': 5,
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Getserviceheartbeat
-        api_response = api_instance.get_service_heartbeat(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_heartbeat(service, stage, history=history)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_heartbeat: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **history** | **int**|  | [optional] if omitted the server will use the default value of 5
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-history | HistorySchema | | optional
-
-
-#### HistorySchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**[HeartbeatResponse]** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**[HeartbeatResponse]**](HeartbeatResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1361,7 +741,9 @@ Getservicekpis
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -1373,124 +755,41 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    history = 5 # int |  (optional) if omitted the server will use the default value of 5
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-    }
-    query_params = {
-    }
     try:
         # Getservicekpis
-        api_response = api_instance.get_service_kpis(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_kpis(service)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_kpis: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'service': "service_example",
-    }
-    query_params = {
-        'history': 5,
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Getservicekpis
-        api_response = api_instance.get_service_kpis(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_kpis(service, history=history)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_kpis: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **history** | **int**|  | [optional] if omitted the server will use the default value of 5
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-history | HistorySchema | | optional
-
-
-#### HistorySchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**[KpiResponse]** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**[KpiResponse]**](KpiResponse.md)
 
@@ -1498,20 +797,37 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_spec**
-> GetServiceSpecResponse get_service_spec(servicespec)
+> GetServiceSpecResponse get_service_spec(service, spec)
 
 Getservicespec
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
+from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1519,120 +835,53 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    spec = "spec_example" # str | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'spec': "spec_example",
-    }
     try:
         # Getservicespec
-        api_response = api_instance.get_service_spec(
-            path_params=path_params,
-        )
+        api_response = api_instance.get_service_spec(service, spec)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_spec: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **spec** | **str**|  |
 
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-spec | SpecSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### SpecSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
-
-#### ApiResponseFor403
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor403ResponseBodyApplicationJson
-
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**message** | **str** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**GetServiceSpecResponse**](GetServiceSpecResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1643,11 +892,14 @@ Getservicespecs
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1655,106 +907,30 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-    }
     try:
         # Getservicespecs
-        api_response = api_instance.get_service_specs(
-            path_params=path_params,
-        )
+        api_response = api_instance.get_service_specs(service)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_specs: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
 
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
-
-#### ApiResponseFor403
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor403ResponseBodyApplicationJson
-
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**message** | **str** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**GetServiceSpecsResponse**](GetServiceSpecsResponse.md)
 
@@ -1762,16 +938,33 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_vitals**
-> [StatsVitalsResponse] get_service_vitals(servicestage)
+> [StatsVitalsResponse] get_service_vitals(service, stage)
 
 Getservicevitals
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.stats_vitals_response import StatsVitalsResponse
@@ -1783,139 +976,63 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    history = 5 # int |  (optional) if omitted the server will use the default value of 5
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
-    query_params = {
-    }
     try:
         # Getservicevitals
-        api_response = api_instance.get_service_vitals(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_vitals(service, stage)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_vitals: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
-    query_params = {
-        'history': 5,
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Getservicevitals
-        api_response = api_instance.get_service_vitals(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.get_service_vitals(service, stage, history=history)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_service_vitals: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **history** | **int**|  | [optional] if omitted the server will use the default value of 5
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-history | HistorySchema | | optional
-
-
-#### HistorySchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**[StatsVitalsResponse]** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**[StatsVitalsResponse]**](StatsVitalsResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1926,7 +1043,9 @@ Getservices
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.service_response import ServiceResponse
@@ -1938,144 +1057,63 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    heartbeats = False # bool |  (optional) if omitted the server will use the default value of False
+    heartbeat_limit = 5 # int |  (optional) if omitted the server will use the default value of 5
+    alarms = False # bool |  (optional) if omitted the server will use the default value of False
+    alarm_limit = 5 # int |  (optional) if omitted the server will use the default value of 5
+    include_hidden = False # bool |  (optional) if omitted the server will use the default value of False
+    stage = "stage_example" # str |  (optional)
+    key = "key_example" # str |  (optional)
 
-    # example passing only optional values
-    query_params = {
-        'heartbeats': False,
-        'heartbeat_limit': 5,
-        'alarms': False,
-        'alarm_limit': 5,
-        'include_hidden': False,
-        'stage': "stage_example",
-        'key': "key_example",
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Getservices
-        api_response = api_instance.get_services(
-            query_params=query_params,
-        )
+        api_response = api_instance.get_services(heartbeats=heartbeats, heartbeat_limit=heartbeat_limit, alarms=alarms, alarm_limit=alarm_limit, include_hidden=include_hidden, stage=stage, key=key)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_services: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **heartbeats** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **heartbeat_limit** | **int**|  | [optional] if omitted the server will use the default value of 5
+ **alarms** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **alarm_limit** | **int**|  | [optional] if omitted the server will use the default value of 5
+ **include_hidden** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **stage** | **str**|  | [optional]
+ **key** | **str**|  | [optional]
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-heartbeats | HeartbeatsSchema | | optional
-heartbeat_limit | HeartbeatLimitSchema | | optional
-alarms | AlarmsSchema | | optional
-alarm_limit | AlarmLimitSchema | | optional
-include_hidden | IncludeHiddenSchema | | optional
-stage | StageSchema | | optional
-key | KeySchema | | optional
-
-
-#### HeartbeatsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### HeartbeatLimitSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-#### AlarmsSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### AlarmLimitSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 5
-
-#### IncludeHiddenSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### KeySchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**[ServiceResponse]** |  | 
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**[ServiceResponse]**](ServiceResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2086,10 +1124,13 @@ Getserviceswithspecs
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.get_service_service_with_specs_response import GetServiceServiceWithSpecsResponse
+from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2097,8 +1138,9 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
 
@@ -2110,54 +1152,12 @@ with ehelply_python_sdk.ApiClient(configuration) as api_client:
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->get_services_with_specs: %s\n" % e)
 ```
+
+
 ### Parameters
 This endpoint does not need any parameter.
 
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-403 | ApiResponseFor403 | Unauthorized - Denied by eHelply
-404 | ApiResponseFor404 | Not found
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
-
-#### ApiResponseFor403
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor403ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor403ResponseBodyApplicationJson
-
-#### Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**message** | **str** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
+### Return type
 
 [**GetServiceServiceWithSpecsResponse**](GetServiceServiceWithSpecsResponse.md)
 
@@ -2165,16 +1165,32 @@ headers | Unset | headers were not defined |
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **hide_service**
-> ServiceMessageResponse hide_service(servicestage)
+> ServiceMessageResponse hide_service(service, stage)
 
 Hideservice
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -2186,97 +1202,32 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
     try:
         # Hideservice
-        api_response = api_instance.hide_service(
-            path_params=path_params,
-        )
+        api_response = api_instance.hide_service(service, stage)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->hide_service: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
 
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ServiceMessageResponse**](ServiceMessageResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**ServiceMessageResponse**](ServiceMessageResponse.md)
 
@@ -2284,16 +1235,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ignore_alarm**
-> AlarmResponse ignore_alarm(servicestagealarm_uuidalarm_ignore)
+> AlarmResponse ignore_alarm(service, stage, alarm_uuid, alarm_ignore)
 
 Ignorealarm
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -2306,125 +1273,58 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
+    alarm_ignore = AlarmIgnore(
+        ignorer_uuid="ignorer_uuid_example",
+    ) # AlarmIgnore | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
-    body = AlarmIgnore(
-        ignorer_uuid="ignorer_uuid_example",
-    )
     try:
         # Ignorealarm
-        api_response = api_instance.ignore_alarm(
-            path_params=path_params,
-            body=body,
-        )
+        api_response = api_instance.ignore_alarm(service, stage, alarm_uuid, alarm_ignore)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->ignore_alarm: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
+ **alarm_ignore** | [**AlarmIgnore**](AlarmIgnore.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmIgnore**](AlarmIgnore.md) |  | 
-
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2435,7 +1335,9 @@ Registerservice
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.service_response import ServiceResponse
@@ -2448,100 +1350,61 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-
-    # example passing only required values which don't have defaults set
-    body = ServiceCreate(
+    service_create = ServiceCreate(
         name="name_example",
         key="key_example",
         version="version_example",
         summary="summary_example",
         authors=[
-            "authors_example"
+            "authors_example",
         ],
         author_emails=[
-            "author_emails_example"
+            "author_emails_example",
         ],
-    )
+    ) # ServiceCreate | 
+
+    # example passing only required values which don't have defaults set
     try:
         # Registerservice
-        api_response = api_instance.register_service(
-            body=body,
-        )
+        api_response = api_instance.register_service(service_create)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->register_service: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service_create** | [**ServiceCreate**](ServiceCreate.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ServiceCreate**](ServiceCreate.md) |  | 
-
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ServiceResponse**](ServiceResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**ServiceResponse**](ServiceResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2552,7 +1415,9 @@ Searchalarms
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.page import Page
@@ -2564,164 +1429,51 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    page = 1 # int |  (optional) if omitted the server will use the default value of 1
+    page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
+    search = "search_example" # str |  (optional)
+    search_on = "search_on_example" # str |  (optional)
+    sort_on = "sort_on_example" # str |  (optional)
+    sort_desc = False # bool |  (optional) if omitted the server will use the default value of False
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-    }
-    query_params = {
-    }
     try:
         # Searchalarms
-        api_response = api_instance.search_alarms(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.search_alarms(service)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->search_alarms: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'service': "service_example",
-    }
-    query_params = {
-        'page': 1,
-        'page_size': 25,
-        'search': "search_example",
-        'search_on': "search_on_example",
-        'sort_on': "sort_on_example",
-        'sort_desc': False,
-    }
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Searchalarms
-        api_response = api_instance.search_alarms(
-            path_params=path_params,
-            query_params=query_params,
-        )
+        api_response = api_instance.search_alarms(service, page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->search_alarms: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-query_params | RequestQueryParams | |
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **page** | **int**|  | [optional] if omitted the server will use the default value of 1
+ **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
+ **search** | **str**|  | [optional]
+ **search_on** | **str**|  | [optional]
+ **sort_on** | **str**|  | [optional]
+ **sort_desc** | **bool**|  | [optional] if omitted the server will use the default value of False
 
-### query_params
-#### RequestQueryParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-page | PageSchema | | optional
-page_size | PageSizeSchema | | optional
-search | SearchSchema | | optional
-search_on | SearchOnSchema | | optional
-sort_on | SortOnSchema | | optional
-sort_desc | SortDescSchema | | optional
-
-
-#### PageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 1
-
-#### PageSizeSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**int** |  | defaults to 25
-
-#### SearchSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### SearchOnSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### SortOnSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### SortDescSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**bool** |  | defaults to False
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Page**](Page.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**Page**](Page.md)
 
@@ -2729,16 +1481,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **show_service**
-> ServiceMessageResponse show_service(servicestage)
+> ServiceMessageResponse show_service(service, stage)
 
 Showservice
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -2750,97 +1518,32 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
     try:
         # Showservice
-        api_response = api_instance.show_service(
-            path_params=path_params,
-        )
+        api_response = api_instance.show_service(service, stage)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->show_service: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-path_params | RequestPathParams | |
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
 
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**ServiceMessageResponse**](ServiceMessageResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**ServiceMessageResponse**](ServiceMessageResponse.md)
 
@@ -2848,16 +1551,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **terminate_alarm**
-> AlarmResponse terminate_alarm(servicestagealarm_uuidalarm_terminate)
+> AlarmResponse terminate_alarm(service, stage, alarm_uuid, alarm_terminate)
 
 Terminatealarm
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -2870,119 +1589,38 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_uuid = "alarm_uuid_example" # str | 
+    alarm_terminate = AlarmTerminate(
+        terminater_uuid="terminater_uuid_example",
+    ) # AlarmTerminate | 
 
     # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-        'alarm_uuid': "alarm_uuid_example",
-    }
-    body = AlarmTerminate(
-        terminater_uuid="terminater_uuid_example",
-    )
     try:
         # Terminatealarm
-        api_response = api_instance.terminate_alarm(
-            path_params=path_params,
-            body=body,
-        )
+        api_response = api_instance.terminate_alarm(service, stage, alarm_uuid, alarm_terminate)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->terminate_alarm: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_uuid** | **str**|  |
+ **alarm_terminate** | [**AlarmTerminate**](AlarmTerminate.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmTerminate**](AlarmTerminate.md) |  | 
-
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-alarm_uuid | AlarmUuidSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### AlarmUuidSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
@@ -2990,16 +1628,32 @@ Type | Description  | Notes
 
 No authorization required
 
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trigger_alarm**
-> AlarmResponse trigger_alarm(servicestagealarm_create)
+> AlarmResponse trigger_alarm(service, stage, alarm_create)
 
 Triggeralarm
 
 ### Example
 
+
 ```python
+import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.alarm_response import AlarmResponse
@@ -3012,121 +1666,60 @@ configuration = ehelply_python_sdk.Configuration(
     host = "https://api.prod.ehelply.com"
 )
 
+
 # Enter a context with an instance of the API client
-with ehelply_python_sdk.ApiClient(configuration) as api_client:
+with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = monitor_api.MonitorApi(api_client)
-
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'service': "service_example",
-        'stage': "stage_example",
-    }
-    body = AlarmCreate(
+    service = "service_example" # str | 
+    stage = "stage_example" # str | 
+    alarm_create = AlarmCreate(
         process="process_example",
         severity="severity_example",
         name="name_example",
         summary="summary_example",
         description="description_example",
-    )
+    ) # AlarmCreate | 
+
+    # example passing only required values which don't have defaults set
     try:
         # Triggeralarm
-        api_response = api_instance.trigger_alarm(
-            path_params=path_params,
-            body=body,
-        )
+        api_response = api_instance.trigger_alarm(service, stage, alarm_create)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling MonitorApi->trigger_alarm: %s\n" % e)
 ```
+
+
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
-path_params | RequestPathParams | |
-content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
-stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
-timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
-skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+ **service** | **str**|  |
+ **stage** | **str**|  |
+ **alarm_create** | [**AlarmCreate**](AlarmCreate.md)|  |
 
-### body
-
-#### SchemaForRequestBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmCreate**](AlarmCreate.md) |  | 
-
-
-### path_params
-#### RequestPathParams
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-service | ServiceSchema | | 
-stage | StageSchema | | 
-
-#### ServiceSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-#### StageSchema
-
-Type | Description | Notes
-------------- | ------------- | -------------
-**str** |  | 
-
-### Return Types, Responses
-
-Code | Class | Description
-------------- | ------------- | -------------
-n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | ApiResponseFor200 | Successful Response
-404 | ApiResponseFor404 | Not found
-422 | ApiResponseFor422 | Validation Error
-
-#### ApiResponseFor200
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**AlarmResponse**](AlarmResponse.md) |  | 
-
-
-#### ApiResponseFor404
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
-headers | Unset | headers were not defined |
-
-#### ApiResponseFor422
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor422ResponseBodyApplicationJson, ] |  |
-headers | Unset | headers were not defined |
-
-#### SchemaFor422ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**HTTPValidationError**](HTTPValidationError.md) |  | 
-
-
+### Return type
 
 [**AlarmResponse**](AlarmResponse.md)
 
 ### Authorization
 
 No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**404** | Not found |  -  |
+**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

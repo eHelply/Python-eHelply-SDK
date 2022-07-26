@@ -1,5 +1,3 @@
-# coding: utf-8
-
 # flake8: noqa
 
 # import all models into this package
@@ -23,12 +21,14 @@ from ehelply_python_sdk.model.alarm_ticket import AlarmTicket
 from ehelply_python_sdk.model.appointment_base import AppointmentBase
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
 from ehelply_python_sdk.model.attach_payment_to_project import AttachPaymentToProject
+from ehelply_python_sdk.model.basic import Basic
 from ehelply_python_sdk.model.basic_meta import BasicMeta
 from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate
 from ehelply_python_sdk.model.catalog_base import CatalogBase
 from ehelply_python_sdk.model.catalog_return import CatalogReturn
 from ehelply_python_sdk.model.category_base import CategoryBase
 from ehelply_python_sdk.model.category_db import CategoryDb
+from ehelply_python_sdk.model.company import Company
 from ehelply_python_sdk.model.company_base import CompanyBase
 from ehelply_python_sdk.model.company_response import CompanyResponse
 from ehelply_python_sdk.model.contact import Contact
@@ -42,8 +42,10 @@ from ehelply_python_sdk.model.create_ticket import CreateTicket
 from ehelply_python_sdk.model.credential import Credential
 from ehelply_python_sdk.model.custom_list import CustomList
 from ehelply_python_sdk.model.dates_meta import DatesMeta
+from ehelply_python_sdk.model.detailed import Detailed
 from ehelply_python_sdk.model.detailed_meta import DetailedMeta
 from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
+from ehelply_python_sdk.model.email import Email
 from ehelply_python_sdk.model.field import Field
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from ehelply_python_sdk.model.get_project_credential import GetProjectCredential
@@ -51,6 +53,7 @@ from ehelply_python_sdk.model.get_secret import GetSecret
 from ehelply_python_sdk.model.get_service_service_with_specs_response import GetServiceServiceWithSpecsResponse
 from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
 from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
+from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.heartbeat_response import HeartbeatResponse
 from ehelply_python_sdk.model.kpi_response import KpiResponse
@@ -88,6 +91,16 @@ from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
 from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
 from ehelply_python_sdk.model.projects_usage_type_unit_price import ProjectsUsageTypeUnitPrice
 from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
+from ehelply_python_sdk.model.response_addmembertoproject import ResponseAddmembertoproject
+from ehelply_python_sdk.model.response_archiveproject import ResponseArchiveproject
+from ehelply_python_sdk.model.response_createkey import ResponseCreatekey
+from ehelply_python_sdk.model.response_createprojectcredential import ResponseCreateprojectcredential
+from ehelply_python_sdk.model.response_deletekey import ResponseDeletekey
+from ehelply_python_sdk.model.response_deleteprojectcredential import ResponseDeleteprojectcredential
+from ehelply_python_sdk.model.response_deleteusagetype import ResponseDeleteusagetype
+from ehelply_python_sdk.model.response_generatetoken import ResponseGeneratetoken
+from ehelply_python_sdk.model.response_removememberfromproject import ResponseRemovememberfromproject
+from ehelply_python_sdk.model.response_updateprojectcredential import ResponseUpdateprojectcredential
 from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 from ehelply_python_sdk.model.security_encryption_key_response import SecurityEncryptionKeyResponse
