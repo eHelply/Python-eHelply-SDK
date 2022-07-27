@@ -4,17 +4,17 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_staff_places_staff_post**](StaffApi.md#create_staff_places_staff_post) | **POST** /places/staff | Create Staff
-[**delete_staff_places_staff_staff_uuid_delete**](StaffApi.md#delete_staff_places_staff_staff_uuid_delete) | **DELETE** /places/staff/{staff_uuid} | Delete Staff
-[**get_staff_places_staff_staff_uuid_get**](StaffApi.md#get_staff_places_staff_staff_uuid_get) | **GET** /places/staff/{staff_uuid} | Get Staff
-[**search_staff_places_staff_get**](StaffApi.md#search_staff_places_staff_get) | **GET** /places/staff | Search Staff
-[**update_staff_places_staff_staff_uuid_put**](StaffApi.md#update_staff_places_staff_staff_uuid_put) | **PUT** /places/staff/{staff_uuid} | Update Staff
+[**create_staff**](StaffApi.md#create_staff) | **POST** /places/staff | Createstaff
+[**delete_staff**](StaffApi.md#delete_staff) | **DELETE** /places/staff/{staff_uuid} | Deletestaff
+[**get_staff**](StaffApi.md#get_staff) | **GET** /places/staff/{staff_uuid} | Getstaff
+[**search_staff**](StaffApi.md#search_staff) | **GET** /places/staff | Searchstaff
+[**update_staff**](StaffApi.md#update_staff) | **PUT** /places/staff/{staff_uuid} | Updatestaff
 
 
-# **create_staff_places_staff_post**
-> StaffDb create_staff_places_staff_post(staff_create)
+# **create_staff**
+> StaffDb create_staff(staff_create)
 
-Create Staff
+Createstaff
 
 Creates a staff member
 
@@ -56,20 +56,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Create Staff
-        api_response = api_instance.create_staff_places_staff_post(staff_create)
+        # Createstaff
+        api_response = api_instance.create_staff(staff_create)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->create_staff_places_staff_post: %s\n" % e)
+        print("Exception when calling StaffApi->create_staff: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create Staff
-        api_response = api_instance.create_staff_places_staff_post(staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Createstaff
+        api_response = api_instance.create_staff(staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->create_staff_places_staff_post: %s\n" % e)
+        print("Exception when calling StaffApi->create_staff: %s\n" % e)
 ```
 
 
@@ -109,10 +109,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_staff_places_staff_staff_uuid_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_staff_places_staff_staff_uuid_delete(staff_uuid)
+# **delete_staff**
+> bool, date, datetime, dict, float, int, list, str, none_type delete_staff(staff_uuid)
 
-Delete Staff
+Deletestaff
 
 Deletes the staff member with the given ID and returns True if successful
 
@@ -147,20 +147,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete Staff
-        api_response = api_instance.delete_staff_places_staff_staff_uuid_delete(staff_uuid)
+        # Deletestaff
+        api_response = api_instance.delete_staff(staff_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->delete_staff_places_staff_staff_uuid_delete: %s\n" % e)
+        print("Exception when calling StaffApi->delete_staff: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Delete Staff
-        api_response = api_instance.delete_staff_places_staff_staff_uuid_delete(staff_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Deletestaff
+        api_response = api_instance.delete_staff(staff_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->delete_staff_places_staff_staff_uuid_delete: %s\n" % e)
+        print("Exception when calling StaffApi->delete_staff: %s\n" % e)
 ```
 
 
@@ -201,10 +201,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_staff_places_staff_staff_uuid_get**
-> StaffResponse get_staff_places_staff_staff_uuid_get(staff_uuid)
+# **get_staff**
+> StaffResponse get_staff(staff_uuid)
 
-Get Staff
+Getstaff
 
 Gets the staff member information given the staff ID
 
@@ -244,20 +244,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get Staff
-        api_response = api_instance.get_staff_places_staff_staff_uuid_get(staff_uuid)
+        # Getstaff
+        api_response = api_instance.get_staff(staff_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->get_staff_places_staff_staff_uuid_get: %s\n" % e)
+        print("Exception when calling StaffApi->get_staff: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get Staff
-        api_response = api_instance.get_staff_places_staff_staff_uuid_get(staff_uuid, with_places=with_places, with_companies=with_companies, with_catalog=with_catalog, with_schedule=with_schedule, with_roles=with_roles, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Getstaff
+        api_response = api_instance.get_staff(staff_uuid, with_places=with_places, with_companies=with_companies, with_catalog=with_catalog, with_schedule=with_schedule, with_roles=with_roles, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->get_staff_places_staff_staff_uuid_get: %s\n" % e)
+        print("Exception when calling StaffApi->get_staff: %s\n" % e)
 ```
 
 
@@ -302,10 +302,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_staff_places_staff_get**
-> Page search_staff_places_staff_get()
+# **search_staff**
+> Page search_staff()
 
-Search Staff
+Searchstaff
 
 TODO Item return format: ``` {     uuid                                **type:** string     project_uuid                        **type:** string or None      entity                              **type:** string or None      place                               **type:** dict or None      company                             **type:** dict or None      schedule                            **type:** dict or None      catalog                             **type:** dict or None      reviews                             **type:** dict or None      created_at                          **type:** string or None      updated_at                          **type:** string or None      deleted_at                          **type:** string or None  } ```
 
@@ -354,11 +354,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Search Staff
-        api_response = api_instance.search_staff_places_staff_get(project_uuid=project_uuid, first_name=first_name, last_name=last_name, is_deleted=is_deleted, with_companies=with_companies, with_places=with_places, with_schedule=with_schedule, with_catalog=with_catalog, with_reviews=with_reviews, with_roles=with_roles, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Searchstaff
+        api_response = api_instance.search_staff(project_uuid=project_uuid, first_name=first_name, last_name=last_name, is_deleted=is_deleted, with_companies=with_companies, with_places=with_places, with_schedule=with_schedule, with_catalog=with_catalog, with_reviews=with_reviews, with_roles=with_roles, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->search_staff_places_staff_get: %s\n" % e)
+        print("Exception when calling StaffApi->search_staff: %s\n" % e)
 ```
 
 
@@ -411,10 +411,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_staff_places_staff_staff_uuid_put**
-> StaffResponse update_staff_places_staff_staff_uuid_put(staff_uuid, staff_create)
+# **update_staff**
+> StaffResponse update_staff(staff_uuid, staff_create)
 
-Update Staff
+Updatestaff
 
 Update staff with given info, only updating the fields supplied. Staff Uuid must be sent however.
 
@@ -457,20 +457,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update Staff
-        api_response = api_instance.update_staff_places_staff_staff_uuid_put(staff_uuid, staff_create)
+        # Updatestaff
+        api_response = api_instance.update_staff(staff_uuid, staff_create)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->update_staff_places_staff_staff_uuid_put: %s\n" % e)
+        print("Exception when calling StaffApi->update_staff: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update Staff
-        api_response = api_instance.update_staff_places_staff_staff_uuid_put(staff_uuid, staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Updatestaff
+        api_response = api_instance.update_staff(staff_uuid, staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling StaffApi->update_staff_places_staff_staff_uuid_put: %s\n" % e)
+        print("Exception when calling StaffApi->update_staff: %s\n" % e)
 ```
 
 
