@@ -13,11 +13,11 @@ import sys
 import unittest
 
 import ehelply_python_sdk
-from ehelply_python_sdk.model.response_addmembertoproject import ResponseAddmembertoproject
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 
 
-class TestResponseAddmembertoproject(unittest.TestCase):
-    """ResponseAddmembertoproject unit test stubs"""
+class TestGetAppointment403Response(unittest.TestCase):
+    """GetAppointment403Response unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,10 +25,10 @@ class TestResponseAddmembertoproject(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testResponseAddmembertoproject(self):
-        """Test ResponseAddmembertoproject"""
+    def testGetAppointment403Response(self):
+        """Test GetAppointment403Response"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ResponseAddmembertoproject()  # noqa: E501
+        # model = GetAppointment403Response()  # noqa: E501
         pass
 
 

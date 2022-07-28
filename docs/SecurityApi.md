@@ -105,10 +105,10 @@ Createkey
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.response_createkey import ResponseCreatekey
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -193,8 +193,8 @@ Deletekey
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.response_deletekey import ResponseDeletekey
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -264,9 +264,9 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
 from ehelply_python_sdk.model.response_generatetoken import ResponseGeneratetoken
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -416,8 +416,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -486,7 +486,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -550,9 +550,9 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import security_api
 from ehelply_python_sdk.model.security_key_get import SecurityKeyGet
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.security_key_verify import SecurityKeyVerify
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

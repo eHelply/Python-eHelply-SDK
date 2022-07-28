@@ -25,8 +25,8 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
 from ehelply_python_sdk.model.contact import Contact
 from ehelply_python_sdk.model.contact_response import ContactResponse
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -120,9 +120,9 @@ Createticket
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.create_ticket import CreateTicket
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -219,8 +219,8 @@ Listtickets
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -312,9 +312,9 @@ Updateticket
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.create_ticket import CreateTicket
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -413,8 +413,8 @@ Viewticket
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import support_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com

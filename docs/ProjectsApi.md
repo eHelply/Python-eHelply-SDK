@@ -42,8 +42,8 @@ Addmembertoproject
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.response_addmembertoproject import ResponseAddmembertoproject
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -135,8 +135,8 @@ Archiveproject
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.response_archiveproject import ResponseArchiveproject
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -228,10 +228,10 @@ Create a new Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.project_db import ProjectDB
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -322,10 +322,10 @@ Createprojectcredential
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.create_project_credential import CreateProjectCredential
 from ehelply_python_sdk.model.response_createprojectcredential import ResponseCreateprojectcredential
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -425,10 +425,10 @@ Createprojectkey
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.security_key_create import SecurityKeyCreate
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -523,9 +523,9 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.projects_usage_type_create import ProjectsUsageTypeCreate
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -627,9 +627,9 @@ Deleteprojectcredential
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.response_deleteprojectcredential import ResponseDeleteprojectcredential
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -720,8 +720,8 @@ Deleteprojectkey
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -812,8 +812,8 @@ Deleteusagetype
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.response_deleteusagetype import ResponseDeleteusagetype
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -903,9 +903,9 @@ Getallprojectcredentials
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.get_project_credential import GetProjectCredential
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -995,8 +995,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1089,9 +1089,9 @@ Getmemberprojects
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.projects_project_get import ProjectsProjectGet
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1184,9 +1184,9 @@ Get a Project
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.project_db import ProjectDB
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1275,9 +1275,9 @@ Getprojectkeys
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1366,9 +1366,9 @@ Getprojectmembers
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.projects_project_member_db import ProjectsProjectMemberDB
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1459,9 +1459,9 @@ Getspecificprojectcredential
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.get_project_credential import GetProjectCredential
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1553,8 +1553,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.projects_project_usage_db import ProjectsProjectUsageDB
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1648,8 +1648,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.projects_usage_type_get import ProjectsUsageTypeGet
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1718,8 +1718,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.response_removememberfromproject import ResponseRemovememberfromproject
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1812,9 +1812,9 @@ Search projects
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1907,9 +1907,9 @@ Get a UsageType  No auth because we may want to use this on pricing/docs pages
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1988,9 +1988,9 @@ Updateproject
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.projects_project_update import ProjectsProjectUpdate
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2086,8 +2086,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.response_updateprojectcredential import ResponseUpdateprojectcredential
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from ehelply_python_sdk.model.update_project_credential_request import UpdateProjectCredentialRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -2189,9 +2189,9 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
 from ehelply_python_sdk.model.projects_usage_type_db import ProjectsUsageTypeDB
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTypeUpdate
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.

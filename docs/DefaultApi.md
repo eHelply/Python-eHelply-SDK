@@ -400,6 +400,7 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -511,8 +512,6 @@ with ehelply_python_sdk.ApiClient() as api_client:
     page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
     sort_on = "sort_on_example" # str |  (optional)
     sort_desc = False # bool |  (optional) if omitted the server will use the default value of False
-    search = "search_example" # str |  (optional)
-    search_on = "search_on_example" # str |  (optional)
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -524,7 +523,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Search Appointment
-        api_response = api_instance.search_appointment(place_uuid=place_uuid, exclude_cancelled=exclude_cancelled, is_deleted=is_deleted, start_range=start_range, end_range=end_range, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, search=search, search_on=search_on, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_appointment(place_uuid=place_uuid, exclude_cancelled=exclude_cancelled, is_deleted=is_deleted, start_range=start_range, end_range=end_range, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling DefaultApi->search_appointment: %s\n" % e)
@@ -544,8 +543,6 @@ Name | Type | Description  | Notes
  **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
  **sort_on** | **str**|  | [optional]
  **sort_desc** | **bool**|  | [optional] if omitted the server will use the default value of False
- **search** | **str**|  | [optional]
- **search_on** | **str**|  | [optional]
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -705,7 +702,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     entity_uuid = "entity_uuid_example" # str | 
     start_date = "start_date_example" # str |  (optional)
     end_date = "end_date_example" # str |  (optional)
-    include_cancelled = False # bool |  (optional) if omitted the server will use the default value of False
+    exclude_cancelled = False # bool |  (optional) if omitted the server will use the default value of False
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -725,7 +722,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Get Entities Appointments
-        api_response = api_instance.search_entity_appointments(entity_uuid, start_date=start_date, end_date=end_date, include_cancelled=include_cancelled, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_entity_appointments(entity_uuid, start_date=start_date, end_date=end_date, exclude_cancelled=exclude_cancelled, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling DefaultApi->search_entity_appointments: %s\n" % e)
@@ -739,7 +736,7 @@ Name | Type | Description  | Notes
  **entity_uuid** | **str**|  |
  **start_date** | **str**|  | [optional]
  **end_date** | **str**|  | [optional]
- **include_cancelled** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **exclude_cancelled** | **bool**|  | [optional] if omitted the server will use the default value of False
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -785,6 +782,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import default_api
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
 from ehelply_python_sdk.model.appointment_base import AppointmentBase
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com

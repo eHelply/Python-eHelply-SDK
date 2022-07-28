@@ -825,9 +825,9 @@ Getservicespec
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -898,8 +898,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
 from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1129,8 +1129,8 @@ Getserviceswithspecs
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import monitor_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.get_service_service_with_specs_response import GetServiceServiceWithSpecsResponse
-from ehelply_python_sdk.model.get_services_with_specs403_response import GetServicesWithSpecs403Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
