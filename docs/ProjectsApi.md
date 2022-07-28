@@ -7,21 +7,26 @@ Method | HTTP request | Description
 [**add_member_to_project**](ProjectsApi.md#add_member_to_project) | **POST** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Addmembertoproject
 [**archive_project**](ProjectsApi.md#archive_project) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 [**create_project**](ProjectsApi.md#create_project) | **POST** /sam/projects/projects | Createproject
+[**create_project_credential**](ProjectsApi.md#create_project_credential) | **POST** /sam/projects/projects/{project_uuid}/credentials | Createprojectcredential
 [**create_project_key**](ProjectsApi.md#create_project_key) | **POST** /sam/projects/projects/{project_uuid}/keys | Createprojectkey
 [**create_usage_type**](ProjectsApi.md#create_usage_type) | **POST** /sam/projects/usage/types | Createusagetype
+[**delete_project_credential**](ProjectsApi.md#delete_project_credential) | **DELETE** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Deleteprojectcredential
 [**delete_project_key**](ProjectsApi.md#delete_project_key) | **DELETE** /sam/projects/projects/{project_uuid}/keys | Deleteprojectkey
 [**delete_usage_type**](ProjectsApi.md#delete_usage_type) | **DELETE** /sam/projects/usage/types/{usage_type_key} | Deleteusagetype
+[**get_all_project_credentials**](ProjectsApi.md#get_all_project_credentials) | **GET** /sam/projects/projects/{project_uuid}/credentials | Getallprojectcredentials
 [**get_all_project_usage**](ProjectsApi.md#get_all_project_usage) | **GET** /sam/projects/projects/{project_uuid}/usage | Getallprojectusage
 [**get_member_projects**](ProjectsApi.md#get_member_projects) | **GET** /sam/projects/members/{entity_uuid}/projects | Getmemberprojects
 [**get_project**](ProjectsApi.md#get_project) | **GET** /sam/projects/projects/{project_uuid} | Getproject
 [**get_project_keys**](ProjectsApi.md#get_project_keys) | **GET** /sam/projects/projects/{project_uuid}/keys | Getprojectkeys
 [**get_project_members**](ProjectsApi.md#get_project_members) | **GET** /sam/projects/projects/{project_uuid}/members | Getprojectmembers
+[**get_specific_project_credential**](ProjectsApi.md#get_specific_project_credential) | **GET** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Getspecificprojectcredential
 [**get_specific_project_usage**](ProjectsApi.md#get_specific_project_usage) | **GET** /sam/projects/projects/{project_uuid}/usage/{usage_type_key} | Getspecificprojectusage
 [**get_usage_type**](ProjectsApi.md#get_usage_type) | **GET** /sam/projects/usage/types/{usage_type_key} | Getusagetype
 [**remove_member_from_project**](ProjectsApi.md#remove_member_from_project) | **DELETE** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Removememberfromproject
 [**search_projects**](ProjectsApi.md#search_projects) | **GET** /sam/projects/projects | Searchprojects
 [**search_usage_type**](ProjectsApi.md#search_usage_type) | **GET** /sam/projects/usage/types | Searchusagetype
 [**update_project**](ProjectsApi.md#update_project) | **PUT** /sam/projects/projects/{project_uuid} | Updateproject
+[**update_project_credential**](ProjectsApi.md#update_project_credential) | **PUT** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Updateprojectcredential
 [**update_usage_type**](ProjectsApi.md#update_usage_type) | **PUT** /sam/projects/usage/types/{usage_type_key} | Updateusagetype
 
 
@@ -305,6 +310,109 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_project_credential**
+> ResponseCreateprojectcredential create_project_credential(project_uuid, create_project_credential)
+
+Createprojectcredential
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.create_project_credential import CreateProjectCredential
+from ehelply_python_sdk.model.response_createprojectcredential import ResponseCreateprojectcredential
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    create_project_credential = CreateProjectCredential(
+        service_name="service_name_example",
+        secrets=[
+            Credential(
+                name="name_example",
+                value="value_example",
+            ),
+        ],
+    ) # CreateProjectCredential | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Createprojectcredential
+        api_response = api_instance.create_project_credential(project_uuid, create_project_credential)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->create_project_credential: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Createprojectcredential
+        api_response = api_instance.create_project_credential(project_uuid, create_project_credential, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->create_project_credential: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **create_project_credential** | [**CreateProjectCredential**](CreateProjectCredential.md)|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**ResponseCreateprojectcredential**](ResponseCreateprojectcredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
+**409** | Project credential already exits already exists |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_project_key**
 > CreateKeyResponse create_project_key(project_uuid, security_key_create)
 
@@ -507,6 +615,99 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_project_credential**
+> ResponseDeleteprojectcredential delete_project_credential(project_uuid, service_name)
+
+Deleteprojectcredential
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.response_deleteprojectcredential import ResponseDeleteprojectcredential
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    service_name = "service_name_example" # str | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Deleteprojectcredential
+        api_response = api_instance.delete_project_credential(project_uuid, service_name)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->delete_project_credential: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Deleteprojectcredential
+        api_response = api_instance.delete_project_credential(project_uuid, service_name, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->delete_project_credential: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **service_name** | **str**|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**ResponseDeleteprojectcredential**](ResponseDeleteprojectcredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Project credential not found does not exist |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_project_key**
 > str delete_project_key(project_uuid)
 
@@ -686,6 +887,97 @@ No authorization required
 **200** | Successful Response |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Not found |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_project_credentials**
+> [GetProjectCredential] get_all_project_credentials(project_uuid)
+
+Getallprojectcredentials
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.get_project_credential import GetProjectCredential
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Getallprojectcredentials
+        api_response = api_instance.get_all_project_credentials(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_all_project_credentials: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Getallprojectcredentials
+        api_response = api_instance.get_all_project_credentials(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_all_project_credentials: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**[GetProjectCredential]**](GetProjectCredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Project credential not found does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1151,6 +1443,99 @@ No authorization required
 **200** | Successful Response |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Project does not exist |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_specific_project_credential**
+> GetProjectCredential get_specific_project_credential(project_uuid, service_name)
+
+Getspecificprojectcredential
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.get_project_credential import GetProjectCredential
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    service_name = "service_name_example" # str | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Getspecificprojectcredential
+        api_response = api_instance.get_specific_project_credential(project_uuid, service_name)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_specific_project_credential: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Getspecificprojectcredential
+        api_response = api_instance.get_specific_project_credential(project_uuid, service_name, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_specific_project_credential: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **service_name** | **str**|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**GetProjectCredential**](GetProjectCredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Project credential not found does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1621,7 +2006,8 @@ with ehelply_python_sdk.ApiClient() as api_client:
     project_uuid = "project_uuid_example" # str | 
     projects_project_update = ProjectsProjectUpdate(
         max_spend=1,
-        status="status_example",
+        add_status="add_status_example",
+        remove_status="remove_status_example",
     ) # ProjectsProjectUpdate | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -1683,6 +2069,109 @@ No authorization required
 **200** | Successful Response |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Project does not exist |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_project_credential**
+> ResponseUpdateprojectcredential update_project_credential(project_uuid, service_name, update_project_credential_request)
+
+Updateprojectcredential
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.response_updateprojectcredential import ResponseUpdateprojectcredential
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.update_project_credential_request import UpdateProjectCredentialRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    service_name = "service_name_example" # str | 
+    update_project_credential_request = UpdateProjectCredentialRequest(
+        secrets=[
+            Credential(
+                name="name_example",
+                value="value_example",
+            ),
+        ],
+    ) # UpdateProjectCredentialRequest | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Updateprojectcredential
+        api_response = api_instance.update_project_credential(project_uuid, service_name, update_project_credential_request)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->update_project_credential: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Updateprojectcredential
+        api_response = api_instance.update_project_credential(project_uuid, service_name, update_project_credential_request, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->update_project_credential: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **service_name** | **str**|  |
+ **update_project_credential_request** | [**UpdateProjectCredentialRequest**](UpdateProjectCredentialRequest.md)|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**ResponseUpdateprojectcredential**](ResponseUpdateprojectcredential.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Project credential not found does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

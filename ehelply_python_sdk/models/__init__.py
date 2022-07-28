@@ -36,8 +36,10 @@ from ehelply_python_sdk.model.contact_base import ContactBase
 from ehelply_python_sdk.model.contact_method import ContactMethod
 from ehelply_python_sdk.model.contact_response import ContactResponse
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
+from ehelply_python_sdk.model.create_project_credential import CreateProjectCredential
 from ehelply_python_sdk.model.create_review import CreateReview
 from ehelply_python_sdk.model.create_ticket import CreateTicket
+from ehelply_python_sdk.model.credential import Credential
 from ehelply_python_sdk.model.custom_list import CustomList
 from ehelply_python_sdk.model.dates_meta import DatesMeta
 from ehelply_python_sdk.model.detailed import Detailed
@@ -48,6 +50,8 @@ from ehelply_python_sdk.model.email import Email
 from ehelply_python_sdk.model.field import Field
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.get_project_credential import GetProjectCredential
+from ehelply_python_sdk.model.get_secret import GetSecret
 from ehelply_python_sdk.model.get_service_service_with_specs_response import GetServiceServiceWithSpecsResponse
 from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
 from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
@@ -92,10 +96,13 @@ from ehelply_python_sdk.model.projects_usage_type_update import ProjectsUsageTyp
 from ehelply_python_sdk.model.response_addmembertoproject import ResponseAddmembertoproject
 from ehelply_python_sdk.model.response_archiveproject import ResponseArchiveproject
 from ehelply_python_sdk.model.response_createkey import ResponseCreatekey
+from ehelply_python_sdk.model.response_createprojectcredential import ResponseCreateprojectcredential
 from ehelply_python_sdk.model.response_deletekey import ResponseDeletekey
+from ehelply_python_sdk.model.response_deleteprojectcredential import ResponseDeleteprojectcredential
 from ehelply_python_sdk.model.response_deleteusagetype import ResponseDeleteusagetype
 from ehelply_python_sdk.model.response_generatetoken import ResponseGeneratetoken
 from ehelply_python_sdk.model.response_removememberfromproject import ResponseRemovememberfromproject
+from ehelply_python_sdk.model.response_updateprojectcredential import ResponseUpdateprojectcredential
 from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 from ehelply_python_sdk.model.security_encryption_key_response import SecurityEncryptionKeyResponse
@@ -116,6 +123,7 @@ from ehelply_python_sdk.model.tag_base import TagBase
 from ehelply_python_sdk.model.tag_db import TagDb
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
+from ehelply_python_sdk.model.update_project_credential_request import UpdateProjectCredentialRequest
 from ehelply_python_sdk.model.update_review import UpdateReview
 from ehelply_python_sdk.model.user import User
 from ehelply_python_sdk.model.user_confirmation import UserConfirmation

@@ -34,8 +34,10 @@ docs/ContactBase.md
 docs/ContactMethod.md
 docs/ContactResponse.md
 docs/CreateKeyResponse.md
+docs/CreateProjectCredential.md
 docs/CreateReview.md
 docs/CreateTicket.md
+docs/Credential.md
 docs/CustomList.md
 docs/DatesMeta.md
 docs/DefaultApi.md
@@ -47,6 +49,8 @@ docs/Email.md
 docs/Field.md
 docs/FieldDynamo.md
 docs/GetAppointment403Response.md
+docs/GetProjectCredential.md
+docs/GetSecret.md
 docs/GetServiceServiceWithSpecsResponse.md
 docs/GetServiceSpecResponse.md
 docs/GetServiceSpecsResponse.md
@@ -98,10 +102,13 @@ docs/ProjectsUsageTypeUpdate.md
 docs/ResponseAddmembertoproject.md
 docs/ResponseArchiveproject.md
 docs/ResponseCreatekey.md
+docs/ResponseCreateprojectcredential.md
 docs/ResponseDeletekey.md
+docs/ResponseDeleteprojectcredential.md
 docs/ResponseDeleteusagetype.md
 docs/ResponseGeneratetoken.md
 docs/ResponseRemovememberfromproject.md
+docs/ResponseUpdateprojectcredential.md
 docs/ReviewsApi.md
 docs/SecurityApi.md
 docs/SecurityCreateToken.md
@@ -128,6 +135,7 @@ docs/TagDb.md
 docs/TagsApi.md
 docs/TicketResponse.md
 docs/TicketsResponse.md
+docs/UpdateProjectCredentialRequest.md
 docs/UpdateReview.md
 docs/User.md
 docs/UserConfirmation.md
@@ -198,8 +206,10 @@ ehelply_python_sdk/model/contact_base.py
 ehelply_python_sdk/model/contact_method.py
 ehelply_python_sdk/model/contact_response.py
 ehelply_python_sdk/model/create_key_response.py
+ehelply_python_sdk/model/create_project_credential.py
 ehelply_python_sdk/model/create_review.py
 ehelply_python_sdk/model/create_ticket.py
+ehelply_python_sdk/model/credential.py
 ehelply_python_sdk/model/custom_list.py
 ehelply_python_sdk/model/dates_meta.py
 ehelply_python_sdk/model/detailed.py
@@ -210,6 +220,8 @@ ehelply_python_sdk/model/email.py
 ehelply_python_sdk/model/field.py
 ehelply_python_sdk/model/field_dynamo.py
 ehelply_python_sdk/model/get_appointment403_response.py
+ehelply_python_sdk/model/get_project_credential.py
+ehelply_python_sdk/model/get_secret.py
 ehelply_python_sdk/model/get_service_service_with_specs_response.py
 ehelply_python_sdk/model/get_service_spec_response.py
 ehelply_python_sdk/model/get_service_specs_response.py
@@ -254,10 +266,13 @@ ehelply_python_sdk/model/projects_usage_type_update.py
 ehelply_python_sdk/model/response_addmembertoproject.py
 ehelply_python_sdk/model/response_archiveproject.py
 ehelply_python_sdk/model/response_createkey.py
+ehelply_python_sdk/model/response_createprojectcredential.py
 ehelply_python_sdk/model/response_deletekey.py
+ehelply_python_sdk/model/response_deleteprojectcredential.py
 ehelply_python_sdk/model/response_deleteusagetype.py
 ehelply_python_sdk/model/response_generatetoken.py
 ehelply_python_sdk/model/response_removememberfromproject.py
+ehelply_python_sdk/model/response_updateprojectcredential.py
 ehelply_python_sdk/model/security_create_token.py
 ehelply_python_sdk/model/security_encryption_key_get.py
 ehelply_python_sdk/model/security_encryption_key_response.py
@@ -278,6 +293,7 @@ ehelply_python_sdk/model/tag_base.py
 ehelply_python_sdk/model/tag_db.py
 ehelply_python_sdk/model/ticket_response.py
 ehelply_python_sdk/model/tickets_response.py
+ehelply_python_sdk/model/update_project_credential_request.py
 ehelply_python_sdk/model/update_review.py
 ehelply_python_sdk/model/user.py
 ehelply_python_sdk/model/user_confirmation.py
@@ -334,8 +350,10 @@ test/test_contact_base.py
 test/test_contact_method.py
 test/test_contact_response.py
 test/test_create_key_response.py
+test/test_create_project_credential.py
 test/test_create_review.py
 test/test_create_ticket.py
+test/test_credential.py
 test/test_custom_list.py
 test/test_dates_meta.py
 test/test_default_api.py
@@ -347,6 +365,8 @@ test/test_email.py
 test/test_field.py
 test/test_field_dynamo.py
 test/test_get_appointment403_response.py
+test/test_get_project_credential.py
+test/test_get_secret.py
 test/test_get_service_service_with_specs_response.py
 test/test_get_service_spec_response.py
 test/test_get_service_specs_response.py
@@ -398,10 +418,13 @@ test/test_projects_usage_type_update.py
 test/test_response_addmembertoproject.py
 test/test_response_archiveproject.py
 test/test_response_createkey.py
+test/test_response_createprojectcredential.py
 test/test_response_deletekey.py
+test/test_response_deleteprojectcredential.py
 test/test_response_deleteusagetype.py
 test/test_response_generatetoken.py
 test/test_response_removememberfromproject.py
+test/test_response_updateprojectcredential.py
 test/test_reviews_api.py
 test/test_security_api.py
 test/test_security_create_token.py
@@ -428,6 +451,7 @@ test/test_tag_db.py
 test/test_tags_api.py
 test/test_ticket_response.py
 test/test_tickets_response.py
+test/test_update_project_credential_request.py
 test/test_update_review.py
 test/test_user.py
 test/test_user_confirmation.py
