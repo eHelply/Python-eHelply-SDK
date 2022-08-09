@@ -168,6 +168,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
                 ),
             ],
         ),
+        picture="url here",
     ) # PlaceBase | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -807,6 +808,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
                 ),
             ],
         ),
+        picture="url here",
     ) # PlaceBase | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
