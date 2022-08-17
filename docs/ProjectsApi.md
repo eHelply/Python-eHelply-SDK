@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**archive_project**](ProjectsApi.md#archive_project) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 [**create_project**](ProjectsApi.md#create_project) | **POST** /sam/projects/projects | Createproject
 [**create_project_credential**](ProjectsApi.md#create_project_credential) | **POST** /sam/projects/projects/{project_uuid}/credentials | Createprojectcredential
+[**create_project_invoice**](ProjectsApi.md#create_project_invoice) | **POST** /sam/projects/projects/{project_uuid}/invoices | Createprojectinvoice
 [**create_project_key**](ProjectsApi.md#create_project_key) | **POST** /sam/projects/projects/{project_uuid}/keys | Createprojectkey
 [**create_usage_type**](ProjectsApi.md#create_usage_type) | **POST** /sam/projects/usage/types | Createusagetype
 [**delete_project_credential**](ProjectsApi.md#delete_project_credential) | **DELETE** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Deleteprojectcredential
@@ -17,6 +18,8 @@ Method | HTTP request | Description
 [**get_all_project_usage**](ProjectsApi.md#get_all_project_usage) | **GET** /sam/projects/projects/{project_uuid}/usage | Getallprojectusage
 [**get_member_projects**](ProjectsApi.md#get_member_projects) | **GET** /sam/projects/members/{entity_uuid}/projects | Getmemberprojects
 [**get_project**](ProjectsApi.md#get_project) | **GET** /sam/projects/projects/{project_uuid} | Getproject
+[**get_project_invoice**](ProjectsApi.md#get_project_invoice) | **GET** /sam/projects/projects/{project_uuid}/invoices | Getprojectinvoice
+[**get_project_invoice_history**](ProjectsApi.md#get_project_invoice_history) | **GET** /sam/projects/projects/{project_uuid}/invoices/history | Getprojectinvoicehistory
 [**get_project_keys**](ProjectsApi.md#get_project_keys) | **GET** /sam/projects/projects/{project_uuid}/keys | Getprojectkeys
 [**get_project_members**](ProjectsApi.md#get_project_members) | **GET** /sam/projects/projects/{project_uuid}/members | Getprojectmembers
 [**get_specific_project_credential**](ProjectsApi.md#get_specific_project_credential) | **GET** /sam/projects/projects/{project_uuid}/credentials/{service_name} | Getspecificprojectcredential
@@ -406,9 +409,107 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
+**400** | Failed to create project credential |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Not found |  -  |
-**409** | Project credential already exits already exists |  -  |
+**409** | Project credential already exists |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_project_invoice**
+> ResponseCreateprojectinvoice create_project_invoice(project_uuid, create_project_invoice)
+
+Createprojectinvoice
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.create_project_invoice import CreateProjectInvoice
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.response_createprojectinvoice import ResponseCreateprojectinvoice
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    create_project_invoice = CreateProjectInvoice(
+        year=1,
+        month=1,
+    ) # CreateProjectInvoice | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Createprojectinvoice
+        api_response = api_instance.create_project_invoice(project_uuid, create_project_invoice)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->create_project_invoice: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Createprojectinvoice
+        api_response = api_instance.create_project_invoice(project_uuid, create_project_invoice, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->create_project_invoice: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **create_project_invoice** | [**CreateProjectInvoice**](CreateProjectInvoice.md)|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**ResponseCreateprojectinvoice**](ResponseCreateprojectinvoice.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Project credential not found does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -794,8 +895,9 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
+**400** | Access token is a required query parameter |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project, Entity, or Key does not exist |  -  |
+**404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -977,7 +1079,7 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project credential not found does not exist |  -  |
+**404** | Project credential does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1263,6 +1365,195 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_project_invoice**
+> GetProjectInvoiceResponse get_project_invoice(project_uuid)
+
+Getprojectinvoice
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_project_invoice_response import GetProjectInvoiceResponse
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    with_invoice = False # bool |  (optional) if omitted the server will use the default value of False
+    year = 1 # int |  (optional)
+    month = 1 # int |  (optional)
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Getprojectinvoice
+        api_response = api_instance.get_project_invoice(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_project_invoice: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Getprojectinvoice
+        api_response = api_instance.get_project_invoice(project_uuid, with_invoice=with_invoice, year=year, month=month, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_project_invoice: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **with_invoice** | **bool**|  | [optional] if omitted the server will use the default value of False
+ **year** | **int**|  | [optional]
+ **month** | **int**|  | [optional]
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**GetProjectInvoiceResponse**](GetProjectInvoiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**400** | The query parameters year and month are required |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Project credential not found does not exist |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_project_invoice_history**
+> GetProjectInvoiceHistory get_project_invoice_history(project_uuid)
+
+Getprojectinvoicehistory
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.get_project_invoice_history import GetProjectInvoiceHistory
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Getprojectinvoicehistory
+        api_response = api_instance.get_project_invoice_history(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_project_invoice_history: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Getprojectinvoicehistory
+        api_response = api_instance.get_project_invoice_history(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->get_project_invoice_history: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**GetProjectInvoiceHistory**](GetProjectInvoiceHistory.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | project invoice history does not exist |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_project_keys**
 > [ProjectsProjectMemberDB] get_project_keys(project_uuid)
 
@@ -1535,7 +1826,7 @@ No authorization required
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project credential not found does not exist |  -  |
+**404** | Project credential does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1827,6 +2118,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = projects_api.ProjectsApi(api_client)
+    is_active = False # bool |  (optional) if omitted the server will use the default value of False
     page = 1 # int |  (optional) if omitted the server will use the default value of 1
     page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
     search = "search_example" # str |  (optional)
@@ -1844,7 +2136,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Searchprojects
-        api_response = api_instance.search_projects(page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_projects(is_active=is_active, page=page, page_size=page_size, search=search, search_on=search_on, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling ProjectsApi->search_projects: %s\n" % e)
@@ -1855,6 +2147,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **is_active** | **bool**|  | [optional] if omitted the server will use the default value of False
  **page** | **int**|  | [optional] if omitted the server will use the default value of 1
  **page_size** | **int**|  | [optional] if omitted the server will use the default value of 25
  **search** | **str**|  | [optional]

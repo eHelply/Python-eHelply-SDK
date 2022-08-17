@@ -37,6 +37,7 @@ from ehelply_python_sdk.model.contact_method import ContactMethod
 from ehelply_python_sdk.model.contact_response import ContactResponse
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.create_project_credential import CreateProjectCredential
+from ehelply_python_sdk.model.create_project_invoice import CreateProjectInvoice
 from ehelply_python_sdk.model.create_review import CreateReview
 from ehelply_python_sdk.model.create_ticket import CreateTicket
 from ehelply_python_sdk.model.credential import Credential
@@ -46,18 +47,25 @@ from ehelply_python_sdk.model.detailed import Detailed
 from ehelply_python_sdk.model.detailed_meta import DetailedMeta
 from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
 from ehelply_python_sdk.model.detailed_meta_get import DetailedMetaGet
+from ehelply_python_sdk.model.discount import Discount
 from ehelply_python_sdk.model.email import Email
 from ehelply_python_sdk.model.field import Field
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.get_invoice_response import GetInvoiceResponse
 from ehelply_python_sdk.model.get_project_credential import GetProjectCredential
+from ehelply_python_sdk.model.get_project_invoice_history import GetProjectInvoiceHistory
+from ehelply_python_sdk.model.get_project_invoice_response import GetProjectInvoiceResponse
 from ehelply_python_sdk.model.get_secret import GetSecret
 from ehelply_python_sdk.model.get_service_service_with_specs_response import GetServiceServiceWithSpecsResponse
 from ehelply_python_sdk.model.get_service_spec_response import GetServiceSpecResponse
 from ehelply_python_sdk.model.get_service_specs_response import GetServiceSpecsResponse
+from ehelply_python_sdk.model.get_transaction_response import GetTransactionResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.heartbeat_response import HeartbeatResponse
+from ehelply_python_sdk.model.history import History
 from ehelply_python_sdk.model.kpi_response import KpiResponse
+from ehelply_python_sdk.model.line_item import LineItem
 from ehelply_python_sdk.model.logging_dynamo import LoggingDynamo
 from ehelply_python_sdk.model.meta_children import MetaChildren
 from ehelply_python_sdk.model.meta_create import MetaCreate
@@ -65,6 +73,7 @@ from ehelply_python_sdk.model.meta_custom import MetaCustom
 from ehelply_python_sdk.model.meta_dynamo import MetaDynamo
 from ehelply_python_sdk.model.meta_get import MetaGet
 from ehelply_python_sdk.model.meta_slugger import MetaSlugger
+from ehelply_python_sdk.model.note import Note
 from ehelply_python_sdk.model.note_base import NoteBase
 from ehelply_python_sdk.model.note_dynamo_history_response import NoteDynamoHistoryResponse
 from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
@@ -97,6 +106,7 @@ from ehelply_python_sdk.model.response_addmembertoproject import ResponseAddmemb
 from ehelply_python_sdk.model.response_archiveproject import ResponseArchiveproject
 from ehelply_python_sdk.model.response_createkey import ResponseCreatekey
 from ehelply_python_sdk.model.response_createprojectcredential import ResponseCreateprojectcredential
+from ehelply_python_sdk.model.response_createprojectinvoice import ResponseCreateprojectinvoice
 from ehelply_python_sdk.model.response_deletekey import ResponseDeletekey
 from ehelply_python_sdk.model.response_deleteprojectcredential import ResponseDeleteprojectcredential
 from ehelply_python_sdk.model.response_deleteusagetype import ResponseDeleteusagetype
@@ -121,6 +131,7 @@ from ehelply_python_sdk.model.stripe_account_response import StripeAccountRespon
 from ehelply_python_sdk.model.stripe_customer_secret_response import StripeCustomerSecretResponse
 from ehelply_python_sdk.model.tag_base import TagBase
 from ehelply_python_sdk.model.tag_db import TagDb
+from ehelply_python_sdk.model.tax import Tax
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
 from ehelply_python_sdk.model.update_project_credential_request import UpdateProjectCredentialRequest
