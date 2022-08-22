@@ -37,6 +37,7 @@ from ehelply_python_sdk.model.contact_method import ContactMethod
 from ehelply_python_sdk.model.contact_response import ContactResponse
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.create_project_credential import CreateProjectCredential
+from ehelply_python_sdk.model.create_project_credit import CreateProjectCredit
 from ehelply_python_sdk.model.create_project_invoice import CreateProjectInvoice
 from ehelply_python_sdk.model.create_review import CreateReview
 from ehelply_python_sdk.model.create_ticket import CreateTicket
@@ -91,6 +92,7 @@ from ehelply_python_sdk.model.place_base import PlaceBase
 from ehelply_python_sdk.model.place_response import PlaceResponse
 from ehelply_python_sdk.model.product_base import ProductBase
 from ehelply_python_sdk.model.product_return import ProductReturn
+from ehelply_python_sdk.model.project_credit_response import ProjectCreditResponse
 from ehelply_python_sdk.model.project_db import ProjectDB
 from ehelply_python_sdk.model.projects_project_create import ProjectsProjectCreate
 from ehelply_python_sdk.model.projects_project_get import ProjectsProjectGet
