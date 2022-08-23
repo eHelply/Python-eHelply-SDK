@@ -1,24 +1,24 @@
-# ehelply_python_sdk.DefaultApi
+# ehelply_python_sdk.AppointmentsApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_entity_to_appointment**](DefaultApi.md#attach_entity_to_appointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Attach Entity To Appointment
-[**create_appointment**](DefaultApi.md#create_appointment) | **POST** /appointments/appointments | Create Appointment
-[**delete_appointment**](DefaultApi.md#delete_appointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Delete Appointment
-[**detach_entity_from_appointment**](DefaultApi.md#detach_entity_from_appointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Detach Entity From Appointment
-[**get_appointment**](DefaultApi.md#get_appointment) | **GET** /appointments/appointments/{appointment_uuid} | Get Appointment
-[**search_appointment**](DefaultApi.md#search_appointment) | **GET** /appointments/appointments | Search Appointment
-[**search_appointment_entities**](DefaultApi.md#search_appointment_entities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Search Appointment Entities
-[**search_entity_appointments**](DefaultApi.md#search_entity_appointments) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Get Entities Appointments
-[**update_appointment**](DefaultApi.md#update_appointment) | **PUT** /appointments/appointments/{appointment_uuid} | Update Appointment
+[**add_entity_to_appointment**](AppointmentsApi.md#add_entity_to_appointment) | **POST** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Addentitytoappointment
+[**create_appointment**](AppointmentsApi.md#create_appointment) | **POST** /appointments/appointments | Createappointment
+[**delete_appointment**](AppointmentsApi.md#delete_appointment) | **DELETE** /appointments/appointments/{appointment_uuid} | Deleteappointment
+[**detach_entity_from_appointment**](AppointmentsApi.md#detach_entity_from_appointment) | **DELETE** /appointments/appointments/{appointment_uuid}/entities/{entity_uuid} | Removeentityfromappointment
+[**get_appointment**](AppointmentsApi.md#get_appointment) | **GET** /appointments/appointments/{appointment_uuid} | Getappointment
+[**search_appointment**](AppointmentsApi.md#search_appointment) | **GET** /appointments/appointments | Searchappointments
+[**search_appointment_entities**](AppointmentsApi.md#search_appointment_entities) | **GET** /appointments/appointments/{appointment_uuid}/entities | Searchappointmententities
+[**search_entity_appointments**](AppointmentsApi.md#search_entity_appointments) | **GET** /appointments/appointments/entities/{entity_uuid}/appointments | Getentityappointments
+[**update_appointment**](AppointmentsApi.md#update_appointment) | **PUT** /appointments/appointments/{appointment_uuid} | Updateappointment
 
 
-# **attach_entity_to_appointment**
-> bool attach_entity_to_appointment(appointment_uuid, entity_uuid)
+# **add_entity_to_appointment**
+> bool add_entity_to_appointment(appointment_uuid, entity_uuid)
 
-Attach Entity To Appointment
+Addentitytoappointment
 
 ### Example
 
@@ -26,7 +26,7 @@ Attach Entity To Appointment
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -39,7 +39,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     appointment_uuid = "appointment_uuid_example" # str | 
     entity_uuid = "entity_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -51,20 +51,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Attach Entity To Appointment
-        api_response = api_instance.attach_entity_to_appointment(appointment_uuid, entity_uuid)
+        # Addentitytoappointment
+        api_response = api_instance.add_entity_to_appointment(appointment_uuid, entity_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->attach_entity_to_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->add_entity_to_appointment: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Attach Entity To Appointment
-        api_response = api_instance.attach_entity_to_appointment(appointment_uuid, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Addentitytoappointment
+        api_response = api_instance.add_entity_to_appointment(appointment_uuid, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->attach_entity_to_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->add_entity_to_appointment: %s\n" % e)
 ```
 
 
@@ -108,7 +108,7 @@ No authorization required
 # **create_appointment**
 > AppointmentResponse create_appointment(appointment_base)
 
-Create Appointment
+Createappointment
 
 ### Example
 
@@ -116,7 +116,7 @@ Create Appointment
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
 from ehelply_python_sdk.model.appointment_base import AppointmentBase
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -131,7 +131,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     appointment_base = AppointmentBase(
         project_uuid="project_uuid",
         place_uuid="place_uuid",
@@ -156,20 +156,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Create Appointment
+        # Createappointment
         api_response = api_instance.create_appointment(appointment_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->create_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->create_appointment: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create Appointment
+        # Createappointment
         api_response = api_instance.create_appointment(appointment_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->create_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->create_appointment: %s\n" % e)
 ```
 
 
@@ -212,7 +212,7 @@ No authorization required
 # **delete_appointment**
 > bool delete_appointment(appointment_uuid)
 
-Delete Appointment
+Deleteappointment
 
 ### Example
 
@@ -220,7 +220,7 @@ Delete Appointment
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -233,7 +233,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     appointment_uuid = "appointment_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -244,20 +244,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete Appointment
+        # Deleteappointment
         api_response = api_instance.delete_appointment(appointment_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->delete_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->delete_appointment: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Delete Appointment
+        # Deleteappointment
         api_response = api_instance.delete_appointment(appointment_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->delete_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->delete_appointment: %s\n" % e)
 ```
 
 
@@ -300,7 +300,7 @@ No authorization required
 # **detach_entity_from_appointment**
 > bool detach_entity_from_appointment(appointment_uuid, entity_uuid)
 
-Detach Entity From Appointment
+Removeentityfromappointment
 
 ### Example
 
@@ -308,7 +308,7 @@ Detach Entity From Appointment
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -321,7 +321,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     appointment_uuid = "appointment_uuid_example" # str | 
     entity_uuid = "entity_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -333,20 +333,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Detach Entity From Appointment
+        # Removeentityfromappointment
         api_response = api_instance.detach_entity_from_appointment(appointment_uuid, entity_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->detach_entity_from_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->detach_entity_from_appointment: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Detach Entity From Appointment
+        # Removeentityfromappointment
         api_response = api_instance.detach_entity_from_appointment(appointment_uuid, entity_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->detach_entity_from_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->detach_entity_from_appointment: %s\n" % e)
 ```
 
 
@@ -390,7 +390,7 @@ No authorization required
 # **get_appointment**
 > AppointmentResponse get_appointment(appointment_uuid)
 
-Get Appointment
+Getappointment
 
 ### Example
 
@@ -398,7 +398,7 @@ Get Appointment
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -413,7 +413,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     appointment_uuid = "appointment_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -424,20 +424,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get Appointment
+        # Getappointment
         api_response = api_instance.get_appointment(appointment_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->get_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->get_appointment: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get Appointment
+        # Getappointment
         api_response = api_instance.get_appointment(appointment_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->get_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->get_appointment: %s\n" % e)
 ```
 
 
@@ -481,7 +481,7 @@ No authorization required
 # **search_appointment**
 > bool, date, datetime, dict, float, int, list, str, none_type search_appointment()
 
-Search Appointment
+Searchappointments
 
 ### Example
 
@@ -489,7 +489,7 @@ Search Appointment
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -502,7 +502,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     place_uuid = "place_uuid_example" # str |  (optional)
     exclude_cancelled = False # bool |  (optional) if omitted the server will use the default value of False
     is_deleted = False # bool |  (optional) if omitted the server will use the default value of False
@@ -522,11 +522,11 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Search Appointment
+        # Searchappointments
         api_response = api_instance.search_appointment(place_uuid=place_uuid, exclude_cancelled=exclude_cancelled, is_deleted=is_deleted, start_range=start_range, end_range=end_range, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->search_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->search_appointment: %s\n" % e)
 ```
 
 
@@ -577,7 +577,7 @@ No authorization required
 # **search_appointment_entities**
 > bool, date, datetime, dict, float, int, list, str, none_type search_appointment_entities(appointment_uuid)
 
-Search Appointment Entities
+Searchappointmententities
 
 ### Example
 
@@ -585,7 +585,7 @@ Search Appointment Entities
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -598,7 +598,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     appointment_uuid = "appointment_uuid_example" # str | 
     page = 1 # int |  (optional) if omitted the server will use the default value of 1
     page_size = 25 # int |  (optional) if omitted the server will use the default value of 25
@@ -615,20 +615,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Search Appointment Entities
+        # Searchappointmententities
         api_response = api_instance.search_appointment_entities(appointment_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->search_appointment_entities: %s\n" % e)
+        print("Exception when calling AppointmentsApi->search_appointment_entities: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Search Appointment Entities
+        # Searchappointmententities
         api_response = api_instance.search_appointment_entities(appointment_uuid, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, search=search, search_on=search_on, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->search_appointment_entities: %s\n" % e)
+        print("Exception when calling AppointmentsApi->search_appointment_entities: %s\n" % e)
 ```
 
 
@@ -677,7 +677,7 @@ No authorization required
 # **search_entity_appointments**
 > bool, date, datetime, dict, float, int, list, str, none_type search_entity_appointments(entity_uuid)
 
-Get Entities Appointments
+Getentityappointments
 
 ### Example
 
@@ -685,7 +685,7 @@ Get Entities Appointments
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -698,7 +698,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     entity_uuid = "entity_uuid_example" # str | 
     start_date = "start_date_example" # str |  (optional)
     end_date = "end_date_example" # str |  (optional)
@@ -712,20 +712,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get Entities Appointments
+        # Getentityappointments
         api_response = api_instance.search_entity_appointments(entity_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->search_entity_appointments: %s\n" % e)
+        print("Exception when calling AppointmentsApi->search_entity_appointments: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get Entities Appointments
+        # Getentityappointments
         api_response = api_instance.search_entity_appointments(entity_uuid, start_date=start_date, end_date=end_date, exclude_cancelled=exclude_cancelled, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->search_entity_appointments: %s\n" % e)
+        print("Exception when calling AppointmentsApi->search_entity_appointments: %s\n" % e)
 ```
 
 
@@ -771,7 +771,7 @@ No authorization required
 # **update_appointment**
 > AppointmentResponse update_appointment(appointment_uuid, appointment_base)
 
-Update Appointment
+Updateappointment
 
 ### Example
 
@@ -779,7 +779,7 @@ Update Appointment
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import appointments_api
 from ehelply_python_sdk.model.appointment_response import AppointmentResponse
 from ehelply_python_sdk.model.appointment_base import AppointmentBase
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
@@ -795,7 +795,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = appointments_api.AppointmentsApi(api_client)
     appointment_uuid = "appointment_uuid_example" # str | 
     appointment_base = AppointmentBase(
         project_uuid="project_uuid",
@@ -821,20 +821,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update Appointment
+        # Updateappointment
         api_response = api_instance.update_appointment(appointment_uuid, appointment_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->update_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->update_appointment: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update Appointment
+        # Updateappointment
         api_response = api_instance.update_appointment(appointment_uuid, appointment_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->update_appointment: %s\n" % e)
+        print("Exception when calling AppointmentsApi->update_appointment: %s\n" % e)
 ```
 
 
