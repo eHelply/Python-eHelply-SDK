@@ -120,6 +120,7 @@ docs/ResponseDeleteprojectcredential.md
 docs/ResponseDeleteusagetype.md
 docs/ResponseGeneratetoken.md
 docs/ResponseRemovememberfromproject.md
+docs/ResponseRevokeprojectcredit.md
 docs/ResponseUpdateprojectcredential.md
 docs/ReviewsApi.md
 docs/SecurityApi.md
@@ -297,6 +298,7 @@ ehelply_python_sdk/model/response_deleteprojectcredential.py
 ehelply_python_sdk/model/response_deleteusagetype.py
 ehelply_python_sdk/model/response_generatetoken.py
 ehelply_python_sdk/model/response_removememberfromproject.py
+ehelply_python_sdk/model/response_revokeprojectcredit.py
 ehelply_python_sdk/model/response_updateprojectcredential.py
 ehelply_python_sdk/model/security_create_token.py
 ehelply_python_sdk/model/security_encryption_key_get.py
@@ -462,6 +464,7 @@ test/test_response_deleteprojectcredential.py
 test/test_response_deleteusagetype.py
 test/test_response_generatetoken.py
 test/test_response_removememberfromproject.py
+test/test_response_revokeprojectcredit.py
 test/test_response_updateprojectcredential.py
 test/test_reviews_api.py
 test/test_security_api.py
