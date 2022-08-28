@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**archive_project**](ProjectsApi.md#archive_project) | **DELETE** /sam/projects/projects/{project_uuid} | Archiveproject
 [**create_project**](ProjectsApi.md#create_project) | **POST** /sam/projects/projects | Createproject
 [**create_project_credential**](ProjectsApi.md#create_project_credential) | **POST** /sam/projects/projects/{project_uuid}/credentials | Createprojectcredential
+[**create_project_credit**](ProjectsApi.md#create_project_credit) | **POST** /sam/projects/projects/{project_uuid}/credits | Createprojectcredit
 [**create_project_invoice**](ProjectsApi.md#create_project_invoice) | **POST** /sam/projects/projects/{project_uuid}/invoices | Createprojectinvoice
 [**create_project_key**](ProjectsApi.md#create_project_key) | **POST** /sam/projects/projects/{project_uuid}/keys | Createprojectkey
 [**create_usage_type**](ProjectsApi.md#create_usage_type) | **POST** /sam/projects/usage/types | Createusagetype
@@ -28,6 +29,7 @@ Method | HTTP request | Description
 [**get_specific_project_usage**](ProjectsApi.md#get_specific_project_usage) | **GET** /sam/projects/projects/{project_uuid}/usage/{usage_type_key} | Getspecificprojectusage
 [**get_usage_type**](ProjectsApi.md#get_usage_type) | **GET** /sam/projects/usage/types/{usage_type_key} | Getusagetype
 [**remove_member_from_project**](ProjectsApi.md#remove_member_from_project) | **DELETE** /sam/projects/projects/{project_uuid}/members/{entity_uuid} | Removememberfromproject
+[**revoke_project_credit**](ProjectsApi.md#revoke_project_credit) | **DELETE** /sam/projects/projects/{project_uuid}/credits/{credit_uuid} | Revokeprojectcredit
 [**search_projects**](ProjectsApi.md#search_projects) | **GET** /sam/projects/projects | Searchprojects
 [**search_usage_type**](ProjectsApi.md#search_usage_type) | **GET** /sam/projects/usage/types | Searchusagetype
 [**update_project**](ProjectsApi.md#update_project) | **PUT** /sam/projects/projects/{project_uuid} | Updateproject
@@ -415,6 +417,103 @@ No authorization required
 **403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Not found |  -  |
 **409** | Project credential already exists |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_project_credit**
+> ProjectCreditResponse create_project_credit(project_uuid, create_project_credit)
+
+Createprojectcredit
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.project_credit_response import ProjectCreditResponse
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.create_project_credit import CreateProjectCredit
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    create_project_credit = CreateProjectCredit(
+        credits_granted=1,
+        granted_reason="granted_reason_example",
+    ) # CreateProjectCredit | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Createprojectcredit
+        api_response = api_instance.create_project_credit(project_uuid, create_project_credit)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->create_project_credit: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Createprojectcredit
+        api_response = api_instance.create_project_credit(project_uuid, create_project_credit, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->create_project_credit: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **create_project_credit** | [**CreateProjectCredit**](CreateProjectCredit.md)|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**ProjectCreditResponse**](ProjectCreditResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1098,7 +1197,6 @@ Getallprojectcredits
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -1179,8 +1277,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project credits not found does not exist |  -  |
+**404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1478,7 +1575,6 @@ Getprojectcredittransactions
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import projects_api
-from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.page import Page
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -1557,8 +1653,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
-**403** | Unauthorized - Denied by eHelply |  -  |
-**404** | Project credential not found does not exist |  -  |
+**404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2283,6 +2378,101 @@ No authorization required
 **200** | Successful Response |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Project does not exist |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **revoke_project_credit**
+> ResponseRevokeprojectcredit revoke_project_credit(project_uuid, credit_uuid, revoked_reason)
+
+Revokeprojectcredit
+
+### Example
+
+
+```python
+import time
+import ehelply_python_sdk
+from ehelply_python_sdk.api import projects_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.response_revokeprojectcredit import ResponseRevokeprojectcredit
+from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.prod.ehelply.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ehelply_python_sdk.Configuration(
+    host = "https://api.prod.ehelply.com"
+)
+
+
+# Enter a context with an instance of the API client
+with ehelply_python_sdk.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = projects_api.ProjectsApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
+    credit_uuid = "credit_uuid_example" # str | 
+    revoked_reason = "revoked_reason_example" # str | 
+    x_access_token = "x-access-token_example" # str |  (optional)
+    x_secret_token = "x-secret-token_example" # str |  (optional)
+    authorization = "authorization_example" # str |  (optional)
+    ehelply_active_participant = "ehelply-active-participant_example" # str |  (optional)
+    ehelply_project = "ehelply-project_example" # str |  (optional)
+    ehelply_data = "ehelply-data_example" # str |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Revokeprojectcredit
+        api_response = api_instance.revoke_project_credit(project_uuid, credit_uuid, revoked_reason)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->revoke_project_credit: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Revokeprojectcredit
+        api_response = api_instance.revoke_project_credit(project_uuid, credit_uuid, revoked_reason, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling ProjectsApi->revoke_project_credit: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
+ **credit_uuid** | **str**|  |
+ **revoked_reason** | **str**|  |
+ **x_access_token** | **str**|  | [optional]
+ **x_secret_token** | **str**|  | [optional]
+ **authorization** | **str**|  | [optional]
+ **ehelply_active_participant** | **str**|  | [optional]
+ **ehelply_project** | **str**|  | [optional]
+ **ehelply_data** | **str**|  | [optional]
+
+### Return type
+
+[**ResponseRevokeprojectcredit**](ResponseRevokeprojectcredit.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
