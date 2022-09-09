@@ -5,7 +5,7 @@ All URIs are relative to *https://api.prod.ehelply.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_company_places_companies_post**](CompaniesApi.md#create_company_places_companies_post) | **POST** /places/companies | Create Company
-[**delete_place_places_companies_company_uuid_delete**](CompaniesApi.md#delete_place_places_companies_company_uuid_delete) | **DELETE** /places/companies/{company_uuid} | Delete Place
+[**delete_company_places_companies_company_uuid_delete**](CompaniesApi.md#delete_company_places_companies_company_uuid_delete) | **DELETE** /places/companies/{company_uuid} | Delete Company
 [**get_company_places_companies_company_uuid_get**](CompaniesApi.md#get_company_places_companies_company_uuid_get) | **GET** /places/companies/{company_uuid} | Get Company
 [**search_companies_places_companies_get**](CompaniesApi.md#search_companies_places_companies_get) | **GET** /places/companies | Search Companies
 [**update_company_places_companies_company_uuid_put**](CompaniesApi.md#update_company_places_companies_company_uuid_put) | **PUT** /places/companies/{company_uuid} | Update Company
@@ -124,10 +124,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_place_places_companies_company_uuid_delete**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_place_places_companies_company_uuid_delete(company_uuid)
+# **delete_company_places_companies_company_uuid_delete**
+> bool, date, datetime, dict, float, int, list, str, none_type delete_company_places_companies_company_uuid_delete(company_uuid)
 
-Delete Place
+Delete Company
 
 Deletes the company with the given ID and returns True if successful
 
@@ -162,20 +162,20 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete Place
-        api_response = api_instance.delete_place_places_companies_company_uuid_delete(company_uuid)
+        # Delete Company
+        api_response = api_instance.delete_company_places_companies_company_uuid_delete(company_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->delete_place_places_companies_company_uuid_delete: %s\n" % e)
+        print("Exception when calling CompaniesApi->delete_company_places_companies_company_uuid_delete: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Delete Place
-        api_response = api_instance.delete_place_places_companies_company_uuid_delete(company_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        # Delete Company
+        api_response = api_instance.delete_company_places_companies_company_uuid_delete(company_uuid, soft_delete=soft_delete, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling CompaniesApi->delete_place_places_companies_company_uuid_delete: %s\n" % e)
+        print("Exception when calling CompaniesApi->delete_company_places_companies_company_uuid_delete: %s\n" % e)
 ```
 
 

@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **uuid** | **str** |  | 
+**project_uuid** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **public** | **bool** |  | [optional]  if omitted the server will use the default value of True
 **meta** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
 **addresses** | [**[AddressBase]**](AddressBase.md) |  | [optional] 
 **contact** | [**ContactBase**](ContactBase.md) |  | [optional] 
 **picture** | **str** |  | [optional] 
-**project_uuid** | **str** |  | [optional] 
 **meta_uuid** | **str** |  | [optional] 
 **tags** | [**[TagBase]**](TagBase.md) |  | [optional] 
 **categories** | [**[CategoryBase]**](CategoryBase.md) |  | [optional] 

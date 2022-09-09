@@ -135,6 +135,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
     place_base = PlaceBase(
+        project_uuid="project_uuid_example",
         name="Example Clinic",
         summary="Summary of the clinic",
         public=True,
@@ -639,7 +640,6 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = places_api.PlacesApi(api_client)
-    project_uuid = "project_uuid_example" # str |  (optional)
     name = "name_example" # str |  (optional)
     address_line_1 = "address_line_1_example" # str |  (optional)
     address_line_2 = "address_line_2_example" # str |  (optional)
@@ -676,7 +676,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Searchplaces
-        api_response = api_instance.search_places(project_uuid=project_uuid, name=name, address_line_1=address_line_1, address_line_2=address_line_2, city=city, province_state=province_state, country=country, postal_zip_code=postal_zip_code, lat=lat, lng=lng, email=email, is_public=is_public, is_deleted=is_deleted, with_company=with_company, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_collection=with_collection, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.search_places(name=name, address_line_1=address_line_1, address_line_2=address_line_2, city=city, province_state=province_state, country=country, postal_zip_code=postal_zip_code, lat=lat, lng=lng, email=email, is_public=is_public, is_deleted=is_deleted, with_company=with_company, with_meta=with_meta, with_catalog=with_catalog, with_reviews=with_reviews, with_schedule=with_schedule, with_collection=with_collection, with_blog=with_blog, with_tags=with_tags, with_categories=with_categories, page=page, page_size=page_size, sort_on=sort_on, sort_desc=sort_desc, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling PlacesApi->search_places: %s\n" % e)
@@ -687,7 +687,6 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | **str**|  | [optional]
  **name** | **str**|  | [optional]
  **address_line_1** | **str**|  | [optional]
  **address_line_2** | **str**|  | [optional]
@@ -775,6 +774,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     api_instance = places_api.PlacesApi(api_client)
     place_uuid = "place_uuid_example" # str | 
     place_base = PlaceBase(
+        project_uuid="project_uuid_example",
         name="Example Clinic",
         summary="Summary of the clinic",
         public=True,

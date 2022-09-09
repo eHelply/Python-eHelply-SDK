@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_staff**
-> StaffDb create_staff(staff_create)
+> StaffResponse create_staff(staff_base)
 
 Createstaff
 
@@ -25,9 +25,9 @@ Creates a staff member
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
-from ehelply_python_sdk.model.staff_create import StaffCreate
-from ehelply_python_sdk.model.staff_db import StaffDb
+from ehelply_python_sdk.model.staff_response import StaffResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.staff_base import StaffBase
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -40,13 +40,13 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
-    staff_create = StaffCreate(
+    staff_base = StaffBase(
         entity_uuid="entity_uuid_1234",
         project_uuid="project_uuid_1234",
         schedule_uuid="schedule_uuid_1234",
         catalog_uuid="catalog_uuid_1234",
         review_group_uuid="review_uuid_1234",
-    ) # StaffCreate | 
+    ) # StaffBase | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -57,7 +57,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Createstaff
-        api_response = api_instance.create_staff(staff_create)
+        api_response = api_instance.create_staff(staff_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->create_staff: %s\n" % e)
@@ -66,7 +66,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Createstaff
-        api_response = api_instance.create_staff(staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_staff(staff_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->create_staff: %s\n" % e)
@@ -77,7 +77,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **staff_create** | [**StaffCreate**](StaffCreate.md)|  |
+ **staff_base** | [**StaffBase**](StaffBase.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StaffDb**](StaffDb.md)
+[**StaffResponse**](StaffResponse.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_staff**
-> StaffResponse update_staff(staff_uuid, staff_create)
+> StaffResponse update_staff(staff_uuid, staff_base)
 
 Updatestaff
 
@@ -426,8 +426,8 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import staff_api
 from ehelply_python_sdk.model.staff_response import StaffResponse
-from ehelply_python_sdk.model.staff_create import StaffCreate
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.staff_base import StaffBase
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -441,13 +441,13 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = staff_api.StaffApi(api_client)
     staff_uuid = "staff_uuid_example" # str | 
-    staff_create = StaffCreate(
+    staff_base = StaffBase(
         entity_uuid="entity_uuid_1234",
         project_uuid="project_uuid_1234",
         schedule_uuid="schedule_uuid_1234",
         catalog_uuid="catalog_uuid_1234",
         review_group_uuid="review_uuid_1234",
-    ) # StaffCreate | 
+    ) # StaffBase | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -458,7 +458,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Updatestaff
-        api_response = api_instance.update_staff(staff_uuid, staff_create)
+        api_response = api_instance.update_staff(staff_uuid, staff_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->update_staff: %s\n" % e)
@@ -467,7 +467,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Updatestaff
-        api_response = api_instance.update_staff(staff_uuid, staff_create, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.update_staff(staff_uuid, staff_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling StaffApi->update_staff: %s\n" % e)
@@ -479,7 +479,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **staff_uuid** | **str**|  |
- **staff_create** | [**StaffCreate**](StaffCreate.md)|  |
+ **staff_base** | [**StaffBase**](StaffBase.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]

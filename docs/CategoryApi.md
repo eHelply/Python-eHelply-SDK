@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_category_places_categories_post**
-> CategoryDb create_category_places_categories_post(category_base)
+> CategoryResponse create_category_places_categories_post(category_base)
 
 Create Category
 
@@ -25,9 +25,9 @@ Creates a category
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import category_api
+from ehelply_python_sdk.model.category_response import CategoryResponse
 from ehelply_python_sdk.model.category_base import CategoryBase
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.category_db import CategoryDb
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryDb**](CategoryDb.md)
+[**CategoryResponse**](CategoryResponse.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_category_places_categories_category_uuid_get**
-> CategoryBase get_category_places_categories_category_uuid_get(category_uuid)
+> CategoryResponse get_category_places_categories_category_uuid_get(category_uuid)
 
 Get Category
 
@@ -212,7 +212,7 @@ Gets the category information given the category ID
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import category_api
-from ehelply_python_sdk.model.category_base import CategoryBase
+from ehelply_python_sdk.model.category_response import CategoryResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CategoryBase**](CategoryBase.md)
+[**CategoryResponse**](CategoryResponse.md)
 
 ### Authorization
 

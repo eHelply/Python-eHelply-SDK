@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
+**project_uuid** | **str** |  | [optional] 
 **summary** | **str** |  | [optional] 
 **public** | **bool** |  | [optional]  if omitted the server will use the default value of True
 **meta** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 

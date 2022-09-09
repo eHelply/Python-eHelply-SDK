@@ -27,7 +27,7 @@ from ehelply_python_sdk.model.basic_meta_create import BasicMetaCreate
 from ehelply_python_sdk.model.catalog_base import CatalogBase
 from ehelply_python_sdk.model.catalog_return import CatalogReturn
 from ehelply_python_sdk.model.category_base import CategoryBase
-from ehelply_python_sdk.model.category_db import CategoryDb
+from ehelply_python_sdk.model.category_response import CategoryResponse
 from ehelply_python_sdk.model.company import Company
 from ehelply_python_sdk.model.company_base import CompanyBase
 from ehelply_python_sdk.model.company_response import CompanyResponse
@@ -126,14 +126,13 @@ from ehelply_python_sdk.model.selection import Selection
 from ehelply_python_sdk.model.service_create import ServiceCreate
 from ehelply_python_sdk.model.service_message_response import ServiceMessageResponse
 from ehelply_python_sdk.model.service_response import ServiceResponse
-from ehelply_python_sdk.model.staff_create import StaffCreate
-from ehelply_python_sdk.model.staff_db import StaffDb
+from ehelply_python_sdk.model.staff_base import StaffBase
 from ehelply_python_sdk.model.staff_response import StaffResponse
 from ehelply_python_sdk.model.stats_vitals_response import StatsVitalsResponse
 from ehelply_python_sdk.model.stripe_account_response import StripeAccountResponse
 from ehelply_python_sdk.model.stripe_customer_secret_response import StripeCustomerSecretResponse
 from ehelply_python_sdk.model.tag_base import TagBase
-from ehelply_python_sdk.model.tag_db import TagDb
+from ehelply_python_sdk.model.tag_response import TagResponse
 from ehelply_python_sdk.model.tax import Tax
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
