@@ -215,6 +215,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
+**400** | Cannot archive project |  -  |
 **403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Not found |  -  |
 **422** | Validation Error |  -  |
