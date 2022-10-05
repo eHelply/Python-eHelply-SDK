@@ -1,13 +1,13 @@
-# ehelply_python_sdk.DefaultApi
+# ehelply_python_sdk.ContentApi
 
 All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file**](DefaultApi.md#create_file) | **POST** /files/files | Createfile
-[**delete_file**](DefaultApi.md#delete_file) | **DELETE** /files/files/{file_uuid} | Deletefile
-[**get_file**](DefaultApi.md#get_file) | **GET** /files/files/{file_uuid} | Getfile
-[**update_file**](DefaultApi.md#update_file) | **PUT** /files/files/{file_uuid} | Updatefile
+[**create_file**](ContentApi.md#create_file) | **POST** /files/files | Createfile
+[**delete_file**](ContentApi.md#delete_file) | **DELETE** /files/files/{file_uuid} | Deletefile
+[**get_file**](ContentApi.md#get_file) | **GET** /files/files/{file_uuid} | Getfile
+[**update_file**](ContentApi.md#update_file) | **PUT** /files/files/{file_uuid} | Updatefile
 
 
 # **create_file**
@@ -21,7 +21,7 @@ Createfile
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import content_api
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.create_file200_response import CreateFile200Response
@@ -36,7 +36,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = content_api.ContentApi(api_client)
     file = open('/path/to/file', 'rb') # file_type | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -51,7 +51,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.create_file(file)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->create_file: %s\n" % e)
+        print("Exception when calling ContentApi->create_file: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -60,7 +60,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.create_file(file, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->create_file: %s\n" % e)
+        print("Exception when calling ContentApi->create_file: %s\n" % e)
 ```
 
 
@@ -113,7 +113,7 @@ Deletefile
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import content_api
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.delete_file200_response import DeleteFile200Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -128,7 +128,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = content_api.ContentApi(api_client)
     file_uuid = "file_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -143,7 +143,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.delete_file(file_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->delete_file: %s\n" % e)
+        print("Exception when calling ContentApi->delete_file: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -152,7 +152,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.delete_file(file_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->delete_file: %s\n" % e)
+        print("Exception when calling ContentApi->delete_file: %s\n" % e)
 ```
 
 
@@ -205,7 +205,7 @@ Getfile
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import content_api
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
@@ -219,7 +219,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = content_api.ContentApi(api_client)
     file_uuid = "file_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
@@ -234,7 +234,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.get_file(file_uuid)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->get_file: %s\n" % e)
+        print("Exception when calling ContentApi->get_file: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -243,7 +243,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.get_file(file_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->get_file: %s\n" % e)
+        print("Exception when calling ContentApi->get_file: %s\n" % e)
 ```
 
 
@@ -296,7 +296,7 @@ Updatefile
 ```python
 import time
 import ehelply_python_sdk
-from ehelply_python_sdk.api import default_api
+from ehelply_python_sdk.api import content_api
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.update_file200_response import UpdateFile200Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
@@ -311,7 +311,7 @@ configuration = ehelply_python_sdk.Configuration(
 # Enter a context with an instance of the API client
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
-    api_instance = default_api.DefaultApi(api_client)
+    api_instance = content_api.ContentApi(api_client)
     file_uuid = "file_uuid_example" # str | 
     file = open('/path/to/file', 'rb') # file_type | 
     x_access_token = "x-access-token_example" # str |  (optional)
@@ -327,7 +327,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.update_file(file_uuid, file)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->update_file: %s\n" % e)
+        print("Exception when calling ContentApi->update_file: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -336,7 +336,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
         api_response = api_instance.update_file(file_uuid, file, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
-        print("Exception when calling DefaultApi->update_file: %s\n" % e)
+        print("Exception when calling ContentApi->update_file: %s\n" % e)
 ```
 
 
