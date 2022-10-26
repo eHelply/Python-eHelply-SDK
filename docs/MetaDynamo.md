@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **uuid** | **str** |  | 
 **basic** | [**Basic**](Basic.md) |  | [optional] 
 **detailed** | [**Detailed**](Detailed.md) |  | [optional] 
-**custom** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional]  if omitted the server will use the default value of {}
+**custom** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
 **dates** | [**Dates**](Dates.md) |  | [optional] 
 **fields** | [**[Field]**](Field.md) |  | [optional] 
 **children** | **[{str: (bool, date, datetime, dict, float, int, list, str, none_type)}]** |  | [optional] 
