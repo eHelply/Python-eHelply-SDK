@@ -35,6 +35,7 @@ from ehelply_python_sdk.model.contact import Contact
 from ehelply_python_sdk.model.contact_base import ContactBase
 from ehelply_python_sdk.model.contact_method import ContactMethod
 from ehelply_python_sdk.model.contact_response import ContactResponse
+from ehelply_python_sdk.model.create_file200_response import CreateFile200Response
 from ehelply_python_sdk.model.create_key_response import CreateKeyResponse
 from ehelply_python_sdk.model.create_project_credential import CreateProjectCredential
 from ehelply_python_sdk.model.create_project_credit import CreateProjectCredit
@@ -44,6 +45,7 @@ from ehelply_python_sdk.model.create_ticket import CreateTicket
 from ehelply_python_sdk.model.credential import Credential
 from ehelply_python_sdk.model.custom_list import CustomList
 from ehelply_python_sdk.model.dates_meta import DatesMeta
+from ehelply_python_sdk.model.delete_file200_response import DeleteFile200Response
 from ehelply_python_sdk.model.detailed import Detailed
 from ehelply_python_sdk.model.detailed_meta import DetailedMeta
 from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
@@ -136,6 +138,7 @@ from ehelply_python_sdk.model.tag_response import TagResponse
 from ehelply_python_sdk.model.tax import Tax
 from ehelply_python_sdk.model.ticket_response import TicketResponse
 from ehelply_python_sdk.model.tickets_response import TicketsResponse
+from ehelply_python_sdk.model.update_file200_response import UpdateFile200Response
 from ehelply_python_sdk.model.update_project_credential_request import UpdateProjectCredentialRequest
 from ehelply_python_sdk.model.update_review import UpdateReview
 from ehelply_python_sdk.model.user import User
