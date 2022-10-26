@@ -4,16 +4,16 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_note**](NotesApi.md#create_note) | **POST** /notes/notes | Create Note
-[**delete_note**](NotesApi.md#delete_note) | **DELETE** /notes/notes/{note_id} | Delete Note
-[**get_note**](NotesApi.md#get_note) | **GET** /notes/notes/{note_id} | Get Note
-[**update_note**](NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Update Note
+[**create_note**](NotesApi.md#create_note) | **POST** /notes/notes | Createnote
+[**delete_note**](NotesApi.md#delete_note) | **DELETE** /notes/notes/{note_id} | Deletenote
+[**get_note**](NotesApi.md#get_note) | **GET** /notes/notes/{note_id} | Getnote
+[**update_note**](NotesApi.md#update_note) | **PUT** /notes/notes/{note_id} | Updatenote
 
 
 # **create_note**
-> NoteDynamoResponse create_note(note_base)
+> CreateNote200Response create_note(note_base)
 
-Create Note
+Createnote
 
 ### Example
 
@@ -23,8 +23,9 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
+from ehelply_python_sdk.model.create_note200_response import CreateNote200Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -56,7 +57,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Create Note
+        # Createnote
         api_response = api_instance.create_note(note_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -65,7 +66,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Create Note
+        # Createnote
         api_response = api_instance.create_note(note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -87,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NoteDynamoResponse**](NoteDynamoResponse.md)
+[**CreateNote200Response**](CreateNote200Response.md)
 
 ### Authorization
 
@@ -104,15 +105,17 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
+**400** | Something went wrong while trying to create a note |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_note**
-> bool, date, datetime, dict, float, int, list, str, none_type delete_note(note_id)
+> DeleteNote200Response delete_note(note_id)
 
-Delete Note
+Deletenote
 
 ### Example
 
@@ -121,7 +124,9 @@ Delete Note
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
+from ehelply_python_sdk.model.delete_note200_response import DeleteNote200Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -145,7 +150,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Delete Note
+        # Deletenote
         api_response = api_instance.delete_note(note_id)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -154,7 +159,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Delete Note
+        # Deletenote
         api_response = api_instance.delete_note(note_id, method=method, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -177,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**bool, date, datetime, dict, float, int, list, str, none_type**
+[**DeleteNote200Response**](DeleteNote200Response.md)
 
 ### Authorization
 
@@ -194,6 +199,8 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
+**400** | Unable to delete note(s) |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
 **404** | Not found |  -  |
 **422** | Validation Error |  -  |
 
@@ -202,7 +209,7 @@ No authorization required
 # **get_note**
 > NoteDynamoHistoryResponse get_note(note_id)
 
-Get Note
+Getnote
 
 ### Example
 
@@ -211,6 +218,7 @@ Get Note
 import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from ehelply_python_sdk.model.note_dynamo_history_response import NoteDynamoHistoryResponse
 from pprint import pprint
@@ -237,7 +245,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Get Note
+        # Getnote
         api_response = api_instance.get_note(note_id)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -246,7 +254,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Get Note
+        # Getnote
         api_response = api_instance.get_note(note_id, history=history, history_content=history_content, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -287,15 +295,16 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
-**404** | Not found |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | note does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_note**
-> NoteDynamoResponse update_note(note_id, note_base)
+> UpdateNote200Response update_note(note_id, note_base)
 
-Update Note
+Updatenote
 
 ### Example
 
@@ -305,8 +314,9 @@ import time
 import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
+from ehelply_python_sdk.model.update_note200_response import UpdateNote200Response
+from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
-from ehelply_python_sdk.model.note_dynamo_response import NoteDynamoResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -339,7 +349,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update Note
+        # Updatenote
         api_response = api_instance.update_note(note_id, note_base)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -348,7 +358,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Update Note
+        # Updatenote
         api_response = api_instance.update_note(note_id, note_base, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
@@ -371,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NoteDynamoResponse**](NoteDynamoResponse.md)
+[**UpdateNote200Response**](UpdateNote200Response.md)
 
 ### Authorization
 
@@ -388,7 +398,9 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
-**404** | Not found |  -  |
+**400** | Something went wrong while updating note |  -  |
+**403** | Unauthorized - Denied by eHelply |  -  |
+**404** | note does not exist |  -  |
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
