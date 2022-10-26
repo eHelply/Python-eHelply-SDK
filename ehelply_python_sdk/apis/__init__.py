@@ -21,9 +21,7 @@ from ehelply_python_sdk.api.catalogs_api import CatalogsApi
 from ehelply_python_sdk.api.category_api import CategoryApi
 from ehelply_python_sdk.api.companies_api import CompaniesApi
 from ehelply_python_sdk.api.logging_api import LoggingApi
-from ehelply_python_sdk.api.meta_api import MetaApi
 from ehelply_python_sdk.api.monitor_api import MonitorApi
-from ehelply_python_sdk.api.notes_api import NotesApi
 from ehelply_python_sdk.api.places_api import PlacesApi
 from ehelply_python_sdk.api.products_api import ProductsApi
 from ehelply_python_sdk.api.projects_api import ProjectsApi
