@@ -49,6 +49,7 @@ from ehelply_python_sdk.model.create_ticket import CreateTicket
 from ehelply_python_sdk.model.credential import Credential
 from ehelply_python_sdk.model.custom_list import CustomList
 from ehelply_python_sdk.model.dates_meta import DatesMeta
+from ehelply_python_sdk.model.delete_fact200_response import DeleteFact200Response
 from ehelply_python_sdk.model.delete_field200_response import DeleteField200Response
 from ehelply_python_sdk.model.delete_file200_response import DeleteFile200Response
 from ehelply_python_sdk.model.delete_meta200_response import DeleteMeta200Response
@@ -58,6 +59,8 @@ from ehelply_python_sdk.model.detailed_meta import DetailedMeta
 from ehelply_python_sdk.model.detailed_meta_create import DetailedMetaCreate
 from ehelply_python_sdk.model.discount import Discount
 from ehelply_python_sdk.model.email import Email
+from ehelply_python_sdk.model.fact import Fact
+from ehelply_python_sdk.model.fact_create import FactCreate
 from ehelply_python_sdk.model.field import Field
 from ehelply_python_sdk.model.field_dynamo import FieldDynamo
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
@@ -122,6 +125,7 @@ from ehelply_python_sdk.model.response_generatetoken import ResponseGeneratetoke
 from ehelply_python_sdk.model.response_removememberfromproject import ResponseRemovememberfromproject
 from ehelply_python_sdk.model.response_revokeprojectcredit import ResponseRevokeprojectcredit
 from ehelply_python_sdk.model.response_updateprojectcredential import ResponseUpdateprojectcredential
+from ehelply_python_sdk.model.save_fact200_response import SaveFact200Response
 from ehelply_python_sdk.model.security_create_token import SecurityCreateToken
 from ehelply_python_sdk.model.security_encryption_key_get import SecurityEncryptionKeyGet
 from ehelply_python_sdk.model.security_encryption_key_response import SecurityEncryptionKeyResponse
