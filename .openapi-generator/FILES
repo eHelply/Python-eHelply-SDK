@@ -49,6 +49,7 @@ docs/CreateTicket.md
 docs/Credential.md
 docs/CustomList.md
 docs/DatesMeta.md
+docs/DeleteFact200Response.md
 docs/DeleteField200Response.md
 docs/DeleteFile200Response.md
 docs/DeleteMeta200Response.md
@@ -58,6 +59,9 @@ docs/DetailedMeta.md
 docs/DetailedMetaCreate.md
 docs/Discount.md
 docs/Email.md
+docs/Fact.md
+docs/FactCreate.md
+docs/FactsApi.md
 docs/Field.md
 docs/FieldDynamo.md
 docs/FieldsApi.md
@@ -131,6 +135,7 @@ docs/ResponseRemovememberfromproject.md
 docs/ResponseRevokeprojectcredit.md
 docs/ResponseUpdateprojectcredential.md
 docs/ReviewsApi.md
+docs/SaveFact200Response.md
 docs/SecurityApi.md
 docs/SecurityCreateToken.md
 docs/SecurityEncryptionKeyGet.md
@@ -194,6 +199,7 @@ ehelply_python_sdk/api/catalogs_api.py
 ehelply_python_sdk/api/category_api.py
 ehelply_python_sdk/api/companies_api.py
 ehelply_python_sdk/api/content_api.py
+ehelply_python_sdk/api/facts_api.py
 ehelply_python_sdk/api/fields_api.py
 ehelply_python_sdk/api/logging_api.py
 ehelply_python_sdk/api/meta_api.py
@@ -254,6 +260,7 @@ ehelply_python_sdk/model/create_ticket.py
 ehelply_python_sdk/model/credential.py
 ehelply_python_sdk/model/custom_list.py
 ehelply_python_sdk/model/dates_meta.py
+ehelply_python_sdk/model/delete_fact200_response.py
 ehelply_python_sdk/model/delete_field200_response.py
 ehelply_python_sdk/model/delete_file200_response.py
 ehelply_python_sdk/model/delete_meta200_response.py
@@ -263,6 +270,8 @@ ehelply_python_sdk/model/detailed_meta.py
 ehelply_python_sdk/model/detailed_meta_create.py
 ehelply_python_sdk/model/discount.py
 ehelply_python_sdk/model/email.py
+ehelply_python_sdk/model/fact.py
+ehelply_python_sdk/model/fact_create.py
 ehelply_python_sdk/model/field.py
 ehelply_python_sdk/model/field_dynamo.py
 ehelply_python_sdk/model/get_appointment403_response.py
@@ -327,6 +336,7 @@ ehelply_python_sdk/model/response_generatetoken.py
 ehelply_python_sdk/model/response_removememberfromproject.py
 ehelply_python_sdk/model/response_revokeprojectcredit.py
 ehelply_python_sdk/model/response_updateprojectcredential.py
+ehelply_python_sdk/model/save_fact200_response.py
 ehelply_python_sdk/model/security_create_token.py
 ehelply_python_sdk/model/security_encryption_key_get.py
 ehelply_python_sdk/model/security_encryption_key_response.py
@@ -431,6 +441,7 @@ test/test_create_ticket.py
 test/test_credential.py
 test/test_custom_list.py
 test/test_dates_meta.py
+test/test_delete_fact200_response.py
 test/test_delete_field200_response.py
 test/test_delete_file200_response.py
 test/test_delete_meta200_response.py
@@ -440,6 +451,9 @@ test/test_detailed_meta.py
 test/test_detailed_meta_create.py
 test/test_discount.py
 test/test_email.py
+test/test_fact.py
+test/test_fact_create.py
+test/test_facts_api.py
 test/test_field.py
 test/test_field_dynamo.py
 test/test_fields_api.py
@@ -513,6 +527,7 @@ test/test_response_removememberfromproject.py
 test/test_response_revokeprojectcredit.py
 test/test_response_updateprojectcredential.py
 test/test_reviews_api.py
+test/test_save_fact200_response.py
 test/test_security_api.py
 test/test_security_create_token.py
 test/test_security_encryption_key_get.py
