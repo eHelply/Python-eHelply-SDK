@@ -4,17 +4,17 @@ All URIs are relative to *https://api.prod.ehelply.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_billing_account**](BillingApi.md#create_billing_account) | **POST** /sam/billing/create_billing_account | Createbillingaccount
-[**get_client_secret**](BillingApi.md#get_client_secret) | **GET** /sam/billing/retrieve_secret | Getclientsecret
-[**has_payment**](BillingApi.md#has_payment) | **GET** /sam/billing/has_payment | Haspayment
-[**list_payment_methods**](BillingApi.md#list_payment_methods) | **GET** /sam/billing/view_payment_method | Listpaymentmethods
-[**process_payment**](BillingApi.md#process_payment) | **POST** /sam/billing/process_payment | Processpayment
-[**reconcile_payment_method**](BillingApi.md#reconcile_payment_method) | **GET** /sam/billing/reconcile_payment | Reconcilepaymentmethod
-[**remove_payment_method**](BillingApi.md#remove_payment_method) | **DELETE** /sam/billing/remove_payment_method | Removepaymentmethod
+[**create_billing_account**](BillingApi.md#create_billing_account) | **POST** /sam/billing/projects/{project_uuid}/accounts | Createbillingaccount
+[**get_client_secret**](BillingApi.md#get_client_secret) | **GET** /sam/billing/projects/{project_uuid}/secrets | Getclientsecret
+[**has_payment**](BillingApi.md#has_payment) | **GET** /sam/billing/projects/{project_uuid}/payment-methods-exist | Haspayment
+[**list_payment_methods**](BillingApi.md#list_payment_methods) | **GET** /sam/billing/projects/{project_uuid}/payment-methods | Listpaymentmethods
+[**process_payment**](BillingApi.md#process_payment) | **POST** /sam/billing/projects/{project_uuid}/payments | Processpayment
+[**reconcile_payment_method**](BillingApi.md#reconcile_payment_method) | **GET** /sam/billing/projects/{project_uuid}/payment-methods-reconciliation | Reconcilepaymentmethod
+[**remove_payment_method**](BillingApi.md#remove_payment_method) | **DELETE** /sam/billing/projects/{project_uuid}/payment-methods | Removepaymentmethod
 
 
 # **create_billing_account**
-> StripeAccountResponse create_billing_account()
+> StripeAccountResponse create_billing_account(project_uuid)
 
 Createbillingaccount
 
@@ -39,6 +39,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -47,10 +48,18 @@ with ehelply_python_sdk.ApiClient() as api_client:
     ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Createbillingaccount
+        api_response = api_instance.create_billing_account(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling BillingApi->create_billing_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Createbillingaccount
-        api_response = api_instance.create_billing_account(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.create_billing_account(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->create_billing_account: %s\n" % e)
@@ -61,6 +70,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -93,7 +103,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_client_secret**
-> StripeCustomerSecretResponse get_client_secret()
+> StripeCustomerSecretResponse get_client_secret(project_uuid)
 
 Getclientsecret
 
@@ -118,6 +128,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -126,10 +137,18 @@ with ehelply_python_sdk.ApiClient() as api_client:
     ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Getclientsecret
+        api_response = api_instance.get_client_secret(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling BillingApi->get_client_secret: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Getclientsecret
-        api_response = api_instance.get_client_secret(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.get_client_secret(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->get_client_secret: %s\n" % e)
@@ -140,6 +159,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -172,7 +192,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **has_payment**
-> bool has_payment()
+> bool has_payment(project_uuid)
 
 Haspayment
 
@@ -196,7 +216,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
-    project_uuid = None # bool, date, datetime, dict, float, int, list, str, none_type |  (optional)
+    project_uuid = "project_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -205,10 +225,18 @@ with ehelply_python_sdk.ApiClient() as api_client:
     ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Haspayment
+        api_response = api_instance.has_payment(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling BillingApi->has_payment: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Haspayment
-        api_response = api_instance.has_payment(project_uuid=project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.has_payment(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->has_payment: %s\n" % e)
@@ -219,7 +247,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | **bool, date, datetime, dict, float, int, list, str, none_type**|  | [optional]
+ **project_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -252,7 +280,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_payment_methods**
-> [PaymentMethodResponse] list_payment_methods()
+> [PaymentMethodResponse] list_payment_methods(project_uuid)
 
 Listpaymentmethods
 
@@ -278,7 +306,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
-    project_uuid = None # bool, date, datetime, dict, float, int, list, str, none_type |  (optional)
+    project_uuid = "project_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -287,10 +315,18 @@ with ehelply_python_sdk.ApiClient() as api_client:
     ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Listpaymentmethods
+        api_response = api_instance.list_payment_methods(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling BillingApi->list_payment_methods: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Listpaymentmethods
-        api_response = api_instance.list_payment_methods(project_uuid=project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.list_payment_methods(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->list_payment_methods: %s\n" % e)
@@ -301,7 +337,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | **bool, date, datetime, dict, float, int, list, str, none_type**|  | [optional]
+ **project_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -336,7 +372,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **process_payment**
-> str process_payment(payment)
+> str process_payment(project_uuid, payment)
 
 Processpayment
 
@@ -361,6 +397,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
     payment = Payment(
         amount=1,
     ) # Payment | 
@@ -374,7 +411,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # example passing only required values which don't have defaults set
     try:
         # Processpayment
-        api_response = api_instance.process_payment(payment)
+        api_response = api_instance.process_payment(project_uuid, payment)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment: %s\n" % e)
@@ -383,7 +420,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
     # and optional values
     try:
         # Processpayment
-        api_response = api_instance.process_payment(payment, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.process_payment(project_uuid, payment, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->process_payment: %s\n" % e)
@@ -394,6 +431,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
  **payment** | [**Payment**](Payment.md)|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
@@ -427,7 +465,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reconcile_payment_method**
-> bool reconcile_payment_method()
+> bool reconcile_payment_method(project_uuid)
 
 Reconcilepaymentmethod
 
@@ -451,6 +489,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
+    project_uuid = "project_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -459,10 +498,18 @@ with ehelply_python_sdk.ApiClient() as api_client:
     ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Reconcilepaymentmethod
+        api_response = api_instance.reconcile_payment_method(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling BillingApi->reconcile_payment_method: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Reconcilepaymentmethod
-        api_response = api_instance.reconcile_payment_method(x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.reconcile_payment_method(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->reconcile_payment_method: %s\n" % e)
@@ -473,6 +520,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **project_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
@@ -505,7 +553,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_payment_method**
-> str remove_payment_method()
+> str remove_payment_method(project_uuid)
 
 Removepaymentmethod
 
@@ -529,7 +577,7 @@ configuration = ehelply_python_sdk.Configuration(
 with ehelply_python_sdk.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = billing_api.BillingApi(api_client)
-    project_uuid = None # bool, date, datetime, dict, float, int, list, str, none_type |  (optional)
+    project_uuid = "project_uuid_example" # str | 
     x_access_token = "x-access-token_example" # str |  (optional)
     x_secret_token = "x-secret-token_example" # str |  (optional)
     authorization = "authorization_example" # str |  (optional)
@@ -538,10 +586,18 @@ with ehelply_python_sdk.ApiClient() as api_client:
     ehelply_data = "ehelply-data_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Removepaymentmethod
+        api_response = api_instance.remove_payment_method(project_uuid)
+        pprint(api_response)
+    except ehelply_python_sdk.ApiException as e:
+        print("Exception when calling BillingApi->remove_payment_method: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Removepaymentmethod
-        api_response = api_instance.remove_payment_method(project_uuid=project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
+        api_response = api_instance.remove_payment_method(project_uuid, x_access_token=x_access_token, x_secret_token=x_secret_token, authorization=authorization, ehelply_active_participant=ehelply_active_participant, ehelply_project=ehelply_project, ehelply_data=ehelply_data)
         pprint(api_response)
     except ehelply_python_sdk.ApiException as e:
         print("Exception when calling BillingApi->remove_payment_method: %s\n" % e)
@@ -552,7 +608,7 @@ with ehelply_python_sdk.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_uuid** | **bool, date, datetime, dict, float, int, list, str, none_type**|  | [optional]
+ **project_uuid** | **str**|  |
  **x_access_token** | **str**|  | [optional]
  **x_secret_token** | **str**|  | [optional]
  **authorization** | **str**|  | [optional]
