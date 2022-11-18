@@ -39,7 +39,7 @@ docs/CreateField200Response.md
 docs/CreateFile200Response.md
 docs/CreateKeyResponse.md
 docs/CreateMeta200Response.md
-docs/CreateNote200Response.md
+docs/CreateNoteResponse.md
 docs/CreateProjectCredential.md
 docs/CreateProjectCredit.md
 docs/CreateProjectInvoice.md
@@ -250,7 +250,7 @@ ehelply_python_sdk/model/create_field200_response.py
 ehelply_python_sdk/model/create_file200_response.py
 ehelply_python_sdk/model/create_key_response.py
 ehelply_python_sdk/model/create_meta200_response.py
-ehelply_python_sdk/model/create_note200_response.py
+ehelply_python_sdk/model/create_note_response.py
 ehelply_python_sdk/model/create_project_credential.py
 ehelply_python_sdk/model/create_project_credit.py
 ehelply_python_sdk/model/create_project_invoice.py
@@ -431,7 +431,7 @@ test/test_create_field200_response.py
 test/test_create_file200_response.py
 test/test_create_key_response.py
 test/test_create_meta200_response.py
-test/test_create_note200_response.py
+test/test_create_note_response.py
 test/test_create_project_credential.py
 test/test_create_project_credit.py
 test/test_create_project_invoice.py
