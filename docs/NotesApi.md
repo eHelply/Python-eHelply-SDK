@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_note**
-> CreateNote200Response create_note(note_base)
+> CreateNoteResponse create_note(note_base)
 
 Createnote
 
@@ -24,7 +24,7 @@ import ehelply_python_sdk
 from ehelply_python_sdk.api import notes_api
 from ehelply_python_sdk.model.note_base import NoteBase
 from ehelply_python_sdk.model.get_appointment403_response import GetAppointment403Response
-from ehelply_python_sdk.model.create_note200_response import CreateNote200Response
+from ehelply_python_sdk.model.create_note_response import CreateNoteResponse
 from ehelply_python_sdk.model.http_validation_error import HTTPValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.prod.ehelply.com
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateNote200Response**](CreateNote200Response.md)
+[**CreateNoteResponse**](CreateNoteResponse.md)
 
 ### Authorization
 
